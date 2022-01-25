@@ -12,36 +12,27 @@ banner:
 about:
   enable: true
   title: About Us
-  description: Far far away, behind the word mountains, far from the countries Vokalia
-    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-    right at the coast of the Semantics
-  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id.
+  description: The ECEA is the largest promoter of off-road motorcycling in the United States in terms of membership,
+    participants, and number of events. We offer something for all abilities and ages; from non-competitive trail
+    rides to the rough and tumble bar banging action of our Hare Scrambles.
+  content: Motorcycle riders come in all shapes and sizes, and fortunately there are bikes and events to suit all of us. You
+    name the terrain or conditions and without a doubt, there will be a motorcycle fit for the task and a rider ready
+    for the challenge. The East Coast Enduro Association (ECEA) offers something great for everyone from four years
+    old to eighty years young! "TODO tie in clubs"
   image: images/wrapper-img.png
 portfolio:
   enable: true
   bg_image: images/feature-bg.jpg
-  title: WE BELIEVE IN GREAT IDEAS
-  content: " Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur
-    ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-    condimentum nibh, ut fermentum massa justo sit amet risus.\n\nMaecenas faucibus
-    mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-    massa justo sit amet risus.\n\nMaecenas faucibus mollis interdum. Morbi leo risus,
-    porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo,
-    tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. "
+  title: Come Race With Us!
+  content: "TODO: Write short blurb on the types of events we offer and give direction for more info" 
   button:
     enable: true
-    label: View Works
+    label: Learn More
     link: project
 service:
   enable: true
 cta:
-  enable: true
+  enable: false
   bg_image: images/call-to-action-bg.jpg
   title: We design delightful digital experiences.
   content: Read more about what we do and our philosophy of design. Judge for yourself
@@ -52,7 +43,7 @@ cta:
     label: Tell Us Your Story
     link: contact
 funfacts:
-  enable: true
+  enable: false
   title: Fun Facts About Us
   description: "'Far far away, behind the word mountains, far from the countries Vokalia
     and Consonantia, <br> there live the blind texts. Separated they live in Bookmarksgrove
