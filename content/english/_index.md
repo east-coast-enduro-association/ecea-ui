@@ -18,7 +18,7 @@ about:
   content: Motorcycle riders come in all shapes and sizes, and fortunately there are bikes and events to suit all of us. You
     name the terrain or conditions and without a doubt, there will be a motorcycle fit for the task and a rider ready
     for the challenge. The East Coast Enduro Association (ECEA) offers something great for everyone from four years
-    old to eighty years young! "TODO tie in clubs"
+    old to eighty years young! 
   image: images/wrapper-img.png
 portfolio:
   enable: true

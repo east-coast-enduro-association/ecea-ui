@@ -12,7 +12,7 @@ logo_text = "ECEA"
 navbar_fixed = false
 # OpenGraph / Twitter Card metadata
 description = "This is meta description"
-author = "Themefisher"
+author = "Michael Abramo"
 image = "images/logo.png" # this image will be used as fallback if a page has no image of its own
 # Whether to display text descriptors (like "E-mail: ", "Phone: ") before the address block elements
 address_descriptors = false
@@ -110,6 +110,11 @@ sidebar = ["recent_posts", "taxonomy_category", "taxonomy_tags"]
 ############################# social site ########################
 [[social]]
 title = "facebook"
+icon = "fab fa-facebook"  # fontawesome icon pack : https://fontawesome.com/icons/
+link = "#"
+
+[[social]]
+title = "facebook again"
 icon = "fab fa-facebook"  # fontawesome icon pack : https://fontawesome.com/icons/
 link = "#"
 
