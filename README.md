@@ -49,7 +49,7 @@
 git clone git@github.com:themefisher/airspace-hugo.git
 
 # cd in the project directory
-$ cd airspace-hugo/exampleSite/
+$ cd airspace-hugo/
 
 # Start local dev server
 $ hugo server --themesDir ../..
