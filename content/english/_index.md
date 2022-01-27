@@ -5,10 +5,16 @@ banner:
   bg_overlay: true
   title: East Coast Enduro Association
   content: The premier Enduro Championship Series and Harescramble Championship Series in the mid-Atlantic
-  button:
-    enable: true
-    label: Get Started Here
-    link: project
+  buttons:
+    - enable: true
+      label: Get Started Here
+      link: project
+    - enable: false
+      label: Enduro 
+      link: project
+    - enable: false
+      label: Harescramble
+      link: project
 about:
   enable: true
   title: About Us
@@ -19,7 +25,7 @@ about:
     name the terrain or conditions and without a doubt, there will be a motorcycle fit for the task and a rider ready
     for the challenge. The East Coast Enduro Association (ECEA) offers something great for everyone from four years
     old to eighty years young! 
-  image: images/wrapper-img.png
+  image: images/logo-compact.png
 portfolio:
   enable: true
   bg_image: images/feature-bg.jpg
@@ -32,7 +38,7 @@ portfolio:
 service:
   enable: true
 cta:
-  enable: false
+  enable: true
   bg_image: images/call-to-action-bg.jpg
   title: We design delightful digital experiences.
   content: Read more about what we do and our philosophy of design. Judge for yourself
@@ -43,7 +49,7 @@ cta:
     label: Tell Us Your Story
     link: contact
 funfacts:
-  enable: false
+  enable: true
   title: Fun Facts About Us
   description: "'Far far away, behind the word mountains, far from the countries Vokalia
     and Consonantia, <br> there live the blind texts. Separated they live in Bookmarksgrove
