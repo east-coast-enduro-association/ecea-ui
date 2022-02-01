@@ -18,6 +18,10 @@ information:
     info : "HTML5 / PHP / CSS3"
   - label : "Client"
     info : "Jannie Kelonsky"
+  - label : "Test label"
+    info : "Test info"
+  - label : "Test label 2"
+    info : "Test info 2"
 ---
 
 ## Behance Website Redesign

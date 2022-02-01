@@ -12,8 +12,8 @@ url = "about/"
 weight = 2
 
 [[main]]
-name = "Project"
-url = "project/"
+name = "Clubs"
+url = "clubs/"
 weight = 3
 
 [[main]]
@@ -23,31 +23,95 @@ weight = 4
 
 [[main]]
 weight = 5
-name = "More"
+name = "Enduro"
 hasChildren = true
 
   [[main]]
-  parent = "More"
-  name = "Service"
-  url = "service/"
+  parent = "Enduro"
+  name = "Enduro Signup"
+  url = "faq/"
   weight = 1
 
   [[main]]
-  parent = "More"
-  name = "Pricing"
-  url = "pricing/"
+  parent = "Enduro"
+  name = "Enduro Schedule"
+  url = "faq/"
   weight = 2
 
   [[main]]
-  parent = "More"
-  name = "FAQ"
+  parent = "Enduro"
+  name = "Enduro Results"
   url = "faq/"
   weight = 3
+
+  [[main]]
+  parent = "Enduro"
+  name = "Enduro Standings"
+  url = "faq/"
+  weight = 4
+
+[[main]]
+weight = 6
+name = "Harescramble"
+hasChildren = true
+
+  [[main]]
+  parent = "Harescramble"
+  name = "Harescramble Signup"
+  url = "faq/"
+  weight = 1
+
+  [[main]]
+  parent = "Harescramble"
+  name = "Harescramble Schedule"
+  url = "faq/"
+  weight = 2
+
+  [[main]]
+  parent = "Harescramble"
+  name = "Harescramble Results"
+  url = "faq/"
+  weight = 3
+
+  [[main]]
+  parent = "Harescramble"
+  name = "Harescramble Standings"
+  url = "faq/"
+  weight = 4
+
+[[main]]
+weight = 7
+name = "FastKIDZ"
+hasChildren = true
+
+  [[main]]
+  parent = "FastKIDZ"
+  name = "FastKIDZ Signup"
+  url = "faq/"
+  weight = 1
+
+  [[main]]
+  parent = "FastKIDZ"
+  name = "FastKIDZ Schedule"
+  url = "faq/"
+  weight = 2
+
+  [[main]]
+  parent = "FastKIDZ"
+  name = "FastKIDZ Results"
+  url = "faq/"
+  weight = 3
+
+  [[main]]
+  parent = "FastKIDZ"
+  name = "FastKIDZ Standings"
+  url = "faq/"
+  weight = 4
   
 [[main]]
 name = "Contact"
 url = "contact/"
-weight = 6
+weight = 8
 
 
 # footer menu
