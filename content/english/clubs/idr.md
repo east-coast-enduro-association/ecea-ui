@@ -22,6 +22,6 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 A New York Club in the Richford NY area, Home of the Speedville Enduro.

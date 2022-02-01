@@ -8,7 +8,7 @@ banner:
   buttons:
     - enable: true
       label: Get Started Here
-      link: project
+      link: about
     - enable: false
       label: Enduro 
       link: project

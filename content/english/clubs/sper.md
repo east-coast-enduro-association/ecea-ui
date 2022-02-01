@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 Home of the Michaux Enduro and the Oxbo Hare Scrambles. We are your local East Coast Enduro Association affiliated off-road motorcycle club. Come on out to one of our events to twist a grip or stop by a monthly meeting.
 Our meetings are held monthly on the second Wednesday of the month at 7:30 PM at VFW Post #7415,

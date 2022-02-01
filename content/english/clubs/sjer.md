@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 In January 1963 four dirt riders had a meeting at Jack Wright’s house in Runnemede, New Jersey, to discuss forming a AMA-sanctioned riding club just for enduro riders that would promote off road riding through competition.Bill Schemel suggested “South Jersey Enduro Riders” and the name stuck. Officers were elected: Jack Wright, President; Bill Schemel,
 Secretary; Woody Molineaux, Treasurer; and, Bill Bandenstein, Referee. The first order of business was to request an AMA Charter, which Bill Schemel paid for out of his own pocket. (He also paid for the second year as well.)

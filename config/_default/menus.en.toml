@@ -7,18 +7,18 @@ url = ""
 weight = 1
 
 [[main]]
-name = "About"
+name = "Join ECEA"
 url = "about/"
 weight = 2
 
 [[main]]
-name = "Clubs"
-url = "clubs/"
+name = "Latest News"
+url = "blog/"
 weight = 3
 
 [[main]]
-name = "Blog"
-url = "blog/"
+name = "Clubs"
+url = "clubs/"
 weight = 4
 
 [[main]]
@@ -28,27 +28,33 @@ hasChildren = true
 
   [[main]]
   parent = "Enduro"
-  name = "Enduro Signup"
+  name = "Get Enduro Membership"
   url = "faq/"
   weight = 1
 
   [[main]]
   parent = "Enduro"
-  name = "Enduro Schedule"
+  name = "Enduro Signup"
   url = "faq/"
   weight = 2
 
   [[main]]
   parent = "Enduro"
-  name = "Enduro Results"
+  name = "Enduro Schedule"
   url = "faq/"
   weight = 3
 
   [[main]]
   parent = "Enduro"
-  name = "Enduro Standings"
+  name = "Enduro Results"
   url = "faq/"
   weight = 4
+
+  [[main]]
+  parent = "Enduro"
+  name = "Enduro Standings"
+  url = "faq/"
+  weight = 5
 
 [[main]]
 weight = 6
@@ -57,27 +63,33 @@ hasChildren = true
 
   [[main]]
   parent = "Harescramble"
-  name = "Harescramble Signup"
+  name = "Get Harescramble Number"
   url = "faq/"
   weight = 1
 
   [[main]]
   parent = "Harescramble"
-  name = "Harescramble Schedule"
+  name = "Harescramble Signup"
   url = "faq/"
   weight = 2
 
   [[main]]
   parent = "Harescramble"
-  name = "Harescramble Results"
+  name = "Harescramble Schedule"
   url = "faq/"
   weight = 3
 
   [[main]]
   parent = "Harescramble"
-  name = "Harescramble Standings"
+  name = "Harescramble Results"
   url = "faq/"
   weight = 4
+
+  [[main]]
+  parent = "Harescramble"
+  name = "Harescramble Standings"
+  url = "faq/"
+  weight = 5
 
 [[main]]
 weight = 7
@@ -86,27 +98,33 @@ hasChildren = true
 
   [[main]]
   parent = "FastKIDZ"
-  name = "FastKIDZ Signup"
+  name = "Get FastKIDZ Number"
   url = "faq/"
   weight = 1
 
   [[main]]
   parent = "FastKIDZ"
-  name = "FastKIDZ Schedule"
+  name = "FastKIDZ Signup"
   url = "faq/"
   weight = 2
 
   [[main]]
   parent = "FastKIDZ"
-  name = "FastKIDZ Results"
+  name = "FastKIDZ Schedule"
   url = "faq/"
   weight = 3
 
   [[main]]
   parent = "FastKIDZ"
-  name = "FastKIDZ Standings"
+  name = "FastKIDZ Results"
   url = "faq/"
   weight = 4
+
+  [[main]]
+  parent = "FastKIDZ"
+  name = "FastKIDZ Standings"
+  url = "faq/"
+  weight = 5
   
 [[main]]
 name = "Contact"

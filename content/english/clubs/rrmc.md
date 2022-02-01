@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 Here are a few small tidbits. I don’t have the names of all the charter members yet but I do know that Norman Harris was amongst them and apparently Jim Slattery was the main culprit. Since 2000 was the 31st consecutive running of the Ridge Run Enduro, I have to assume the club was formed in 1969 or more likely 1968. The first meeting location was in Dover at what is now called Charlottes Web. At the time, I believe, it was called Charley Websters Pub (or something like that anyway). Long time member Steve Wagner was the creator of the famous RRMC arrow. Steve’s wife Lillian designed our round logo which can be seen at the top of our home page as well as on our riding jerseys.
 

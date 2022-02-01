@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 Joining our club is simple. Just show up at a meeting and ask for an application. You will be asked to pay the lifetime dues fee of $2 (that’s right, two dollars) and have your picture taken. After filling out the application, you will be a candidate for membership for approximately one year before you will be eligible for full membership. Membership is not automatic, you must be voted in. Candidates may participate in all club activities, they just cannot vote.
 

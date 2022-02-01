@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 The Green Marble Enduro Riders club is a proud member of the East Coast Enduro Association.
 

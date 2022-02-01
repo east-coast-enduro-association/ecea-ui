@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 Established in 1972, the home of the Shotgun Enduro and National Hare Scrambles in the 70’s and 80’s.Our Membership is comprised of a variety of folks, racers, riders, enthusiasts, young and old.
 

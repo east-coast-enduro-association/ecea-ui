@@ -22,6 +22,6 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 STER is a AMA chartered club located south of Elmira NY near PA border.STER brings us the Barbed Wire Enduro and recently have added a hare scramble.

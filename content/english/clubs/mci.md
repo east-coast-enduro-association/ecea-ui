@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 Motorcycle Competition Inc (MCI) holds monthly meetings 8pm at the Wildflowers Too restaurant (255 Route 156, Yardville, NJ 08620) the first Monday of each month (except holidays).Club members regularly meet Sunday mornings ready to ride by 9am at various locations.
 

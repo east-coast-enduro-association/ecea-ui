@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 The Tri-County Sportsmen’s Motorcycle Club was formed in 1964 when a bunch of guys who raced together decided to get serious about enduro riding. Headquartered in Port Elizabeth, NJ TCSMC has enjoyed a long history of success. Several generations of ‘Team Hammer’ have dominated the East Coast Enduro Association – Names like Tomlin, Lafferty, Lafferty, Bennett, and Lafferty have always been a dominant force.
 

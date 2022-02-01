@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 The Brandywine Enduro Riders (BER) have been an active part of the East Coast Enduro Association (ECEA) since the mid-70′s, and many of it’s original members remain active members. 
 

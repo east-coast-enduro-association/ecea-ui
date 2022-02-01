@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 Reading Off Road Riders club members strive to bring you the best in off-road competition from the course layout to professionally run events.Memberships are open to new members if you’re thinking about joining our club. We have monthly meetings at the Temple Fire Co., on the second Wednesday at 8PM on the second floor. You must attend the meetings to be voted into RORR.
 

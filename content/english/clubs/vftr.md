@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 VFTR was chartered with the AMA in 1972, the first year it also become a member club of the ECEA.
 Jim Moore and friends (Val Shukaitis, Dick Place, Lloyd Clemmer, Nat Emery…and others) were the charter members.The first meetings were held at Jim’s home in Worcester, they then began meeting at the Audubon Inn.

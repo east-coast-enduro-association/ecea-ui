@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 Ocean County Competition Riders M/C (OCCR) is a group of over 150 members dedicated to the sport of motorcycling. An AMA chartered club since 1970, our membership consists of all levels of competence from first time riders, seasoned weekend warriors, all the way to Grand Champions. 
 

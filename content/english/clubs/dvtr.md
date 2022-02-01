@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 Trail riding is where it all started, and for most, it’s the sole reason for riding motorcycles. Some of us prefer to ride gravel roads though the majestic forests of the NorthEast, while others enjoy pushing their bodies and their machines to the limit in some of the gnarliest terrain found. One thing we have in common is that feeling at the end of the ride when we sit around and harass each other about random things.
 

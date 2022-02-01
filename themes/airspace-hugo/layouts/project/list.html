@@ -33,7 +33,7 @@
             {{ $cats = apply $cats "urlize" "." | jsonify -}}
             <div class="col-md-4 portfolio-item shuffle-item" data-groups="{{ $cats }}">
               {{ if isset .Params "image" -}}
-              <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+              <img src="{{ .Params.image | relURL }}" href="{{ .RelPermalink }}" alt="{{ .Title }}">
               {{- end }}
               <div class="portfolio-hover">
                 <div class="portfolio-content">

@@ -22,7 +22,7 @@ information:
     info : "Phone number?"
 ---
 
-## Behance Website Redesign
+## About Our Club
 
 Competition Dirt Riders (CDR) is a group of off-road motorcycle enthusiasts. We are an AMA chartered club, ECEA sanctioned and sponsor 2 points paying events and 1 fun event each year - the Beehive Enduro, Ormond Farms Hare Scramble and Ormond farms fun ride weekend. We have club members that compete in the Enduro and Hare Scramble series as well as members who participate in non-competitive trail riding. 
 
