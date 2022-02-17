@@ -28,13 +28,13 @@ hasChildren = true
 
   [[main]]
   parent = "Enduro"
-  name = "Get Enduro Membership"
+  name = "Enduro Series Registration"
   url = "faq/"
   weight = 1
 
   [[main]]
   parent = "Enduro"
-  name = "Enduro Signup"
+  name = "Enduro Event Registration"
   url = "faq/"
   weight = 2
 
@@ -52,7 +52,7 @@ hasChildren = true
 
   [[main]]
   parent = "Enduro"
-  name = "Enduro Standings"
+  name = "Enduro Championship Results"
   url = "faq/"
   weight = 5
 
@@ -63,13 +63,13 @@ hasChildren = true
 
   [[main]]
   parent = "Harescramble"
-  name = "Get Harescramble Number"
+  name = "Harescramble Series Registration"
   url = "faq/"
   weight = 1
 
   [[main]]
   parent = "Harescramble"
-  name = "Harescramble Signup"
+  name = "Harescramble Event Registration"
   url = "faq/"
   weight = 2
 
@@ -87,7 +87,7 @@ hasChildren = true
 
   [[main]]
   parent = "Harescramble"
-  name = "Harescramble Standings"
+  name = "Harescramble Championship Results"
   url = "faq/"
   weight = 5
 
@@ -98,13 +98,13 @@ hasChildren = true
 
   [[main]]
   parent = "FastKIDZ"
-  name = "Get FastKIDZ Number"
+  name = "FastKIDZ Series Registration"
   url = "faq/"
   weight = 1
 
   [[main]]
   parent = "FastKIDZ"
-  name = "FastKIDZ Signup"
+  name = "FastKIDZ Event Registration"
   url = "faq/"
   weight = 2
 
@@ -122,10 +122,10 @@ hasChildren = true
 
   [[main]]
   parent = "FastKIDZ"
-  name = "FastKIDZ Standings"
+  name = "FastKIDZ Championship Results"
   url = "faq/"
   weight = 5
-  
+
 [[main]]
 name = "Contact"
 url = "contact/"
