@@ -1,14 +1,15 @@
-ul {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+ul {
   padding-left: 0;
   list-style-type: none;
 }
 
-iframe {
-  border: 0;
-}
-
-img{
+img {
   max-width: 100%;
   height: auto;
 }
@@ -26,7 +27,7 @@ blockquote {
   border-color: $color-primary;
   padding: 20px 40px;
   text-align: left;
-  color: darken( $light, 50.98);
+  color: darken($light, 50.98);
 }
 
 .navbar-toggle .icon-bar {
@@ -48,7 +49,6 @@ input[type="tel"] {
   }
 }
 
-
 .form-control {
   box-shadow: none;
   border-radius: 0;
@@ -59,11 +59,9 @@ input[type="tel"] {
   }
 }
 
-
 .slick-slide {
   outline: 0
 }
-
 
 // Button Style
 
@@ -103,7 +101,6 @@ input[type="tel"] {
     background: $color-primary;
   }
 }
-
 
 .btn-transparent {
   @extend .btn-main;
@@ -337,14 +334,6 @@ input[type="tel"] {
   }
 }
 
-
-
-
-
-
-
-
-
 .page-wrapper {
   padding: 70px 0;
 
@@ -362,11 +351,10 @@ input[type="tel"] {
 
       a {
         font-size: 18px;
-        color: lighten( $black, 20 );
+        color: lighten($black, 20);
         display: inline-block;
         padding: 7px 12px;
         color: $white;
-
       }
 
       .twitter {
