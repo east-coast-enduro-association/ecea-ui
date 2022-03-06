@@ -3,14 +3,10 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500,600);
 @import url(https://fonts.googleapis.com/css?family=Volkhov:400italic);
 
-
-
-
 body {
   line-height: 1.5;
   font-family: $font-primary;
   -webkit-font-smoothing: antialiased;
-
 }
 
 h1,
@@ -64,7 +60,7 @@ h4 {
 }
 
 p {
-  color: darken( $light, 49.41);
+  color: darken($light, 49.41);
   font-size: 15px;
   font-family: $font-primary;
 }
