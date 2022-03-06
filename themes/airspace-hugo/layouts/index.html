@@ -24,6 +24,65 @@
 {{ end }}
 <!-- /banner -->
 
+<!-- updates -->
+{{ with .Params.updates}}
+{{ if .enable }}
+<section class="updates section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-sm-12">
+        <div class="block">
+          <div class="section-title">
+            {{ with .eventsTitle }}<h2>{{ . | markdownify }}</h2>{{ end }}
+          </div>
+          THIS IS A PLACEHOLDER
+          {{ partial "blog-sidebar" . }}
+        </div>
+      </div>
+      <div class="col-md-7 col-sm-12">
+        <div class="block">
+          <div class="section-title">
+            {{ with .newsTitle }}<h2>{{ . | markdownify }}</h2>{{ end }}
+          </div>
+          THIS IS A PLACEHOLDER
+          {{ partial "blog-sidebar" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /updates -->
+
+<!-- portfolio -->
+{{ with .Params.portfolio }}
+{{ if .enable }}
+<section class="feature bg-2" style="background-image: url('{{ .bg_image | relURL }}')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-6">
+        {{ with .title }}<h2 class="section-subtitle">{{ . | markdownify }}</h2>{{ end }}
+        {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
+        {{ with .button }}
+        {{ if .enable }}
+        <a href="{{ .link | relLangURL }}" class="btn btn-view-works">{{ .label }}</a>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /portfolio -->
+
+<!-- sponsors -->
+{{ if .Params.sponsors.enable }}
+{{ partial "sponsors.html" . }}
+{{ end }}
+<!-- /service -->
+
 <!-- about -->
 {{ with .Params.about }}
 {{ if .enable }}
@@ -50,34 +109,6 @@
 {{ end }}
 {{ end }}
 <!-- /about -->
-
-<!-- portfolio -->
-{{ with .Params.portfolio }}
-{{ if .enable }}
-<section class="feature bg-2" style="background-image: url('{{ .bg_image | relURL }}')">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-6">
-        {{ with .title }}<h2 class="section-subtitle">{{ . | markdownify }}</h2>{{ end }}
-        {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-        {{ with .button }}
-        {{ if .enable }}
-        <a href="{{ .link | relLangURL }}" class="btn btn-view-works">{{ .label }}</a>
-        {{ end }}
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-{{ end }}
-<!-- /portfolio -->
-
-<!-- service -->
-{{ if .Params.service.enable }}
-{{ partial "service.html" . }}
-{{ end }}
-<!-- /service -->
 
 <!-- call to action -->
 {{ if .Params.cta.enable }}

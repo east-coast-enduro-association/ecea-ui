@@ -15,6 +15,10 @@ banner:
     - enable: false
       label: Harescramble
       link: project
+updates:
+  enable: true
+  eventsTitle: Upcoming Events
+  newsTitle: Latest News
 about:
   enable: true
   title: About Us
@@ -35,10 +39,10 @@ portfolio:
     enable: true
     label: Learn More
     link: project
-service:
+sponsors:
   enable: true
 cta:
-  enable: true
+  enable: false
   bg_image: images/call-to-action-bg.jpg
   title: We design delightful digital experiences.
   content: Read more about what we do and our philosophy of design. Judge for yourself
@@ -49,7 +53,7 @@ cta:
     label: Tell Us Your Story
     link: contact
 funfacts:
-  enable: true
+  enable: false
   title: Fun Facts About Us
   description: "'Far far away, behind the word mountains, far from the countries Vokalia
     and Consonantia, <br> there live the blind texts. Separated they live in Bookmarksgrove
