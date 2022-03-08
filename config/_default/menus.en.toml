@@ -29,13 +29,13 @@ hasChildren = true
   [[main]]
   parent = "Enduro"
   name = "Enduro Series Registration"
-  url = "faq/"
+  url = "https://www.moto-tally.com/ECEA/Enduro/SeriesRegistration.aspx"
   weight = 1
 
   [[main]]
   parent = "Enduro"
   name = "Enduro Event Registration"
-  url = "faq/"
+  url = "https://www.moto-tally.com/ECEA/Enduro/PreEntry.aspx"
   weight = 2
 
   [[main]]
@@ -47,14 +47,20 @@ hasChildren = true
   [[main]]
   parent = "Enduro"
   name = "Enduro Results"
-  url = "faq/"
+  url = "https://www.moto-tally.com/ECEA/Enduro/Results.aspx"
   weight = 4
 
   [[main]]
   parent = "Enduro"
   name = "Enduro Championship Results"
-  url = "faq/"
+  url = "https://www.moto-tally.com/ECEA/Enduro/Standings.aspx"
   weight = 5
+
+  [[main]]
+  parent = "Enduro"
+  name = "Enduro Membership List"
+  url = "https://www.moto-tally.com/ECEA/Enduro/MemberList.aspx"
+  weight = 6
 
 [[main]]
 weight = 6
@@ -64,13 +70,13 @@ hasChildren = true
   [[main]]
   parent = "Harescramble"
   name = "Harescramble Series Registration"
-  url = "faq/"
+  url = "https://www.moto-tally.com/ECEA/ECEA/SeriesRegistration.aspx"
   weight = 1
 
   [[main]]
   parent = "Harescramble"
   name = "Harescramble Event Registration"
-  url = "faq/"
+  url = "https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx"
   weight = 2
 
   [[main]]
@@ -82,14 +88,20 @@ hasChildren = true
   [[main]]
   parent = "Harescramble"
   name = "Harescramble Results"
-  url = "faq/"
+  url = "https://www.moto-tally.com/ECEA/ECEA/Results.aspx"
   weight = 4
 
   [[main]]
   parent = "Harescramble"
   name = "Harescramble Championship Results"
-  url = "faq/"
+  url = "https://www.moto-tally.com/ECEA/ECEA/Standings.aspx"
   weight = 5
+
+  [[main]]
+  parent = "Harescramble"
+  name = "Harescramble Membership List"
+  url = "https://www.moto-tally.com/ECEA/ECEA/MemberList.aspx"
+  weight = 6
 
 [[main]]
 weight = 7
@@ -99,13 +111,13 @@ hasChildren = true
   [[main]]
   parent = "FastKIDZ"
   name = "FastKIDZ Series Registration"
-  url = "faq/"
+  url = "https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx"
   weight = 1
 
   [[main]]
   parent = "FastKIDZ"
   name = "FastKIDZ Event Registration"
-  url = "faq/"
+  url = "http://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx"
   weight = 2
 
   [[main]]
@@ -117,14 +129,20 @@ hasChildren = true
   [[main]]
   parent = "FastKIDZ"
   name = "FastKIDZ Results"
-  url = "faq/"
+  url = "http://www.moto-tally.com/ECEA/ECEA_PWY/Results.aspx"
   weight = 4
 
   [[main]]
   parent = "FastKIDZ"
   name = "FastKIDZ Championship Results"
-  url = "faq/"
+  url = "http://www.moto-tally.com/ECEA/ECEA_PWY/Standings.aspx"
   weight = 5
+
+  [[main]]
+  parent = "FastKIDZ"
+  name = "FastKIDZ Membership List"
+  url = "http://www.moto-tally.com/ECEA/ECEA_PWY/MemberList.aspx"
+  weight = 6
 
 [[main]]
 name = "Contact"

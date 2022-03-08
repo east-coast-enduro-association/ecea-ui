@@ -18,6 +18,13 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+            <!-- TODO: add row of sponsors here -->
+          </div>
+        </div>
+    </div>
   </div>
 </section>
 {{ end }}
@@ -55,34 +62,6 @@
 {{ end }}
 <!-- /updates -->
 
-<!-- portfolio -->
-{{ with .Params.portfolio }}
-{{ if .enable }}
-<section class="feature bg-2" style="background-image: url('{{ .bg_image | relURL }}')">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-6">
-        {{ with .title }}<h2 class="section-subtitle">{{ . | markdownify }}</h2>{{ end }}
-        {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-        {{ with .button }}
-        {{ if .enable }}
-        <a href="{{ .link | relLangURL }}" class="btn btn-view-works">{{ .label }}</a>
-        {{ end }}
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-{{ end }}
-<!-- /portfolio -->
-
-<!-- sponsors -->
-{{ if .Params.sponsors.enable }}
-{{ partial "sponsors.html" . }}
-{{ end }}
-<!-- /service -->
-
 <!-- about -->
 {{ with .Params.about }}
 {{ if .enable }}
@@ -115,6 +94,35 @@
 {{ partial "cta.html" . }}
 {{ end }}
 <!-- /call to action -->
+
+<!-- portfolio -->
+{{ with .Params.portfolio }}
+{{ if .enable }}
+<section class="feature bg-2" style="background-image: url('{{ .bg_image | relURL }}')">
+  <!-- <section class="feature bg-2"> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-6">
+        {{ with .title }}<h2 class="section-subtitle">{{ . | markdownify }}</h2>{{ end }}
+        {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
+        {{ with .button }}
+        {{ if .enable }}
+        <a href="{{ .link | relLangURL }}" class="btn btn-view-works">{{ .label }}</a>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /portfolio -->
+
+<!-- sponsors -->
+{{ if .Params.sponsors.enable }}
+{{ partial "sponsors.html" . }}
+{{ end }}
+<!-- /service -->
 
 <!-- funfacts -->
 {{ with .Params.funfacts }}

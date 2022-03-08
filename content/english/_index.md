@@ -31,10 +31,10 @@ about:
     old to eighty years young! 
   image: images/logo-compact.png
 portfolio:
-  enable: true
+  enable: false
   bg_image: images/feature-bg.jpg
   title: Come Race With Us!
-  content: "TODO: Write short blurb on the types of events we offer and give direction for more info" 
+  content: "TODO: Delete portfolio section entirely"
   button:
     enable: true
     label: Learn More
@@ -42,16 +42,14 @@ portfolio:
 sponsors:
   enable: true
 cta:
-  enable: false
-  bg_image: images/call-to-action-bg.jpg
-  title: We design delightful digital experiences.
-  content: Read more about what we do and our philosophy of design. Judge for yourself
-    The work and results <br> we’ve achieved for other clients, and meet our highly
-    experienced Team who just love to design.
+  enable: true
+  bg_image: images/feature-bg.jpg
+  title: Come Race With Us!
+  content: "TODO: Write short blurb on the types of events we offer and give direction for more info"
   button:
     enable: true
-    label: Tell Us Your Story
-    link: contact
+    label: Get Started
+    link: about
 funfacts:
   enable: false
   title: Fun Facts About Us

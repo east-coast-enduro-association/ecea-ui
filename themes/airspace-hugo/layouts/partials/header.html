@@ -20,7 +20,6 @@
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="nav navbar-nav navbar-right">
           <!-- menu active -->
-          <!-- TODO Add support for external links -->
           {{ $currentPage := . }}
           {{ range site.Menus.main }}
           {{ $menuURL := .URL | absLangURL }}
@@ -41,14 +40,14 @@
               {{ range .Children }}
               {{ $childURL := .URL | absLangURL }}
               {{ $active := eq $childURL $pageURL }}
-              <li><a class="dropdown-item {{ if $active }}current{{ end }}" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
+              <li><a class="dropdown-item {{ if $active }}current{{ end }}"
                 href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a></li>
               {{ end }}
             </ul>
           </li>
           {{ else }}
           <li class="nav-item">
-            <a class="nav-link {{ if $active }}current{{ end }}" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
+            <a class="nav-link {{ if $active }}current{{ end }}" 
               href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{.Name}}</a>
           </li>
           {{ end }}
