@@ -1,26 +1,23 @@
 ---
-title: "About Our Company"
-description: "this is meta description"
+title: "Get Started In The ECEA"
+description: "Add meta description here"
 bg_image: "images/feature-bg.jpg"
 layout: "about"
 draft: false
-
 
 ################################## About #####################################
 about:
   enable : true
   image : "images/company/about.jpg"
-  title : "We strive to be the best and <br> make awesome work."
-  content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius enim, accusantium repellat ex autem numquam iure officiis facere vitae itaque.
-
-
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam qui vel cupiditate exercitationem, ea fuga est
-  velit nulla culpa modi quis iste tempora non, suscipit repellendus labore voluptatem dicta amet? Lorem ipsum
-  dolor sit amet, consectetur adipisicing elit. Provident, neque!"
-
+  title : "Welcome To The East Coast Enduro Association"
+  content : "The ECEA is the most diverse off road association around with something for the family, youth rider, racer or enthusiast.
+  <br/><br/>
+  As we are an American Motorcyclist Association chartered organization, we urge you to join to the AMA. The AMA has many benefits to both the ECEA and to you. The AMA supports motorcycling and our organization and as a member, you will be provided with many benefits.
+  <br><br>
+  The ECEA is about racing but only a small percentage of our members race and many don’t even ride. Many of our ECEA members just volunteer to help and enjoy the life long friendships that are formed. Our youth racing is a complete family oriented program. Camping for the weekend is very popular with the kids racing on Saturday. Older kids(12+) and adults race on Sunday."
   button:
     enable : true
-    label : "Download Company Profile"
+    label : "Download Our Welcome Book"
     link : "#"
 
   funfacts:
@@ -57,38 +54,26 @@ about:
 ################################ feature #####################################
 features:
   enable : true
-  title : "We are indepented Design & Development Agency"
+  title : "Ride or Race With Us"
   feature_item:
   # feature item loop
-  - icon : "fab fa-app-store-ios" #https://fontawesome.com/v5.15/icons
-    name : "IOS App Development"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+  - logo: ""
+    name: "Enduros"
+    content: "Since the early 70's the ECEA has been providing some of the best Enduro events on the east coast. We offer old school time keepers and some restarts."
 
-  # feature item loop
-  - icon : "fas fa-unlock" #https://fontawesome.com/v5.15/icons
-    name : "App Secutity"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+  - logo: ""
+    name: "Hare Scrambles"
+    content: "The ECEA has always been the home of select National Events back in the day and now provide some of the most diverse off road events in the country"
 
-  # feature item loop
-  - icon : "fas fa-gamepad" #https://fontawesome.com/v5.15/icons
-    name : "Games Development"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+  - logo: ""
+    name: "Dual Sports"
+    content: "Some of the best Dual Sports in the USA
+    AMA awarded Hammer Run and more."
 
-  # feature item loop
-  - icon : "fas fa-microphone" #https://fontawesome.com/v5.15/icons
-    name : "Animation and Editing"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-  # feature item loop
-  - icon : "fas fa-lightbulb" #https://fontawesome.com/v5.15/icons
-    name : "UI/UX Design"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-  # feature item loop
-  - icon : "fas fa-star-of-life" #https://fontawesome.com/v5.15/icons
-    name : "Branding"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
+  - logo: ""
+    name: "Fast Kidz"
+    content: "Started in 2000 and formalized in 2006 as
+    the ECEA FastKIDZ- The Future Champions Start Here. ECEA Youth Racing."
 
 #################################### testimonial & mission vision #######################################
 testimonial:
@@ -130,7 +115,6 @@ mission_vision:
     suscipit vero laudantium, mollitia, quaerat soluta nihil non tempore, quos dignissimos quasi ab officiis
     illum numquam quibusdam ducimus, veritatis ad. Quia, aliquid. Quaerat quos ducimus ipsam amet minus
     temporibus eos sequi alias hic nemo."
-
 
 ############################# call to action #################################
 cta:

@@ -1,20 +1,20 @@
 .about{
-  .block{
-    h2 {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      margin:0;
-    }
+  // .block{
+  //   h2 {
+  //     padding-top: 30px;
+  //     padding-bottom: 30px;
+  //     margin: 0;
+  //   }
 
-    p {
-      padding-top: 0px;
-      line-height:28px;
-    }
+  //   p {
+  //     padding-top: 0px;
+  //     line-height:28px;
+  //   }
 
-    img {
-      width: 100%;
-    }
-  }
+  //   img {
+  //     width: 100%;
+  //   }
+  // }
 
   .about-img {
     overflow:hidden;
@@ -26,6 +26,14 @@
     img {
       opacity: .6;
       @include transition (all, 0.5s, ease-out);
+    }
+  }
+
+  .mt-40 {
+    margin-top: 0;
+
+    @include desktop {
+      margin: 24px 0;
     }
   }
 
