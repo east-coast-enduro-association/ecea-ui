@@ -50,7 +50,7 @@ service:
   description : "We enormously appreciate our generous sponsors who contribute in many ways throughout the year!"
   service_item:
     # service item loop
-    - icon : fas fa-bullseye #https://fontawesome.com/v5.15/icons
+    - icon : favicon.png #https://fontawesome.com/v5.15/icons
       name: Branding
       content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
 
