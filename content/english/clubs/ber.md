@@ -2,7 +2,7 @@
 title: "Brandywine Enduro Riders"
 description: "BER"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/clubs/ber-logo.gif"
 bg_image: "images/feature-bg.jpg"
 category: [ "Pennsylvania" ]
 information:

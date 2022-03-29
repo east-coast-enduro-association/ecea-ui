@@ -2,7 +2,7 @@
 title: "Southern Tier Enduro Riders"
 description: "BER"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/clubs/sterlogo.jpg"
 bg_image: "images/feature-bg.jpg"
 category: [ "New York" ]
 information:

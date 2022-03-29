@@ -2,7 +2,7 @@
 title: "Central Jersey Competition Riders"
 description: "CJCR"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/clubs/cjcr-finisher.jpg"
 bg_image: "images/feature-bg.jpg"
 category: [ "New Jersey" ]
 information:

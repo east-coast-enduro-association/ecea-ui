@@ -2,7 +2,7 @@
 title: "Pine Baron Enduro Riders"
 description: "PBER"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/clubs/pber-logo.webp"
 bg_image: "images/feature-bg.jpg"
 category: [ "New Jersey" ]
 information:

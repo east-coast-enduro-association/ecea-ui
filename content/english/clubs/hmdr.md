@@ -2,7 +2,7 @@
 title: "High Mountain Dirt Riders"
 description: "HMDR"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/clubs/hmdr-logo.png"
 bg_image: "images/feature-bg.jpg"
 category: [ "Pennsylvania" ]
 information:

@@ -2,7 +2,7 @@
 title: "Delaware Valley Trail Riders"
 description: "DVTR"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/clubs/dvtr-logo.jpg"
 bg_image: "images/feature-bg.jpg"
 category: [ "Pennsylvania" ]
 information:

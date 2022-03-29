@@ -2,7 +2,7 @@
 title: "Green Marble Enduro Riders"
 description: "GMER"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/clubs/gmer-logo.gif"
 bg_image: "images/feature-bg.jpg"
 category: [ "Pennsylvania" ]
 information:
