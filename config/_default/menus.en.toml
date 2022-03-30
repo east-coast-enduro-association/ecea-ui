@@ -145,9 +145,14 @@ hasChildren = true
   weight = 6
 
 [[main]]
+name = "Dual Sport"
+url = "faq/"
+weight = 8
+
+[[main]]
 name = "Contact"
 url = "contact/"
-weight = 8
+weight = 9
 
 
 # footer menu
