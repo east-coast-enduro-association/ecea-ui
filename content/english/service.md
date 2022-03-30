@@ -50,13 +50,13 @@ service:
   description : "We enormously appreciate our generous sponsors who contribute in many ways throughout the year!"
   service_item:
     # service item loop
-    - icon : favicon.png #https://fontawesome.com/v5.15/icons
-      name: Branding
+    - logo: images/sponsors/100percent.png
+      name: 100 percent
       content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
 
     # service item loop
-    - icon : fas fa-layer-group #https://fontawesome.com/v5.15/icons
-      name: Web Design
+    - logo: images/sponsors/amsoil-logo.png
+      name: Amsoil
       content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
 
     # service item loop
