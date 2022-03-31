@@ -2,7 +2,7 @@
 title: "Delaware Enduro Riders"
 description: "DER"
 draft: false
-image : "images/clubs/der-logo.gif"
+image : "images/logos/clubs/der.gif"
 bg_image: "images/feature-bg.jpg"
 category: [ "Delaware" ]
 information:

@@ -2,7 +2,7 @@
 title: "South Jersey Enduro Riders"
 description: "SJER"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/logos/clubs/sjer-black.png"
 bg_image: "images/feature-bg.jpg"
 category: [ "New Jersey" ]
 information:

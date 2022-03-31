@@ -2,7 +2,7 @@
 title: "Meteor Motorcycle Club"
 description: "MMC"
 draft: false
-image : "images/clubs/mmc-logo.jpg"
+image : "images/logos/clubs/mmc.jpg"
 bg_image: "images/feature-bg.jpg"
 category: [ "New Jersey" ]
 information:

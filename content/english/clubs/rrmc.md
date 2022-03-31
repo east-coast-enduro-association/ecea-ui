@@ -2,7 +2,7 @@
 title: "Ridge Rider Motorcycle Club"
 description: "RRMC"
 draft: false
-image : "images/clubs/rrmc-logo.png"
+image : "images/logos/clubs/rrmc-large.png"
 bg_image: "images/feature-bg.jpg"
 category: [ "Pennsylvania" ]
 information:

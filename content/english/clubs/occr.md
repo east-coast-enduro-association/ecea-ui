@@ -2,7 +2,7 @@
 title: "Ocean County Competition Riders"
 description: "OCCR"
 draft: false
-image : "images/clubs/occrlogo.gif"
+image : "images/logos/clubs/occr.gif"
 bg_image: "images/feature-bg.jpg"
 category: [ "New Jersey" ]
 information:
