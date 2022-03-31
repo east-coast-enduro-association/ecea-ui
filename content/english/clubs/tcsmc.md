@@ -2,7 +2,7 @@
 title: "Tri-County Sportsman Motorcycle Club"
 description: "TCSMC"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/logos/clubs/tcsmc.png"
 bg_image: "images/feature-bg.jpg"
 category: [ "New Jersey" ]
 information:
