@@ -2,7 +2,7 @@
 title: "Competition Dirt Riders"
 description: "CDR"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/logos/clubs/cdr.png"
 bg_image: "images/feature-bg.jpg"
 category: [ "New Jersey" ]
 information:

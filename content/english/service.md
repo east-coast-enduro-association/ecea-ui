@@ -60,7 +60,7 @@ service:
       content: "Keep your vision clear with 100% goggles"
 
     # service item loop
-    - logo : images/sponsors/blackrock-synthetics.jpg
+    - logo : images/sponsors/blackrock-synthetics.png
       name: Blackrock Synthetics
       content: "Our local AMSOIL dealer based in Ashland PA"
 

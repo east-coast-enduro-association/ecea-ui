@@ -2,7 +2,7 @@
 title: "Motorcycle Competition Inc"
 description: "MCI"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/logos/clubs/mci.jpg"
 bg_image: "images/feature-bg.jpg"
 category: [ "New Jersey" ]
 information:
