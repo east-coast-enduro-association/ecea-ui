@@ -49,45 +49,45 @@ service:
   title : "Series Sponsors"
   description : "We enormously appreciate our generous sponsors who contribute in many ways throughout the year!"
   service_item:
-    # service item loop
-    - icon : favicon.png #https://fontawesome.com/v5.15/icons
-      name: Branding
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+  # service item loop
+    - logo : images/sponsors/revzilla.png
+      name: Revzilla
+      content: "Our premier sponsor and your one stop shop for parts and gear"
 
     # service item loop
-    - icon : fas fa-layer-group #https://fontawesome.com/v5.15/icons
-      name: Web Design
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+    - logo: images/sponsors/100percent.png
+      name: 100 percent
+      content: "Keep your vision clear with 100% goggles"
 
     # service item loop
-    - icon : fas fa-image #https://fontawesome.com/v5.15/icons
-      name: App Design
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+    - logo : images/sponsors/blackrock-synthetics.png
+      name: Blackrock Synthetics
+      content: "Our local AMSOIL dealer based in Ashland PA"
+
+       # service item loop
+    - logo: images/sponsors/amsoil-logo.png
+      name: Cormoto Graphics
+      content: "Showcase your style and display your race numbers"
 
     # service item loop
-    - icon : fas fa-bug #https://fontawesome.com/v5.15/icons
-      name: Start Up
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+    - logo : images/sponsors/evans-coolant.png
+      name: Evans Coolant
+      content: "Waterless engine coolant designed for motorcycles and powersports"
 
     # service item loop
-    - icon : fas fa-headphones-alt #https://fontawesome.com/v5.15/icons
-      name: Logo Design
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+    - logo : images/sponsors/kenda1.png
+      name: Kenda Tires
+      content: "Sold through Mile Hill Cycle"
 
     # service item loop
-    - icon : fas fa-leaf #https://fontawesome.com/v5.15/icons
-      name: Development
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+    - logo : images/sponsors/liquimoly.png
+      name: LiquiMoly
+      content: "The world's widest, deepest range of motor and gear oils, fuel and oil additives, care products, chemical problem-solvers and service products"
 
     # service item loop
-    - icon : fas fa-globe-asia #https://fontawesome.com/v5.15/icons
-      name: Brand Identity
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
-
-    # service item loop
-    - icon : fas fa-feather #https://fontawesome.com/v5.15/icons
-      name: Brand Identity
-      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut"
+    - logo : images/sponsors/vp-fuels.jpg
+      name: VP Fuels
+      content: "Ethanol-free, high-octane small engine fuels and synthetic oils"
 
 ############################# call to action #################################
 cta:

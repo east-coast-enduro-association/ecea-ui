@@ -45,7 +45,7 @@ cta:
   enable: true
   bg_image: images/feature-bg.jpg
   title: Come Race With Us!
-  content: "TODO: Write short blurb on the types of events we offer and give direction for more info"
+  content: "Enduro, Harescrambles, Dual Sport events: we have something for everyone and for all ages! Click the button below to learn how you can participate"
   button:
     enable: true
     label: Get Started
@@ -89,4 +89,3 @@ funfacts:
       a success, with innovative ideas we feel that our site has unique elements that
       make us stand out from the crowd.
 ---
-
