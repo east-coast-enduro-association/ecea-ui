@@ -17,7 +17,12 @@
         {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
         {{ with .button }}
         {{ if .enable }}
-        <a href="{{ .link | relURL }}" class="btn btn-small mt-20">{{ .label }}</a>
+          <a href="{{ .link | relURL }}" class="btn btn-small mt-20">{{ .label }}</a>
+        {{ end }}
+        {{ end }}
+        {{ with .button_secondary }}
+        {{ if .enable }}
+          <a target="_blank" href="{{ .link | safeURL }}" class="btn btn-small mt-20">{{ .label }}</a>
         {{ end }}
         {{ end }}
       </div>
@@ -45,19 +50,20 @@
     {{ with .title }}
     <div class="row">
       <div class="col-md-12">
-        <div class="title">
-          <h2>{{ . | markdownify }}</h2>
-        </div>
+        <h2 class="title">{{ . | markdownify }}</h2>
       </div>
     </div>
     {{ end }}
     <div class="row">
       {{ range .feature_item }}
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="service-item">
-          {{ with .icon }}<i class="{{ . }}"></i>{{ end }}
-          {{ with .name }}<h4>{{ . | markdownify }}</h4>{{ end }}
-          {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
+          <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
+          <a href="{{ .link | safeURL }}">
+            {{ with .logo }}<img src="{{ . | relURL }}" alt="test">{{ end }}
+            {{ with .name }}<h4>{{ . | markdownify }}</h4>{{ end }}
+            {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
+          </a>
         </div>
       </div>
       {{ end }}
