@@ -2,7 +2,7 @@
 title: "Reading Off-Road Riders"
 description: "RORR"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/logos/clubs/rorr.png"
 bg_image: "images/feature-bg.jpg"
 category: [ "Pennsylvania" ]
 information:

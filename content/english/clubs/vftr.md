@@ -2,7 +2,7 @@
 title: "Valley Forge Trail Riders"
 description: "VFTR"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/logos/clubs/vftr.jpg"
 bg_image: "images/feature-bg.jpg"
 category: [ "Pennsylvania" ]
 information:

@@ -2,14 +2,14 @@
 title: "High Mountain Dirt Riders"
 description: "HMDR"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/logos/clubs/hmdr.png"
 bg_image: "images/feature-bg.jpg"
 category: [ "Pennsylvania" ]
 information:
   - label : "Club"
-    info : "Brandywine Enduro Riders"
+    info : "High Mountain Dirt Riders"
   - label : "Website"
-    info : "http://www.gmer.us/"
+    info : "https://hmdr.org/"
   - label : "Address"
     info : "INSERT ADDRESS HERE"
   - label : "Club President"

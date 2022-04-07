@@ -2,7 +2,7 @@
 title: "South Penn Enduro Riders"
 description: "SPER"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/logos/clubs/sper.jpg"
 bg_image: "images/feature-bg.jpg"
 category: [ "Pennsylvania" ]
 information:
