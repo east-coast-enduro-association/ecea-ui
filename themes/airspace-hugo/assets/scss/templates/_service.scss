@@ -34,18 +34,27 @@
 }
 
 .dark-service {
+  // background-color: $color-secondary;
+  background-color: #202122;
+  transition: all .2s ease-in-out;
+  padding: 48px 0;
+
   .title {
     color: $white;
+    font-size: 28px;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
   }
 
   .service-item {
-    padding-bottom: 30px;
+    padding: 15px 0;
     text-align: center;
 
-    i {
-      color: $white;
-      font-size: 40px;
-      margin-bottom: 10px;
+    img {
+      max-width: 162px;
+      height: 142px;
     }
 
     h4 {
@@ -58,8 +67,13 @@
     }
 
     p {
-      padding-top: 10px;
+      padding-top: 16px;
       margin: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
     }
   }
 }
@@ -69,10 +83,6 @@
     line-height: 28px;
   }
 }
-
-
-
-
 
 .service-arrow {
   .block {
@@ -87,9 +97,6 @@
     }
   }
 }
-
-
-
 
 .service-list {
   .block {
