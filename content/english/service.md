@@ -52,7 +52,7 @@ service:
   # service item loop
     - logo : images/sponsors/revzilla.png
       name: Revzilla
-      content: "Our premier sponsor and your one stop shop for parts and gear"
+      content: "Our premier sponsor and your one stop shop for parts and gear. They provide clubs with supplies such as ribbon and arrows to mark race courses and riders get access to a discount code after each event"
 
     # service item loop
     - logo: images/sponsors/100percent.png
@@ -77,7 +77,7 @@ service:
     # service item loop
     - logo : images/sponsors/kenda1.png
       name: Kenda Tires
-      content: "Sold through Mile Hill Cycle"
+      content: "Sold through Mile Hill Cycle. Look for them in the parking field at our events"
 
     # service item loop
     - logo : images/sponsors/liquimoly.png
