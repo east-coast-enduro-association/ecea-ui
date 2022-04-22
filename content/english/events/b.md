@@ -1,6 +1,6 @@
 ---
 title: "Events"
-description: "this is file A. short blurb / subtitle for event"
+description: "this is file B. short blurb / subtitle for event"
 draft: false
 bg_image: "images/feature-bg.jpg"
 event_format: "enduro"
