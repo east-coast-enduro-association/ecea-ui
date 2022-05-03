@@ -1,9 +1,14 @@
-{{define "main"}}
+{{ define "main" }}
 
 {{ partial "page-title.html" . }}
 
 {{ $data := index site.Data site.Language.Lang }}
 
-this is the event list
+<!-- Event Start -->
+<section class="portfolio-work">
+  {{ range .Data.Pages -}}
+  <div>{{ .Params.description }}</div>
+  {{- end }}
+</section>
 
-{{end}}
+{{ end }}

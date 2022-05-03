@@ -1,5 +1,5 @@
 ---
-title: "Events"
+title: "I am One Event"
 description: "this is file A. short blurb / subtitle for event"
 draft: false
 bg_image: "images/feature-bg.jpg"
