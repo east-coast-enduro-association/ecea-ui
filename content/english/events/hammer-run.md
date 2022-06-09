@@ -8,9 +8,24 @@ draft: false
 preview_image: "images/logos/clubs/tcsmc.png"
 date: "11/07/22"
 plate_required: "Yes or No"
+# draft: false
+# bg_image: "images/feature-bg.jpg"
+# title: "Event A"
+# description: "this is file A. short blurb / subtitle for event"
+# club: "GMER"
+# date: 2018-09-24T11:07:10+06:00
+# location: "location"
+# event_series: "ECEA Enduro Championship Series"
+# event_format: "sprint enduro"
+# closed_course: "Yes or No"
+# gate_fee: "$5"
+# flyer: "images/events/flyers/test-flyer.jpg"
+# attachments:
+#   - label : "Test file attachment"
+#     src : "test-file.jpg"
 ---
 
-We need the following: 
+We need the following:
 
     Title
     Club (Full name + Abbreviation + hyperlink to club page with icon)

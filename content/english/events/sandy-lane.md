@@ -5,10 +5,12 @@ title: "Sandy Lane"
 club: "Meteor"
 description: "Dirtbikes go brap brap"
 address: "A different gun club"
-draft: false
-preview_image: "images/logos/clubs/mmc.jpg"
-date: "3/27/22"
-plate_required: "Yes or No"
+# title: "Event B"
+# description: "this is file B. short blurb / subtitle for event"
+# draft: false
+# preview_image: "images/logos/clubs/mmc.jpg"
+# date: "3/27/22"
+# plate_required: "Yes or No"
 ---
 
 We need the following: 
