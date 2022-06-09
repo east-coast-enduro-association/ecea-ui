@@ -1,11 +1,13 @@
 ---
-title: "I Am Second Event"
-description: "this is file B. short blurb / subtitle for event"
+type: "Enduro"
+format: "Time Keeping"
+title: "Curly Fern"
+club: "South Jersey Enduro Riders"
+description: "Whole Lotta Sand Woops"
+address: "The Gun Club"
 draft: false
-bg_image: "images/feature-bg.jpg"
-event_format: "enduro"
-date: "enter date in specified format"
-club: "club name here - there can be multiple"
+preview_image: "images/logos/clubs/sjer-green.png"
+event_date: "3/20/22"
 plate_required: "Yes or No"
 ---
 

@@ -31,7 +31,9 @@ $(document).ready(function () {
     var Shuffle = window.Shuffle;
     var myShuffle = new Shuffle(document.querySelector('.shuffle-wrapper'), {
       itemSelector: '.shuffle-item',
-      buffer: 1
+      buffer: 1,
+      gutterWidth: 44,
+      isCentered: true,
     });
 
     jQuery('input[name="shuffle-filter"]').on('change', function (evt) {

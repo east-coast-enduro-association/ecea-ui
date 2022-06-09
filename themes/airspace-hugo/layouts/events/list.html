@@ -5,10 +5,45 @@
 {{ $data := index site.Data site.Language.Lang }}
 
 <!-- Event Start -->
-<section class="portfolio-work">
-  {{ range .Data.Pages -}}
-  <div>{{ .Params.description }}</div>
-  {{- end }}
+<section class="events-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <div class="portfolio-menu">
+            <div class="btn-group btn-group-toggle justify-content-center" data-toggle="buttons">
+              <label class="btn btn-sm btn-primary active">
+                <input type="radio" name="shuffle-filter" value="all" checked="checked">{{ i18n "all" }}
+              </label>
+              {{ $types := slice -}}
+              {{ range .Data.Pages -}}
+              {{ $types = $types | append .Params.type -}}
+              {{ end -}}
+              {{ range ( $types | uniq ) -}}
+              <label class="btn btn-sm btn-primary">
+                <input type="radio" name="shuffle-filter" value="{{ . | urlize }}">{{ . }}
+              </label>
+              {{- end }}
+            </div>
+          </div>
+          <div class="shuffle-wrapper events-list">
+            <!-- Need to figure out:
+            Sorting events by Month + adding in a marker for each new month <br>
+            Necessary data in the preview -->
+            {{ range .Data.Pages -}}
+            {{ $types := .Params.type -}}
+            {{ if not (reflect.IsSlice $types) }}{{ $types = slice ($types) }}{{ end -}}
+            {{ $types = apply $types "urlize" "." | jsonify -}}
+            <div class="shuffle-item" data-groups="{{ $types }}">
+              {{ partial "event-preview.html" . }}
+            </div>
+            {{- end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 {{ end }}
+ 

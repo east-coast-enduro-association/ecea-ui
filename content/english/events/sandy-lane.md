@@ -1,11 +1,13 @@
 ---
-title: "I am One Event"
-description: "this is file A. short blurb / subtitle for event"
+type: "Enduro"
+format: "Time Keeping"
+title: "Sandy Lane"
+club: "Meteor"
+description: "Dirtbikes go brap brap"
+address: "A different gun club"
 draft: false
-bg_image: "images/feature-bg.jpg"
-event_format: "enduro"
-date: "enter date in specified format"
-club: "club name here - there can be multiple"
+preview_image: "images/logos/clubs/mmc.jpg"
+date: "3/27/22"
 plate_required: "Yes or No"
 ---
 

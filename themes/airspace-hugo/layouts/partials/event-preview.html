@@ -1,0 +1,16 @@
+<div class="event-preview-wrapper">
+  <a href="{{ .RelPermalink }}">
+    <div class="header-wrapper">
+      <div class="date-tag">{{ .Params.event_date }}</div>
+      <div class="type-tag">{{ .Params.type }}</div>
+      <img class="media-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
+    </div>
+  </a>
+  <div class="event-details">
+    <h4>{{ .Params.title }}</h4>
+    <p>{{ .Params.club }}</p>
+    <p>{{ .Params.event_date }}</p>
+    <p>{{ .Params.description }}</p>
+    <a href="{{ .RelPermalink }}">More info...</a>
+  </div>
+</div>
