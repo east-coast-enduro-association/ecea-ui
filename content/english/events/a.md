@@ -1,22 +1,22 @@
 ---
-title: "Event A"
-description: "this is file A. short blurb / subtitle for event"
 draft: false
 bg_image: "images/feature-bg.jpg"
-event_series: "ECEA Enduro Championship Series"
-event_format: "sprint enduro"
-date: "enter date in specified format"
+title: "Event A"
+description: "this is file A. short blurb / subtitle for event"
 club: "GMER"
 date: 2018-09-24T11:07:10+06:00
 location: "location"
+event_series: "ECEA Enduro Championship Series"
+event_format: "sprint enduro"
 closed_course: "Yes or No"
-plate_required: "Yes or No"
-flyer: "images/events/flyers/test-flyer.jpg"
-signup_url: "https://www.moto-tally.com/ECEA/Enduro/"
 gate_fee: "$5"
+flyer: "images/events/flyers/test-flyer.jpg"
+attachments:
+  - label : "Test file attachment"
+    src : "test-file.jpg"
 ---
 
-We need the following: 
+We need the following:
 
     Title
     Club (Full name + Abbreviation + hyperlink to club page with icon)

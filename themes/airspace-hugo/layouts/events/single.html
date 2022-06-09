@@ -1,49 +1,52 @@
-{{ define "main" }}
-
-{{ partial "page-title.html" . }}
-
-{{ $data := index site.Data site.Language.Lang }}
+{{ define "main" }} {{ partial "page-title.html" . }} {{ $data := index site.Data site.Language.Lang }}
 
 <section class="portfolio-single-page section-sm event-details-section">
-  <div class="container">
-    <div class="row">
-      <h2>{{.Title}}</h2>
-      <div class="col-md-8 event-flyer-img">
+    <div class="container">
+        <div class="row">
+            <h2>{{.Title}}</h2>
+            <div class="col-md-8 event-flyer-img">
 
-        <div class="post-thumb">
-          {{ with .Params.flyer -}}
-          <img class="img-responsive" src="{{ . | relURL }}" alt="{{ $.Title }}">
-          {{- end }}
+                <div class="post-thumb">
+                    {{ with .Params.flyer -}}
+                    <img class="img-responsive" src="{{ . | relURL }}" alt="{{ $.Title }}"> {{- end }}
+                </div>
+            </div>
+
+            <div class="col-md-4 event-matter project-details">
+                <h4 class="event-matter-header">Event Details</h4>
+                <ul>
+                    {{ with .Params.Club -}}
+                    <li><span>Hosting Club:</span> <a href="{{ `clubs/` | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                    <li><span>Date:</span> <strong>{{ .Params.Date }}</strong></li>
+                    <li><span>Location:</span> <strong>{{ .Params.Location }}</strong></li>
+                    <li><span>Event Series:</span> <strong>{{ .Params.Event_Series }}</strong></li>
+                    <li><span>Event Format:</span> <strong>{{ .Params.Event_Format }}</strong></li>
+                    <li><span>Closed Course:</span> <strong>{{ .Params.Closed_Course }}</strong></li>
+                    <li><span>Gate Fee:</span> <strong>{{ .Params.Gate_Fee }}</strong></li>
+
+                    {{if (in .Params.Event_Series "Enduro")}}
+                    <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/Enduro/">Click Here to Enter</a></strong></li>
+                    {{ else if (in .Params.Event_Series "Hare" ) }}
+                    <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA/">Click Here to Enter</a></strong></li>
+                    {{ else }}
+                    <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA_PWY">Click Here to Enter</a></strong></li>
+                    {{ end }} {{ range .Params.attachments }}
+                    <li><span>{{ .label }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .src | urlize}}">Open file</a></strong></li>
+                    {{ end }}
+                </ul>
+            </div>
+
         </div>
-      </div>
-
-      <div class="col-md-4 event-matter project-details">
-        <h4 class="event-matter-header">Event Details</h4>
-        <ul>
-          {{ with .Params.Club -}}
-          <li><span>Hosting Club:</span> <a href="{{ `clubs/` | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-          {{ end }}
-          <li><span>Date:</span> <strong>{{ .Params.Date }}</strong></li>
-          <li><span>Location:</span> <strong>{{ .Params.Location }}</strong></li>
-          <li><span>Event Series:</span> <strong>{{ .Params.Event_Series }}</strong></li>
-          <li><span>Event Type:</span> <strong>{{ .Params.Event_Format }}</strong></li>
-          <li><span>Closed Course:</span> <strong>{{ .Params.Closed_Course }}</strong></li>
-          <li><span>Plate Required:</span> <strong>{{ .Params.Plate_Required }} </strong></li>
-          <li><span>Gate Fee:</span> <strong>{{ .Params.Gate_Fee }}</strong></li>
-          <li><span>Event Entry:</span> <strong><a href="{{ .Params.Signup_Url}}">Click Here to Enter</a></strong></li>
-        </ul>
-      </div>
-
     </div>
-  </div>
 </section>
 
 <section class="event-description">
 
-  <div class="container">
-    <h3>Event Description:</h3>
-    {{ .Content }}
-  </div>
+    <div class="container">
+        <h3>Event Description:</h3>
+        {{ .Content }}
+    </div>
 </section>
 
 {{end}}
