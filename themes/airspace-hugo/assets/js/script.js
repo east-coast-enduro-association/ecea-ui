@@ -31,9 +31,10 @@ $(document).ready(function () {
     var Shuffle = window.Shuffle;
     var myShuffle = new Shuffle(document.querySelector('.shuffle-wrapper'), {
       itemSelector: '.shuffle-item',
-      buffer: 1,
-      gutterWidth: 44,
+      buffer: 0,
+      gutterWidth: 52,
       isCentered: true,
+      useTransforms: false,
     });
 
     jQuery('input[name="shuffle-filter"]').on('change', function (evt) {

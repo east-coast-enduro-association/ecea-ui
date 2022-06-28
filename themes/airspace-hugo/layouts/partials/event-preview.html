@@ -1,16 +1,18 @@
 <div class="event-preview-wrapper">
-  <a href="{{ .RelPermalink }}">
+  <div class="labels">
+    <p class="date-label">{{ .Params.event_date }}</p>
+    <p class="type-label">{{ .Params.type }}</p>
+  </div>
+  <a href="{{ .RelPermalink }}" class="single-event-link">
     <div class="header-wrapper">
-      <div class="date-tag">{{ .Params.event_date }}</div>
-      <div class="type-tag">{{ .Params.type }}</div>
       <img class="media-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
     </div>
   </a>
   <div class="event-details">
-    <h4>{{ .Params.title }}</h4>
+    <h3>{{ .Params.title }}</h3>
     <p>{{ .Params.club }}</p>
     <p>{{ .Params.event_date }}</p>
     <p>{{ .Params.description }}</p>
-    <a href="{{ .RelPermalink }}">More info...</a>
+    <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
   </div>
 </div>
