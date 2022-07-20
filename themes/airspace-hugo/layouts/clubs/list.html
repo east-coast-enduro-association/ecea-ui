@@ -4,13 +4,13 @@
 
 {{ $data := index site.Data site.Language.Lang }}
 
-<!-- Portfolio Start -->
-<section class="portfolio-work">
+<!-- Club Start -->
+<section class="clubs-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="block">
-          <div class="portfolio-menu">
+          <div class="club-menu">
             <div class="btn-group btn-group-toggle justify-content-center" data-toggle="buttons">
               <label class="btn btn-sm btn-primary active">
                 <input type="radio" name="shuffle-filter" value="all" checked="checked">{{ i18n "all" }}
@@ -31,12 +31,12 @@
             {{ $cats := .Params.category -}}
             {{ if not (reflect.IsSlice $cats) }}{{ $cats = slice ($cats) }}{{ end -}}
             {{ $cats = apply $cats "urlize" "." | jsonify -}}
-            <div class="col-md-4 portfolio-item shuffle-item" data-groups="{{ $cats }}">
+            <div class="col-md-4 club-item shuffle-item" data-groups="{{ $cats }}">
               {{ if isset .Params "image" -}}
               <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
               {{- end }}
-              <div class="portfolio-hover">
-                <div class="portfolio-content">
+              <div class="club-hover">
+                <div class="club-content">
                   <a class="h3" href="{{ .RelPermalink }}">{{ .Title }}</a>
                   <p>{{ .Params.description }}</p>
                 </div>
