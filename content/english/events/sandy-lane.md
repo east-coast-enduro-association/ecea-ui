@@ -1,19 +1,24 @@
 ---
-event_type: "Enduro"
-format: "Time Keeping"
 title: "Sandy Lane"
-club: "Meteor"
 description: "Dirtbikes go brap brap"
-address: "A different gun club"
-# title: "Event B"
-# description: "this is file B. short blurb / subtitle for event"
-# draft: false
-# preview_image: "images/logos/clubs/mmc.jpg"
-# date: "3/27/22"
-# plate_required: "Yes or No"
+preview_image: "images/logos/clubs/sjer-green.png"
+bg_image: ""
+club: "MMC"
+event_date: "3-27-22"
+location: "Interboro Gun Club"
+event_type: "Enduro"
+event_series: "ECEA Enduro Championship Series"
+event_format: "Time Keeping"
+closed_course: "No"
+gate_fee: "None"
+flyer: "None"
+attachments:
+  - label: "Test file attachment"
+    src : "test-file.jpg"
+draft: false
 ---
 
-We need the following: 
+We need the following:
 
     Title
     Club (Full name + Abbreviation + hyperlink to club page with icon)

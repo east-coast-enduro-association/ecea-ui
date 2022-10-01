@@ -1,14 +1,21 @@
 ---
-event_type: "Enduro"
-format: "Time Keeping"
 title: "Curly Fern"
-club: "South Jersey Enduro Riders"
 description: "Whole Lotta Sand Woops"
-address: "The Gun Club"
-draft: false
 preview_image: "images/logos/clubs/sjer-green.png"
+bg_image: ""
+club: "SJER"
 event_date: "3/20/22"
-plate_required: "Yes or No"
+location: "A different gun club"
+event_type: "Enduro"
+event_series: "ECEA Enduro Championship Series"
+event_format: "Time Keeping"
+closed_course: "No"
+gate_fee: "None"
+flyer: ""
+attachments:
+  - label: "Test file attachment"
+    src : "test-file.jpg"
+draft: false
 ---
 
 We need the following: 

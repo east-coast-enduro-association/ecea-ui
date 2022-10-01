@@ -1,25 +1,21 @@
 ---
-event_type: "Dual Sport"
 title: "Hammer Run"
 description: "Braaaaaaaap"
-draft: false
 preview_image: "images/logos/clubs/tcsmc.png"
-date: "11/07/22"
-plate_required: "Yes or No"
-draft: false
 bg_image: "images/feature-bg.jpg"
-title: "Event A"
-description: "this is file A. short blurb / subtitle for event"
-club: "GMER"
+club: "TSCMC"
+event_date: "11/07/22"
 location: "Port Elizabeth, NJ"
+event_type: "Dual Sport"
 event_series: "Dual Sport Series"
-event_format: "sprint enduro"
-closed_course: "Yes or No"
+event_format: "Dual Sport"
+closed_course: "No"
 gate_fee: "$5"
 flyer: "images/events/flyers/test-flyer.jpg"
 attachments:
   - label : "Test file attachment"
     src : "test-file.jpg"
+draft: false
 ---
 
 We need the following:
