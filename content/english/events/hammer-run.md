@@ -1,5 +1,5 @@
 ---
-type: "Dual Sport"
+event_type: "Dual Sport"
 title: "Hammer Run"
 description: "Braaaaaaaap"
 draft: false

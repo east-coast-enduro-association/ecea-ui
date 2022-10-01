@@ -17,7 +17,7 @@
               </label>
               {{ $types := slice -}}
               {{ range .Data.Pages -}}
-              {{ $types = $types | append .Params.type -}}
+              {{ $types = $types | append .Params.event_type -}}
               {{ end -}}
               {{ range ( $types | uniq ) -}}
               <label class="btn btn-sm btn-primary">
@@ -31,7 +31,7 @@
             Sorting events by Month + adding in a marker for each new month <br>
             Necessary data in the preview -->
             {{ range .Data.Pages -}}
-            {{ $types := .Params.type -}}
+            {{ $types := .Params.event_type -}}
             {{ if not (reflect.IsSlice $types) }}{{ $types = slice ($types) }}{{ end -}}
             {{ $types = apply $types "urlize" "." | jsonify -}}
             <div class="shuffle-item" data-groups="{{ $types }}">
@@ -46,4 +46,3 @@
 </section>
 
 {{ end }}
- 

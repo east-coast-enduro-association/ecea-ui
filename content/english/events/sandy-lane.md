@@ -1,5 +1,5 @@
 ---
-type: "Enduro"
+event_type: "Enduro"
 format: "Time Keeping"
 title: "Sandy Lane"
 club: "Meteor"

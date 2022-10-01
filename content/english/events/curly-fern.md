@@ -1,5 +1,5 @@
 ---
-type: "Enduro"
+event_type: "Enduro"
 format: "Time Keeping"
 title: "Curly Fern"
 club: "South Jersey Enduro Riders"
