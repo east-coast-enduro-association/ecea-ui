@@ -16,6 +16,7 @@ attachments:
   - label: "Test file attachment"
     src : "test-file.jpg"
 draft: false
+type: "event"
 ---
 
 We need the following: 

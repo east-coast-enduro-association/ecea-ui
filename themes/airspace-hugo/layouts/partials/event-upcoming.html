@@ -1,5 +1,24 @@
-<section> this is the next event section</section>
-<section> this is the enduro section </section>
-<section> this is the harescramble section</section>
-<section> this is the kids harescramble section</section>
-<section> this is the dual sport section</section>
+<div class="upcoming-events-wrapper">
+  <div class="row">
+    <section>
+      {{ range first 1 ( where (where site.RegularPages "Type" "event") "Params.event_type" "==" "Enduro" )}}
+        <p>{{.Params.Title}}</p>
+      {{end}}
+    </section>
+    <section>
+      {{ range first 1 ( where (where site.RegularPages "Type" "event") "Params.event_type" "==" "Hare Scramble" )}}
+        <p>{{.Params.Title}}</p>
+      {{end}}
+    </section>
+    <section>
+      {{ range first 1 ( where (where site.RegularPages "Type" "event") "Params.event_type" "==" "FastKIDZ" )}}
+        <p>{{.Params.Title}}</p>
+      {{end}}
+    </section>
+    <section>
+      {{ range first 1 ( where (where site.RegularPages "Type" "event") "Params.event_type" "==" "Dual Sport" )}}
+        <p>{{.Params.Title}}</p>
+      {{end}}
+    </section>
+  </div>
+</div>
