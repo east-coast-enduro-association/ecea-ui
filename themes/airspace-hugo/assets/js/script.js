@@ -24,7 +24,6 @@ $(window).on('load', function () {
 
 $(document).ready(function () {
   'use strict';
-
   // Shuffle js filter and masonry
   var containerEl = document.querySelector('.shuffle-wrapper');
   if (containerEl) {
@@ -37,10 +36,22 @@ $(document).ready(function () {
       useTransforms: false,
     });
 
+    // pre-filter by event type if navigating from discipline's respective dropdown in nav
+    let params = new URLSearchParams(window?.location?.search);
+    const eventType = params.get('type');
+    myShuffle.filter(eventType);
+    const filterEl = document.querySelectorAll(`input[value=${eventType}]`);
+
+    if (filterEl?.length > 0) {
+      filterEl[0].parentElement.classList.add('active');
+    }
+
     jQuery('input[name="shuffle-filter"]').on('change', function (evt) {
       var input = evt.currentTarget;
       if (input.checked) {
         myShuffle.filter(input.value);
+        let updatedParams = `${window?.location?.protocol}//${window?.location?.host}${window.location.pathname}?type=${input.value}`;
+        window.history.pushState({ path: updatedParams }, '', updatedParams);
       }
     });
   }

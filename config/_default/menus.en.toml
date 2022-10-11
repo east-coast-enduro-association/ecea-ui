@@ -41,7 +41,7 @@ hasChildren = true
   [[main]]
   parent = "Enduro"
   name = "Enduro Schedule"
-  url = "faq/"
+  url = "events?type=enduro"
   weight = 3
 
   [[main]]
@@ -82,7 +82,7 @@ hasChildren = true
   [[main]]
   parent = "Harescramble"
   name = "Harescramble Schedule"
-  url = "faq/"
+  url = "events?type=hare-scramble"
   weight = 3
 
   [[main]]
@@ -123,7 +123,7 @@ hasChildren = true
   [[main]]
   parent = "FastKIDZ"
   name = "FastKIDZ Schedule"
-  url = "faq/"
+  url = "events?type=fastkidz"
   weight = 3
 
   [[main]]
