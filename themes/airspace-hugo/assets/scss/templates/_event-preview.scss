@@ -1,5 +1,5 @@
 .event-preview-wrapper {
-  width: 250px;
+  width: 300px;
   box-shadow: 0 6px 18px #0000001a;
 
   .labels {
@@ -18,11 +18,11 @@
 
   .header-wrapper {
     padding: 6px 16px;
-    height: 230px;
+    height: 275px;
     position: relative;
 
     img {
-      height: auto;
+      height:min-content;
       transition: .5s ease;
 
       &:hover {

@@ -26,12 +26,12 @@
               {{- end }}
             </div>
           </div>
-          <div class="row shuffle-wrapper">
+          <div class="row clubs-shuffle-wrapper">
             {{ range .Data.Pages -}}
             {{ $cats := .Params.category -}}
             {{ if not (reflect.IsSlice $cats) }}{{ $cats = slice ($cats) }}{{ end -}}
             {{ $cats = apply $cats "urlize" "." | jsonify -}}
-            <div class="col-md-4 clubs-item shuffle-item" data-groups="{{ $cats }}">
+            <div class="col-md-4 clubs-item clubs-shuffle-item" data-groups="{{ $cats }}">
               {{ if isset .Params "image" -}}
               <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
               {{- end }}
