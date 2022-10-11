@@ -29,7 +29,7 @@
           {{ with .Params.Club -}}
           <li><span>Hosting Club:</span> <a href="{{ `clubs/` | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
           {{ end }}
-          <li><span>Date:</span> <strong>{{ .Params.event_Date }}</strong></li>
+          <li><span>Date:</span> <strong>{{ .Params.event_datetime }}</strong></li>
           <li><span>Location:</span> <strong>{{ .Params.Location }}</strong></li>
           <li><span>Event Series:</span> <strong>{{ .Params.Event_Series }}</strong></li>
           {{if .Params.event_format}}

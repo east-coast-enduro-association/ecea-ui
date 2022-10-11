@@ -17,7 +17,7 @@
           <h4>Club Details</h4>
           <ul>
             {{ range .Params.information }}
-            <li><span>{{ .label }} :</span> <strong>{{ .info | markdownify }}</strong></li>
+              <li><span>{{ .label }} :</span> <strong>{{ .info | markdownify }}</strong></li>
             {{ end }}
           </ul>
         </div>
