@@ -17,9 +17,15 @@ url = "blog/"
 weight = 3
 
 [[main]]
+name = "Schedule"
+url = "events/"
+weight = 3
+
+[[main]]
 name = "Clubs"
 url = "clubs/"
 weight = 4
+
 
 [[main]]
 weight = 5
