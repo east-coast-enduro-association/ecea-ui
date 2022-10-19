@@ -36,16 +36,12 @@
 {{ if .enable }}
 <section class="updates section">
   <div class="container">
-    <div class="row">
-      <div class="col-md-5 col-sm-12">
+      <!-- <div class="col-md-50 col-sm-12"> -->
         <div class="block">
-          <div class="section-title">
-            {{ with .eventsTitle }}<h2>{{ . | markdownify }}</h2>{{ end }}
-          </div>
           {{ partial "event-upcoming" . }}
         </div>
-      </div>
-      <div class="col-md-7 col-sm-12">
+      <!-- </div> -->
+      <!-- <div class="col-md-7 col-sm-12">
         <div class="block">
           <div class="section-title">
             {{ with .newsTitle }}<h2>{{ . | markdownify }}</h2>{{ end }}
@@ -53,8 +49,7 @@
           THIS IS A PLACEHOLDER
           {{ partial "blog-sidebar" . }}
         </div>
-      </div>
-    </div>
+      </div> -->
   </div>
 </section>
 {{ end }}
