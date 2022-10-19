@@ -31,30 +31,27 @@
 {{ end }}
 <!-- /banner -->
 
-<!-- updates -->
-{{ with .Params.updates}}
+<!-- upcoming events -->
+{{ with .Params.upcoming_events}}
 {{ if .enable }}
-<section class="updates section">
+<section class="upcoming-events section">
   <div class="container">
-      <!-- <div class="col-md-50 col-sm-12"> -->
+    <row>
         <div class="block">
           {{ partial "event-upcoming" . }}
         </div>
-      <!-- </div> -->
-      <!-- <div class="col-md-7 col-sm-12">
-        <div class="block">
-          <div class="section-title">
-            {{ with .newsTitle }}<h2>{{ . | markdownify }}</h2>{{ end }}
-          </div>
-          THIS IS A PLACEHOLDER
-          {{ partial "blog-sidebar" . }}
-        </div>
-      </div> -->
+    </row>
   </div>
 </section>
 {{ end }}
 {{ end }}
-<!-- /updates -->
+<!-- /upcoming events -->
+
+<!-- latest news -->
+{{ with .Params.latest_news.enable}}
+  {{ partial "blog-new-posts" . }}
+{{ end }}
+<!-- /latest news -->
 
 <!-- about -->
 {{ with .Params.about }}

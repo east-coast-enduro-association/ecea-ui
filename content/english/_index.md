@@ -15,10 +15,11 @@ banner:
     - enable: false
       label: Harescramble
       link: project
-updates:
+upcoming_events:
   enable: true
   eventsTitle: Upcoming Events
-  newsTitle: Latest News
+latest_news:
+  enable: true
 about:
   enable: true
   title: About Us
