@@ -27,13 +27,10 @@
             </div>
           </div>
           <div class="shuffle-wrapper events-list">
-            <!-- Need to figure out:
-            Sorting events by Month + adding in a marker for each new month <br>
-            Necessary data in the preview -->
-            {{ range .Data.Pages -}}
+            {{ range sort .Data.Pages ".Params.event_datetime" -}}
             {{ $types := .Params.event_type -}}
             {{ if not (reflect.IsSlice $types) }}{{ $types = slice ($types) }}{{ end -}}
-            {{ $types = apply $types "urlize" "." | jsonify -}}
+            {{ $types = apply $types "urlize" "." | jsonify -}}    
             <div class="shuffle-item" data-groups="{{ $types }}">
               {{ partial "event-preview.html" . }}
             </div>
