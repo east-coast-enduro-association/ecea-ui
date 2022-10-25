@@ -17,19 +17,18 @@
           <h4>Club Details</h4>
           <ul>
             {{ range .Params.information }}
-              <li><span>{{ .label }} :</span> <strong>{{ .info | markdownify }}</strong></li>
+            <li><span>{{ .label }} :</span> <strong>{{ .info | markdownify }}</strong></li>
             {{ end }}
           </ul>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="clubs-content mt-50">
-          {{ .Content }}
-        </div>
-      </div>
-    </div>
+  </div>
+</section>
+
+<section class="clubs-content">
+  <div class="container">
+    {{ .Content }}
   </div>
 </section>
 
