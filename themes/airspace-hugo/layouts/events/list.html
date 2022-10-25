@@ -30,7 +30,7 @@
             {{ range sort .Data.Pages ".Params.event_datetime" -}}
             {{ $types := .Params.event_type -}}
             {{ if not (reflect.IsSlice $types) }}{{ $types = slice ($types) }}{{ end -}}
-            {{ $types = apply $types "urlize" "." | jsonify -}}    
+            {{ $types = apply $types "urlize" "." | jsonify -}}
             <div class="shuffle-item" data-groups="{{ $types }}">
               {{ partial "event-preview.html" . }}
             </div>
