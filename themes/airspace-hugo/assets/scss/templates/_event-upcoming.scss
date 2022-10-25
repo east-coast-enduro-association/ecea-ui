@@ -1,0 +1,53 @@
+.upcoming-events-wrapper {
+  margin-bottom: 65px;
+
+  @include tablet {
+    margin-bottom: 35px;
+  }
+
+  .upcoming-events-title {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: lighten( $black, 20 );
+    font-weight: 500;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .upcoming-events-header {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: lighten( $black, 50 );
+    font-weight: 500;
+    border-bottom: 1px solid $border-color;
+  }
+
+  // Latest Posts
+  .upcoming-events-post {
+    .media {
+      .media-object {
+        width: 200px;
+        height: auto;
+        padding-bottom: 30px;
+      }
+
+      .media-heading {
+        a {
+          color: $black;
+          font-size: 24px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        color: darken( $light, 47.45);
+      }
+    }
+
+    @include desktop {
+      padding-top: 20px;
+    }
+  }
+
+}

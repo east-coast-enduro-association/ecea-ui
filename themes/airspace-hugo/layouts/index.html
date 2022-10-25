@@ -11,9 +11,9 @@
           {{ with .title }}<h1>{{ . | markdownify }}</h1>{{ end }}
           {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
           {{ range .buttons }}
-            {{ if .enable }}
-            <a href="{{ .link | relLangURL }}" class="btn btn-main animated fadeInUp">{{ .label }}</a>
-            {{ end }}
+          {{ if .enable }}
+          <a href="{{ .link | relLangURL }}" class="btn btn-main animated fadeInUp">{{ .label }}</a>
+          {{ end }}
           {{ end }}
         </div>
       </div>
@@ -21,9 +21,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="block">
-            <!-- TODO: add row of sponsors here -->
-          </div>
+          <!-- TODO: add row of sponsors here -->
         </div>
+      </div>
     </div>
   </div>
 </section>
@@ -31,36 +31,27 @@
 {{ end }}
 <!-- /banner -->
 
-<!-- updates -->
-{{ with .Params.updates}}
+<!-- upcoming events -->
+{{ with .Params.upcoming_events}}
 {{ if .enable }}
-<section class="updates section">
+<section class="upcoming-events section">
   <div class="container">
-    <div class="row">
-      <div class="col-md-5 col-sm-12">
-        <div class="block">
-          <div class="section-title">
-            {{ with .eventsTitle }}<h2>{{ . | markdownify }}</h2>{{ end }}
-          </div>
-          THIS IS A PLACEHOLDER
-          {{ partial "blog-sidebar" . }}
-        </div>
+    <row>
+      <div class="block">
+        {{ partial "event-upcoming" . }}
       </div>
-      <div class="col-md-7 col-sm-12">
-        <div class="block">
-          <div class="section-title">
-            {{ with .newsTitle }}<h2>{{ . | markdownify }}</h2>{{ end }}
-          </div>
-          THIS IS A PLACEHOLDER
-          {{ partial "blog-sidebar" . }}
-        </div>
-      </div>
-    </div>
+    </row>
   </div>
 </section>
 {{ end }}
 {{ end }}
-<!-- /updates -->
+<!-- /upcoming events -->
+
+<!-- latest news -->
+  {{ with .Params.latest_news.enable}}
+  {{ partial "blog-new-posts" . }}
+  {{ end }}
+<!-- /latest news -->
 
 <!-- about -->
 {{ with .Params.about }}

@@ -17,9 +17,15 @@ url = "blog/"
 weight = 3
 
 [[main]]
+name = "Schedule"
+url = "events/"
+weight = 3
+
+[[main]]
 name = "Clubs"
 url = "clubs/"
 weight = 4
+
 
 [[main]]
 weight = 5
@@ -41,7 +47,7 @@ hasChildren = true
   [[main]]
   parent = "Enduro"
   name = "Enduro Schedule"
-  url = "faq/"
+  url = "events?type=enduro"
   weight = 3
 
   [[main]]
@@ -82,7 +88,7 @@ hasChildren = true
   [[main]]
   parent = "Harescramble"
   name = "Harescramble Schedule"
-  url = "faq/"
+  url = "events?type=hare-scramble"
   weight = 3
 
   [[main]]
@@ -123,7 +129,7 @@ hasChildren = true
   [[main]]
   parent = "FastKIDZ"
   name = "FastKIDZ Schedule"
-  url = "faq/"
+  url = "events?type=fastkidz"
   weight = 3
 
   [[main]]
@@ -145,9 +151,14 @@ hasChildren = true
   weight = 6
 
 [[main]]
+name = "Dual Sport"
+url = "faq/"
+weight = 8
+
+[[main]]
 name = "Contact"
 url = "contact/"
-weight = 8
+weight = 9
 
 
 # footer menu

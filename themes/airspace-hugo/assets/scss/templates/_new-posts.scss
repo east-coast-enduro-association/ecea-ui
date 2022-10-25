@@ -1,0 +1,62 @@
+.latest-news-wrapper {
+  text-align: center;
+  padding: 70px 0px;
+
+  @include tablet {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 32px;
+    color: $white;
+    margin: 0px;
+    padding: 30px 0px;
+  }
+
+  .btn-main {
+    padding: 15px 35px;
+    font-size: 12px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .container {
+    width: 75%;
+    text-align: cen;
+  }
+
+  .new-post {
+    .media {
+      .media-object {
+        width: 300px;
+        height: auto;
+        padding-bottom: 30px;
+      }
+
+      .media-heading {
+        a {
+          color: $black;
+          font-size: 24px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        color: darken($light, 47.45);
+      }
+    }
+
+    .media-body {
+      text-align: left;
+
+      .media-summary {
+        color: darken($black, 47.45);
+      }
+    }
+
+    @include desktop {
+      padding-top: 20px;
+    }
+  }
+}

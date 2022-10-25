@@ -1,0 +1,18 @@
+<div class="event-preview-wrapper">
+  <div class="labels" id={{ .Params.event_type }}>
+    <p class="date-label">{{ .Params.event_datetime | time.Format ":date_long" }}</p>
+    <p class="type-label">{{ .Params.event_type }}</p>
+  </div>
+  <a href="{{ .RelPermalink }}" class="single-event-link">
+    <div class="header-wrapper">
+      <img class="media-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
+    </div>
+  </a>
+  <div class="event-details">
+    <h3>{{ .Params.title }}</h3>
+    <p>Hosting Club: {{ .Params.club }}</p>
+    <p>Start Time: {{ .Params.event_datetime | time.Format ":time_short"}}</p>
+    <p>{{ .Params.description }}</p>
+    <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
+  </div>
+</div>

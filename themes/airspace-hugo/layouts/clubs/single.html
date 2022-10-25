@@ -4,7 +4,7 @@
 
 {{ $data := index site.Data site.Language.Lang }}
 
-<section class="portfolio-single-page section-sm">
+<section class="clubs-single-page section-sm">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -13,11 +13,11 @@
         {{ end }}
       </div>
       <div class="col-md-4">
-        <div class="project-details">
+        <div class="clubs-details">
           <h4>Club Details</h4>
           <ul>
             {{ range .Params.information }}
-            <li><span>{{ .label }} :</span> <strong>{{ .info | markdownify }}</strong></li>
+              <li><span>{{ .label }} :</span> <strong>{{ .info | markdownify }}</strong></li>
             {{ end }}
           </ul>
         </div>
@@ -25,7 +25,7 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="project-content mt-50">
+        <div class="clubs-content mt-50">
           {{ .Content }}
         </div>
       </div>

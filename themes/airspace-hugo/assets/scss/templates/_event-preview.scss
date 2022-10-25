@@ -1,0 +1,56 @@
+.event-preview-wrapper {
+  width: 300px;
+  box-shadow: 0 6px 18px #0000001a;
+
+  .labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom:solid;
+
+    .date-label, .type-label {
+      color: $text-dark;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+  }
+
+  .header-wrapper {
+    padding: 6px 16px;
+    height: 275px;
+    position: relative;
+
+    img {
+      height:min-content;
+      transition: .5s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .event-details {
+    position: relative;
+    padding: 16px;
+    height: 225px;
+    background: rgba($color-primary, 0.3);
+
+    h3 {
+      margin-top: 0;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: $text-dark;
+    }
+
+    a {
+      position: fixed;
+      bottom: 16px;
+      padding: 8px 14px;
+    }
+  }
+}

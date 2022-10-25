@@ -1,4 +1,4 @@
-.portfolio-work {
+.events-wrapper {
   padding: 80px 0;
 
   .block {
@@ -14,7 +14,7 @@
           padding: 8px 25px;
           cursor: pointer;
           font-size: 15px;
-          color: lighten( $black, 20 );
+          color: lighten($black, 20);
           outline: 0;
           background: $white;
           margin: 2px;
@@ -23,77 +23,14 @@
         }
       }
     }
-  }
-}
 
-.portfolio {
-  &-item {
-    position: relative;
-    // padding: 0;
-    max-width: 25%;
-    max-height: 500px;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-    &:hover {
-      .portfolio-hover {
-        visibility: visible;
-        opacity: 1;
-      }
-
-      .portfolio-content {
-        transform: translateY(-50%);
-      }
-    }
-  }
-
-  &-hover {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(60, 55, 55, 0.90);
-    // background: rgba(0, 0, 0, 1);
-    visibility: hidden;
-    opacity: 0;
-    transition: .3s ease;
-  }
-
-  &-content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-40%);
-    text-align: center;
-    padding: 20px;
-    transition: inherit;
-
-    * {
-      color: $white;
-    }
-
-    a {
-      display: block;
-      transition: .2s ease;
-
-      i {
-        font-size: 30px;
-      }
-
-      &.h3 {
-        margin-top: 0;
+    .shuffle-wrapper {
+      .shuffle-item {
+        padding-top: 14px;
       }
     }
   }
 }
-
-
-
 
 // Portfolio Single Page
 .portfolio-single-page {
