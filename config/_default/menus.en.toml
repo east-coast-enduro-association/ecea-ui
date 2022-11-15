@@ -8,7 +8,7 @@ weight = 1
 
 [[main]]
 name = "Join ECEA"
-url = "about/"
+url = "get-started/"
 weight = 2
 
 [[main]]
@@ -164,7 +164,7 @@ weight = 9
 # footer menu
 [[footer]]
 name = "About"
-url = "about/"
+url = "get-started/"
 weight = 2
 
 [[footer]]

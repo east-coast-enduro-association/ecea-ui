@@ -5,8 +5,8 @@ bg_image: "images/feature-bg.jpg"
 layout: "service"
 draft: false
 
-########################### about service #############################
-about:
+########################### get started service #############################
+get_started:
   enable : true
   title : "Creative UX/UI Design Agency"
   content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate soluta corporis odit, optio

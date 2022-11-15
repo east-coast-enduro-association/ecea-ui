@@ -2,11 +2,11 @@
 title: "Get Started In The ECEA"
 description: "Add meta description here"
 bg_image: "images/feature-bg.jpg"
-layout: "about"
+layout: "get-started"
 draft: false
 
-################################## About #####################################
-about:
+################################## Get Started #####################################
+get_started:
   enable : true
   image : "images/riders/image17.jpg"
   title : "Welcome To The East Coast Enduro Association"
