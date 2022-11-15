@@ -160,14 +160,13 @@ name = "Contact"
 url = "contact/"
 weight = 9
 
-
 # footer menu
 [[footer]]
 name = "About"
 url = "get-started/"
 weight = 2
 
-[[footer]]
+[[footer]]  
 name = "Project"
 url = "project/"
 weight = 3
