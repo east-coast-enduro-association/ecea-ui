@@ -1,7 +1,7 @@
 ######################## default configuration ####################
-baseURL = "https://demo.gethugothemes.com/airspace/"
+baseURL = "/"
 title = "ECEA | East Coast Enduro Association"
-theme = "airspace-hugo"
+theme = "default"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 timeZone = "UTC"
 # post pagination
