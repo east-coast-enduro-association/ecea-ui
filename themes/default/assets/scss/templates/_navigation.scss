@@ -8,7 +8,16 @@
   }
 
   .navbar-brand {
-    padding-top: 5px;
+    padding: 0;
+    .header-img {
+      height: 84px;
+      margin-top: -18px; // to let it overflow container padding
+
+      @include mobile {
+        height: 72px;
+        margin-top: -12px;
+      }
+    }
   }
 
   .navbar {

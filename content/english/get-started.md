@@ -125,7 +125,7 @@ mission_vision:
     temporibus eos sequi alias hic nemo."
 
 ############################# call to action #################################
-cta:
-  enable : true
+cta_contact:
+  enable: true
   # call to action content comes from "_index.md"
 ---

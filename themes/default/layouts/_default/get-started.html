@@ -12,8 +12,8 @@
           <img class="img-responsive" src="{{ .image | relURL }}">
         </div>
       </div>
-      <div class="col-md-6">
-        {{ with .title }}<h2 class="mt-40">{{ . | markdownify }}</h2>{{ end }}
+      <div class="col-md-6 intro-text">
+        {{ with .title }}<h2 class="intro-title">{{ . | markdownify }}</h2>{{ end }}
         {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
         {{ with .button }}
         {{ if .enable }}
@@ -45,7 +45,7 @@
 
 {{ with .Params.features }}
 {{ if .enable }}
-<section class="about-feature bg-dark section dark-service">
+<section class="about-feature section">
   <div class="container">
     {{ with .title }}
     <div class="row">
@@ -54,16 +54,18 @@
       </div>
     </div>
     {{ end }}
-    <div class="row">
+    <div class="row about-list-items">
       {{ range .feature_item }}
-      <div class="col-md-3">
-        <div class="service-item">
-          <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
-          <a href="{{ .link | safeURL }}">
-            {{ with .logo }}<img src="{{ . | relURL }}" alt="test">{{ end }}
-            {{ with .name }}<h4>{{ . | markdownify }}</h4>{{ end }}
-            {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-          </a>
+      <div class="col-md-12">
+        <div class="service-item item-wrapper">
+          {{ with .logo }}<img src="{{ . | relURL }}" alt="test">{{ end }}
+          <div class="item-content">
+            <div>
+              {{ with .name }}<h4>{{ . | markdownify }}</h4>{{ end }}
+              {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
+            </div>
+            <a class="btn btn-small mt-20" href="{{ .link | safeURL }}">Go To {{ .name }} Home Page</a>
+          </div>
         </div>
       </div>
       {{ end }}
@@ -73,9 +75,10 @@
 {{ end }}
 {{ end }}
 
-<section class="testimonial section-sm">
+<!-- <section class="testimonial section-sm">
   <div class="container">
     <div class="row">
+      <h2>Resources to Go Here</h2>
       {{ if .Params.testimonial.enable }}
       {{ with .GetPage "/" }}
       <div class="col-md-6">
@@ -119,13 +122,10 @@
       {{ end }}
       {{ end }}
     </div>
-  </div>
-</section>
+  </div> 
+</section> -->
 
-<!-- Call to action -->
-{{ if .Params.cta.enable }}
-{{ partial "cta.html" . }}
+{{ if .Params.cta_contact.enable }}
+{{ partial "contact-cta.html" }}
 {{ end }}
-<!-- /Call to action -->
-
 {{ end }}

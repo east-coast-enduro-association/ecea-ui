@@ -51,6 +51,15 @@ cta:
     enable: true
     label: Get Started
     link: get-started
+cta_contact:
+  enable: true
+  bg_image: images/riders/image5.jpg
+  title: Need More Information?
+  content: "Got a question or want to know more about something? Drop us a line and we will get back to you!"
+  button:
+    enable: true
+    label: Contact Us
+    link: contact
 funfacts:
   enable: false
   title: Fun Facts About Us
