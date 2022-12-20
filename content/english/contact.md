@@ -6,6 +6,10 @@ layout: "contact"
 draft: false
 ---
 
+| test    | table |
+| ------- | ------- |
+| wow     | lol |
+
 This is not up to date
 
 Feel Free to Contact the ECEA with any Questions, Concerns or Suggestions
