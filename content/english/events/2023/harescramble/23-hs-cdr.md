@@ -15,3 +15,6 @@ flyer: ""
 attachments:
 draft: false
 ---
+
+Morning race: 10:00am
+Afternoon race: 1:00pm
