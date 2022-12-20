@@ -1,6 +1,6 @@
 ---
 title: "Get Started In The ECEA"
-description: "Add meta description here"
+description: "The premier off road racing organization in the mid-Atlantic"
 bg_image: "images/feature-bg.jpg"
 layout: "get-started"
 draft: false

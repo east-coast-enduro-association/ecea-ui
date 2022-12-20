@@ -14,6 +14,7 @@ navbar_fixed = false
 description = "This is meta description"
 author = "Michael Abramo"
 image = "images/logo.png" # this image will be used as fallback if a page has no image of its own
+
 # Whether to display text descriptors (like "E-mail: ", "Phone: ") before the address block elements
 address_descriptors = false
 # contact info
@@ -35,7 +36,7 @@ google_tag_manager = "" # example: G-XXXXXXXXXX
 recaptcha_site_key = "xxx-xxxxxxxxxxxxxxxxxxxxxxxx"
 
 [contact.form]
-enable = true
+enable = false
 # Whether to use [Netlify Forms](https://docs.netlify.com/forms/setup/)
 use_netlify = true
 # Whether to use recaptch v3 in form
@@ -111,29 +112,14 @@ sidebar = ["recent_posts", "taxonomy_category", "taxonomy_tags"]
 [[social]]
 title = "facebook"
 icon = "fab fa-facebook"  # fontawesome icon pack : https://fontawesome.com/icons/
-link = "#"
+link = "https://www.facebook.com/groups/133551240256/"
 
 [[social]]
 title = "facebook again"
 icon = "fab fa-facebook"  # fontawesome icon pack : https://fontawesome.com/icons/
-link = "#"
-
-[[social]]
-title = "twitter"
-icon = "fab fa-twitter"  # fontawesome icon pack : https://fontawesome.com/icons/
-link = "#"
-
-[[social]]
-title = "instagram"
-icon = "fab fa-instagram" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "#"
+link = "https://www.facebook.com/groups/155457685835/"
 
 [[social]]
 title = "github"
 icon = "fab fa-github" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "#"
-
-[[social]]
-title = "linkedin"
-icon = "fab fa-linkedin" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "#"
+link = "https://github.com/east-coast-enduro-association"
