@@ -3,7 +3,7 @@
   <h4 class="upcoming-events-title">Upcoming Events</h4>
   <div class="row">
     <section class="upcoming-events-post col-md-3">
-      {{ range first 1 ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Enduro" )}}
+      {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Enduro" ) ".Params.event_datetime" )}}
         <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
         <div class="media">
           <a class="pull-left" href="{{ .RelPermalink }}">
@@ -21,7 +21,7 @@
       {{end}}
     </section>
     <section class="upcoming-events-post col-md-3">
-      {{ range first 1 ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Hare Scramble" )}}
+      {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Hare Scramble" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
       <div class="media">
         <a class="pull-left" href="{{ .RelPermalink }}">
@@ -39,7 +39,7 @@
       {{end}}
     </section>
     <section class="upcoming-events-post col-md-3">
-      {{ range first 1 ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "FastKIDZ" )}}
+      {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "FastKIDZ" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
       <div class="media">
         <a class="pull-left" href="{{ .RelPermalink }}">
@@ -57,7 +57,7 @@
       {{end}}
     </section>
     <section class="upcoming-events-post col-md-3">
-      {{ range first 1 ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Dual Sport" )}}
+      {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Dual Sport" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
       <div class="media">
         <a class="pull-left" href="{{ .RelPermalink }}">
