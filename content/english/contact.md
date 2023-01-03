@@ -13,24 +13,20 @@ draft: false
 [Merle Compton, Secretary](ecea.secy@verizon.net) (609) 560-1713  
 
 ### Enduro ###
-
 [Kenny Lee Taylor, ECEA Referee]() (609) 304-2695  
 [Merle Compton, Secretary](eceaenduropts@aol.com) (609) 560-1713  
 [Ron DeCaro, Enduro Referee]()  
 
 ### Hare Scramble / Fast Kidz ###
-
-[Mike Soudas](msoudas@comcast.net)  
-[Lisa Soudas, Sign Up Coordinator](lsoudas@comcast.net)  (717) 865-2723  
 [Dave Glenn, Series Director and Referee]() (302) 530-3802  
 [Youth Series Chair: Joe Young, Youth Series Chair]() (610) 781-1499  
+[Mike Soudas](msoudas@comcast.net)  
+[Lisa Soudas, Sign Up Coordinator](lsoudas@comcast.net)  (717) 865-2723  
 
 ### Marketing/Sponsorships ###  
-
 [Mike Soudas](msoudas@comcast.net)  
 
 ### Web Masters ###  
-
 [Mike Soudas](msoudas@comcast.net)  
 [Michael Abramo](abramomichael@gmail.com)
 [Justin McKenzie](justinmckenzie15@gmail.com)  
