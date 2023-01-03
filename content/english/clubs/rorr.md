@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://www.rorr.org/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "P.O. Box 13006, Reading, PA 19612"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "jgraff57@gmail.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(844) 440-RORR"
 ---
 
 ## About Our Club

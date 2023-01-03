@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "https://hmdr.org/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "699 Cedar Ln., Perkasie, PA 18944"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "msoudas@comcast.net"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(570) 954-7799"
 ---
 
 ## About Our Club

@@ -2,7 +2,7 @@
 
 {{ partial "page-title.html" . }}
 
-<section class="contact-info">
+<section class="contact-info container">
   <div class="row">
     <div class="col-md-6 col-sm-12">
       <div class="block">
@@ -55,7 +55,7 @@
       </form>
     </div>
     {{- end }}{{ end }}
-    <div class="contact-box row">
+    <!-- <div class="contact-box row">
       {{ with site.Params.contact -}}
       <div class="col-md-6 col-sm-12">
         <div class="block">
@@ -73,7 +73,7 @@
           </ul>
         </div>
       </div>
-      {{- end }}
+      {{- end }} -->
       {{ if site.Params.gmap.enable -}}
       <div class="col-md-6 col-sm-12">
         <div class="block">

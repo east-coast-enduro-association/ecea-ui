@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://www.meteormc.com/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "987 Ladner Ave., Gibbstown, NJ 08027"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "meteormc1930@gmail.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(609) 254-0918"
 ---
 
 ## About Our Club

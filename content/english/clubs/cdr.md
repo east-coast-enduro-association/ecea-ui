@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://www.eceacompetitiondirtriders.com/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "3239 Dante Ave, Vineland, NJ 08361"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "davebostrom@comcast.net"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(609) 319-7496"
 ---
 
 ## About Our Club

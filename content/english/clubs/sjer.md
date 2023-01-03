@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://sjer.org/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "101 Rt. 541 Bypass, Hainesport, NJ 08036"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "sjer@sjer.org"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(609) 268-9272"
 ---
 
 ## About Our Club

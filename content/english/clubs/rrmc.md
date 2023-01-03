@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://www.ridgeriders.org/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "25 Custer Dr., Ringwood, NJ 07456"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "rrmcnj@gmail.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(973) 222-5850"
 ---
 
 ## About Our Club

@@ -9,17 +9,13 @@ information:
   - label : "Club"
     info : "Southern Tier Enduro Riders"
   - label : "Website"
-    info : "INSERT URL HERE"
+    info : "N/A"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "687 Dry Run Rd., Pine City, NY 14871"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "bubba121kx@yahoo.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(607) 731-5981"
 ---
 
 ## About Our Club

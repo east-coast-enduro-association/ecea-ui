@@ -9,17 +9,13 @@ information:
   - label : "Club"
     info : "Ithaca Dirt Riders"
   - label : "Website"
-    info : "INSERT URL HERE"
+    info : "www.ithacadirtriders.com"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "21 Ironwood Pl., Richford, NY 13835"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "ironwd@frontiernet.net"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(607) 657-8248"
 ---
 
 ## About Our Club

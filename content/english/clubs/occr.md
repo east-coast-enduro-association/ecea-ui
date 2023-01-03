@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://occr.net/home.php"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
+    info : "2 Harvard West Dr., Jackson, NJ 08527"
   - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
-  - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "donovan.marvin@gmail.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(732) 616-3462"
 ---
 
 ## About Our Club

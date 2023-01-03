@@ -11,15 +11,15 @@ information:
   - label : "Website"
     info : "https://www.dvtrailriders.org/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
+    info : "31 Hog Hollow Rd, Pittstown, NJ 08867"
   - label : "Club President"
     info : "INSERT NAME"
   - label : "Club Contact"
     info : "INSERT NAME"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "dvtrailriders@gmail.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(267) 246-1386"
 ---
 
 ## About Our Club

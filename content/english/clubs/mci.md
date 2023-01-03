@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "https://ride-mci.com/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "172 Larrison Rd., Wrightstown, NJ 08562"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "bwoodrick82@gmail.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(732) 331-6348"
 ---
 
 ## About Our Club

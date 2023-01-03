@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://www.pber.org/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "16 Mills Brook Ln., Shamong, NJ 08088"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "pinebaronsnj@gmail.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(732) 429-2920"
 ---
 
 ## About Our Club

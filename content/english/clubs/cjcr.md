@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://cjcrmc.org/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "177 Burlington Path Rd, Cream Ridge, NJ 08514"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "cjcrmc@gmail.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(609) 937-5210"
 ---
 
 ## About Our Club

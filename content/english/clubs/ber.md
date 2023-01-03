@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://www.ber.us/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "1054 Saunders Ln., Unit 4, West Chester, PA 19380"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "jfpenny@verizon.net"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(267) 549-4765"
 ---
 
 ## About Our Club

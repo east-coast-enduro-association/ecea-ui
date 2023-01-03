@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://www.teamhammer.org/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "P.O. Box 146, Port Elizabeth, NJ 08348"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "hammerhead@teamhammer.org"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(888) 274-4469"
 ---
 
 ## About Our Club

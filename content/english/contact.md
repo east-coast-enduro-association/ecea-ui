@@ -6,56 +6,29 @@ layout: "contact"
 draft: false
 ---
 
-| test    | table |
-| ------- | ------- |
-| wow     | lol |
+### ECEA Executive Board ###  
+[Frank Kaminski, President]() (484) 948-5361  
+[Mike Blair, Vice President](jclives62@gmail.com)  
+[Lisa Soudas, Treasurer](lsoudas@comcast.net)  (717) 865-2723  
+[Merle Compton, Secretary](ecea.secy@verizon.net) (609) 560-1713  
 
-This is not up to date
+### Enduro ###
 
-Feel Free to Contact the ECEA with any Questions, Concerns or Suggestions
-ECEA Board of Trustees:
-Rick Kivela, Chair
-Mike Vanovich
-Merle Compton
-Jack Lafferty, Sr.
-Charles Stapleford
+[Kenny Lee Taylor, ECEA Referee]() (609) 304-2695  
+[Merle Compton, Secretary](eceaenduropts@aol.com) (609) 560-1713  
+[Ron DeCaro, Enduro Referee]()  
 
-ECEA Executive Board:
-Jamie Theurkauf, President
-Mike Blair, Vice President
-Lisa Soudas, Treasurer
-Merle Compton, Secretary
-ECEA Referee:
-Charles Stapleford
-Mike Blair, Assistant Referee
-Scoring/Points:
-Mike Soudas, Hare Scrambles
-Merle Compton, Enduros
-Webmasters:
-Mike Soudas, Web Pages 
+### Hare Scramble ###
 
-Hare Scrambles Contacts:
-Mike Soudas, Scoring, Go To for Questions
-Rick Kivela, Hare Scrambles Director
-Jack Lafferty, Sr., Vice Chair
-Ron DeCaro & Jack Lafferty, Sr., Course Marshalls
-Holly DeCaro Starting Line, Banquet Ads
-Lisa Soudas, Treasurer & Sign up Coordinator, Numbers
+[Mike Soudas](msoudas@comcast.net)  
+[Lisa Soudas, Sign Up Coordinator](lsoudas@comcast.net)  (717) 865-2723  
 
-ENDURO Series
-Merle Compton
+### Web Masters ###  
 
-YOUTH RACING
-Youth Series Coordinator/Lead
-Andrew Tsakinikas
+[Mike Soudas](msoudas@comcast.net)  
+[Michael Abramo](abramomichael@gmail.com)
+[Justin McKenzie](justinmckenzie15@gmail.com)  
 
-SPONSORSHIP
-Mike Soudas
-Jamie Theurkauf  Chairman
+### Marketing/Sponsorships ###  
 
-Marketing
-Mike Soudas
-
-Membership
-Mike Soudas, Merle Compton
-Barry Seppy,Roster
+[Mike Soudas](msoudas@comcast.net)  

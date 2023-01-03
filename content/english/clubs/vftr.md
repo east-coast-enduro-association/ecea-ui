@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://www.vftr.org/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "411 Clover Mill Rd., Exton, PA 19341"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "tomwheeler6318@gmail.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(610) 363-0706"
 ---
 
 ## About Our Club

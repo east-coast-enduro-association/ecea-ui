@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://delawareenduroriders.com/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "2190 S. College Ave, Newark, DE 19702"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "neil.newcomb@yahoo.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(302) 357-8203"
 ---
 
 ## About Our Club

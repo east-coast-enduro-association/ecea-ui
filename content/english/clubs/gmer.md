@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "http://www.gmer.us/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "1820 Ridge Rd., York Springs, PA 17372"
   - label : "Contact Email"
-    info : "INSERT EMAIL"
+    info : "GMERenduro@gmail.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(717) 554-4480"
 ---
 
 ## About Our Club

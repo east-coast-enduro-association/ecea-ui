@@ -11,15 +11,11 @@ information:
   - label : "Website"
     info : "https://www.facebook.com/South-Penn-Enduro-Riders-204507879633515/"
   - label : "Address"
-    info : "INSERT ADDRESS HERE"
-  - label : "Club President"
-    info : "INSERT NAME"
-  - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "P.O. Box 836, Carlisle, PA 17013"
   - label : "Contact Email"
     info : "dashughart@aol.com"
   - label : "Contact Number"
-    info : "Phone number?"
+    info : "(717) 385-6014"
 ---
 
 ## About Our Club
