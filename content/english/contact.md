@@ -19,7 +19,7 @@ draft: false
 
 ### Hare Scramble / Fast Kidz ###
 [Dave Glenn, Series Director and Referee]() (302) 530-3802  
-[Youth Series Chair: Joe Young, Youth Series Chair]() (610) 781-1499  
+[Joe Young, Youth Series Chair]() (610) 781-1499  
 [Mike Soudas](msoudas@comcast.net)  
 [Lisa Soudas, Sign Up Coordinator](lsoudas@comcast.net)  (717) 865-2723  
 
