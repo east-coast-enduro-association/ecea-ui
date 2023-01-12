@@ -4,22 +4,44 @@
 
 <section class="series-main container">
   <div class="row">
-    <div class="series-preview col-sm-4">
-      <header>Upcoming Events:</header>
-      <p> events here </p>
-    </div>
-    <div class="series-latest-news col-sm-4">
-      <header>Latest News:</header>
-      <p>news here</p>
-    </div>
-    <div class="series-links col-sm-4">
-      <header>Links</header>
-      <p>links here?</p>
-    </div>
-  </div>
-</section>
-<section class="series-info">
 
+    <!-- upcoming events -->
+    <div class="series-preview col-md-4">
+      <h2>Upcoming Events:</h2>
+      
+      <ul>
+        {{range first 3 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Enduro" ) ".Params.event_datetime" )}}
+        <li>{{ partial "event-preview.html" . }}</li>
+        {{ end }}
+
+        {{range after 3 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Enduro" ) ".Params.event_datetime" )}}
+        <li><a href="{{ .RelPermalink }}">{{ .Params.event_datetime | time.Format ":date_short"}} {{ .Params.title }}</a></li>      
+        {{ end }}
+      </ul>
+      
+    </div>
+
+    <!-- series blog -->
+    <div class="series-latest-news col-md-6">
+      <h2>Latest News:</h2>
+      {{ partial "blog-latest-posts-series-page.html" . }}
+    </div>
+
+    <!-- series links/faq -->
+    <div class="series-links col-md-2">
+      <h2>Information:</h2>
+      <ul>
+        <li><a href="">What is Enduro?</a></li>
+        <li>Youth Scholarships</li>
+        <li>Rulebook</li>
+        <li>Enduro Responsibility Statement</li>
+        <li>Enduro Team Sheet</li>
+        <li>Rule Proposals</li>
+        <li>Advancement Petition</li>
+        <li>Protests</li>
+    </div>
+
+  </div>
 </section>
 
 {{ end }}

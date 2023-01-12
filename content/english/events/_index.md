@@ -1,6 +1,6 @@
 ---
 title: "Events"
-description: "this is meta description and I've added to it again"
+description: "This is the list you've been looking for"
 draft: false
 bg_image: "images/feature-bg.jpg"
 ---

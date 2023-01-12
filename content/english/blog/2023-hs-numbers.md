@@ -7,6 +7,7 @@ bg_image: "images/feature-bg.jpg"
 categories: ["Announcement", "News"]
 tags: ["2023", "fast kidz", "hare scramble"]
 description: "Reserve your number today"
+wow: true
 draft: false
 type: "post"
 ---

@@ -20,13 +20,14 @@ draft: false
 ### Hare Scramble / Fast Kidz ###
 [Dave Glenn, Series Director and Referee]() (302) 530-3802  
 [Joe Young, Youth Series Chair]() (610) 781-1499  
-[Mike Soudas](msoudas@comcast.net)  
 [Lisa Soudas, Sign Up Coordinator](lsoudas@comcast.net)  (717) 865-2723  
+[Mike Soudas](msoudas@comcast.net)  
+
 
 ### Marketing/Sponsorships ###  
 [Mike Soudas](msoudas@comcast.net)  
 
 ### Web Masters ###  
 [Mike Soudas](msoudas@comcast.net)  
-[Michael Abramo](abramomichael@gmail.com)
+[Michael Abramo](abramomichael@gmail.com)  
 [Justin McKenzie](justinmckenzie15@gmail.com)  
