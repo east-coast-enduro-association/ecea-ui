@@ -34,7 +34,7 @@ hasChildren = true
 
   [[main]]
   parent = "Enduro"
-  name = "Enduro Home"
+  name = "Enduro Hub"
   url = "series/enduro"
   weight = 1
 
@@ -81,7 +81,7 @@ hasChildren = true
 
   [[main]]
   parent = "Hare Scramble"
-  name = "Hare Scramble Home"
+  name = "Hare Scramble Hub"
   url = "series/harescramble"
   weight = 1
 
@@ -128,7 +128,7 @@ hasChildren = true
 
   [[main]]
   parent = "FastKIDZ"
-  name = "FastKIDZ Home"
+  name = "FastKIDZ Hub"
   url = "series/fastkidz"
   weight = 1
 
