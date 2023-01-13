@@ -58,7 +58,7 @@ get_started:
 ################################ feature #####################################
 features:
   enable : true
-  title : "Ride or Race With Us"
+  title : "Come Ride With Us"
   feature_item:
   # feature item loop
   - logo: "images/logos/ecea/enduro-compact.png"

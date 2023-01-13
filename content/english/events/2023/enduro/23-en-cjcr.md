@@ -4,7 +4,7 @@ description: "Whoops round 2: Dirtbiking boogaloo"
 preview_image: "images/logos/clubs/cjcr.jpg"
 bg_image: "images/feature-bg.jpg"
 club: "CJCR"
-event_datetime: "2023-07-09 07:00:00"
+event_datetime: "2023-04-02 07:00:00"
 location: "TBA"
 event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
@@ -16,4 +16,4 @@ attachments:
 draft: false
 ---
 
-Hosted at the same location as Locked And Loaded Hard Enduro, this one goes out to those who yearn to test their limits.
+A classic course hosted in the lovely Brendan T. Byrne State Forest. Expect fast trail with some familiar stick farms thrown in.

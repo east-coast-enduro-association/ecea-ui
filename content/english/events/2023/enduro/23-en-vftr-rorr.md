@@ -13,6 +13,8 @@ closed_course: "No"
 gate_fee: "None"
 flyer: ""
 attachments:
+    # - label: first
+    #   src: test-file.jpg
 draft: false
 ---
 

@@ -34,6 +34,12 @@ hasChildren = true
 
   [[main]]
   parent = "Enduro"
+  name = "Enduro Home"
+  url = "series/enduro"
+  weight = 1
+
+  [[main]]
+  parent = "Enduro"
   name = "Enduro Series Registration"
   url = "https://www.moto-tally.com/ECEA/Enduro/SeriesRegistration.aspx"
   weight = 1
@@ -70,42 +76,48 @@ hasChildren = true
 
 [[main]]
 weight = 6
-name = "Harescramble"
+name = "Hare Scramble"
 hasChildren = true
 
   [[main]]
-  parent = "Harescramble"
-  name = "Harescramble Series Registration"
+  parent = "Hare Scramble"
+  name = "Hare Scramble Home"
+  url = "series/harescramble"
+  weight = 1
+
+  [[main]]
+  parent = "Hare Scramble"
+  name = "Hare Scramble Series Registration"
   url = "https://www.moto-tally.com/ECEA/ECEA/SeriesRegistration.aspx"
   weight = 1
 
   [[main]]
-  parent = "Harescramble"
-  name = "Harescramble Event Registration"
+  parent = "Hare Scramble"
+  name = "Hare Scramble Event Registration"
   url = "https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx"
   weight = 2
 
   [[main]]
-  parent = "Harescramble"
-  name = "Harescramble Schedule"
+  parent = "Hare Scramble"
+  name = "Hare Scramble Schedule"
   url = "events?type=hare-scramble"
   weight = 3
 
   [[main]]
-  parent = "Harescramble"
-  name = "Harescramble Results"
+  parent = "Hare Scramble"
+  name = "Hare Scramble Results"
   url = "https://www.moto-tally.com/ECEA/ECEA/Results.aspx"
   weight = 4
 
   [[main]]
-  parent = "Harescramble"
-  name = "Harescramble Championship Results"
+  parent = "Hare Scramble"
+  name = "Hare Scramble Championship Results"
   url = "https://www.moto-tally.com/ECEA/ECEA/Standings.aspx"
   weight = 5
 
   [[main]]
-  parent = "Harescramble"
-  name = "Harescramble Membership List"
+  parent = "Hare Scramble"
+  name = "Hare Scramble Membership List"
   url = "https://www.moto-tally.com/ECEA/ECEA/MemberList.aspx"
   weight = 6
 
@@ -113,6 +125,12 @@ hasChildren = true
 weight = 7
 name = "FastKIDZ"
 hasChildren = true
+
+  [[main]]
+  parent = "FastKIDZ"
+  name = "FastKIDZ Home"
+  url = "series/fastkidz"
+  weight = 1
 
   [[main]]
   parent = "FastKIDZ"
@@ -152,7 +170,7 @@ hasChildren = true
 
 [[main]]
 name = "Dual Sport"
-url = "faq/"
+url = "series/dual-sport"
 weight = 8
 
 [[main]]

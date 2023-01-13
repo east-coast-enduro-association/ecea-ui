@@ -29,16 +29,18 @@
 
     <!-- series links/faq -->
     <div class="series-links col-md-2">
-      <h2>Information:</h2>
+      <h4>Information:</h4>
       <ul>
-        <li><a href="">What is Enduro?</a></li>
-        <li>Youth Scholarships</li>
-        <li>Rulebook</li>
-        <li>Enduro Responsibility Statement</li>
-        <li>Enduro Team Sheet</li>
-        <li>Rule Proposals</li>
-        <li>Advancement Petition</li>
-        <li>Protests</li>
+        {{ range .Params.information }}
+        <li><a href="{{.link}}">{{.label}}</a></li>
+        {{ end }}
+        </ul>
+      <h4>Important Documents:</h4>
+      <ul>
+      {{ range .Params.documents }}
+        <li><a href="{{ `documents/` | relLangURL}}{{ .src | urlize}}">{{.label}}</a></li>
+      {{ end }}
+        </ul>
     </div>
 
   </div>

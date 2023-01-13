@@ -16,4 +16,4 @@ attachments:
 draft: false
 ---
 
-An old-school New Jersey enduro. Trails narrower than your bars paired with timekeeping tricks to keep your mind young.
+Hosted at the same location as Locked And Loaded Hard Enduro, this one goes out to those who yearn to test their limits.

@@ -10,11 +10,21 @@
         <div class="block">
           {{ with .title }}<h1>{{ . | markdownify }}</h1>{{ end }}
           {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-          {{ range .buttons }}
+          <div class="row header-button-row">
+            {{ range first 1 .buttons }}
+            {{ if .enable }}
+            <a href="{{ .link | relLangURL }}" class="btn btn-main animated fadeInUp">{{ .label }}</a>
+            {{ end }}
+            {{ end }}
+          </div>
+          <div class="row header-button-row">
+          {{ range after 1 .buttons }}
           {{ if .enable }}
           <a href="{{ .link | relLangURL }}" class="btn btn-main animated fadeInUp">{{ .label }}</a>
           {{ end }}
           {{ end }}
+          </div>
+          
         </div>
       </div>
     </div>

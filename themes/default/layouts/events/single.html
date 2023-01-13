@@ -48,8 +48,9 @@
           {{ else }}
           <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA_PWY">Click Here to
                 Enter</a></strong></li>
-          {{ end }} {{ range .Params.attachments }}
-
+          {{ end }} 
+          
+          {{ range .Params.attachments }}
           <li><span>{{ .label }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .src | urlize}}">Open
                 file</a></strong></li>
           {{ end }}

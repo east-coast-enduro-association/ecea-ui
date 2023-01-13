@@ -9,12 +9,18 @@ banner:
     - enable: true
       label: Get Started Here
       link: get-started
-    - enable: false
-      label: Enduro 
-      link: project
-    - enable: false
-      label: Harescramble
-      link: project
+    - enable: true
+      label: Enduro Hub
+      link: series/enduro
+    - enable: true
+      label: Hare Scramble Hub
+      link: series/harescramble
+    - enable: true
+      label: FastKIDZ Youth Hub
+      link: series/fastkidz
+    - enable: true
+      label: Dual Sport Hub
+      link: series/dua-sport
 upcoming_events:
   enable: true
   eventsTitle: Upcoming Events
