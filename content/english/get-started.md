@@ -18,7 +18,7 @@ get_started:
   button:
     enable : true
     label : "Download Our Welcome Book"
-    link : "#"
+    link : /documents/ecea-welcome-book.pdf
   button_secondary:
     enable: true
     label: "Register or Renew with AMA"
