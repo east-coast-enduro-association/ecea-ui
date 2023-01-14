@@ -3,7 +3,7 @@ title: "Curly Fern"
 description: "Whole Lotta Sand Woops"
 preview_image: "images/logos/clubs/sjer-green.png"
 bg_image: "images/feature-bg.jpg"
-club: "SJER"
+club: ["SJER"]
 event_datetime: "2023-03-19 07:00:00"
 location: "TBA"
 event_type: "Enduro"

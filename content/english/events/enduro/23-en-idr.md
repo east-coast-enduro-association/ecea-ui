@@ -3,7 +3,7 @@ title: "Ithaca Sprint"
 description: "Finger lakes mud welcomes you"
 preview_image: "logo-compact.png"
 bg_image: "images/feature-bg.jpg"
-club: "IDR"
+club: ["IDR"]
 event_datetime: "2023-08-20 07:00:00"
 location: "TBA"
 event_type: "Enduro"

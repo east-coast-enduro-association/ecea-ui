@@ -3,7 +3,7 @@ title: "Michaux"
 description: "Why does it always rain here?"
 preview_image: "images/logos/clubs/michaux.jpg"
 bg_image: "images/feature-bg.jpg"
-club: "SPER"
+club: ["SPER"]
 event_datetime: "2023-09-10 07:00:00"
 location: "TBA"
 event_type: "Enduro"

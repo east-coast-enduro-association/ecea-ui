@@ -3,7 +3,7 @@ title: "Pine Hill"
 description: "Whoops round 2: Dirtbiking boogaloo"
 preview_image: "images/logos/clubs/cjcr.jpg"
 bg_image: "images/feature-bg.jpg"
-club: "CJCR"
+club: ["CJCR"]
 event_datetime: "2023-04-02 07:00:00"
 location: "TBA"
 event_type: "Enduro"

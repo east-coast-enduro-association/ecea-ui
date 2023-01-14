@@ -3,7 +3,7 @@ title: "Pine Glen Farms Sprint"
 description: "Bring on the rocks!"
 preview_image: "images/logos/clubs/rrmc-large.png"
 bg_image: "images/feature-bg.jpg"
-club: "RRMC"
+club: ["RRMC"]
 event_datetime: "2023-06-11 07:00:00"
 location: "TBA"
 event_type: "Enduro"

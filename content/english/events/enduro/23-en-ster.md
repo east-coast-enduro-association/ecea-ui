@@ -3,7 +3,7 @@ title: "Southern Tier"
 description: "Alcohol Prohibited"
 preview_image: "images/logos/clubs/ster.jpg"
 bg_image: "images/feature-bg.jpg"
-club: "STER"
+club: ["STER"]
 event_datetime: "2023-07-09 07:00:00"
 location: "TBA"
 event_type: "Enduro"

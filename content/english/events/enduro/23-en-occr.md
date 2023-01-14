@@ -3,7 +3,7 @@ title: "Scrub Pine"
 description: "Forest so nice, you've come back twice"
 preview_image: "images/logos/clubs/occr.jpg"
 bg_image: "images/feature-bg.jpg"
-club: "OCCR"
+club: ["OCCR"]
 event_datetime: "2023-10-22 07:00:00"
 location: "TBA"
 event_type: "Enduro"

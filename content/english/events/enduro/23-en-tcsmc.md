@@ -3,7 +3,7 @@ title: "Greenbrier Enduro"
 description: "The annual season opener"
 preview_image: "images/logos/clubs/tcsmc.png"
 bg_image: "images/feature-bg.jpg"
-club: "TCSMC"
+club: ["TCSMC"]
 event_datetime: "2023-03-12 07:00:00"
 location: "TBA"
 event_type: "Enduro"

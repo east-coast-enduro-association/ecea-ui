@@ -3,7 +3,7 @@ title: "Beehive"
 description: "Back in the sand"
 preview_image: "images/logos/clubs/cdr.png"
 bg_image: "images/feature-bg.jpg"
-club: "CDR"
+club: ["CDR"]
 event_datetime: "2023-08-27 07:00:00"
 location: "TBA"
 event_type: "Enduro"

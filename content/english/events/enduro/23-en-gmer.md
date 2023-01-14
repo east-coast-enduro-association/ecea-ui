@@ -3,7 +3,7 @@ title: "Three Springs"
 description: "Teetering on the edge"
 preview_image: "images/logos/clubs/gmer.gif"
 bg_image: "images/feature-bg.jpg"
-club: "GMER"
+club: ["GMER"]
 event_datetime: "2023-08-06 07:00:00"
 location: "TBA"
 event_type: "Enduro"
