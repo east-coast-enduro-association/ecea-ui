@@ -5,20 +5,22 @@ draft: false
 bg_image: "images/feature-bg.jpg"
 information:
   - label: What is FastKIDZ?
-    link: link goes here
+    link: /faq/#1-what-is-fastkidz
   - label: How do I get my kids racing?
-    link: link goes here
-  - label: How does my family get involved?
-    link: link goes here
+    link: /faq/#2-how-do-i-sign-my-kid-up-to-ride
+  - label: What should we expect?
+    link: /faq/#3-what-should-my-family-expect-when-we-arrive-at-the-event
   - label: Youth Scholarships
-    link: link goes here
+    link: /faq/#4-youth-scholarships
 documents:
   - label: Rule Book
-    path: path/to/doc
+    path: /documents/ecea-rulebook-current.pdf
   - label: Protests
-    path: path/to/doc2
+    path: /documents/ecea-protest-form.pdf
   - label: Rule Proposals
-    path: path/to/doc2
-  - label: Advancement Petition
-    path: path/to/doc2
+    path: /documents/ecea-rule-proposal-form.pdf
+  # - label: Enduro Team Signup
+  #   path: /
+  # - label: Advancement Petition
+  #   path: /
 ---

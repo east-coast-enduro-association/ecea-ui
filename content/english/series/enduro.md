@@ -5,22 +5,20 @@ draft: false
 bg_image: "images/feature-bg.jpg"
 information:
   - label: What is Enduro?
-    link: link goes here
-  - label: What is Timekeeping?
-    link: link goes here
-  - label: Enduro Responsibility Statement
-    link: link goes here
-  - label: Youth Scholarships
-    link: link goes here
+    link: /faq/#1-what-is-an-enduro
+  - label: How do I start racing?
+    link: /faq/#2-how-do-i-sign-up-for-an-enduro
+  - label: What should I expect?
+    link: /faq/#3-what-should-i-expect-when-i-arrive-at-the-enduro-event
 documents:
   - label: Rule Book
-    path: path/to/doc
+    path: /documents/ecea-rulebook-current.pdf
   - label: Protests
-    path: path/to/doc2
+    path: /documents/ecea-protest-form.pdf
   - label: Rule Proposals
-    path: path/to/doc2
-  - label: Enduro Team Signup
-    path: path/to/doc2
-  - label: Advancement Petition
-    path: path/to/doc2
+    path: /documents/ecea-rule-proposal-form.pdf
+  # - label: Enduro Team Signup
+  #   path: /
+  # - label: Advancement Petition
+  #   path: /
 ---
