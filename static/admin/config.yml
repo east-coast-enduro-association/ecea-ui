@@ -4,7 +4,7 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: "/assets/images" # Media files will be stored here
+media_folder: "static/images/blog" # Media files will be stored here
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
@@ -25,3 +25,83 @@ collections:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Blog Entry Type", name: "type", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "enduro-event" # Used in routes, e.g., /admin/collections/blog
+    label: "Enduro Event" # Used in the UI
+    folder: "content/english/events/enduro" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Tag Line", name: "description", widget: "string"}
+      - {label: "Club", name: "club", widget: "select", multiple: true,
+          options: 
+          - { label: "BER", value: "BER" }
+          - { label: "CDR", value: "CDR" }
+          - { label: "CJCR", value: "CJCR" }
+          - { label: "DVTR", value: "DVTR" }
+          - { label: "GMER", value: "GMER" }
+          - { label: "HMDR", value: "HMDR" }
+          - { label: "IDR", value: "IDR" }
+          - { label: "MCI", value: "MCI" }
+          - { label: "MMC", value: "MMC" }
+          - { label: "OCCR", value: "OCCR" }
+          - { label: "RORR", value: "RORR" }
+          - { label: "RRMC", value: "RRMC" }
+          - { label: "SJER", value: "SJER" }
+          - { label: "SPER", value: "SPER" }
+          - { label: "STER", value: "STER" }
+          - { label: "TCSMC", value: "TCSMC" }
+          - { label: "VFTR", value: "VFTR" }
+        }
+      - {label: "Event Date", name: "event_datetime", widget: "datetime"}
+      - {label: "Address", name: "location", widget: "string"}
+      - {label: "Event Type", name: "event_type", widget: "select",
+          options: 
+          - { label: "Enduro", value: "Enduro" }
+          - { label: "Hare Scramble", value: "Hare Scramble" }
+          - { label: "FastKIDZ", value: "fastKIDZ" }
+          - { label: "Dual Sport", value: "Dual Sport" }
+          - { label: "Other", value: "Special" }
+        }
+      - {label: "Event Format", name: "event_format", widget: "select",
+          options: 
+          - { label: "Timekeeping", value: "Timekeeping" }
+          - { label: "Restart", value: "Restart" }
+          - { label: "Sprint Enduro", value: "Sprint Enduro" }
+          - { label: "Dual Sport", value: "Dual Sport" }
+          - { label: "Other", value: "Special" }
+        }
+      - {label: "Event Series", name: "event_series", widget: "select", default: "ECEA Enduro Championship Series"}
+      - {label: "Closed course?", name: "closed_course", widget: "select",
+          options: 
+          - { label: "Yes", value: "Yes" }
+          - { label: "No", value: "No" }
+        }
+      - {label: "Preview Image", name: "preview-image", widget: "image"}
+      - {label: "Background Image", name: "bg-image", widget: "image"}
+      - {label: "Flyer Image", name: "flyer", widget: "image"}
+      - {label: "Route Sheet, Confirmation Sheet, etc", name: "attachments", widget: "object",
+          fields:
+          - { label: "Attachment 1", name: "attachment1", widget: "object", 
+              fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "File", name: "path", widget: "file", default: "/static/uploads"}
+            }
+          - { label: "Attachment 2", name: "attachment2", widget: "object", 
+              fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "File", name: "path", widget: "file", default: "/static/uploads"}
+            }
+          - { label: "Attachment 3", name: "attachment3", widget: "object", 
+              fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "File", name: "path", widget: "file", default: "/static/uploads"}
+            }
+          - { label: "Attachment 4", name: "attachment4", widget: "object", 
+              fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "File", name: "path", widget: "file", default: "/static/uploads"}
+            }
+        }
+      - {label: "Description and information about event", name: "body", widget: "markdown"}

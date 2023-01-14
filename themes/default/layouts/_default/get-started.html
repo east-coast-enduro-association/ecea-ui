@@ -64,7 +64,7 @@
               {{ with .name }}<h4>{{ . | markdownify }}</h4>{{ end }}
               {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
             </div>
-            <a class="btn btn-small mt-20" href="{{ .link | safeURL }}">Go To {{ .name }} Home Page</a>
+            <a class="btn btn-small mt-20" href="{{ .link | safeURL }}">Go to the {{ .name }} Hub to learn more</a>
           </div>
         </div>
       </div>

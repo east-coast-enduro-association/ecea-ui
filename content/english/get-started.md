@@ -62,12 +62,12 @@ features:
   feature_item:
   # feature item loop
   - logo: "images/logos/ecea/enduro-compact.png"
-    name: "Enduros"
+    name: "Enduro"
     link: /series/enduro
     content: "Since the early 70's the ECEA has been providing some of the best Enduro events on the east coast. We host old school time keepers to restarts to sprint enduros."
 
   - logo: "images/logos/ecea/harescramble-compact.png"
-    name: "Hare Scrambles"
+    name: "Hare Scramble"
     link: /series/harescramble
     content: "The ECEA has always been the home of select National Events back in the day and now provide some of the most diverse off road events in the country"
 
@@ -77,7 +77,7 @@ features:
     content: "ECEA Youth Racing started in 2000 and formalized in 2006 as the ECEA FastKIDZ. The Future Champions Start Here."
 
   - logo: "images/logos/ecea/dualsport-compact.png"
-    name: "Dual Sports"
+    name: "Dual Sport"
     link: /series/dual-sport
     content: "Some of the best Dual Sports in the USA. AMA awarded Hammer Run Dual Sport and more."
 

@@ -27,32 +27,33 @@
         <h4 class="event-matter-header">Event Details</h4>
         <ul>
           {{ with .Params.Club -}}
-          <li><span>Hosting Club:</span> <a href="{{ `clubs/` | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+          <li><span>Hosting Club:</span> {{ range . }}<a href="{{ `clubs/` | relLangURL }}{{ . | urlize }}">{{ . }} </a>{{end}}</li>
           {{ end }}
           <li><span>Date:</span> <strong>{{ .Params.event_datetime }}</strong></li>
           <li><span>Location:</span> <strong>{{ .Params.Location }}</strong></li>
-          <li><span>Event Series:</span> <strong>{{ .Params.Event_Series }}</strong></li>
+          {{ with .Params.Event_Series -}}
+          <li><span>Event Series:</span> <strong>{{ . }}</strong></li>
+          {{end}}
           {{if .Params.event_format}}
           <li><span>Event Format:</span> <strong>{{ .Params.Event_Format }}</strong></li>
           {{end}}
           <li><span>Closed Course:</span> <strong>{{ .Params.Closed_Course }}</strong></li>
-          <li><span>Gate Fee:</span> <strong>{{ .Params.Gate_Fee }}</strong></li>
+          {{if .Params.Gate_Fee}}<li><span>Gate Fee:</span> <strong>{{ .Params.Gate_Fee }}</strong></li>{{end}}
 
-          <!-- Sign up link is dependent on event series value -->
+          <!-- Sign up link is dependent on event series value. Dual sports do not have a sign up link -->
           {{if (in .Params.Event_Series "Enduro")}}
           <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/Enduro/">Click Here to
                 Enter</a></strong></li>
           {{ else if (in .Params.Event_Series "Hare" ) }}
           <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA/">Click Here to
                 Enter</a></strong></li>
-          {{ else }}
+          {{ else if (in .Params.Event_Series "fast" ) }}
           <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA_PWY">Click Here to
                 Enter</a></strong></li>
           {{ end }} 
           
           {{ range .Params.attachments }}
-          <li><span>{{ .label }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .src | urlize}}">Open
-                file</a></strong></li>
+          <li><span>{{ .filename }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .src | urlize}}">Label</a></strong></li>
           {{ end }}
         </ul>
       </div>

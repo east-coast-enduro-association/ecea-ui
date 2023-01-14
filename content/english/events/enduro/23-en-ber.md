@@ -3,14 +3,13 @@ title: "Rattlesnake National Enduro"
 description: "Sometimes it's rocky, sometimes not, who knows?"
 preview_image: "images/logos/clubs/ber.gif"
 bg_image: "images/feature-bg.jpg"
-club: "BER"
+club: ["BER"]
 event_datetime: "2023-07-23 07:00:00"
 location: "TBA"
 event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
 event_format: "Restart"
 closed_course: "No"
-gate_fee: "None"
 flyer: ""
 attachments:
 draft: false

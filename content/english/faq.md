@@ -18,7 +18,7 @@ The ECEA is the most diverse off road association around with something for the 
 
 #### 2. Should I join a club?
 
-Yes! The foundation of ECEA is built on clubs. Every event on the schedule is hosted by a club on property they either own, lease, or otherwise have permission to use. Without dedicated club members who help maintain and mark trail, among many other things, these events would not be possible and there would be no ECEA. Please refer to the [clubs page](/clubs) and find out if there is a club near you.  
+Yes! The foundation of ECEA is built on clubs. Every event on the schedule is hosted by a club on property they either own, lease, or otherwise have permission to use. Without dedicated club members who help maintain and mark trail, among many other things, these events would not be possible and there would be no ECEA. Please refer to the [clubs page](/clubs) and find out if there is a club near you. You will be welcomed with open arms.  
 
 It is important to note that you do not need to be a member of a club to ride ECEA events, however you MUST be a member of a club to be eligible for Enduro Championship awards. See the [rule book here](/documents/ecea-rulebook-current.pdf) for more information or continue to the [enduro section of this FAQ.](/faq/enduro)
 
@@ -33,7 +33,7 @@ If you have an offroad motorcycle, there is surely something for you here. Wheth
 ## Enduro  
 #### 1. What is an Enduro?
 
-An enduro is a race against a clock testing the rider’s ability to negotiate technical terrain and maintain apredetermined time schedule. If you have ever seen an off-road car rally, the format is very similar. For a more detailed explaination, please take a peek at our [welcome book here](/documents/ecea-welcome-book.pdf)
+An enduro is a race against a clock testing the rider’s ability to negotiate technical terrain and maintain apredetermined time schedule. If you have ever seen an off-road car rally, the format is very similar. For a more detailed explaination, please check out our [enduro guide here!](/blog/a-guide-to-enduro/)
 
 You do NOT need to be a member of a club to ride an enduro but you MUST be a member of a club if you want to be eligible for championship awards for the season.
 

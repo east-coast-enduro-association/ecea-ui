@@ -12,6 +12,10 @@ information:
     link: /faq/#3-what-should-i-expect-when-i-arrive-at-the-hare-scramble
   - label: Youth Scholarships
     link: /faq/#4-youth-scholarships
+  - label: Should I join a club?
+    link: /faq/#2-should-i-join-a-club
+  - label: How do I join a club?
+    link: /faq/#3-how-do-i-join-a-club
 documents:
   - label: Rule Book
     path: /documents/ecea-rulebook-current.pdf

@@ -10,7 +10,6 @@ event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
 event_format: "Time Keeping"
 closed_course: "No"
-gate_fee: "None"
 flyer: ""
 attachments:
 draft: false
