@@ -35,24 +35,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Tag Line", name: "description", widget: "string"}
       - {label: "Club", name: "club", widget: "select", multiple: true,
-          options: 
-          - { label: "BER", value: "BER" }
-          - { label: "CDR", value: "CDR" }
-          - { label: "CJCR", value: "CJCR" }
-          - { label: "DVTR", value: "DVTR" }
-          - { label: "GMER", value: "GMER" }
-          - { label: "HMDR", value: "HMDR" }
-          - { label: "IDR", value: "IDR" }
-          - { label: "MCI", value: "MCI" }
-          - { label: "MMC", value: "MMC" }
-          - { label: "OCCR", value: "OCCR" }
-          - { label: "RORR", value: "RORR" }
-          - { label: "RRMC", value: "RRMC" }
-          - { label: "SJER", value: "SJER" }
-          - { label: "SPER", value: "SPER" }
-          - { label: "STER", value: "STER" }
-          - { label: "TCSMC", value: "TCSMC" }
-          - { label: "VFTR", value: "VFTR" }
+          options: ["BER", "CDR", "CJCR", "DVTR", "GMER", "HMDR", "IDR", "MCI", "MMC", "OCCR", "RORR", "RRMC", "SJER", "SPER", "STER", "TCSMC", "VFTR"]
         }
       - {label: "Event Date", name: "event_datetime", widget: "datetime"}
       - {label: "Address", name: "location", widget: "string"}
