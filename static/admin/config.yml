@@ -40,26 +40,14 @@ collections:
       - {label: "Event Date", name: "event_datetime", widget: "datetime"}
       - {label: "Address", name: "location", widget: "string"}
       - {label: "Event Type", name: "event_type", widget: "select",
-          options: 
-          - { label: "Enduro", value: "Enduro" }
-          - { label: "Hare Scramble", value: "Hare Scramble" }
-          - { label: "FastKIDZ", value: "fastKIDZ" }
-          - { label: "Dual Sport", value: "Dual Sport" }
-          - { label: "Other", value: "Special" }
+          options: ["Enduro"]
         }
       - {label: "Event Format", name: "event_format", widget: "select",
-          options: 
-          - { label: "Timekeeping", value: "Timekeeping" }
-          - { label: "Restart", value: "Restart" }
-          - { label: "Sprint Enduro", value: "Sprint Enduro" }
-          - { label: "Dual Sport", value: "Dual Sport" }
-          - { label: "Other", value: "Special" }
+          options: ["Time Keeping", "Restart", "Sprint Enduro", "Dual Sport", "Other"]
         }
       - {label: "Event Series", name: "event_series", widget: "select", default: "ECEA Enduro Championship Series"}
       - {label: "Closed course?", name: "closed_course", widget: "select",
-          options: 
-          - { label: "Yes", value: "Yes" }
-          - { label: "No", value: "No" }
+          options: ["Yes", "No"]
         }
       - {label: "Preview Image", name: "preview-image", widget: "image"}
       - {label: "Background Image", name: "bg-image", widget: "image"}
