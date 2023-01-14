@@ -6,9 +6,6 @@
 
       <!-- investigate this... We want to change line 12 to gather the range of posts where posts with .Params.tags contains the tag "enduro" -->
       {{ $posts := where .Site.RegularPages "Section" "==" "blog" }}
-      {{ print $posts }}
-      {{ $posts2 := where $posts .Params.author "eq" "Michael Abramo"}}
-      {{ range $posts}}{{ . | print .Params}}{{end}}
       {{ range (where $posts "Draft" false) }}
 
       <div class="post">
