@@ -3,7 +3,7 @@ title: "Ormond Farms"
 description: "Put sand in your pants"
 preview_image: "images/logos/clubs/cdr.png"
 bg_image: "images/feature-bg.jpg"
-club: "CDR"
+club: ["CDR"]
 event_datetime: "2023-05-07 07:00:00"
 location: "Millville"
 event_type: "Hare Scramble"

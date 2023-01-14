@@ -3,7 +3,7 @@ title: "OxBo"
 description: "Fast, flowy, rocky"
 preview_image: "images/logos/clubs/sper.jpg"
 bg_image: "images/feature-bg.jpg"
-club: "SPER"
+club: ["SPER"]
 event_datetime: "2023-07-15 07:00:00"
 location: "TBA"
 event_type: "FastKIDZ"

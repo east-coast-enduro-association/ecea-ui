@@ -3,7 +3,7 @@ title: "Tough Like RORR Hard Enduro"
 description: "Test your mettle"
 preview_image: "images/logos/clubs/rorr.png"
 bg_image: "images/feature-bg.jpg"
-club: "RORR"
+club: ["RORR"]
 event_datetime: "2023-05-27 07:00:00"
 location: "Tamaqua, PA"
 event_type: "Special"

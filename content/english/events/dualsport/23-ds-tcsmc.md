@@ -3,7 +3,7 @@ title: "Hammer Run National Dual Sport"
 description: "Braaaaaaaap"
 preview_image: "images/logos/clubs/tcsmc.png"
 bg_image: "images/feature-bg.jpg"
-club: "TSCMC"
+club: ["TSCMC"]
 event_datetime: "2023-11-04 07:00:00"
 location: "Port Elizabeth, NJ"
 event_type: "Dual Sport"

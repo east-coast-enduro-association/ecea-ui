@@ -3,7 +3,7 @@ title: "Sahara Sands"
 description: "This is (almost) desert racing"
 preview_image: "images/logos/clubs/sjer.png"
 bg_image: "images/feature-bg.jpg"
-club: "SJER"
+club: ["SJER"]
 event_datetime: "2023-10-28 07:00:00"
 location: "Eagleswood Township, NJ"
 event_type: "FastKIDZ"

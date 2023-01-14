@@ -3,7 +3,7 @@ title: "Dirty Santa Toy Run"
 description: "Do it for the kids"
 preview_image: "images/logos/clubs/dvtr.jpg"
 bg_image: "images/feature-bg.jpg"
-club: "DVTR"
+club: ["DVTR"]
 event_datetime: "2023-12-03 07:00:00"
 location: "Locust Gap, PA"
 event_type: "Special"

@@ -3,7 +3,7 @@ title: "Ice Breaker"
 description: "Come out of hibernation"
 preview_image: "images/logos/clubs/sjer.png"
 bg_image: "images/feature-bg.jpg"
-club: "PBER"
+club: ["PBER"]
 event_datetime: "2023-02-26 07:00:00"
 location: "TBA"
 event_type: "Dual Sport"

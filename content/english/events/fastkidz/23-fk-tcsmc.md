@@ -3,7 +3,7 @@ title: "Tri-County"
 description: "So, it begins..."
 preview_image: "images/logos/clubs/tcsmc.png"
 bg_image: "images/feature-bg.jpg"
-club: "TCSMC"
+club: ["TCSMC"]
 event_datetime: "2023-04-15 07:00:00"
 location: "TBA"
 event_type: "FastKIDZ"

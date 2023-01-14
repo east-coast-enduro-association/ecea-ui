@@ -3,7 +3,7 @@ title: "Broken Anvil"
 description: "Rocket Raceway"
 preview_image: "images/logos/clubs/gmer.gif"
 bg_image: "images/feature-bg.jpg"
-club: "GMER"
+club: ["GMER"]
 event_datetime: "2023-06-04 07:00:00"
 location: "Rocket Raceway"
 event_type: "Hare Scramble"

@@ -3,7 +3,7 @@ title: "Stumpjumper"
 description: ""
 preview_image: "images/logos/clubs/mci.jpg"
 bg_image: "images/feature-bg.jpg"
-club: "MCI"
+club: ["MCI"]
 event_datetime: "2023-05-20 07:00:00"
 location: "TBA"
 event_type: "FastKIDZ"

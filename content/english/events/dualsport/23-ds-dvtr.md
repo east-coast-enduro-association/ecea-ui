@@ -3,7 +3,7 @@ title: "Michaux"
 description: "The oldest dual sport in the USA"
 preview_image: "images/logos/clubs/dvtr.jpg"
 bg_image: "images/feature-bg.jpg"
-club: "DVTR"
+club: ["DVTR"]
 event_datetime: "2023-08-19 07:00:00"
 location: "TBA"
 event_type: "Dual Sport"

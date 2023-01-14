@@ -3,7 +3,7 @@ title: "CDR Fun Day"
 description: "Family fun ride at the farm"
 preview_image: "images/logos/clubs/cdr.png"
 bg_image: "images/feature-bg.jpg"
-club: "CDR"
+club: ["CDR"]
 event_datetime: "2023-06-24 07:00:00"
 location: "Millville, NJ"
 event_type: "Special"
