@@ -76,10 +76,10 @@ Be sure to read the event details on the [event schedule](/events). I suggest yo
 
 There is typically a 'gate fee' to enter the property. This is separate from your race entry. Cost is typically $5-10 per person but consult the flyer for the event for exact details.  
 
-After you park, you need to ask yourself a few things:
-1. Have you pre entered?
-2. Is your number on your helmet? On your bike?
-3. Do I have my transponder on my helmet?
+After you park, you need to ask yourself a few things:  
+\- Have you pre entered?  
+\- Is your number on your helmet? On your bike?  
+\- Do I have my transponder on my helmet?  
 
 At the sign-up tent/trailer, you will be able to sign up (obviously) and you will be provided a transponder sticker for your helmet. You will also be provided stickers to be placed on the left side of your helmet and on the front number plate of your bike. If you have already registered (pre-entered) and have these things, you do not need to go to the sign-up trailer.
 
@@ -100,10 +100,10 @@ Be sure to read the event details on the [event schedule](/events). I suggest yo
 
 There is typically a 'gate fee' to enter the property. This is separate from your race entry. Cost is typically $5-10 per person but consult the flyer for the event for exact details.  
 
-After you park, you need to ask yourself a few things:
-1. Have you pre entered?
-2. Is your number on your helmet? On your bike?
-3. Do I have my transponder on my helmet?
+After you park, you need to ask yourself a few things:  
+\- Have you pre entered?  
+\- Is your number on your helmet? On your bike?  
+\- Do I have my transponder on my helmet?  
 
 At the sign-up tent/trailer, you will be able to sign your kid(s) up (obviously) and you will be provided a transponder sticker for their helmet. You will also be provided stickers to be placed on the left side of your child's helmet and on the front number plate of their bike. If you have already registered (pre-entered) and have these things, you do not need to go to the sign-up trailer.
 
@@ -113,12 +113,13 @@ Next, gear them up! It's time to go to inspection. The club just wants to make s
 
 The East Coast Enduro Association (ECEA) has two scholarship programs in place:
 
-1. The ‘ECEA -Mike Little- Scholarship’ set up to recognize riders academically and their commitment to the amateur sport of off-road riding within the ECEA. Mike Little was a MCI members and acted as ECEA Treasurer for years.  
-2. The ‘Skip Stoner Memorial Scholarship’ set up to recognize achievement by a member in the memory of long-time devoted ECEA member, Skip Stoner. Skip was a mentor to many kids over the years. He and his family would open their shop, home, and hearts to help others.  
+\- The ‘ECEA -Mike Little- Scholarship’ set up to recognize riders academically and their commitment to the amateur sport of off-road riding within the ECEA. Mike Little was a MCI members and acted as ECEA Treasurer for years.  
+
+\- The ‘Skip Stoner Memorial Scholarship’ set up to recognize achievement by a member in the memory of long-time devoted ECEA member, Skip Stoner. Skip was a mentor to many kids over the years. He and his family would open their shop, home, and hearts to help others.  
 
 Applicants for the scholarships are selected on their scholastic accomplishments, course of study, and their demonstrated involvement in the ECEA.
 
-The ECEA awards up to four scholarships in the amount of $500 each year and have different eligibility criteria. Applications must be received by August 31. Notifications to awardees will be made in December and acknowledged at our banquet. Be sure to pay attention to forthcoming information on the [fastKIDZ series page!](/series/fastKIDZ)
+The ECEA awards up to four scholarships in the amount of $500 each year and have different eligibility criteria. Applications must be received by August 31. Notifications to awardees will be made in December and acknowledged at our banquet. Be sure to pay attention to forthcoming information on the [fastKIDZ series page!](/series/fastkidz)
 
 ## Dual Sport
 #### 1. What is a Dual Sport?
