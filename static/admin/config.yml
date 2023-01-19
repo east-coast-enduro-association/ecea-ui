@@ -68,7 +68,7 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              default: "/static/events/attachments"
+              default: "/static/documents/events/attachments"
         - label: "Attachment 2"
           name: "attachment2"
           widget: "object"

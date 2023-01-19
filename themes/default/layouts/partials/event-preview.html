@@ -10,7 +10,7 @@
   </a>
   <div class="event-details">
     <h3>{{ .Params.title }}</h3>
-    <p>Hosting Club: {{ .Params.club }}</p>
+    <p>Hosting Club: {{ range .Params.club}} {{ . }} {{ end }}</p>
     <p>Start Time: {{ .Params.event_datetime | time.Format ":time_short"}}</p>
     <p>{{ .Params.description }}</p>
     <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
