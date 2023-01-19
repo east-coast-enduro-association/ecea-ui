@@ -13,7 +13,7 @@ closed_course: "No"
 flyer: ""
 attachments:
     # - label: first
-    #   src: test-file.jpg
+    #   filepath: test-file.jpg
 draft: false
 ---
 

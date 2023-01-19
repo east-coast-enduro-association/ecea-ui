@@ -53,7 +53,7 @@
           {{ end }} 
           
           {{ range .Params.attachments }}
-          <li><span>{{ .filename }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .src | urlize}}">Label</a></strong></li>
+          <li><span>{{ .label }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .filepath | urlize}}">Click Here to Download</a></strong></li>
           {{ end }}
         </ul>
       </div>

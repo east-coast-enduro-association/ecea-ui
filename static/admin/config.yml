@@ -4,7 +4,7 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: "static/images/blog" # Media files will be stored here
+media_folder: "static/images/blog" # Media files will be stored here by default.
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
