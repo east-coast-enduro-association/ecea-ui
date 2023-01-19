@@ -45,7 +45,9 @@ collections:
       - {label: "Event Format", name: "event_format", widget: "select",
           options: ["Time Keeping", "Restart", "Sprint Enduro", "Dual Sport", "Other"]
         }
-      - {label: "Event Series", name: "event_series", widget: "select", default: "ECEA Enduro Championship Series"}
+      - {label: "Event Series", name: "event_series", widget: "select", default: "ECEA Enduro Championship Series",
+          options: ["ECEA Enduro Championship Series"]
+        }
       - {label: "Closed course?", name: "closed_course", widget: "select",
           options: ["Yes", "No"]
         }
