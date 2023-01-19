@@ -51,9 +51,9 @@ collections:
       - {label: "Closed course?", name: "closed_course", widget: "select",
           options: ["Yes", "No"]
         }
-      - {label: "Preview Image", name: "preview-image", widget: "image"}
-      - {label: "Background Image", name: "bg-image", widget: "image"}
-      - {label: "Flyer Image", name: "flyer", widget: "image"}
+      - {label: "Preview Image", name: "preview-image", media_library: "static/images/logos/clubs", widget: "image"}
+      - {label: "Background Image", name: "bg-image", widget: "image", media_library: "static/events/backgrounds",default: "static/images/feature-bg.jpg"}
+      - {label: "Flyer Image", name: "flyer", media_library: "static/events/flyers",widget: "image"}
       - label: "Route Sheet, Confirmation Sheet, etc"
         name: "attachments"
         widget: "object"
@@ -68,7 +68,7 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              default: "/static/uploads"
+              default: "/static/events/attachments"
         - label: "Attachment 2"
           name: "attachment2"
           widget: "object"
@@ -79,5 +79,27 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              default: "/static/uploads"
+              default: "/static/events/attachments"
+        - label: "Attachment 3"
+          name: "attachment3"
+          widget: "object"
+          fields:
+            - label: "Label"
+              name: "label"
+              widget: "string"
+            - label: "File"
+              name: "path"
+              widget: "file"
+              default: "/static/events/attachments"
+        - label: "Attachment 4"
+          name: "attachment4"
+          widget: "object"
+          fields:
+            - label: "Label"
+              name: "label"
+              widget: "string"
+            - label: "File"
+              name: "path"
+              widget: "file"
+              default: "/static/events/attachments"
       - {label: "Description and information about event", name: "body", widget: "markdown"}
