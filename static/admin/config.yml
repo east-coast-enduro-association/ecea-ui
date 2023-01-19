@@ -60,25 +60,22 @@ collections:
           name: "attachment1"
           widget: "object"
           fields:
-            - {label: "Label", name: "label", widget: "string"}
-            - {label: "File", name: "path", widget: "file", default: "/static/uploads"}
+            - label: "Label"
+              name: "label"
+              widget: "string"
+            - label: "File"
+              name: "path"
+              widget: "file"
+              default: "/static/uploads"
         - label: "Attachment 2"
           name: "attachment2"
           widget: "object"
           fields:
-            - {label: "Label", name: "label", widget: "string"}
-            - {label: "File", name: "path", widget: "file", default: "/static/uploads"}
-        - label: "Attachment 3"
-          name: "attachment3"
-          widget: "object"
-          fields:
-            - {label: "Label", name: "label", widget: "string"}
-            - {label: "File", name: "path", widget: "file", default: "/static/uploads"}
-          
-        - label: "Attachment 4"
-          name: "attachment4"
-          widget: "object"
-          fields:
-            - {label: "Label", name: "label", widget: "string"}
-            - {label: "File", name: "path", widget: "file", default: "/static/uploads"}
+            - label: "Label"
+              name: "label"
+              widget: "string"
+            - label: "File"
+              name: "path"
+              widget: "file"
+              default: "/static/uploads"
       - {label: "Description and information about event", name: "body", widget: "markdown"}
