@@ -4,17 +4,16 @@
 
 <section class="series-main container">
   <div class="row">
-
+    {{ $currentPage := .Params.Title }}
     <!-- upcoming events -->
     <div class="series-preview col-md-4">
       <h2>Upcoming Events:</h2>
-      
       <ul>
-        {{range first 3 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Enduro" ) ".Params.event_datetime" )}}
+        {{range first 3 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" $currentPage ) ".Params.event_datetime" )}}
         <li>{{ partial "event-preview.html" . }}</li>
         {{ end }}
 
-        {{range after 3 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Enduro" ) ".Params.event_datetime" )}}
+        {{range after 3 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" $currentPage ) ".Params.event_datetime" )}}
         <li><a href="{{ .RelPermalink }}">{{ .Params.event_datetime | time.Format ":date_short"}} {{ .Params.title }}</a></li>      
         {{ end }}
       </ul>
