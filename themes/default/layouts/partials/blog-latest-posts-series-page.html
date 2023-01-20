@@ -1,41 +1,40 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      {{ if gt (where site.RegularPages "Section" "==" "blog") 0}}
-      
-
-      <!-- investigate this... We want to change line 12 to gather the range of posts where posts with .Params.tags contains the tag "enduro" -->
-      {{ $posts := where .Site.RegularPages "Section" "==" "blog" }}
-      {{ range (where $posts "Draft" false) }}
-
-      <div class="post">
-        <div class="post-media post-thumb">
-          {{ if isset .Params "image" -}}
-          <a href="{{ .RelPermalink }}">
-            <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
-          </a>
-          {{- end }}
-        </div>
-        <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <div class="post-meta">
-          <ul>
-            <li><i class="fas fa-calendar-week"></i> {{ time.Format ":date_long" .PublishDate }}</li>
-            <li><i class="fas fa-user"></i>
-              {{ i18n "posted_by" }}
-              {{ $authors := slice }}{{ if reflect.IsSlice .Params.author }}{{ $authors = .Params.author }}{{ else }}{{ $authors = (slice .Params.author) }}{{ end -}}
-              {{ range $index, $elements := $authors }}{{ if ne $index 0 }}, {{ end }}<a class="text-primary" href="{{ `author/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-            </li>
-            <li><i class="fas fa-tags"></i>
-              {{ range $index, $elements:= .Params.tags }}{{ if ne $index 0 }}, {{ end }}<a href="{{ `tags/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-            </li>
-          </ul>
-        </div>
-        <div class="post-content">
-          <p>{{ .Summary }}</p>
-          <a href="{{ .RelPermalink }}" class="btn btn-main">{{ i18n "read_more" }}</a>
-        </div>
-      </div>
-      {{- end }}
+      {{ $currentPage := .Params.Title | lower }}
+      {{ if gt (where site.RegularPages "Section" "==" "blog") 0}}      
+      {{ $posts := where .Site.RegularPages "Section" "==" "blog"  }}
+        {{ range where $posts "Draft" false }}
+          {{ if in .Params.Tags $currentPage }}
+            <div class="post">
+              <div class="post-media post-thumb">
+                {{ if isset .Params "image" -}}
+                <a href="{{ .RelPermalink }}">
+                  <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+                </a>
+                {{- end }}
+              </div>
+              <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <div class="post-meta">
+                <ul>
+                  <li><i class="fas fa-calendar-week"></i> {{ time.Format ":date_long" .PublishDate }}</li>
+                  <li><i class="fas fa-user"></i>
+                    {{ i18n "posted_by" }}
+                    {{ $authors := slice }}{{ if reflect.IsSlice .Params.author }}{{ $authors = .Params.author }}{{ else }}{{ $authors = (slice .Params.author) }}{{ end -}}
+                    {{ range $index, $elements := $authors }}{{ if ne $index 0 }}, {{ end }}<a class="text-primary" href="{{ `author/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+                  </li>
+                  <li><i class="fas fa-tags"></i>
+                    {{ range $index, $elements:= .Params.tags }}{{ if ne $index 0 }}, {{ end }}<a href="{{ `tags/` | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+                  </li>
+                </ul>
+              </div>
+              <div class="post-content">
+                <p>{{ .Summary }}</p>
+                <a href="{{ .RelPermalink }}" class="btn btn-main">{{ i18n "read_more" }}</a>
+              </div>
+            </div>
+          {{ end }}
+        {{- end }}
       {{- end }}
     </div>
   </div>
