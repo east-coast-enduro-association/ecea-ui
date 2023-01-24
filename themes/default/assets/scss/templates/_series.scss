@@ -1,0 +1,63 @@
+.series-main {
+  padding: 32px 0;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h2, h4 {
+    margin: 0 0 16px;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .series-preview {
+    padding-right: 24px;
+
+    .later-events {
+      margin-bottom: 6px;
+
+      a {
+        font-size: 15px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .series-latest-news {
+    max-width: 500px;
+    padding: 0 12px;
+  }
+
+  .series-links {
+    padding-left: 12px;
+    width: 18%;
+    text-align: right;
+    margin-bottom: 6px;
+
+    a {
+      font-size: 15px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.test {
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    width: 200px;
+    background-color: red;
+  }
+}
