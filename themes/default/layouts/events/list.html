@@ -32,7 +32,7 @@
             {{ if not (reflect.IsSlice $types) }}{{ $types = slice ($types) }}{{ end -}}
             {{ $types = apply $types "urlize" "." | jsonify -}}
             <div class="shuffle-item" data-groups="{{ $types }}">
-              {{ partial "event-preview.html" . }}
+              {{ partial "event-preview.html" (dict "context" . "wrapperClass" "event-preview-wrapper") }}
             </div>
             {{- end }}
           </div>

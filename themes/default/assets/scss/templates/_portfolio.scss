@@ -6,8 +6,6 @@
       text-align: center;
 
       .btn-group {
-        margin-bottom: 40px;
-
         label {
           display: inline-block;
           border: 1px solid $border-color;
@@ -17,16 +15,27 @@
           color: lighten($black, 20);
           outline: 0;
           background: $white;
-          margin: 2px;
+          margin: 0 6px;
           border-radius: 0;
           @include transition (all, 0.3s, ease);
+
+          &:hover {
+            font-weight: bold;
+            border: 1px solid lighten($black, 20);
+          }
+        }
+
+        .active {
+          background-color: $color-primary;
+          color: $white;
+          border: 1px solid $color-primary;
         }
       }
     }
 
     .shuffle-wrapper {
       .shuffle-item {
-        padding-top: 14px;
+        margin-top: 48px;
       }
     }
   }

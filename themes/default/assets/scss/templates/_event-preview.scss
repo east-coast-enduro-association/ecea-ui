@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     padding: 16px;
-    border-bottom:solid;
+    border-bottom: 2px solid $text-dark;
 
     .date-label, .type-label {
       color: $text-dark;
@@ -20,9 +20,11 @@
     padding: 6px 16px;
     height: 275px;
     position: relative;
+    display: flex;
+    justify-content: center;
 
     img {
-      height:min-content;
+      height: min-content;
       transition: .5s ease;
 
       &:hover {
@@ -34,7 +36,7 @@
   .event-details {
     position: relative;
     padding: 16px;
-    height: 225px;
+    height: 250px;
     background: rgba($color-primary, 0.3);
 
     h3 {
@@ -48,9 +50,27 @@
     }
 
     a {
-      position: fixed;
+      position: absolute;
       bottom: 16px;
       padding: 8px 14px;
+    }
+  }
+
+  &.small {
+    width: auto;
+    margin-bottom: 32px;
+    
+    .header-wrapper {
+      height: 215px;
+      padding: 16px;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .event-details {
+      height: 240px;
     }
   }
 }

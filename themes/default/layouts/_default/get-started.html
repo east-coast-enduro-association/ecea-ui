@@ -58,7 +58,7 @@
       {{ range .feature_item }}
       <div class="col-md-12">
         <div class="service-item item-wrapper">
-          {{ with .logo }}<img src="{{ . | relURL }}" alt="test">{{ end }}
+          {{ with .logo }}<img src="{{ . | relURL }}">{{ end }}
           <div class="item-content">
             <div>
               {{ with .name }}<h4>{{ . | markdownify }}</h4>{{ end }}
