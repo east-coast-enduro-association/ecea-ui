@@ -36,11 +36,11 @@ $(document).ready(function () {
       useTransforms: false,
     });
 
-    // pre-filter by event type if navigating from discipline's respective dropdown in nav
+    // pre-filter by the value being sent in query parameter on initial page load
     let params = new URLSearchParams(window?.location?.search);
-    const eventType = params.get('type');
-    myShuffle.filter(eventType);
-    const filterEl = document.querySelectorAll(`input[value=${eventType}]`);
+    const filterType = params.get('type');
+    myShuffle.filter(filterType);
+    const filterEl = document.querySelectorAll(`input[value=${filterType}]`);
 
     if (filterEl?.length > 0) {
       filterEl[0].parentElement.classList.add('active');
