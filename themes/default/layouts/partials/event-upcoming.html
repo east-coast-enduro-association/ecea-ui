@@ -2,7 +2,7 @@
 <div class="upcoming-events-wrapper">
   <h4 class="upcoming-events-title">Upcoming Events</h4>
   <div class="row">
-    <section class="upcoming-events-post col-md-4">
+    <section class="upcoming-events-post col-sm-3">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Enduro" ) ".Params.event_datetime" )}}
         <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
         <div class="media">
@@ -20,7 +20,7 @@
         </div>
       {{end}}
     </section>
-    <section class="upcoming-events-post col-md-4">
+    <section class="upcoming-events-post col-sm-3">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Hare Scramble" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
       <div class="media">
@@ -38,7 +38,7 @@
       </div>
       {{end}}
     </section>
-    <section class="upcoming-events-post col-md-4">
+    <section class="upcoming-events-post col-sm-3">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "FastKIDZ" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
       <div class="media">
@@ -56,7 +56,7 @@
       </div>
       {{end}}
     </section>
-    <section class="upcoming-events-post col-md-4">
+    <section class="upcoming-events-post col-sm-3">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Dual Sport" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
       <div class="media">
@@ -74,7 +74,8 @@
       </div>
       {{end}}
     </section>
-    <section class="upcoming-events-post col-md-4">
+<!-- TODO: Add "Special Events" to home page
+    <section class="upcoming-events-post col-sm-3">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Special" ) ".Params.event_datetime" )}}
         <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
         <div class="media">
@@ -91,6 +92,6 @@
           </div>
         </div>
       {{end}}
-    </section>
+    </section> -->
   </div>
 </div>
