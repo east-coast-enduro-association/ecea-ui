@@ -2,7 +2,7 @@
 title: "Ithaca Dirt Riders"
 description: "IDR"
 draft: false
-image : "images/portfolio/work1.jpg"
+image : "images/logos/ecea/ecea-small.png"
 bg_image: "images/feature-bg.jpg"
 category: [ "New York" ]
 information:

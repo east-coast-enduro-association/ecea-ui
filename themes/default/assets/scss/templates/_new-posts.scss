@@ -7,13 +7,6 @@
     padding-bottom: 20px;
   }
 
-  h2 {
-    font-size: 32px;
-    color: $white;
-    margin: 0px;
-    padding: 30px 0px;
-  }
-
   .btn-main {
     padding: 15px 35px;
     font-size: 12px;
@@ -24,8 +17,16 @@
   .container {
     width: 75%;
     text-align: cen;
+    background-color: rgba(54, 39, 27, 0.582);
   }
 
+  .latest-news-title {
+    font-size: 32px;
+    color: white;
+    margin: 0px;
+    padding: 30px 0px;
+  }
+  
   .new-post {
     .media {
       .media-object {
@@ -48,10 +49,12 @@
     }
 
     .media-body {
+      background: fixed;
       text-align: left;
-
+      color: white;
+      
       .media-summary {
-        color: darken($black, 47.45);
+        color: darken($light, 47.45);
       }
     }
 

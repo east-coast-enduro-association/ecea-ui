@@ -1,8 +1,10 @@
 {{ with site.GetPage "/" }}
 {{ with .Params.cta }}
-<div class="latest-news-wrapper bg-1 section-sm overly" style="background-image: url('{{ .bg_image | relURL }}');">
-  <h2 class="latest-news-title">Latest News</h2>
+<div class="latest-news-wrapper bg-1 section overly" style="background-image: url('{{ .bg_image | relURL }}');">
   <div class="container">
+    <div class="row">
+      <h2 class="latest-news-title">Latest News</h2>
+    </div>
     <div class="row">
       {{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
       <div class="new-post col-md-4">

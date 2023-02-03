@@ -26,6 +26,8 @@
   .series-preview {
     order: 1;
     padding-right: 24px;
+    max-width: 30%;
+
 
     @include desktop {
       width: 35%;

@@ -25,7 +25,13 @@
 
   // Latest Posts
   .upcoming-events-post {
+    padding: 30px;
     .media {
+
+      .pull-left{
+        min-height: 220px;
+      }
+
       .media-object {
         width: 200px;
         height: auto;

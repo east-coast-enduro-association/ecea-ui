@@ -19,7 +19,7 @@
       </div>
       <!-- series blog -->
       <div class="series-latest-news">
-        <h2>Latest News</h2>
+        <h2>Latest {{.Params.Title}} News</h2>
         {{ partial "blog-latest-posts-series-page.html" . }}
       </div>
       <!-- series links/faq -->
@@ -33,7 +33,7 @@
         <h4>Important Documents:</h4>
         <ul>
           {{ range .Params.documents }}
-            <li><a href="{{ `documents/` | relLangURL}}{{ .src | urlize}}">{{.label}}</a></li>
+            <li><a href="{{ .path | urlize}}">{{.label}}</a></li>
           {{ end }}
         </ul>
       </div>

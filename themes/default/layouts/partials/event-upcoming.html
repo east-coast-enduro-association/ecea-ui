@@ -2,7 +2,7 @@
 <div class="upcoming-events-wrapper">
   <h4 class="upcoming-events-title">Upcoming Events</h4>
   <div class="row">
-    <section class="upcoming-events-post col-md-3">
+    <section class="upcoming-events-post col-md-4">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Enduro" ) ".Params.event_datetime" )}}
         <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
         <div class="media">
@@ -20,7 +20,7 @@
         </div>
       {{end}}
     </section>
-    <section class="upcoming-events-post col-md-3">
+    <section class="upcoming-events-post col-md-4">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Hare Scramble" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
       <div class="media">
@@ -38,7 +38,7 @@
       </div>
       {{end}}
     </section>
-    <section class="upcoming-events-post col-md-3">
+    <section class="upcoming-events-post col-md-4">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "FastKIDZ" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
       <div class="media">
@@ -56,7 +56,7 @@
       </div>
       {{end}}
     </section>
-    <section class="upcoming-events-post col-md-3">
+    <section class="upcoming-events-post col-md-4">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Dual Sport" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
       <div class="media">
@@ -72,6 +72,24 @@
           <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
         </div>
       </div>
+      {{end}}
+    </section>
+    <section class="upcoming-events-post col-md-4">
+      {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Special" ) ".Params.event_datetime" )}}
+        <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
+        <div class="media">
+          <a class="pull-left" href="{{ .RelPermalink }}">
+            {{ if isset .Params "preview_image" }}
+            <img class="media-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
+            {{ end }}
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+            <p>Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
+            <p>{{ .Summary | truncate 50 }}</p>
+            <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
+          </div>
+        </div>
       {{end}}
     </section>
   </div>

@@ -58,9 +58,11 @@
 <!-- /upcoming events -->
 
 <!-- latest news -->
+<section>
   {{ with .Params.latest_news.enable}}
   {{ partial "blog-new-posts" . }}
   {{ end }}
+</section>
 <!-- /latest news -->
 
 <!-- about -->

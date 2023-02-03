@@ -5,7 +5,7 @@ author: Michael Abramo
 image : "images/blog/2023-ecea-schedule.jpg"
 bg_image: "images/feature-bg.jpg"
 categories: ["Announcement", "News"]
-tags: ["2023","dual sport", "enduro", "hare scramble"]
+tags: ["2023","dual sport", "enduro", "hare scramble", "fastkidz"]
 description: "The moment we've all been waiting for"
 draft: false
 type: "post"

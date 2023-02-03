@@ -11,4 +11,6 @@ draft: false
 type: "post"
 ---
 
-Registration of for the 2023 ECEA Enduro Series is open! [Register by clicking here or by using the navigation bar at the top of the page Enduro > Enduro Series Registration](https://www.moto-tally.com/ecea/enduro/SeriesRegistration.aspx)
+## Registration of for the 2023 ECEA Enduro Series is open! 
+
+[Register by clicking here or by using the navigation bar at the top of the page Enduro > Enduro Series Registration](https://www.moto-tally.com/ecea/enduro/SeriesRegistration.aspx)
