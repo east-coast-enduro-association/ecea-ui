@@ -8,26 +8,34 @@ draft: false
 ### ECEA Executive Board
 
 [Frank Kaminski, President](f_kaminski@comcast.net) (484) 948-5361\
-[Mike Soudas, Vice President](msoudas@comcast.net) (570)944-7799\
+[Mike Soudas, Vice President](msoudas@comcast.net) (570)954-7799\
 [Lisa Soudas, Treasurer](lsoudas@comcast.net)  (717) 865-2723\
 [Merle Compton, Secretary](ecea.secy@verizon.net) (609) 560-1713  
 
 ### Enduro
 
-[Kenny Lee Taylor, ECEA Referee](<>) (609) 304-2695\
+[Kenny Lee Taylor, ECEA Referee](mrtaylor58@comcast.net) (609) 304-2695\
 [Merle Compton, Secretary](ecea.secy@verizon.net) (609) 560-1713\
-[Ron DeCaro, Enduro Referee](<>)  
+[Ron DeCaro, Enduro Referee](<>) (856)740-2141
 
 ### Hare Scramble / Fast Kidz
 
 [Dave Glenn, Series Director and Referee](<>) (302) 530-3802\
 [Joe Young, Youth Series Chair](<>) (610) 781-1499\
 [Lisa Soudas, Sign Up Coordinator](lsoudas@comcast.net)  (717) 865-2723\
-[Mike Soudas](msoudas@comcast.net)  
+[Mike Soudas, Points Keeper] (msoudas@comcast.net) (570)-954-7799\
+[Mitch Walker, Event Scoring](<>) (717)497-4382\
+[﻿Amanda Walker Event Signup](<>) (337)499-3163
 
-### Marketing/Sponsorships
+### Marketing
 
-[Mike Soudas](msoudas@comcast.net)  
+[Neil Newcomb](neil.newcomb@yahoo.com) (302)357-8203
+
+### S﻿ponsorships
+
+
+Joe Young,(610) 781-1499\
+Liz Kearny, Revzilla-Contact
 
 ### Web Masters
 
