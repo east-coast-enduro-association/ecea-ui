@@ -7,15 +7,15 @@ draft: false
 ---
 ### ECEA Executive Board
 
-[Frank Kaminski, President](<>) (484) 948-5361\
-[Mike Blair, Vice President](jclives62@gmail.com)\
+[Frank Kaminski, President](f_kaminski@comcast.net) (484) 948-5361\
+[Mike Soudas, Vice President](msoudas@comcast.net) (570)944-7799\
 [Lisa Soudas, Treasurer](lsoudas@comcast.net)  (717) 865-2723\
 [Merle Compton, Secretary](ecea.secy@verizon.net) (609) 560-1713  
 
 ### Enduro
 
 [Kenny Lee Taylor, ECEA Referee](<>) (609) 304-2695\
-[Merle Compton, Secretary](eceaenduropts@aol.com) (609) 560-1713\
+[Merle Compton, Secretary](ecea.secy@verizon.net) (609) 560-1713\
 [Ron DeCaro, Enduro Referee](<>)  
 
 ### Hare Scramble / Fast Kidz
