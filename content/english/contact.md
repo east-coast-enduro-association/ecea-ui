@@ -28,7 +28,7 @@ draft: false
 
 ### Marketing
 
-[Neil Newcomb](mailto:neil.newcomb@yahoo.com) (302)357-8203
+[Neil Newcomb, Marketing/Promotions](mailto:neil.newcomb@yahoo.com) (302)357-8203
 
 ### Sponsorships
 
