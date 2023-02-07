@@ -24,17 +24,17 @@ draft: false
 [Joe Young, Youth Series Chair](mailto:jyoung311@comcast.net) (610) 781-1499\
 [Lisa Soudas, Sign Up Coordinator](mailto:lsoudas@comcast.net) (570)954-4129\
 [Mitch Walker, Event Scoring](<>) (717)497-4382\
-[﻿Amanda Walker Event Signup](<>) (337)499-3163
+[Amanda Walker, Event Signup](<>) (337)499-3163
 
 ### Marketing
 
 [Neil Newcomb](mailto:neil.newcomb@yahoo.com) (302)357-8203
 
-### S﻿ponsorships
+### Sponsorships
 
 
 [Joe Young](mailto:jyoung311@comcast.net) (610) 781-1499\
-Liz Kearny, Revzilla-Contact
+[Liz Kiniery, Revzilla Contact](mailto:dvtrvicepres@gmail.com)
 
 ### Web Masters
 
