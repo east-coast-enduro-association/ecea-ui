@@ -33,8 +33,4 @@ draft: false
 
 [Mike Soudas](msoudas@comcast.net)\
 [Michael Abramo](abramomichael@gmail.com)\
-[Justin McKenzie](justinmckenzie15@gmail.com)  
-
-
-
-this is a test
+[Justin McKenzie](justinmckenzie15@gmail.com)
