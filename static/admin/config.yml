@@ -25,13 +25,20 @@ collections:
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Blog Entry Type", name: "type", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: "faq"
-    label: "FAQ"
-    folder: "content/english"
-    create: false
-    fields:
-      - {label: "Last Modified Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "content-pages"
+    label: "Content Pages"
+    files:
+      - label: "FAQ"
+        name: "faq"
+        file: "content/english/faq.md"
+        fields:
+          - {label: "Last Modified Date", name: "date", widget: "datetime"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Contacts"
+        name: "contacts"
+        file: "content/english/contact.md"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
   - name: "enduro-event" # Used in routes, e.g., /admin/collections/blog
     label: "Enduro Event" # Used in the UI
     folder: "content/english/events/enduro" # The path to the folder where the documents are stored
