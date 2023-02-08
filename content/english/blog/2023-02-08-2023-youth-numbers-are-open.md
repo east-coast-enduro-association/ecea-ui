@@ -3,8 +3,8 @@ layout: blog
 title: 2023 Youth Numbers are Open
 author: Mike Soudas
 date: 2023-02-08T00:31:37.319Z
-image: /static/images/blog/youth2023number.jpg
-bg_image: /static/images/blog/youth2023number.jpg
+image: images/blog/youth2023number.jpg
+bg_image: images/blog/youth2023number.jpg
 categories:
   - Announcement
   - News
