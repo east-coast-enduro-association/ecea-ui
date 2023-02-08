@@ -4,13 +4,14 @@ title: 2023 Youth Numbers are Open
 author: Mike Soudas
 date: 2023-02-08T00:31:37.319Z
 image: /static/images/blog/youth2023number.jpg
-bg_image: /static/images/blog/youthsceduleadsq.jpg
+bg_image: /static/images/blog/youth2023number.jpg
 categories:
   - Announcement
   - News
 description: Youth Riders get your 2023 Numbers
 tags:
   - fast kidz
+  - fastkidz
 draft: false
 type: post
 ---
