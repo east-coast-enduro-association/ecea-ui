@@ -99,7 +99,7 @@
 }
 
 // Change Bootstrap's default navbar collapse breakpoint of 768px to 992px (=desktop); source: https://silvawebdesigns.com/how-to-change-the-bootstrap-navbar-breakpoint/
-@include desktop {
+@media (max-width: 1180px) {
   .navbar-header {
     float: none;
   }
@@ -134,6 +134,7 @@
 
   .navbar-nav > li {
     float: none;
+    text-align: center;
   }
 
   .navbar-nav > li > a {
