@@ -2,7 +2,7 @@
   padding: 80px 0;
 
   .block {
-    .portfolio-menu {
+    .events-menu {
       text-align: center;
 
       .btn-group {
@@ -25,10 +25,22 @@
           }
         }
 
+        .btn {
+          @include desktop {
+            margin-bottom: 12px;
+          }
+        }
+
         .active {
           background-color: $color-primary;
           color: $white;
           border: 1px solid $color-primary;
+        }
+
+        &.justify-content-center {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
         }
       }
     }
