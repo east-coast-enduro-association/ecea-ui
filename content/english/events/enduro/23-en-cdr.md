@@ -10,7 +10,7 @@ event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 closed_course: No
-preview-image: /static/events/previews/bee-656-600x583.gif
+preview-image: /static/events/previews/bee-656-600x583.png
 bg-image: http
 flyer: http
 bg_image: images/feature-bg.jpg
