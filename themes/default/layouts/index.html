@@ -46,11 +46,9 @@
 {{ if .enable }}
 <section class="upcoming-events section">
   <div class="container">
-    <row>
-      <div class="col-xl-12">
-        {{ partial "event-upcoming" . }}
-      </div>
-    </row>
+    <div class="col-xl-12">
+      {{ partial "event-upcoming" . }}
+    </div>
   </div>
 </section>
 {{ end }}
