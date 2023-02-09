@@ -1,59 +1,58 @@
 .upcoming-events-wrapper {
-  margin-bottom: 65px;
-
-  @include tablet {
-    margin-bottom: 35px;
-  }
 
   .upcoming-events-title {
-    margin-top: 0px;
-    margin-bottom: 20px;
+    margin: 0 0 18px;
     font-size: 32px;
-    color: lighten( $black, 20 );
-    font-weight: 500;
-    border-bottom: 1px solid $border-color;
+    text-align: center;
   }
 
-  .upcoming-events-header {
-    margin-top: 0px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: lighten( $black, 50 );
-    font-weight: 500;
-    border-bottom: 1px solid $border-color;
-  }
+  .upcoming-events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-  // Latest Posts
-  .upcoming-events-post {
-    padding: 30px;
-    .media {
+    .upcoming-events-header {
+      margin: 0 0 20px;
+      text-transform: uppercase;
+      border-bottom: 1px solid $border-color;
+    }
 
-      .pull-left{
-        min-height: 220px;
+    .upcoming-events-post {
+      width: 220px;
+      padding: 24px;
+      height: 100%;
+
+      &:first-of-type {
+        padding-left: 0;
       }
 
-      .media-object {
-        width: 200px;
-        height: auto;
-        padding-bottom: 30px;
-      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
 
-      .media-heading {
-        a {
-          color: $black;
-          font-size: 24px;
+        .img-wrapper {
+          min-height: 200px;
+          max-height: 200px;
+
+          .content-object {
+            height: auto;
+            padding-bottom: 30px;
+          }
+        }
+
+        .content-heading {
+          a {
+            color: $black;
+            font-size: 24px;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          color: darken( $light, 47.45);
         }
       }
-
-      p {
-        font-size: 16px;
-        color: darken( $light, 47.45);
-      }
-    }
-
-    @include desktop {
-      padding-top: 20px;
     }
   }
-
 }

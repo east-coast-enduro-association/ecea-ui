@@ -1,97 +1,107 @@
 <!-- TODO: Refactor code to iterate over the upcoming events rather than defining each individually -->
-<div class="upcoming-events-wrapper">
+<section class="upcoming-events-wrapper">
   <h4 class="upcoming-events-title">Upcoming Events</h4>
-  <div class="row">
-    <section class="upcoming-events-post col-sm-3">
+  <div class="upcoming-events">
+    <div class="upcoming-events-post">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Enduro" ) ".Params.event_datetime" )}}
-        <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
-        <div class="media">
-          <a class="pull-left" href="{{ .RelPermalink }}">
+        <h4 class="upcoming-events-header">{{ .Params.event_type }}</h4>
+        <div class="content">
+          <a class="img-wrapper" href="{{ .RelPermalink }}">
             {{ if isset .Params "preview_image" }}
-            <img class="media-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
+            <img class="content-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
             {{ end }}
           </a>
-          <div class="media-body">
-            <h4 class="media-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-            <p>Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
-            <p>{{ .Summary | truncate 50 }}</p>
+          <div class="content-body">
+            <h4 class="content-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+            <div class="content-info">
+              <p class="date">Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
+              <p class="summary">{{ .Summary | truncate 50 }}</p>
+            </div>
             <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
           </div>
         </div>
       {{end}}
-    </section>
-    <section class="upcoming-events-post col-sm-3">
+    </div>
+    <div class="upcoming-events-post">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Hare Scramble" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
-      <div class="media">
-        <a class="pull-left" href="{{ .RelPermalink }}">
+      <div class="content">
+        <a class="img-wrapper"  href="{{ .RelPermalink }}">
           {{ if isset .Params "preview_image" }}
-          <img class="media-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
+          <img class="content-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
           {{ end }}
         </a>
-        <div class="media-body">
-          <h4 class="media-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-          <p>Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
-          <p>{{ .Summary | truncate 50 }}</p>
+        <div class="content-body">
+          <h4 class="content-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+          <div class="content-info">
+            <p class="date">Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
+            <p class="summary">{{ .Summary | truncate 50 }}</p>
+          </div>
           <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
         </div>
       </div>
       {{end}}
-    </section>
-    <section class="upcoming-events-post col-sm-3">
+    </div>
+    <div class="upcoming-events-post">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "FastKIDZ" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
-      <div class="media">
-        <a class="pull-left" href="{{ .RelPermalink }}">
+      <div class="content">
+        <a class="img-wrapper"  href="{{ .RelPermalink }}">
           {{ if isset .Params "preview_image" }}
-          <img class="media-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
+          <img class="content-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
           {{ end }}
         </a>
-        <div class="media-body">
-          <h4 class="media-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-          <p>Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
-          <p>{{ .Summary | truncate 50 }}</p>
+        <div class="content-body">
+          <h4 class="content-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+          <div class="content-info">
+            <p class="date">Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
+            <p class="summary">{{ .Summary | truncate 50 }}</p>
+          </div>
           <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
         </div>
       </div>
       {{end}}
-    </section>
-    <section class="upcoming-events-post col-sm-3">
+    </div>
+    <div class="upcoming-events-post">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Dual Sport" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
-      <div class="media">
-        <a class="pull-left" href="{{ .RelPermalink }}">
+      <div class="content">
+        <a class="img-wrapper"  href="{{ .RelPermalink }}">
           {{ if isset .Params "preview_image" }}
-          <img class="media-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
+          <img class="content-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
           {{ end }}
         </a>
-        <div class="media-body">
-          <h4 class="media-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-          <p>Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
-          <p>{{ .Summary | truncate 50 }}</p>
+        <div class="content-body">
+          <h4 class="content-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+          <div class="content-info">
+            <p class="date">Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
+            <p class="summary">{{ .Summary | truncate 50 }}</p>
+          </div>
           <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
         </div>
       </div>
       {{end}}
-    </section>
-<!-- TODO: Add "Special Events" to home page
-    <section class="upcoming-events-post col-sm-3">
+    </div>
+    <!-- TODO: dont forget to update back to "special" -->
+    <div class="upcoming-events-post">
       {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Special" ) ".Params.event_datetime" )}}
-        <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
-        <div class="media">
-          <a class="pull-left" href="{{ .RelPermalink }}">
-            {{ if isset .Params "preview_image" }}
-            <img class="media-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
-            {{ end }}
-          </a>
-          <div class="media-body">
-            <h4 class="media-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-            <p>Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
-            <p>{{ .Summary | truncate 50 }}</p>
-            <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
+      <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
+      <div class="content">
+        <a class="img-wrapper"  href="{{ .RelPermalink }}">
+          {{ if isset .Params "preview_image" }}
+          <img class="content-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
+          {{ end }}
+        </a>
+        <div class="content-body">
+          <h4 class="content-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+          <div class="content-info">
+            <p class="date">Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
+            <p class="summary">{{ .Summary | truncate 50 }}</p>
           </div>
+          <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
         </div>
+      </div>
       {{end}}
-    </section> -->
-  </div>
-</div>
+    </div>
+    </div>
+  </section>
