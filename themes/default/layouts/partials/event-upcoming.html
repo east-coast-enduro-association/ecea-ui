@@ -84,7 +84,7 @@
     </div>
     <!-- TODO: dont forget to update back to "special" -->
     <div class="upcoming-events-post">
-      {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Dual Sport" ) ".Params.event_datetime" )}}
+      {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Special" ) ".Params.event_datetime" )}}
       <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
       <div class="content">
         <a class="img-wrapper"  href="{{ .RelPermalink }}">
@@ -105,22 +105,3 @@
     </div>
     </div>
   </section>
-
-      <!-- <section class="upcoming-events-post col-sm-3">
-      {{range first 1 ( sort ( where (where site.RegularPages "Type" "events") "Params.event_type" "==" "Special" ) ".Params.event_datetime" )}}
-        <h4 class="upcoming-events-header">{{ .Params.event_type}}</h4>
-        <div class="content">
-          <a href="{{ .RelPermalink }}">
-            {{ if isset .Params "preview_image" }}
-            <img class="content-object" src="{{ .Params.preview_image | relURL }}" alt="{{ .Title }}">
-            {{ end }}
-          </a>
-          <div class="content-body">
-            <h4 class="content-heading"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-            <p class="date">Event Date: {{ .Params.event_datetime | time.Format ":date_short"}}</p>
-            <p class="summary">{{ .Summary | truncate 50 }}</p>
-            <a class="btn btn-main" href="{{ .RelPermalink }}">More info...</a>
-          </div>
-        </div>
-      {{end}}
-    </section> -->
