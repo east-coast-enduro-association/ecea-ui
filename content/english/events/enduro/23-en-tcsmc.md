@@ -10,8 +10,10 @@ event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
 event_format: "Time Keeping"
 closed_course: "No"
-flyer: ""
+flyer: "images/events/flyers/23-en-tcsmc-flyer.jpg"
 attachments:
+    - label: Flyer
+      filepath: events/23-en-tcsmc-flyer.pdf
 draft: false
 ---
 
