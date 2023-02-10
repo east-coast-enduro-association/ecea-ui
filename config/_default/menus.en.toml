@@ -174,9 +174,34 @@ url = "series/dual-sport"
 weight = 8
 
 [[main]]
+weight = 9
+name = "Resources"
+hasChildren = true
+
+  [[main]]
+  parent = "Resources"
+  name = "Welcome Book"
+  url = "documents/ecea-welcome-book.pdf"
+
+  [[main]]
+  parent = "Resources"
+  name = "Rule Book"
+  url = "documents/ecea-rulebook-current.pdf"
+
+  [[main]]
+  parent = "Resources"
+  name = "Protest Form"
+  url = "documents/ecea-protest-form.pdf"
+
+  [[main]]
+  parent = "Resources"
+  name = "Rule Proposals"
+  url = "documents/ecea-rule-proposal-form.pdf"
+
+[[main]]
 name = "Contact"
 url = "contact/"
-weight = 9
+weight = 10
 
 # footer menu
 [[footer]]
