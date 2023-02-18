@@ -10,7 +10,7 @@
     </div>
     <div class="row">
       {{ range .service_item }}
-      <div class="col-sm-6 col-md-3">
+      <div class="service-item-wrapper col-md-3">
         <div class="service-item">
           <img src="{{ .logo | relURL }}" alt="{{ .name }}">
           <h4>{{ .name | markdownify }}</h4>

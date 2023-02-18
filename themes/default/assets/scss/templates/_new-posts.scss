@@ -1,6 +1,5 @@
 .latest-news-wrapper {
   text-align: center;
-  padding: 70px 0px;
 
   @include tablet {
     padding-top: 20px;
@@ -17,12 +16,10 @@
   .container {
     width: 75%;
     text-align: cen;
-    background-color: rgba(54, 39, 27, 0.582);
   }
 
   .latest-news-title {
     font-size: 32px;
-    color: white;
     margin: 0px;
     padding: 30px 0px;
   }
@@ -51,7 +48,6 @@
     .media-body {
       background: fixed;
       text-align: left;
-      color: white;
       
       .media-summary {
         color: darken($light, 47.45);

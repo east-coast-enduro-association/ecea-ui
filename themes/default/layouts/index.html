@@ -90,6 +90,12 @@
 {{ end }}
 <!-- /about -->
 
+<!-- sponsors -->
+{{ if .Params.sponsors.enable }}
+{{ partial "sponsors.html" . }}
+{{ end }}
+<!-- /service -->
+
 <!-- call to action -->
 {{ if .Params.cta.enable }}
 {{ partial "cta.html" . }}
@@ -118,12 +124,6 @@
 {{ end }}
 {{ end }}
 <!-- /portfolio -->
-
-<!-- sponsors -->
-{{ if .Params.sponsors.enable }}
-{{ partial "sponsors.html" . }}
-{{ end }}
-<!-- /service -->
 
 <!-- funfacts -->
 {{ with .Params.funfacts }}

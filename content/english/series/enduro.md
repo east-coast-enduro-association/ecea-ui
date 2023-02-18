@@ -21,8 +21,6 @@ documents:
     path: /documents/ecea-protest-form.pdf
   - label: Rule Proposals
     path: /documents/ecea-rule-proposal-form.pdf
-  # - label: Enduro Team Signup
-  #   path: /
-  # - label: Advancement Petition
-  #   path: /
+  - label: Enduro Team Signup
+    path: /documents/ecea-enduro-team-signup.pdf
 ---

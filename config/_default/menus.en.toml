@@ -198,6 +198,26 @@ hasChildren = true
   name = "Rule Proposals"
   url = "documents/ecea-rule-proposal-form.pdf"
 
+  [[main]]
+  parent = "Resources"
+  name = "Enduro Team Registration Form"
+  url = "documents/ecea-enduro-team-signup.pdf"
+
+  [[main]]
+  parent = "Resources"
+  name = "Statement of Responsibility"
+  url = "documents/ecea-enduro-statement-of-responsibility.pdf"
+
+  [[main]]
+  parent = "Resources"
+  name = "Hall of Fame Nomination"
+  url = "documents/ecea-hall-of-fame-nomination-form.pdf"
+
+  [[main]]
+  parent = "Resources"
+  name = "Rule Proposals"
+  url = "documents/ecea-rule-proposal-form.pdf"
+
 [[main]]
 name = "Contact"
 url = "contact/"
