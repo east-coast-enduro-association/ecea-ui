@@ -87,17 +87,17 @@ service:
     # service item loop
     - logo : images/sponsors/dp-brakes-logo.png
       name: DP Brakes
-      content: "Ethanol-free, high-octane small engine fuels and synthetic oils"
+      content: "The FIRST...the BEST...the LEADER...in Sintered Braking Technology"
 
     # service item loop
     - logo : images/sponsors/arai.png
       name: Arai Helmets
-      content: "Ethanol-free, high-octane small engine fuels and synthetic oils"
+      content: "From MotoGP to Formula 1, Arai is chosen by many top riders and drivers"
 
     # service item loop
     - logo : images/sponsors/funnelweb-logo.png
       name: Funnelweb Filters
-      content: "Ethanol-free, high-octane small engine fuels and synthetic oils"
+      content: "With its unique pyramid-foam, FunnelWeb Filters feature increased surface areafor longer ride times and improved engine performance"
 
 ############################# call to action #################################
 cta:
