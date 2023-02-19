@@ -72,7 +72,7 @@ service:
     # service item loop
     - logo : images/sponsors/kenda-mile-hill.png
       name: Kenda Tires
-      content: "Sold through Mile Hill Cycle"
+      content: "Sold through Mile Hill Cycle. Track side support at Hare Scrambles and select events"
 
     # service item loop
     - logo : images/sponsors/liquimoly.png
