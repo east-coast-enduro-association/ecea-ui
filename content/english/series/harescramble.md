@@ -1,6 +1,6 @@
 ---
 title: "Hare Scramble"
-description: "Hare Scramble Landing Page"
+description: "Everything Hare Scramble"
 draft: false
 bg_image: "images/feature-bg.jpg"
 information:

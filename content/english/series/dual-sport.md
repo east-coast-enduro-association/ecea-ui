@@ -1,6 +1,6 @@
 ---
 title: "Dual Sport"
-description: "Dual Sport Landing Page"
+description: "Everything Dual Sport"
 draft: false
 bg_image: "images/feature-bg.jpg"
 information:

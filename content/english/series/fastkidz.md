@@ -1,6 +1,6 @@
 ---
 title: "FastKIDZ"
-description: "FastKIDZ Landing Page"
+description: "Everything you need to know for ECEA Youth Racing"
 draft: false
 bg_image: "images/feature-bg.jpg"
 information:
