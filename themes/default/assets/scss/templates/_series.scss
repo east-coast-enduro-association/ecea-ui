@@ -26,23 +26,11 @@
   .series-preview {
     order: 1;
     padding-right: 24px;
-    max-width: 30%;
-
-
-    @include desktop {
-      width: 35%;
-    }
 
     @include tablet {
       order: 2;
       padding: 0;
-      width: 42%;
       margin-left: auto;
-      margin-right: 24px;
-    }
-
-    @include mobile {
-      width: initial;
       margin-right: auto;
     }
 

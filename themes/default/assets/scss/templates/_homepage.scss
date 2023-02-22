@@ -1,3 +1,14 @@
 .header-button-row {
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    &.get-started-cta {
+        margin-bottom: 24px;
+    }
+
+    a {
+        margin: 6px;
+    }
 }
