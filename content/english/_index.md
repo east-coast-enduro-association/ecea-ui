@@ -20,7 +20,7 @@ banner:
       link: series/fastkidz
     - enable: true
       label: Dual Sport Hub
-      link: series/dua-sport
+      link: series/dual-sport
 upcoming_events:
   enable: true
   eventsTitle: Upcoming Events
