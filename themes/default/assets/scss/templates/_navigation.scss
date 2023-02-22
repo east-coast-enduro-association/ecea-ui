@@ -67,8 +67,11 @@
     .dropdown-menu {
       border-radius: 0;
       border: none;
-      width: fit-content;
-      left: -5px;
+      width: fit-content; 
+      left: 0;
+      right: 0; 
+      margin-left: auto; 
+      margin-right: auto; 
       box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
 
       a {
@@ -90,6 +93,14 @@
         color: $white;
         background: $color-primary;
       }
+
+      @include tablet {
+        margin: 0 auto;
+
+        > li {
+          text-align: center;
+        }
+      }
     }
   }
 }
@@ -99,7 +110,7 @@
 }
 
 // Change Bootstrap's default navbar collapse breakpoint of 768px to 992px (=desktop); source: https://silvawebdesigns.com/how-to-change-the-bootstrap-navbar-breakpoint/
-@media (max-width: 1180px) {
+@media (max-width: 1284px) {
   .navbar-header {
     float: none;
   }
