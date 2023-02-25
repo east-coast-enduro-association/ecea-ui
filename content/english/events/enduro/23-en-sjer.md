@@ -10,7 +10,7 @@ event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
 event_format: "Time Keeping"
 closed_course: "No"
-flyer: ""
+flyer: "attachments/events/23-en-sjer-flyer.jpg"
 attachments:
 draft: false
 ---
