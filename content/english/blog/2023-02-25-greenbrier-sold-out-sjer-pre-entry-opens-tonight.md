@@ -15,7 +15,7 @@ tags:
   - registration
   - sjer
   - tcsmc
-draft: true
+draft: false
 type: post
 ---
 [TCSMC Greenbrier Enduro](/events/enduro/23-en-tcsmc) is sold out! As a quick reminder, it is not possible to transfer entries/tickets for Enduros or Hare Scrambles. If you missed out, we are sorry for the bad news.
