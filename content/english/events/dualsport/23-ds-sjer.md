@@ -13,6 +13,7 @@ closed_course: "No"
 flyer: "attachments/events/23-ds-icebreaker.jpg"
 attachments:
 draft: false
+expirydate: 2023-02-26
 ---
 
 Come out of hibernation

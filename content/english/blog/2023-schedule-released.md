@@ -1,5 +1,5 @@
 ---
-title: "Official Schedule for 2023 Events!"
+title: "Official Schedule for 2023 Events"
 date: 2022-12-19T14:30:00-05:00
 author: Michael Abramo
 image : "images/blog/2023-ecea-schedule.jpg"
