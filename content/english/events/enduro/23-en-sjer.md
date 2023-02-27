@@ -1,6 +1,6 @@
 ---
 title: "Curly Fern"
-description: "Whole Lotta Sand Woops"
+description: "A New Jersey Classic"
 preview_image: "images/logos/clubs/sjer-green.png"
 bg_image: "images/feature-bg.jpg"
 club: ["SJER"]
@@ -15,4 +15,4 @@ attachments:
 draft: false
 ---
 
-If you haven't been doing squats and running sprints over the winter, you're gonna have a bad time... Whoops all day and bring your best timekeeping skills!
+A true test of rider fitness! This year features an improved course with some rarely-used trail. I hope you have kept your timekeeping skills sharp over the winter - SJER pulls out all the stops for this classic NJ enduro.
