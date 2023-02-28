@@ -6,12 +6,13 @@ date: 2023-02-28T16:00:39.155Z
 image : images/blog/kathy-campbell.jpg
 bg_image: "images/feature-bg.jpg"
 categories:
- - Flavor
+ - On Your Minute
 description: Ladies of ECEA, Part One
 tags:
  - "2023"
  - enduro
  - women
+ - on your minute
 draft: false
 type: post
 ---
