@@ -7,17 +7,16 @@ image : images/blog/kathy-campbell.jpg
 bg_image: "images/feature-bg.jpg"
 categories:
  - Flavor
-description: This is your last chance to register
+description: Ladies of ECEA, Part One
 tags:
  - "2023"
  - enduro
  - women
- - 
 draft: false
 type: post
 ---
 
-## “Ladies of the ECEA” Part 1 
+## “Ladies of the ECEA” Part One  
 With special Guest Lissa Aldakimov
 
 It’s no secret, some of our clubs are struggling for members, it’s getting harder and harder to have our events and the mean age of our riders is getting older. But if you have been around our sport for the last few years you might have noticed an interesting thing happening. There are a lot more female riders getting into our sport and they are not just buying bikes and learning to ride. They are joining clubs, attending events and competing in races and this is an awesome thing! I personally believe that if our sport is going to survive, and I believe it will, it will be in large part due to increased numbers of female riders joining our ranks. 
