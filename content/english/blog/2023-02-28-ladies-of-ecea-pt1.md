@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: ON YOUR MINUTE, THE LIFE AND TIMES OF THE ECEA
+title: On Your Minute, The Life And Times of ECEA
 author: Pig Pen
 date: 2023-02-28T16:00:39.155Z
 image : images/blog/kathy-campbell.jpg
