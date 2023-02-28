@@ -8,7 +8,7 @@ bg_image: "images/feature-bg.jpg"
 categories:
   - Announcement
   - News
-description: Let's sell out more enduros!
+description: This is your last chance to register
 tags:
   - "2023"
   - enduro
