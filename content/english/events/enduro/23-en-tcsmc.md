@@ -17,4 +17,6 @@ attachments:
 draft: false
 ---
 
+## This event has reached their rider limit and registration has closed
+
 Don't miss the annual and highly regarded ECEA Enduro opener, Greenbrier Enduro! Bring your sand tires but watch out for those roots! I hope it snows again.
