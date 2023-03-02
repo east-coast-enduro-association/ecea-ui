@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: Greenbrier Sold Out... Again
-author: Michael Abramo
+author: Kelli Silvers
 date: 2023-03-01T19:10:00.000Z
 image: https://ecea.org/images/logos/ecea/ecea-small.png
 bg_image: https://ecea.org/images/feature-bg.jpg
