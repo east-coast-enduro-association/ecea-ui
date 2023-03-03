@@ -8,7 +8,7 @@ event_datetime: "2023-07-09"
 location: "TBA"
 event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
-event_format: "Timekeeping"
+event_format: "Time Keeping"
 closed_course: "No"
 start_grid: ""
 key_time: 2023-07-09T09:00:00

@@ -4,8 +4,6 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: "static/images/blog" # Media files will be stored here by default.
-
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
@@ -92,7 +90,7 @@ collections:
         widget: "image"
         media_library:
           config:
-            media_folder: "static/images/logos/clubs"
+            media_folder: "/static/images/logos/clubs/"
       - {label: "Background Image", name: "bg-image", widget: "hidden", default: "static/images/feature-bg.jpg"}
       - label: "Flyer Image"
         name: "flyer"
