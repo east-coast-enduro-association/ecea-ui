@@ -89,7 +89,7 @@ collections:
         name: "preview-image"
         widget: "image"
         media_folder: "/static/images/logos/clubs"
-      - {label: "Background Image", name: "bg-image", widget: "hidden", default: "static/images/feature-bg.jpg"}
+      - {label: "Background Image", name: "bg-image", widget: "hidden", default: "images/feature-bg.jpg"}
       - label: "Flyer Image"
         name: "flyer"
         widget: "image"
@@ -110,10 +110,12 @@ collections:
               name: "label"
               widget: "string"
               default: "Confirmation Sheet"
+              required: false
             - label: "File"
               name: "path"
               widget: "file"
               media_folder: "/static/documents/events/attachments/events"
+              required: false
         - label: "Route Sheet"
           name: "attachment2"
           widget: "object"
@@ -123,10 +125,12 @@ collections:
               name: "label"
               widget: "string"
               default: "Route Sheet"
+              required: false
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/events/attachments/events"
+              media_folder: "/static/documents/attachments/events"
+              required: false
         - label: "Other Document"
           name: "attachment3"
           widget: "object"
@@ -135,10 +139,12 @@ collections:
             - label: "Label"
               name: "label"
               widget: "string"
+              required: false
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/events/attachments/events"
+              media_folder: "/static/documents/attachments/events"
+              required: false
         - label: "Other Document"
           name: "attachment4"
           widget: "object"
@@ -147,7 +153,9 @@ collections:
             - label: "Label"
               name: "label"
               widget: "string"
+              required: false
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/events/attachments/events"
+              media_folder: "/static/documents/attachments/events"
+              required: false

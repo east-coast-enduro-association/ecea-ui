@@ -1,7 +1,7 @@
 ---
 title: "Beehive"
 description: "Back in the sand"
-preview_image: "images/logos/clubs/cdr.png"
+preview_image: "/images/logos/clubs/cdr.png"
 bg_image: "images/feature-bg.jpg"
 club: ["CDR"]
 event_datetime: "2023-08-27"
