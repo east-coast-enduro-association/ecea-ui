@@ -17,8 +17,13 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Blog Post Image", name: "image", widget: "image", media_folder: "static/images/blog"}
-      - {label: "Background Image", name: "bg_image", widget: "image", media_folder: "static/images/"}
+      - label: "Blog Post Image"
+        name: "image"
+        widget: "image"
+        media_library:
+          config:
+            media_folder: "static/images/blog"
+      - {label: "Background Image", name: "bg_image", widget: "hidden", default: "images/feature-bg.jpg"}
       - label: "Categories"
         name: "categories"
         widget: "select"
@@ -81,9 +86,20 @@ collections:
         widget: "datetime"
         hint: "What day and time will pre-entry open?"
         required: false
-      - {label: "Club Logo", name: "preview-image", media_folder: "/static/events/previews", widget: "image"}
+      - label: "Club Logo"
+        name: "preview-image"
+        widget: "image"
+        media_library:
+          config:
+            media_folder: "/static/images/logos/clubs"
       - {label: "Background Image", name: "bg-image", widget: "hidden", default: "static/images/feature-bg.jpg"}
-      - {label: "Flyer Image", name: "flyer", media_folder: "/static/events/flyers", widget: "image", required: false}
+      - label: "Flyer Image"
+        name: "flyer"
+        widget: "image"
+        required: false
+        media_library:
+          config:
+            media_folder: "/static/images/events/flyers"
       - label: "Route Sheet, Confirmation Sheet, etc"
         name: "attachments"
         widget: "object"
@@ -102,7 +118,9 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/documents/events/attachments/events"
+              media_library:
+                config:
+                  media_folder: "/static/documents/events/attachments/events"
         - label: "Route Sheet"
           name: "attachment2"
           widget: "object"
@@ -115,7 +133,9 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/events/attachments/events"
+              media_library:
+                config:
+                  media_folder: "/static/events/attachments/events"
         - label: "Other Document"
           name: "attachment3"
           widget: "object"
@@ -127,7 +147,9 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/events/attachments/events"
+              media_library:
+                config:
+                  media_folder: "/static/events/attachments/events"
         - label: "Other Document"
           name: "attachment4"
           widget: "object"
@@ -139,5 +161,7 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/events/attachments/events"
+              media_library:
+                config:
+                  media_folder: "/static/events/attachments/events"
       - {label: "Description and information about event", name: "body", widget: "markdown"}
