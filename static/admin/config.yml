@@ -68,12 +68,12 @@ collections:
         }
       - {label: "Event Series", name: "event_series", widget: "hidden", default: "ECEA Enduro Championship Series"}
       - {label: "Closed course?", name: "closed_course", widget: "select",
-          options: ["Yes", "No"]
+          options: ["\"Yes\"", "\"No\""]
         }
       - label: "Gas Away?"
         name: "gas_away"
         widget: "select"
-        options: ["Yes", "No"]
+        options: ["\"Yes\"", "\"No\""]
         required: false
       - label: "Starting Grid URL"
         name: "start_grid"

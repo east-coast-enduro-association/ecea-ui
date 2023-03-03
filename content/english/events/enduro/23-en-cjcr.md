@@ -15,11 +15,11 @@ location: Brendan T. Byrne State Forest, 3 miles south of 70 &72 circle, Follow
 event_type: Enduro
 event_format: Restart
 event_series: ECEA Enduro Championship Series
-closed_course: No
-gas_away: No
-key_time: 2023-04-02T09:00:00
-check_in_time: 2023-04-02T07:00:00
-registration_date: 2023-03-06T01:00:11.013Z
+closed_course: "No"
+gas_away: "No"
+key_time: 2023-04-02T09:00:00Z
+check_in_time: 2023-04-02T07:00:00.013Z
+registration_date: 2023-03-05T20:00:11.013Z
 attachments: null
 ---
 
