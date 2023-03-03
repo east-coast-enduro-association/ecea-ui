@@ -4,7 +4,7 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: "static/" # Media files will be stored here by default.
+media_folder: "static/images/blog" # Media files will be stored here by default.
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
@@ -98,9 +98,8 @@ collections:
         name: "flyer"
         widget: "image"
         required: false
-        media_library:
-          config:
-            media_folder: "static/images/events/flyers"
+        media_folder: "static/images/events/flyers"
+        media_library: "static/images/events/flyers"
       - label: "Route Sheet, Confirmation Sheet, etc"
         name: "attachments"
         widget: "object"
