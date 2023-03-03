@@ -20,6 +20,7 @@ event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 registration_date: ""
+preview-image: /static/images/logos/clubs/cdr.png
 ---
 
 A New Jersey staple in the enduro community. How many years has this event been hosted? Somebody should update the page with that info... 
