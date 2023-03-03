@@ -15,7 +15,6 @@ club:
   - CDR
 location: 9544 Noble St Mauricetown, NJ 08329
 registration_date: ""
-preview-image: /static/images/logos/clubs/cdr.png
 title: Beehive
 description: Back in the sand
 event_type: Enduro
