@@ -76,6 +76,11 @@ collections:
         name: "check_in_time"
         widget: "datetime"
         hint: "What time does check-in open in the morning?"
+      - label: Pre-Entry Date
+        name: "registration_date"
+        widget: "datetime"
+        hint: "What day and time will pre-entry open?"
+        required: false
       - {label: "Club Logo", name: "preview-image", media_folder: "/static/events/previews", widget: "image"}
       - {label: "Background Image", name: "bg-image", widget: "hidden", default: "static/images/feature-bg.jpg"}
       - {label: "Flyer Image", name: "flyer", media_folder: "/static/events/flyers", widget: "image", required: false}

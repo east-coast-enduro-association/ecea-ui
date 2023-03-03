@@ -37,6 +37,7 @@
           {{if .Params.gas_away}}<li><span>Gas Away:</span> <strong>{{ .Params.gas_away }}</strong></li>{{end}}
           {{if .Params.Gate_Fee}}<li><span>Gate Fee:</span> <strong>{{ .Params.Gate_Fee }}</strong></li>{{end}}
           {{if .Params.start_grid}}<li><span>Starting Grid:</span> <strong><a href="{{.Params.start_grid}}">Click Here for Starting Grid</a></strong></li>{{end}}
+          {{if .Params.registration_date}}<li><span>Registration Opens:</span> <strong>{{ .Params.registration_date | .time.Format ":date_medium"}} {{ .Params.registration_date | .time.Format ":time_short"}}</strong></li>{{end}}
 
           {{ if .Params.registration_url }}
             <li><span>Event Entry:</span> <strong><a href="{{.Params.registration_url}}">Click Here to Enter</a></strong></li>
