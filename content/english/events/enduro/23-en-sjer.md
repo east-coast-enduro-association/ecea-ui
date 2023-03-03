@@ -15,7 +15,7 @@ key_time: 2023-03-19T09:00:00
 check_in_time: 2023-03-19T07:00:00
 gas_away: "Yes"
 registration_url: ""
-flyer: "attachments/events/23-en-sjer-flyer.jpg"
+flyer: "images/events/flyers/23-en-sjer-flyer.jpg"
 attachments:
 draft: false
 ---

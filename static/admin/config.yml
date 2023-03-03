@@ -20,9 +20,7 @@ collections:
       - label: "Blog Post Image"
         name: "image"
         widget: "image"
-        media_library:
-          config:
-            media_folder: "static/images/blog"
+        media_folder: "/static/images/blog"
       - {label: "Background Image", name: "bg_image", widget: "hidden", default: "images/feature-bg.jpg"}
       - label: "Categories"
         name: "categories"
@@ -90,9 +88,7 @@ collections:
       - label: "Club Logo"
         name: "preview-image"
         widget: "image"
-        media_library:
-          config:
-            media_folder: "/static/images/logos/clubs"
+        media_folder: "/static/images/logos/clubs"
       - {label: "Background Image", name: "bg-image", widget: "hidden", default: "static/images/feature-bg.jpg"}
       - label: "Flyer Image"
         name: "flyer"
@@ -117,9 +113,7 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_library:
-                config:
-                  media_folder: "static/documents/events/attachments/events"
+              media_folder: "/static/documents/events/attachments/events"
         - label: "Route Sheet"
           name: "attachment2"
           widget: "object"
@@ -132,9 +126,7 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_library:
-                config:
-                  media_folder: "static/events/attachments/events"
+              media_folder: "/static/events/attachments/events"
         - label: "Other Document"
           name: "attachment3"
           widget: "object"
@@ -146,9 +138,7 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_library:
-                config:
-                  media_folder: "static/events/attachments/events"
+              media_folder: "/static/events/attachments/events"
         - label: "Other Document"
           name: "attachment4"
           widget: "object"
@@ -160,6 +150,4 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_library:
-                config:
-                  media_folder: "static/events/attachments/events"
+              media_folder: "/static/events/attachments/events"

@@ -10,7 +10,7 @@ event_type: "Dual Sport"
 event_series: "Dual Sport Series"
 event_format: "Dual Sport"
 closed_course: "No"
-flyer: "attachments/events/23-ds-icebreaker.jpg"
+flyer: "images/events/flyers/23-ds-icebreaker.jpg"
 attachments:
 draft: false
 expirydate: 2023-02-26
