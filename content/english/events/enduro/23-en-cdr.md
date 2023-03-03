@@ -4,7 +4,7 @@ flyer: ""
 bg_image: images/feature-bg.jpg
 draft: false
 start_grid: ""
-preview_image: images/logos/clubs/dvtr.jpg
+preview_image: images/logos/clubs/cdr.png
 registration_url: ""
 closed_course: No
 key_time: 2023-08-27T09:00:00
