@@ -4,23 +4,23 @@ flyer: ""
 bg_image: images/feature-bg.jpg
 draft: false
 start_grid: ""
-preview_image: /images/logos/clubs/cdr.png
+preview_image: images/logos/clubs/dvtr.jpg
 registration_url: ""
 closed_course: No
 key_time: 2023-08-27T09:00:00
 check_in_time: 2023-08-27T07:00:00
 attachments: null
 gas_away: Yes
-title: Beehive
-description: Back in the sand
 club:
   - CDR
 location: 9544 Noble St Mauricetown, NJ 08329
+registration_date: ""
+preview-image: /static/images/logos/clubs/cdr.png
+title: Beehive
+description: Back in the sand
 event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
-registration_date: ""
-preview-image: /static/images/logos/clubs/cdr.png
 ---
 
 A New Jersey staple in the enduro community. How many years has this event been hosted? Somebody should update the page with that info... 
