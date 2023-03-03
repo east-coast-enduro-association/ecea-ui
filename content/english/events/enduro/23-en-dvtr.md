@@ -14,8 +14,8 @@ location: TBA
 event_type: Enduro
 event_format: Restart
 event_series: ECEA Enduro Championship Series
-closed_course: \"No\"
-gas_away: No
+closed_course: \"Yes\"
+gas_away: Yes
 key_time: 2023-07-30T09:00:00
 check_in_time: 2023-07-30T07:00:00
 registration_date: ""
