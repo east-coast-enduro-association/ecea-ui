@@ -99,7 +99,6 @@ collections:
         widget: "image"
         required: false
         media_folder: "/static/images/events/flyers"
-        media_library: "/static/images/events/flyers"
       - label: "Route Sheet, Confirmation Sheet, etc"
         name: "attachments"
         widget: "object"
