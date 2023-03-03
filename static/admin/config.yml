@@ -17,8 +17,8 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Thumbnail Image", name: "image", widget: "image"}
-      - {label: "Background Image", name: "bg_image", widget: "image", media_folder: "/static/images/logos"}
+      - {label: "Blog Post Image", name: "image", widget: "image", media_folder: "static/images/blog"}
+      - {label: "Background Image", name: "bg_image", widget: "image", media_folder: "static/images/"}
       - label: "Categories"
         name: "categories"
         widget: "select"
@@ -97,7 +97,7 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              default: "/static/documents/events/attachments/events"
+              media_folder: "/static/documents/events/attachments/events"
         - label: "Route Sheet"
           name: "attachment2"
           widget: "object"
@@ -110,7 +110,7 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              default: "/static/events/attachments/events"
+              media_folder: "/static/events/attachments/events"
         - label: "Other Document"
           name: "attachment3"
           widget: "object"
@@ -122,7 +122,7 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              default: "/static/events/attachments/events"
+              media_folder: "/static/events/attachments/events"
         - label: "Other Document"
           name: "attachment4"
           widget: "object"
@@ -134,5 +134,5 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              default: "/static/events/attachments/events"
+              media_folder: "/static/events/attachments/events"
       - {label: "Description and information about event", name: "body", widget: "markdown"}

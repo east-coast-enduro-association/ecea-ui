@@ -42,13 +42,12 @@
             <li><span>Event Entry:</span> <strong><a href="{{.Params.registration_url}}">Click Here to Enter</a></strong></li>
           {{ else }}
             {{if (in .Params.Event_Series "Enduro")}}
-            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/Enduro/">Click Here to Enter</a></strong></li>
+            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/Enduro/PreEntry.aspx">Click Here to Enter</a></strong></li>
             {{ else if (in .Params.Event_Series "Hare" ) }}
-            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA/">Click Here to Enter</a></strong></li>
+            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx">Click Here to Enter</a></strong></li>
             {{ else if (in .Params.Event_Series "fast" ) }}
-            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA_PWY">Click Here to Enter</a></strong></li>
+            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx">Click Here to Enter</a></strong></li>
             {{ end }} 
-
           {{ end }}
           
           {{ range .Params.attachments }}
