@@ -69,7 +69,7 @@ collections:
       - {label: "Event Series", name: "event_series", widget: "hidden", default: "ECEA Enduro Championship Series"}
       - label: "Closed course?"
         name: "closed_course"
-        widget: "select",
+        widget: "select"
         options:
           - label: "Yes"
             value: "Yes"
