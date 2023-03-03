@@ -10,7 +10,7 @@ closed_course: No
 key_time: 2023-08-27T09:00:00
 check_in_time: 2023-08-27T07:00:00
 attachments: null
-gas_away: Yes
+gas_away: "Yes"
 club:
   - CDR
 location: 9544 Noble St Mauricetown, NJ 08329

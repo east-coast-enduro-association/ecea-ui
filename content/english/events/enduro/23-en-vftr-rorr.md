@@ -10,7 +10,7 @@ closed_course: No
 key_time: 2023-09-17T09:00:00
 check_in_time: 2023-09-17T07:00:00
 attachments: null
-gas_away: Yes
+gas_away: "Yes"
 title: Moonshine
 description: Alcohol Prohibited
 club:

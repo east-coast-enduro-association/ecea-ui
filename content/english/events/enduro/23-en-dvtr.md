@@ -10,7 +10,7 @@ closed_course: Yes
 key_time: 2023-07-30T09:00:00
 check_in_time: 2023-07-30T07:00:00
 attachments: null
-gas_away: Yes
+gas_away: "Yes"
 title: Foggy Mountain
 description: This one is easy, you should do it
 club:

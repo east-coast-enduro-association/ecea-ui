@@ -70,6 +70,9 @@ collections:
       - {label: "Closed course?", name: "closed_course", widget: "select",
           options: ["Yes", "No"]
         }
+      - {label: "Gas Away?", name: "gas_away", widget: "select",
+          options: ["Yes", "No"]
+        }
       - label: "Starting Grid URL"
         name: "start_grid"
         widget: "string"
