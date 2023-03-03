@@ -72,13 +72,13 @@ collections:
         widget: "select"
         options:
           - label: "Yes"
-            value: \"Yes\"
+            value: ""Yes""
           - label: "No"
-            value: \"No\"
+            value: ""No""
       - label: "Gas Away?"
         name: "gas_away"
         widget: "select"
-        options: ["Yes", "No"]
+        options: [\"Yes\", \"No\"]
         required: false
       - label: "Starting Grid URL"
         name: "start_grid"
