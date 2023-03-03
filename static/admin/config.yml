@@ -92,14 +92,14 @@ collections:
         widget: "image"
         media_library:
           config:
-            media_folder: "static/images/logos/clubs"
+            media_folder: "/static/images/logos/clubs"
       - {label: "Background Image", name: "bg-image", widget: "hidden", default: "static/images/feature-bg.jpg"}
       - label: "Flyer Image"
         name: "flyer"
         widget: "image"
         required: false
-        media_folder: "static/images/events/flyers"
-        media_library: "static/images/events/flyers"
+        media_folder: "/static/images/events/flyers"
+        media_library: "/static/images/events/flyers"
       - label: "Route Sheet, Confirmation Sheet, etc"
         name: "attachments"
         widget: "object"
