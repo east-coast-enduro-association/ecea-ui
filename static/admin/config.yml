@@ -86,12 +86,13 @@ collections:
         widget: "datetime"
         hint: "What day and time will pre-entry open?"
         required: false
+      - {label: "Description and information about event", name: "body", widget: "markdown"}
       - label: "Club Logo"
         name: "preview-image"
         widget: "image"
         media_library:
           config:
-            media_folder: "/static/images/logos/clubs"
+            media_folder: "static/images/logos/clubs"
       - {label: "Background Image", name: "bg-image", widget: "hidden", default: "static/images/feature-bg.jpg"}
       - label: "Flyer Image"
         name: "flyer"
@@ -99,7 +100,7 @@ collections:
         required: false
         media_library:
           config:
-            media_folder: "/static/images/events/flyers"
+            media_folder: "static/images/events/flyers"
       - label: "Route Sheet, Confirmation Sheet, etc"
         name: "attachments"
         widget: "object"
@@ -120,7 +121,7 @@ collections:
               widget: "file"
               media_library:
                 config:
-                  media_folder: "/static/documents/events/attachments/events"
+                  media_folder: "static/documents/events/attachments/events"
         - label: "Route Sheet"
           name: "attachment2"
           widget: "object"
@@ -135,7 +136,7 @@ collections:
               widget: "file"
               media_library:
                 config:
-                  media_folder: "/static/events/attachments/events"
+                  media_folder: "static/events/attachments/events"
         - label: "Other Document"
           name: "attachment3"
           widget: "object"
@@ -149,7 +150,7 @@ collections:
               widget: "file"
               media_library:
                 config:
-                  media_folder: "/static/events/attachments/events"
+                  media_folder: "static/events/attachments/events"
         - label: "Other Document"
           name: "attachment4"
           widget: "object"
@@ -163,5 +164,4 @@ collections:
               widget: "file"
               media_library:
                 config:
-                  media_folder: "/static/events/attachments/events"
-      - {label: "Description and information about event", name: "body", widget: "markdown"}
+                  media_folder: "static/events/attachments/events"
