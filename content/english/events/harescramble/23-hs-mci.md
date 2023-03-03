@@ -4,7 +4,7 @@ description: ""
 preview_image: "images/logos/clubs/mci.jpg"
 bg_image: "images/feature-bg.jpg"
 club: ["MCI"]
-event_datetime: "2023-05-21 07:00:00"
+event_datetime: "2023-05-21"
 location: "TBA"
 event_type: "Hare Scramble"
 event_series: "Hare Scramble Series"

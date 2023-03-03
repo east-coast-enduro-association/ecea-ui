@@ -4,12 +4,17 @@ description: "Alcohol Prohibited"
 preview_image: "images/logos/clubs/ster.jpg"
 bg_image: "images/feature-bg.jpg"
 club: ["STER"]
-event_datetime: "2023-07-09 07:00:00"
+event_datetime: "2023-07-09"
 location: "TBA"
 event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
 event_format: "Timekeeping"
 closed_course: "No"
+start_grid: ""
+key_time: 2023-07-09T09:00:00
+check_in_time: 2023-07-09T07:00:00
+gas_away: "Yes"
+registration_url: ""
 flyer: ""
 attachments:
 draft: false

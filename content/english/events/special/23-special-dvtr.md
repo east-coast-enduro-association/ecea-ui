@@ -4,7 +4,7 @@ description: "Do it for the kids"
 preview_image: "images/logos/clubs/dvtr.jpg"
 bg_image: "images/feature-bg.jpg"
 club: ["DVTR"]
-event_datetime: "2023-12-03 07:00:00"
+event_datetime: "2023-12-03"
 location: "Locust Gap, PA"
 event_type: "Special"
 event_series: "Special Series"

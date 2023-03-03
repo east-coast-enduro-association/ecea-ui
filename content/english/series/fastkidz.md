@@ -11,7 +11,7 @@ information:
   - label: What should we expect?
     link: /faq/#3-what-should-my-family-expect-when-we-arrive-at-the-event
   - label: Youth Scholarships
-    link: /faq/#4-youth-scholarships
+    link: /faq/#4-scholarship-program
   - label: Should I join a club?
     link: /faq/#2-should-i-join-a-club
   - label: How do I join a club?

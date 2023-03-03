@@ -5,7 +5,7 @@ author: Michael Abramo
 image : "images/logos/ecea/ecea-small.png"
 bg_image: "images/feature-bg.jpg"
 categories: ["Announcement", "News"]
-tags: ["2023", "enduro", "hare scramble", "fast kidz"]
+tags: ["2023", "enduro", "hare scramble", "fastkidz"]
 description: "Race and get paid!"
 draft: false
 type: "post"

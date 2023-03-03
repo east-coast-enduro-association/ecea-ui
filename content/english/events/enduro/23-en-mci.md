@@ -4,12 +4,17 @@ description: "Forest so nice, you've come back twice"
 preview_image: "images/logos/clubs/mci.jpg"
 bg_image: "images/feature-bg.jpg"
 club: ["OCCR"]
-event_datetime: "2023-11-12 07:00:00"
+event_datetime: "2023-11-12"
 location: "TBA"
 event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
 event_format: "Timekeeping"
 closed_course: "No"
+start_grid: ""
+key_time: 2023-11-12T09:00:00
+check_in_time: 2023-11-12T07:00:00
+gas_away: "Yes"
+registration_url: ""
 flyer: ""
 attachments:
 draft: false

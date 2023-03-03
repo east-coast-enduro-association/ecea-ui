@@ -4,7 +4,7 @@ description: "I love NY"
 preview_image: "images/logos/clubs/rrmc-large.png"
 bg_image: "images/feature-bg.jpg"
 club: ["RRMC"]
-event_datetime: "2023-10-01 07:00:00"
+event_datetime: "2023-10-01"
 location: "TBA"
 event_type: "Hare Scramble"
 event_series: "Hare Scramble Series"

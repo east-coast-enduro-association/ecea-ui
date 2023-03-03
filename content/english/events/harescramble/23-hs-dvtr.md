@@ -4,7 +4,7 @@ description: "Eat your heart out"
 preview_image: "images/logos/clubs/dvtr.jpg"
 bg_image: "images/feature-bg.jpg"
 club: ["DVTR"]
-event_datetime: "2023-09-24 07:00:00"
+event_datetime: "2023-09-24"
 location: "TBA"
 event_type: "Hare Scramble"
 event_series: "Hare Scramble Series"

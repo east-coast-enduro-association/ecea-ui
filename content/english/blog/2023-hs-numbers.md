@@ -5,7 +5,7 @@ author: Michael Abramo
 image : "images/blog/2023-hs-numbers.jpg"
 bg_image: "images/feature-bg.jpg"
 categories: ["Announcement", "News"]
-tags: ["2023", "fast kidz", "hare scramble"]
+tags: ["2023", "fastkidz", "hare scramble"]
 description: "Reserve your number today"
 draft: false
 type: "post"

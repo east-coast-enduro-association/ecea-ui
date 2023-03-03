@@ -4,7 +4,7 @@ description: "This is (almost) desert racing"
 preview_image: "images/logos/clubs/sjer.png"
 bg_image: "images/feature-bg.jpg"
 club: ["SJER"]
-event_datetime: "2023-10-28 07:00:00"
+event_datetime: "2023-10-28"
 location: "Eagleswood Township, NJ"
 event_type: "FastKIDZ"
 event_series: "Hare Scramble Series"
@@ -16,5 +16,6 @@ attachments:
 draft: false
 ---
 
-Morning race: 10:00am
-Afternoon race: 1:00pm
+Pee-Wee: 11:00AM
+Junior: 12:30PM
+Youth: 2:15PM

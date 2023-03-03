@@ -4,7 +4,7 @@ description: "A chance for the kids to try out an enduro format!"
 preview_image: "images/logos/clubs/sjer.png"
 bg_image: "images/feature-bg.jpg"
 club: ["SJER"]
-event_datetime: "2023-03-18 07:00:00"
+event_datetime: "2023-03-18"
 location: "TBA"
 event_type: "Special"
 event_series: "Special Series"

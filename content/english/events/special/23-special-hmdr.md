@@ -4,7 +4,7 @@ description: "You'll be seeing rocks in your dreams"
 preview_image: "images/logos/clubs/hmdr.png"
 bg_image: "images/feature-bg.jpg"
 club: ["HMDR"]
-event_datetime: "2023-05-29 07:00:00"
+event_datetime: "2023-05-29"
 location: "Berwick, PA"
 event_type: "Special"
 event_series: "Special Series"

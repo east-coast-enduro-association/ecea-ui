@@ -10,7 +10,6 @@ categories:
   - News
 description: Youth Riders get your 2023 Numbers
 tags:
-  - fast kidz
   - fastkidz
 draft: false
 type: post

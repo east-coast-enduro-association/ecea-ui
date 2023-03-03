@@ -4,7 +4,7 @@ description: "Test your mettle"
 preview_image: "images/logos/clubs/rorr.png"
 bg_image: "images/feature-bg.jpg"
 club: ["RORR"]
-event_datetime: "2023-05-27 07:00:00"
+event_datetime: "2023-05-27"
 location: "Tamaqua, PA"
 event_type: "Special"
 event_series: "Special Series"

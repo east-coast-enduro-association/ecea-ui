@@ -4,7 +4,7 @@ description: "Last one!"
 preview_image: "images/logos/clubs/pber.webp"
 bg_image: "images/feature-bg.jpg"
 club: ["PBER"]
-event_datetime: "2023-11-26 07:00:00"
+event_datetime: "2023-11-26"
 location: "TBA"
 event_type: "Dual Sport"
 event_series: "Dual Sport Series"

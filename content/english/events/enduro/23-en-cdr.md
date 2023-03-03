@@ -4,12 +4,17 @@ description: "Back in the sand"
 preview_image: "images/logos/clubs/cdr.png"
 bg_image: "images/feature-bg.jpg"
 club: ["CDR"]
-event_datetime: "2023-08-27 07:00:00"
+event_datetime: "2023-08-27"
 location: "9544 Noble St Mauricetown, NJ 08329"
 event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
 event_format: "Timekeeping"
 closed_course: "No"
+start_grid: ""
+key_time: 2023-08-27T09:00:00
+check_in_time: 2023-08-27T07:00:00
+gas_away: "Yes"
+registration_url: ""
 flyer: ""
 attachments:
 draft: false

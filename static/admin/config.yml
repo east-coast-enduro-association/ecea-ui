@@ -18,12 +18,16 @@ collections:
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Thumbnail Image", name: "image", widget: "image"}
-      - {label: "Background Image", name: "bg_image", widget: "image"}
-      - {label: "Categories", name: "categories", widget: "list"}
+      - {label: "Background Image", name: "bg_image", widget: "image", media_folder: "/static/images/logos"}
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        options: ["Announcement", "News", "On Your Minute"]
+        multiple: true
       - {label: "Description", name: "description", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
-      - {label: "Blog Entry Type", name: "type", widget: "string"}
+      - {label: "Blog Entry Type", name: "type", widget: "hidden", default: "post"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "content-pages"
     label: "Content Pages"
@@ -39,81 +43,96 @@ collections:
         file: "content/english/contact.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
-  # - name: "enduro-event" # Used in routes, e.g., /admin/collections/blog
-  #   label: "Enduro Event" # Used in the UI
-  #   folder: "content/english/events/enduro" # The path to the folder where the documents are stored
-  #   create: true # Allow users to create new documents in this collection
-  #   slug: "{{year}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-  #   fields: # The fields for each document, usually in front matter
-  #     - {label: "Draft", name: "draft", widget: "boolean", default: false}
-  #     - {label: "Title", name: "title", widget: "string"}
-  #     - {label: "Tag Line", name: "description", widget: "string"}
-  #     - {label: "Club", name: "club", widget: "select", multiple: true,
-  #         options: ["BER", "CDR", "CJCR", "DVTR", "GMER", "HMDR", "IDR", "MCI", "MMC", "OCCR", "RORR", "RRMC", "SJER", "SPER", "STER", "TCSMC", "VFTR"]
-  #       }
-  #     - {label: "Event Date", name: "event_datetime", widget: "datetime"}
-  #     - {label: "Address", name: "location", widget: "string"}
-  #     - {label: "Event Type", name: "event_type", widget: "select",
-  #         options: ["Enduro"]
-  #       }
-  #     - {label: "Event Format", name: "event_format", widget: "select",
-  #         options: ["Time Keeping", "Restart", "Sprint Enduro", "Dual Sport", "Other"]
-  #       }
-  #     - {label: "Event Series", name: "event_series", widget: "select", default: "ECEA Enduro Championship Series",
-  #         options: ["ECEA Enduro Championship Series"]
-  #       }
-  #     - {label: "Closed course?", name: "closed_course", widget: "select",
-  #         options: ["Yes", "No"]
-  #       }
-  #     - {label: "Preview Image", name: "preview-image", media_folder: "/static/events/previews", widget: "image"}
-  #     - {label: "Background Image", name: "bg-image", widget: "image", media_folder: "/static/events/backgrounds", default: "static/images/feature-bg.jpg"}
-  #     - {label: "Flyer Image", name: "flyer", media_folder: "/static/events/flyers", widget: "image"}
-  #     - label: "Route Sheet, Confirmation Sheet, etc"
-  #       name: "attachments"
-  #       widget: "object"
-  #       fields:
-  #       - label: "Attachment 1"
-  #         name: "attachment1"
-  #         widget: "object"
-  #         fields:
-  #           - label: "Label"
-  #             name: "label"
-  #             widget: "string"
-  #           - label: "File"
-  #             name: "path"
-  #             widget: "file"
-  #             default: "/static/documents/events/attachments"
-  #       - label: "Attachment 2"
-  #         name: "attachment2"
-  #         widget: "object"
-  #         fields:
-  #           - label: "Label"
-  #             name: "label"
-  #             widget: "string"
-  #           - label: "File"
-  #             name: "path"
-  #             widget: "file"
-  #             default: "/static/events/attachments"
-  #       - label: "Attachment 3"
-  #         name: "attachment3"
-  #         widget: "object"
-  #         fields:
-  #           - label: "Label"
-  #             name: "label"
-  #             widget: "string"
-  #           - label: "File"
-  #             name: "path"
-  #             widget: "file"
-  #             default: "/static/events/attachments"
-  #       - label: "Attachment 4"
-  #         name: "attachment4"
-  #         widget: "object"
-  #         fields:
-  #           - label: "Label"
-  #             name: "label"
-  #             widget: "string"
-  #           - label: "File"
-  #             name: "path"
-  #             widget: "file"
-  #             default: "/static/events/attachments"
-  #     - {label: "Description and information about event", name: "body", widget: "markdown"}
+  - name: "enduro-event" # Used in routes, e.g., /admin/collections/blog
+    label: "Enduro Event" # Used in the UI
+    folder: "content/english/events/enduro" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{event_type}}-{{club}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Tag Line", name: "description", widget: "string"}
+      - {label: "Club", name: "club", widget: "select", multiple: true,
+          options: ["BER", "CDR", "CJCR", "DVTR", "GMER", "HMDR", "IDR", "MCI", "MMC", "OCCR", "RORR", "RRMC", "SJER", "SPER", "STER", "TCSMC", "VFTR"]
+        }
+      - {label: "Event Date", name: "event_datetime", widget: "datetime"}
+      - {label: "Address", name: "location", widget: "string"}
+      - {label: "Event Type", name: "event_type", widget: "hidden", default: "Enduro"}
+      - {label: "Event Format", name: "event_format", widget: "select",
+          options: ["Time Keeping", "Restart", "Sprint Enduro", "National Enduro", "Other"]
+        }
+      - {label: "Event Series", name: "event_series", widget: "hidden", default: "ECEA Enduro Championship Series"}
+      - {label: "Closed course?", name: "closed_course", widget: "select",
+          options: ["Yes", "No"]
+        }
+      - label: "Starting Grid URL"
+        name: "start_grid"
+        widget: "string"
+        required: false
+      - label: "Key Time"
+        name: "key_time"
+        widget: "datetime"
+      - label: "Check In Time"
+        name: "check_in_time"
+        widget: "datetime"
+        hint: "What time does check-in open in the morning?"
+      - {label: "Club Logo", name: "preview-image", media_folder: "/static/events/previews", widget: "image"}
+      - {label: "Background Image", name: "bg-image", widget: "hidden", default: "static/images/feature-bg.jpg"}
+      - {label: "Flyer Image", name: "flyer", media_folder: "/static/events/flyers", widget: "image", required: false}
+      - label: "Route Sheet, Confirmation Sheet, etc"
+        name: "attachments"
+        widget: "object"
+        required: false
+        hint: "These files are not required yet. You can come back and add them later."
+        fields:
+        - label: "Confirmation Sheet"
+          name: "attachment1"
+          widget: "object"
+          required: false
+          fields:
+            - label: "Label"
+              name: "label"
+              widget: "string"
+              default: "Confirmation Sheet"
+            - label: "File"
+              name: "path"
+              widget: "file"
+              default: "/static/documents/events/attachments/events"
+        - label: "Route Sheet"
+          name: "attachment2"
+          widget: "object"
+          required: false
+          fields:
+            - label: "Label"
+              name: "label"
+              widget: "string"
+              default: "Route Sheet"
+            - label: "File"
+              name: "path"
+              widget: "file"
+              default: "/static/events/attachments/events"
+        - label: "Other Document"
+          name: "attachment3"
+          widget: "object"
+          required: false
+          fields:
+            - label: "Label"
+              name: "label"
+              widget: "string"
+            - label: "File"
+              name: "path"
+              widget: "file"
+              default: "/static/events/attachments/events"
+        - label: "Other Document"
+          name: "attachment4"
+          widget: "object"
+          required: false
+          fields:
+            - label: "Label"
+              name: "label"
+              widget: "string"
+            - label: "File"
+              name: "path"
+              widget: "file"
+              default: "/static/events/attachments/events"
+      - {label: "Description and information about event", name: "body", widget: "markdown"}

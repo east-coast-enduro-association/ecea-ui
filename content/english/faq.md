@@ -111,7 +111,7 @@ At the sign-up tent/trailer, you will be able to sign your kid(s) up (obviously)
 
 Next, gear them up! It's time to go to inspection. The club just wants to make sure your kid is safe and has the appropriate gear and you're not sending them into the trail on a razer scooter. Have fun! Tech inspection is also to check your transponder, it is up to the riders to make sure he gets scored. slow thru finish check to make sure you get scored.
 
-#### 4.  Scholarship Program 
+#### 4. Scholarship Program 
 
 The East Coast Enduro Association (ECEA) has two scholarship programs in place that are open to Youth and Adults who are continuing their education through college or trades or even continuing education certificate programs:
 

@@ -4,7 +4,7 @@ description: "Put sand in your pants"
 preview_image: "images/logos/clubs/cdr.png"
 bg_image: "images/feature-bg.jpg"
 club: ["CDR"]
-event_datetime: "2023-05-06 07:00:00"
+event_datetime: "2023-05-06"
 location: "Millville"
 event_type: "FastKIDZ"
 event_series: "Hare Scramble Series"
@@ -16,5 +16,6 @@ attachments:
 draft: false
 ---
 
-Morning race: 10:00am
-Afternoon race: 1:00pm
+Pee-Wee: 11:00AM
+Junior: 12:30PM
+Youth: 2:15PM
