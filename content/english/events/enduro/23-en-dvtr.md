@@ -20,7 +20,6 @@ event_type: Enduro
 event_format: Restart
 event_series: ECEA Enduro Championship Series
 registration_date: ""
-preview-image: /static/images/logos/clubs/dvtr.jpg
 ---
 
 There's a mountain. There are rocks on it. Sometimes it's foggy, sometimes it's not. Point your dirtbike at it and open the throttle already.

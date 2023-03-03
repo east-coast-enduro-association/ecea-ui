@@ -4,7 +4,8 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: "static/images/blog" # Media files will be stored here by default.
+media_folder: static/images/blog # Media files will be stored here by default.
+public_folder: /images
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
@@ -86,9 +87,10 @@ collections:
         required: false
       - {label: "Description and information about event", name: "body", widget: "markdown"}
       - label: "Club Logo"
-        name: "preview-image"
+        name: "preview_image"
         widget: "image"
         media_folder: "/static/images/logos/clubs"
+        public_folder: "images/logos/clubs"
       - {label: "Background Image", name: "bg-image", widget: "hidden", default: "images/feature-bg.jpg"}
       - label: "Flyer Image"
         name: "flyer"
