@@ -1,6 +1,6 @@
 ---
 title: "Shotgun Enduro"
-description: "This is the one for masochists"
+description: "Back to Delano, Still Shotgun worthy trail"
 preview_image: "images/logos/clubs/hmdr.png"
 bg_image: "images/feature-bg.jpg"
 club: ["HMDR"]
@@ -20,4 +20,4 @@ attachments:
 draft: false
 ---
 
-Hosted at the same location as Locked And Loaded Hard Enduro, this one goes out to those who yearn to test their limits.
+This years event is back at a familiar venue in the Delano area.. New start location and some High Mountain classic trails.
