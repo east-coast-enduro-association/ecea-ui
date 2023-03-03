@@ -119,8 +119,8 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/documents/events/attachments/events"
-              public_folder: "documents/events/attachments/events"
+              media_folder: "/static/attachments/events"
+              public_folder: "attachments/events"
               required: false
         - label: "Route Sheet"
           name: "attachment2"
@@ -135,8 +135,8 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/documents/attachments/events"
-              public_folder: "documents/events/attachments/events"              
+              media_folder: "/static/attachments/events"
+              public_folder: "attachments/events"              
               required: false
         - label: "Other Document"
           name: "attachment3"
@@ -150,8 +150,8 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/documents/attachments/events"
-              public_folder: "documents/events/attachments/events"              
+              media_folder: "/static/attachments/events"
+              public_folder: "attachments/events"              
               required: false
         - label: "Other Document"
           name: "attachment4"
@@ -165,6 +165,6 @@ collections:
             - label: "File"
               name: "path"
               widget: "file"
-              media_folder: "/static/documents/attachments/events"
-              public_folder: "documents/events/attachments/events"
+              media_folder: "/static/attachments/events"
+              public_folder: "attachments/events"
               required: false
