@@ -13,7 +13,7 @@ closed_course: "No"
 start_grid: ""
 key_time: 2023-10-22T09:00:00
 check_in_time: 2023-10-22T07:00:00
-gas_away: "Yes"
+gas_away: "No"
 registration_url: ""
 flyer: ""
 attachments:
