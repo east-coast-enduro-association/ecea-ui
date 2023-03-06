@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Update on Greenbrier
+title: An Update on Greenbrier Rows
 author: Michael Abramo
 date: 2023-03-06T00:42:49.739Z
 image: images/blog/ecea-small.png
