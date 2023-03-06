@@ -15,4 +15,10 @@ tags:
 draft: false
 type: post
 ---
-[c](clubs/tcsmc)TCSMC is working hard on assigning over 500+ riders for their Greenbrier Enduro. The event referee should be reeven[events/Enduro/23-en-tcsm](clubs/tcsmc)viewing the row assignments soon so that we can post the final list on Wednesday.
+[TCSMC](clubs/tcsmc) is working hard on assigning over 500+ riders for their Greenbrier Enduro. The event referee should be reviewing the row assignments soon so that we can post the final list on Wednesday.
+
+The confirmation sheet and route sheet will be posted on Friday on the [Greenbrier event page (link)](events/enduro/23-en-tcsmc), 2 days for the event. 
+
+If you are running for championship points and did not make the cutoff for Greenbrier, remember that there are 16 enduros this year and only your best 12 results are scored. That means you have 4 events that you can skip and it will not impact your championship points.
+
+Good luck all!
