@@ -19,10 +19,10 @@ flyer: "images/events/flyers/23-en-tcsmc-flyer.jpg"
 attachments:
     - label: Flyer
       filepath: events/23-en-tcsmc-flyer.pdf
-    # - label: Confirmation Sheet
-    #   filepath: events/23-en-tcsmc-confirmation.pdf
-    # - label: Route Sheet
-    #   filepath: events/23-en-tcsmc-route-sheet-1.pdf
+    - label: Confirmation Sheet
+      filepath: events/23-en-tcsmc-confirmation.pdf
+    - label: Route Sheet
+      filepath: events/23-en-tcsmc-route-sheet.pdf
     # - label: RS File
     #   filepath: events/23-en-tcsmc-route-sheet-4.rs
     # - label: JART 1
