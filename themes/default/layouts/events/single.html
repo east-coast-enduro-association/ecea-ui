@@ -53,7 +53,7 @@
           {{if .Params.start_grid}}<li><span>Starting Grid:</span> <strong><a href="{{.Params.start_grid}}">Click Here for Starting Grid</a></strong></li>{{end}}
 
           {{ range .Params.attachments }}
-          <li><span>{{ .label }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .filepath | urlize}}">Click Here to Download</a></strong></li>
+          <li><span>{{ .label }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .filepath | urlize}}" target="_blank">Click Here to Download</a></strong></li>
           {{ end }}
         </ul>
       </div>
