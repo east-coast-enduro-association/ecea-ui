@@ -55,6 +55,7 @@
           {{ range .Params.attachments }}
           <li><span>{{ .label }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .filepath | urlize}}" target="_blank">Click Here to Download</a></strong></li>
           {{ end }}
+          <li><span>Information Last Updated:</span> <strong>{{ .Page.Lastmod | time.Format ":date_medium"}} at {{ .Page.Lastmod | time.Format ":time_short"}}</strong></li>
         </ul>
       </div>
 
