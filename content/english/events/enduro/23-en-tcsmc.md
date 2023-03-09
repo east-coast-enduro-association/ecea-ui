@@ -23,12 +23,12 @@ attachments:
       filepath: events/23-en-tcsmc-confirmation.pdf
     - label: Route Sheet
       filepath: events/23-en-tcsmc-route-sheet.pdf
-    # - label: RS File
-    #   filepath: events/23-en-tcsmc-route-sheet-4.rs
-    # - label: JART 1
-    #   filepath: events/23-en-tcsmc-route-sheet-2.pdf
-    # - label: JART 2
-    #   filepath: events/23-en-tcsmc-route-sheet-3.pdf
+    - label: RS File
+      filepath: events/23-en-tcsmc-jart-3.rs
+    - label: JART 1
+      filepath: events/23-en-tcsmc-jart-1.pdf
+    - label: JART 2
+      filepath: events/23-en-tcsmc-jart-2.pdf
 
 draft: false
 ---
