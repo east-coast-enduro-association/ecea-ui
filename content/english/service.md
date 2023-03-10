@@ -99,6 +99,10 @@ service:
       name: Funnelweb Filters
       content: "With its unique pyramid-foam, FunnelWeb Filters feature increased surface areafor longer ride times and improved engine performance"
 
+    - logo: images/sponsors/blackrock-synthetics.png
+      name: Blackrock Synthetics
+      content: "Locally based out of Ashland, PA, Blackrock Synthetics is your source for Amsoil products"
+
 ############################# call to action #################################
 cta:
   enable : true

@@ -39,22 +39,23 @@
           {{if .Params.registration_date}}<li><span>Registration Opens:</span> <strong>{{ .Params.registration_date | time.Format ":date_medium"}} {{ .Params.registration_date | time.Format ":time_short"}}</strong></li>{{end}}
                 
           {{ if .Params.registration_url }}
-            <li><span>Event Entry:</span> <strong><a href="{{.Params.registration_url}}">Click Here to Enter</a></strong></li>
+            <li><span>Event Entry:</span> <strong><a href="{{.Params.registration_url}}" target="_blank">Click Here to Enter</a></strong></li>
           {{ else }}
             {{if (in .Params.Event_Series "Enduro")}}
-            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/Enduro/PreEntry.aspx">Click Here to Enter</a></strong></li>
+            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/Enduro/PreEntry.aspx" target="_blank">Click Here to Enter</a></strong></li>
             {{ else if (in .Params.Event_Series "Hare" ) }}
-            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx">Click Here to Enter</a></strong></li>
+            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx" target="_blank">Click Here to Enter</a></strong></li>
             {{ else if (in .Params.Event_Series "fast" ) }}
-            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx">Click Here to Enter</a></strong></li>
+            <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx" target="_blank">Click Here to Enter</a></strong></li>
             {{ end }} 
           {{ end }}
           
-          {{if .Params.start_grid}}<li><span>Starting Grid:</span> <strong><a href="{{.Params.start_grid}}">Click Here for Starting Grid</a></strong></li>{{end}}
+          {{if .Params.start_grid}}<li><span>Starting Grid:</span> <strong><a href="{{.Params.start_grid}}" target="_blank">Click Here for Starting Grid</a></strong></li>{{end}}
 
           {{ range .Params.attachments }}
           <li><span>{{ .label }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .filepath | urlize}}" target="_blank">Click Here to Download</a></strong></li>
           {{ end }}
+          
           <li><span>Information Last Updated:</span> <strong>{{ .Page.Lastmod | time.Format ":date_medium"}} at {{ .Page.Lastmod | time.Format ":time_short"}}</strong></li>
         </ul>
       </div>
