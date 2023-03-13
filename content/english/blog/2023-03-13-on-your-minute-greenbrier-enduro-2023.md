@@ -17,8 +17,6 @@ type: post
 ---
 Each year, loading up the truck after the second day of Hammer Run in November is bitter sweet for me. On one hand I just got to ride some of the best trails around for two awesome days of fun, on the other hand, I know the enduro season is now over and it will be four long months until we start a new year at Greenbriar. Driving out of that parking lot on that first Sunday in November, I always look forward to pulling back into that same lot on the second Sunday in March.
 
-
-
 ![](/images/335694050_924903555435698_6727499967387022290_n.jpg)
 
 If you’re like me, The Sunday of Greenbriar is one of the best days of the year. It signals the end of winter and the start of a new ECEA Enduro season, not to mention you get to race and ride on some of the best trails our sport has to offer. Everyone has their favorite events and for me Greenbriar is at the top of the list. It has it all. A great parking lot, a big turnout, well organized and supportive club, and especially amazing single track. Greenbriar 2023 might have been the best one yet.
@@ -36,6 +34,8 @@ Kerri Shank (Husq) took first in Women’s class\
 Chuck Sullivan (Gas) took First in Masters Class\
 Jim Jenkins (Yam) took first in Golden Class\
 And Donald Kirpatrick (KTM) brought home first in The Legends Class  
+
+(See full [results here](https://www.moto-tally.com/ECEA/Enduro/Results.aspx))
 
 We had many new riders who came out and gave this enduro a go and I would like to recognize all of them.
 
