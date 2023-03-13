@@ -17,13 +17,13 @@ type: post
 ---
 Each year, loading up the truck after the second day of Hammer Run in November is bitter sweet for me. On one hand I just got to ride some of the best trails around for two awesome days of fun, on the other hand, I know the enduro season is now over and it will be four long months until we start a new year at Greenbriar. Driving out of that parking lot on that first Sunday in November, I always look forward to pulling back into that same lot on the second Sunday in March.
 
-![](/images/335694050_924903555435698_6727499967387022290_n.jpg)
+![](/images/blog/335694050_924903555435698_6727499967387022290_n.jpg)
 
 If you’re like me, The Sunday of Greenbriar is one of the best days of the year. It signals the end of winter and the start of a new ECEA Enduro season, not to mention you get to race and ride on some of the best trails our sport has to offer. Everyone has their favorite events and for me Greenbriar is at the top of the list. It has it all. A great parking lot, a big turnout, well organized and supportive club, and especially amazing single track. Greenbriar 2023 might have been the best one yet.
 
 The weather was as good as we could have hoped for this time of year. It was not terribly cold. It was clear and dry. The clouds kept the sun from blinding us first thing in the morning. With the rain on Saturday, the trails were a bit slippery early on but that gave way to lots of sweet chocolate cake dirt later in the day. Speaking of trails, they never ended. All day long, all race long, tight flowing single track that went on and on. Some challenging and very tight sections of stick farms broke up the flow and made things interesting. 
 
-![](/images/336008402_893441278543188_389858030745943963_n.jpg)
+![](/images/blog/336008402_893441278543188_389858030745943963_n.jpg)
 
 The guys and gals of TCSMC did an amazing job as usual. The trails were well marked, well thought out and there were club members everywhere sweeping and helping out in the woods. Justin Lafferty (KTM) picked up where he left off last year and finished the day with the overall win. Cameron Harris (Gas Gas) came in second and Robert Lapinski (Sherco) was on the podium finishing in 3rd overall.
 
