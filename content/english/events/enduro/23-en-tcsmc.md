@@ -29,6 +29,7 @@ attachments:
       filepath: events/23-en-tcsmc-jart-1.pdf
     - label: JART 2
       filepath: events/23-en-tcsmc-jart-2.pdf
+expiryDate: 2023-03-13
 
 draft: false
 ---
