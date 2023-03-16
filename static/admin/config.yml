@@ -127,10 +127,10 @@ collections:
               default: "Confirmation Sheet"
               required: false
             - label: "File"
-              name: "path"
+              name: "filepath"
               widget: "file"
               media_folder: "/static/attachments/events"
-              public_folder: "attachments/events"
+              public_folder: "events"
               required: false
         - label: "Route Sheet"
           name: "attachment2"
@@ -143,10 +143,10 @@ collections:
               default: "Route Sheet"
               required: false
             - label: "File"
-              name: "path"
+              name: "filepath"
               widget: "file"
               media_folder: "/static/attachments/events"
-              public_folder: "attachments/events"              
+              public_folder: events"              
               required: false
         - label: "Other Document"
           name: "attachment3"
@@ -158,10 +158,10 @@ collections:
               widget: "string"
               required: false
             - label: "File"
-              name: "path"
+              name: "filepath"
               widget: "file"
               media_folder: "/static/attachments/events"
-              public_folder: "attachments/events"              
+              public_folder: "events"              
               required: false
         - label: "Other Document"
           name: "attachment4"
@@ -173,8 +173,8 @@ collections:
               widget: "string"
               required: false
             - label: "File"
-              name: "path"
+              name: "filepath"
               widget: "file"
               media_folder: "/static/attachments/events"
-              public_folder: "attachments/events"
+              public_folder: "events"
               required: false

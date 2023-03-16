@@ -22,16 +22,16 @@ registration_date: ""
 attachments:
   attachment1:
     label: Confirmation Sheet
-    path: attachments/events/2023-confirmation-313-curly-fern-enduro.pdf
+    filepath: events/2023-confirmation-313-curly-fern-enduro.pdf
   attachment2:
     label: Route Sheet
-    path: attachments/events/2023-routesheet-313-curly-fern-enduro.pdf
+    filepath: events/2023-routesheet-313-curly-fern-enduro.pdf
   attachment3:
     label: RS File
-    path: attachments/events/2023-curly-fern-program-313.rs
+    filepath: events/2023-curly-fern-program-313.rs
   attachment4:
     label: JART Chart
-    path: attachments/events/2023-curly-fern-rollchart-313.pdf
+    filepath: events/2023-curly-fern-rollchart-313.pdf
 ---
 
 A true test of rider fitness! This year features an improved course with some rarely-used trail. I hope you have kept your timekeeping skills sharp over the winter - SJER pulls out all the stops for this classic NJ enduro.
