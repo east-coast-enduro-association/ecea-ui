@@ -18,7 +18,7 @@ event_series: ECEA Enduro Championship Series
 closed_course: "'No'"
 gas_away: "'Yes'"
 key_time: 2023-03-26T09:00:00
-check_in_time: 2023-03-26T10:00:00.000Z
+check_in_time: 2023-03-26T06:00:00.000Z
 registration_date: ""
 attachments: null
 ---
