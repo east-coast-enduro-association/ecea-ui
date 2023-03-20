@@ -32,6 +32,7 @@ attachments:
   attachment4:
     label: JART Chart
     filepath: events/2023-curly-fern-rollchart-313.pdf
+expiryDate: 2023-03-20
 ---
 
 A true test of rider fitness! This year features an improved course with some rarely-used trail. I hope you have kept your timekeeping skills sharp over the winter - SJER pulls out all the stops for this classic NJ enduro.
