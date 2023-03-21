@@ -48,5 +48,6 @@ Lastly, a BIG thank you to every one of you SJER club members, trail workers and
 
 Credit for photography goes to Daniel Givens (DVTR), Barry Seppy (MMC), and Will Horn with [`Snap That Media`](https://snapthatmedia.smugmug.com/23-MX-Season/ECEA-Enduros/Round-2-Curly-Fern).  
 
-See you all next week at Sandy Lane for some games of tree pin ball
+See you all next week at Sandy Lane for some games of tree pin ball!
+
 Pig Pen
