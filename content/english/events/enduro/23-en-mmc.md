@@ -20,7 +20,28 @@ gas_away: "'Yes'"
 key_time: 2023-03-26T09:00:00
 check_in_time: 2023-03-26T06:00:00.000Z
 registration_date: ""
-attachments: null
+attachments:
+  attachment1:
+    label: Confirmation Sheet
+    filepath: events/2023-sandylane-confirmation.pdf
+  attachment2:
+    label: Route Sheet Long
+    filepath: events/2023-sandylane-route-sheet-long.pdf
+  attachment3:
+    label: Route Sheet Short
+    filepath: events/2023-sandylane-route-sheet-short.pdf
+  attachment4:
+    label: JART Chart Long
+    filepath: events/2023-rollchartlong.pdf
+  attachment5:
+    label: JART Chart Short
+    filepath: events/2023-rollchartshort.pdf
+  attachment6:
+    label: RS File Long
+    filepath: events/2023-sandylane-routesheet-long.rs
+  attachment7:
+    label: RS File Short
+    filepath: events/2023-sandylane-routesheet-short.rs
 ---
 An old-school New Jersey enduro. Trails narrower than your bars paired with timekeeping tricks to keep your mind young.
 
