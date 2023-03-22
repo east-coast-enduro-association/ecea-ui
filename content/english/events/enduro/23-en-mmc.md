@@ -42,7 +42,7 @@ attachments:
   attachment7:
     label: RS File Short
     filepath: events/2023-sandylane-routesheet-short.rs
-expiryDate: 2023-03-22
+expiryDate: 2023-03-27
 ---
 An old-school New Jersey enduro. Trails narrower than your bars paired with timekeeping tricks to keep your mind young.
 
