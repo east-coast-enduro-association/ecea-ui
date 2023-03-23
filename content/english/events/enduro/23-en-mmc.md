@@ -32,10 +32,10 @@ attachments:
     filepath: events/2023-sandylane-route-sheet-short.pdf
   attachment4:
     label: JART Chart Long
-    filepath: events/2023-rollchartlong.pdf
+    filepath: events/2023-sandylane-rollchartlong.pdf
   attachment5:
     label: JART Chart Short
-    filepath: events/2023-rollchartshort.pdf
+    filepath: events/2023-sandylane-rollchartshort.pdf
   attachment6:
     label: RS File Long
     filepath: events/2023-sandylane-routesheet-long.rs
