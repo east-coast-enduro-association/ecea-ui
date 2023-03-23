@@ -1,7 +1,7 @@
 # Enduro Route Sheet
      title SANDY LANE
     title2 ENDURO 2023
-    title3 SHORT COURSE
+    title3 LONG COURSE
      speed   0.00  24
       note   0.20 0.20 LBT
       note   1.53 1.53 LWR
@@ -33,7 +33,11 @@
       note  31.24 31.24 A/B-C SPLIT
       note  31.25 A/B RIDERS RTR
       note  31.26 C RIDERS STRAIGHT
-     reset  31.90  49.00
+      note  32.26 32.26 STR
+      note  37.04 37.04 STR
+      note  38.57 38.57 LTR
+      note  38.80 38.80 RWR
+     reset  38.80  49.00
       note  49.10 49.10 LTR
       note  49.20 49.20 RTR
      start  49.20
@@ -41,7 +45,8 @@
       note  52.57 52.57 STR
       note  54.14 54.14 STR
       note  56.15 56.15 LTR
- free_zone  56.80  61.30
+ free_zone  56.80  64.60
+     reset  56.80  61.30
       note  61.30 61.30 RWR
       note  61.46 61.46 LWR
       note  62.76 62.76 SWR   XX2 WAY TRAFFIC
