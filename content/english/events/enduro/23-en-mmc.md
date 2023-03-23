@@ -44,6 +44,14 @@ attachments:
     filepath: events/2023-sandylane-routesheet-short.rs
 expiryDate: 2023-03-27
 ---
+
+**IMPORTANT:** Note that there is a split, meaning there is a section that only riders in certain classes will ride. If you are in any of the following classes, then you will NOT ride the split section and you will follow the “short” course route sheet:
+
+A-SSR-50 & 55+ B-SSR-50 & 55+ and ALL C-Classes & ALL Specialty Classes.
+
+If you are NOT in any of the above classes, you will follow the “long” course route sheet.
+
 An old-school New Jersey enduro. Trails narrower than your bars paired with timekeeping tricks to keep your mind young.
 
 Online Pre-entry is open until 7pm on Thursday, March 23rd. Post-Entry will be available on Saturday afternoon from 4pm to 6pm and Sunday morning 6am until 9am.
+
