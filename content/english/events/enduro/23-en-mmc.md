@@ -42,7 +42,7 @@ attachments:
   attachment7:
     label: RS File Short
     filepath: events/2023-sandylane-rs-short.rs
-expiryDate: 2023-03-27
+expiryDate: 2023-03-26
 ---
 
 **IMPORTANT:** Note that there is a split, meaning there is a section that only riders in certain classes will ride. If you are in any of the following classes, then you will NOT ride the split section and you will follow the “short” course route sheet:
