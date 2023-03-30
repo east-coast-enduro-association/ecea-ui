@@ -20,7 +20,13 @@ gas_away: "No"
 key_time: 2023-04-02T09:00:00Z
 check_in_time: 2023-04-02T07:00:00.013Z
 registration_date: 2023-03-05T20:00:11.013Z
-attachments: null
+attachments: 
+  attachement1:
+    label: Confirmation Sheet
+    filepath: events/2023-pinehill-confirmation.pdf
+  attachment2:
+    label: Route Sheet
+    filepath: events/2023-pinehill-route-sheet.pdf
 ---
 
 A classic course hosted in the lovely Brendan T. Byrne State Forest. Expect fast trail with some familiar stick farms thrown in.
