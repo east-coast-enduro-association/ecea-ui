@@ -22,10 +22,10 @@ check_in_time: 2023-04-02T07:00:00.013Z
 registration_date: 2023-03-05T20:00:11.013Z
 attachments: 
   attachement1:
-    label: Confirmation Sheet
+    label: Confirmation Sheet (Revision 1)
     filepath: events/2023-pinehill-confirmation.pdf
   attachment2:
-    label: Route Sheet
+    label: Route Sheet (Revision 1)
     filepath: events/2023-pinehill-route-sheet.pdf
 ---
 
