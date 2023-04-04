@@ -19,8 +19,6 @@ There were rumors going around for a few months that the CJCR crew were up to so
 
 YES! YES! HOME RUN! GRAND SLAM!
 
-https://www.youtube.com/watch?v=LKfsv_dD2w4
-
 Let’s call it what it is. CJCR went from an Enduro that was 33 miles of whoops, then lunch, then 33 more miles of the exact same whoops. To a bad ass and super fun Enduro of 6 sections of single track, fire cuts, lots of virgin woods trials, some tight stuff, some sand, some whoops and a damn near 10-mile section of everything thrown in at the end. Holy Hell, where’s the Tylenol! 
 
 In one year, Pine Hill went from a race that most of us only did for points to a “must do” event that is going to sell out every year moving forward. Yes, I’m gushing over this race- Because I loved it !! and so did all my friends who rode it! It was a blast! I can’t say enough about the time and work the CJCR crew put into turning this event around. None of what they did was easy and it sure wasn’t done in a year. They were persistent and dedicated to bringing this race back and it payed off big time. Pine Hill is back on the map and if you missed it- man did you miss it!
