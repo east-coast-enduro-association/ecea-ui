@@ -27,6 +27,7 @@ attachments:
   attachment2:
     label: Route Sheet (Revision 1)
     filepath: events/2023-pinehill-route-sheet.pdf
+expiryDate: 2023-04-03
 ---
 
 A classic course hosted in the lovely Brendan T. Byrne State Forest. Expect fast trail with some familiar stick farms thrown in.
