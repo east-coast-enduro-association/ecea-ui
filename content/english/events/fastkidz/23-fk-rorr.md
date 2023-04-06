@@ -4,7 +4,7 @@ description: "Turn out your clickers"
 preview_image: "images/logos/clubs/rorr.png"
 bg_image: "images/feature-bg.jpg"
 club: ["RORR"]
-event_datetime: "2023-06-16"
+event_datetime: "2023-06-17"
 location: "Tamaqua, PA"
 event_type: "FastKIDZ"
 event_series: "Hare Scramble Series"
