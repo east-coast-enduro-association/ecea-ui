@@ -18,7 +18,7 @@ registration_url: ""
 flyer: "images/events/flyers/23-en-tcsmc-flyer.jpg"
 attachments:
     - label: Flyer
-      filepath: events/23-en-tcsmc-flyer.jpg
+      filepath: /events/23-en-tcsmc-flyer.jpg
     - label: Confirmation Sheet
       filepath: events/23-en-tcsmc-confirmation.pdf
     - label: Route Sheet
