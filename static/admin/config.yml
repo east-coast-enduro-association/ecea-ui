@@ -178,3 +178,48 @@ collections:
               media_folder: "/static/attachments/events"
               public_folder: "events"
               required: false
+  - name: "harescramble-event" # Used in routes, e.g., /admin/collections/blog
+    label: "Hare Scramble Event" # Used in the UI
+    folder: "content/english/events/harescramble" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{event_type}}-{{club}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Tag Line", name: "description", widget: "string"}
+      - {label: "Club", name: "club", widget: "select", multiple: true,
+          options: ["BER", "CDR", "CJCR", "DVTR", "GMER", "HMDR", "IDR", "MCI", "MMC", "OCCR", "RORR", "RRMC", "SJER", "SPER", "STER", "TCSMC", "VFTR"]
+        }
+      - {label: "Event Date", name: "event_datetime", widget: "datetime"}
+      - {label: "Address", name: "location", widget: "string"}
+      - {label: "Event Type", name: "event_type", widget: "hidden", default: "Enduro"}
+      - {label: "Event Format", name: "event_format", widget: "hidden", default: "Hare Scramble"}
+      - {label: "Event Series", name: "event_series", widget: "hidden", default: "ECEA Hare Scramble Series"}
+      - label: "Closed course?"
+        name: "closed_course"
+        widget: "hidden"
+        default: "Yes"
+      - label: "Check In Time"
+        name: "check_in_time"
+        widget: "datetime"
+        hint: "What time does check-in open in the morning?"
+        required: false
+      - label: Pre-Entry Date
+        name: "registration_date"
+        widget: "datetime"
+        default: ""
+        hint: "What day and time will pre-entry open?"
+        required: false
+      - {label: "Description and information about event", name: "body", widget: "markdown"}
+      - label: "Club Logo"
+        name: "preview_image"
+        widget: "image"
+        media_folder: "/static/images/logos/clubs"
+        public_folder: "images/logos/clubs"
+      - {label: "Background Image", name: "bg_image", widget: "hidden", default: "images/feature-bg.jpg"}
+      - label: "Flyer Image"
+        name: "flyer"
+        widget: "image"
+        required: false
+        media_folder: "/static/images/events/flyers"
+        public_folder: "images/events/flyers"
