@@ -1,6 +1,6 @@
 ---
 draft: false
-title: Ormond Farms
+title: CDR @ Ormond Farms
 description: Put sand in your pants
 club:
   - CDR
