@@ -11,7 +11,7 @@ event_format: Hare Scramble
 event_series: Hare Scramble Series
 closed_course: Yes
 gate_fee: $10
-check_in_time: 2023-04-14T16:38:49.460Z
+check_in_time: 2023-05-07T11:38:00.000Z
 registration_date: 2023-04-21T16:38:00.000Z
 preview_image: images/logos/clubs/cdr.png
 bg_image: images/feature-bg.jpg
