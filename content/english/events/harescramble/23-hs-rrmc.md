@@ -9,7 +9,6 @@ location: "TBA"
 event_type: "Hare Scramble"
 event_series: "Hare Scramble Series"
 event_format: "Hare Scramble"
-closed_course: "Yes"
 gate_fee: "TBA"
 flyer: ""
 attachments:
