@@ -195,10 +195,6 @@ collections:
       - {label: "Event Type", name: "event_type", widget: "hidden", default: "Enduro"}
       - {label: "Event Format", name: "event_format", widget: "hidden", default: "Hare Scramble"}
       - {label: "Event Series", name: "event_series", widget: "hidden", default: "ECEA Hare Scramble Series"}
-      - label: "Closed course?"
-        name: "closed_course"
-        widget: "hidden"
-        default: "Yes"
       - {label: "Gate Fee", name: "gate_fee", widget: "string", default: "TBA"}
       - label: "Check In Time"
         name: "check_in_time"
@@ -241,10 +237,6 @@ collections:
       - {label: "Event Type", name: "event_type", widget: "hidden", default: "fastKIDZ"}
       - {label: "Event Format", name: "event_format", widget: "hidden", default: "Hare Scramble"}
       - {label: "Event Series", name: "event_series", widget: "hidden", default: "ECEA Youth Hare Scramble Series"}
-      - label: "Closed course?"
-        name: "closed_course"
-        widget: "hidden"
-        default: "Yes"
       - {label: "Gate Fee", name: "gate_fee", widget: "string", default: "TBA"}
       - label: "Check In Time"
         name: "check_in_time"
