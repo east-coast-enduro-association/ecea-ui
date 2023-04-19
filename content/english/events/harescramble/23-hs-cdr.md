@@ -10,7 +10,7 @@ event_type: Hare Scramble
 event_format: Hare Scramble
 event_series: Hare Scramble Series
 closed_course: Yes
-gate_fee: $10
+gate_fee: "$10   "
 check_in_time: 2023-05-07T11:00:00.000Z
 registration_date: 2023-04-21T23:00:00.000Z
 preview_image: images/logos/clubs/cdr.png
@@ -20,7 +20,8 @@ attachments:
   - label: Flyer
     filepath: images/events/flyers/23-hs-cdr-flyer.png
 ---
-**RIDER LIMIT, ONLINE SIGN UP ONLY., You need a Series Number** to use the online system
+**RIDER LIMIT, ONLINE SIGN UP ONLY., You need a Series Number** to use the online system\
+**NO FRIDAY Night CAMPING** , GATES open SATURDAY 8AM, SUNDAY 6am
 
 **AMA** NUMBER is REQUIRED\
 GET ECEA Hare Scramble Series **2023 Yearly NUMBER FIRST** ..  **Need one** ,  [GO HERE](https://www.moto-tally.com/ECEA/ECEA/SeriesRegistration.aspx)\
