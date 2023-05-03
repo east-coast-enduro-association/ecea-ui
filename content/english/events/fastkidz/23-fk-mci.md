@@ -7,7 +7,7 @@ club: ["MCI"]
 event_datetime: "2023-05-20"
 location: "TBA"
 event_type: "FastKIDZ"
-event_series: "Hare Scramble Series"
+event_series: "ECEA Youth Series"
 event_format: "Hare Scramble"
 closed_course: "Yes"
 gate_fee: "TBA"

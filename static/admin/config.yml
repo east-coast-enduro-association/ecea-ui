@@ -240,7 +240,7 @@ collections:
       - {label: "Address", name: "location", widget: "string"}
       - {label: "Event Type", name: "event_type", widget: "hidden", default: "fastKIDZ"}
       - {label: "Event Format", name: "event_format", widget: "hidden", default: "Hare Scramble"}
-      - {label: "Event Series", name: "event_series", widget: "hidden", default: "ECEA Youth Hare Scramble Series"}
+      - {label: "Event Series", name: "event_series", widget: "hidden", default: "ECEA Youth Series"}
       - label: "Closed course?"
         name: "closed_course"
         widget: "hidden"

@@ -7,7 +7,7 @@ club: ["SJER"]
 event_datetime: "2023-10-28"
 location: "Eagleswood Township, NJ"
 event_type: "FastKIDZ"
-event_series: "Hare Scramble Series"
+event_series: "ECEA Youth Series"
 event_format: "Hare Scramble"
 closed_course: "Yes"
 gate_fee: "TBA"

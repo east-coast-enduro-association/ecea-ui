@@ -7,7 +7,7 @@ club: ["MMC"]
 event_datetime: "2023-10-14"
 location: "Millville"
 event_type: "FastKIDZ"
-event_series: "Hare Scramble Series"
+event_series: "ECEA Youth Series"
 event_format: "Hare Scramble"
 closed_course: "Yes"
 gate_fee: "TBA"

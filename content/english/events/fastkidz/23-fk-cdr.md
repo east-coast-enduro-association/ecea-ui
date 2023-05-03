@@ -7,7 +7,7 @@ club: ["CDR"]
 event_datetime: "2023-05-06"
 location: "161 Hesstown Rd, Millville, NJ"
 event_type: "FastKIDZ"
-event_series: "ECEA Youth Hare Scramble Series"
+event_series: "ECEA Youth Series"
 event_format: "Hare Scramble"
 closed_course: "Yes"
 gate_fee: "$10"
