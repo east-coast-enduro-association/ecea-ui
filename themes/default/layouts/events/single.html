@@ -1,28 +1,52 @@
-{{ define "main" }}
-
-{{ partial "page-title.html" . }}
-
-{{ $data := index site.Data site.Language.Lang }}
+{{ define "main" }} {{ partial "page-title.html" . }} {{ $data := index site.Data site.Language.Lang }}
 
 <section class="portfolio-single-page section-sm event-details-section">
-  <div class="container">
-    <div class="row">
-      <h2>{{.Title}}</h2>
-      <div class="col-md-8 event-flyer-img">
+    <div class="container">
+        <div class="row">
+            <h2>{{.Title}}</h2>
+            <div class="col-md-8 event-flyer-img">
 
-        <div class="post-thumb">
-          {{if .Params.flyer }}
-            {{ with .Params.flyer -}}
-            <img class="img-responsive" src="{{ . | relURL }}" alt="{{ $.Title }}">
-            {{- end }}
-          {{ else }}
-            {{ with .Params.preview_image -}}
-            <img class="img-responsive" src="{{ . | relURL }}" alt="{{ $.Title }}">
-            {{- end }}
-          {{ end }}
+                <div class="post-thumb">
+                    {{if .Params.flyer }} {{ with .Params.flyer -}}
+                    <img class="img-responsive" src="{{ . | relURL }}" alt="{{ $.Title }}"> {{- end }} {{ else }} {{ with .Params.preview_image -}}
+                    <img class="img-responsive" src="{{ . | relURL }}" alt="{{ $.Title }}"> {{- end }} {{ end }}
+                </div>
+            </div>
+
+            <div class="col-md-4 event-matter project-details">
+                <h4 class="event-matter-header">Event Details</h4>
+                <ul>
+                    {{ with .Params.Club -}}
+                    <li><span>Hosting Club:</span> {{ range . }}<a href="{{ `clubs/` | relLangURL }}{{ . | urlize }}">{{ . }} </a>{{end}}</li>{{ end }}
+                    <li><span>Date:</span> <strong>{{ .Params.event_datetime | time.Format ":date_full" }}</strong></li>
+                    <li><span>Location:</span> <strong>{{ .Params.Location }}</strong></li>
+                    {{ with .Params.Event_Series -}}
+                    <li><span>Event Series:</span> <strong>{{ . }}</strong></li>{{end}} {{if .Params.event_format}}
+                    <li><span>Event Format:</span> <strong>{{ .Params.Event_Format }}</strong></li>{{end}} {{if .Params.closed_course}}
+                    <li><span>Closed Course:</span> <strong>{{ .Params.Closed_Course }}</strong></li>{{end}} {{if .Params.gas_away}}
+                    <li><span>Gas Away:</span> <strong>{{ .Params.gas_away }}</strong></li>{{end}} {{if .Params.key_time}}
+                    <li><span>Key Time:</span> <strong>{{ .Params.key_time | time.Format ":time_short"}}</strong></li>{{end}} {{if .Params.Gate_Fee}}
+                    <li><span>Gate Fee:</span> <strong>{{ .Params.Gate_Fee }}</strong></li>{{end}} {{if .Params.check_in_time}}
+                    <li><span>Check In Time:</span> <strong>{{ .Params.check_in_time | time.Format ":time_short"}}</strong></li>{{end}} {{if .Params.registration_date}}
+                    <li><span>Registration Opens:</span> <strong>{{ .Params.registration_date | time.Format ":date_medium" }} {{ .Params.registration_date | time.Format ":time_short"}}</strong></li>{{end}} {{ if .Params.registration_url }}
+                    <li><span>Event Entry:</span> <strong><a href="{{.Params.registration_url}}" target="_blank">Click Here to Enter</a></strong></li>
+                    {{ else }} {{if (in .Params.Event_Series "Enduro")}}
+                    <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/Enduro/PreEntry.aspx" target="_blank">Click Here to Enter</a></strong></li>
+                    {{ else if (in .Params.Event_Series "Hare" ) }}
+                    <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx" target="_blank">Click Here to Enter</a></strong></li>
+                    {{ else if (in .Params.Event_Series "fast" ) }}
+                    <li><span>Event Entry:</span> <strong><a href="https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx" target="_blank">Click Here to Enter</a></strong></li>
+                    {{ end }} {{ end }} {{if .Params.start_grid}}
+                    <li><span>Starting Grid:</span> <strong><a href="{{.Params.start_grid}}" target="_blank">Click Here for Starting Grid</a></strong></li>{{end}} {{ range .Params.attachments }}
+                    <li><span>{{ .label }} :</span> <strong><a href="{{ `attachments/` | relLangURL}}{{ .filepath | urlize}}" download>Click Here to Download</a></strong></li>
+                    {{ end }}
+
+                    <li><span>Information Last Updated:</span> <strong>{{ .Page.Lastmod | time.Format ":date_medium"}} at {{ .Page.Lastmod | time.Format ":time_short"}}</strong></li>
+                </ul>
+            </div>
+
         </div>
       </div>
-
       <div class="col-md-4 event-matter project-details">
         <h4 class="event-matter-header">Event Details</h4>
         <ul>
@@ -61,15 +85,14 @@
       </div>
 
     </div>
-  </div>
 </section>
 
 <section class="event-description">
 
-  <div class="container">
-    <h3>Event Description:</h3>
-    {{ .Content }}
-  </div>
+    <div class="container">
+        <h3>Event Description:</h3>
+        {{ .Content }}
+    </div>
 </section>
 
 {{end}}
