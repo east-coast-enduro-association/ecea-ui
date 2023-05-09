@@ -1,6 +1,6 @@
 ---
 draft: false
-title: Stumpjumper
+title: Stump Jumper
 description: A premier sand run in NJ
 club:
   - MCI
