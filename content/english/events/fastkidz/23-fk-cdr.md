@@ -17,6 +17,7 @@ preview_image: images/logos/clubs/cdr.png
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/23-hs-cdr-flyer.png
 attachments: null
+expiryDate: 2023-05-09
 ---
 **NO FRIDAY CAMPING..Sorry,,  GATES OPEN SATURDAY at 8 AM.**\
 \

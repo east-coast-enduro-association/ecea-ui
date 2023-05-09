@@ -19,6 +19,7 @@ flyer: images/events/flyers/23-hs-cdr-flyer.png
 attachments:
   - label: Flyer
     filepath: images/events/flyers/23-hs-cdr-flyer.png
+expiryDate: 2023-05-09
 ---
 **RIDER LIMIT, ONLINE SIGN UP ONLY., You need a Series Number** to use the online system\
 **NO FRIDAY Night CAMPING** , GATES open SATURDAY 8AM, SUNDAY 6am
