@@ -5,7 +5,7 @@ preview_image: "images/logos/clubs/rrmc-large.png"
 bg_image: "images/feature-bg.jpg"
 club: ["RRMC"]
 event_datetime: "2023-06-11"
-location: "TBA"
+location: "199 Teed Rd, Sidney Center, NY"
 event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
 event_format: "Sprint Enduro"
