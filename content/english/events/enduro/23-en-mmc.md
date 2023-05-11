@@ -3,7 +3,6 @@ draft: false
 event_datetime: 2023-03-26
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/23-en-mmc-flyer.png
-expiryDate: 2023-03-27
 start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=3
 preview_image: images/logos/clubs/mmc.jpg
 registration_url: ""
