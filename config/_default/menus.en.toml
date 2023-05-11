@@ -218,6 +218,21 @@ hasChildren = true
   name = "Rule Proposals"
   url = "documents/ecea-rule-proposal-form.pdf"
 
+  [[main]]
+  parent = "Resources"
+  name = "Racing Protest Log"
+  url = "documents/ecea-club-referee-protest-log.pdf"
+
+   [[main]]
+  parent = "Resources"
+  name = "Advancement Petition"
+  url = "documents/ecea-advancement-petition-form.pdf"
+
+  [[main]]
+  parent = "Resources"
+  name = "How to Protest"
+  url = "documents/ecea-protest-procedure-flow-chart.pdf"
+
 [[main]]
 name = "Contact"
 url = "contact/"
