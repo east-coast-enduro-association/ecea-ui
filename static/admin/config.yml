@@ -152,8 +152,10 @@ collections:
         name: gas_away
         widget: select
         options:
-          - '''Yes'''
-          - '''No'''
+          - label: 'Yes'
+            value: '''Yes'''
+          - label: 'No'
+            value: '''No'''
         required: false
       - label: Starting Grid URL
         name: start_grid

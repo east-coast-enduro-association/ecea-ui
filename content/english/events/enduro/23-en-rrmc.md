@@ -14,6 +14,7 @@ start_grid: ""
 key_time: 2023-06-11T09:00:00
 check_in_time: 2023-06-11T07:00:00
 registration_url: ""
+registration_date: ""
 flyer: "images/events/flyers/23-en-rrmc-flyer.jpg"
 attachments:
 draft: false

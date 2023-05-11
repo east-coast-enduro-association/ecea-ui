@@ -14,7 +14,7 @@ location: TBA
 event_type: Enduro
 event_format: National Enduro
 event_series: ECEA Enduro Championship Series
-closed_course: No
+closed_course: "'Yes'"
 gas_away: "'Yes'"
 key_time: 2023-07-23T09:00:00
 check_in_time: 2023-07-23T07:00:00

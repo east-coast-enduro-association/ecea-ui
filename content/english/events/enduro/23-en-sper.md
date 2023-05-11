@@ -15,6 +15,7 @@ key_time: 2023-09-10T09:00:00
 check_in_time: 2023-09-10T07:00:00
 gas_away: "No"
 registration_url: ""
+registration_date: ""
 flyer: ""
 attachments:
 draft: false
