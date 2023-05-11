@@ -2,8 +2,8 @@
 draft: false
 event_datetime: 2023-07-30
 start_grid: ""
-preview_image: images/logos/clubs/dvtr.jpg
-bg_image: images/feature-bg.jpg
+preview_image: "images/logos/clubs/dvtr.jpg"
+bg_image: "images/feature-bg.jpg"
 flyer: ""
 registration_url: ""
 title: Foggy Mountain

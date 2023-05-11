@@ -9,11 +9,11 @@ location: "34 Frankles Lane, Port Elizabeth, NJ"
 event_type: "Enduro"
 event_series: "ECEA Enduro Championship Series"
 event_format: "Time Keeping"
-closed_course: "No"
-start_grid: "https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=1"
+closed_course: "'No'"
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=1
 key_time: 2023-03-12T09:00:00
 check_in_time: 2023-03-12T07:00:00
-gas_away: "Yes"
+gas_away: "'Yes'"
 registration_url: ""
 flyer: "images/events/flyers/23-en-tcsmc-flyer.jpg"
 attachments:
