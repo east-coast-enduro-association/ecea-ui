@@ -14,7 +14,8 @@ location: 199 Teed Rd, Sidney Center, NY
 event_type: Enduro
 event_format: Sprint Enduro
 event_series: ECEA Enduro Championship Series
-closed_course: Yes
+closed_course: "'Yes'"
+gas_away: "'No'"
 key_time: 2023-06-11T09:00:00
 check_in_time: 2023-06-11T07:00:00
 registration_date: ""
