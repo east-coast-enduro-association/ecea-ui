@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Ridge Run Pine Glen Sprint Update
+title: RRMC Pine Glen Sprint Update
 author: Michael Abramo
 date: 2023-05-19T03:12:41.335Z
 image: images/blog/ecea-small.png
