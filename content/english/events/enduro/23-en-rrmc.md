@@ -21,5 +21,10 @@ check_in_time: 2023-06-11T07:00:00
 registration_date: ""
 attachments: null
 ---
-
 RRMC brings everything to the table with rocks, roots, mud, creek beds, grass track, loamy hillclimbs, slick off cambers, you name it! Hosted in a beautiful part of New York State.
+
+**This year we are using a digital waiver form. Please click one of the links below and fill it out to save time at registration.**
+
+**Adult Waiver**: [https://waiver.​smartwaiver.com/w/​cf8x7uvshjjt5jjbakxpn6/web/](https://waiver.smartwaiver.com/w/cf8x7uvshjjt5jjbakxpn6/web/)
+
+**Minor Waiver**: [https://waiver.​smartwaiver.com/w/​ry1dw4wdgjkz17f1avhncn/web/](https://waiver.smartwaiver.com/w/ry1dw4wdgjkz17f1avhncn/web/)
