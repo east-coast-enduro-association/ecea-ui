@@ -16,6 +16,7 @@ preview_image: images/logos/clubs/mci.jpg
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/stump.jpg
 attachments: null
+expiryDate: 2023-05-21
 ---
 **NO ENTRY FRIDAY NIGHT**
 

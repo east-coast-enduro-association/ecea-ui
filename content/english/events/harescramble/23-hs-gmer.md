@@ -16,6 +16,7 @@ preview_image: images/logos/clubs/gmer.gif
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/23-hs-gmde-flyer.jpeg
 attachments: null
+expiryDate: 2023-06-04
 ---
 Gates OPEN FRIDAY 1pm\
 Practice will be open go to office..
