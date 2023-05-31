@@ -14,6 +14,7 @@ gate_fee: "None"
 flyer: ""
 attachments:
 draft: false
+expiryDate: 2023-05-29
 ---
 
 HMDR and RORR are making a bold move! Two hard enduros in three days. Some say this is the most physically demanding event in the entire AMA Extreme Enduro series. Are you bold enough to take on RORR and HMDR in the same weekend?

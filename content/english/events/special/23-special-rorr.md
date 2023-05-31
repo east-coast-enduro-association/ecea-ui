@@ -14,6 +14,7 @@ gate_fee: "None"
 flyer: ""
 attachments:
 draft: false
+expiryDate: 2023-05-28
 ---
 
 Tough Like RORR brings the AMA Extreme Enduro Series to PA! This event has become iconic among PA locals and everyone comes out to test their skills against pro enduro riders from around the world.
