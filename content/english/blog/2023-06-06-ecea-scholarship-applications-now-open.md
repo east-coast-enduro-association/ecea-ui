@@ -29,7 +29,7 @@ Hainesport, NJ 08036 East Coast Enduro Association
 
 ## Press Release
 
-Application Period Opens for East Coast Enduro Association Scholarships
+##### Application Period Opens for East Coast Enduro Association Scholarships
 
 Hainesport, NJ, June 4, 2023: The East Coast Enduro Association (ECEA) invites applications for its annual scholarships – the Mike Little Memorial and the Skip Stoner Memorial each worth $500. The East Coast Enduro Association (ECEA) has two scholarship programs in place – the ‘Mike Little Memorial Scholarship’ and the ‘Skip Stoner Memorial Scholarship’. Each have been set up to recognize ECEA riders both academically and technically with their commitment to the ECEA’s amateur sport of off- road riding in the memories of long-time devoted ECEA members, Mike Little and Skip Stoner. Skip was a mentor to many kids over the years. He and his family would open their shop, home, and hearts to help others. Mike Little, a past officer of the ECEA, always felt deeply about the youth in the ECEA series. Applicants for the scholarships are selected on their scholastic accomplishments, course of study, trade/technical certifications, and their demonstrated involvement in the ECEA. 
 
@@ -37,8 +37,7 @@ The ECEA awards up to four scholarships in the amount of $500 each year and have
 
 About the ECEA: The East Coast Enduro Association (ECEA) is a non-profit corporation consisting of a group of American Motorcyclist Association (AMA) chartered clubs engaged in the sponsorship and promotion of off highway motorcycle events, and is widely recognized as one of the foremost off-highway motorcycle events sanctioning bodies in the United States. The ECEA is dedicated to the betterment of the sport of off-highway motorcycle riding and to providing the individual competitor with a quality, challenging event.
 
-For more information on the East Coast Enduro Association, call (609) 560-1713, check out our web site at\
-http://www.ecea.org or e-mail questions to ecea.secy@verizon.net.
+For more information on the East Coast Enduro Association, call (609) 560-1713, check out our web site at http://www.ecea.org or e-mail questions to ecea.secy@verizon.net.
 
 #### Application Forms:
 
