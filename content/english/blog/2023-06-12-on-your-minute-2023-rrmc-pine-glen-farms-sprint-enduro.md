@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "On Your Minute: 2023 RRMC Pine Glen Farms Sprint Enduro"
+title: "On Your Minute: RRMC Pine Glen Farms Sprint Enduro 2023"
 author: Pig Pen
 date: 2023-06-12T22:02:37.851Z
 image: images/blog/353611149_6500327513323154_6409842504923117323_n.jpg
@@ -46,15 +46,13 @@ Dennis Fitzgerald (KTM) took first in Masters Class
 
 Duke Finch (KTM) took first in The Golden Class
 
+![](/images/blog/2023-rrmc-woods.jpg)
 
 Lastly, Thank you to RRMC for putting on an amazing event. Everyone I spoke to during and after the race was raving about the Fun Factor of this event! The course layout was a well thought out mix of flow and technical terrain. The Quarry area and the Ying Yang Vomit Comet are unique features of this race that make it one of a kind. All around event organization was top notch.
 
-
 Most importantly, the pre-race rider information was impeccable. Providing the section lengths and average speeds for each class was much appreciated by all. I personally wish this was standard practice for sprint enduros.
 
-
 See You at Barbed Wire next month, and don't forget that both Barbed Wire and Rattlesnake Enduro registration open this Wednesday.
-
 
 Pig Pen
 
