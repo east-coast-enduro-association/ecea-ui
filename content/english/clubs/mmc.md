@@ -20,8 +20,4 @@ information:
 
 ## About Our Club
 
-The Brandywine Enduro Riders (BER) have been an active part of the East Coast Enduro Association (ECEA) since the mid-70′s, and many of it’s original members remain active members. 
-
-BER has put on the Rattlesnake Enduro for many years and launched our first Hare Scrambles event in 2005. 
-
-Today, members get together to participate in numerous events (enduro, hare scrambles, and dual sports) in the tri-state area as well as several group trail rides throughout the year. Brandywine Enduro meets monthly at the Quiet Oaks Campground.
+​Meteor Motorcycle Club Inc. is a non for profit club organization and has been promoting off-road motorcycle events since the early 1930's Charter member of the American Motorcycle Association & Member of the East Coast Enduro Association we strive to putting on quality events.      
