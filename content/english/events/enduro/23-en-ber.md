@@ -5,7 +5,7 @@ start_grid: ""
 preview_image: images/logos/clubs/ber.gif
 bg_image: images/feature-bg.jpg
 flyer: ""
-registration_url: ""
+registration_url: "https://www.livelaps.com/event?12156"
 title: Rattlesnake National Enduro
 description: Sometimes it's rocky, sometimes not, who knows?
 club:
