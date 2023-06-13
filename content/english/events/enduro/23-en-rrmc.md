@@ -23,6 +23,7 @@ attachments:
   attachment3:
     label: Rider Information
     filepath: events/2023-ridge-sprint-rider-information.pdf
+expiryDate: 2023-06-11
 ---
 RRMC brings everything to the table with rocks, roots, mud, creek beds, grass track, loamy hillclimbs, slick off cambers, you name it! Hosted in a beautiful part of New York State.
 
