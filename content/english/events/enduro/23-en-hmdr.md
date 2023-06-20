@@ -1,6 +1,6 @@
 ---
 draft: false
-title: Shotgun Enduro (Cancelled)
+title: Shotgun Enduro (Canceled)
 description: SORRY this EVENT is CANCLED for 2023
 club:
   - HMDR
