@@ -14,6 +14,7 @@ gate_fee: "None"
 flyer: ""
 attachments:
 draft: false
+expiryDate: 2023-06-25
 ---
 
 A 2-day family fun ride hosted at Ormond Farms. Bring your camping gear and the whole family. Many trails to choose from that cater to all skill levels!

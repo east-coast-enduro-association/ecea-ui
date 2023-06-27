@@ -14,6 +14,7 @@ gate_fee: "None"
 flyer: ""
 attachments:
 draft: false
+expiryDate: 2023-09-03
 ---
 
 A 2-day family fun weekend! Bring your camping gear, enjoy the campground, and ride the trails. There's something for all skill levels here so bring the whole family!
