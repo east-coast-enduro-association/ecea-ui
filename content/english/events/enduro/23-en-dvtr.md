@@ -4,7 +4,7 @@ event_datetime: 2023-07-30
 start_grid: ""
 preview_image: images/logos/clubs/dvtr.jpg
 bg_image: images/feature-bg.jpg
-flyer: ""
+flyer: images/events/flyers/2023-en-dvtr-flyer.png
 registration_url: ""
 title: Foggy Mountain
 description: This one is easy, you should do it
@@ -23,6 +23,9 @@ attachments:
   attachment1:
     filepath: ""
     label: ""
+  attachment3:
+    label: Entry Form
+    filepath: events/2023-en-dvtr-entry-form.png
 ---
 
 There's a mountain. There are rocks on it. Sometimes it's foggy, sometimes it's not. Point your dirtbike at it and open the throttle already.
