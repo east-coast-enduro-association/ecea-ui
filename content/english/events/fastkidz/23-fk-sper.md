@@ -11,11 +11,11 @@ title: OxBo
 description: Fast, flowy, rocky
 club:
   - SPER
-location: TBA
+location: 342 Morea Rd, Frackville, PA
 event_type: FastKIDZ
 event_format: Hare Scramble
 event_series: ECEA Youth Series
-gate_fee: TBA
+gate_fee: $10
 registration_date: ""
 ---
 
