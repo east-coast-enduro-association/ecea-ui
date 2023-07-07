@@ -23,6 +23,16 @@ registration_date: 2023-06-15T00:00:00.000Z
 attachments:
   attachment3:
     filepath: events/ster-2023-flyer.pdf
+    label: Flyer
+  attachment1:
+    filepath: events/2023-ster-2-cofirmation.pdf
+    label: Confirmation Sheet
+  attachment2:
+    filepath: events"/2023-ster-roll-chart.pdf
+    label: Route Sheet
+  attachment4:
+    filepath: events/ster-2023-rs-file-roll-chart.rs
+    label: RS File
 ---
 
 Watch out for the weather here or you might be wishing you brought a rain coat and some taller knobs. Smooth, fast trail with decent elevation change. Minimal rocks but plenty of roots! If you can't have fun on trails like these then maybe you picked the wrong sport. There's definitely no beer at the end. And that beer is absolutely NOT provided in solo cups poured from a few fresh kegs. Nope.
