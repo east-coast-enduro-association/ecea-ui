@@ -24,5 +24,9 @@ There is no camping on SUNDAY night
 
 PLEASE PRE ENTER to save time and long lines. [ CLICK HERE](https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx)
 
+[Click here for the waiver](/attachments/events/2023-sper-oxbo-waiver.pdf)  
+[And click here for the youth waiver](/attachments/events/2023-sper-oxbo-youth-waiver.pdf)
+
+
 Morning race: 10:00am
 Afternoon race: 1:00pm

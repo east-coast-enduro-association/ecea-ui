@@ -20,6 +20,9 @@ attachments: null
 ---
 PreEntry is [OPEN CLICK HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx)\
 \
+[Click here for the waiver](/attachments/events/2023-sper-oxbo-waiver.pdf)  
+[And click here for the youth waiver](/attachments/events/2023-sper-oxbo-youth-waiver.pdf)
+
 Pee-Wee: 12:00pm NOON
 Junior: 1:30PM
 Youth: 3:30PM\
