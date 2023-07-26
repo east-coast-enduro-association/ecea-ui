@@ -26,6 +26,7 @@ attachments:
   attachment3:
     label: Entry Form
     filepath: events/2023-en-dvtr-entry-form.png
+expiryDate: 2023-07-30
 ---
 
 There's a mountain. There are rocks on it. Sometimes it's foggy, sometimes it's not. Point your dirtbike at it and open the throttle already.

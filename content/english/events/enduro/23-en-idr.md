@@ -19,6 +19,7 @@ registration_date: ""
 flyer: ""
 attachments:
 draft: false
+expiryDate: 2023-08-20
 ---
 
 Honestly, it's not that wet. Unless it rains again. Bring towels.

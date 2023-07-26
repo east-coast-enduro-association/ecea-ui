@@ -20,6 +20,7 @@ key_time: 2023-08-06T09:00:00
 check_in_time: 2023-08-06T07:00:00
 registration_date: ""
 attachments: null
+expiryDate: 2023-08-06
 ---
 
 When you think Pennsylvania, do you think rocks? Throw that characterization out of your mind and think "if my front wheel comes out of this rut, the bike is going to slide down the whole damn mountain". It's fun, you should go.

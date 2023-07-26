@@ -20,6 +20,7 @@ description: Back in the sand
 event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
+expiryDate: 2023-08-27
 ---
 
 A New Jersey staple in the enduro community. How many years has this event been hosted? Somebody should update the page with that info... 
