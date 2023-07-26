@@ -21,11 +21,17 @@ check_in_time: 2023-07-30T07:00:00
 registration_date: ""
 attachments:
   attachment1:
-    filepath: ""
-    label: ""
+    filepath: events/23-en-dvtr-confirmation.pdf
+    label: Confirmation Sheet
   attachment3:
     label: Entry Form
     filepath: events/2023-en-dvtr-entry-form.png
+  attachment2:
+    filepath: events"/23-en-dvtr-roll-chart.pdf
+    label: Roll Chart
+  attachment4:
+    label: RS File
+    filepath: events/23-en-dvtr-rs.rs
 ---
 
 There's a mountain. There are rocks on it. Sometimes it's foggy, sometimes it's not. Point your dirtbike at it and open the throttle already.
