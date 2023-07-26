@@ -1,7 +1,7 @@
 ---
 draft: false
 event_datetime: 2023-07-30
-start_grid: ""
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=9
 preview_image: images/logos/clubs/dvtr.jpg
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/2023-en-dvtr-flyer.png
@@ -21,11 +21,17 @@ check_in_time: 2023-07-30T07:00:00
 registration_date: ""
 attachments:
   attachment1:
-    filepath: ""
-    label: ""
+    filepath: events/23-en-dvtr-confirmation.pdf
+    label: Confirmation Sheet
   attachment3:
     label: Entry Form
     filepath: events/2023-en-dvtr-entry-form.png
+  attachment2:
+    filepath: events"/23-en-dvtr-roll-chart.pdf
+    label: Roll Chart
+  attachment4:
+    label: RS File
+    filepath: events/23-en-dvtr-rs.rs
 expiryDate: 2023-07-30
 ---
 
