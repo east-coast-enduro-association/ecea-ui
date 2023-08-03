@@ -23,6 +23,10 @@ PW and Juniors get the fast flowy stuff across the road and the pines trails..\
 \
 Youth get a taste of the big track, new stuff added.. \
 \
+SOME GREAT SWAG from our ECEA Sponsors to ALL KIDS,   Plaques to 10th place.. \
+\
+Lisa Soudas has Arranged for some Cool FACEPainting for the KIDS ,, Details soon... \
+\
 Pee-Wee: NOON
 
 Junior: 1:30PM\
