@@ -310,7 +310,7 @@ collections:
       - label: Event Type
         name: event_type
         widget: hidden
-        default: Enduro
+        default: Hare Scramble
       - label: Event Format
         name: event_format
         widget: hidden
@@ -409,6 +409,96 @@ collections:
         name: event_series
         widget: hidden
         default: ECEA Youth Series
+      - label: Gate Fee
+        name: gate_fee
+        widget: string
+        default: TBA
+      - label: Check In Time
+        name: check_in_time
+        widget: datetime
+        hint: What time does check-in open in the morning?
+        required: false
+      - label: Pre-Entry Date
+        name: registration_date
+        widget: datetime
+        default: ''
+        hint: What day and time will pre-entry open?
+        required: false
+      - label: Description and information about event
+        name: body
+        widget: markdown
+      - label: Club Logo
+        name: preview_image
+        widget: image
+        media_folder: /static/images/logos/clubs
+        public_folder: images/logos/clubs
+      - label: Background Image
+        name: bg_image
+        widget: hidden
+        default: images/feature-bg.jpg
+      - label: Flyer Image
+        name: flyer
+        widget: image
+        required: false
+        media_folder: /static/images/events/flyers
+        public_folder: images/events/flyers
+  - name: special-event
+    label: Special Event
+    folder: content/english/events/special
+    create: true
+    slug: '{{year}}-{{event_type}}-{{club}}'
+    fields:
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: false
+      - label: Title
+        name: title
+        widget: string
+      - label: Tag Line
+        name: description
+        widget: string
+      - label: Club
+        name: club
+        widget: select
+        multiple: true
+        options:
+          - BER
+          - CDR
+          - CJCR
+          - DER
+          - DVTR
+          - GMER
+          - HMDR
+          - IDR
+          - MCI
+          - MMC
+          - OCCR
+          - RORR
+          - RRMC
+          - SJER
+          - SPER
+          - STER
+          - TCSMC
+          - VFTR
+      - label: Event Date
+        name: event_datetime
+        widget: datetime
+      - label: Address
+        name: location
+        widget: string
+      - label: Event Type
+        name: event_type
+        widget: hidden
+        default: Enduro
+      - label: Event Format
+        name: event_format
+        widget: hidden
+        default: Special
+      - label: Event Series
+        name: event_series
+        widget: hidden
+        default: Special Series
       - label: Gate Fee
         name: gate_fee
         widget: string
