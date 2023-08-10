@@ -5,7 +5,7 @@ bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/2023-en-idr-flyer.jpg
 expiryDate: 2023-08-20
 start_grid: ""
-preview_image: logo-compact.png
+preview_image: images/logo-compact.png
 registration_url: ""
 title: Ithaca Sprint
 description: Finger lakes mud welcomes you
