@@ -20,7 +20,7 @@ closed_course: "'Yes'"
 gas_away: "'No'"
 key_time: 2023-09-10T09:00:00
 check_in_time: 2023-09-10T07:00:00
-registration_date: 2023-08-28T12:00:00.000Z
+registration_date: 2023-08-28T08:00:00.000Z
 attachments: null
 ---
 
