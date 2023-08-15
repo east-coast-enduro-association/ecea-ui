@@ -17,8 +17,8 @@ event_format: Sprint Enduro
 event_series: ECEA Enduro Championship Series
 closed_course: "'Yes'"
 gas_away: "'No'"
-key_time: 2023-08-20T12:00:00.000Z
-check_in_time: 2023-08-20T07:00:00
+key_time: 2023-08-20T10:00:00.000Z
+check_in_time: 2023-08-20T11:30:00.000Z
 registration_date: ""
 attachments: null
 ---
