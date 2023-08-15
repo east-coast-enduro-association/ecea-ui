@@ -16,6 +16,8 @@ preview_image: images/logos/clubs/hmdr.png
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/2023-hs-hmdr-flyer.jpg
 attachments: null
+expiryDate: 2023-08-13
+
 ---
 PLEASE PRENTER Save a few $$$ and speed the process  [CLICK HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx)\
 \
