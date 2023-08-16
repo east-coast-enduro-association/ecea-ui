@@ -21,5 +21,6 @@ check_in_time: 2023-10-22T07:00:00
 registration_date: ""
 attachments: null
 ---
+**This event is cancelled for 2023.**
 
 A classic New Jersey timekeeper hosted in the same forest as [CJCR's Pine Hill enduro](/events/23-en-cjcr). Bring the family for a nice weekend camping in Brendan T. Byrne.
