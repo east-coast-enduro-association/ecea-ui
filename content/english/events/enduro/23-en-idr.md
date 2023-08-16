@@ -27,4 +27,4 @@ attachments:
 ---
 All classes will ride and start at 10AM and all riders will have a time limit of 3 hours to complete all their sections
 
-Please download the rider information sheet posted in the "Event Details" section above and read it. Or click [here to download](/events/2023-en-idr-confirmation.pdf)
+Please download the rider information sheet posted in the "Event Details" section above and read it. Or click [here to download](attachments/events/2023-en-idr-confirmation.pdf)
