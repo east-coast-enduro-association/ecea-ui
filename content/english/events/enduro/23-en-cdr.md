@@ -4,7 +4,7 @@ event_datetime: 2023-08-27
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/2023-en-cdr-flyer.png
 expiryDate: 2023-08-27
-start_grid: ""
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=12
 preview_image: images/logos/clubs/cdr.png
 registration_url: ""
 title: Beehive
