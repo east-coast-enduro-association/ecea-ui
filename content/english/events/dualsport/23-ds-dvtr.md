@@ -13,6 +13,7 @@ closed_course: "No"
 flyer: ""
 attachments:
 draft: false
+expirydate: 2023-08-20
 ---
 
 The oldest dual sport in the country. DVTR pulls together a well run event with an excellent set of trails. This one sells out very quickly so spam that refresh button!
