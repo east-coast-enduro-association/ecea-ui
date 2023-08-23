@@ -1,18 +1,21 @@
 ---
-title: "Ridge Mountain"
-description: "I love NY"
-preview_image: "images/logos/clubs/rrmc-large.png"
-bg_image: "images/feature-bg.jpg"
-club: ["RRMC"]
-event_datetime: "2023-10-01"
-location: "TBA"
-event_type: "Hare Scramble"
-event_series: "Hare Scramble Series"
-event_format: "Hare Scramble"
-gate_fee: "TBA"
-flyer: ""
-attachments:
 draft: false
+event_datetime: 2023-10-01
+check_in_time: 2023-08-23T03:55:45.714Z
+preview_image: images/logos/clubs/rrmc-large.png
+bg_image: images/feature-bg.jpg
+flyer: ""
+attachments: null
+title: Ridge Mountain (Cancelled)
+description: I love NY
+club:
+  - RRMC
+location: TBA
+event_type: Hare Scramble
+event_format: Hare Scramble
+event_series: Hare Scramble Series
+gate_fee: TBA
+registration_date: ""
 ---
 
 Morning race: 10:00am
