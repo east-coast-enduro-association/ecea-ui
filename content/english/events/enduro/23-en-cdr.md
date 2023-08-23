@@ -20,8 +20,15 @@ gas_away: "'Yes'"
 key_time: 2023-08-27T09:00:00
 check_in_time: 2023-08-27T07:00:00
 registration_date: ""
-attachments: null
+attachments:
+  attachment1:
+    filepath: events/2023-en-cdr-confirmation.pdf
+    label: Confirmation
+  attachment2:
+    filepath: events"/2023-en-cdr-rider-info.pdf
+    label: Rider Info
 ---
+**Please read the attached rider info sheet posted in the "Event Details" section on this page**
 
 A New Jersey staple in the enduro community. How many years has this event been hosted? Somebody should update the page with that info... 
 
