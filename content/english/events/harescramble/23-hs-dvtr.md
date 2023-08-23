@@ -10,11 +10,11 @@ title: High Steaks
 description: Eat your heart out
 club:
   - DVTR
-location: TBA
+location: 399 Halstead Road, Clifford, PA
 event_type: Hare Scramble
 event_format: Hare Scramble
 event_series: Hare Scramble Series
-gate_fee: TBA
+gate_fee: $10
 registration_date: ""
 ---
 
