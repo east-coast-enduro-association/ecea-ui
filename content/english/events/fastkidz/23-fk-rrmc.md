@@ -1,18 +1,21 @@
 ---
-title: "Ridge Mountain"
-description: "I love NY"
-preview_image: "images/logos/clubs/rrmc-large.png"
-bg_image: "images/feature-bg.jpg"
-club: ["RRMC"]
-event_datetime: "2023-09-30"
-location: "TBA"
-event_type: "FastKIDZ"
-event_series: "ECEA Youth Series"
-event_format: "Hare Scramble"
-gate_fee: "TBA"
-flyer: ""
-attachments:
 draft: false
+event_datetime: 2023-09-30
+check_in_time: 2023-08-23T03:56:14.256Z
+preview_image: images/logos/clubs/rrmc-large.png
+bg_image: images/feature-bg.jpg
+flyer: ""
+attachments: null
+title: Ridge Mountain (Cancelled)
+description: I love NY
+club:
+  - RRMC
+location: TBA
+event_type: FastKIDZ
+event_format: Hare Scramble
+event_series: ECEA Youth Series
+gate_fee: TBA
+registration_date: ""
 ---
 
 Pee-Wee: 11:00AM
