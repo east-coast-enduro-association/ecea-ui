@@ -1,18 +1,21 @@
 ---
-title: "High Steaks"
-description: "Eat your heart out"
-preview_image: "images/logos/clubs/dvtr.jpg"
-bg_image: "images/feature-bg.jpg"
-club: ["DVTR"]
-event_datetime: "2023-09-23"
-location: "TBA"
-event_type: "FastKIDZ"
-event_series: "ECEA Youth Series"
-event_format: "Hare Scramble"
-gate_fee: "TBA"
-flyer: ""
-attachments:
 draft: false
+event_datetime: 2023-09-23
+check_in_time: 2023-08-23T04:03:03.444Z
+preview_image: images/logos/clubs/dvtr.jpg
+bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/2023-hs-dvtr-flyer1024_1.jpg
+attachments: null
+title: High Steaks
+description: Eat your heart out
+club:
+  - DVTR
+location: 399 Halstead Road, Clifford, PA
+event_type: FastKIDZ
+event_format: Hare Scramble
+event_series: ECEA Youth Series
+gate_fee: $10
+registration_date: ""
 ---
 
 Pee-Wee: 11:00AM
