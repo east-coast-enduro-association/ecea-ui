@@ -27,6 +27,9 @@ attachments:
   attachment2:
     filepath: events"/2023-en-cdr-rider-info.pdf
     label: Rider Info
+  attachment3:
+    label: Route Sheet
+    filepath: events/2023-en-cdr-route-sheet.pdf
 ---
 **Please read the attached rider info sheet posted in the "Event Details" section on this page**
 
