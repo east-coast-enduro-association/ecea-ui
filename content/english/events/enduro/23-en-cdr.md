@@ -33,7 +33,7 @@ attachments:
 ---
 **Please read the attached rider info sheet posted in the "Event Details" section on this page.**
 
-**The "A split" will include AA riders and ALL A classes including A Sr 50+/55+**
+**The "A split" will include AA riders and ALL A classes including A Sr 50+/55+ but NOT A-Masters**
 
 A New Jersey staple in the enduro community. How many years has this event been hosted? Somebody should update the page with that info... 
 
