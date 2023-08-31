@@ -27,34 +27,33 @@ Beehive is one of the few events that is beginner friendly yet it is also amazin
 
 If you are only able to do one event a year- go to Beehive. If you are a new rider who wants to try an enduro- go to Beehive. If you just want to go out with your riding buddies and have a fun day in the South Jersey single track – go to Beehive and if you are an experienced racer running for season points- go to Beehive.
 
-
 “A” riders got 6 sections of sweet single track while “B” and “C” class got to ride 5. Most of the course was your typical fast flowing South Jersey singe track but the club did have some surprises for this one. A minute or two into the first section they ran us through some stick farms that had many riders having flashbacks of Sandy lane earlier this spring. Each section had a little fresh cut trail tossed in for good measure. As usual for Beehive, the whoops were few and far between.
 
 Justin Lafferty (KTM ) took the overall win
 
 
+
+![](/images/blog/2023-beehive3.jpg)
+
 Michael Beeler (KTM) took second overall
 
-
-Kyle McDonal (Beta) took 3 nd overall
-
+Kyle McDonal (Beta) took 3rd overall
 
 Maverick Reiner (Gas Gas ) also took the overall in A class.
 
-
 William Holmes (KTM) took the overall in B class
 
+![](/images/blog/2023-beehive2.jpg)
 
 Mark Balogh (Husq) took the overall in C class.
 
-Liz Kiniery (KTM) took first in Women’s class
+![](/images/blog/2023-beehive4.jpg)
 
+Liz Kiniery (KTM) took first in Women’s class
 
 Chuck Sullivan (Gas Gas) took first in Masters Class
 
-
 Jim Jenkins “JJ” (Yam) took the win in Golden Class
-
 
 Donald Kirkpatrick (KTM) took the win in Legends Class
 
