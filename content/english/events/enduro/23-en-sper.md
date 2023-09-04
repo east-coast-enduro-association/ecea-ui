@@ -21,7 +21,16 @@ gas_away: "'No'"
 key_time: 2023-09-10T09:00:00
 check_in_time: 2023-09-10T07:00:00
 registration_date: 2023-08-28T08:00:00.000Z
-attachments: null
+attachments:
+  attachment1:
+    filepath: events/23-en-sper-confirmation.pdf
+    label: Confirmation Sheet
+  attachment2:
+    filepath: events"/23-en-sper-route.pdf
+    label: Route Sheet
+  attachment3:
+    filepath: events/23-en-sper-jart.pdf
+    label: Jart Chart
 ---
 
 A leasuirely ride through the beautiful Michaux State Forest. I don't think I've ever seen a rock here. The trail is practicially paved over! Nope, definitely no rock gardens. 
