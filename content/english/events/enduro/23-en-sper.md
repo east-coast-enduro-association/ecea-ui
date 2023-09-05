@@ -1,7 +1,7 @@
 ---
 draft: false
 event_datetime: 2023-09-10
-start_grid: ""
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=13
 preview_image: images/logos/clubs/michaux.jpg
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/2023-en-michaux-flyer.jpg
