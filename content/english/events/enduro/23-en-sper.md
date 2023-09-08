@@ -23,10 +23,10 @@ check_in_time: 2023-09-10T07:00:00
 registration_date: 2023-08-28T08:00:00.000Z
 attachments:
   attachment1:
-    filepath: events/23-en-sper-confirmation.pdf
+    filepath: events/23-en-sper-confirmation-update.pdf
     label: Confirmation Sheet
   attachment2:
-    filepath: events"/23-en-sper-route.pdf
+    filepath: events"/23-en-sper-route-update.pdf
     label: Route Sheet
   attachment3:
     filepath: events/23-en-sper-jart.pdf
