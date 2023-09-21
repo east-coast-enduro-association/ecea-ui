@@ -15,4 +15,8 @@ attachments:
 draft: false
 ---
 
+**Event is full! Registration is closed**
+
 Rocks run hosted on private property not usually accessible to riders! 
+
+Event info will be up to date on the RORR website https://www.rorr.org/dual-sport/
