@@ -15,4 +15,4 @@ attachments:
 draft: false
 ---
 
-Everyone loves this event. Everyone wishes this event was actually an enduro (or is it just me?). Two days of fun in the sand.
+Everyone loves this event. Everyone wishes this event was actually an enduro (or is it just me?). Two days of fun in the sand. All event information will be posted on the Tri-County website located at https://615269738679f.site123.me/
