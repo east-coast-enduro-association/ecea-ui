@@ -13,6 +13,7 @@ gate_fee: "TBA"
 flyer: ""
 attachments:
 draft: false
+expiryDate: 2023-10-30
 ---
 
 Morning race: 10:00am

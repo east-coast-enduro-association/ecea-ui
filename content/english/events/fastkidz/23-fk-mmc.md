@@ -13,6 +13,7 @@ gate_fee: "TBA"
 flyer: ""
 attachments:
 draft: false
+expiryDate: 2023-10-16
 ---
 
 Pee-Wee: 11:00AM
