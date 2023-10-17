@@ -16,6 +16,7 @@ event_format: Hare Scramble
 event_series: ECEA Youth Series
 gate_fee: TBA
 registration_date: ""
+expiryDate: 2023-10-01
 ---
 
 Pee-Wee: 11:00AM

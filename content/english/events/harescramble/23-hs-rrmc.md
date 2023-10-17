@@ -16,6 +16,7 @@ event_format: Hare Scramble
 event_series: Hare Scramble Series
 gate_fee: TBA
 registration_date: ""
+expiryDate: 2023-10-01
 ---
 
 Morning race: 10:00am
