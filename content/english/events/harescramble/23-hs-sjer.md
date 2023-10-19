@@ -15,7 +15,7 @@ check_in_time: 2023-10-28T14:00:10.615Z
 registration_date: ""
 preview_image: images/logos/clubs/sjer.png
 bg_image: images/feature-bg.jpg
-flyer: ""
+flyer: images/events/flyers/23_hs_pber.jpg
 expiryDate: 2023-10-30
 attachments: null
 ---
