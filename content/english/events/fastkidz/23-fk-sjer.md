@@ -18,6 +18,15 @@ flyer: images/events/flyers/23_hs_pber.jpg
 expiryDate: 2023-10-30
 attachments: null
 ---
+**NO** FRIDAY ENTRY
+
+**PLEASE PRE ENTER**\
+\
+First get a Day Number if **NOT** a series member [ GO HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)\
+\
+SERIES Members or with a Day Pass [PRE ENTER HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx)
+
+**NOTE EARLY TIMES**
 
 Pee-Wee: 11:00AM
 Junior: 12:30PM
