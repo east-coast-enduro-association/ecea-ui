@@ -19,7 +19,7 @@ information:
   - label : "Contact Email"
     info : "dvtrailriders@gmail.com"
   - label : "Contact Number"
-    info : "(267) 246-1386"
+    info : ""
 ---
 
 ## About Our Club
