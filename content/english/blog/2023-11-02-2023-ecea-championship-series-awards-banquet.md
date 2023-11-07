@@ -17,4 +17,5 @@ tags:
 draft: true
 type: post
 ---
-TODO: Enter banquet info
+**BANQUET DATE :** January 20th, 2024\
+**LOCATION :** Sheraton Valley Forge Hotel at 480 N Gulph Road, King of Prussia, PA
