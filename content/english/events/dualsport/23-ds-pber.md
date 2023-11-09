@@ -19,6 +19,7 @@ attachments:
     filepath: events/dual-sport/23-ds-pber-info.pdf
     label: Event Info
 draft: false
+expiryDate: 2023-11-27
 ---
 
 A PBER classic. Wear your ski suit.
