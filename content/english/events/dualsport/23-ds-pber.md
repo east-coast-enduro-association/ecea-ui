@@ -12,6 +12,12 @@ event_format: "Dual Sport"
 closed_course: "No"
 flyer: ""
 attachments:
+  attachment1:
+    filepath: events/dual-sport/23-ds-pber-entry.pdf
+    label: Entry Form
+  attachment2:
+    filepath: events/dual-sport/23-ds-pber-info.pdf
+    label: Event Info
 draft: false
 ---
 
