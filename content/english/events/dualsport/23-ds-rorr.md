@@ -13,6 +13,7 @@ closed_course: "No"
 flyer: ""
 attachments:
 draft: false
+expiryDate: 2023-10-09
 ---
 
 **Event is full! Registration is closed**
