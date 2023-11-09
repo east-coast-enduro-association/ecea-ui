@@ -16,7 +16,6 @@ registration_date: ""
 preview_image: images/logos/clubs/sjer.png
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/23_hs_pber.jpg
-expiryDate: 2023-10-30
 attachments: null
 ---
 LAST EVENT of the YEAR.. PLEASE SIGN UP ONLINE..  Open til Friday at noon prior to event.\
