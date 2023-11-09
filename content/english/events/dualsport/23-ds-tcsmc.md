@@ -12,6 +12,7 @@ event_format: "Dual Sport"
 closed_course: "No"
 flyer: ""
 attachments:
+expiryDate: 2023-11-06
 draft: false
 ---
 
