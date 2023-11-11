@@ -7,6 +7,7 @@ image: images/blog/ads24.jpg
 bg_image: images/feature-bg.jpg
 categories:
   - Announcement
+  - News
 description: Banquet Book advertising is now available.
 tags:
   - ECEA
