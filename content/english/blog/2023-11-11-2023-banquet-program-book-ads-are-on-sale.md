@@ -19,5 +19,8 @@ type: post
 ---
 The 2023 Banquet Program Book Advertisements are now on Sale. \
 All proceeds from the advertising will go directly back into the banquet budget for swag and the youth series party.\
-\
-Get your ad reserved today, contact Barry by[ email.](mailto:bigbhodog@aol.com)
+      Clubs can congratulate their riders, showcase their events. Vendors and sponsors can  be creative with product ads and information. Family and friends can congratulate their riders and add what they wish about them. Images and sponsor logos are welcomed in the ad.\
+      Get your ad reserved today, contact Barry by [ email](mailto:bigbhodog@aol.com), You can email the Art in PDF format (print quality). \
+      Next you can contact Lisa for payment info or questions. FB messenger works and by [email](Mailto:lsoudas@comcast.net)
+
+The current pricing must be paid prior to 12/10/2023, after that the prices will increase approx. 15%
