@@ -17,5 +17,9 @@ tags:
 draft: true
 type: post
 ---
+
+
+![](/images/blog/eceatick23.jpg)
+
 **BANQUET DATE :** January 20th, 2024\
 **LOCATION :** Sheraton Valley Forge Hotel at 480 N Gulph Road, King of Prussia, PA
