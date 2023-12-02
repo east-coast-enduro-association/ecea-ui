@@ -31,11 +31,13 @@ check_in_time: 2024-01-20T21:00:52.787Z
 registration_date: ""
 preview_image: images/logos/clubs/ecea24l2.png
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/eceatick23.jpg
+flyer: images/events/flyers/eceatick23info.jpg
 ---
 More info will be posted in the Announcements/News Blog here on website and on Facebook etc,,\
 \
-Hotel Reservation info and call number TBA after Dec 1\
+Hotel Reservation info  [Go here for a room](https://www.marriott.com/events/start.mi?id=1687358131807&key=GRP)
+
+\
 Tickets will be sold after Dec/1 \
 \
 Program Book Advertising is now open  [CLICK HERE](https://ecea.org/blog/2023-11-11-2023-banquet-program-book-ads-are-on-sale/)
