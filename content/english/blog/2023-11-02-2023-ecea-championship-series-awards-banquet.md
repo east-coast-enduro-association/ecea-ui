@@ -25,3 +25,9 @@ type: post
 **LOCATION :** Sheraton Valley Forge Hotel at 480 N Gulph Road, King of Prussia, PA
 
 **HOTEL RESERVATIONS:** [Book your Room Today Click Here ](https://www.marriott.com/events/start.mi?id=1687358131807&key=GRP)
+
+Tickets can be purchased below. Tickets for the adult banquet are $62.50 per person 13 years of age or older and $35 for kids younger than 13. 
+
+[Adult Banquet - https://forms.gle/v7t8sZgxnCVjSpbr6](https://forms.gle/v7t8sZgxnCVjSpbr6)
+
+[Youth Banquet - https://forms.gle/rUkkDi865XFQLnx16](https://forms.gle/rUkkDi865XFQLnx16)
