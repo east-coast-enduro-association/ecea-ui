@@ -15,7 +15,7 @@ tags:
   - fastkidz
   - banquet
   - "2023"
-draft: true
+draft: false
 type: post
 ---
 ![](/images/blog/eceatick23info.jpg)
