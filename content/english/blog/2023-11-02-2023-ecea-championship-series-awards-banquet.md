@@ -2,7 +2,7 @@
 layout: blog
 title: 2023 ECEA Championship Series Awards Banquet
 author: Michael Abramo
-date: 2023-11-02T01:19:31.603Z
+date: 2023-12-04T19:06:40.562Z
 image: images/blog/eceatick_23logo.jpg
 bg_image: images/feature-bg.jpg
 categories:
