@@ -1,12 +1,12 @@
 ---
 draft: false
-event_datetime: 2023-11-12
+event_datetime: 2024-10-20
 start_grid: ""
 preview_image: images/logos/clubs/mci.jpg
 bg_image: images/feature-bg.jpg
 flyer: ""
 registration_url: ""
-title: Stumpjumper (Cancelled)
+title: Stumpjumper
 description: Forest so nice, you've come back twice
 club:
   - MCI
@@ -16,11 +16,10 @@ event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 closed_course: No
 gas_away: Yes
-key_time: 2023-11-12T09:00:00
-check_in_time: 2023-11-12T07:00:00
+key_time: 2024-10-20T09:00:00
+check_in_time: 2024-10-20T07:00:00
 registration_date: ""
 attachments: null
 ---
-**This event is cancelled for 2023.**
 
 The season closer... it's gonna be cold. It's gonna be wet. And it's gonna be fun.

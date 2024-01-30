@@ -5,17 +5,17 @@ description: This is (almost) desert racing, PBER and SJER tag team this event
   to bring out the best...
 club:
   - SJER
-event_datetime: 2023-10-29
+  - PBER
+event_datetime: 2024-10-27
 location: Eagleswood Township, NJ
 event_type: Hare Scramble
 event_format: Hare Scramble
 event_series: Hare Scramble Series
 gate_fee: $10
-check_in_time: 2023-10-28T14:00:10.615Z
+check_in_time: 2024-10-27T14:00:10.615Z
 registration_date: ""
 preview_image: images/logos/clubs/sjer.png
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/23_hs_pber.jpg
 attachments: null
 ---
 LAST EVENT of the YEAR.. PLEASE SIGN UP ONLINE..  Open til Friday at noon prior to event.\

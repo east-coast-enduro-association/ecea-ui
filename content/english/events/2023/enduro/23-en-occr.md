@@ -20,6 +20,7 @@ key_time: 2023-10-22T09:00:00
 check_in_time: 2023-10-22T07:00:00
 registration_date: ""
 attachments: null
+expiryDate: 2023-10-23
 ---
 **This event is cancelled for 2023.**
 
