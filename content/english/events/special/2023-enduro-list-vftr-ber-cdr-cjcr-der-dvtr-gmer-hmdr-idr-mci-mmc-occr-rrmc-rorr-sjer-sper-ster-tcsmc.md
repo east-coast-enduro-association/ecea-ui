@@ -23,7 +23,7 @@ club:
   - TCSMC
 event_datetime: 2024-01-20T17:00:52.767Z
 location: Sheraton Valley Forge, PA
-event_type: Enduro
+event_type: Special
 event_format: Special
 event_series: Special Series
 gate_fee: N/A
@@ -32,6 +32,7 @@ registration_date: ""
 preview_image: images/logos/clubs/ecea24l2.png
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/eceatick23info.jpg
+expiryDate: 2024-01-20
 ---
 More info will be posted in the Announcements/News Blog here on website and on Facebook etc,,\
 \
