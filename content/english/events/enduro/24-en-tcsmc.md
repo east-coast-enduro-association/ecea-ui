@@ -1,23 +1,24 @@
 ---
-title: "Greenbrier Enduro"
-description: "The annual season opener"
-preview_image: "images/logos/clubs/tcsmc.png"
-bg_image: "images/feature-bg.jpg"
-club: ["TCSMC"]
-event_datetime: "2024-03-10"
-location: "34 Frankles Lane, Port Elizabeth, NJ"
-event_type: "Enduro"
-event_series: "ECEA Enduro Championship Series"
-event_format: "Time Keeping"
+draft: false
+event_datetime: 2024-03-10
+bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/24-en-tcsmc-flyer.jpg
+expiryDate: 2024-03-11
+preview_image: images/logos/clubs/tcsmc.png
+registration_url: ""
+title: Greenbrier Enduro
+description: The annual season opener
+club:
+  - TCSMC
+location: 34 Frankles Lane, Port Elizabeth, NJ
+event_type: Enduro
+event_format: Time Keeping
+event_series: ECEA Enduro Championship Series
 closed_course: "'No'"
+gas_away: "'Yes'"
 key_time: 2024-03-10T09:00:00
 check_in_time: 2024-03-10T07:00:00
-gas_away: "'Yes'"
-registration_url: ""
-flyer: "images/events/flyers/23-en-tcsmc-flyer.jpg"
-expiryDate: 2024-03-11
-
-draft: false
+registration_date: ""
 ---
 
 Don't miss the annual and highly regarded ECEA Enduro opener, Greenbrier Enduro! Bring your sand tires but watch out for those roots! I hope it snows again.
