@@ -4,7 +4,7 @@ description: "The oldest dual sport in the USA"
 preview_image: "images/logos/clubs/dvtr.jpg"
 bg_image: "images/feature-bg.jpg"
 club: ["DVTR"]
-event_datetime: "2023-06-15"
+event_datetime: "2024-06-15"
 location: "TBA"
 event_type: "Dual Sport"
 event_series: "Dual Sport Series"
