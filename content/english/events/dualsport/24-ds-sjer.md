@@ -16,6 +16,4 @@ draft: false
 expirydate: 2024-02-26
 ---
 
-This event is canceled due to permitting related to New Jersey State Forest usage. The NJ Pines Commission is on a mission to stop clubs from hosting motorcycle events in the forest. The ECEA is working hard and clubs are working hard to come to (yet another) agreement with the DEP.
-
-Please see the following webpage on the SJER website for all info pertaining to the Ice Breaker Dual Sport http://sjer.org/ice-breaker-dual-sport.html
+This event is canceled!
