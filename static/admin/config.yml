@@ -1,3 +1,6 @@
+### Deprecated ###
+### This is the config for DecapCMS, formerly NetlifyCMS ###
+
 backend:
   name: git-gateway
   branch: master
