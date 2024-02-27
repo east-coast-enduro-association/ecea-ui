@@ -98,10 +98,12 @@ export default defineConfig({
               {
                 value: "Announcement",
                 label: "Announcement"
-              }, {
+              }, 
+              {
                 value: "News",
                 label: "News"
-              }, {
+              }, 
+              {
                 value: "On Your Minute",
                 label: "On Your Minute"
               }
@@ -127,6 +129,224 @@ export default defineConfig({
             isBody: true,
           },
         ],
+      },
+
+      {
+        name: "enduro-event",
+        label: "Enduro Event",
+        path: "content/english/events/enduro",
+        defaultItem: () => {
+          return {
+            event_series: "ECEA Enduro Championship Series",
+            event_type: "Enduro",
+            bg_image: "images/feature-bg.jpg",
+          }
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Tag Line",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            required: true,
+          },
+
+          //TODO: reuse list of clubs
+          {
+            type: 'string',
+            name: 'club',
+            label: 'Club',
+            list: true,
+            options: [
+              {
+                value: "BER",
+              }, 
+              {
+                value: "CDR",
+              }, 
+              {
+                value: "CJCR",
+              },
+              {
+                value: "DER",
+              },
+              {
+                value: "DVTR",
+              }, 
+              {
+                value: "GMER",
+              }, 
+              {
+                value: "HMDR",
+              }, 
+              {
+                value: "IDR",
+              }, 
+              {
+                value: "MCI",
+              }, 
+              {
+                value: "MMC",
+              }, 
+              {
+                value: "OCCR",
+              }, 
+              {
+                value: "RORR",
+              }, 
+              {
+                value: "RRMC",
+              }, 
+              {
+                value: "SJER",
+              }, 
+              {
+                value: "SPER",
+              },
+              {
+                value: "STER",
+              }, 
+              {
+                value: "TCSMC",
+              }, 
+              {
+                value: "VFTR",
+              }, 
+            ]
+          },
+          {
+            type: "datetime",
+            name: "event_datetime",
+            label: "Event Date",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "address",
+            label: "Location",
+            required: true,
+          },
+
+          //TODO: create event type array
+          {
+            type: "string",
+            name: "event_type",
+            label: "Event Type",
+            required: true,
+            list: true,
+            options: [
+              {
+                value: "Time Keeping"
+              },
+              {
+                value: "Restart"
+              },
+              {
+                value: "Sprint Enduro"
+              },
+              {
+                value: "National Enduro"
+              },
+              {
+                value: "Other"
+              }
+            ]
+          },
+          {
+            type: "string",
+            name: "closed_course",
+            label: "Closed Course?",
+            required: true,
+            list: true,
+            options: [
+              {
+                value: "Yes"
+              },
+              {
+                value: "No"
+              }
+            ]
+          },
+          {
+            type: "string",
+            name: "gas_away",
+            label: "Gas Away?",
+            required: false,
+            list: true,
+            options: [
+              {
+                value: "Yes"
+              },
+              {
+                value: "No"
+              }
+            ]
+          },
+          {
+            type: "string",
+            name: "start_grid",
+            label: "Start Grid URL",
+          },
+          {
+            type: "datetime",
+            name: "key_time",
+            label: "Key Time",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "datetime",
+            name: "check_in_time",
+            label: "Check In Time",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "datetime",
+            name: "registration_date",
+            label: "Pre-Entry Date",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Description and information about event",
+            required: true
+          },
+          {
+            type: "image",
+            name: "preview_image",
+            label: "Club Logo",
+            required: true,
+          },
+          // {
+          //   type: "object",
+          //   name: "attachments",
+          //   label: "Event Attachments",
+          //   list: true,
+          //   fields: [
+          //     {
+          //       type: "media",
+
+          //     }
+          //   ]
+          // }
+        ]
       },
 
 
