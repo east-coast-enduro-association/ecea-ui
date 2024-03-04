@@ -4,6 +4,7 @@ event_datetime: 2024-03-10
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/24-en-tcsmc-flyer.jpg
 expiryDate: 2024-03-11
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=1
 preview_image: images/logos/clubs/tcsmc.png
 registration_url: ""
 title: Greenbrier Enduro
