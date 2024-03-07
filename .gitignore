@@ -10,5 +10,6 @@ package-lock.json
 public
 resources
 .hugo_build.lock
+static/admin/index.html
 
 .env
