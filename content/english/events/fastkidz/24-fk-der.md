@@ -9,9 +9,9 @@ description: We're Back!
 club:
   - DER
 location: Budds Creek, MD
-event_type: Hare Scramble
+event_type: FastKIDZ
 event_format: Hare Scramble
-event_series: Hare Scramble Series
+event_series: ECEA Youth Series
 registration_date: ""
 expiryDate: 2024-10-07
 ---
