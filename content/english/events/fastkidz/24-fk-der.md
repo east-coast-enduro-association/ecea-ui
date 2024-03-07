@@ -1,6 +1,6 @@
 ---
 draft: false
-event_datetime: 2024-10-06
+event_datetime: 2024-10-05
 preview_image: images/logos/clubs/der.gif
 bg_image: images/feature-bg.jpg
 attachments: null
@@ -15,6 +15,3 @@ event_series: Hare Scramble Series
 registration_date: ""
 expiryDate: 2024-10-07
 ---
-
-Morning race: 10:00am
-Afternoon race: 1:00pm
