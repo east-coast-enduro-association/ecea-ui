@@ -7,6 +7,81 @@ const branch =
   process.env.HEAD ||
   "main";
 
+const CLUBS = [
+  {
+    value: "BER",
+    label: "BER"
+  },
+  {
+    value: "CDR",
+    label: "CDR"
+  },
+  {
+    value: "CJCR",
+    label: "CJCR"
+  },
+  {
+    value: "DER",
+    label: "DER"
+  },
+  {
+    value: "DVTR",
+    label: "DVTR"
+  },
+  {
+    value: "GMER",
+    label: "GMER"
+  },
+  {
+    value: "HMDR",
+    label: "HMDR"
+  },
+  {
+    value: "IDR",
+    label: "IDR"
+  },
+  {
+    value: "MCI",
+    label: "MCI"
+  },
+  {
+    value: "MMC",
+    label: "MMC"
+  },
+  {
+    value: "OCCR",
+    label: "OCCR"
+  },
+  {
+    value: "RORR",
+    label: "RORR"
+  },
+  {
+    value: "RRMC",
+    label: "RRMC"
+  },
+  {
+    value: "SJER",
+    label: "SJER"
+  },
+  {
+    value: "SPER",
+    label: "SPER"
+  },
+  {
+    value: "STER",
+    label: "STER"
+  },
+  {
+    value: "TCSMC",
+    label: "TCSMC"
+  },
+  {
+    value: "VFTR",
+    label: "VFTR"
+  },
+];
+
 export default defineConfig({
   branch,
 
@@ -98,11 +173,11 @@ export default defineConfig({
               {
                 value: "Announcement",
                 label: "Announcement"
-              }, 
+              },
               {
                 value: "News",
                 label: "News"
-              }, 
+              },
               {
                 value: "On Your Minute",
                 label: "On Your Minute"
@@ -132,7 +207,7 @@ export default defineConfig({
       },
 
       {
-        name: "enduro-event",
+        name: "enduro_event",
         label: "Enduro Event",
         path: "content/english/events/enduro",
         defaultItem: () => {
@@ -155,12 +230,6 @@ export default defineConfig({
             label: "Tag Line",
             required: true,
           },
-          {
-            type: "string",
-            name: "description",
-            label: "Description",
-            required: true,
-          },
 
           //TODO: reuse list of clubs
           {
@@ -168,62 +237,7 @@ export default defineConfig({
             name: 'club',
             label: 'Club',
             list: true,
-            options: [
-              {
-                value: "BER",
-              }, 
-              {
-                value: "CDR",
-              }, 
-              {
-                value: "CJCR",
-              },
-              {
-                value: "DER",
-              },
-              {
-                value: "DVTR",
-              }, 
-              {
-                value: "GMER",
-              }, 
-              {
-                value: "HMDR",
-              }, 
-              {
-                value: "IDR",
-              }, 
-              {
-                value: "MCI",
-              }, 
-              {
-                value: "MMC",
-              }, 
-              {
-                value: "OCCR",
-              }, 
-              {
-                value: "RORR",
-              }, 
-              {
-                value: "RRMC",
-              }, 
-              {
-                value: "SJER",
-              }, 
-              {
-                value: "SPER",
-              },
-              {
-                value: "STER",
-              }, 
-              {
-                value: "TCSMC",
-              }, 
-              {
-                value: "VFTR",
-              }, 
-            ]
+            options: CLUBS
           },
           {
             type: "datetime",
@@ -233,33 +247,41 @@ export default defineConfig({
           },
           {
             type: "string",
-            name: "address",
+            name: "location",
             label: "Location",
             required: true,
           },
 
-          //TODO: create event type array
+          //TODO: create event type array or map
           {
             type: "string",
-            name: "event_type",
-            label: "Event Type",
+            name: "event_format",
+            label: "Event Format",
             required: true,
             list: true,
+            ui: {
+              component: "radio-group",
+            },
             options: [
               {
-                value: "Time Keeping"
+                value: "Time Keeping",
+                label: "Time Keeping"
               },
               {
-                value: "Restart"
+                value: "Restart",
+                label: "Restart"
               },
               {
-                value: "Sprint Enduro"
+                value: "Sprint Enduro",
+                label: "Sprint Enduro"
               },
               {
-                value: "National Enduro"
+                value: "National Enduro",
+                label: "National Enduro"
               },
               {
-                value: "Other"
+                value: "Other",
+                label: "Other"
               }
             ]
           },
@@ -269,12 +291,17 @@ export default defineConfig({
             label: "Closed Course?",
             required: true,
             list: true,
+            ui: {
+              component: "radio-group"
+            },
             options: [
               {
-                value: "Yes"
+                value: "Yes",
+                label: "Yes"
               },
               {
-                value: "No"
+                value: "No",
+                label: "No"
               }
             ]
           },
@@ -284,12 +311,17 @@ export default defineConfig({
             label: "Gas Away?",
             required: false,
             list: true,
+            ui: {
+              component: "radio-group"
+            },
             options: [
               {
-                value: "Yes"
+                value: "Yes",
+                label: "Yes"
               },
               {
-                value: "No"
+                value: "No",
+                label: "No"
               }
             ]
           },
@@ -319,14 +351,16 @@ export default defineConfig({
             name: "registration_date",
             label: "Pre-Entry Date",
             ui: {
-              timeFormat: "HH:mm"
-            }
+              timeFormat: "HH:mm"              
+            },
+            required: false,
           },
           {
             type: "rich-text",
             name: "body",
             label: "Description and information about event",
-            required: true
+            required: true,
+            isBody: true,
           },
           {
             type: "image",
@@ -349,7 +383,364 @@ export default defineConfig({
         ]
       },
 
+      {
+        name: "harescramble_event",
+        label: "Hare Scramble Event",
+        path: "content/english/events/harescramble",
+        defaultItem: () => {
+          return {
+            event_series: "ECEA Hare Scramble Series",
+            event_type: "Hare Scramble",
+            event_format: "Hare Scramble",
+            bg_image: "images/feature-bg.jpg",
+          }
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Tag Line",
+            required: true,
+          },
 
+          //TODO: reuse list of clubs
+          {
+            type: 'string',
+            name: 'club',
+            label: 'Club',
+            list: true,
+            options: CLUBS
+          },
+          {
+            type: "datetime",
+            name: "event_datetime",
+            label: "Event Date",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "location",
+            label: "Location",
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "key_time",
+            label: "Key Time",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "datetime",
+            name: "check_in_time",
+            label: "Check In Time",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "datetime",
+            name: "registration_date",
+            label: "Pre-Entry Date",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Description and information about event",
+            required: true,
+            isBody: true
+          },
+          {
+            type: "image",
+            name: "preview_image",
+            label: "Club Logo",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "flyer",
+            label: "Flyer Image",
+            required: false,
+          },
+        ]
+      },
+
+      {
+        name: "fastkidz_event",
+        label: "FastKIDZ Event",
+        path: "content/english/events/fastkidz",
+        defaultItem: () => {
+          return {
+            event_series: "ECEA Youth Series",
+            event_type: "Hare Scramble",
+            event_format: "Hare Scramble",
+            bg_image: "images/feature-bg.jpg",
+          }
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Tag Line",
+            required: true,
+          },
+
+          //TODO: reuse list of clubs
+          {
+            type: 'string',
+            name: 'club',
+            label: 'Club',
+            list: true,
+            options: CLUBS
+          },
+          {
+            type: "datetime",
+            name: "event_datetime",
+            label: "Event Date",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "location",
+            label: "Location",
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "key_time",
+            label: "Key Time",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "datetime",
+            name: "check_in_time",
+            label: "Check In Time",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "datetime",
+            name: "registration_date",
+            label: "Pre-Entry Date",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Description and information about event",
+            required: true,
+            isBody: true
+          },
+          {
+            type: "image",
+            name: "preview_image",
+            label: "Club Logo",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "flyer",
+            label: "Flyer Image",
+            required: false,
+          },
+        ]
+      },
+
+      {
+        name: "special_event",
+        label: "Special Event",
+        path: "content/english/events/special",
+        defaultItem: () => {
+          return {
+            event_series: "Special Series",
+            event_type: "Special",
+            bg_image: "images/feature-bg.jpg",
+            event_format: "Special"
+          }
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Tag Line",
+            required: true,
+          },
+
+          //TODO: reuse list of clubs
+          {
+            type: 'string',
+            name: 'club',
+            label: 'Club',
+            list: true,
+            options: CLUBS
+          },
+          {
+            type: "datetime",
+            name: "event_datetime",
+            label: "Event Date",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "location",
+            label: "Location",
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "key_time",
+            label: "Key Time",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "datetime",
+            name: "check_in_time",
+            label: "Check In Time",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "datetime",
+            name: "registration_date",
+            label: "Pre-Entry Date",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Description and information about event",
+            required: true,
+            isBody: true
+          },
+          {
+            type: "image",
+            name: "preview_image",
+            label: "Club Logo",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "flyer",
+            label: "Flyer Image",
+            required: false,
+          },
+        ]
+      },
+
+      {
+        name: "dual_sport",
+        label: "Dual Sport",
+        path: "content/english/events/dualsport",
+        defaultItem: () => {
+          return {
+            event_series: "Dual Sport Series",
+            event_type: "Dual Sport",
+            event_format: "Dual Sport",
+            bg_image: "images/feature-bg.jpg",
+          }
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Tag Line",
+            required: true,
+          },
+          //TODO: reuse list of clubs
+          {
+            type: 'string',
+            name: 'club',
+            label: 'Club',
+            list: true,
+            options: CLUBS
+          },
+          {
+            type: "datetime",
+            name: "event_datetime",
+            label: "Event Date",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "location",
+            label: "Location",
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "check_in_time",
+            label: "Check In Time",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "datetime",
+            name: "registration_date",
+            label: "Pre-Entry Date",
+            ui: {
+              timeFormat: "HH:mm"
+            }
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Description and information about event",
+            required: true,
+            isBody: true
+          },
+          {
+            type: "image",
+            name: "preview_image",
+            label: "Club Logo",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "flyer",
+            label: "Flyer Image",
+            required: false,
+          },
+        ]
+      }
 
     ],
   },
