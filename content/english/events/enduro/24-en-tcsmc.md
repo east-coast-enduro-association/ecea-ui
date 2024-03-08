@@ -20,16 +20,44 @@ gas_away: "'Yes'"
 key_time: 2024-03-10T09:00:00
 check_in_time: 2024-03-10T07:00:00
 registration_date: ""
+attachments:
+  attachment1:
+    label: Confirmation Sheet
+    filepath: events/24-en-tcsmc-confirmation.pdf
+  attachment2:
+    label: Route Sheet
+    filepath: events"/24-en-tcsmc-route.pdf
 ---
+## Greenbrier Enduro March 10th, 2024
 
-Don't miss the annual and highly regarded ECEA Enduro opener, Greenbrier Enduro! Bring your sand tires but watch out for those roots! I hope it snows again.
 
-The Registration team STRONGLY ENCOURAGES all riders to check-in on Saturday, especially if you need a new or replacement transponder tag.
 
-Hours are posted on your entry (4p-6pm) SATURDAY. Check-in may remain open later. SUNDAY check-in opens at 6am and will close at 9am. If you are on a later row, you must be registered before 9am. The scoring team needs time to upload all information for scoring purposes.
+**Traditional Timekeeping Enduro**\
+\
+4 Riders on a Row KEYTIME: 0900
 
-The confirmation sheet and route sheet can be found on this page in the "Event Details" section.
+* Row 1 will be in honor of Kyle Riggins
 
-The property owners will once again provide meals for purchase. Meals will be available Saturday afternoon and all-day Sunday. Please come hungry and support our generous landowners. Trash is your responsibility. If you bring it, please take it with you.
+\
+**NO GPS, NO Video Equipment Permitted**\
+Camping Saturday Night (Please take your trash with you when you leave)\
+NO Camp Fires\
+\
+***NJ State Requirements:***
 
-Most importantly, we thank you for your love of enduros and your support to keep this sport alive and kicking. We have put a lot of work to make this event awesome for everyone.
+* You must be at least 17 yrs old with motorcycle license and a legal guardian present.
+* Valid Motorcycle, Registration, Insurance and Lights
+* License Plate must be mounted on bike.
+
+\
+**Gas trucks available**\
+\
+Rider List to be posted on Monday 3/5\
+Confirmation Sheet and Roll Chart posted on Thursday 3/8\
+\
+**Saturday 3/9**\
+Sign-in opens at 2pm to 6pm\
+**Sunday 3/10**\
+Sign-in opens 6am to start of race\
+\
+**ALL RIDERS - each rider is to bring their own helmet to sign-in and sign event waiver.**
