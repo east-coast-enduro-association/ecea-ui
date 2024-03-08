@@ -2,9 +2,10 @@
 draft: false
 event_datetime: 2024-03-24
 bg_image: images/feature-bg.jpg
+expiryDate: 2024-03-24
 preview_image: images/logos/clubs/mmc.jpg
 registration_url: ""
-title: Sandy Lane
+title: Sandy Lane (CANCELLED)
 description: Bark-busting and knuckle bashing fun
 club:
   - MMC
@@ -17,7 +18,6 @@ gas_away: "'Yes'"
 key_time: 2024-03-24T09:00:00
 check_in_time: 2024-03-24T06:00:00.000Z
 registration_date: ""
-expiryDate: 2024-03-24
 ---
 
 
