@@ -652,7 +652,9 @@
     "zwitch": "^2.0.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tinacms dev -c \"hugo server -D -p 1313\" ",
+    "preview": "netlify deploy"
   },
   "keywords": [],
   "author": "",

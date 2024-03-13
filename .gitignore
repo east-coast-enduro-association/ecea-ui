@@ -11,5 +11,8 @@ public
 resources
 .hugo_build.lock
 static/admin/index.html
+tina/tina-lock.json
 
 .env
+# Local Netlify folder
+.netlify
