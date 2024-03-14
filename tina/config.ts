@@ -350,7 +350,7 @@ export default defineConfig({
             name: "registration_date",
             label: "Pre-Entry Date",
             ui: {
-              timeFormat: "HH:mm"              
+              timeFormat: "HH:mm"
             },
             required: false,
           },
@@ -408,7 +408,6 @@ export default defineConfig({
             required: true,
           },
 
-          //TODO: reuse list of clubs
           {
             type: 'string',
             name: 'club',
@@ -428,15 +427,7 @@ export default defineConfig({
             label: "Location",
             required: true,
           },
-          {
-            type: "datetime",
-            name: "key_time",
-            label: "Key Time",
-            ui: {
-              timeFormat: "HH:mm"
-            }
-          },
-          {
+         {
             type: "datetime",
             name: "check_in_time",
             label: "Check In Time",
@@ -500,7 +491,6 @@ export default defineConfig({
             required: true,
           },
 
-          //TODO: reuse list of clubs
           {
             type: 'string',
             name: 'club',
@@ -519,14 +509,6 @@ export default defineConfig({
             name: "location",
             label: "Location",
             required: true,
-          },
-          {
-            type: "datetime",
-            name: "key_time",
-            label: "Key Time",
-            ui: {
-              timeFormat: "HH:mm"
-            }
           },
           {
             type: "datetime",
@@ -592,7 +574,6 @@ export default defineConfig({
             required: true,
           },
 
-          //TODO: reuse list of clubs
           {
             type: 'string',
             name: 'club',
@@ -611,14 +592,6 @@ export default defineConfig({
             name: "location",
             label: "Location",
             required: true,
-          },
-          {
-            type: "datetime",
-            name: "key_time",
-            label: "Key Time",
-            ui: {
-              timeFormat: "HH:mm"
-            }
           },
           {
             type: "datetime",
