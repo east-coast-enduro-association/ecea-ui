@@ -1,26 +1,25 @@
 ---
 draft: false
-title: Ormond Farms
-description: Series Opener for 2023, Great Sand track, open woods, open field camping.
-club:
-  - CDR
-  - DER
-event_datetime: 2024-05-05T14:00:00.000Z
-location: 161 Hesstown Rd, Millville, NJ
 event_type: Hare Scramble
 event_format: Hare Scramble
 event_series: Hare Scramble Series
-gate_fee: "$10"
+gate_fee: $10
+bg_image: images/feature-bg.jpg
+expiryDate: '2024-05-06T00:00:00.000Z'
+title: Ormond Farms
+description: 'Series Opener for 2024, Great Sand track, open woods, open field camping.'
+club:
+  - CDR
+event_datetime: 2024-05-05T14:00:00.000Z
+location: '161 Hesstown Rd, Millville, NJ'
 check_in_time: 2024-05-05T07:00:00.000Z
 preview_image: images/logos/clubs/cdr.png
-bg_image: images/feature-bg.jpg
-expiryDate: 2024-05-06
 ---
-**RIDER LIMIT, ONLINE SIGN UP ONLY., You need a Series Number** to use the online system\
-**NO FRIDAY Night CAMPING** , GATES open SATURDAY 8AM, SUNDAY 6am
+
+ GATES open SATURDAY 8AM, SUNDAY 6am
 
 **AMA** NUMBER is REQUIRED\
-GET ECEA Hare Scramble Series **2023 Yearly NUMBER FIRST** ..  **Need one** ,  [GO HERE](https://www.moto-tally.com/ECEA/ECEA/SeriesRegistration.aspx)\
+GET ECEA Hare Scramble Series **2024 Yearly NUMBER FIRST** ..  **Need one** ,  [GO HERE](https://www.moto-tally.com/ECEA/ECEA/SeriesRegistration.aspx)\
 **PRE ENTER / SIGN UP ONLINE** for [ADULT RACE HERE](https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx)\
 ALL RIDERS **MUST CHECK IN at Registration Trailer with HELMET**
 
