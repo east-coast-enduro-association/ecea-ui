@@ -95,7 +95,7 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "static",
+      mediaRoot: "",
       publicFolder: "static",
     },
   },
@@ -214,6 +214,7 @@ export default defineConfig({
             event_series: "ECEA Enduro Championship Series",
             event_type: "Enduro",
             bg_image: "images/feature-bg.jpg",
+            registration_date: "2024-03-06T05:00:00.000Z"
           }
         },
         fields: [
@@ -348,11 +349,11 @@ export default defineConfig({
           {
             type: "datetime",
             name: "registration_date",
+            required: false,
             label: "Pre-Entry Date",
             ui: {
               timeFormat: "HH:mm"
             },
-            required: false,
           },
           {
             type: "rich-text",
