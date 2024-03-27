@@ -1,0 +1,87 @@
+fragment BlogParts on Blog {
+  __typename
+  draft
+  title
+  author
+  date
+  image
+  bg_image
+  categories
+  description
+  tags
+  body
+}
+
+fragment Enduro_eventParts on Enduro_event {
+  __typename
+  title
+  description
+  club
+  event_datetime
+  location
+  event_format
+  closed_course
+  gas_away
+  start_grid
+  key_time
+  check_in_time
+  registration_date
+  body
+  preview_image
+}
+
+fragment Harescramble_eventParts on Harescramble_event {
+  __typename
+  title
+  description
+  club
+  event_datetime
+  location
+  check_in_time
+  registration_date
+  body
+  preview_image
+  flyer
+}
+
+fragment Fastkidz_eventParts on Fastkidz_event {
+  __typename
+  title
+  description
+  club
+  event_datetime
+  location
+  check_in_time
+  registration_date
+  body
+  preview_image
+  flyer
+}
+
+fragment Special_eventParts on Special_event {
+  __typename
+  title
+  description
+  club
+  event_datetime
+  location
+  check_in_time
+  registration_date
+  body
+  preview_image
+  flyer
+}
+
+fragment Dual_sportParts on Dual_sport {
+  __typename
+  title
+  description
+  club
+  event_datetime
+  location
+  check_in_time
+  registration_date
+  body
+  preview_image
+  flyer
+}

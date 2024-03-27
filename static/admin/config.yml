@@ -115,6 +115,7 @@ collections:
           - SJER
           - SPER
           - STER
+          - PBER
           - TCSMC
           - VFTR
       - label: Event Date
@@ -299,6 +300,7 @@ collections:
           - SJER
           - SPER
           - STER
+          - PBER
           - TCSMC
           - VFTR
       - label: Event Date
@@ -389,6 +391,7 @@ collections:
           - SJER
           - SPER
           - STER
+          - PBER
           - TCSMC
           - VFTR
       - label: Event Date
@@ -479,6 +482,7 @@ collections:
           - SJER
           - SPER
           - STER
+          - PBER
           - TCSMC
           - VFTR
       - label: Event Date

@@ -3,7 +3,7 @@ draft: false
 title: Clock Run (Postponed)
 description: Kicking it old school
 club:
-  - CJCR
+  - PBER
 event_datetime: 2024-03-27T02:30:20.504Z
 location: TBA
 event_type: Enduro
@@ -20,5 +20,6 @@ attachments:
     label: Confirmation Sheet
   attachment2:
     label: Route Sheet
+expiryDate: 2024-03-27
 ---
 PBER is bringing back a NJ classic
