@@ -12,8 +12,8 @@ event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 closed_course: "'No'"
-key_time: 2024-03-27T02:30:20.513Z
-check_in_time: 2024-03-27T02:30:20.521Z
+key_time: 2024-04-07T13:00:20.513Z
+check_in_time: 2024-04-07T11:00:00.000Z
 registration_date: ""
 preview_image: images/logos/clubs/pber.webp
 attachments:
