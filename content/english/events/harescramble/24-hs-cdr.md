@@ -1,7 +1,7 @@
 ---
 draft: false
 title: Ormond Farms
-description: Series Opener for 2023, Great Sand track, open woods, open field camping.
+description: Series Opener for 2024, Great Sand track, open woods, open field camping.
 club:
   - CDR
   - DER
@@ -11,7 +11,7 @@ event_type: Hare Scramble
 event_format: Hare Scramble
 event_series: Hare Scramble Series
 gate_fee: $10
-check_in_time: 2024-05-05T07:00:00.000Z
+check_in_time: 2024-05-05T11:00:00.000Z
 registration_date: ""
 preview_image: images/logos/clubs/cdr.png
 bg_image: images/feature-bg.jpg
