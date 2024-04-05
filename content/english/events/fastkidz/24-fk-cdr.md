@@ -11,17 +11,19 @@ event_type: FastKIDZ
 event_format: Hare Scramble
 event_series: ECEA Youth Series
 gate_fee: $10
-check_in_time: 2024-05-04T11:00:00.000Z
+check_in_time: 2024-05-04T14:00:00.000Z
+registration_date: ""
 preview_image: images/logos/clubs/cdr.png
 bg_image: images/feature-bg.jpg
-attachments: null
+flyer: images/events/flyers/updated-2024-cdr-hare-scramble-flyer.jpg
 expiryDate: 2024-05-06
+attachments: null
 ---
-**NO FRIDAY CAMPING..Sorry,,  GATES OPEN SATURDAY at 8 AM.**\
+**GATES OPEN Friday 7PM SATURDAY at 8 AM.**\
 \
 **ONLINE PRE ENTER ONLY FOR THIS EVENT.**\
 **AMA required**\
-**ECEA SERIES NUMBER required to use ONLINE System  [GET 2023 NUMBER HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)**
+**ECEA YOUTH SERIES NUMBER required to use ONLINE System  [GET 2023 NUMBER HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)**
 
 **PRE ENTER FOR THIS EVENT with a Series Number [GO HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx)**\
 \
