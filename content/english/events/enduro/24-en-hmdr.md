@@ -1,15 +1,15 @@
 ---
 draft: false
 title: Shotgun Enduro
-description: Old School Rock run
+description: Old School Rock run but in Delano, good trail....
 club:
   - HMDR
 event_datetime: 2024-06-23
 location: TBA
 event_type: Enduro
-event_format: Other
+event_format: Restart
 event_series: ECEA Enduro Championship Series
-closed_course: "'No'"
+closed_course: "'Yes'"
 gas_away: Yes
 start_grid: ""
 key_time: 2024-06-23T09:00:00
@@ -22,4 +22,4 @@ registration_url: ""
 registration_date: ""
 attachments: null
 ---
-HMDR is back with a vengeance!  Start Control Format...
+HMDR is back with a vengeance!  ReStart Format , Start Controls
