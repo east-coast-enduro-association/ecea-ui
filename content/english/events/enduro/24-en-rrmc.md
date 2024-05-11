@@ -19,5 +19,6 @@ key_time: 2024-06-09T09:00:00
 check_in_time: 2024-06-09T07:00:00
 registration_date: ""
 expiryDate: 2024-06-10
+flyer: images/events/flyers/24-en-rrmc-sprint-flyer
 ---
 RRMC brings everything to the table with rocks, roots, mud, creek beds, grass track, loamy hillclimbs, slick off cambers, you name it! Hosted in a beautiful part of New York State.
