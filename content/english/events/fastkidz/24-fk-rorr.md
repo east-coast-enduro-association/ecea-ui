@@ -17,10 +17,16 @@ bg_image: images/feature-bg.jpg
 expiryDate: 2024-06-18
 attachments: null
 ---
-Please use Preentry System prior to event.\
+AMA Required.\
 \
-Sign Up Opens 10AM Saturday\
+**ECEA Yearly Number or Day Pass Required** to use Preentry system or to Sign up.  **Get one** [HERE ](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)\
 \
-Pee-Wee: 12PM
+**Event Pre entry System opens**   [Go HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx) to Pre Enter the event
+
+Event Sign up and Rider Check in opens at 10am on Saturday.
+
+Pee-Wee: 12:00AM
 Junior: 1:30PM
-Youth: 3:30PM
+Youth: 3:30PM\
+\
+Awards approx 5-6PM
