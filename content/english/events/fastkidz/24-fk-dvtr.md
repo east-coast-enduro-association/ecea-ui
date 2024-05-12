@@ -21,7 +21,7 @@ AMA Required.\
 \
 **ECEA Yearly Number or Day Pass Required** to use Preentry system or to Sign up.  **Get one** [HERE ](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)\
 \
-**Event Pre entry System opens 5/20**  [Go HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx) to Pre Enter the event
+**Event Pre entry System opens**   [Go HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx) to Pre Enter the event
 
 Event Sign up and Rider Check in opens at 10am on Saturday.
 
