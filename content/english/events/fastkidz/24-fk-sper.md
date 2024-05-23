@@ -14,7 +14,7 @@ check_in_time: 2024-06-29T14:13:40.331Z
 registration_date: ""
 preview_image: images/logos/clubs/sper.jpg
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/24-sper-oxbo-hs.jpeg
+flyer: ""
 expiryDate: 2024-06-29
 attachments: null
 ---
