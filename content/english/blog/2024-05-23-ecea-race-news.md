@@ -16,4 +16,6 @@ ECEA Race Events Changes as of 5/22.\
 \
 The Ridge Sprint and HMDR Shotgun enduros are on.  Get ready to ride !!!\
 \
+The GMER Broken Anvil Hare Scramble is ready to Preenter and Race.. Get out to this event.\
+\
 Unfortunately the **SPER OXBO** Hare Scramble has **BEEN CANCELED...**
