@@ -18,17 +18,6 @@ flyer: images/events/flyers/24-sper-oxbo-hs.jpeg
 expiryDate: 2024-06-29
 attachments: null
 ---
-PreEntry is [OPEN CLICK HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx)\
+**THIS RACE has been CANCELED**\
 \
-There are three event waivers that you can fill out right now to save time on race day:[](/attachments/events/2023-sper-oxbo-waiver.pdf)
-
-[Click here for the waiver](/attachments/events/2023-sper-oxbo-waiver.pdf)\
-[And click here for the youth waiver](/attachments/events/2023-sper-oxbo-youth-waiver.pdf)
-
-[And here is the FRO waiver](https://link.edgepilot.com/s/d4ef2188/solb1XjDdkuWUacoOASnqQ?u=https://waivers.readingoutdoors.com/event-oxbo)
-
-Pee-Wee: 12:00pm NOON
-Junior: 1:30PM
-Youth: 3:30PM\
-\
-Gates Open 5pm to 10pm For Friday Nite Camping, Reopen in morning approx 6am
+any change or reschedule will be poste here.
