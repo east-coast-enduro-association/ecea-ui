@@ -26,9 +26,13 @@ Mark Moyer
 
 ### Enduro
 
-[Merle Compton,Series Director / Scoring / Points Keeper](mailto:ecea.secy@verizon.net) (609) 560-1713\
-Ron DeCaro, Enduro Referee (609) 868-1876
-Holly DeCaro, Scoring/Membership
+[Merle Compton,Series Director / Scoring / Points Keeper](mailto:ecea.secy@verizon.net)   
+(609) 560-1713
+
+Ron DeCaro, Enduro Referee
+
+Holly DeCaro, Scoring/Membership.  
+(609)707-9800
 
 ### Hare Scramble / Fast Kidz
 
