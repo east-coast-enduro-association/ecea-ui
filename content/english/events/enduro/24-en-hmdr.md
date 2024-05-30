@@ -34,8 +34,4 @@ attachments: null
 * **NO GPS** or Returning to Ride area.
 * Food and Primative Camping Sat,Sun
 
-Contact info   
-
-```html
-<a href="mailto:msoudas@comcast.net">Send email to Mike</a>
-```
+Contact info [Mike Soudas, questions ](mailto:msoudas@comcast.net)
