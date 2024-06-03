@@ -14,13 +14,23 @@ check_in_time: 2024-06-15T14:00:43.190Z
 registration_date: ""
 preview_image: images/logos/clubs/rorr.png
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/24rorr.jpg
 expiryDate: 2024-06-18
 attachments: null
 ---
-Please use Preentry System prior to event.\
+**SPECIAL EVENT WAIVER and GATE FEE's** \
+[GO HERE NOW  Required prior to Entering  site. ](https://rorr.redpodium.com/2024-rorr-ecea-hare-scramble-series)\
 \
-Sign Up Opens 10AM Saturday\
+AMA Required.\
 \
-Pee-Wee: 12PM
+**ECEA Yearly Number or Day Pass Required** to use Preentry system or to Sign up.  **Get one** [HERE ](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)\
+\
+**Event Pre entry System opens**   [Go HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx) to Pre Enter the event
+
+Event Sign up and Rider Check in opens at 10am on Saturday.
+
+Pee-Wee: 12:00AM
 Junior: 1:30PM
-Youth: 3:30PM
+Youth: 3:30PM\
+\
+Awards approx 5-6PM
