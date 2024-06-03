@@ -14,9 +14,13 @@ check_in_time: 2024-06-15T14:00:43.190Z
 registration_date: ""
 preview_image: images/logos/clubs/rorr.png
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/24rorr.jpg
 expiryDate: 2024-06-18
 attachments: null
 ---
+**SPECIAL EVENT WAIVER and GATE FEE's** \
+[GO HERE NOW  Required prior to Entering  site. ](https://rorr.redpodium.com/2024-rorr-ecea-hare-scramble-series)\
+\
 AMA Required.\
 \
 **ECEA Yearly Number or Day Pass Required** to use Preentry system or to Sign up.  **Get one** [HERE ](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)\
