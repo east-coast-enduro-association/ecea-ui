@@ -14,6 +14,7 @@ check_in_time: 2024-06-16T11:00:50.686Z
 registration_date: ""
 preview_image: images/logos/clubs/rorr.png
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/24rorr.jpg
 expiryDate: 2024-06-16
 attachments: null
 ---
@@ -23,3 +24,8 @@ Please use PreEntry to AVOID Lines and long waits..\
 Morning race: 10:00 am\
 10AM to 12:30 PM Check in / Registration for Afternoon Event
 Afternoon race: 1:00pm
+
+
+
+**ALL RIDERS, CREWS, Spectators MUST USE this WAIVER SYSTEM**. \
+Prior to ENTRY of property.         ,, [GO HERE NOW ](https://rorr.redpodium.com/2024-rorr-ecea-hare-scramble-series)
