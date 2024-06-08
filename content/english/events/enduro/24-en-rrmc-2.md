@@ -2,7 +2,7 @@
 draft: false
 event_datetime: 2024-09-29
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/24-en-rrmc-flyer.jpg
+flyer: ""
 expiryDate: 2024-06-10
 start_grid: ""
 preview_image: images/logos/clubs/rrmc-large.png
