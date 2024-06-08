@@ -17,6 +17,7 @@ closed_course: "'No'"
 gas_away: Yes
 key_time: 2024-08-04T09:00:00
 check_in_time: 2024-08-04T07:00:00
+expiryDate: 2024-06-01
 registration_date: ""
 ---
 
