@@ -15,6 +15,7 @@ registration_date: 2024-05-20T18:00:00.000Z
 preview_image: images/logos/clubs/gmer.gif
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/24-gmer-hs-flyer.jpg
+expiryDate: 2024-06-01
 ---
 Gates OPEN FRIDAY 2pm\
 **NO GO PRO’s**
