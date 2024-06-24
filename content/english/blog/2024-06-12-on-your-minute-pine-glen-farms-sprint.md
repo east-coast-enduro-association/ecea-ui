@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "On Your Minute: Pine Glen Farms Sprint"
+title: "On Your Minute: Pine Glen Farms Sprint 2024"
 author: Pig Pen
 date: 2024-06-12T02:53:24.118Z
 image: images/blog/448142792_868086222021547_4291799995127207269_n.jpg
