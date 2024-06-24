@@ -8,6 +8,11 @@ bg_image: images/feature-bg.jpg
 categories:
   - On Your Minute
 description: And we are back in the rocks, love it or hate it!
+tags:
+  - enduro
+  - "2024"
+  - onyourminute
+  - hmdr
 draft: false
 type: post
 ---
