@@ -2,6 +2,7 @@
 draft: false
 event_datetime: 2024-08-04
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/three-springs-enduro-flyer-24-r1_page-0001.jpg
 expiryDate: 2024-08-04
 preview_image: images/logos/clubs/gmer.gif
 registration_url: ""
@@ -9,9 +10,9 @@ title: Three Springs
 description: Teetering on the edge
 club:
   - GMER
-location: TBA
+location: 8418 ASHMAN ST. Three Springs, PA
 event_type: Enduro
-event_format: Restart
+event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 closed_course: "'No'"
 gas_away: Yes
