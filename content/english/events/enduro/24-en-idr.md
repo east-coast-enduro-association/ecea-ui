@@ -2,6 +2,7 @@
 draft: false
 event_datetime: 2024-08-18T14:00:00.000Z
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/image0.png
 expiryDate: 2024-08-18
 start_grid: ""
 preview_image: images/logos/clubs/idrlogo.jpg
@@ -10,7 +11,7 @@ title: Ithaca Sprint
 description: Finger lakes mud welcomes you
 club:
   - IDR
-location: TBA
+location: 253 Andersen Hill Rd. Berkshire, NY 13736
 event_type: Enduro
 event_format: Sprint Enduro
 event_series: ECEA Enduro Championship Series
