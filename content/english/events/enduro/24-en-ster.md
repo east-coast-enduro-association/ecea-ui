@@ -1,20 +1,20 @@
 ---
 draft: false
-event_datetime: 2024-07-14
-bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/ster-en-2024-flyer.jpg
-expiryDate: 2024-07-14
-start_grid: ""
-preview_image: images/logos/clubs/ster.jpg
-registration_url: ""
 title: Barbed Wire Enduro
 description: Alcohol Prohibited
-club:
-  - STER
-location: 184 Comfort Rd Pine City, NY 14871
+event_datetime: 2024-07-14
 event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
+bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/ster-en-2024-flyer.jpg
+expiryDate: 2024-07-14
+start_grid: https://www.moto-tally.com/ECEA/Enduro/startingGrid.aspx?EY=2024&EID=8
+preview_image: images/logos/clubs/ster.jpg
+registration_url: ""
+club:
+  - STER
+location: 184 Comfort Rd Pine City, NY 14871
 closed_course: "'No'"
 gas_away: "'Yes'"
 key_time: 2024-07-14T09:00:00
