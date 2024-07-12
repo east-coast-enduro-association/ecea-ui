@@ -25,7 +25,7 @@ attachments:
     filepath: events/24-en-ster-confirmation.pdf
     label: Confirmation Sheet
   attachment2:
-    filepath: events"/24-en-ster-route.pdf
+    filepath: events"/24-en-ster-route-sheet.pdf
     label: Route Sheet
 ---
 
