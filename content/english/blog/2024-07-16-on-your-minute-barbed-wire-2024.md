@@ -3,7 +3,7 @@ layout: blog
 title: "On Your Minute: Barbed Wire 2024"
 author: Pig Pen
 date: 2024-07-16T13:42:40.947Z
-image: images/blog/ecea-small.png
+image: images/blog/24-ster-champion.jpg
 bg_image: images/feature-bg.jpg
 categories:
   - On Your Minute
