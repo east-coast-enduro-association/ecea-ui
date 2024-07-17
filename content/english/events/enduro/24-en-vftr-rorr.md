@@ -4,7 +4,7 @@ event_datetime: 2024-09-15
 start_grid: ""
 preview_image: images/logos/clubs/vftr.jpg
 bg_image: images/feature-bg.jpg
-flyer: ""
+flyer: images/events/flyers/moonshine-24-flyer-fin7-16.jpg
 registration_url: ""
 title: Moonshine
 description: Alcohol Prohibited
