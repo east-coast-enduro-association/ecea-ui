@@ -7,7 +7,7 @@ expiryDate: 2024-06-10
 start_grid: ""
 preview_image: images/logos/clubs/rrmc-large.png
 registration_url: ""
-title: Ridge Run Enduro
+title: Ridge Run Enduro (Cancelled)
 description: Bring on the rocks!
 club:
   - RRMC
@@ -21,5 +21,4 @@ key_time: 2024-09-29T09:00:00
 check_in_time: 2024-09-29T07:00:00
 registration_date: ""
 ---
-
 RRMC brings everything to the table with rocks, roots, mud, creek beds, grass track, loamy hillclimbs, slick off cambers, you name it! Hosted in a beautiful part of New York State.
