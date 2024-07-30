@@ -4,6 +4,7 @@ event_datetime: 2024-08-04
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/three-springs-enduro-flyer-24-r1_page-0001.jpg
 expiryDate: 2024-08-04
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=11
 preview_image: images/logos/clubs/gmer.gif
 registration_url: ""
 title: Three Springs
