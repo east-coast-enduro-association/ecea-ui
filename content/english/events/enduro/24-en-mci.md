@@ -6,7 +6,7 @@ preview_image: images/logos/clubs/mci.jpg
 bg_image: images/feature-bg.jpg
 flyer: ""
 registration_url: ""
-title: Stumpjumper
+title: Stumpjumper (Cancelled)
 description: Forest so nice, you've come back twice
 club:
   - MCI
