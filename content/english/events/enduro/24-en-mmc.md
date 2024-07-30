@@ -2,7 +2,7 @@
 draft: false
 event_datetime: 2024-11-17T05:00:00.000Z
 bg_image: images/feature-bg.jpg
-expiryDate: 2024-03-24
+expiryDate: 2024-11-18
 preview_image: images/logos/clubs/mmc.jpg
 registration_url: ""
 title: Sandy Lane (Rescheduled)
