@@ -7,7 +7,7 @@ bg_image: images/feature-bg.jpg
 flyer: ""
 registration_url: ""
 title: Stumpjumper (Cancelled)
-description: Forest so nice, you've come back twice
+description: Jump them stumps!
 club:
   - MCI
 location: TBA
