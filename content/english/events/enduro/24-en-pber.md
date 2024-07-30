@@ -2,7 +2,7 @@
 draft: false
 event_datetime: 2024-11-24T13:00:00.000Z
 bg_image: images/feature-bg.jpg
-expiryDate: 2024-04-08
+expiryDate: 2024-11-25
 title: Clock Run (Rescheduled)
 description: Kicking it old school
 club:
