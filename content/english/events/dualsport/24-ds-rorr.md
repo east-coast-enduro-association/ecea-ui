@@ -4,7 +4,7 @@ description: "This is basically an enduro"
 preview_image: "images/logos/clubs/rorr.png"
 bg_image: "images/feature-bg.jpg"
 club: ["RORR"]
-event_datetime: "2024-10-06"
+event_datetime: "2024-10-20"
 location: "TBA"
 event_type: "Dual Sport"
 event_series: "Dual Sport Series"
