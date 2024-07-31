@@ -35,3 +35,5 @@ I am extremely excited for both events. PBER has not hosted their event since I 
 That means we have EIGHT more enduros this year; we are not even half way through the season yet. Wow... This time last year we only had four left.
 
 See you all at Three Springs Enduro this weekend, I've got a championship to win
+
+![](/images/blog/2024-ecea-event-schedule-card-rev-071724_page-0001.jpg)
