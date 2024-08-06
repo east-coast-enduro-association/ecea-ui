@@ -3,6 +3,7 @@ draft: false
 event_datetime: 2024-09-08
 preview_image: images/logos/clubs/michaux.jpg
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/michaux-enduro-flyer_2024.jpg
 registration_url: ""
 title: Michaux
 description: Why does it always rain here?
@@ -18,6 +19,7 @@ closed_course: "'Yes'"
 gas_away: "'No'"
 key_time: 2024-09-08T09:00:00
 check_in_time: 2024-09-08T07:00:00
+registration_date: ""
 ---
 
 A leasuirely ride through the beautiful Michaux State Forest. I don't think I've ever seen a rock here. The trail is practicially paved over! Nope, definitely no rock gardens. 
