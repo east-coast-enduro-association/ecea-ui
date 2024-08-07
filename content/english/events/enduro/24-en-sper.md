@@ -9,8 +9,6 @@ title: Michaux
 description: Why does it always rain here?
 club:
   - SPER
-  - RORR
-  - VFTR
 location: 1975 Birch Run Road, Biglerville, PA 17307
 event_type: Enduro
 event_format: Time Keeping
