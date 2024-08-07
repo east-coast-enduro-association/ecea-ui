@@ -3,7 +3,7 @@ draft: false
 event_datetime: 2024-09-08
 preview_image: images/logos/clubs/michaux.jpg
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/michaux-enduro-flyer_2024.jpg
+flyer: images/events/flyers/micheaux-2024-2-.jpg
 registration_url: ""
 title: Michaux
 description: Why does it always rain here?
