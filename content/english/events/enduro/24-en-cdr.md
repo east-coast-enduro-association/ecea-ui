@@ -2,6 +2,7 @@
 draft: false
 event_datetime: 2024-08-25T04:00:00.000Z
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/51st-beehive-final.png
 expiryDate: 2024-08-27
 preview_image: images/logos/clubs/cdr.png
 registration_url: ""
