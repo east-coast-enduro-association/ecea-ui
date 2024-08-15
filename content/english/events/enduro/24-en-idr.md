@@ -23,6 +23,6 @@ registration_date: ""
 attachments:
   attachment1:
     label: Rider Info Sheet
-    filepath: events/idr-rider-info-sheet-2024_page_1.jpeg
+    filepath: events/idr-rider-info-sheet-2024.pdf
 ---
 All classes will ride and start at 10AM and all riders will have a time limit of 3 hours to complete all their sections
