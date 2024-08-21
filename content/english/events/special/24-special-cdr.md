@@ -5,7 +5,7 @@ event_datetime: 2024-06-22
 event_type: Special
 bg_image: images/feature-bg.jpg
 flyer: ""
-expiryDate: 2023-06-25
+expiryDate: 2024-06-25
 preview_image: images/logos/clubs/cdr.png
 closed_course: No
 check_in_time: 2024-08-21T02:27:50.184Z
