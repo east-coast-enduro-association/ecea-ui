@@ -7,7 +7,7 @@ club:
 event_datetime: 2024-08-31T13:00:00.000Z
 location: 142 Cabin Lane, Sugarloaf, PA
 event_type: Special
-event_format: Family Fun Ride
+event_format: Special
 event_series: Special Series
 gate_fee: "Fees posted on Web, "
 check_in_time: 2024-08-30T20:00:54.249Z
