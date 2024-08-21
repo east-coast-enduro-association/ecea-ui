@@ -6,9 +6,9 @@ bg_image: "images/feature-bg.jpg"
 club: ["DVTR"]
 event_datetime: "2023-12-01"
 location: "Locust Gap, PA"
-event_type: "Special"
-event_series: "Special Series"
-event_format: "Family Fun Ride"
+event_type: Special
+event_format: Special
+event_series: Special Series
 closed_course: "No"
 gate_fee: "None"
 flyer: ""
