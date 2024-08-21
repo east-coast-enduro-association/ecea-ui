@@ -14,7 +14,7 @@ gate_fee: "None"
 flyer: ""
 attachments:
 draft: false
-expiryDate: 2023-12-04
+expiryDate: 2024-12-04
 ---
 
 The annual Toys For Tots charity event hosted by Delaware Valley Trail Riders. Pay your entry fee and bring a new, wrapped toy to donate. December is a toss-up as it pertains to weather and riding conditions - it might be wet, it might be dry, it might be icy, it might be loamy. Who cares? Just come out and enjoy good people, trails, food, and possibly win some raffle prizes.
