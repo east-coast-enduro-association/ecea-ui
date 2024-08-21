@@ -14,7 +14,7 @@ check_in_time: 2024-08-30T20:00:54.249Z
 preview_image: images/logos/clubs/hmdr.png
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/wallow23.jpg
-expiryDate: 2023-09-03
+expiryDate: 2024-08-31
 closed_course: No
 attachments: null
 ---
