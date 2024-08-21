@@ -6,9 +6,9 @@ bg_image: "images/feature-bg.jpg"
 club: ["CDR"]
 event_datetime: "2024-06-22"
 location: "Millville, NJ"
-event_type: "Special"
-event_series: "Special Series"
-event_format: "Family Fun Ride"
+event_type: Special
+event_format: Special
+event_series: Special Series
 closed_course: "No"
 gate_fee: "None"
 flyer: ""
