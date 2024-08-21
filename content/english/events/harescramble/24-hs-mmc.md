@@ -2,7 +2,7 @@
 draft: false
 event_datetime: 2024-10-13T14:00:00.000Z
 bg_image: images/feature-bg.jpg
-expiryDate: 2024-05-13
+expiryDate: 2024-10-14
 check_in_time: 2024-05-12T11:00:04.369Z
 preview_image: images/logos/clubs/mmc.jpg
 attachments: null
