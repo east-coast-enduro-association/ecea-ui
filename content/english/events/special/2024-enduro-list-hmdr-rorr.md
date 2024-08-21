@@ -16,7 +16,7 @@ check_in_time: 2024-05-24T22:30:12.374Z
 registration_date: ""
 preview_image: images/logos/clubs/2023-series-east-irc-logo-black-with-color-logos.png
 bg_image: images/feature-bg.jpg
-expiry_date: 2024-05-31
+expiryDate: 2024-05-31
 ---
 INFO coming.\
 \
