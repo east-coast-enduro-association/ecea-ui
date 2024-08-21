@@ -16,5 +16,6 @@ preview_image: images/logos/clubs/vftr.jpg
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/fern-glen-hs24-v6-18.jpg
 attachments: null
+expiryDate: 2024-08-12
 ---
 VFTR is returning and we are all so looking forward to what they put together
