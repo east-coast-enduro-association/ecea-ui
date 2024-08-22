@@ -28,6 +28,9 @@ attachments:
   attachment2:
     label: Rider Info
     filepath: events"/2024-beehive-rider-info.pdf
+  attachment3:
+    label: Route Sheet
+    filepath: events/cdr-updated-routesheet-2024.pdf
 ---
 
 A New Jersey staple in the enduro community. How many years has this event been hosted? Somebody should update the page with that info... 
