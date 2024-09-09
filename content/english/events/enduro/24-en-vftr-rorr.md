@@ -12,7 +12,7 @@ event_format: Restart
 event_series: ECEA Enduro Championship Series
 closed_course: "'Yes'"
 gas_away: "'No'"
-start_grid: ""
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=15
 check_in_time: 2024-09-15T07:00:00
 registration_date: ""
 preview_image: images/logos/clubs/vftr.jpg
