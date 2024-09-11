@@ -18,6 +18,7 @@ flyer: images/events/flyers/micheaux-2024-2-.jpg
 registration_url: ""
 closed_course: "'Yes'"
 key_time: 2024-09-08T09:00:00
+expiryDate: 2024-09-10
 attachments:
   attachment1:
     filepath: events/24confirmation.pdf
