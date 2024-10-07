@@ -4,6 +4,7 @@ event_datetime: 2024-10-20
 start_grid: ""
 preview_image: images/logos/clubs/mci.jpg
 bg_image: images/feature-bg.jpg
+expiryDate: 2024-10-05
 flyer: ""
 registration_url: ""
 title: Stumpjumper (Cancelled)
