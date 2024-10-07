@@ -6,6 +6,7 @@ club:
   - VFTR
   - RORR
 event_datetime: 2024-09-15
+expiryDate: 2024-09-15
 location: Fern Glen, PA
 event_type: Enduro
 event_format: Restart
