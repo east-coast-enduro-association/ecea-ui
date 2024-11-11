@@ -1,5 +1,5 @@
 ---
-title: "Pine Barons (Cancelled)"
+title: "Pine Barons Dual Sport (Cancelled)"
 description: "Last one!"
 preview_image: "images/logos/clubs/pber.webp"
 bg_image: "images/feature-bg.jpg"
