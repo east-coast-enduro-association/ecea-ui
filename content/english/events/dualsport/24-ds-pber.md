@@ -1,5 +1,5 @@
 ---
-title: "Pine Barons"
+title: "Pine Barons (Cancelled)"
 description: "Last one!"
 preview_image: "images/logos/clubs/pber.webp"
 bg_image: "images/feature-bg.jpg"
@@ -21,5 +21,7 @@ attachments:
 draft: false
 expiryDate: 2024-11-24
 ---
+
+Cancelled for 2024.
 
 A PBER classic. Wear your ski suit.
