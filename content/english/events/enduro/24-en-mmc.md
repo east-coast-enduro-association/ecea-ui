@@ -15,7 +15,7 @@ check_in_time: 2024-11-17T07:00:00.000Z
 registration_date: ""
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/sandy-lane-2024-10-22-.jpg
-expiryDate: 2024-11-18
+expiryDate: 2024-11-11
 preview_image: images/logos/clubs/mmc.jpg
 registration_url: ""
 key_time: 2024-11-17T09:00:00.000Z
