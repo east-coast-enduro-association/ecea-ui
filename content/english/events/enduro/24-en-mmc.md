@@ -20,4 +20,6 @@ preview_image: images/logos/clubs/mmc.jpg
 registration_url: ""
 key_time: 2024-11-17T09:00:00.000Z
 ---
-Regrettably, Sandy Lane Enduro is cancelled for 2024. An old-school New Jersey enduro. Trails narrower than your bars paired with timekeeping tricks to keep your mind young.
+**Regrettably, Sandy Lane Enduro is cancelled for 2024.** 
+
+An old-school New Jersey enduro. Trails narrower than your bars paired with timekeeping tricks to keep your mind young.
