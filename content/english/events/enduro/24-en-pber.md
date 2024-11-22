@@ -21,7 +21,12 @@ preview_image: images/logos/clubs/pber.webp
 attachments:
   attachment1:
     label: Confirmation Sheet
+    filepath: events/2024-clock-run-confirmation.pdf
   attachment2:
     label: Route Sheet
+    filepath: events"/pber-2024-enduro-final-route-sheet.pdf
+  attachment3:
+    label: Roll Chart
+    filepath: events/2024-pber-enduro-roll-chart-unofficial-112224.pdf
 ---
 PBER is bringing back a NJ classic
