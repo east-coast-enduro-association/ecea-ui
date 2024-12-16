@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: 2024 Adult Awards Banquet
+title: 2024 Enduro / Harescramble Awards Banquet
 author: Michael Abramo
 date: 2024-12-16T00:08:55.808Z
 image: images/blog/2024adultbanqweb.jpg
@@ -21,6 +21,8 @@ Tickets for the 2024 awards banquet are now available! You can purchase tickets 
 Date: Saturday, Feb 1, 2025 4:00 PM EST (doors open at 4:00 PM)
 
 Location:[ Sheraton Valley Forge Hotel, 480 North Gulph Road, King of Prussia, PA 19406 US](https://www.google.com/maps/search/480+North+Gulph+Road%2c+King+of+Prussia%2c+PA+19406+US/@40.0896876,-75.40983469999999,17z "Get Directions (new window)")
+
+If you are looking for details on the FASTKidz series awards banquet, please read the article here: https://ecea.org/blog/2024-12-16-2024-fastkidz-awards-banquet/
 
 **Schedule:**
 
