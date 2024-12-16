@@ -24,6 +24,8 @@ Date: Sunday, Jan 19, 2025 11:00 AM EST
 
 Location:[ Fun Plex - Mt Laurel NJ, 3320 New Jersey 38, Mount Laurel Township, NJ 08054 US](https://www.google.com/maps/search/3320+New+Jersey+38%2c+Mount+Laurel+Township%2c+NJ+08054+US/@39.9679453,-74.8917372,17z "Get Directions (new window)")
 
+If you are looking for details on the Enduro/HS awards banquet, please read the article here: https://ecea.org/blog/2024-12-16-2024-adult-awards-banquet/
+
 - - -
 
 **Schedule:**
