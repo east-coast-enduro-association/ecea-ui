@@ -13,7 +13,7 @@ information:
   - label : "Address"
     info : "P.O. Box 13006, Reading, PA 19612"
   - label : "Contact Email"
-    info : "jgraff57@gmail.com"
+    info : "readingoffroadriders@gmail.com"
   - label : "Contact Number"
     info : "(844) 440-RORR"
 ---
