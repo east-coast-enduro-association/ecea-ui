@@ -3,6 +3,7 @@
 # The presence of this file is for compatibility with Blogdown and Forestry.
 #
 # The actual configuration files are stored in the `config/_default/` folder.
+#
 
 
 ######################### site variables ##############################
@@ -20,7 +21,7 @@ white = "#ffffff"
 light = "#f5f5f5"
 
 # font variables
-# base font size for full website, 
+# base font size for full website,
 font_size = "15px" # default is 16px
 
 # Font Scale Sizes
