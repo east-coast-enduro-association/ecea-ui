@@ -4,17 +4,16 @@ title: High Mountain Fun Day
 description: Wallow in the Hollow, Family fun ride
 club:
   - HMDR
-event_datetime: 2024-08-31T13:00:00.000Z
+event_datetime: 2025-08-30T13:00:00.000Z
 location: 142 Cabin Lane, Sugarloaf, PA
 event_type: Special
 event_format: Special
 event_series: Special Series
 gate_fee: "Fees posted on Web, "
-check_in_time: 2024-08-30T20:00:54.249Z
+check_in_time: 2025-08-29T20:00:54.249Z
 preview_image: images/logos/clubs/hmdr.png
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/wallow23.jpg
-expiryDate: 2024-08-31
+expiryDate: 2025-09-01
 closed_course: No
 attachments: null
 ---

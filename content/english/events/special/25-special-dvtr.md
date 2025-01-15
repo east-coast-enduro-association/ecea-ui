@@ -1,11 +1,11 @@
 ---
 draft: false
 description: Do it for the kids
-event_datetime: 2024-12-01
+event_datetime: 2025-12-07
 event_type: Special
 bg_image: images/feature-bg.jpg
 flyer: ""
-expiryDate: 2024-12-04
+expiryDate: 2025-12-08
 preview_image: images/logos/clubs/dvtr.jpg
 closed_course: No
 check_in_time: ""

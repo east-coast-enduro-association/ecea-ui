@@ -1,14 +1,14 @@
 ---
 draft: false
 description: Family fun ride at the farm
-event_datetime: 2024-06-22
+event_datetime: 2025-06-21
 event_type: Special
 bg_image: images/feature-bg.jpg
 flyer: ""
-expiryDate: 2024-06-25
+expiryDate: 2025-06-25
 preview_image: images/logos/clubs/cdr.png
 closed_course: No
-check_in_time: 2024-08-21T02:27:50.184Z
+check_in_time: 2025-06-21T02:27:50.184Z
 attachments: null
 title: CDR Fun Day
 club:

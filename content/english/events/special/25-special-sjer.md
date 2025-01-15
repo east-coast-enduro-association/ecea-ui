@@ -1,12 +1,11 @@
 ---
 draft: false
-event_datetime: 2024-03-16
+event_datetime: 2025-03-15
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/24-special-sjer-flyer.jpg
-expiryDate: 2024-03-19
+expiryDate: 2025-03-19
 preview_image: images/logos/clubs/sjer.png
 closed_course: No
-check_in_time: 2024-03-14T14:50:07.755Z
+check_in_time: 2025-03-15T14:50:07.755Z
 attachments: null
 title: Squirrely Fern Enduro
 description: A chance for the kids to try out an enduro format!

@@ -4,18 +4,16 @@ title: High Steaks
 description: Eat your heart out
 club:
   - DVTR
-event_datetime: 2024-09-22T14:00:00.000Z
+event_datetime: 2025-09-14T14:00:00.000Z
 location: 399 Halstead Road, Clifford, PA
 event_type: Hare Scramble
 event_format: Hare Scramble
 event_series: Hare Scramble Series
 gate_fee: $10
-check_in_time: 2024-09-22T23:01:08.120Z
-registration_date: 2024-09-09T04:00:00.000Z
+check_in_time: 2025-09-14T23:01:08.120Z
 preview_image: images/logos/clubs/dvtr.jpg
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/24highsteakshs.jpg
-expiryDate: 2024-09-25
+expiryDate: 2025-09-16
 attachments: null
 ---
 Morning race: 10:00am
