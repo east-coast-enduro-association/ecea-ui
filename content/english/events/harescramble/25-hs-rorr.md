@@ -14,7 +14,6 @@ check_in_time: 2025-06-15T11:00:50.686Z
 registration_date: ""
 preview_image: images/logos/clubs/rorr.png
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/24rorr.jpg
 expiryDate: 2025-06-16
 attachments: null
 ---

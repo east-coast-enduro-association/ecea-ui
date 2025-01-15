@@ -11,7 +11,7 @@ event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 closed_course: "'No'"
 gas_away: "'Yes'"
-check_in_time: 2025-03-232024-11-17T07:00:00.000Z
+check_in_time: 2025-03-23T07:00:00.000Z
 registration_date: ""
 bg_image: images/feature-bg.jpg
 expiryDate: 2025-03-23

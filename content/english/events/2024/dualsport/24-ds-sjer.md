@@ -13,7 +13,7 @@ closed_course: "No"
 flyer: "images/events/flyers/23-ds-icebreaker.jpg"
 attachments:
 draft: false
-expirydate: 2024-02-26
+expiryDate: 2024-02-26
 ---
 
 This event is canceled!

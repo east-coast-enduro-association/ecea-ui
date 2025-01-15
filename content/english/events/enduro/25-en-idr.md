@@ -17,7 +17,7 @@ check_in_time: 2025-08-17T07:30:00.000Z
 preview_image: images/logos/clubs/idrlogo.jpg
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/image0.png
-expiryDate: 2025-08-1720
+expiryDate: 2025-08-17
 registration_url: ""
 registration_date: ""
 attachments:

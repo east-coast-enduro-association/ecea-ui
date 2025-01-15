@@ -17,6 +17,7 @@ bg_image: images/feature-bg.jpg
 attachments: null
 gate_fee: $10
 registration_date: ""
+expiryDate: 2024-10-28
 ---
 A message from PBER and SJER.
 
