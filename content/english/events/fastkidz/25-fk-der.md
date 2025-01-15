@@ -1,6 +1,6 @@
 ---
 draft: false
-event_datetime: 2024-10-05
+event_datetime: 2025-10-04
 preview_image: images/logos/clubs/der.gif
 bg_image: images/feature-bg.jpg
 attachments: null
@@ -13,5 +13,5 @@ event_type: FastKIDZ
 event_format: Hare Scramble
 event_series: ECEA Youth Series
 registration_date: ""
-expiryDate: 2024-10-07
+expiryDate: 2025-10-07
 ---

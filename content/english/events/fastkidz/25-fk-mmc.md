@@ -4,17 +4,17 @@ title: Fall Brawl
 description: Back at the farm
 club:
   - MMC
-event_datetime: 2024-10-12
+event_datetime: 2025-09-27
 location: Hesstown Road, Millville NJ
 event_type: FastKIDZ
 event_format: Hare Scramble
 event_series: ECEA Youth Series
 gate_fee: 10/5
-check_in_time: 2024-10-12T14:00:28.070Z
+check_in_time: 2025-09-27T14:00:28.070Z
 registration_date: ""
 preview_image: images/logos/clubs/mmc.jpg
 bg_image: images/feature-bg.jpg
-expiryDate: 2024-10-16
+expiryDate: 2025-09-29
 attachments: null
 ---
 AMA Required to RACE \

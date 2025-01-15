@@ -5,18 +5,17 @@ description: Great event for Youth, good spectating, mix of sandy and woods trai
 club:
   - CDR
   - DER
-event_datetime: 2024-05-04
+event_datetime: 2025-05-03
 location: 161 Hesstown Rd, Millville, NJ
 event_type: FastKIDZ
 event_format: Hare Scramble
 event_series: ECEA Youth Series
 gate_fee: $10
-check_in_time: 2024-05-04T14:00:00.000Z
+check_in_time: 2025-05-03T14:00:00.000Z
 registration_date: ""
 preview_image: images/logos/clubs/cdr.png
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/updated-2024-cdr-hare-scramble-flyer.jpg
-expiryDate: 2024-05-06
+expiryDate: 2025-05-06
 attachments: null
 ---
 **GATES OPEN Friday 7PM SATURDAY at 8 AM.**\
