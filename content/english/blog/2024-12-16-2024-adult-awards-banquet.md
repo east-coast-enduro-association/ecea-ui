@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: 2024 Enduro / Harescramble Awards Banquet
+title: 2024 Enduro / Harescramble Awards Banquet - LAST CALL TICKETS
 author: Michael Abramo
 date: 2024-12-16T00:08:55.808Z
 image: images/blog/2024adultbanqweb.jpg
