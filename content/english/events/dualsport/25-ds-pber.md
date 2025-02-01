@@ -16,6 +16,4 @@ draft: false
 expiryDate: 2025-11-30
 ---
 
-Cancelled for 2024.
-
 A PBER classic. Wear your ski suit.
