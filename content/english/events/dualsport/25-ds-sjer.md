@@ -14,5 +14,3 @@ attachments:
 draft: false
 expirydate: 2025-02-24
 ---
-
-This event is canceled!
