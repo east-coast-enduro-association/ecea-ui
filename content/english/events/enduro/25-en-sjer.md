@@ -19,6 +19,5 @@ expiryDate: 2025-03-17
 registration_url: ""
 registration_date: ""
 ---
-Curly Fern Enduro is canceled for the 2024 season
 
 A true test of rider fitness! This year features an improved course with some rarely-used trail. I hope you have kept your timekeeping skills sharp over the winter - SJER pulls out all the stops for this classic NJ enduro.
