@@ -3,7 +3,7 @@ title: "Ice Breaker"
 description: "Come out of hibernation"
 preview_image: "images/logos/clubs/sjer.png"
 bg_image: "images/feature-bg.jpg"
-club: ["PBER"]
+club: ["SJER"]
 event_datetime: "2025-02-23"
 location: "BBB Hunting Club, Pemberton, NJ"
 event_type: "Dual Sport"
