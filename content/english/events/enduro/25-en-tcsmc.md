@@ -1,24 +1,25 @@
 ---
 draft: false
-event_datetime: 2025-03-09
-bg_image: images/feature-bg.jpg
-expiryDate: 2025-03-11
-preview_image: images/logos/clubs/tcsmc.png
-registration_url: ""
 title: Greenbrier Enduro
 description: The annual season opener
 club:
   - TCSMC
+event_datetime: 2025-03-09
 location: 34 Frankles Lane, Port Elizabeth, NJ
 event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 closed_course: "'No'"
 gas_away: "'Yes'"
-key_time: 2025-03-09T09:00:00
 check_in_time: 2025-03-09T07:00:00
 registration_date: ""
-attachments:
+bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/25-en-tcsmc-flyer.jpg
+expiryDate: 2025-03-11
+preview_image: images/logos/clubs/tcsmc.png
+registration_url: ""
+key_time: 2025-03-09T09:00:00
+attachments: null
 ---
 ## Greenbrier Enduro March 9th, 2025
 
