@@ -23,13 +23,7 @@ attachments: null
 ---
 ## Greenbrier Enduro March 9th, 2025
 
-
-
-**Traditional Timekeeping Enduro**\
-\
-4 Riders on a Row KEYTIME: 0900
-
-* Row 1 will be in honor of Kyle Riggins
+**Traditional Timekeeping Enduro**
 
 \
 **NO GPS, NO Video Equipment Permitted**\
