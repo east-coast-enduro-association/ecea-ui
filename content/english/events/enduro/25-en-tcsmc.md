@@ -12,7 +12,7 @@ event_series: ECEA Enduro Championship Series
 closed_course: "'No'"
 gas_away: "'Yes'"
 check_in_time: 2025-03-09T07:00:00
-registration_date: ""
+registration_date: 2025-02-16T01:00:54.732Z
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/25-en-tcsmc-flyer.jpg
 expiryDate: 2025-03-11
