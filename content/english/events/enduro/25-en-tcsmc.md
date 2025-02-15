@@ -11,19 +11,21 @@ event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 closed_course: "'No'"
 gas_away: "'Yes'"
+key_time: 2025-03-09T09:00:00
 check_in_time: 2025-03-09T07:00:00
 registration_date: 2025-02-15T20:00:54.732Z
+preview_image: images/logos/clubs/tcsmc.png
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/25-en-tcsmc-flyer.jpg
 expiryDate: 2025-03-11
-preview_image: images/logos/clubs/tcsmc.png
 registration_url: ""
-key_time: 2025-03-09T09:00:00
 attachments: null
 ---
 ## Greenbrier Enduro March 9th, 2025
 
-**Traditional Timekeeping Enduro**
+**Traditional Timekeeping Enduro**\
+\
+**PRE ENTRY LINK, Opens 3/15 8pm  [GO HERE  ](https://www.moto-tally.com/ECEA/Enduro/PreEntry.aspx)**
 
 \
 **NO GPS, NO Video Equipment Permitted**\
