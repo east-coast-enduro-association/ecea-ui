@@ -1,18 +1,19 @@
 ---
 draft: false
+description: A chance for the kids to try out an enduro format!
 event_datetime: 2025-03-15
+event_type: Special
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/squirrelly-fern-flyer-2025_page-0001.jpg
 expiryDate: 2025-03-19
 preview_image: images/logos/clubs/sjer.png
 closed_course: No
 check_in_time: 2025-03-15T14:50:07.755Z
 attachments: null
 title: Squirrely Fern Enduro
-description: A chance for the kids to try out an enduro format!
 club:
   - SJER
 location: Indian Mills Deer Club, Atsion Road, Shamong, NJ
-event_type: Special
 event_format: Restart
 event_series: Special Series
 gate_fee: None
