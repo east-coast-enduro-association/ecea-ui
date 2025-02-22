@@ -21,8 +21,8 @@ registration_url: ""
 key_time: 2025-03-23T09:00:00.000Z
 attachments:
   attachment1:
-    label: Waiver
-    filepath: events/25-en-mmc-waiver.jpg
+    label: State Waiver (Print and Sign)
+    filepath: events/enduro-event-state-waiver.pdf
 ---
 An old-school New Jersey enduro. Trails narrower than your bars paired with timekeeping tricks to keep your mind young.
 
