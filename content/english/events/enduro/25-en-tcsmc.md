@@ -2,23 +2,24 @@
 draft: false
 title: Greenbrier Enduro
 description: The annual season opener
-club:
-  - TCSMC
 event_datetime: 2025-03-09
-location: 34 Frankles Lane, Port Elizabeth, NJ
 event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
+bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/25-en-tcsmc-flyer.jpg
+expiryDate: 2025-03-11
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=1
+preview_image: images/logos/clubs/tcsmc.png
+registration_url: ""
+club:
+  - TCSMC
+location: 34 Frankles Lane, Port Elizabeth, NJ
 closed_course: "'No'"
 gas_away: "'Yes'"
 key_time: 2025-03-09T09:00:00
 check_in_time: 2025-03-09T07:00:00
 registration_date: 2025-02-15T20:00:54.732Z
-preview_image: images/logos/clubs/tcsmc.png
-bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/25-en-tcsmc-flyer.jpg
-expiryDate: 2025-03-11
-registration_url: ""
 attachments: null
 ---
 ## Greenbrier Enduro March 9th, 2025
@@ -45,8 +46,8 @@ Rider List to be posted on Monday 3/5\
 Confirmation Sheet and Roll Chart posted on Thursday 3/8\
 \
 **Saturday 3/9**\
-Sign-in opens at 2pm to 6pm\
+Sign-in opens at 3pm to 7pm\
 **Sunday 3/10**\
-Sign-in opens 6am to start of race\
+Sign-in opens 6am to 9am\
 \
 **ALL RIDERS - each rider is to bring their own helmet to sign-in and sign event waiver.**
