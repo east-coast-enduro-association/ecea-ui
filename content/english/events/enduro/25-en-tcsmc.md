@@ -20,7 +20,13 @@ gas_away: "'Yes'"
 key_time: 2025-03-09T09:00:00
 check_in_time: 2025-03-09T07:00:00
 registration_date: 2025-02-15T20:00:54.732Z
-attachments: null
+attachments:
+  attachment1:
+    filepath: events/25-en-tcsmc-route-sheet.pdf
+    label: Route Sheet
+  attachment2:
+    filepath: events"/25-en-tcsmc-confirmation.pdf
+    label: Confirmation Sheet
 ---
 ## Greenbrier Enduro March 9th, 2025
 
