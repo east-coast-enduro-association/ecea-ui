@@ -13,9 +13,9 @@ information:
   - label : "Address"
     info : "31 Hog Hollow Rd, Pittstown, NJ 08867"
   - label : "Club President"
-    info : "INSERT NAME"
+    info : "Corey Chandler"
   - label : "Club Contact"
-    info : "INSERT NAME"
+    info : "Corey Chandler"
   - label : "Contact Email"
     info : "dvtrailriders@gmail.com"
   - label : "Contact Number"
@@ -30,4 +30,4 @@ Trail riding is where it all started, and for most, it’s the sole reason for r
 
 Each December we have our Toys-For-Tots Dirty Santa Toy Run, which is the single-most important event you can participate in each year. For this event, it’s all hands on deck so that we can continue to make the massive donations to Toys-For-Tots that we have in past years.
 
-Club meetings will be on the Second Tuesday of every month at the West End Tavern in Quakertown, PA. Please do your very best to attend these meetings, get involved and be part of the movement we’ve created.
+For more info on our events, meetings, and how you can join, please visit our website.
