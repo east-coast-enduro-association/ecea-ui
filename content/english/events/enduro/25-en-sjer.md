@@ -2,23 +2,24 @@
 draft: false
 title: Curly Fern
 description: A New Jersey Classic
-club:
-  - SJER
 event_datetime: 2025-03-16
-location: Indian Mills Deer Club, Atsion, NJ
 event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
-closed_course: "'No'"
-gas_away: "'Yes'"
-check_in_time: 2025-03-16T07:00:00
-registration_date: ""
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/25-en-sjer-flyer.jpg
 expiryDate: 2025-03-17
+start_grid: https://moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=2
 preview_image: images/logos/clubs/sjer-green.png
 registration_url: ""
+club:
+  - SJER
+location: Indian Mills Deer Club, Atsion, NJ
+closed_course: "'No'"
+gas_away: "'Yes'"
 key_time: 2025-03-16T09:00:00
+check_in_time: 2025-03-16T07:00:00
+registration_date: ""
 attachments:
   attachment1:
     label: State Waiver (Print and Sign)
