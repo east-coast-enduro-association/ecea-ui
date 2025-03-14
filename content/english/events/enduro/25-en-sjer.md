@@ -24,6 +24,12 @@ attachments:
   attachment1:
     label: State Waiver (Print and Sign)
     filepath: events/enduro-event-state-waiver.pdf
+  attachment2:
+    filepath: events"/2025-cf-rider-information-312.pdf
+    label: Rider Info
+  attachment3:
+    filepath: events/2025-curly-fern-enduro-routesheet-courtesy-copy.pdf
+    label: Route Sheet
 ---
 
 A true test of rider fitness! This year features an improved course with some rarely-used trail. I hope you have kept your timekeeping skills sharp over the winter - SJER pulls out all the stops for this classic NJ enduro.
