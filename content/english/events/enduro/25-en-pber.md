@@ -4,7 +4,7 @@ title: Clock Run
 description: Kicking it old school
 club:
   - PBER
-event_datetime: 2025-11-23T08:00:00.000Z
+event_datetime: 2025-11-30T08:00:00.000Z
 location: 1555 Route 532, Woodland Twp., NJ
 event_type: Enduro
 event_format: Time Keeping
