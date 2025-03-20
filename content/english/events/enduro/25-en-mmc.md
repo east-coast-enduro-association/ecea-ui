@@ -25,8 +25,8 @@ attachments:
     label: State Waiver (Print and Sign)
     filepath: events/enduro-event-state-waiver.pdf
   attachment2:
-    filepath: events"/2025-sandy-lane-route-sheet.pdf
-    label: Roll Chart
+    filepath: events"/sandy-lane-2025-rollchart-long.pdf
+    label: Roll Chart (Long Course)
   attachment3:
     filepath: events/confirmation-sle-2025.pdf
     label: Confirmation Sheet
