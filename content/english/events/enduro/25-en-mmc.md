@@ -35,7 +35,7 @@ attachments:
     label: Roll Chart (Short Course)
   attachment5:
     filepath: events/2025-sandy-lane-route-sheet.pdf
-    label: Roll Chart (Short Course)
+    label: Route Sheet
 ---
 An old-school New Jersey enduro. Trails narrower than your bars paired with timekeeping tricks to keep your mind young.
 
