@@ -25,13 +25,16 @@ attachments:
     label: State Waiver (Print and Sign)
     filepath: events/enduro-event-state-waiver.pdf
   attachment2:
-    filepath: events"/sandy-lane-2025-rollchart-long.pdf
-    label: Roll Chart (Long Course)
-  attachment3:
     filepath: events/confirmation-sle-2025.pdf
     label: Confirmation Sheet
+  attachment3:
+    filepath: events"/sandy-lane-2025-rollchart-long.pdf
+    label: Roll Chart (Long Course)
   attachment4:
     filepath: events/sandy-lane-2025-rollchart-short.pdf
+    label: Roll Chart (Short Course)
+  attachment5:
+    filepath: events/2025-sandy-lane-route-sheet.pdf
     label: Roll Chart (Short Course)
 ---
 An old-school New Jersey enduro. Trails narrower than your bars paired with timekeeping tricks to keep your mind young.
