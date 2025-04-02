@@ -10,8 +10,8 @@ event_type: Hare Scramble
 event_format: Hare Scramble
 event_series: Hare Scramble Series
 gate_fee: $10
-check_in_time: 2025-04-27T11:00:10.615Z
-registration_date: 2025-04-14T22:00:00.000Z
+check_in_time: 2025-04-27T07:00:00.000Z
+registration_date: 2025-04-14T18:00:00.000Z
 preview_image: images/logos/clubs/vftr.jpg
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/25-vftr-hs.jpeg
