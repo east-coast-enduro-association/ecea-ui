@@ -17,4 +17,4 @@ tags:
 draft: false
 type: post
 ---
-Rider contingency is here! Please [click here for more details](/static/attachments/ECEA-contingency-announcement-2025-interactive.pdf) and check the manufacturer website for more details.
+Rider contingency is here! Please [click here for more details](/attachments/ECEA-contingency-announcement-2025-interactive.pdf) and check the manufacturer website for more details.
