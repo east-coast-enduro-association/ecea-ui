@@ -11,6 +11,7 @@ event_type: Enduro
 event_format: Restart
 event_series: ECEA Enduro Championship Series
 closed_course: "'No'"
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=5
 gas_away: "'No'"
 check_in_time: 2025-04-13T07:00:00.013Z
 registration_date: ""
