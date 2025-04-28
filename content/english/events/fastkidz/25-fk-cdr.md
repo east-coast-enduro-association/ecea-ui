@@ -15,6 +15,7 @@ check_in_time: 2025-05-03T14:00:00.000Z
 registration_date: ""
 preview_image: images/logos/clubs/cdr.png
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/25_cdr_ormand_hs.jpg
 expiryDate: 2025-05-06
 attachments: null
 ---
@@ -22,7 +23,7 @@ attachments: null
 \
 **ONLINE PRE ENTER ONLY FOR THIS EVENT.**\
 **AMA required**\
-**ECEA YOUTH SERIES NUMBER required to use ONLINE System  [GET 2023 NUMBER HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)**
+**ECEA YOUTH SERIES NUMBER required to use ONLINE System  [GET NUMBER HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)**
 
 **PRE ENTER FOR THIS EVENT with a Series Number [GO HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx)**\
 \
