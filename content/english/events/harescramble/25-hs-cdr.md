@@ -15,6 +15,7 @@ check_in_time: 2025-05-04T11:00:00.000Z
 registration_date: ""
 preview_image: images/logos/clubs/cdr.png
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/25_cdr_ormand_hs.jpg
 expiryDate: 2025-05-06
 ---
 **RIDER LIMIT for Sunday, ONLINE SIGN UP ONLY., You need a Series Number** to use the online system\
