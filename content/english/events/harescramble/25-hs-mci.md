@@ -11,8 +11,10 @@ event_format: Hare Scramble
 event_series: Hare Scramble Series
 gate_fee: $10 per person, Kids 5 and under Free
 check_in_time: ""
+registration_date: ""
 preview_image: images/logos/clubs/mci.jpg
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/25_mci_hs.jpg
 expiryDate: 2025-05-19
 attachments: null
 ---
