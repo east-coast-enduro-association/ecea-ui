@@ -11,8 +11,10 @@ event_format: Hare Scramble
 event_series: ECEA Hare Scramble Series
 gate_fee: TBA
 check_in_time: 2025-06-01T11:05:23.454Z
+registration_date: ""
 preview_image: images/logos/clubs/gmer.gif
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/25_gmer_hs.png
 expiryDate: 2025-06-03
 ---
 Gates OPEN FRIDAY 2pm\
