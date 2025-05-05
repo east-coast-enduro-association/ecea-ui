@@ -74,6 +74,12 @@ hasChildren = true
   url = "https://www.moto-tally.com/ECEA/Enduro/MemberList.aspx"
   weight = 6
 
+  [[main]]
+  parent = "Enduro"
+  name = "Enduro Team Results"
+  url = "team_results"
+  weight = 5
+
 [[main]]
 weight = 6
 name = "Hare Scramble"
