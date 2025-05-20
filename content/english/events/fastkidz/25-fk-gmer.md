@@ -18,11 +18,11 @@ flyer: images/events/flyers/25_gmer_hs.png
 expiryDate: 2025-06-03
 attachments: null
 ---
-**NO GO PRO's  DSQ if found on person or bike**
+**NO GO PRO's  DSQ if found on person or bike,  NO SATURDAY PRACTICE**
 
 AMA Required.\
 \
-**ECEA Yearly Number or Day Pass Required** to use Preentry system or to Sign up.  **Get one** [HERE ](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)\
+**ECEA Yearly Number or Day Pass Required** to use Pre entry system or to Sign up.  **Get one** [HERE ](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)\
 \
 **Event Pre entry System opens 5/20**  [Go HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx) to Pre Enter the event
 
