@@ -16,7 +16,9 @@ preview_image: images/logos/clubs/michaux.jpg
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/25-sper-hs.png
 ---
-SPER is back with an all new Hare Scramble , NEW LOCATION\
+SPER is back with an all new Hare Scramble , NEW LOCATION \
+\
+**NO CAMPING FRIDAY NIGHT**\
 \
 [Pre entry ](https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx)is best way to sign up, [Series Numbers required or Day Pass](https://www.moto-tally.com/ECEA/ECEA/SeriesRegistration.aspx)\
 \
