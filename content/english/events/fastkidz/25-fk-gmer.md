@@ -14,7 +14,7 @@ check_in_time: 2025-05-31T14:00:57.675Z
 registration_date: 2025-05-31T12:00:00.000Z
 preview_image: images/logos/clubs/gmer.gif
 bg_image: images/feature-bg.jpg
-flyer: images/events/flyers/25_gmer_hs.png
+flyer: images/events/flyers/25gmerhs-revised.jpg
 expiryDate: 2025-06-03
 attachments: null
 ---
