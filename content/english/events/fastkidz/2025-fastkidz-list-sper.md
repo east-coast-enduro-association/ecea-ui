@@ -18,6 +18,8 @@ flyer: images/events/flyers/25-sper-hs.png
 ---
 South Penn  is back with an all new Hare Scramble , new Location.\
 \
+**NO CAMPING FRIDAY NIGHT**\
+\
 See Flyer for Details. Updates will post on Social Media if not here\
 \
 10am Saturday Sign Up, Please sign up/ check in prior to 30 minutes before race starts\
