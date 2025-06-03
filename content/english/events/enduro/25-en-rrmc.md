@@ -8,7 +8,7 @@ event_series: ECEA Enduro Championship Series
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/jim-smith-memorial-enduro-2-.jpg
 expiryDate: 2025-06-10
-start_grid: ""
+start_grid: https://www.moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=6
 preview_image: images/logos/clubs/rrmc-large.png
 registration_url: ""
 title: Jim Smith Memorial Enduro
