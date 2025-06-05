@@ -14,11 +14,12 @@ check_in_time: 2025-06-15T14:00:43.190Z
 registration_date: ""
 preview_image: images/logos/clubs/rorr.png
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/rorrhs25.jpg
 expiryDate: 2025-06-18
 attachments: null
 ---
 **SPECIAL EVENT WAIVER and GATE FEE's** \
-[GO HERE NOW  Required prior to Entering  site. ](https://rorr.redpodium.com/2024-rorr-ecea-hare-scramble-series)\
+[GO HERE NOW  Required prior to Entering  site. ](https://rorr.redpodium.com/2025-rorr-ecea-hare-scramble-series)\
 \
 AMA Required.\
 \
