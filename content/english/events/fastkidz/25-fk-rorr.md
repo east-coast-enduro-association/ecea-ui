@@ -15,7 +15,7 @@ registration_date: ""
 preview_image: images/logos/clubs/rorr.png
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/rorrhs25.jpg
-expiryDate: 2025-06-18
+expiryDate: 2025-06-15
 attachments: null
 ---
 **SPECIAL EVENT WAIVER and GATE FEE's** \
