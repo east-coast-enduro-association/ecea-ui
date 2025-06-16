@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 description: Old School Rock run but in Delano, good trail....
 event_datetime: 2025-06-22
 event_type: Enduro
