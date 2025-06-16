@@ -23,7 +23,7 @@ registration_date: ""
 ---
 ## **This event is sold out and will not be accepting any further entries**
 
-**HMDR is back** with a vengeance!  ReStart Format .
+**HMDR is back** with a vengeance!  ReStart Format
 
 **UPDATES**, we are in **POST Entry** MODE online **til THURSDAY AFTERNOON**.. GET ENTERED \
 \
