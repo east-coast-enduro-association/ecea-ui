@@ -8,10 +8,10 @@ event_series: ECEA Enduro Championship Series
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/250409-shotgun-enduro-flyer.jpg
 expiryDate: 2025-06-23
-start_grid: ""
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=7
 preview_image: images/logos/clubs/hmdr.png
 registration_url: ""
-title: Shotgun Enduro
+title: Shotgun Enduro [Sold Out]
 club:
   - HMDR
 location: Ryan Twp Grove Rt, State Route 1017, Barnsville, PA
@@ -21,6 +21,10 @@ key_time: 2025-06-22T09:00:00
 check_in_time: 2025-06-22T07:00:00
 registration_date: ""
 ---
+## **This event is sold out and will not be accepting any further entries**
+
+
+
 **HMDR is back** with a vengeance!  ReStart Format .
 
 **UPDATES**, we are in **POST Entry** MODE online **til THURSDAY AFTERNOON**.. GET ENTERED \
