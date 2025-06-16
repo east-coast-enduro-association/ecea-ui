@@ -3,7 +3,7 @@ draft: false
 description: Old School Rock run but in Delano, good trail....
 event_datetime: 2025-06-22
 event_type: Enduro
-event_format: Time Keeping
+event_format: Restart
 event_series: ECEA Enduro Championship Series
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/250409-shotgun-enduro-flyer.jpg
