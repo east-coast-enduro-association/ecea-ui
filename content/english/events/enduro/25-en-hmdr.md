@@ -23,13 +23,11 @@ registration_date: ""
 ---
 ## **This event is sold out and will not be accepting any further entries**
 
-
-
 **HMDR is back** with a vengeance!  ReStart Format .
 
 **UPDATES**, we are in **POST Entry** MODE online **til THURSDAY AFTERNOON**.. GET ENTERED \
 \
-The **ROW ASSIGNMENTS** are [POSTED HERE](https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=7)
+T**R** [P](https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=7)
 
 **See Flyer, But here are  some key points**
 
