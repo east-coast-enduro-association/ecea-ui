@@ -3,7 +3,7 @@ draft: false
 description: This one is easy, you should do it
 event_datetime: 2025-07-20
 event_type: Enduro
-event_format: Restart
+event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/506449518_1132222292277842_581084921244868926_n.jpg
