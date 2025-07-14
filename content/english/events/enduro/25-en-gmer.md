@@ -4,7 +4,7 @@ title: Three Springs
 description: Teetering on the edge
 event_datetime: 2025-08-10
 event_type: Enduro
-event_format: Time Keeping
+event_format: Restart
 event_series: ECEA Enduro Championship Series
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/three-springs-enduro-flyer-25.jpg
