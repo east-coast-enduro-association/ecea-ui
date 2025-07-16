@@ -8,7 +8,7 @@ event_series: ECEA Enduro Championship Series
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/506449518_1132222292277842_581084921244868926_n.jpg
 expiryDate: 2025-07-21
-start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=9
+start_grid: https://moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=9
 preview_image: images/logos/clubs/dvtr.jpg
 registration_url: ""
 title: Foggy Mountain
