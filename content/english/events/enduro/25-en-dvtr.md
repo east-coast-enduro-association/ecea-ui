@@ -1,5 +1,6 @@
 ---
 draft: false
+title: Foggy Mountain
 description: This one is easy, you should do it
 event_datetime: 2025-07-20
 event_type: Enduro
@@ -11,7 +12,6 @@ expiryDate: 2025-07-21
 start_grid: https://moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=9
 preview_image: images/logos/clubs/dvtr.jpg
 registration_url: ""
-title: Foggy Mountain
 club:
   - DVTR
 location: 532 PICNIC GROVE RD, BLAIN, PA 17006
@@ -20,7 +20,18 @@ gas_away: "'Yes'"
 key_time: 2025-07-20T09:00:00
 check_in_time: 2025-07-20T07:00:00
 registration_date: ""
+attachments:
+  attachment1:
+    filepath: events/foggy-25-confirmation-sheet.pdf
+    label: Confirmation Sheet
+  attachment2:
+    filepath: events"/foggy-mtn-2025-route-sheet-ver-7.pdf
+    label: Route Sheet
+  attachment3:
+    filepath: events/foggy-mtn-2025-jart-ver-7.pdf
+    label: JART Chart
+  attachment4:
+    filepath: events/foggy-mtn-2025-ver-7.rs
+    label: RS File
 ---
 There's a mountain. There are rocks on it. Sometimes it's foggy, sometimes it's not. Point your dirtbike at it and open the throttle already.
-
-Route sheet and other info is located here https://drive.google.com/drive/u/1/folders/1V-Vv_iFmlbBnQAd8xcsOtbO3Qeumf5Hp
