@@ -35,3 +35,25 @@ attachments:
     label: RS File
 ---
 There's a mountain. There are rocks on it. Sometimes it's foggy, sometimes it's not. Point your dirtbike at it and open the throttle already.
+
+**Note on split course:**
+
+The classes riding the split course (the final section) are as follows: 
+
+AA (all motor sizes/ages)
+
+A-200 (98cc -200cc)
+
+A-250 (201cc -250cc)
+
+A-Open (251cc & up)
+
+A-Veteran (Age 30 & up)
+
+A-Senior 40+ (Age 40 & up)
+
+A-Senior 45+ (Age 45 & up)
+
+A-Senior 50+ (Age 50 & up)
+
+The confirmation sheet is correct. The route sheet incorrectly states that A50+ skips the final section when in fact they should ride it. There will be ample signage on the trail indicating the split.
