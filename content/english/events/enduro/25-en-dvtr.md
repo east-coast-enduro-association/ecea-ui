@@ -55,5 +55,3 @@ A-Senior 40+ (Age 40 & up)
 A-Senior 45+ (Age 45 & up)
 
 A-Senior 50+ (Age 50 & up)
-
-The confirmation sheet is correct. The route sheet incorrectly states that A50+ skips the final section when in fact they should ride it. There will be ample signage on the trail indicating the split.
