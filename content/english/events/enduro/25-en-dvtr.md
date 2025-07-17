@@ -25,13 +25,13 @@ attachments:
     filepath: events/foggy-25-confirmation-sheet.pdf
     label: Confirmation Sheet
   attachment2:
-    filepath: events"/foggy-mtn-2025-route-sheet-ver-7.pdf
+    filepath: events"/foggy-mtn-2025-route-sheet-ver-8.pdf
     label: Route Sheet
   attachment3:
-    filepath: events/foggy-mtn-2025-jart-ver-7.pdf
+    filepath: events/foggy-mtn-2025-jart-ver-8.pdf
     label: JART Chart
   attachment4:
-    filepath: events/foggy-mtn-2025-ver-7.rs
+    filepath: events/foggy-mtn-2025-ver-8.rs
     label: RS File
 ---
 There's a mountain. There are rocks on it. Sometimes it's foggy, sometimes it's not. Point your dirtbike at it and open the throttle already.
