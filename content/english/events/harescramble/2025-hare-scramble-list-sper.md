@@ -15,6 +15,7 @@ registration_date: 2025-06-16T16:00:50.712Z
 preview_image: images/logos/clubs/michaux.jpg
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/25-sper-hs.png
+expiryDate: 2025-06-28
 ---
 SPER is back with an all new Hare Scramble , NEW LOCATION \
 \
