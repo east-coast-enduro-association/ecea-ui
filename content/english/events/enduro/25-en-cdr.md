@@ -8,7 +8,7 @@ event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 bg_image: images/feature-bg.jpg
 expiryDate: 2025-08-25
-start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=13
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=13
 preview_image: images/logos/clubs/cdr.png
 registration_url: ""
 club:
