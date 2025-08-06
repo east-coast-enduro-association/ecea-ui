@@ -20,6 +20,7 @@ gas_away: "'Yes'"
 key_time: 2025-08-24T09:00:00
 check_in_time: 2025-08-24T07:00:00
 registration_date: ""
+flyer: images/events/flyers/2025-en-cdr-flyer.jpg
 attachments:
 ---
 

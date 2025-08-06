@@ -19,6 +19,7 @@ preview_image: images/logos/clubs/vftr.jpg
 bg_image: images/feature-bg.jpg
 registration_url: ""
 key_time: 2025-09-22T09:00:00
+flyer: images/events/flyers/2025-en-vftr-flyer.jpg
 attachments:
 ---
 

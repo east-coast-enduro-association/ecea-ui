@@ -9,7 +9,7 @@ event_series: ECEA Enduro Championship Series
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/three-springs-enduro-flyer-25.jpg
 expiryDate: 2025-08-11
-start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=11
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=11
 preview_image: images/logos/clubs/gmer.gif
 registration_url: ""
 club:
