@@ -7,6 +7,7 @@ event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/2025-en-cdr-flyer.jpeg
 expiryDate: 2025-08-25
 start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=13
 preview_image: images/logos/clubs/cdr.png
@@ -20,8 +21,7 @@ gas_away: "'Yes'"
 key_time: 2025-08-24T09:00:00
 check_in_time: 2025-08-24T07:00:00
 registration_date: ""
-flyer: images/events/flyers/2025-en-cdr-flyer.jpg
-attachments:
+attachments: null
 ---
 
 A New Jersey staple in the enduro community. How many years has this event been hosted? Somebody should update the page with that info... 
