@@ -14,6 +14,7 @@ draft: false
 [Three Springs Enduro](/attachments/events/team-results/2025-en-gmer-team-results.pdf)  
 [Rattlesnake Enduro](/attachments/events/team-results/2025-en-ber-team-results.pdf)  
 [Foggy Mountain](/attachments/events/team-results/2025-en-dvtr-team-results.pdf)  
+[Barbed Wire](/attachments/events/team-results/2025-en-ster-team-results.pdf)  
 [Shotgun Enduro](/attachments/events/team-results/2025-en-hmdr-team-results.pdf)  
 [Jim Smith Memorial](/attachments/events/team-results/2025-en-rrmc-team-results.pdf)  
 [Pine Hill](/attachments/events/team-results/2025-en-cjcr-team-results.pdf)  
