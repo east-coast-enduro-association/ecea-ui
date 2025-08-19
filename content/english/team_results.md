@@ -10,7 +10,10 @@ draft: false
 
 [Unofficial Team Standings](/attachments/events/team-results/2025-en-current-team-results.pdf)
 
+[Ithaca Sprint](/attachments/events/team-results/2025-en-idr-team-results.pdf)  
+[Three Springs Enduro](/attachments/events/team-results/2025-en-gmer-team-results.pdf)  
 [Rattlesnake Enduro](/attachments/events/team-results/2025-en-ber-team-results.pdf)  
+[Foggy Mountain](/attachments/events/team-results/2025-en-dvtr-team-results.pdf)  
 [Shotgun Enduro](/attachments/events/team-results/2025-en-hmdr-team-results.pdf)  
 [Jim Smith Memorial](/attachments/events/team-results/2025-en-rrmc-team-results.pdf)  
 [Pine Hill](/attachments/events/team-results/2025-en-cjcr-team-results.pdf)  
