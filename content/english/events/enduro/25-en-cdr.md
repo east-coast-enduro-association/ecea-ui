@@ -21,7 +21,19 @@ gas_away: "'Yes'"
 key_time: 2025-08-24T09:00:00
 check_in_time: 2025-08-24T07:00:00
 registration_date: ""
-attachments: null
+attachments:
+  attachment1:
+    filepath: events/beehive-confirmation-sheet-2025.pdf
+    label: Confirmation Sheet
+  attachment2:
+    filepath: events"/beehive-routesheet-2025.pdf
+    label: Route Sheet
+  attachment3:
+    filepath: events/beehive-spec-sheet-2025.pdf
+    label: Spectator Sheet
+  attachment4:
+    filepath: events/beehive-rider-info-sheet-2025.pdf
+    label: Rider Info
 ---
 
 A New Jersey staple in the enduro community. How many years has this event been hosted? Somebody should update the page with that info... 
