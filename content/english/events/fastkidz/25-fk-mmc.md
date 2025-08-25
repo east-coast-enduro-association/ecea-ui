@@ -11,9 +11,10 @@ event_format: Hare Scramble
 event_series: ECEA Youth Series
 gate_fee: 10/5
 check_in_time: 2025-09-27T14:00:28.070Z
-registration_date: ""
+registration_date: 2025-09-15T04:00:00.000Z
 preview_image: images/logos/clubs/mmc.jpg
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/25mmchs.jpg
 expiryDate: 2025-09-29
 attachments: null
 ---
