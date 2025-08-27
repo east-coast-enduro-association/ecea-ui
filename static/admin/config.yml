@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: github
+  branch: migration-sveltia # replace once ready to use in production
+  # branch: master
+  repo: east-coast-enduro-association/ecea-ui
 publish_mode: editorial_workflow
 media_folder: static/images/blog
 public_folder: /images/blog
