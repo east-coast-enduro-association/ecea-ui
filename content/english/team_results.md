@@ -10,7 +10,7 @@ draft: false
 
 [Unofficial Team Standings](/attachments/events/team-results/2025-en-current-team-results.pdf)
 
-[Beehive](/attachments/events/team-results/2025-en-cdr-team-results.pdf)
+[Beehive](/attachments/events/team-results/2025-en-cdr-team-results.pdf)  
 [Ithaca Sprint](/attachments/events/team-results/2025-en-idr-team-results.pdf)  
 [Three Springs Enduro](/attachments/events/team-results/2025-en-gmer-team-results.pdf)  
 [Rattlesnake Enduro](/attachments/events/team-results/2025-en-ber-team-results.pdf)  
