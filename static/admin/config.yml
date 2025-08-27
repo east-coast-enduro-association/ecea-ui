@@ -4,8 +4,8 @@ backend:
   # branch: master
   repo: east-coast-enduro-association/ecea-ui
 publish_mode: editorial_workflow
-media_folder: static/images/blog
-public_folder: /images/blog
+media_folder: static/images
+public_folder: /images
 collections:
   - name: blog
     label: Blog
