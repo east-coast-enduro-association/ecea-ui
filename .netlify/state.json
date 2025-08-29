@@ -1,3 +1,21 @@
 {
-	"siteId": "baa8414b-b130-4048-99cb-9c15417c5a83"
+	"siteId": "baa8414b-b130-4048-99cb-9c15417c5a83",
+	"geolocation": {
+		"data": {
+			"city": "Suffern",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "NY",
+				"name": "New York"
+			},
+			"timezone": "America/New_York",
+			"latitude": 41.1196,
+			"longitude": -74.1417,
+			"postalCode": "10901"
+		},
+		"timestamp": 1756437162998
+	}
 }
