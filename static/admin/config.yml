@@ -1,14 +1,54 @@
+# ===================================================================
+# Reusable Fields Anchor for all Event Collections
+# This anchor now contains ONLY the fields common to ALL event types.
+# ===================================================================
+common_event_fields: &common_event_fields
+  - { label: Draft, name: draft, widget: boolean, default: false }
+  - { label: Title, name: title, widget: string, required: true }
+  - { label: Tag Line, name: description, widget: string }
+  - label: Club
+    name: club
+    widget: select
+    multiple: true
+    options: [BER, CDR, CJCR, DER, DVTR, GMER, HMDR, IDR, MCI, MMC, OCCR, RORR, RRMC, SJER, SPER, STER, PBER, TCSMC, VFTR]
+  - { label: Event Date, name: event_datetime, widget: datetime }
+  - { label: Address, name: location, widget: string }
+  - { label: Check In Time, name: check_in_time, widget: datetime, hint: "What time does check-in open in the morning?" }
+  - { label: Pre-Entry Date, name: registration_date, widget: datetime, default: "", hint: "What day and time will pre-entry open?", required: false }
+  - { label: "Description and information about event", name: body, widget: markdown }
+  - label: Club Logo
+    name: preview_image
+    widget: image
+    media_folder: "/static/images/logos/clubs" # Override: Force logos to their own folder
+    public_folder: "/images/logos/clubs"
+  - { label: Background Image, name: bg_image, widget: hidden, default: images/feature-bg.jpg }
+  - label: Flyer Image
+    name: flyer
+    widget: image
+    required: false
+    # This will now inherit the media_folder from the collection
+  - label: "Event Attachments"
+    name: "attachments"
+    widget: "list"
+    summary: "{{fields.label}}"
+    hint: "Add any number of files for this event, like route sheets or results."
+    fields:
+      - { label: "Label", name: "label", widget: "string", hint: "e.g., Route Sheet, Entry Form" }
+      - { label: "File", name: "file", widget: "file" } # This will also inherit the collection's media_folder
+
+# ===================================================================
+# Main Configuration Starts Here
+# ===================================================================
 backend:
   name: github
   branch: migration-sveltia # replace once ready to use in production
   repo: east-coast-enduro-association/ecea-ui
-  implementation: beta # IMPORTANT: Enables folder view
+  implementation: beta # IMPORTANT: Enables folder view in the media library
 
-# Global default for the main Media tab and markdown editor's image button
+# Global default for the main "Media" tab and markdown editor's image button
 media_folder: "static/images"
 public_folder: "/images"
 
-# Optional, but recommended for clarity and forcing folder UI
 media_library:
   folder_support: true
 
@@ -18,68 +58,50 @@ collections:
   - name: blog
     label: Blog
     folder: content/english/blog
+    summary: "{{fields.title}} — {{fields.date}}" # Better UI summary
+    media_folder: "/static/images/blog" # Sveltia-specific: Note the leading slash
+    public_folder: "/images/blog"
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - { label: Layout, name: layout, widget: hidden, default: blog }
-      - { label: Title, name: title, widget: string }
+      - { label: Title, name: title, widget: string, required: true }
       - { label: Author, name: author, widget: string }
       - { label: Publish Date, name: date, widget: datetime }
-      - label: Blog Post Image
-        name: image
-        widget: image
-        # CORRECTED PATHS: Restricts this widget to the /blog subfolder
-        media_folder: "static/images/blog"
-        public_folder: "/images/blog"
+      - { label: Blog Post Image, name: image, widget: image } # Inherits this collection's media_folder
       - { label: Background Image, name: bg_image, widget: hidden, default: images/feature-bg.jpg }
-      - label: Categories
-        name: categories
-        widget: select
-        options: [Announcement, News, "On Your Minute"]
-        multiple: true
+      - { label: Categories, name: categories, widget: select, options: [Announcement, News, "On Your Minute"], multiple: true }
       - { label: Description, name: description, widget: string }
       - { label: Tags, name: tags, widget: list }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Blog Entry Type, name: type, widget: hidden, default: post }
-      - { label: Body, name: body, widget: markdown } # Uses global media_folder
+      - { label: Body, name: body, widget: markdown }
 
   - name: content-pages
     label: Content Pages
+    view_groups: # Better UI organization
+      - label: "General Pages"
+        files: ["faq", "contacts"]
     files:
-      - label: FAQ
-        name: faq
-        file: content/english/faq.md
-        fields:
-          - { label: Last Modified Date, name: date, widget: datetime }
-          - { label: Body, name: body, widget: markdown } # Uses global media_folder
-      - label: Contacts
-        name: contacts
-        file: content/english/contact.md
-        fields:
-          - { label: Body, name: body, widget: markdown } # Uses global media_folder
+      - { label: FAQ, name: faq, file: content/english/faq.md, fields: [{ label: Last Modified Date, name: date, widget: datetime }, { label: Body, name: body, widget: markdown }] }
+      - { label: Contacts, name: contacts, file: content/english/contact.md, fields: [{ label: Body, name: body, widget: markdown }] }
 
   - name: enduro-event
     label: Enduro Event
     folder: content/english/events/enduro
+    summary: "{{fields.title}} — {{fields.event_datetime}}"
+    media_folder: "/static/images/events/flyers" # Sveltia-specific folder for this collection
+    public_folder: "/images/events/flyers"
     create: true
     slug: '{{year}}-{{event_type}}-{{club}}'
     fields:
-      - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Title, name: title, widget: string }
-      - { label: Tag Line, name: description, widget: string }
-      - label: Club
-        name: club
-        widget: select
-        multiple: true
-        options: [BER, CDR, CJCR, DER, DVTR, GMER, HMDR, IDR, MCI, MMC, OCCR, RORR, RRMC, SJER, SPER, STER, PBER, TCSMC, VFTR]
-      - { label: Event Date, name: event_datetime, widget: datetime }
-      - { label: Address, name: location, widget: string }
+      - <<: *common_event_fields # Imports all common event fields
+      # Fields specific to Enduro events
       - { label: Event Type, name: event_type, widget: hidden, default: Enduro }
-      - label: Event Format
-        name: event_format
-        widget: select
-        options: ["Time Keeping", Restart, "Sprint Enduro", "National Enduro", Other]
       - { label: Event Series, name: event_series, widget: hidden, default: ECEA Enduro Championship Series }
+      - { label: Event Format, name: event_format, widget: select, options: ["Time Keeping", Restart, "Sprint Enduro", "National Enduro", Other] }
+      - { label: Key Time, name: key_time, widget: datetime }
+      - { label: Starting Grid URL, name: start_grid, widget: string, required: false }
       - label: "Closed course?"
         name: closed_course
         widget: select
@@ -93,194 +115,51 @@ collections:
           - { label: "Yes", value: "Yes" }
           - { label: "No", value: "No" }
         required: false
-      - { label: Starting Grid URL, name: start_grid, widget: string, required: false }
-      - { label: Key Time, name: key_time, widget: datetime }
-      - { label: Check In Time, name: check_in_time, widget: datetime, hint: "What time does check-in open in the morning?" }
-      - { label: Pre-Entry Date, name: registration_date, widget: datetime, default: "", hint: "What day and time will pre-entry open?", required: false }
-      - { label: "Description and information about event", name: body, widget: markdown } # Uses global media_folder
-      - label: Club Logo
-        name: preview_image
-        widget: image
-        # CORRECTED PATHS: Restricts to logos subfolder
-        media_folder: "static/images/logos/clubs"
-        public_folder: "/images/logos/clubs"
-      - { label: Background Image, name: bg_image, widget: hidden, default: images/feature-bg.jpg }
-      - label: Flyer Image
-        name: flyer
-        widget: image
-        required: false
-        # CORRECTED PATHS: Restricts to flyers subfolder
-        media_folder: "static/images/events/flyers"
-        public_folder: "/images/events/flyers"
-      - label: "Route Sheet, Confirmation Sheet, etc"
-        name: attachments
-        widget: object
-        required: false
-        hint: "These files are not required yet. You can come back and add them later."
-        fields:
-          - label: Confirmation Sheet
-            name: attachment1
-            widget: object
-            required: false
-            fields:
-              - { label: Label, name: label, widget: string, default: "Confirmation Sheet", required: false }
-              - label: File
-                name: filepath
-                widget: file
-                required: false
-                # CORRECTED PATHS: Restricts to attachments subfolder
-                media_folder: "static/attachments/events"
-                public_folder: "/attachments/events"
-          - label: Route Sheet
-            name: attachment2
-            widget: object
-            required: false
-            fields:
-              - { label: Label, name: label, widget: string, default: "Route Sheet", required: false }
-              - label: File
-                name: filepath
-                widget: file
-                required: false
-                # CORRECTED PATHS: Restricts to attachments subfolder
-                media_folder: "static/attachments/events"
-                public_folder: "/attachments/events"
-          - label: Other Document
-            name: attachment3
-            widget: object
-            required: false
-            fields:
-              - { label: Label, name: label, widget: string, required: false }
-              - label: File
-                name: filepath
-                widget: file
-                required: false
-                # CORRECTED PATHS: Restricts to attachments subfolder
-                media_folder: "static/attachments/events"
-                public_folder: "/attachments/events"
-          - label: Other Document
-            name: attachment4
-            widget: object
-            required: false
-            fields:
-              - { label: Label, name: label, widget: string, required: false }
-              - label: File
-                name: filepath
-                widget: file
-                required: false
-                # CORRECTED PATHS: Restricts to attachments subfolder
-                media_folder: "static/attachments/events"
-                public_folder: "/attachments/events"
 
   - name: harescramble-event
     label: Hare Scramble Event
     folder: content/english/events/harescramble
+    summary: "{{fields.title}} — {{fields.event_datetime}}"
+    media_folder: "/static/images/events/flyers"
+    public_folder: "/images/events/flyers"
     create: true
     slug: '{{year}}-{{event_type}}-{{club}}'
     fields:
-      - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Title, name: title, widget: string }
-      - { label: Tag Line, name: description, widget: string }
-      - label: Club
-        name: club
-        widget: select
-        multiple: true
-        options: [BER, CDR, CJCR, DER, DVTR, GMER, HMDR, IDR, MCI, MMC, OCCR, RORR, RRMC, SJER, SPER, STER, PBER, TCSMC, VFTR]
-      - { label: Event Date, name: event_datetime, widget: datetime }
-      - { label: Address, name: location, widget: string }
+      - <<: *common_event_fields # Imports all common event fields
+      # Fields specific to Hare Scramble events
       - { label: Event Type, name: event_type, widget: hidden, default: "Hare Scramble" }
       - { label: Event Format, name: event_format, widget: hidden, default: "Hare Scramble" }
       - { label: Event Series, name: event_series, widget: hidden, default: "ECEA Hare Scramble Series" }
       - { label: Gate Fee, name: gate_fee, widget: string, default: TBA }
-      - { label: Check In Time, name: check_in_time, widget: datetime, hint: "What time does check-in open in the morning?", required: false }
-      - { label: Pre-Entry Date, name: registration_date, widget: datetime, default: "", hint: "What day and time will pre-entry open?", required: false }
-      - { label: "Description and information about event", name: body, widget: markdown } # Uses global media_folder
-      - label: Club Logo
-        name: preview_image
-        widget: image
-        # CORRECTED PATHS
-        media_folder: "static/images/logos/clubs"
-        public_folder: "/images/logos/clubs"
-      - { label: Background Image, name: bg_image, widget: hidden, default: images/feature-bg.jpg }
-      - label: Flyer Image
-        name: flyer
-        widget: image
-        required: false
-        # CORRECTED PATHS
-        media_folder: "static/images/events/flyers"
-        public_folder: "/images/events/flyers"
 
   - name: fastkidz-event
     label: FastKIDZ Event
     folder: content/english/events/fastkidz
+    summary: "{{fields.title}} — {{fields.event_datetime}}"
+    media_folder: "/static/images/events/flyers"
+    public_folder: "/images/events/flyers"
     create: true
     slug: '{{year}}-{{event_type}}-{{club}}'
     fields:
-      - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Title, name: title, widget: string }
-      - { label: Tag Line, name: description, widget: string }
-      - label: Club
-        name: club
-        widget: select
-        multiple: true
-        options: [BER, CDR, CJCR, DER, DVTR, GMER, HMDR, IDR, MCI, MMC, OCCR, RORR, RRMC, SJER, SPER, STER, PBER, TCSMC, VFTR]
-      - { label: Event Date, name: event_datetime, widget: datetime }
-      - { label: Address, name: location, widget: string }
+      - <<: *common_event_fields # Imports all common event fields
+      # Fields specific to FastKIDZ events
       - { label: Event Type, name: event_type, widget: hidden, default: fastKIDZ }
       - { label: Event Format, name: event_format, widget: hidden, default: "Hare Scramble" }
       - { label: Event Series, name: event_series, widget: hidden, default: "ECEA Youth Series" }
       - { label: Gate Fee, name: gate_fee, widget: string, default: TBA }
-      - { label: Check In Time, name: check_in_time, widget: datetime, hint: "What time does check-in open in the morning?", required: false }
-      - { label: Pre-Entry Date, name: registration_date, widget: datetime, default: "", hint: "What day and time will pre-entry open?", required: false }
-      - { label: "Description and information about event", name: body, widget: markdown } # Uses global media_folder
-      - label: Club Logo
-        name: preview_image
-        widget: image
-        # CORRECTED PATHS
-        media_folder: "static/images/logos/clubs"
-        public_folder: "/images/logos/clubs"
-      - { label: Background Image, name: bg_image, widget: hidden, default: images/feature-bg.jpg }
-      - label: Flyer Image
-        name: flyer
-        widget: image
-        required: false
-        # CORRECTED PATHS
-        media_folder: "static/images/events/flyers"
-        public_folder: "/images/events/flyers"
 
   - name: special-event
     label: Special Event
     folder: content/english/events/special
+    summary: "{{fields.title}} — {{fields.event_datetime}}"
+    media_folder: "/static/images/events/flyers"
+    public_folder: "/images/events/flyers"
     create: true
     slug: '{{year}}-{{event_type}}-{{club}}'
     fields:
-      - { label: Draft, name: draft, widget: boolean, default: false }
-      - { label: Title, name: title, widget: string }
-      - { label: Tag Line, name: description, widget: string }
-      - label: Club
-        name: club
-        widget: select
-        multiple: true
-        options: [BER, CDR, CJCR, DER, DVTR, GMER, HMDR, IDR, MCI, MMC, OCCR, RORR, RRMC, SJER, SPER, STER, PBER, TCSMC, VFTR]
-      - { label: Event Date, name: event_datetime, widget: datetime }
-      - { label: Address, name: location, widget: string }
+      - <<: *common_event_fields # Imports all common event fields
+      # Fields specific to Special events
       - { label: Event Type, name: event_type, widget: hidden, default: Enduro }
       - { label: Event Format, name: event_format, widget: hidden, default: Special }
       - { label: Event Series, name: event_series, widget: hidden, default: "Special Series" }
       - { label: Gate Fee, name: gate_fee, widget: string, default: TBA }
-      - { label: Check In Time, name: check_in_time, widget: datetime, hint: "What time does check-in open in the morning?", required: false }
-      - { label: Pre-Entry Date, name: registration_date, widget: datetime, default: "", hint: "What day and time will pre-entry open?", required: false }
-      - { label: "Description and information about event", name: body, widget: markdown } # Uses global media_folder
-      - label: Club Logo
-        name: preview_image
-        widget: image
-        # CORRECTED PATHS
-        media_folder: "static/images/logos/clubs"
-        public_folder: "/images/logos/clubs"
-      - { label: Background Image, name: bg_image, widget: hidden, default: images/feature-bg.jpg }
-      - label: Flyer Image
-        name: flyer
-        widget: image
-        required: false
-        # CORRECTED PATHS
-        media_folder: "static/images/events/flyers"
-        public_folder: "/images/events/flyers"
