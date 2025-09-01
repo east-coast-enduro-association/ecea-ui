@@ -9,10 +9,12 @@ location: 399 Halstead Road, Clifford, PA
 event_type: FastKIDZ
 event_format: Hare Scramble
 event_series: ECEA Youth Series
-gate_fee: $10
-check_in_time: 2025-09-13T02:00:03.444Z
+gate_fee: $10,  5 and under free
+check_in_time: 2025-09-14T02:00:03.444Z
+registration_date: 2025-09-02T21:57:00.000Z
 preview_image: images/logos/clubs/dvtr.jpg
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/25dvterhs.jpg
 expiryDate: 2025-09-15
 attachments: null
 ---
