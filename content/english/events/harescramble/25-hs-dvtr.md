@@ -11,7 +11,7 @@ event_format: Hare Scramble
 event_series: Hare Scramble Series
 gate_fee: $10
 check_in_time: 2025-09-14T23:01:08.120Z
-registration_date: ""
+registration_date: 2025-09-02T17:32:49.605Z
 preview_image: images/logos/clubs/dvtr.jpg
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/25dvterhs.jpg
@@ -21,6 +21,6 @@ attachments: null
 Morning race: 10:00am
 Afternoon race: 1:00pm\
 \
-PRE ENTRY OPEN SEPT 9 , CLOSES SEPT 20 11 AM.. [ GO HERE](https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx)\
+PRE ENTRY OPEN SEPT 2 , CLOSES SEPT 12 noon .. [ GO HERE](https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx)\
 \
 This race is ole school hare scramble, Grass track, woods, off cambers, single track, roots etc.. GREAT EVENT..
