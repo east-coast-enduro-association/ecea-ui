@@ -11,8 +11,10 @@ event_format: Hare Scramble
 event_series: Hare Scramble Series
 gate_fee: $10
 check_in_time: 2025-09-14T23:01:08.120Z
+registration_date: ""
 preview_image: images/logos/clubs/dvtr.jpg
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/25dvterhs.jpg
 expiryDate: 2025-09-16
 attachments: null
 ---
