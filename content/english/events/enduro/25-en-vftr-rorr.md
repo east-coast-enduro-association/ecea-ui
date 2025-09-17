@@ -21,7 +21,13 @@ gas_away: "'No'"
 key_time: 2025-09-22T09:00:00
 check_in_time: 2025-09-22T07:00:00
 registration_date: ""
-attachments: null
+attachments:
+  attachment1:
+    label: Confirmation Sheet
+    filepath: events/confirmation-moonshine-2025-rev-3.pdf
+  attachment2:
+    label: Route Sheet
+    filepath: events"/2025-route-sheet-moonshine.pdf
 ---
 
 This event is co-hosted between [Valley Forge Trail Riders](/clubs/vftr) and [Reading Off Road Riders](/clubs/rorr). Top notch event with a ton of variety.
