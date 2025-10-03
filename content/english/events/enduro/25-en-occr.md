@@ -19,7 +19,7 @@ closed_course: No
 gas_away: No
 key_time: 2025-10-26T09:00:00
 check_in_time: 2025-10-26T07:00:00
-registration_date: 2025-10-14T00:00:00.000Z
+registration_date: 2025-10-13T16:00:00.000Z
 attachments: null
 ---
 Pre-Entry opens on October 13th. 
