@@ -22,5 +22,6 @@ check_in_time: 2025-10-26T07:00:00
 registration_date: 2025-10-14T00:00:00.000Z
 attachments: null
 ---
+Pre-Entry opens on October 13th. 
 
 A classic New Jersey timekeeper hosted in the same forest as [CJCR's Pine Hill enduro](/events/23-en-cjcr). Bring the family for a nice weekend camping in Brendan T. Byrne.
