@@ -9,14 +9,14 @@ event_series: ECEA Enduro Championship Series
 bg_image: images/feature-bg.jpg
 flyer: images/events/flyers/scrubpine25flyer.gif
 expiryDate: 2025-10-27
-start_grid: ""
+start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=16
 preview_image: images/logos/clubs/occr.jpg
 registration_url: ""
 club:
   - OCCR
 location: Brendan T Byrne Forest, 1 Campsite Loop, Vincetown NJ
-closed_course: No
-gas_away: No
+closed_course: "'No'"
+gas_away: "'No'"
 key_time: 2025-10-26T09:00:00
 check_in_time: 2025-10-26T07:00:00
 registration_date: 2025-10-13T16:00:00.000Z
