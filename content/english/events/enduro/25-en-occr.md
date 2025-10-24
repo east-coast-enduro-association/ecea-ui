@@ -20,7 +20,19 @@ gas_away: "'No'"
 key_time: 2025-10-26T09:00:00
 check_in_time: 2025-10-26T07:00:00
 registration_date: 2025-10-13T16:00:00.000Z
-attachments: null
+attachments:
+  attachment1:
+    label: Confirmation
+    filepath: events/2025-sc100-confirmation.pdf
+  attachment2:
+    label: Route Sheet
+    filepath: events"/2025-sc100-rs.pdf
+  attachment3:
+    label: Camping Assignments
+    filepath: events/scrub-pine-100-25-camping-list-sheet1.pdf
+  attachment4:
+    label: NJ DEP Waiver
+    filepath: events/njdep-enduro-event-waiver.pdf
 ---
 Pre-Entry opens on October 13th. 
 
