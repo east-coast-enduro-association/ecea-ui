@@ -1,7 +1,7 @@
 ---
 draft: false
 description: Do it for the kids
-event_datetime: 2025-12-07
+event_datetime: 2025-12-14T05:00:00.000Z
 event_type: Special
 bg_image: images/feature-bg.jpg
 flyer: ""
