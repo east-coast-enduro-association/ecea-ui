@@ -10,12 +10,13 @@ event_type: Enduro
 event_format: Time Keeping
 event_series: ECEA Enduro Championship Series
 gas_away: "'Yes'"
+check_in_time: 2025-11-23T08:00:00.000Z
 registration_date: ""
 bg_image: images/feature-bg.jpg
+flyer: images/events/flyers/2025clockrunflyer.jpg
 expiryDate: 2025-12-07
 closed_course: "'No'"
 key_time: 2025-11-23T10:00:20.513Z
-check_in_time: 2025-11-23T08:00:00.000Z
 preview_image: images/logos/clubs/pber.webp
 attachments: null
 ---
