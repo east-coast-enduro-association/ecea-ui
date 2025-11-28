@@ -19,6 +19,12 @@ expiryDate: 2025-12-07
 start_grid: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=4
 key_time: 2025-11-23T09:00:20.513Z
 preview_image: images/logos/clubs/pber.webp
-attachments: null
+attachments:
+  attachment1:
+    label: Confirmation Sheet
+    filepath: events/pber-11_30_25-enduro-rider-information.pdf
+  attachment2:
+    label: Route Sheet
+    filepath: events"/pber-2page-route-sheet-with-kt-pdf.pdf
 ---
 PBER is bringing back a NJ classic
