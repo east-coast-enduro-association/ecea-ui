@@ -10,3 +10,4 @@ package-lock.json
 resources
 .hugo_build.lock
 .astro
+.astro
