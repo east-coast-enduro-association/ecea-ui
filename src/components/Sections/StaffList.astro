@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+const { showAll = true, limit = 6 } = Astro.props;
+
+const allStaff = await getCollection("staff", ({ data }) =>
+  import.meta.env.PROD ? !data.draft : true
+);
+const staffMembers = allStaff
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, showAll ? undefined : limit);
+---
+
+<!-- ================= STAFF GRID ================= -->
+<section id="staff" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-4">Our Leadership Team</h2>
+    <p class="text-center text-gray-600 mb-12">
+      Meet the dedicated individuals who lead and serve our church community
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
+      {staffMembers.map(staff => (
+        <div class="bg-white rounded-lg shadow overflow-hidden flex flex-col h-full">
+          <!-- Foto (4:3) -->
+          <div class="relative w-full pb-[100%]">
+            <img
+              src={staff.data.image}
+              alt={staff.data.name}
+              class="absolute inset-0 w-full h-full object-cover object-center"
+            />
+          </div>
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-xl font-semibold mb-1">{staff.data.name}</h3>
+              <p class="text-primary-600 mb-2">{staff.data.title}</p>
+              <p class="text-gray-700 text-sm">{staff.data.bio}</p>
+            </div>
+            <div class="mt-4 space-y-1 text-sm">
+              {staff.data.email && (
+                <a
+                  href={`mailto:${staff.data.email}`}
+                  class="text-primary-600 hover:underline block"
+                >
+                  {staff.data.email}
+                </a>
+              )}
+              {staff.data.phone && (
+                <a
+                  href={`tel:${staff.data.phone}`}
+                  class="text-primary-600 hover:underline block"
+                >
+                  {staff.data.phone}
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

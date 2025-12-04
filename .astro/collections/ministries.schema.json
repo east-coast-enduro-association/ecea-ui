@@ -1,0 +1,45 @@
+{
+  "$ref": "#/definitions/ministries",
+  "definitions": {
+    "ministries": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string",
+          "pattern": "^\\/uploads\\/ministries\\/"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "coordinator": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        },
+        "schedule": {
+          "type": "string"
+        },
+        "order": {
+          "type": "number"
+        },
+        "draft": {
+          "type": "boolean",
+          "default": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "summary"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
