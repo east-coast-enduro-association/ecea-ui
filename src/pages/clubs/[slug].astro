@@ -4,7 +4,7 @@ import PageHeader from "../../components/Sections/PageHeader.astro";
 import Button from "../../components/UI/Button.astro";
 import { getCollection } from "astro:content";
 
-// Generate static paths for all ministries
+// Generate static paths for all clubs
 export async function getStaticPaths() {
   try {
     const clubEntries = await getCollection("clubs", ({ data }) => {
@@ -64,10 +64,10 @@ const { Content } = await entry.render();
             <h3 class="text-xl font-bold mb-4">Club Information</h3>
 
             <div class="space-y-4 mb-6">
-              {entry.data.coordinator && (
+              {entry.data.president && (
                 <div>
-                  <h4 class="font-bold text-gray-700">Coordinator</h4>
-                  <p>{entry.data.coordinator}</p>
+                  <h4 class="font-bold text-gray-700">President</h4>
+                  <p>{entry.data.president}</p>
                 </div>
               )}
 
@@ -84,12 +84,6 @@ const { Content } = await entry.render();
                 </div>
               )}
 
-              {entry.data.schedule && (
-                <div>
-                  <h4 class="font-bold text-gray-700">Schedule</h4>
-                  <p>{entry.data.schedule}</p>
-                </div>
-              )}
             </div>
 
             <div class="flex flex-col space-y-3">
@@ -98,7 +92,7 @@ const { Content } = await entry.render();
               </Button>
 
               <Button href="/clubs" variant="outline">
-                Back to All Ministries
+                Back to All Clubs
               </Button>
             </div>
           </div>

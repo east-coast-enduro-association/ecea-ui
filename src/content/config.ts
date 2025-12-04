@@ -53,14 +53,21 @@ const clubsCollection = defineCollection({
   type: 'content',
   schema: z.object({
     name: z.string(),
-    logo: z.string().startsWith('/uploads/ministries/').optional(),
+    abbreviatedName: z.string(),
+    logo: z.string().startsWith('/uploads/clubs/logos/').optional(),
     summary: z.string(),
-    coordinator: z.string().optional(),
+    president: z.string().optional(),
+    website: z.string().optional(),
     contact: z.string().optional(), // Email or text
-    schedule: z.string().optional(),
     order: z.number().optional(),
     draft: z.boolean().default(false),
-  }),
+    category: z.array(z.string()).optional(),
+    location: z.string().optional(),
+    // metadata: z.array(z.object({
+    // label: z.string(),
+    // info: z.string()
+    // )).optional(),
+  }).passthrough(),
 });
 
 const blogCollection = defineCollection({
