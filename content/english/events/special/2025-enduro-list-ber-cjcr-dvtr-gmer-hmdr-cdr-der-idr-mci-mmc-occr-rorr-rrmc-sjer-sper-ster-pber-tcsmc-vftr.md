@@ -40,9 +40,12 @@ flyer: images/events/flyers/25adultbanq.jpg
 
 **GET a Cheap 10x10 Spot to Sell, swap, give away**.. your motorcycle related stuff... *[REGISTER HERE](https://brushfire.com/eastcoastenduroassociation/eceaswapmeet-sellerregistration/621047)*\
 \
-**BANQUET DINNER and AWARDS TICKETS (required to get ECEA Series Awards**) *[GO HERE for Tickets](https://brushfire.com/eastcoastenduroassociation/ecea-banquet-2025/620937)*\
-\
-**HOTEL RESERVATIONS will be announced  12/13 or sooner.**\
+**BANQUET DINNER and AWARDS TICKETS (required to get ECEA Series Awards**) *[GO HERE for Tickets](https://brushfire.com/eastcoastenduroassociation/ecea-banquet-2025/620937)*
+
+**Hotel room booking**  [USE THIS LINK](https://urldefense.com/v3/__https://book.passkey.com/go/EASA26C__;!!BnpaTDOe3sRS!K_t0qjWghfy_TLry10ynFCpTIFfDXKzczT1WmKfy0Hw2F_h_cjK_MEs6qyNxCHEXVeDoJ_4U6VwGaBNPk_IU$)\
+Additionally, you can call our call center and let them know that you are with East Coast Enduro Association or code EASA26C:\
+Call Center Reservation Number: **610-354-8118**\
+Days of Operation: Monday-Sunday **8:00 AM -9:00 PM EST**\
 \
 **We hope everyone will come early and enjoy the day with the ECEA, Racers, Friends and Family.** \
 You can arrive anytime around Noon, Doors are open by 10am for set up, etc.. The Casino awaits !!!!!!!\
