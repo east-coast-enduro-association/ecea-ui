@@ -2,159 +2,233 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
 import Card from "../../components/UI/Card.astro";
+import Button from "../../components/UI/Button.astro"; // Added for the "Reset" button
 import { getCollection } from "astro:content";
-import { formatDate, isFutureDate, isPastDate } from "../../utils/dateUtils";
+import { formatDate } from "../../utils/dateUtils";
 
-// Get all events
+// 1. Fetch all events
 const allEvents = await getCollection("events", ({ data }) => {
   return import.meta.env.PROD ? !data.draft : true;
 });
 
-// Separate upcoming and past events
-const upcomingEvents = allEvents.filter(event => isFutureDate(event.data.date))
-                            .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+// 2. Sort by date (Newest/Future first generally feels better for calendars,
+//    but standard blog order is newest first. For events, usually you want
+//    upcoming events first. Let's stick to simple date sorting.)
+const events = allEvents.sort((a, b) =>
+  new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
+);
 
-const pastEvents = allEvents.filter(event => isPastDate(event.data.date))
-                        .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-                        .slice(0, 6); // Show only the most recent past events
+// 3. Extract unique values for the Filter Dropdowns
+// We use "eventType" (Enduro, Hare Scramble) and "hostingClub"
+const eventTypes = [...new Set(events.map(e => e.data.eventType).filter(Boolean))].sort();
+const clubs = [...new Set(events.map(e => e.data.hostingClub).filter(Boolean))].sort();
 ---
 
 <BaseLayout
-  title="Events - Church Name"
-  description="Stay updated with upcoming events and activities at our church. Find information on special services, community gatherings, and more."
+  title="ECEA Events Calendar"
+  description="Upcoming Enduros, Hare Scrambles, and Dual Sports in the ECEA."
 >
-  <PageHeader 
-    title="Events" 
-    subtitle="Join us for these upcoming activities"
+  <PageHeader
+    title="2025 Schedule"
+    subtitle="Enduros, Hare Scrambles, and Junior Events"
     backgroundImage="/uploads/events-header-bg.webp"
   />
-  
-  <!-- Upcoming Events -->
+
   <section class="py-16">
     <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Upcoming Events</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Mark your calendar and join us for these upcoming events
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {upcomingEvents.map((event) => (
-          <Card
-            title={event.data.title}
-            image={{
-              src: event.data.image,
-              alt: event.data.title
-            }}
-            href={`/events/${event.slug}`}
-          >
-            <div class="mb-3 flex items-center text-gray-600">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span>{formatDate(event.data.date)}</span>
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+        <div class="lg:col-span-1">
+          <div class="bg-white p-6 rounded-lg shadow-sm sticky top-24">
+            <h2 class="text-xl font-bold mb-6">Filter Events</h2>
+
+            <div class="mb-6">
+              <label for="search" class="block text-sm font-medium text-gray-700 mb-1">Search</label>
+              <input
+                type="text"
+                id="search"
+                placeholder="Search event name..."
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+              />
             </div>
-            
-            {event.data.time && (
-              <div class="mb-3 flex items-center text-gray-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>{event.data.time}</span>
+
+            {eventTypes.length > 0 && (
+              <div class="mb-6">
+                <label for="eventType" class="block text-sm font-medium text-gray-700 mb-1">Event Type</label>
+                <select
+                  id="eventType"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                >
+                  <option value="">All Types</option>
+                  {eventTypes.map(type => (
+                    <option value={type}>{type}</option>
+                  ))}
+                </select>
               </div>
             )}
-            
-            <div class="mb-3 flex items-center text-gray-600">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <span>{event.data.location}</span>
+
+            {clubs.length > 0 && (
+              <div class="mb-6">
+                <label for="club" class="block text-sm font-medium text-gray-700 mb-1">Hosting Club</label>
+                <select
+                  id="club"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                >
+                  <option value="">All Clubs</option>
+                  {clubs.map(c => (
+                    <option value={c}>{c}</option>
+                  ))}
+                </select>
+              </div>
+            )}
+
+            <div class="space-y-3">
+              <label class="block text-sm font-medium text-gray-700">Date Range</label>
+              <div>
+                <label for="from-date" class="block text-xs text-gray-500 mb-1">From</label>
+                <input type="date" id="from-date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" />
+              </div>
+              <div>
+                <label for="to-date" class="block text-xs text-gray-500 mb-1">To</label>
+                <input type="date" id="to-date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" />
+              </div>
             </div>
-            
-            <p class="text-gray-700 mb-4">{event.data.summary}</p>
-            
-            <p class="text-primary-600 font-medium group-hover:underline group-hover:text-primary-700">
-              Learn More →
-            </p>
-          </Card>
-        ))}
-      </div>
-    </div>
-  </section>
-  
-  <!-- Past Events -->
-  <section class="py-16 bg-gray-50">
-    <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Past Events</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Browse some of our recent events
-        </p>
-      </div>
-      
-      {
-        pastEvents.length > 0 ? (
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pastEvents.map((event) => (
+
+            <button
+              id="reset-filters"
+              class="w-full mt-6 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
+            >
+              Reset Filters
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="events-grid">
+            {events.map((event) => (
               <Card
                 title={event.data.title}
-                image={{
+                image={event.data.image ? {
                   src: event.data.image,
                   alt: event.data.title
-                }}
+                } : undefined}
                 href={`/events/${event.slug}`}
-                className="opacity-90 hover:opacity-100"
+                className="event-card"
+                /* These data-attributes are KEY for the Javascript to find them */
+                data-type={event.data.eventType || ""}
+                data-club={event.data.hostingClub || ""}
+                data-date={event.data.date.toISOString().slice(0, 10)}
               >
                 <div class="mb-3 flex items-center text-gray-600">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <span>{formatDate(event.data.date)}</span>
+                  <span class="font-semibold">{formatDate(event.data.date)}</span>
                 </div>
-                
-                <div class="mb-3 flex items-center text-gray-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span>{event.data.location}</span>
-                </div>
-                
-                <p class="text-gray-700 mb-4">{event.data.summary}</p>
 
-                <p class="text-primary-600 font-medium group-hover:underline group-hover:text-primary-700">
+                {event.data.hostingClub && (
+                  <div class="mb-3 flex items-center text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span>{event.data.hostingClub}</span>
+                  </div>
+                )}
+
+                {event.data.eventType && (
+                  <div class="mb-3">
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                      {event.data.eventType}
+                    </span>
+                  </div>
+                )}
+
+                <p class="text-gray-700 mb-4 line-clamp-2">{event.data.summary}</p>
+
+                <p class="text-primary-600 font-medium group-hover:underline">
                   View Details →
                 </p>
               </Card>
             ))}
           </div>
-        ) : (
-          <div class="text-center py-12 bg-white rounded-lg shadow-sm">
-            <p class="text-gray-600">No past events to display.</p>
+
+          <div id="no-results" class="hidden text-center py-12 bg-gray-50 rounded-lg mt-8">
+            <p class="text-gray-600">No events match your filters.</p>
+            <button id="clear-search-btn" class="mt-2 text-primary-600 hover:underline">Clear all filters</button>
           </div>
-        )
-      }
-    </div>
-  </section>
-  
-  <!-- Add Your Event CTA -->
-  <section class="py-20 bg-white">
-    <div class="container">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Have an Event to Share?</h2>
-        <p class="text-xl text-gray-600 mb-8">
-          If you're planning a church or ministry-related event that you'd like to add to our calendar, please contact us.
-        </p>
-        
-        <a 
-          href="/contact?subject=Event+Submission" 
-          class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-primary-600 rounded-md shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-        >
-          Submit an Event
-        </a>
+        </div>
       </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search');
+      const typeSelect = document.getElementById('eventType'); // Changed ID
+      const clubSelect = document.getElementById('club');      // Changed ID
+      const fromDateInput = document.getElementById('from-date');
+      const toDateInput = document.getElementById('to-date');
+      const resetButton = document.getElementById('reset-filters');
+      const clearSearchBtn = document.getElementById('clear-search-btn');
+      const eventsGrid = document.getElementById('events-grid');
+      const noResults = document.getElementById('no-results');
+      const eventCards = document.querySelectorAll('.event-card');
+
+      const filterEvents = () => {
+        const searchTerm = searchInput?.value.toLowerCase() || '';
+        const selectedType = typeSelect?.value || '';
+        const selectedClub = clubSelect?.value || '';
+        const fromDate = fromDateInput?.value || '';
+        const toDate = toDateInput?.value || '';
+
+        let visibleCount = 0;
+
+        eventCards.forEach(card => {
+          const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+          const summary = card.querySelector('p')?.textContent.toLowerCase() || '';
+
+          // These match the data- attributes set in the astro loop above
+          const type = card.getAttribute('data-type') || '';
+          const club = card.getAttribute('data-club') || '';
+          const date = card.getAttribute('data-date') || '';
+
+          const matchesSearch = title.includes(searchTerm) || summary.includes(searchTerm);
+          const matchesType = !selectedType || type === selectedType;
+          const matchesClub = !selectedClub || club === selectedClub;
+          const matchesFromDate = !fromDate || date >= fromDate;
+          const matchesToDate = !toDate || date <= toDate;
+
+          if (matchesSearch && matchesType && matchesClub && matchesFromDate && matchesToDate) {
+            card.style.display = 'block';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (noResults) {
+          noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      };
+
+      // Listeners
+      searchInput?.addEventListener('input', filterEvents);
+      typeSelect?.addEventListener('change', filterEvents);
+      clubSelect?.addEventListener('change', filterEvents);
+      fromDateInput?.addEventListener('change', filterEvents);
+      toDateInput?.addEventListener('change', filterEvents);
+
+      const resetAll = () => {
+        if (searchInput) searchInput.value = '';
+        if (typeSelect) typeSelect.value = '';
+        if (clubSelect) clubSelect.value = '';
+        if (fromDateInput) fromDateInput.value = '';
+        if (toDateInput) toDateInput.value = '';
+        filterEvents();
+      }
+
+      resetButton?.addEventListener('click', resetAll);
+      clearSearchBtn?.addEventListener('click', resetAll);
+    });
+  </script>
 </BaseLayout>
