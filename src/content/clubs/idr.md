@@ -2,7 +2,7 @@
 name: "Ithaca Dirt Riders"
 slug: "ithaca-dirt-riders"
 abbreviatedName: "IDR"
-summary: "wow"
+summary: "Ithaca Dirt Riders"
 draft: false
 logo : "/uploads/clubs/logos/ecea-small.png"
 category: [ "New York" ]

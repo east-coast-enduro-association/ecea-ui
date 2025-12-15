@@ -2,7 +2,7 @@
 name: "Meteor Motorcycle Club"
 slug: "meteor-motorcycle-club"
 abbreviatedName: "MMC"
-summary: "wow"
+summary: "Meteor Motorcycle Club"
 draft: false
 logo : "/uploads/clubs/logos/mmc.jpg"
 category: [ "New Jersey" ]

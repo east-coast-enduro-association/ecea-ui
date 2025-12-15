@@ -2,7 +2,7 @@
 name: "Delaware Valley Trail Riders"
 slug: "delaware-valley-trail-riders"
 abbreviatedName: "DVTR"
-summary: "wow"
+summary: "Delaware Valley Trail Riders"
 draft: false
 logo : "/uploads/clubs/logos/dvtr.jpg"
 category: [ "Pennsylvania" ]

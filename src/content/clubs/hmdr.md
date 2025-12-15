@@ -2,7 +2,7 @@
 name: "High Mountain Dirt Riders"
 slug: "high-mountain-dirt-riders"
 abbreviatedName: "HMDR"
-summary: "wow"
+summary: "High Mountain Dirt Riders"
 draft: false
 logo : "/uploads/clubs/logos/hmdr.png"
 category: [ "Pennsylvania" ]

@@ -2,7 +2,7 @@
 name: "Central Jersey Competition Riders"
 slug: "central-jersey-competition-riders"
 abbreviatedName: "CJCR"
-summary: "wow"
+summary: "Central Jerser Competition Riders"
 draft: false
 logo : "/uploads/clubs/logos/cjcr.jpg"
 category: [ "New Jersey" ]

@@ -2,7 +2,7 @@
 name: "Delaware Enduro Riders"
 slug: "delaware-enduro-riders"
 abbreviatedName: "DER"
-summary: "wow"
+summary: "Delaware Enduro Riders"
 draft: false
 logo : "/uploads/clubs/logos/der.gif"
 category: [ "Delaware" ]

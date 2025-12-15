@@ -2,7 +2,7 @@
 name: "Green Marble Enduro Riders"
 slug: "green-marble-enduro-riders"
 abbreviatedName: "GMER"
-summary: "wow"
+summary: "Green Marble Enduro Riders"
 draft: false
 logo : "/uploads/clubs/logos/gmer.gif"
 category: [ "Pennsylvania" ]

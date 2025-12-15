@@ -2,7 +2,7 @@
 name: "Motorcycle Competition Inc"
 slug: "motorcycle-competition-inc"
 abbreviatedName: "MCI"
-summary: "wow"
+summary: "Motorcycle Competition Inc"
 draft: false
 logo : "/uploads/clubs/logos/mci-large.jpg"
 category: [ "New Jersey" ]

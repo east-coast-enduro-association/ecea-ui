@@ -2,7 +2,7 @@
 name: "Competition Dirt Riders"
 slug: "competition-dirt-riders"
 abbreviatedName: "CDR"
-summary: "wow"
+summary: "Competition Dirt Riders"
 draft: false
 logo : "/uploads/clubs/logos/cdr.png"
 category: [ "New Jersey" ]

@@ -2,7 +2,7 @@
 name: "Ocean County Competition Riders"
 slug: "ocean-county-competition-riders"
 abbreviatedName: "OCCR"
-summary: "wow"
+summary: "Ocean County Competition Riders"
 draft: false
 logo : "/uploads/clubs/logos/occr.jpg"
 category: [ "New Jersey" ]

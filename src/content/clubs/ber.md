@@ -2,7 +2,7 @@
 name: "Brandywine Enduro Riders"
 slug: "brandywine-enduro-riders"
 abbreviatedName: "BER"
-summary: "wow"
+summary: "Brandywine Enduro Riders"
 draft: false
 logo : "/uploads/clubs/logos/ber.gif"
 category: [ "Pennsylvania" ]
