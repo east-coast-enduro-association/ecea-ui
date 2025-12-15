@@ -18,15 +18,28 @@ const eventsCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    date: z.date(), // Event start date
-    endDate: z.date().optional(), // Event end date
-    time: z.string().optional(), // e.g., "09:00 AM - 11:00 AM"
-    location: z.string(),
-    image: z.string().startsWith('/uploads/events/'),
     summary: z.string(),
-    tags: z.array(z.string()).optional(),
+    date: z.date(),
+    endDate: z.date().optional(),
+    keyTime: z.date().optional(),
+    checkInTime: z.date().optional(),
+    location: z.string(),
+    hostingClubs: z.array(z.string()).optional(),
+    eventType: z.enum(["Enduro", "Hare Scramble", "FastKIDZ", "Dual Sport", "Special", "Meeting"]),
+    format: z.string().optional(),
+    series: z.string().optional(),
+    closedCourse: z.boolean().default(false),
+    gasAway: z.boolean().default(false),
+    gateFee: z.string().optional(),
+    image: z.string().optional(),
+    flyer: z.string().optional(),
     registrationLink: z.string().url().optional(),
-    registrationRequired: z.boolean().default(false),
+    startGridLink: z.string().url().optional(),
+    downloads: z.array(z.object({
+      label: z.string(),
+      url: z.string()
+    })).optional(),
+    tags: z.array(z.string()).optional(),
     draft: z.boolean().default(false),
   }),
 });
