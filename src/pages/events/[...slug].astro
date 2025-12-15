@@ -1,0 +1,174 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostLayout from "../../layouts/PostLayout.astro";
+import Button from "../../components/UI/Button.astro";
+import { getCollection } from "astro:content";
+import { formatDate } from "../../utils/dateUtils";
+
+export async function getStaticPaths() {
+  const eventEntries = await getCollection("events");
+  return eventEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// --- IMAGE FALLBACK LOGIC ---
+// 1. Default to the event's specific image
+let displayImage = entry.data.image;
+
+// 2. If no event image, look up the hosting club's logo
+if (!displayImage && entry.data.hostingClubs && entry.data.hostingClubs.length > 0) {
+  const clubs = await getCollection("clubs");
+  // Find the club that matches the first abbreviation in the list
+  const hostingClubEntry = clubs.find(c => c.data.abbreviatedName === entry.data.hostingClubs[0]);
+
+  if (hostingClubEntry && hostingClubEntry.data.logo) {
+    displayImage = hostingClubEntry.data.logo;
+  }
+}
+
+// 3. Last resort fallback
+if (!displayImage) {
+  displayImage = "/images/feature-bg.jpg";
+}
+// ----------------------------
+
+const formattedDate = formatDate(entry.data.date);
+const formattedEndDate = entry.data.endDate ? formatDate(entry.data.endDate) : null;
+const isFutureEvent = new Date(entry.data.date) > new Date();
+---
+
+<BaseLayout
+  title={`${entry.data.title} - ECEA Events`}
+  description={entry.data.summary}
+  image={{ url: displayImage, alt: entry.data.title }}
+  type="article"
+>
+  <PostLayout
+    title={entry.data.title}
+    description={entry.data.summary}
+    image={{ url: displayImage, alt: entry.data.title }}
+    date={entry.data.date}
+    tags={entry.data.tags}
+    type="event"
+  >
+    <div class="bg-gray-50 rounded-lg p-6 mb-8 border border-gray-100">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div>
+          <h3 class="text-lg font-bold mb-3 text-gray-900">Event Details</h3>
+
+          <div class="flex items-start mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <div>
+              <p class="font-medium">{formattedDate}</p>
+              {formattedEndDate && <p class="text-sm text-gray-600">to {formattedEndDate}</p>}
+            </div>
+          </div>
+
+          {entry.data.keyTime && (
+            <div class="flex items-start mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p>Key Time: {new Date(entry.data.keyTime).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
+            </div>
+          )}
+
+          <div class="flex items-start mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <p>{entry.data.location}</p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold mb-3 text-gray-900">Hosted By</h3>
+          {entry.data.hostingClubs && (
+            <div class="flex items-start mb-4">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+               </svg>
+               <p>{entry.data.hostingClubs.join(", ")}</p>
+            </div>
+          )}
+
+          <div class="grid grid-cols-2 gap-4 text-sm mt-4">
+            <div class="bg-white p-2 rounded border border-gray-200 text-center">
+              <span class="block font-bold text-gray-500 text-xs uppercase">Format</span>
+              {entry.data.format || entry.data.eventType}
+            </div>
+            {entry.data.gateFee && (
+              <div class="bg-white p-2 rounded border border-gray-200 text-center">
+                <span class="block font-bold text-gray-500 text-xs uppercase">Gate Fee</span>
+                {entry.data.gateFee}
+              </div>
+            )}
+            <div class="bg-white p-2 rounded border border-gray-200 text-center">
+              <span class="block font-bold text-gray-500 text-xs uppercase">Closed Course</span>
+              {entry.data.closedCourse ? "Yes" : "No"}
+            </div>
+            <div class="bg-white p-2 rounded border border-gray-200 text-center">
+              <span class="block font-bold text-gray-500 text-xs uppercase">Gas Away</span>
+              {entry.data.gasAway ? "Yes" : "No"}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap gap-4">
+        {entry.data.registrationLink && (
+          <Button href={entry.data.registrationLink} target="_blank" variant="primary">
+            Register Online
+          </Button>
+        )}
+
+        {entry.data.startGridLink && (
+          <Button href={entry.data.startGridLink} target="_blank" variant="outline">
+            View Start Grid
+          </Button>
+        )}
+
+        {entry.data.flyer && (
+          <Button href={entry.data.flyer} target="_blank" variant="secondary">
+            View Flyer
+          </Button>
+        )}
+      </div>
+    </div>
+
+    {entry.data.downloads && entry.data.downloads.length > 0 && (
+      <div class="mb-8">
+        <h3 class="text-xl font-bold mb-4">Event Downloads</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {entry.data.downloads.map(file => (
+            <a href={file.url} target="_blank" class="flex items-center p-4 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+              <span class="font-medium text-primary-700">{file.label}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <article class="prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-primary-600 hover:prose-a:text-primary-700">
+      <Content />
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-gray-200">
+      <Button href="/events" variant="outline">
+        ← Back to Schedule
+      </Button>
+    </div>
+  </PostLayout>
+</BaseLayout>

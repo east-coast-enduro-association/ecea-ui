@@ -2,7 +2,6 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
 import Card from "../../components/UI/Card.astro";
-import Button from "../../components/UI/Button.astro"; // Added for the "Reset" button
 import { getCollection } from "astro:content";
 import { formatDate } from "../../utils/dateUtils";
 
@@ -11,17 +10,32 @@ const allEvents = await getCollection("events", ({ data }) => {
   return import.meta.env.PROD ? !data.draft : true;
 });
 
-// 2. Sort by date (Newest/Future first generally feels better for calendars,
-//    but standard blog order is newest first. For events, usually you want
-//    upcoming events first. Let's stick to simple date sorting.)
-const events = allEvents.sort((a, b) =>
-  new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
-);
+const allClubs = await getCollection("clubs");
 
-// 3. Extract unique values for the Filter Dropdowns
-// We use "eventType" (Enduro, Hare Scramble) and "hostingClub"
-const eventTypes = [...new Set(events.map(e => e.data.eventType).filter(Boolean))].sort();
-const clubs = [...new Set(events.map(e => e.data.hostingClub).filter(Boolean))].sort();
+// 2. Club Logo Map
+const clubLogoMap = {};
+allClubs.forEach((club) => {
+  if (club.data.abbreviatedName) {
+    clubLogoMap[club.data.abbreviatedName] = club.data.logo;
+  }
+});
+
+// 3. Separate Upcoming and Past Events (Based on BUILD TIME)
+// We set this to yesterday to ensure events happening "today" are still upcoming
+const now = new Date();
+now.setHours(0, 0, 0, 0);
+
+const upcomingEvents = allEvents
+  .filter(event => new Date(event.data.date) >= now)
+  .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+
+const pastEvents = allEvents
+  .filter(event => new Date(event.data.date) < now)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()); // Reverse sort (newest first)
+
+// 4. Extract filters
+const eventTypes = [...new Set(allEvents.map(e => e.data.eventType).filter(Boolean))].sort();
+const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filter(Boolean))].sort();
 ---
 
 <BaseLayout
@@ -29,9 +43,9 @@ const clubs = [...new Set(events.map(e => e.data.hostingClub).filter(Boolean))].
   description="Upcoming Enduros, Hare Scrambles, and Dual Sports in the ECEA."
 >
   <PageHeader
-    title="2025 Schedule"
-    subtitle="Enduros, Hare Scrambles, and Junior Events"
-    backgroundImage="/uploads/events-header-bg.webp"
+    title="Event Schedule"
+    subtitle="Enduros, Hare Scrambles, FastKIDZ, and Dual Sports"
+    backgroundImage="/images/feature-bg.jpg"
   />
 
   <section class="py-16">
@@ -44,118 +58,110 @@ const clubs = [...new Set(events.map(e => e.data.hostingClub).filter(Boolean))].
 
             <div class="mb-6">
               <label for="search" class="block text-sm font-medium text-gray-700 mb-1">Search</label>
-              <input
-                type="text"
-                id="search"
-                placeholder="Search event name..."
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
-              />
+              <input type="text" id="search" placeholder="Search event name..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" />
             </div>
 
-            {eventTypes.length > 0 && (
-              <div class="mb-6">
-                <label for="eventType" class="block text-sm font-medium text-gray-700 mb-1">Event Type</label>
-                <select
-                  id="eventType"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
-                >
-                  <option value="">All Types</option>
-                  {eventTypes.map(type => (
-                    <option value={type}>{type}</option>
-                  ))}
-                </select>
-              </div>
-            )}
-
-            {clubs.length > 0 && (
-              <div class="mb-6">
-                <label for="club" class="block text-sm font-medium text-gray-700 mb-1">Hosting Club</label>
-                <select
-                  id="club"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
-                >
-                  <option value="">All Clubs</option>
-                  {clubs.map(c => (
-                    <option value={c}>{c}</option>
-                  ))}
-                </select>
-              </div>
-            )}
-
-            <div class="space-y-3">
-              <label class="block text-sm font-medium text-gray-700">Date Range</label>
-              <div>
-                <label for="from-date" class="block text-xs text-gray-500 mb-1">From</label>
-                <input type="date" id="from-date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" />
-              </div>
-              <div>
-                <label for="to-date" class="block text-xs text-gray-500 mb-1">To</label>
-                <input type="date" id="to-date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" />
-              </div>
+            <div class="mb-6">
+              <label for="eventType" class="block text-sm font-medium text-gray-700 mb-1">Event Type</label>
+              <select id="eventType" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
+                <option value="">All Types</option>
+                {eventTypes.map(type => <option value={type}>{type}</option>)}
+              </select>
             </div>
 
-            <button
-              id="reset-filters"
-              class="w-full mt-6 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
-            >
+            <div class="mb-6">
+              <label for="club" class="block text-sm font-medium text-gray-700 mb-1">Hosting Club</label>
+              <select id="club" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
+                <option value="">All Clubs</option>
+                {clubs.map(c => <option value={c}>{c}</option>)}
+              </select>
+            </div>
+
+            <button id="reset-filters" class="w-full mt-6 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
               Reset Filters
             </button>
           </div>
         </div>
 
-        <div class="lg:col-span-3">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="events-grid">
-            {events.map((event) => (
-              <Card
-                title={event.data.title}
-                image={event.data.image ? {
-                  src: event.data.image,
-                  alt: event.data.title
-                } : undefined}
-                href={`/events/${event.slug}`}
-                className="event-card"
-                /* These data-attributes are KEY for the Javascript to find them */
-                data-type={event.data.eventType || ""}
-                data-club={event.data.hostingClub || ""}
-                data-date={event.data.date.toISOString().slice(0, 10)}
-              >
-                <div class="mb-3 flex items-center text-gray-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span class="font-semibold">{formatDate(event.data.date)}</span>
-                </div>
+        <div class="lg:col-span-3 space-y-16">
 
-                {event.data.hostingClub && (
-                  <div class="mb-3 flex items-center text-gray-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <span>{event.data.hostingClub}</span>
-                  </div>
-                )}
+          <div id="upcoming-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2 flex items-center">
+              <span class="mr-2">📅</span> Upcoming Events
+            </h2>
 
-                {event.data.eventType && (
-                  <div class="mb-3">
-                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+            <div id="upcoming-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {upcomingEvents.map((event) => {
+                let displayImage = event.data.image ||
+                  (event.data.hostingClubs?.[0] ? clubLogoMap[event.data.hostingClubs[0]] : null) ||
+                  "/images/feature-bg.jpg";
+
+                return (
+                  <Card
+                    title={event.data.title}
+                    image={{ src: displayImage, alt: event.data.title }}
+                    href={`/events/${event.slug}`}
+                    className="event-card upcoming"
+                    data-type={event.data.eventType || ""}
+                    data-club={event.data.hostingClubs?.[0] || ""}
+                    data-date={event.data.date.toISOString().slice(0, 10)}
+                  >
+                    <div class="mb-3 flex items-center text-primary-700 font-medium">
+                      <span class="mr-2">📅</span> {formatDate(event.data.date)}
+                    </div>
+                    {event.data.hostingClubs && (
+                      <div class="mb-3 flex items-center text-gray-600">
+                         <span class="mr-2">🏁</span> {event.data.hostingClubs.join(", ")}
+                      </div>
+                    )}
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-3">
                       {event.data.eventType}
                     </span>
-                  </div>
-                )}
-
-                <p class="text-gray-700 mb-4 line-clamp-2">{event.data.summary}</p>
-
-                <p class="text-primary-600 font-medium group-hover:underline">
-                  View Details →
-                </p>
-              </Card>
-            ))}
+                  </Card>
+                );
+              })}
+            </div>
+            {upcomingEvents.length === 0 && <p class="text-gray-500 italic mt-4">No upcoming events scheduled.</p>}
           </div>
 
-          <div id="no-results" class="hidden text-center py-12 bg-gray-50 rounded-lg mt-8">
+          <div id="past-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-500 border-b pb-2 flex items-center">
+              <span class="mr-2">🕰️</span> Past Events
+            </h2>
+
+            <div id="past-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 opacity-75 hover:opacity-100 transition-opacity">
+              {pastEvents.map((event) => {
+                let displayImage = event.data.image ||
+                  (event.data.hostingClubs?.[0] ? clubLogoMap[event.data.hostingClubs[0]] : null) ||
+                  "/images/feature-bg.jpg";
+
+                return (
+                  <Card
+                    title={event.data.title}
+                    image={{ src: displayImage, alt: event.data.title }}
+                    href={`/events/${event.slug}`}
+                    className="event-card past grayscale hover:grayscale-0 transition-all"
+                    data-type={event.data.eventType || ""}
+                    data-club={event.data.hostingClubs?.[0] || ""}
+                    data-date={event.data.date.toISOString().slice(0, 10)}
+                  >
+                     <div class="mb-3 flex items-center text-gray-500">
+                      <span class="mr-2">📅</span> <span class="line-through">{formatDate(event.data.date)}</span>
+                    </div>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 mb-3">
+                      {event.data.eventType}
+                    </span>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+
+          <div id="no-results" class="hidden text-center py-12 bg-gray-50 rounded-lg">
             <p class="text-gray-600">No events match your filters.</p>
             <button id="clear-search-btn" class="mt-2 text-primary-600 hover:underline">Clear all filters</button>
           </div>
+
         </div>
       </div>
     </div>
@@ -163,43 +169,56 @@ const clubs = [...new Set(events.map(e => e.data.hostingClub).filter(Boolean))].
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // --- 1. AUTO-CORRECT DATES (The "Self-Healing" Logic) ---
+      // This script runs in the browser. If an event in the "Upcoming" list
+      // has actually passed (because the site build is old), this moves it to "Past".
+
+      const upcomingGrid = document.getElementById('upcoming-grid');
+      const pastGrid = document.getElementById('past-grid');
+      const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+
+      // Select cards currently in the upcoming section
+      const upcomingCards = upcomingGrid ? upcomingGrid.querySelectorAll('.event-card') : [];
+
+      upcomingCards.forEach(card => {
+        const eventDate = card.getAttribute('data-date');
+        // If event date is strictly less than today, move it
+        if (eventDate && eventDate < today) {
+           // Move DOM element to the start of the past grid
+           card.classList.add('grayscale', 'opacity-75'); // Add visual style
+           pastGrid.prepend(card);
+        }
+      });
+
+      // --- 2. FILTERING LOGIC ---
       const searchInput = document.getElementById('search');
-      const typeSelect = document.getElementById('eventType'); // Changed ID
-      const clubSelect = document.getElementById('club');      // Changed ID
-      const fromDateInput = document.getElementById('from-date');
-      const toDateInput = document.getElementById('to-date');
+      const typeSelect = document.getElementById('eventType');
+      const clubSelect = document.getElementById('club');
       const resetButton = document.getElementById('reset-filters');
       const clearSearchBtn = document.getElementById('clear-search-btn');
-      const eventsGrid = document.getElementById('events-grid');
       const noResults = document.getElementById('no-results');
-      const eventCards = document.querySelectorAll('.event-card');
 
       const filterEvents = () => {
         const searchTerm = searchInput?.value.toLowerCase() || '';
         const selectedType = typeSelect?.value || '';
         const selectedClub = clubSelect?.value || '';
-        const fromDate = fromDateInput?.value || '';
-        const toDate = toDateInput?.value || '';
 
         let visibleCount = 0;
+        const allCards = document.querySelectorAll('.event-card');
 
-        eventCards.forEach(card => {
+        allCards.forEach(card => {
           const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
-          const summary = card.querySelector('p')?.textContent.toLowerCase() || '';
-
-          // These match the data- attributes set in the astro loop above
           const type = card.getAttribute('data-type') || '';
           const club = card.getAttribute('data-club') || '';
-          const date = card.getAttribute('data-date') || '';
 
-          const matchesSearch = title.includes(searchTerm) || summary.includes(searchTerm);
+          const matchesSearch = title.includes(searchTerm);
           const matchesType = !selectedType || type === selectedType;
           const matchesClub = !selectedClub || club === selectedClub;
-          const matchesFromDate = !fromDate || date >= fromDate;
-          const matchesToDate = !toDate || date <= toDate;
 
-          if (matchesSearch && matchesType && matchesClub && matchesFromDate && matchesToDate) {
-            card.style.display = 'block';
+          if (matchesSearch && matchesType && matchesClub) {
+            card.style.display = 'block'; // Or 'flex' depending on your card layout
+            // We need to ensure the parent <a> or <div> is visible
+            // Since Card.astro might render as <a>, we target the card directly
             visibleCount++;
           } else {
             card.style.display = 'none';
@@ -211,19 +230,14 @@ const clubs = [...new Set(events.map(e => e.data.hostingClub).filter(Boolean))].
         }
       };
 
-      // Listeners
       searchInput?.addEventListener('input', filterEvents);
       typeSelect?.addEventListener('change', filterEvents);
       clubSelect?.addEventListener('change', filterEvents);
-      fromDateInput?.addEventListener('change', filterEvents);
-      toDateInput?.addEventListener('change', filterEvents);
 
       const resetAll = () => {
         if (searchInput) searchInput.value = '';
         if (typeSelect) typeSelect.value = '';
         if (clubSelect) clubSelect.value = '';
-        if (fromDateInput) fromDateInput.value = '';
-        if (toDateInput) toDateInput.value = '';
         filterEvents();
       }
 
