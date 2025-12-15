@@ -21,7 +21,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/beehive-confirmation-sheet-2025.pdf
   - label: Route Sheet
-    url: /events"/beehive-routesheet-2025.pdf
+    url: /events/beehive-routesheet-2025.pdf
   - label: Spectator Sheet
     url: /events/beehive-spec-sheet-2025.pdf
   - label: Rider Info

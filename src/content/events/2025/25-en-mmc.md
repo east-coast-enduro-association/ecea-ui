@@ -22,7 +22,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/confirmation-sle-2025.pdf
   - label: Roll Chart (Long Course)
-    url: /events"/sandy-lane-2025-rollchart-long.pdf
+    url: /events/sandy-lane-2025-rollchart-long.pdf
   - label: Roll Chart (Short Course)
     url: /events/sandy-lane-2025-rollchart-short.pdf
   - label: Route Sheet

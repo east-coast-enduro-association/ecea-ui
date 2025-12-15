@@ -20,6 +20,6 @@ downloads:
   - label: Confirmation Sheet
     url: /events/pber-11_30_25-enduro-rider-information.pdf
   - label: Route Sheet
-    url: /events"/pber-2page-route-sheet-with-kt-pdf.pdf
+    url: /events/pber-2page-route-sheet-with-kt-pdf.pdf
 ---
 PBER is bringing back a NJ classic

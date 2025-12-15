@@ -21,7 +21,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/confirmation-moonshine-2025-rev-3.pdf
   - label: Route Sheet
-    url: /events"/2025-route-sheet-moonshine.pdf
+    url: /events/2025-route-sheet-moonshine.pdf
 ---
 
 This event is co-hosted between [Valley Forge Trail Riders](/clubs/vftr) and [Reading Off Road Riders](/clubs/rorr). Top notch event with a ton of variety.

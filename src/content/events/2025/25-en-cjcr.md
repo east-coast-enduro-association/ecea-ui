@@ -22,7 +22,7 @@ downloads:
   - label: Route Sheet
     url: /events/2025-pine-hill-route-sheet.jpg
   - label: Confirmation Sheet
-    url: /events"/2025-pine-hill-enduro-confirmation.jpg
+    url: /events/2025-pine-hill-enduro-confirmation.jpg
 ---
 
 A classic course hosted in the lovely Brendan T. Byrne State Forest. Expect fast trail with some familiar stick farms thrown in.

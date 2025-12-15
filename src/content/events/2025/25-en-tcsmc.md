@@ -20,7 +20,7 @@ downloads:
   - label: Route Sheet
     url: /events/25-en-tcsmc-route-sheet.pdf
   - label: Confirmation Sheet
-    url: /events"/25-en-tcsmc-confirmation.pdf
+    url: /events/25-en-tcsmc-confirmation.pdf
 ---
 ## Greenbrier Enduro March 9th, 2025
 

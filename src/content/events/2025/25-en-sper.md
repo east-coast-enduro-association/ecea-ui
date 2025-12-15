@@ -20,7 +20,7 @@ downloads:
   - label: Confirmation
     url: /events/michaux-2025-confirmation-sheet.pdf
   - label: Route Sheet
-    url: /events"/michaux-2025-route-sheet.pdf
+    url: /events/michaux-2025-route-sheet.pdf
   - label: JART Chart
     url: /events/michaux-2025-jart-chart.pdf
   - label: JART Chart with turns

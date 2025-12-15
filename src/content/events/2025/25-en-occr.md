@@ -20,7 +20,7 @@ downloads:
   - label: Confirmation
     url: /events/2025-sc100-confirmation.pdf
   - label: Route Sheet
-    url: /events"/2025-sc100-rs.pdf
+    url: /events/2025-sc100-rs.pdf
   - label: Camping Assignments
     url: /events/scrub-pine-100-25-camping-list-sheet1.pdf
   - label: NJ DEP Waiver
