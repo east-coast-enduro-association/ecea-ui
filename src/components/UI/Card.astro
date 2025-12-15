@@ -8,9 +8,10 @@ export interface Props {
   href?: string;
   className?: string;
   imageLayout?: 'top' | 'background';
+  [key: string]: any; // Allow arbitrary props like data-date
 }
 
-const { title, image, href, className = "", imageLayout = 'top' } = Astro.props;
+const { title, image, href, className = "", imageLayout = 'top', ...rest } = Astro.props;
 const Element = href ? "a" : "div";
 ---
 
@@ -18,10 +19,11 @@ const Element = href ? "a" : "div";
   href={href}
   aria-label={href ? title : undefined}
   class:list={[
-    'card group overflow-hidden',
+    'card group overflow-hidden block h-full', // Added h-full for grid consistency
     { 'relative': imageLayout === 'background' },
     className
   ]}
+  {...rest}
 >
   {image && (
     <div class:list={[
@@ -33,18 +35,18 @@ const Element = href ? "a" : "div";
         alt={image.alt}
         class:list={[
           "w-full object-cover object-center transition-transform duration-300 group-hover:scale-105",
-          { 'h-full': imageLayout === 'background', 'h-auto': imageLayout === 'top' }
+          { 'h-full': imageLayout === 'background', 'h-48': imageLayout === 'top' } // Fixed height for consistency
         ]}
       />
     </div>
   )}
 
   <div class:list={[
-    'p-5',
+    'p-5 flex flex-col flex-1',
     { 'relative': imageLayout === 'background' }
   ]}>
     <h3 class="mb-2 text-xl font-bold">{title}</h3>
-    <div class="text-gray-700">
+    <div class="text-gray-700 flex-1">
       <slot />
     </div>
   </div>
