@@ -7,22 +7,22 @@ keyTime: '2023-08-06T09:00:00'
 checkInTime: '2023-08-06T07:00:00'
 location: TBA
 hostingClubs:
-- GMER
+  - GMER
 eventType: Enduro
 format: Restart
 series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: true
-image: /images/logos/clubs/gmer.gif
-flyer: /images/events/flyers/23-en-gmer-flyer.jpg
-startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=10
+image: '@assets/images/logos/clubs/gmer.gif'
+flyer: '@assets/images/events/flyers/23-en-gmer-flyer.jpg'
+startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=10'
 downloads:
-- label: Confirmation Sheet
-  url: /events/2023-gmer-confirmation.pdf
-- label: Route Sheet
-  url: /events"/2023-gmer-routesheet.pdf
-- label: Rider Information
-  url: /events/2023_gmer_rider_information_sheet.pdf
+  - label: Confirmation Sheet
+    url: /events/2023-gmer-confirmation.pdf
+  - label: Route Sheet
+    url: /events"/2023-gmer-routesheet.pdf
+  - label: Rider Information
+    url: /events/2023_gmer_rider_information_sheet.pdf
 ---
 
 When you think Pennsylvania, do you think rocks? Throw that characterization out of your mind and think "if my front wheel comes out of this rut, the bike is going to slide down the whole damn mountain". It's fun, you should go.

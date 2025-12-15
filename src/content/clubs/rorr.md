@@ -1,16 +1,17 @@
 ---
-name: "Reading Off-Road Riders"
-slug: "reading-off-road-riders"
-abbreviatedName: "RORR"
-summary: "Reading Off-Road Riders"
+name: Reading Off-Road Riders
+slug: reading-off-road-riders
+abbreviatedName: RORR
+summary: Reading Off-Road Riders
 draft: false
-logo: "/uploads/clubs/logos/rorr.png"
-category: [ "Pennsylvania" ]
-website: "http://www.rorr.org/"
-president: "TODO"
-contact: "readingoffroadriders@gmail.com"
+logo: '@assets/clubs/logos/rorr.png'
+category:
+  - Pennsylvania
+website: 'http://www.rorr.org/'
+president: TODO
+contact: readingoffroadriders@gmail.com
 order: 10
-location: "Reading, PA"
+location: 'Reading, PA'
 ---
 
 ## About Our Club

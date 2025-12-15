@@ -7,14 +7,14 @@ keyTime: '2023-09-17T09:00:00'
 checkInTime: '2023-09-17T07:00:00'
 location: TBA
 hostingClubs:
-- VFTR
-- RORR
+  - VFTR
+  - RORR
 eventType: Enduro
 format: Restart
 series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: true
-image: /images/logos/clubs/vftr.jpg
+image: '@assets/images/logos/clubs/vftr.jpg'
 flyer: null
 ---
 

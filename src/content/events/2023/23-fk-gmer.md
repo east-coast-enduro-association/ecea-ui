@@ -5,14 +5,14 @@ draft: false
 date: '2023-06-03'
 location: Rocket Raceway
 hostingClubs:
-- GMER
+  - GMER
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
 gateFee: TBA
-image: /images/logos/clubs/gmer.gif
+image: '@assets/images/logos/clubs/gmer.gif'
 flyer: null
 ---
 

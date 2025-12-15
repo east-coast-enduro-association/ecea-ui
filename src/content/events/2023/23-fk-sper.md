@@ -1,20 +1,20 @@
 ---
 title: OxBo
-summary: Fast, flowy, rocky
+summary: 'Fast, flowy, rocky'
 draft: false
 date: '2023-07-15'
 checkInTime: '2023-07-15T14:13:40.331000+00:00'
-location: 342 Morea Rd, Frackville, PA
+location: '342 Morea Rd, Frackville, PA'
 hostingClubs:
-- SPER
+  - SPER
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
 gateFee: $10
-image: /images/logos/clubs/sper.jpg
-flyer: /images/events/flyers/2023-hs-sper-flyer.jpg
+image: '@assets/images/logos/clubs/sper.jpg'
+flyer: '@assets/images/events/flyers/2023-hs-sper-flyer.jpg'
 ---
 PreEntry is [OPEN CLICK HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx)\
 \

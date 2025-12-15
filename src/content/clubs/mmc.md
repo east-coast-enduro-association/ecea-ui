@@ -1,16 +1,17 @@
 ---
-name: "Meteor Motorcycle Club"
-slug: "meteor-motorcycle-club"
-abbreviatedName: "MMC"
-summary: "Meteor Motorcycle Club"
+name: Meteor Motorcycle Club
+slug: meteor-motorcycle-club
+abbreviatedName: MMC
+summary: Meteor Motorcycle Club
 draft: false
-logo : "/uploads/clubs/logos/mmc.jpg"
-category: [ "New Jersey" ]
-website: "http://www.meteormc.com/"
-president: "TODO"
-contact: "meteormc1930@gmail.com"
+logo: '@assets/clubs/logos/mmc.jpg'
+category:
+  - New Jersey
+website: 'http://www.meteormc.com/'
+president: TODO
+contact: meteormc1930@gmail.com
 order: 8
-location: "Gibbstown, NJ"
+location: 'Gibbstown, NJ'
 ---
 
 ## About Our Club

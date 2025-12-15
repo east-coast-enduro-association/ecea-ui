@@ -5,24 +5,24 @@ draft: false
 date: '2023-08-27'
 keyTime: '2023-08-27T09:00:00'
 checkInTime: '2023-08-27T07:00:00'
-location: 9544 Noble St Mauricetown, NJ 08329
+location: '9544 Noble St Mauricetown, NJ 08329'
 hostingClubs:
-- CDR
+  - CDR
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: true
-image: /images/logos/clubs/cdr.png
-flyer: /images/events/flyers/2023-en-cdr-flyer.png
-startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=12
+image: '@assets/images/logos/clubs/cdr.png'
+flyer: '@assets/images/events/flyers/2023-en-cdr-flyer.png'
+startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=12'
 downloads:
-- label: Confirmation
-  url: /events/2023-en-cdr-confirmation.pdf
-- label: Rider Info
-  url: /events"/2023-en-cdr-rider-info.pdf
-- label: Route Sheet
-  url: /events/2023-en-cdr-route-sheet.pdf
+  - label: Confirmation
+    url: /events/2023-en-cdr-confirmation.pdf
+  - label: Rider Info
+    url: /events"/2023-en-cdr-rider-info.pdf
+  - label: Route Sheet
+    url: /events/2023-en-cdr-route-sheet.pdf
 ---
 **Please read the attached rider info sheet posted in the "Event Details" section on this page.**
 

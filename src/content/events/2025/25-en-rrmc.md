@@ -5,23 +5,23 @@ draft: false
 date: '2025-06-08'
 keyTime: '2025-06-08T09:00:00'
 checkInTime: '2025-06-08T07:00:00'
-location: 199 Teed Rd, Sidney Center, NY
+location: '199 Teed Rd, Sidney Center, NY'
 hostingClubs:
-- RRMC
+  - RRMC
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: false
-image: /images/logos/clubs/rrmc-large.png
-flyer: /images/events/flyers/jim-smith-memorial-enduro-2-.jpg
-startGridLink: https://www.moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=6
+image: '@assets/images/logos/clubs/rrmc-large.png'
+flyer: '@assets/images/events/flyers/jim-smith-memorial-enduro-2-.jpg'
+startGridLink: 'https://www.moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=6'
 downloads:
-- label: Confirmation
-  url: /events/2025-rrmc-confirmation-rev-060525.pdf
-- label: Route Sheet
-  url: /events"/2025-ridge-run-route-sheet.pdf
-- label: JART Chart
-  url: /events/2025-ridge-enduro.pdf
+  - label: Confirmation
+    url: /events/2025-rrmc-confirmation-rev-060525.pdf
+  - label: Route Sheet
+    url: /events"/2025-ridge-run-route-sheet.pdf
+  - label: JART Chart
+    url: /events/2025-ridge-enduro.pdf
 ---
 RRMC brings everything to the table with rocks, roots, mud, creek beds, grass track, loamy hillclimbs, slick off cambers, you name it! Hosted in a beautiful part of New York State.

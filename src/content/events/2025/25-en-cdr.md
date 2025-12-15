@@ -5,27 +5,27 @@ draft: false
 date: '2025-08-24'
 keyTime: '2025-08-24T09:00:00'
 checkInTime: '2025-08-24T07:00:00'
-location: 9544 Noble St Mauricetown, NJ 08329
+location: '9544 Noble St Mauricetown, NJ 08329'
 hostingClubs:
-- CDR
-- DER
+  - CDR
+  - DER
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: true
-image: /images/logos/clubs/cdr.png
-flyer: /images/events/flyers/2025-en-cdr-flyer.jpeg
-startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=13
+image: '@assets/images/logos/clubs/cdr.png'
+flyer: '@assets/images/events/flyers/2025-en-cdr-flyer.jpeg'
+startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=13'
 downloads:
-- label: Confirmation Sheet
-  url: /events/beehive-confirmation-sheet-2025.pdf
-- label: Route Sheet
-  url: /events"/beehive-routesheet-2025.pdf
-- label: Spectator Sheet
-  url: /events/beehive-spec-sheet-2025.pdf
-- label: Rider Info
-  url: /events/beehive-rider-info-sheet-2025.pdf
+  - label: Confirmation Sheet
+    url: /events/beehive-confirmation-sheet-2025.pdf
+  - label: Route Sheet
+    url: /events"/beehive-routesheet-2025.pdf
+  - label: Spectator Sheet
+    url: /events/beehive-spec-sheet-2025.pdf
+  - label: Rider Info
+    url: /events/beehive-rider-info-sheet-2025.pdf
 ---
 
 A New Jersey staple in the enduro community. How many years has this event been hosted? Somebody should update the page with that info... 

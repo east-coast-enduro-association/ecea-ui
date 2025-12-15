@@ -1,16 +1,17 @@
 ---
-name: "Central Jersey Competition Riders"
-slug: "central-jersey-competition-riders"
-abbreviatedName: "CJCR"
-summary: "Central Jerser Competition Riders"
+name: Central Jersey Competition Riders
+slug: central-jersey-competition-riders
+abbreviatedName: CJCR
+summary: Central Jerser Competition Riders
 draft: false
-logo : "/uploads/clubs/logos/cjcr.jpg"
-category: [ "New Jersey" ]
-website: "http://cjcrmc.org/"
-president: "TODO"
-contact: "cjcrmc@gmail.com"
+logo: '@assets/clubs/logos/cjcr.jpg'
+category:
+  - New Jersey
+website: 'http://cjcrmc.org/'
+president: TODO
+contact: cjcrmc@gmail.com
 order: 3
-location: "Cream Ridge, NJ"
+location: 'Cream Ridge, NJ'
 ---
 
 ## About Our Club

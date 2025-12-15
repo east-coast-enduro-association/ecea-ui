@@ -3,16 +3,16 @@ title: Locked And Loaded Hard Enduro
 summary: You'll be seeing rocks in your dreams
 draft: false
 date: '2023-05-29'
-location: Berwick, PA
+location: 'Berwick, PA'
 hostingClubs:
-- HMDR
+  - HMDR
 eventType: Special
 format: Extreme Enduro
 series: Special Series
 closedCourse: false
 gasAway: false
 gateFee: None
-image: /images/logos/clubs/hmdr.png
+image: '@assets/images/logos/clubs/hmdr.png'
 flyer: null
 ---
 

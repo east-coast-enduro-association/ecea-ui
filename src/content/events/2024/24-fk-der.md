@@ -3,13 +3,14 @@ title: Budd's Creek
 summary: We're Back!
 draft: false
 date: '2024-10-05'
-location: Budds Creek, MD
+location: 'Budds Creek, MD'
 hostingClubs:
-- DER
+  - DER
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
-image: /images/logos/clubs/der.gif
+image: '@assets/images/logos/clubs/der.gif'
 ---
+

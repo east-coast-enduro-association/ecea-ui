@@ -3,17 +3,17 @@ title: Stump Jumper
 summary: Great Youth Series fun in the sand
 draft: false
 date: '2024-05-18T10:00:00+00:00'
-location: 942 Main St (RT 9 ), Eagleswood, NJ
+location: '942 Main St (RT 9 ), Eagleswood, NJ'
 hostingClubs:
-- MCI
+  - MCI
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
-gateFee: $10 per Person, Kids under 5 Free
-image: /images/logos/clubs/mci.jpg
-flyer: /images/events/flyers/24mci-hs.jpg
+gateFee: '$10 per Person, Kids under 5 Free'
+image: '@assets/images/logos/clubs/mci.jpg'
+flyer: '@assets/images/events/flyers/24mci-hs.jpg'
 ---
 **NO ENTRY FRIDAY NIGHT**
 

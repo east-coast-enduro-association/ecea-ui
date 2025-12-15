@@ -6,15 +6,15 @@ date: '2024-06-01T16:00:00+00:00'
 checkInTime: '2024-06-01T14:00:57.675000+00:00'
 location: Rocket Raceway
 hostingClubs:
-- GMER
+  - GMER
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
-gateFee: $10, under 5 $5
-image: /images/logos/clubs/gmer.gif
-flyer: /images/events/flyers/24-gmer-hs-flyer.jpg
+gateFee: '$10, under 5 $5'
+image: '@assets/images/logos/clubs/gmer.gif'
+flyer: '@assets/images/events/flyers/24-gmer-hs-flyer.jpg'
 ---
 **NO GO PRO's  DSQ if found on person or bike**
 

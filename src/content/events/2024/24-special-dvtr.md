@@ -3,16 +3,16 @@ title: Dirty Santa Toy Run
 summary: Do it for the kids
 draft: false
 date: '2024-12-01'
-location: Locust Gap, PA
+location: 'Locust Gap, PA'
 hostingClubs:
-- DVTR
+  - DVTR
 eventType: Special
 format: Special
 series: Special Series
 closedCourse: false
 gasAway: false
 gateFee: None
-image: /images/logos/clubs/dvtr.jpg
+image: '@assets/images/logos/clubs/dvtr.jpg'
 flyer: null
 ---
 

@@ -5,19 +5,19 @@ draft: false
 date: '2023-06-11'
 keyTime: '2023-06-11T09:00:00'
 checkInTime: '2023-06-11T07:00:00'
-location: 199 Teed Rd, Sidney Center, NY
+location: '199 Teed Rd, Sidney Center, NY'
 hostingClubs:
-- RRMC
+  - RRMC
 eventType: Enduro
 format: Sprint Enduro
 series: ECEA Enduro Championship Series
 closedCourse: true
 gasAway: false
-image: /images/logos/clubs/rrmc-large.png
-flyer: /images/events/flyers/23-en-rrmc-flyer.jpg
+image: '@assets/images/logos/clubs/rrmc-large.png'
+flyer: '@assets/images/events/flyers/23-en-rrmc-flyer.jpg'
 downloads:
-- label: Rider Information
-  url: /events/2023-ridge-sprint-rider-information.pdf
+  - label: Rider Information
+    url: /events/2023-ridge-sprint-rider-information.pdf
 ---
 RRMC brings everything to the table with rocks, roots, mud, creek beds, grass track, loamy hillclimbs, slick off cambers, you name it! Hosted in a beautiful part of New York State.
 

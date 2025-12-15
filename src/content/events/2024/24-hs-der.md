@@ -3,15 +3,15 @@ title: Budd's Creek
 summary: We're Back!
 draft: false
 date: '2024-10-06'
-location: Budds Creek, MD
+location: 'Budds Creek, MD'
 hostingClubs:
-- DER
+  - DER
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
 closedCourse: false
 gasAway: false
-image: /images/logos/clubs/der.gif
+image: '@assets/images/logos/clubs/der.gif'
 ---
 
 Morning race: 10:00am

@@ -1,16 +1,17 @@
 ---
-name: "Valley Forge Trail Riders"
-slug: "valley-forge-trail-riders"
-abbreviatedName: "VFTR"
-summary: "Valley Forge Trail Riders"
+name: Valley Forge Trail Riders
+slug: valley-forge-trail-riders
+abbreviatedName: VFTR
+summary: Valley Forge Trail Riders
 draft: false
-logo: "/uploads/clubs/logos/vftr.jpg"
-category: [ "Pennsylvania" ]
-website: "http://www.vftr.org/"
-president: "TODO"
-contact: "tomwheeler6318@gmail.com"
+logo: '@assets/clubs/logos/vftr.jpg'
+category:
+  - Pennsylvania
+website: 'http://www.vftr.org/'
+president: TODO
+contact: tomwheeler6318@gmail.com
 order: 10
-location: "Exton, PA"
+location: 'Exton, PA'
 ---
 
 ## About Our Club

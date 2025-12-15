@@ -1,10 +1,12 @@
 ---
-name: "Rev. Dr. John Smith"
-title: "Senior Pastor"
-image: "/uploads/staff/john-smith.webp"
-email: "pastor.john@churchname.org"
-phone: "+1-555-0101"
-bio: "Pastor John has been faithfully serving our congregation for over 12 years, bringing wisdom, compassion, and biblical teaching to our community."
+name: Rev. Dr. John Smith
+title: Senior Pastor
+image: '@assets/staff/john-smith.webp'
+email: pastor.john@churchname.org
+phone: +1-555-0101
+bio: >-
+  Pastor John has been faithfully serving our congregation for over 12 years,
+  bringing wisdom, compassion, and biblical teaching to our community.
 order: 1
 draft: false
 ---

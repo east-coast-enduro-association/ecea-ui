@@ -1,16 +1,17 @@
 ---
-name: "Delaware Enduro Riders"
-slug: "delaware-enduro-riders"
-abbreviatedName: "DER"
-summary: "Delaware Enduro Riders"
+name: Delaware Enduro Riders
+slug: delaware-enduro-riders
+abbreviatedName: DER
+summary: Delaware Enduro Riders
 draft: false
-logo : "/uploads/clubs/logos/der.gif"
-category: [ "Delaware" ]
-website: "http://delawareenduroriders.com/"
-president: "Neil Newcomb"
-contact: "neil.newcomb@yahoo.com"
+logo: '@assets/clubs/logos/der.gif'
+category:
+  - Delaware
+website: 'http://delawareenduroriders.com/'
+president: Neil Newcomb
+contact: neil.newcomb@yahoo.com
 order: 3
-location: "Newark, DE"
+location: 'Newark, DE'
 ---
 
 ## About Our Club

@@ -1,10 +1,12 @@
 ---
-name: "Rev. Sarah Martinez"
-title: "Associate Pastor & Women's Ministry Director"
-image: "/uploads/staff/sarah-martinez.webp"
-email: "sarah.martinez@churchname.org"
-phone: "+1-555-0102"
-bio: "Pastor Sarah leads our women's ministry and provides pastoral care with a heart for discipleship and community building."
+name: Rev. Sarah Martinez
+title: Associate Pastor & Women's Ministry Director
+image: '@assets/staff/sarah-martinez.webp'
+email: sarah.martinez@churchname.org
+phone: +1-555-0102
+bio: >-
+  Pastor Sarah leads our women's ministry and provides pastoral care with a
+  heart for discipleship and community building.
 order: 2
 draft: false
 ---

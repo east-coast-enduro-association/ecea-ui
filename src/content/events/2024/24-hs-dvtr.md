@@ -4,17 +4,17 @@ summary: Eat your heart out
 draft: false
 date: '2024-09-22T14:00:00+00:00'
 checkInTime: '2024-09-22T23:01:08.120000+00:00'
-location: 399 Halstead Road, Clifford, PA
+location: '399 Halstead Road, Clifford, PA'
 hostingClubs:
-- DVTR
+  - DVTR
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
 closedCourse: false
 gasAway: false
 gateFee: $10
-image: /images/logos/clubs/dvtr.jpg
-flyer: /images/events/flyers/24highsteakshs.jpg
+image: '@assets/images/logos/clubs/dvtr.jpg'
+flyer: '@assets/images/events/flyers/24highsteakshs.jpg'
 ---
 Morning race: 10:00am
 Afternoon race: 1:00pm\

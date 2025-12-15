@@ -6,15 +6,15 @@ date: '2024-06-16'
 checkInTime: '2024-06-16T11:00:50.686000+00:00'
 location: 'Rt 209S Tamaqua, PA  '
 hostingClubs:
-- RORR
+  - RORR
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
 closedCourse: false
 gasAway: false
 gateFee: $10 5 and under Free
-image: /images/logos/clubs/rorr.png
-flyer: /images/events/flyers/24rorr.jpg
+image: '@assets/images/logos/clubs/rorr.png'
+flyer: '@assets/images/events/flyers/24rorr.jpg'
 ---
 Please use PreEntry to AVOID Lines and long waits..\
 \

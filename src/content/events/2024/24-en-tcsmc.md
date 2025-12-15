@@ -5,22 +5,22 @@ draft: false
 date: '2024-03-10'
 keyTime: '2024-03-10T09:00:00'
 checkInTime: '2024-03-10T07:00:00'
-location: 34 Frankles Lane, Port Elizabeth, NJ
+location: '34 Frankles Lane, Port Elizabeth, NJ'
 hostingClubs:
-- TCSMC
+  - TCSMC
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: true
-image: /images/logos/clubs/tcsmc.png
-flyer: /images/events/flyers/24-en-tcsmc-flyer.jpg
-startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=1
+image: '@assets/images/logos/clubs/tcsmc.png'
+flyer: '@assets/images/events/flyers/24-en-tcsmc-flyer.jpg'
+startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=1'
 downloads:
-- label: Confirmation Sheet
-  url: /events/24-en-tcsmc-confirmation.pdf
-- label: Route Sheet
-  url: /events"/24-en-tcsmc-route.pdf
+  - label: Confirmation Sheet
+    url: /events/24-en-tcsmc-confirmation.pdf
+  - label: Route Sheet
+    url: /events"/24-en-tcsmc-route.pdf
 ---
 ## Greenbrier Enduro March 10th, 2024
 

@@ -1,21 +1,21 @@
 ---
 title: Ormond Farms
-summary: Great event for Youth, good spectating, mix of sandy and woods trails
+summary: 'Great event for Youth, good spectating, mix of sandy and woods trails'
 draft: false
 date: '2023-05-06'
 checkInTime: '2023-05-06T11:00:00+00:00'
-location: 161 Hesstown Rd, Millville, NJ
+location: '161 Hesstown Rd, Millville, NJ'
 hostingClubs:
-- CDR
-- DER
+  - CDR
+  - DER
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
 gateFee: $10
-image: /images/logos/clubs/cdr.png
-flyer: /images/events/flyers/23-hs-cdr-flyer.png
+image: '@assets/images/logos/clubs/cdr.png'
+flyer: '@assets/images/events/flyers/23-hs-cdr-flyer.png'
 ---
 **NO FRIDAY CAMPING..Sorry,,  GATES OPEN SATURDAY at 8 AM.**\
 \

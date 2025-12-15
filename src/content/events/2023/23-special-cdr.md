@@ -3,16 +3,16 @@ title: CDR Fun Day
 summary: Family fun ride at the farm
 draft: false
 date: '2023-06-24'
-location: Millville, NJ
+location: 'Millville, NJ'
 hostingClubs:
-- CDR
+  - CDR
 eventType: Special
 format: Family Fun Ride
 series: Special Series
 closedCourse: false
 gasAway: false
 gateFee: None
-image: /images/logos/clubs/cdr.png
+image: '@assets/images/logos/clubs/cdr.png'
 flyer: null
 ---
 

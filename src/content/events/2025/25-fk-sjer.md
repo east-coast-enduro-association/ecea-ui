@@ -1,22 +1,23 @@
 ---
 title: Sahara Sands
-summary: This is (almost) desert racing, PBER and SJER team up for great trails for
+summary: >-
+  This is (almost) desert racing, PBER and SJER team up for great trails for
   kids ...
 draft: false
 date: '2025-10-18T15:00:57.712000+00:00'
 checkInTime: '2025-10-18T13:00:24.638000+00:00'
-location: Eagleswood Township, NJ
+location: 'Eagleswood Township, NJ'
 hostingClubs:
-- SJER
-- PBER
+  - SJER
+  - PBER
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
 gateFee: $10
-image: /images/logos/clubs/sjer.png
-flyer: /images/events/flyers/25pberhs.jpg
+image: '@assets/images/logos/clubs/sjer.png'
+flyer: '@assets/images/events/flyers/25pberhs.jpg'
 ---
 ### ATTENTION 
 

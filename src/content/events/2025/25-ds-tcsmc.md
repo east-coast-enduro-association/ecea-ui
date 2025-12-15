@@ -3,15 +3,15 @@ title: Hammer Run National Dual Sport
 summary: Braaaaaaaap
 draft: false
 date: '2025-11-01'
-location: Port Elizabeth, NJ
+location: 'Port Elizabeth, NJ'
 hostingClubs:
-- TSCMC
+  - TSCMC
 eventType: Dual Sport
 format: Dual Sport
 series: Dual Sport Series
 closedCourse: false
 gasAway: false
-image: /images/logos/clubs/tcsmc.png
+image: '@assets/images/logos/clubs/tcsmc.png'
 flyer: null
 ---
 

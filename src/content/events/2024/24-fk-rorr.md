@@ -4,17 +4,17 @@ summary: Turn out your clickers
 draft: false
 date: '2024-06-15T16:00:00+00:00'
 checkInTime: '2024-06-15T14:00:43.190000+00:00'
-location: Tamaqua, PA  1/2 Mile on RT 209 South thru town...
+location: 'Tamaqua, PA  1/2 Mile on RT 209 South thru town...'
 hostingClubs:
-- RORR
+  - RORR
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
 gateFee: $10    under 5 Free
-image: /images/logos/clubs/rorr.png
-flyer: /images/events/flyers/24rorr.jpg
+image: '@assets/images/logos/clubs/rorr.png'
+flyer: '@assets/images/events/flyers/24rorr.jpg'
 ---
 **SPECIAL EVENT WAIVER and GATE FEE's** \
 [GO HERE NOW  Required prior to Entering  site. ](https://rorr.redpodium.com/2024-rorr-ecea-hare-scramble-series)\

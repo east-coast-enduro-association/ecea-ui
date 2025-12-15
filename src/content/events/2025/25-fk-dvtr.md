@@ -4,17 +4,17 @@ summary: Eat your heart out
 draft: false
 date: '2025-09-13T16:00:00+00:00'
 checkInTime: '2025-09-14T02:00:03.444000+00:00'
-location: 399 Halstead Road, Clifford, PA
+location: '399 Halstead Road, Clifford, PA'
 hostingClubs:
-- DVTR
+  - DVTR
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
-gateFee: $10,  5 and under free
-image: /images/logos/clubs/dvtr.jpg
-flyer: /images/events/flyers/25dvterhs.jpg
+gateFee: '$10,  5 and under free'
+image: '@assets/images/logos/clubs/dvtr.jpg'
+flyer: '@assets/images/events/flyers/25dvterhs.jpg'
 ---
 AMA Required.\
 \

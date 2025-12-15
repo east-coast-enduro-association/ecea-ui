@@ -1,16 +1,17 @@
 ---
-name: "Green Marble Enduro Riders"
-slug: "green-marble-enduro-riders"
-abbreviatedName: "GMER"
-summary: "Green Marble Enduro Riders"
+name: Green Marble Enduro Riders
+slug: green-marble-enduro-riders
+abbreviatedName: GMER
+summary: Green Marble Enduro Riders
 draft: false
-logo : "/uploads/clubs/logos/gmer.gif"
-category: [ "Pennsylvania" ]
-website: "http://www.gmer.us/"
-president: "TODO"
-contact: "GMEREnduro@gmail.com"
+logo: '@assets/clubs/logos/gmer.gif'
+category:
+  - Pennsylvania
+website: 'http://www.gmer.us/'
+president: TODO
+contact: GMEREnduro@gmail.com
 order: 5
-location: "York Springs, PA"
+location: 'York Springs, PA'
 ---
 
 ## About Our Club

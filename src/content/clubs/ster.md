@@ -1,16 +1,17 @@
 ---
-name: "Southern Tier Enduro Riders"
-slug: "southern-tier-enduro-riders"
-abbreviatedName: "STER"
-summary: "Southern Tier Enduro Riders"
+name: Southern Tier Enduro Riders
+slug: southern-tier-enduro-riders
+abbreviatedName: STER
+summary: Southern Tier Enduro Riders
 draft: false
-logo: "/uploads/clubs/logos/ster.jpg"
-category: [ "New York" ]
-website: ""
-president: "TODO"
-contact: "bubba121kx@yahoo.com"
+logo: '@assets/clubs/logos/ster.jpg'
+category:
+  - New York
+website: ''
+president: TODO
+contact: bubba121kx@yahoo.com
 order: 10
-location: "Pine City, NY"
+location: 'Pine City, NY'
 ---
 
 ## About Our Club

@@ -4,17 +4,17 @@ summary: VFTR is Back at the Fern
 draft: false
 date: '2025-04-26T16:00:00+00:00'
 checkInTime: '2025-04-26T10:00:10.615000+00:00'
-location: 1478 Tomhicken Rd, Fern Glen, PA.
+location: '1478 Tomhicken Rd, Fern Glen, PA.'
 hostingClubs:
-- VFTR
+  - VFTR
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
 gateFee: $10
-image: /images/logos/clubs/vftr.jpg
-flyer: /images/events/flyers/25-vftr-hs.jpeg
+image: '@assets/images/logos/clubs/vftr.jpg'
+flyer: '@assets/images/events/flyers/25-vftr-hs.jpeg'
 ---
 **PEE WEE/JUNIOR/YOUTH RACE DETAILS**
 

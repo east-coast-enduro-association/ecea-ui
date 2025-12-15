@@ -5,13 +5,13 @@ draft: false
 date: '2023-08-19'
 location: TBA
 hostingClubs:
-- DVTR
+  - DVTR
 eventType: Dual Sport
 format: Dual Sport
 series: Dual Sport Series
 closedCourse: false
 gasAway: false
-image: /images/logos/clubs/dvtr.jpg
+image: '@assets/images/logos/clubs/dvtr.jpg'
 flyer: null
 ---
 

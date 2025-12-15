@@ -1,16 +1,17 @@
 ---
-name: "Competition Dirt Riders"
-slug: "competition-dirt-riders"
-abbreviatedName: "CDR"
-summary: "Competition Dirt Riders"
+name: Competition Dirt Riders
+slug: competition-dirt-riders
+abbreviatedName: CDR
+summary: Competition Dirt Riders
 draft: false
-logo : "/uploads/clubs/logos/cdr.png"
-category: [ "New Jersey" ]
-website: "http://www.eceacompetitiondirtriders.com/"
-president: "TODO"
-contact: "davebostrom@comcast.net"
+logo: '@assets/clubs/logos/cdr.png'
+category:
+  - New Jersey
+website: 'http://www.eceacompetitiondirtriders.com/'
+president: TODO
+contact: davebostrom@comcast.net
 order: 2
-location: "Vineland, NJ"
+location: 'Vineland, NJ'
 ---
 
 

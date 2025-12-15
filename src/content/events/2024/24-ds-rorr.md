@@ -5,13 +5,13 @@ draft: false
 date: '2024-10-20'
 location: TBA
 hostingClubs:
-- RORR
+  - RORR
 eventType: Dual Sport
 format: Dual Sport
 series: Dual Sport Series
 closedCourse: false
 gasAway: false
-image: /images/logos/clubs/rorr.png
+image: '@assets/images/logos/clubs/rorr.png'
 flyer: null
 ---
 

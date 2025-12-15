@@ -1,20 +1,20 @@
 ---
 title: Shotgun
-summary: Rocking it at LaRocks' Grove, Sugarloaf, PA
+summary: 'Rocking it at LaRocks'' Grove, Sugarloaf, PA'
 draft: false
 date: '2023-08-12'
 checkInTime: '2023-08-12T14:00:57.754000+00:00'
 location: '142 Cabin Lane , Sugarloaf, PA '
 hostingClubs:
-- HMDR
+  - HMDR
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
 gateFee: '10'
-image: /images/logos/clubs/hmdr.png
-flyer: /images/events/flyers/2023-hs-hmdr-flyer.jpg
+image: '@assets/images/logos/clubs/hmdr.png'
+flyer: '@assets/images/events/flyers/2023-hs-hmdr-flyer.jpg'
 ---
 PLEASE PRENTER Save a few $$$ and speed the process  [CLICK HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx)\
 \

@@ -4,17 +4,17 @@ summary: 'This is (almost) desert racing, PBER and SJER team up for great trails
 draft: false
 date: '2023-10-28T15:00:57.712000+00:00'
 checkInTime: '2023-10-28T13:00:24.638000+00:00'
-location: Eagleswood Township, NJ
+location: 'Eagleswood Township, NJ'
 hostingClubs:
-- SJER
+  - SJER
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
 gateFee: $10
-image: /images/logos/clubs/sjer.png
-flyer: /images/events/flyers/23_hs_pber.jpg
+image: '@assets/images/logos/clubs/sjer.png'
+flyer: '@assets/images/events/flyers/23_hs_pber.jpg'
 ---
 **NO** FRIDAY ENTRY
 

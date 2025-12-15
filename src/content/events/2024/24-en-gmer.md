@@ -5,22 +5,22 @@ draft: false
 date: '2024-08-04'
 keyTime: '2024-08-04T09:00:00'
 checkInTime: '2024-08-04T07:00:00'
-location: 8418 ASHMAN ST. Three Springs, PA
+location: '8418 ASHMAN ST. Three Springs, PA'
 hostingClubs:
-- GMER
+  - GMER
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: true
-image: /images/logos/clubs/gmer.gif
-flyer: /images/events/flyers/three-springs-enduro-flyer-24-r1_page-0001.jpg
-startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=11
+image: '@assets/images/logos/clubs/gmer.gif'
+flyer: '@assets/images/events/flyers/three-springs-enduro-flyer-24-r1_page-0001.jpg'
+startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=11'
 downloads:
-- label: Confirmation Sheet
-  url: /events/24-en-gmer-confirmation.pdf
-- label: Route Sheet
-  url: /events"/24-en-gmer-jart.pdf
+  - label: Confirmation Sheet
+    url: /events/24-en-gmer-confirmation.pdf
+  - label: Route Sheet
+    url: /events"/24-en-gmer-jart.pdf
 ---
 When you think Pennsylvania, do you think rocks? Throw that characterization out of your mind and think "if my front wheel comes out of this rut, the bike is going to slide down the whole damn mountain". It's fun, you should go.
 

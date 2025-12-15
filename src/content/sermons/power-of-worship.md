@@ -1,14 +1,19 @@
 ---
-title: "The Power of Worship: More Than Just Music"
-date: 2025-02-16
-speaker: "David Wilson"
-series: "Worship in Spirit and Truth"
-scripture: "John 4:23-24"
-audioUrl: "https://example.com/sermons/power-of-worship.mp3"
-videoUrl: "https://www.youtube.com/embed/example456"
-image: "/uploads/sermons/power-of-worship.webp"
-summary: "Explore the true meaning of worship and how it transforms our relationship with God beyond just musical expression."
-tags: ["worship", "spiritual growth", "music"]
+title: 'The Power of Worship: More Than Just Music'
+date: 2025-02-16T00:00:00.000Z
+speaker: David Wilson
+series: Worship in Spirit and Truth
+scripture: 'John 4:23-24'
+audioUrl: 'https://example.com/sermons/power-of-worship.mp3'
+videoUrl: 'https://www.youtube.com/embed/example456'
+image: '@assets/sermons/power-of-worship.webp'
+summary: >-
+  Explore the true meaning of worship and how it transforms our relationship
+  with God beyond just musical expression.
+tags:
+  - worship
+  - spiritual growth
+  - music
 draft: false
 ---
 

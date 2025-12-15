@@ -1,16 +1,17 @@
 ---
-name: "High Mountain Dirt Riders"
-slug: "high-mountain-dirt-riders"
-abbreviatedName: "HMDR"
-summary: "High Mountain Dirt Riders"
+name: High Mountain Dirt Riders
+slug: high-mountain-dirt-riders
+abbreviatedName: HMDR
+summary: High Mountain Dirt Riders
 draft: false
-logo : "/uploads/clubs/logos/hmdr.png"
-category: [ "Pennsylvania" ]
-website: "https://hmdr.org/"
-president: "Joanne Apple"
-contact: "msoudas@comcast.net"
+logo: '@assets/clubs/logos/hmdr.png'
+category:
+  - Pennsylvania
+website: 'https://hmdr.org/'
+president: Joanne Apple
+contact: msoudas@comcast.net
 order: 6
-location: "Sugarloaf, PA"
+location: 'Sugarloaf, PA'
 ---
 
 ## About Our Club

@@ -4,17 +4,17 @@ summary: SPER is back
 draft: false
 date: '2025-06-28T12:00:15.995000+00:00'
 checkInTime: '2025-06-28T14:00:16.009000+00:00'
-location: Summit Quarry Road, Good Springs, PA
+location: 'Summit Quarry Road, Good Springs, PA'
 hostingClubs:
-- SPER
+  - SPER
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
-gateFee: $10, under 5 Free
-image: /images/logos/clubs/sper.jpg
-flyer: /images/events/flyers/25-sper-hs.png
+gateFee: '$10, under 5 Free'
+image: '@assets/images/logos/clubs/sper.jpg'
+flyer: '@assets/images/events/flyers/25-sper-hs.png'
 ---
 South Penn  is back with an all new Hare Scramble , new Location.\
 \

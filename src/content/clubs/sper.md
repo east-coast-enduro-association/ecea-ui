@@ -1,16 +1,17 @@
 ---
-name: "South Penn Enduro Riders"
-slug: "south-penn-enduro-riders"
-abbreviatedName: "SPER"
-summary: "South Penn Enduro Riders"
+name: South Penn Enduro Riders
+slug: south-penn-enduro-riders
+abbreviatedName: SPER
+summary: South Penn Enduro Riders
 draft: false
-logo: "/uploads/clubs/logos/sper.jpg"
-category: [ "Pennsylvania" ]
-website: "https://www.facebook.com/South-Penn-Enduro-Riders-204507879633515/"
-president: "TODO"
-contact: "dashughart@aol.com"
+logo: '@assets/clubs/logos/sper.jpg'
+category:
+  - Pennsylvania
+website: 'https://www.facebook.com/South-Penn-Enduro-Riders-204507879633515/'
+president: TODO
+contact: dashughart@aol.com
 order: 10
-location: "Carlisle, PA"
+location: 'Carlisle, PA'
 ---
 
 ## About Our Club

@@ -5,14 +5,14 @@ draft: false
 date: '2023-03-18'
 location: TBA
 hostingClubs:
-- SJER
+  - SJER
 eventType: Special
 format: Restart
 series: Special Series
 closedCourse: false
 gasAway: false
 gateFee: None
-image: /images/logos/clubs/sjer.png
+image: '@assets/images/logos/clubs/sjer.png'
 flyer: null
 ---
 

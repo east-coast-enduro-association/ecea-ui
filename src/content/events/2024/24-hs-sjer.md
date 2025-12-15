@@ -1,21 +1,22 @@
 ---
 title: Sahara Sands (Cancelled)
-summary: This is (almost) desert racing, PBER and SJER tag team this event to bring
-  out the best...
+summary: >-
+  This is (almost) desert racing, PBER and SJER tag team this event to bring out
+  the best...
 draft: false
 date: '2024-10-27'
 checkInTime: '2024-10-27T14:00:10.615000+00:00'
-location: Eagleswood Township, NJ
+location: 'Eagleswood Township, NJ'
 hostingClubs:
-- SJER
-- PBER
+  - SJER
+  - PBER
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
 closedCourse: false
 gasAway: false
 gateFee: $10
-image: /images/logos/clubs/sjer.png
+image: '@assets/images/logos/clubs/sjer.png'
 ---
 A message from PBER and SJER.
 

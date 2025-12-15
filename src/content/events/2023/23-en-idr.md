@@ -7,17 +7,17 @@ keyTime: '2023-08-20T10:00:00+00:00'
 checkInTime: '2023-08-20T07:30:00+00:00'
 location: TBA
 hostingClubs:
-- IDR
+  - IDR
 eventType: Enduro
 format: Sprint Enduro
 series: ECEA Enduro Championship Series
 closedCourse: true
 gasAway: false
-image: /images/logos/clubs/idrlogo.jpg
-flyer: /images/events/flyers/2023-en-idr-flyer.jpg
+image: '@assets/images/logos/clubs/idrlogo.jpg'
+flyer: '@assets/images/events/flyers/2023-en-idr-flyer.jpg'
 downloads:
-- label: Rider Information
-  url: /events/2023-en-idr-confirmation.pdf
+  - label: Rider Information
+    url: /events/2023-en-idr-confirmation.pdf
 ---
 All classes will ride and start at 10AM and all riders will have a time limit of 3 hours to complete all their sections
 

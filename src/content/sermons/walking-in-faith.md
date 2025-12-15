@@ -1,14 +1,19 @@
 ---
-title: "Walking in Faith: Trusting God's Plan"
-date: 2025-02-02
-speaker: "Rev. Dr. John Smith"
-series: "Faith Foundations"
-scripture: "Proverbs 3:5-6"
-audioUrl: "https://example.com/sermons/walking-in-faith.mp3"
-videoUrl: "https://www.youtube.com/embed/example789"
-image: "/uploads/sermons/walking-in-faith.webp"
-summary: "Learn how to trust God completely and walk confidently in His plan for your life, even when the path seems unclear."
-tags: ["faith", "trust", "guidance"]
+title: 'Walking in Faith: Trusting God''s Plan'
+date: 2025-02-02T00:00:00.000Z
+speaker: Rev. Dr. John Smith
+series: Faith Foundations
+scripture: 'Proverbs 3:5-6'
+audioUrl: 'https://example.com/sermons/walking-in-faith.mp3'
+videoUrl: 'https://www.youtube.com/embed/example789'
+image: '@assets/sermons/walking-in-faith.webp'
+summary: >-
+  Learn how to trust God completely and walk confidently in His plan for your
+  life, even when the path seems unclear.
+tags:
+  - faith
+  - trust
+  - guidance
 draft: false
 ---
 

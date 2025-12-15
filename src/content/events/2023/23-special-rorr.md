@@ -3,16 +3,16 @@ title: Tough Like RORR Hard Enduro
 summary: Test your mettle
 draft: false
 date: '2023-05-27'
-location: Tamaqua, PA
+location: 'Tamaqua, PA'
 hostingClubs:
-- RORR
+  - RORR
 eventType: Special
 format: Extreme Enduro
 series: Special Series
 closedCourse: false
 gasAway: false
 gateFee: None
-image: /images/logos/clubs/rorr.png
+image: '@assets/images/logos/clubs/rorr.png'
 flyer: null
 ---
 

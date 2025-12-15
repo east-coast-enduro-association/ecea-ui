@@ -3,15 +3,15 @@ title: Michaux
 summary: The oldest dual sport in the USA
 draft: false
 date: '2025-06-21'
-location: Shippensburg Fairgrounds, Shippensburg, PA
+location: 'Shippensburg Fairgrounds, Shippensburg, PA'
 hostingClubs:
-- DVTR
+  - DVTR
 eventType: Dual Sport
 format: Dual Sport
 series: Dual Sport Series
 closedCourse: false
 gasAway: false
-image: /images/logos/clubs/dvtr.jpg
+image: '@assets/images/logos/clubs/dvtr.jpg'
 flyer: null
 ---
 

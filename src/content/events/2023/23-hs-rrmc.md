@@ -6,14 +6,14 @@ date: '2023-10-01'
 checkInTime: '2023-08-23T03:55:45.714000+00:00'
 location: TBA
 hostingClubs:
-- RRMC
+  - RRMC
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
 closedCourse: false
 gasAway: false
 gateFee: TBA
-image: /images/logos/clubs/rrmc-large.png
+image: '@assets/images/logos/clubs/rrmc-large.png'
 flyer: null
 ---
 

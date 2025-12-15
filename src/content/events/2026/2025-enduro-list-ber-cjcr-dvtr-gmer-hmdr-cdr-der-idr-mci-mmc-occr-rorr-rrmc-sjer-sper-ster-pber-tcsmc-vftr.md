@@ -1,42 +1,42 @@
 ---
 title: 2025 ECEA AWARDS BANQUET - Swap Meet - Vendor Show
-summary: Celebrate with ECEA, Friends, Family the 2025 Race Season.
+summary: 'Celebrate with ECEA, Friends, Family the 2025 Race Season.'
 draft: false
 date: '2026-01-24T15:00:08.480000+00:00'
 checkInTime: '2026-01-24T17:00:08.503000+00:00'
 location: '1160 FIRST AVENUE • KING OF PRUSSIA, PA 19406 '
 hostingClubs:
-- BER
-- CJCR
-- DVTR
-- GMER
-- HMDR
-- CDR
-- DER
-- IDR
-- MCI
-- MMC
-- OCCR
-- RORR
-- RRMC
-- SJER
-- SPER
-- STER
-- PBER
-- TCSMC
-- VFTR
+  - BER
+  - CJCR
+  - DVTR
+  - GMER
+  - HMDR
+  - CDR
+  - DER
+  - IDR
+  - MCI
+  - MMC
+  - OCCR
+  - RORR
+  - RRMC
+  - SJER
+  - SPER
+  - STER
+  - PBER
+  - TCSMC
+  - VFTR
 eventType: Enduro
 format: Special
 series: Special Series
 closedCourse: false
 gasAway: false
 gateFee: TBA
-image: /images/logos/clubs/ecea24l2.png
-flyer: /images/events/flyers/25adultbanq.jpg
+image: '@assets/images/logos/clubs/ecea24l2.png'
+flyer: '@assets/images/events/flyers/25adultbanq.jpg'
 ---
 **ECEA AWARDS BANQUET** is back at the Valley Forge Casino by popular request, also we will have the **Vendor show, Seminar**s and all **New SWAPMEET**... so Register for a spot and sell your stuff-bikes, gear etc.... 
 
-![](/images/blog/26swap.png)
+![](@assets/images/blog/26swap.png)
 
 **GET a Cheap 10x10 Spot to Sell, swap, give away**.. your motorcycle related stuff... *[REGISTER HERE](https://brushfire.com/eastcoastenduroassociation/eceaswapmeet-sellerregistration/621047)*\
 \

@@ -1,16 +1,17 @@
 ---
-name: "Ridge Rider Motorcycle Club"
-slug: "ridge-rider-motorcycle-club"
-abbreviatedName: "RRMC"
-summary: "Ridge Rider Motorcycle Club"
+name: Ridge Rider Motorcycle Club
+slug: ridge-rider-motorcycle-club
+abbreviatedName: RRMC
+summary: Ridge Rider Motorcycle Club
 draft: false
-logo: "/uploads/clubs/logos/rrmc-large.png"
-category: [ "Pennsylvania" ]
-website: "http://www.ridgeriders.org/"
-president: "TODO"
-contact: "rrmcnj@gmail.com"
+logo: '@assets/clubs/logos/rrmc-large.png'
+category:
+  - Pennsylvania
+website: 'http://www.ridgeriders.org/'
+president: TODO
+contact: rrmcnj@gmail.com
 order: 10
-location: "Ringwood, NJ"
+location: 'Ringwood, NJ'
 ---
 
 ## About Our Club

@@ -4,17 +4,17 @@ summary: Great Youth Series fun in the sand
 draft: false
 date: '2023-05-20T10:00:00+00:00'
 checkInTime: '2023-05-20T10:01:43.367000+00:00'
-location: 942 Main St (RT 9 ), Eagleswood, NJ
+location: '942 Main St (RT 9 ), Eagleswood, NJ'
 hostingClubs:
-- MCI
+  - MCI
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
-gateFee: $10 per Person, Kids under 5 Free
-image: /images/logos/clubs/mci.jpg
-flyer: /images/events/flyers/stump.jpg
+gateFee: '$10 per Person, Kids under 5 Free'
+image: '@assets/images/logos/clubs/mci.jpg'
+flyer: '@assets/images/events/flyers/stump.jpg'
 ---
 **NO ENTRY FRIDAY NIGHT**
 
