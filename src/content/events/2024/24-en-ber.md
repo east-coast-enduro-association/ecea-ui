@@ -2,9 +2,9 @@
 title: Rattlesnake National Enduro
 summary: Sometimes it's rocky, sometimes not, who knows?
 draft: false
-date: 2024-07-28
-keyTime: 2024-07-23 09:00:00
-checkInTime: 2024-07-23 07:00:00
+date: '2024-07-28'
+keyTime: '2024-07-23T09:00:00'
+checkInTime: '2024-07-23T07:00:00'
 location: 88 Quiet Oaks Campground Ln, Cross Fork, PA 17729
 hostingClubs:
 - BER

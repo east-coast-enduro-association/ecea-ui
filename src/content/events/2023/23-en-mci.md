@@ -2,9 +2,9 @@
 title: Stumpjumper (Cancelled)
 summary: Forest so nice, you've come back twice
 draft: false
-date: 2023-11-12
-keyTime: 2023-11-12 09:00:00
-checkInTime: 2023-11-12 07:00:00
+date: '2023-11-12'
+keyTime: '2023-11-12T09:00:00'
+checkInTime: '2023-11-12T07:00:00'
 location: TBA
 hostingClubs:
 - MCI
@@ -15,8 +15,6 @@ closedCourse: false
 gasAway: true
 image: /images/logos/clubs/mci.jpg
 flyer: null
-registrationLink: ''
-startGridLink: ''
 ---
 **This event is cancelled for 2023.**
 

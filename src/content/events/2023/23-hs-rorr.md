@@ -2,8 +2,8 @@
 title: Reading
 summary: Turn out your clickers
 draft: false
-date: 2023-06-18
-checkInTime: 2023-06-18 11:00:50.686000+00:00
+date: '2023-06-18'
+checkInTime: '2023-06-18T11:00:50.686000+00:00'
 location: 'Rt 209S Tamaqua, PA  '
 hostingClubs:
 - RORR

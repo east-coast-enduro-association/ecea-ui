@@ -2,8 +2,8 @@
 title: OXBO-Skip Stoner Memorial
 summary: SPER is back
 draft: false
-date: 2025-06-28 12:00:15.995000+00:00
-checkInTime: 2025-06-28 14:00:16.009000+00:00
+date: '2025-06-28T12:00:15.995000+00:00'
+checkInTime: '2025-06-28T14:00:16.009000+00:00'
 location: Summit Quarry Road, Good Springs, PA
 hostingClubs:
 - SPER

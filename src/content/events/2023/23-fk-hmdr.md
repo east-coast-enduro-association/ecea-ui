@@ -2,8 +2,8 @@
 title: Shotgun
 summary: Rocking it at LaRocks' Grove, Sugarloaf, PA
 draft: false
-date: 2023-08-12
-checkInTime: 2023-08-12 14:00:57.754000+00:00
+date: '2023-08-12'
+checkInTime: '2023-08-12T14:00:57.754000+00:00'
 location: '142 Cabin Lane , Sugarloaf, PA '
 hostingClubs:
 - HMDR

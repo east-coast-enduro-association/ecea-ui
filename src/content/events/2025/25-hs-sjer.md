@@ -3,8 +3,8 @@ title: Sahara Sands
 summary: This is (almost) desert racing, PBER and SJER tag team this event to bring
   out the best...
 draft: false
-date: 2025-10-19
-checkInTime: 2025-10-19 11:00:10.615000+00:00
+date: '2025-10-19'
+checkInTime: '2025-10-19T11:00:10.615000+00:00'
 location: Eagleswood Township, NJ
 hostingClubs:
 - SJER

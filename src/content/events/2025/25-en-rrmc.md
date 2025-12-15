@@ -2,9 +2,9 @@
 title: Jim Smith Memorial Enduro
 summary: Bring on the rocks!
 draft: false
-date: 2025-06-08
-keyTime: 2025-06-08 09:00:00
-checkInTime: 2025-06-08 07:00:00
+date: '2025-06-08'
+keyTime: '2025-06-08T09:00:00'
+checkInTime: '2025-06-08T07:00:00'
 location: 199 Teed Rd, Sidney Center, NY
 hostingClubs:
 - RRMC
@@ -15,7 +15,6 @@ closedCourse: false
 gasAway: false
 image: /images/logos/clubs/rrmc-large.png
 flyer: /images/events/flyers/jim-smith-memorial-enduro-2-.jpg
-registrationLink: ''
 startGridLink: https://www.moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=6
 downloads:
 - label: Confirmation

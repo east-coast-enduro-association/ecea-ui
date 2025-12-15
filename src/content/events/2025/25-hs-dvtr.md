@@ -2,8 +2,8 @@
 title: High Steaks
 summary: Eat your heart out
 draft: false
-date: 2025-09-14 14:00:00+00:00
-checkInTime: 2025-09-14 23:01:08.120000+00:00
+date: '2025-09-14T14:00:00+00:00'
+checkInTime: '2025-09-14T23:01:08.120000+00:00'
 location: 399 Halstead Road, Clifford, PA
 hostingClubs:
 - DVTR

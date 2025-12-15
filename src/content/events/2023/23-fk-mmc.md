@@ -2,8 +2,8 @@
 title: Fall Brawl
 summary: Back at the farm
 draft: false
-date: 2023-10-14
-checkInTime: 2023-10-14 14:00:28.070000+00:00
+date: '2023-10-14'
+checkInTime: '2023-10-14T14:00:28.070000+00:00'
 location: Hesstown Road, Millville NJ
 hostingClubs:
 - MMC

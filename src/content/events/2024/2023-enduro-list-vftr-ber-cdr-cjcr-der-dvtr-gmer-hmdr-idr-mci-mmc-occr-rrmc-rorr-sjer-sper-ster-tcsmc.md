@@ -2,8 +2,8 @@
 title: 2023 AWARDS BANQUET
 summary: ECEA Awards Banquet, Vendor show, Dinner, FastKIDZ Ceremony.
 draft: false
-date: 2024-01-20 17:00:52.767000+00:00
-checkInTime: 2024-01-20 21:00:52.787000+00:00
+date: '2024-01-20T17:00:52.767000+00:00'
+checkInTime: '2024-01-20T21:00:52.787000+00:00'
 location: Sheraton Valley Forge, PA
 hostingClubs:
 - VFTR

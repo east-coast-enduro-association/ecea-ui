@@ -2,8 +2,7 @@
 title: Stump Jumper
 summary: Great Youth Series fun in the sand
 draft: false
-date: 2024-05-18 10:00:00+00:00
-checkInTime: ''
+date: '2024-05-18T10:00:00+00:00'
 location: 942 Main St (RT 9 ), Eagleswood, NJ
 hostingClubs:
 - MCI

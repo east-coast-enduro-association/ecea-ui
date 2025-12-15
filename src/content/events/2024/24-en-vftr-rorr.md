@@ -2,9 +2,9 @@
 title: Moonshine
 summary: Alcohol Prohibited... just kidding
 draft: false
-date: 2024-09-15
-keyTime: 2024-09-15 09:00:00
-checkInTime: 2024-09-15 07:00:00
+date: '2024-09-15'
+keyTime: '2024-09-15T09:00:00'
+checkInTime: '2024-09-15T07:00:00'
 location: Fern Glen, PA
 hostingClubs:
 - VFTR
@@ -16,7 +16,6 @@ closedCourse: true
 gasAway: false
 image: /images/logos/clubs/vftr.jpg
 flyer: /images/events/flyers/moonshine-24-flyer-fin7-16.jpg
-registrationLink: ''
 startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=15
 downloads:
 - label: Confirmation Sheet

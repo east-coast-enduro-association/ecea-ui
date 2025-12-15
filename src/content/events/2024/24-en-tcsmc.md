@@ -2,9 +2,9 @@
 title: Greenbrier Enduro
 summary: The annual season opener
 draft: false
-date: 2024-03-10
-keyTime: 2024-03-10 09:00:00
-checkInTime: 2024-03-10 07:00:00
+date: '2024-03-10'
+keyTime: '2024-03-10T09:00:00'
+checkInTime: '2024-03-10T07:00:00'
 location: 34 Frankles Lane, Port Elizabeth, NJ
 hostingClubs:
 - TCSMC
@@ -15,7 +15,6 @@ closedCourse: false
 gasAway: true
 image: /images/logos/clubs/tcsmc.png
 flyer: /images/events/flyers/24-en-tcsmc-flyer.jpg
-registrationLink: ''
 startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=1
 downloads:
 - label: Confirmation Sheet

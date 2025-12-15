@@ -2,8 +2,8 @@
 title: Ormond Farms
 summary: Great event for Youth, good spectating, mix of sandy and woods trails
 draft: false
-date: 2023-05-06
-checkInTime: 2023-05-06 11:00:00+00:00
+date: '2023-05-06'
+checkInTime: '2023-05-06T11:00:00+00:00'
 location: 161 Hesstown Rd, Millville, NJ
 hostingClubs:
 - CDR

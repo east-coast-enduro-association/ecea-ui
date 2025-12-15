@@ -2,8 +2,8 @@
 title: FastKIDZ Awards Banquet
 summary: Celebrate with the ECEA FastKIDZ
 draft: false
-date: 2026-01-11 16:00:02.437000+00:00
-checkInTime: 2026-01-11 15:00:02.452000+00:00
+date: '2026-01-11T16:00:02.437000+00:00'
+checkInTime: '2026-01-11T15:00:02.452000+00:00'
 location: 3320-24 NJ-38, Mt Laurel Township, NJ 08054
 hostingClubs:
 - DER

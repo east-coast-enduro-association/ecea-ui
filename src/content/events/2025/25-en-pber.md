@@ -2,9 +2,9 @@
 title: Clock Run
 summary: Kicking it old school
 draft: false
-date: 2025-11-30 07:00:00+00:00
-keyTime: 2025-11-23 09:00:20.513000+00:00
-checkInTime: 2025-11-23 07:00:00+00:00
+date: '2025-11-30T07:00:00+00:00'
+keyTime: '2025-11-23T09:00:20.513000+00:00'
+checkInTime: '2025-11-23T07:00:00+00:00'
 location: 1555 Route 532, Woodland Twp., NJ
 hostingClubs:
 - PBER

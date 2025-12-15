@@ -2,9 +2,9 @@
 title: Ithaca Sprint
 summary: Finger lakes mud welcomes you
 draft: false
-date: 2023-08-20 14:00:00+00:00
-keyTime: 2023-08-20 10:00:00+00:00
-checkInTime: 2023-08-20 07:30:00+00:00
+date: '2023-08-20T14:00:00+00:00'
+keyTime: '2023-08-20T10:00:00+00:00'
+checkInTime: '2023-08-20T07:30:00+00:00'
 location: TBA
 hostingClubs:
 - IDR
@@ -15,8 +15,6 @@ closedCourse: true
 gasAway: false
 image: /images/logos/clubs/idrlogo.jpg
 flyer: /images/events/flyers/2023-en-idr-flyer.jpg
-registrationLink: ''
-startGridLink: ''
 downloads:
 - label: Rider Information
   url: /events/2023-en-idr-confirmation.pdf

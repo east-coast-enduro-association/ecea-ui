@@ -2,8 +2,8 @@
 title: OxBo
 summary: Fast, flowy, rocky
 draft: false
-date: 2023-07-15
-checkInTime: 2023-07-15 14:13:40.331000+00:00
+date: '2023-07-15'
+checkInTime: '2023-07-15T14:13:40.331000+00:00'
 location: 342 Morea Rd, Frackville, PA
 hostingClubs:
 - SPER

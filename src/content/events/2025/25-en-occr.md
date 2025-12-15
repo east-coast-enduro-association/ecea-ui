@@ -2,9 +2,9 @@
 title: Scrub Pine
 summary: Forest so nice, you've come back twice
 draft: false
-date: 2025-10-26
-keyTime: 2025-10-26 09:00:00
-checkInTime: 2025-10-26 07:00:00
+date: '2025-10-26'
+keyTime: '2025-10-26T09:00:00'
+checkInTime: '2025-10-26T07:00:00'
 location: Brendan T Byrne Forest, 1 Campsite Loop, Vincetown NJ
 hostingClubs:
 - OCCR
@@ -15,7 +15,6 @@ closedCourse: false
 gasAway: false
 image: /images/logos/clubs/occr.jpg
 flyer: /images/events/flyers/scrubpine25flyer.gif
-registrationLink: ''
 startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=16
 downloads:
 - label: Confirmation

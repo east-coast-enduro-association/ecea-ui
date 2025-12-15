@@ -2,8 +2,8 @@
 title: CDR Fun Day
 summary: Family fun ride at the farm
 draft: false
-date: 2025-06-21
-checkInTime: 2025-06-21 02:27:50.184000+00:00
+date: '2025-06-21'
+checkInTime: '2025-06-21T02:27:50.184000+00:00'
 location: Millville, NJ
 hostingClubs:
 - CDR

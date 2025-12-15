@@ -2,9 +2,9 @@
 title: Beehive
 summary: Back in the sand
 draft: false
-date: 2023-08-27
-keyTime: 2023-08-27 09:00:00
-checkInTime: 2023-08-27 07:00:00
+date: '2023-08-27'
+keyTime: '2023-08-27T09:00:00'
+checkInTime: '2023-08-27T07:00:00'
 location: 9544 Noble St Mauricetown, NJ 08329
 hostingClubs:
 - CDR
@@ -15,7 +15,6 @@ closedCourse: false
 gasAway: true
 image: /images/logos/clubs/cdr.png
 flyer: /images/events/flyers/2023-en-cdr-flyer.png
-registrationLink: ''
 startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=12
 downloads:
 - label: Confirmation

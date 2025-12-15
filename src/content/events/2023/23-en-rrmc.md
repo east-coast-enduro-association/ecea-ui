@@ -2,9 +2,9 @@
 title: Pine Glen Farms Sprint
 summary: Bring on the rocks!
 draft: false
-date: 2023-06-11
-keyTime: 2023-06-11 09:00:00
-checkInTime: 2023-06-11 07:00:00
+date: '2023-06-11'
+keyTime: '2023-06-11T09:00:00'
+checkInTime: '2023-06-11T07:00:00'
 location: 199 Teed Rd, Sidney Center, NY
 hostingClubs:
 - RRMC
@@ -15,8 +15,6 @@ closedCourse: true
 gasAway: false
 image: /images/logos/clubs/rrmc-large.png
 flyer: /images/events/flyers/23-en-rrmc-flyer.jpg
-registrationLink: ''
-startGridLink: ''
 downloads:
 - label: Rider Information
   url: /events/2023-ridge-sprint-rider-information.pdf

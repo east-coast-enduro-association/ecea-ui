@@ -2,8 +2,8 @@
 title: Broken Anvil
 summary: Great woods racing
 draft: false
-date: 2025-06-01 11:00:23.434000+00:00
-checkInTime: 2025-06-01 11:05:23.454000+00:00
+date: '2025-06-01T11:00:23.434000+00:00'
+checkInTime: '2025-06-01T11:05:23.454000+00:00'
 location: see flyer, Rocket Raceway
 hostingClubs:
 - GMER

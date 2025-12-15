@@ -2,9 +2,9 @@
 title: Shotgun Enduro
 summary: Old School Rock run but in Delano, good trail....
 draft: false
-date: 2024-06-23
-keyTime: 2024-06-23 09:00:00
-checkInTime: 2024-06-23 07:00:00
+date: '2024-06-23'
+keyTime: '2024-06-23T09:00:00'
+checkInTime: '2024-06-23T07:00:00'
 location: Ryan Twp Grove Rt, State Route 1017, Barnsville, PA
 hostingClubs:
 - HMDR
@@ -15,8 +15,6 @@ closedCourse: true
 gasAway: false
 image: /images/logos/clubs/hmdr.png
 flyer: /images/events/flyers/240529-enduro-flyer-01.jpg
-registrationLink: ''
-startGridLink: ''
 downloads:
 - label: Confirmation Sheet
   url: /events/240623-shotgun-enduro-confirmation-sheet-v4.pdf

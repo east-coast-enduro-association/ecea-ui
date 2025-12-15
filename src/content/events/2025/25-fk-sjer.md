@@ -3,8 +3,8 @@ title: Sahara Sands
 summary: This is (almost) desert racing, PBER and SJER team up for great trails for
   kids ...
 draft: false
-date: 2025-10-18 15:00:57.712000+00:00
-checkInTime: 2025-10-18 13:00:24.638000+00:00
+date: '2025-10-18T15:00:57.712000+00:00'
+checkInTime: '2025-10-18T13:00:24.638000+00:00'
 location: Eagleswood Township, NJ
 hostingClubs:
 - SJER

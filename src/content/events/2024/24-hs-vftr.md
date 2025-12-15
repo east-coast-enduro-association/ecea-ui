@@ -2,8 +2,8 @@
 title: Fern Glen
 summary: All new VFTR
 draft: false
-date: 2024-08-11
-checkInTime: 2024-08-10 14:00:10.615000+00:00
+date: '2024-08-11'
+checkInTime: '2024-08-10T14:00:10.615000+00:00'
 location: TBA
 hostingClubs:
 - VFTR

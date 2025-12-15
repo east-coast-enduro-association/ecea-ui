@@ -2,8 +2,8 @@
 title: Broken Anvil
 summary: Rocket Raceway
 draft: false
-date: 2023-06-04 11:00:00+00:00
-checkInTime: 2023-06-04 11:00:43.954000+00:00
+date: '2023-06-04T11:00:00+00:00'
+checkInTime: '2023-06-04T11:00:43.954000+00:00'
 location: Rocket Raceway see flyer directions
 hostingClubs:
 - GMER

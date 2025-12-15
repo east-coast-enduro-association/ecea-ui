@@ -2,8 +2,8 @@
 title: Ridge Mountain (Cancelled)
 summary: I love NY
 draft: false
-date: 2023-10-01
-checkInTime: 2023-08-23 03:55:45.714000+00:00
+date: '2023-10-01'
+checkInTime: '2023-08-23T03:55:45.714000+00:00'
 location: TBA
 hostingClubs:
 - RRMC

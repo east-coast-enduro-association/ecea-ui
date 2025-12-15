@@ -2,8 +2,8 @@
 title: High Mountain Fun Day
 summary: Wallow in the Hollow, Family fun ride
 draft: false
-date: 2023-09-02 13:00:00+00:00
-checkInTime: 2023-09-01 20:00:54.249000+00:00
+date: '2023-09-02T13:00:00+00:00'
+checkInTime: '2023-09-01T20:00:54.249000+00:00'
 location: 142 Cabin Lane, Sugarloaf, PA
 hostingClubs:
 - HMDR

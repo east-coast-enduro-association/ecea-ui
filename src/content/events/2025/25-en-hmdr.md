@@ -2,9 +2,9 @@
 title: Shotgun Enduro [Sold Out]
 summary: Old School Rock run but in Delano, good trail....
 draft: false
-date: 2025-06-22
-keyTime: 2025-06-22 09:00:00
-checkInTime: 2025-06-22 07:00:00
+date: '2025-06-22'
+keyTime: '2025-06-22T09:00:00'
+checkInTime: '2025-06-22T07:00:00'
 location: Ryan Twp Grove Rt, State Route 1017, Barnsville, PA
 hostingClubs:
 - HMDR
@@ -15,7 +15,6 @@ closedCourse: true
 gasAway: false
 image: /images/logos/clubs/hmdr.png
 flyer: /images/events/flyers/250409-shotgun-enduro-flyer.jpg
-registrationLink: ''
 startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=7
 ---
 ## **This event is sold out and will not be accepting any further entries**

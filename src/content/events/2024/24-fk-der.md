@@ -2,7 +2,7 @@
 title: Budd's Creek
 summary: We're Back!
 draft: false
-date: 2024-10-05
+date: '2024-10-05'
 location: Budds Creek, MD
 hostingClubs:
 - DER

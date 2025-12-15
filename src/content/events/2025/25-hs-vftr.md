@@ -2,8 +2,8 @@
 title: Fern Glen
 summary: VFTR return to the Fern
 draft: false
-date: 2025-04-27 10:00:00+00:00
-checkInTime: 2025-04-27 07:00:00+00:00
+date: '2025-04-27T10:00:00+00:00'
+checkInTime: '2025-04-27T07:00:00+00:00'
 location: 1478 Tomhicken Rd. Fern Glen PA
 hostingClubs:
 - VFTR

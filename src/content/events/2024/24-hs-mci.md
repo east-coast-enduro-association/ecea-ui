@@ -2,8 +2,7 @@
 title: Stump Jumper
 summary: A premier sand run in NJ
 draft: false
-date: 2024-05-19 11:00:00+00:00
-checkInTime: ''
+date: '2024-05-19T11:00:00+00:00'
 location: 942 Main St (RT 9), Eagleswood, NJ 08092
 hostingClubs:
 - MCI

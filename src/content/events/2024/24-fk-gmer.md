@@ -2,8 +2,8 @@
 title: Broken Anvil
 summary: Rocket Raceway
 draft: false
-date: 2024-06-01 16:00:00+00:00
-checkInTime: 2024-06-01 14:00:57.675000+00:00
+date: '2024-06-01T16:00:00+00:00'
+checkInTime: '2024-06-01T14:00:57.675000+00:00'
 location: Rocket Raceway
 hostingClubs:
 - GMER

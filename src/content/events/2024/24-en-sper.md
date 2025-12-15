@@ -2,9 +2,9 @@
 title: Michaux
 summary: Why does it always rain here?
 draft: false
-date: 2024-09-08
-keyTime: 2024-09-08 09:00:00
-checkInTime: 2024-09-08 07:00:00
+date: '2024-09-08'
+keyTime: '2024-09-08T09:00:00'
+checkInTime: '2024-09-08T07:00:00'
 location: 1975 Birch Run Road, Biglerville, PA 17307
 hostingClubs:
 - SPER
@@ -15,7 +15,6 @@ closedCourse: true
 gasAway: false
 image: /images/logos/clubs/michaux.jpg
 flyer: /images/events/flyers/micheaux-2024-2-.jpg
-registrationLink: ''
 downloads:
 - label: Confirmation Sheet
   url: /events/24confirmation.pdf

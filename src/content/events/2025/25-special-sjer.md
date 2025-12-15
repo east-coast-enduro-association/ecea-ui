@@ -2,8 +2,8 @@
 title: Squirrely Fern Enduro
 summary: A chance for the kids to try out an enduro format!
 draft: false
-date: 2025-03-15
-checkInTime: 2025-03-15 14:50:07.755000+00:00
+date: '2025-03-15'
+checkInTime: '2025-03-15T14:50:07.755000+00:00'
 location: Indian Mills Deer Club, Atsion Road, Shamong, NJ
 hostingClubs:
 - SJER

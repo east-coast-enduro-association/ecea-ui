@@ -2,8 +2,8 @@
 title: Ormond Farms
 summary: Great Sand track, open woods, open field camping.
 draft: false
-date: 2025-05-04 14:00:00+00:00
-checkInTime: 2025-05-04 11:00:00+00:00
+date: '2025-05-04T14:00:00+00:00'
+checkInTime: '2025-05-04T11:00:00+00:00'
 location: 161 Hesstown Rd, Millville, NJ
 hostingClubs:
 - CDR

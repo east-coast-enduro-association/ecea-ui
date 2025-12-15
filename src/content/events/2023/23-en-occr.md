@@ -2,9 +2,9 @@
 title: Scrub Pine (Cancelled)
 summary: Forest so nice, you've come back twice
 draft: false
-date: 2023-10-22
-keyTime: 2023-10-22 09:00:00
-checkInTime: 2023-10-22 07:00:00
+date: '2023-10-22'
+keyTime: '2023-10-22T09:00:00'
+checkInTime: '2023-10-22T07:00:00'
 location: TBA
 hostingClubs:
 - OCCR
@@ -15,8 +15,6 @@ closedCourse: false
 gasAway: false
 image: /images/logos/clubs/occr.jpg
 flyer: null
-registrationLink: ''
-startGridLink: ''
 ---
 **This event is cancelled for 2023.**
 

@@ -2,9 +2,9 @@
 title: Sandy Lane
 summary: Bark-busting and knuckle bashing fun
 draft: false
-date: 2025-03-23 05:00:00+00:00
-keyTime: 2025-03-23 09:00:00+00:00
-checkInTime: 2025-03-23 07:00:00+00:00
+date: '2025-03-23T05:00:00+00:00'
+keyTime: '2025-03-23T09:00:00+00:00'
+checkInTime: '2025-03-23T07:00:00+00:00'
 location: Interboro Gun Club, 2587 County Road 563, Egg Harbor City, NJ
 hostingClubs:
 - MMC
@@ -15,7 +15,6 @@ closedCourse: false
 gasAway: true
 image: /images/logos/clubs/mmc.jpg
 flyer: /images/events/flyers/25-en-mmc-flyer.jpg
-registrationLink: ''
 startGridLink: https://moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=3
 downloads:
 - label: State Waiver (Print and Sign)

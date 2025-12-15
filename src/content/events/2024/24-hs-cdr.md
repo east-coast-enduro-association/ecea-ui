@@ -2,8 +2,8 @@
 title: Ormond Farms
 summary: Series Opener for 2024, Great Sand track, open woods, open field camping.
 draft: false
-date: 2024-05-05 14:00:00+00:00
-checkInTime: 2024-05-05 11:00:00+00:00
+date: '2024-05-05T14:00:00+00:00'
+checkInTime: '2024-05-05T11:00:00+00:00'
 location: 161 Hesstown Rd, Millville, NJ
 hostingClubs:
 - CDR

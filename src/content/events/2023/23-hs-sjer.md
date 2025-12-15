@@ -3,8 +3,8 @@ title: 'Sahara Sands '
 summary: This is (almost) desert racing, PBER and SJER tag team this event to bring
   out the best...
 draft: false
-date: 2023-10-29
-checkInTime: 2023-10-28 14:00:10.615000+00:00
+date: '2023-10-29'
+checkInTime: '2023-10-28T14:00:10.615000+00:00'
 location: Eagleswood Township, NJ
 hostingClubs:
 - SJER

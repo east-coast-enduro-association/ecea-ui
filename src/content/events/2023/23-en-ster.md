@@ -2,9 +2,9 @@
 title: Barbed Wire Enduro
 summary: Alcohol Prohibited
 draft: false
-date: 2023-07-09
-keyTime: 2023-07-09 09:00:00
-checkInTime: 2023-07-09 07:00:00
+date: '2023-07-09'
+keyTime: '2023-07-09T09:00:00'
+checkInTime: '2023-07-09T07:00:00'
 location: TBA
 hostingClubs:
 - STER
@@ -15,8 +15,6 @@ closedCourse: false
 gasAway: true
 image: /images/logos/clubs/ster.jpg
 flyer: /images/events/flyers/2023-en-sper-flyer.jpg
-registrationLink: ''
-startGridLink: ''
 downloads:
 - label: Flyer
   url: /events/ster-2023-flyer.pdf

@@ -2,8 +2,8 @@
 title: Fern Glen
 summary: VFTR is Back in the Hare Scramble business
 draft: false
-date: 2024-08-10
-checkInTime: 2024-08-10 10:00:10.615000+00:00
+date: '2024-08-10'
+checkInTime: '2024-08-10T10:00:10.615000+00:00'
 location: TBA
 hostingClubs:
 - VFTR

@@ -2,9 +2,9 @@
 title: Curly Fern
 summary: A New Jersey Classic
 draft: false
-date: 2023-03-19
-keyTime: 2023-03-19 09:00:00
-checkInTime: 2023-03-19 07:00:00
+date: '2023-03-19'
+keyTime: '2023-03-19T09:00:00'
+checkInTime: '2023-03-19T07:00:00'
 location: Indian Mills Deer Club, Atsion, NJ
 hostingClubs:
 - SJER
@@ -15,7 +15,6 @@ closedCourse: false
 gasAway: true
 image: /images/logos/clubs/sjer-green.png
 flyer: /images/events/flyers/23-en-sjer-flyer.jpg
-registrationLink: ''
 startGridLink: https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=2
 downloads:
 - label: Confirmation Sheet

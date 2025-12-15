@@ -2,9 +2,9 @@
 title: Ithaca Sprint
 summary: Finger lakes mud welcomes you
 draft: false
-date: 2024-08-18 14:00:00+00:00
-keyTime: 2024-08-18 10:00:00+00:00
-checkInTime: 2024-08-18 07:30:00+00:00
+date: '2024-08-18T14:00:00+00:00'
+keyTime: '2024-08-18T10:00:00+00:00'
+checkInTime: '2024-08-18T07:30:00+00:00'
 location: 253 Andersen Hill Rd. Berkshire, NY 13736
 hostingClubs:
 - IDR
@@ -15,8 +15,6 @@ closedCourse: true
 gasAway: false
 image: /images/logos/clubs/idrlogo.jpg
 flyer: /images/events/flyers/image0.png
-registrationLink: ''
-startGridLink: ''
 downloads:
 - label: Rider Info Sheet
   url: /events/idr-rider-info-sheet-2024.pdf
