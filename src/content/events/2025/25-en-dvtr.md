@@ -21,7 +21,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/foggy-25-confirmation-sheet.pdf
   - label: Route Sheet
-    url: /events"/foggy-mtn-2025-route-sheet-ver-8.pdf
+    url: /events/foggy-mtn-2025-route-sheet-ver-8.pdf
   - label: JART Chart
     url: /events/foggy-mtn-2025-jart-ver-8.pdf
   - label: RS File

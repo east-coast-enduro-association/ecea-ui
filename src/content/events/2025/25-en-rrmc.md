@@ -20,7 +20,7 @@ downloads:
   - label: Confirmation
     url: /events/2025-rrmc-confirmation-rev-060525.pdf
   - label: Route Sheet
-    url: /events"/2025-ridge-run-route-sheet.pdf
+    url: /events/2025-ridge-run-route-sheet.pdf
   - label: JART Chart
     url: /events/2025-ridge-enduro.pdf
 ---

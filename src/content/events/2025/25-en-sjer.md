@@ -20,7 +20,7 @@ downloads:
   - label: State Waiver (Print and Sign)
     url: /events/enduro-event-state-waiver.pdf
   - label: Rider Info
-    url: /events"/2025-cf-rider-information-312.pdf
+    url: /events/2025-cf-rider-information-312.pdf
   - label: Route Sheet
     url: /events/2025-curly-fern-enduro-routesheet-courtesy-copy.pdf
 ---
