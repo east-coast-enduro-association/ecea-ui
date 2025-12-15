@@ -22,7 +22,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/23-en-sper-confirmation-update.pdf
   - label: Route Sheet
-    url: /events"/23-en-sper-route-update.pdf
+    url: /events/23-en-sper-route-update.pdf
   - label: Jart Chart
     url: /events/23-en-sper-jart.pdf
 ---

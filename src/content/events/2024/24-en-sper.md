@@ -19,7 +19,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/24confirmation.pdf
   - label: JART Chart
-    url: /events"/24-jart-michaux.pdf
+    url: /events/24-jart-michaux.pdf
   - label: 'JART Chart With Turns '
     url: /events/jart-w-turns.pdf
   - label: Route Sheet

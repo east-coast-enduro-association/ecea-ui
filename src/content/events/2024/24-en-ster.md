@@ -20,7 +20,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/24-en-ster-confirmation.pdf
   - label: Route Sheet
-    url: /events"/24-en-ster-route-sheet.pdf
+    url: /events/24-en-ster-route-sheet.pdf
 ---
 
 Watch out for the weather here or you might be wishing you brought a rain coat and some taller knobs. Smooth, fast trail with decent elevation change. Minimal rocks but plenty of roots! If you can't have fun on trails like these then maybe you picked the wrong sport. There's definitely no beer at the end. And that beer is absolutely NOT provided in solo cups poured from a few fresh kegs. Nope.

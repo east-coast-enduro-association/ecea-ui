@@ -19,7 +19,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/240623-shotgun-enduro-confirmation-sheet-v4.pdf
   - label: Roll Chart Long Course
-    url: /events"/240623-shotgun-enduro-long-course-roll-chart-v4.pdf
+    url: /events/240623-shotgun-enduro-long-course-roll-chart-v4.pdf
   - label: Roll Chart Short Course
     url: /events/240623-shotgun-enduro-short-course-roll-chart-v4.pdf
 ---

@@ -21,7 +21,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/2024-confirmation-sheet.pdf
   - label: Rider Info
-    url: /events"/2024-beehive-rider-info.pdf
+    url: /events/2024-beehive-rider-info.pdf
   - label: Route Sheet
     url: /events/cdr-updated-routesheet-2024.pdf
 ---

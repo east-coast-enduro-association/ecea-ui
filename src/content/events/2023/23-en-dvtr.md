@@ -22,7 +22,7 @@ downloads:
   - label: Entry Form
     url: /events/2023-en-dvtr-entry-form.png
   - label: Roll Chart
-    url: /events"/23-en-dvtr-roll-chart.pdf
+    url: /events/23-en-dvtr-roll-chart.pdf
   - label: RS File
     url: /events/23-en-dvtr-rs.rs
 ---

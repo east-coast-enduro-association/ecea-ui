@@ -20,7 +20,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/24-en-tcsmc-confirmation.pdf
   - label: Route Sheet
-    url: /events"/24-en-tcsmc-route.pdf
+    url: /events/24-en-tcsmc-route.pdf
 ---
 ## Greenbrier Enduro March 10th, 2024
 

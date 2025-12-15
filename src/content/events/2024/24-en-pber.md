@@ -19,7 +19,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/2024-clock-run-confirmation.pdf
   - label: Route Sheet
-    url: /events"/pber-2024-enduro-final-route-sheet.pdf
+    url: /events/pber-2024-enduro-final-route-sheet.pdf
   - label: Roll Chart
     url: /events/2024-pber-enduro-roll-chart-unofficial-112224.pdf
 ---

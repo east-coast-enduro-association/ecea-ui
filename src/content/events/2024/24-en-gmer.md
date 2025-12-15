@@ -20,7 +20,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/24-en-gmer-confirmation.pdf
   - label: Route Sheet
-    url: /events"/24-en-gmer-jart.pdf
+    url: /events/24-en-gmer-jart.pdf
 ---
 When you think Pennsylvania, do you think rocks? Throw that characterization out of your mind and think "if my front wheel comes out of this rut, the bike is going to slide down the whole damn mountain". It's fun, you should go.
 

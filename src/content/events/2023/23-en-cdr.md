@@ -20,7 +20,7 @@ downloads:
   - label: Confirmation
     url: /events/2023-en-cdr-confirmation.pdf
   - label: Rider Info
-    url: /events"/2023-en-cdr-rider-info.pdf
+    url: /events/2023-en-cdr-rider-info.pdf
   - label: Route Sheet
     url: /events/2023-en-cdr-route-sheet.pdf
 ---

@@ -20,7 +20,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/2023-gmer-confirmation.pdf
   - label: Route Sheet
-    url: /events"/2023-gmer-routesheet.pdf
+    url: /events/2023-gmer-routesheet.pdf
   - label: Rider Information
     url: /events/2023_gmer_rider_information_sheet.pdf
 ---

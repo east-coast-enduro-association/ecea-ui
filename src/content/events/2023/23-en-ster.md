@@ -21,7 +21,7 @@ downloads:
   - label: Confirmation Sheet
     url: /events/2023-ster-2-cofirmation.pdf
   - label: Route Sheet
-    url: /events"/2023-ster-roll-chart.pdf
+    url: /events/2023-ster-roll-chart.pdf
   - label: RS File
     url: /events/ster-2023-rs-file-roll-chart.rs
 ---
