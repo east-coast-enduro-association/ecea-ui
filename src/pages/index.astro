@@ -1,13 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HeroSection from "../components/Sections/HeroSection.astro";
-import EventList from "../components/Sections/EventList.astro";
 import Button from "../components/UI/Button.astro";
-import Card from "../components/UI/Card.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { formatDate } from "../utils/dateUtils";
-import ecealogo from "@assets/images/logos/clubs/ecea24l2.png";
+import heroBg from "@assets/images/feature-bg.jpg";
+
+// Get upcoming events
+const allEvents = await getCollection("events", ({ data }) => {
+  return !data.draft && new Date(data.date) >= new Date();
+});
+const upcomingEvents = allEvents
+  .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime())
+  .slice(0, 4);
+
+// Get club logos for events without images
+const clubs = await getCollection("clubs");
+const clubLogoMap = Object.fromEntries(
+  clubs.map(club => [club.data.abbreviatedName, club.data.logo])
+);
 
 // Get latest blog posts
 const allPosts = await getCollection("blog", ({ data }) => {
@@ -15,215 +26,218 @@ const allPosts = await getCollection("blog", ({ data }) => {
 });
 const latestPosts = allPosts
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-  .slice(0, 3);
+  .slice(0, 4);
+
+// Helper to get event image
+const getEventImage = (event: typeof upcomingEvents[0]) => {
+  if (event.data.image) return event.data.image;
+  if (event.data.hostingClubs?.[0]) {
+    return clubLogoMap[event.data.hostingClubs[0]];
+  }
+  return null;
+};
 ---
 
 <BaseLayout>
-  <HeroSection
-    title="East Coast Enduro Association"
-    subtitle="AMA sanctioned off-road motorcycle racing since 1971"
-    backgroundImage="/images/feature-bg.jpg"
-    ctaText="View Events"
-    ctaLink="/events"
-    secondaryCtaText="Get Started"
-    secondaryCtaLink="/get-started"
-  />
-
-  <!-- Racing Series -->
-  <section class="py-16 bg-white">
-    <div class="container">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Racing Series</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 class="text-xl font-bold mb-3">Enduro</h3>
-            <p class="text-gray-600 mb-4">Time-keeping format racing through woods and trails</p>
-            <a href="/series/enduro" class="text-primary-600 font-medium hover:text-primary-700">
-              Learn More →
-            </a>
-          </div>
-
-          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 class="text-xl font-bold mb-3">Hare Scramble</h3>
-            <p class="text-gray-600 mb-4">Mass start racing over varied terrain</p>
-            <a href="/series/harescramble" class="text-primary-600 font-medium hover:text-primary-700">
-              Learn More →
-            </a>
-          </div>
-
-          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 class="text-xl font-bold mb-3">FastKIDZ</h3>
-            <p class="text-gray-600 mb-4">Youth racing program for future champions</p>
-            <a href="/series/fastkidz" class="text-primary-600 font-medium hover:text-primary-700">
-              Learn More →
-            </a>
-          </div>
-
-          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-            <h3 class="text-xl font-bold mb-3">Dual Sport</h3>
-            <p class="text-gray-600 mb-4">Street-legal adventure riding events</p>
-            <a href="/series/dual-sport" class="text-primary-600 font-medium hover:text-primary-700">
-              Learn More →
-            </a>
-          </div>
-        </div>
-
-        <Button href="/faq" variant="outline">
-          New to Racing? Read the FAQ
-        </Button>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="container">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <Image
-            src={ecealogo}
-            alt="ECEA Logo"
-            class="rounded-lg object-contain w-full max-w-md mx-auto"
-          />
-        </div>
-
-        <div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6">About ECEA</h2>
-          <p class="text-gray-700 mb-6 text-lg">
-            The East Coast Enduro Association has been promoting off-road motorcycle racing since 1971. We are an AMA sanctioned organization that hosts Enduros, Hare Scrambles, Dual Sports, and FastKIDZ events across the East Coast.
-          </p>
-          <p class="text-gray-700 mb-8 text-lg">
-            Our member clubs organize events throughout the year, providing competitive racing opportunities for riders of all skill levels. Whether you're a seasoned pro or just getting started, ECEA has a place for you.
-          </p>
-
-          <Button href="/about-us">
-            Learn More About ECEA
-          </Button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Upcoming Events Section -->
-  <EventList />
-
-  <!-- Latest Blog Posts -->
-  <section class="py-16 bg-white">
-    <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Latest News</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Stay up to date with ECEA announcements, event recaps, and racing news
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        {latestPosts.map((post) => (
-          <Card
-            title={post.data.title}
-            image={post.data.image && {
-              src: post.data.image.src,
-              alt: post.data.image.alt
-            }}
-            href={`/blog/${post.slug}`}
-            className="h-full"
-          >
-            <div class="mb-3 flex items-center text-gray-500 text-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span>{formatDate(post.data.pubDate)}</span>
-            </div>
-            <p class="text-gray-700 line-clamp-2">{post.data.description}</p>
-          </Card>
-        ))}
-      </div>
-
-      <div class="text-center">
-        <Button href="/blog" variant="outline">
-          View All Posts
-        </Button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Member Clubs Preview -->
-  <section class="py-16 bg-gray-50">
-    <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Member Clubs</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          ECEA is made up of dedicated AMA-chartered clubs across the region
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">CDR</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">DER</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">DVTR</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">GMER</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">HMDR</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">IDR</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">MCI</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">MMC</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">OCCR</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">PBER</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">RORR</span>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-          <span class="font-bold text-primary-600">+ More</span>
-        </div>
-      </div>
-
-      <div class="mt-12 text-center">
-        <Button href="/clubs" variant="outline">
-          View All Clubs
-        </Button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action -->
+  <!-- Hero Section - Compact -->
   <section
-    class="py-20 bg-cover bg-center text-white"
-    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/images/feature-bg.jpg)"
+    class="relative min-h-[50vh] flex items-center bg-cover bg-center pt-24 pb-16"
+    style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/images/feature-bg.jpg);"
   >
     <div class="container">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Start Racing?</h2>
-        <p class="text-xl mb-8">
-          Join the ECEA community and experience the thrill of off-road motorcycle racing. Check out our getting started guide or browse upcoming events.
+      <div class="max-w-3xl text-white">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+          East Coast Enduro Association
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-white/90">
+          AMA sanctioned off-road motorcycle racing since 1971
         </p>
-
-        <div class="flex flex-wrap justify-center gap-4">
-          <Button href="/get-started" variant="primary" size="lg">
+        <div class="flex flex-wrap gap-4">
+          <Button href="/events" variant="primary" size="lg">
+            View Events
+          </Button>
+          <Button href="/get-started" variant="outline" size="lg" class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm">
             Get Started
           </Button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <Button href="/contact" variant="outline" size="lg" class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm">
-            Contact Us
+  <!-- Racing Series - Dark Banner with Button Links -->
+  <section class="py-6 bg-gray-900 text-white">
+    <div class="container">
+      <div class="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+        <a href="/series/enduro" class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
+          <span class="text-lg">🏁</span>
+          <span class="font-medium">Enduro</span>
+        </a>
+        <a href="/series/harescramble" class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
+          <span class="text-lg">🏍️</span>
+          <span class="font-medium">Hare Scramble</span>
+        </a>
+        <a href="/series/fastkidz" class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
+          <span class="text-lg">⭐</span>
+          <span class="font-medium">FastKIDZ</span>
+        </a>
+        <a href="/series/dual-sport" class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
+          <span class="text-lg">🌲</span>
+          <span class="font-medium">Dual Sport</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="py-10 md:py-12 bg-white">
+    <div class="container">
+      <div class="flex justify-between items-end mb-6">
+        <div>
+          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Coming Up</span>
+          <h2 class="text-2xl md:text-3xl font-bold">Upcoming Events</h2>
+        </div>
+        <a href="/events" class="text-primary-600 font-medium hover:text-primary-700 hidden md:inline-flex items-center">
+          All Events
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Event Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+        {upcomingEvents.slice(0, 4).map((event, index) => {
+          const eventImage = getEventImage(event);
+          const isFeature = index === 0;
+
+          return (
+            <a
+              href={`/events/${event.slug}`}
+              class:list={[
+                "group relative overflow-hidden rounded-xl bg-gray-900",
+                isFeature ? "md:row-span-2 aspect-[4/3] md:aspect-auto" : "aspect-[16/9]"
+              ]}
+            >
+              {eventImage ? (
+                <Image
+                  src={eventImage}
+                  alt={event.data.title}
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  widths={isFeature ? [640, 800] : [400, 600]}
+                />
+              ) : (
+                <div class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800"></div>
+              )}
+
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="px-2 py-0.5 bg-white/20 backdrop-blur-sm rounded text-xs font-medium text-white uppercase tracking-wider">
+                    {event.data.eventType || 'Event'}
+                  </span>
+                  <span class="text-white/70 text-sm">{formatDate(event.data.date)}</span>
+                </div>
+                <h3 class:list={[
+                  "font-bold text-white group-hover:text-primary-300 transition-colors",
+                  isFeature ? "text-xl md:text-2xl" : "text-lg"
+                ]}>
+                  {event.data.title}
+                </h3>
+                {isFeature && (
+                  <p class="text-white/70 text-sm mt-2 hidden md:block">{event.data.location}</p>
+                )}
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <div class="text-center mt-6 md:hidden">
+        <Button href="/events" variant="outline">View All Events</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section class="py-10 md:py-12 bg-gray-50">
+    <div class="container">
+      <div class="flex justify-between items-end mb-6">
+        <div>
+          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">News & Updates</span>
+          <h2 class="text-2xl md:text-3xl font-bold">Latest News</h2>
+        </div>
+        <a href="/blog" class="text-primary-600 font-medium hover:text-primary-700 hidden md:inline-flex items-center">
+          All Posts
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Featured + Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+        {latestPosts.map((post, index) => {
+          const isFeature = index === 0;
+
+          return (
+            <a
+              href={`/blog/${post.slug}`}
+              class:list={[
+                "group relative overflow-hidden rounded-xl bg-gray-100",
+                isFeature ? "md:row-span-2 aspect-[4/3] md:aspect-auto" : "aspect-[16/9]"
+              ]}
+            >
+              {post.data.image ? (
+                <Image
+                  src={post.data.image.src}
+                  alt={post.data.image.alt}
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  widths={isFeature ? [640, 800] : [400, 600]}
+                />
+              ) : (
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900"></div>
+              )}
+
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                <span class="text-white/70 text-sm">{formatDate(post.data.pubDate)}</span>
+                <h3 class:list={[
+                  "font-bold text-white group-hover:text-primary-300 transition-colors mt-1",
+                  isFeature ? "text-xl md:text-2xl" : "text-lg"
+                ]}>
+                  {post.data.title}
+                </h3>
+                {isFeature && (
+                  <p class="text-white/70 text-sm mt-2 line-clamp-2 hidden md:block">{post.data.description}</p>
+                )}
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <div class="text-center mt-6 md:hidden">
+        <Button href="/blog" variant="outline">View All Posts</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compact CTA -->
+  <section class="py-10 bg-gray-900 text-white">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Ready to race?</h2>
+          <p class="text-gray-400 mt-1">Join 19+ clubs across the East Coast</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3">
+          <Button href="/get-started" variant="primary">
+            Get Started
+          </Button>
+          <Button href="/clubs" variant="outline" class="text-white border-gray-600 hover:bg-gray-800">
+            Find a Club
           </Button>
         </div>
       </div>
