@@ -77,6 +77,26 @@ const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filt
               </select>
             </div>
 
+            <div class="mb-6 space-y-3">
+              <label class="block text-sm font-medium text-gray-700">Date Range</label>
+              <div>
+                <label for="from-date" class="block text-xs text-gray-500 mb-1">From</label>
+                <input
+                  type="date"
+                  id="from-date"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                />
+              </div>
+              <div>
+                <label for="to-date" class="block text-xs text-gray-500 mb-1">To</label>
+                <input
+                  type="date"
+                  id="to-date"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
+                />
+              </div>
+            </div>
+
             <button id="reset-filters" class="w-full mt-6 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
               Reset Filters
             </button>
@@ -194,6 +214,8 @@ const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filt
       const searchInput = document.getElementById('search');
       const typeSelect = document.getElementById('eventType');
       const clubSelect = document.getElementById('club');
+      const fromDateInput = document.getElementById('from-date');
+      const toDateInput = document.getElementById('to-date');
       const resetButton = document.getElementById('reset-filters');
       const clearSearchBtn = document.getElementById('clear-search-btn');
       const noResults = document.getElementById('no-results');
@@ -202,6 +224,8 @@ const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filt
         const searchTerm = searchInput?.value.toLowerCase() || '';
         const selectedType = typeSelect?.value || '';
         const selectedClub = clubSelect?.value || '';
+        const fromDate = fromDateInput?.value || '';
+        const toDate = toDateInput?.value || '';
 
         let visibleCount = 0;
         const allCards = document.querySelectorAll('.event-card');
@@ -210,15 +234,16 @@ const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filt
           const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
           const type = card.getAttribute('data-type') || '';
           const club = card.getAttribute('data-club') || '';
+          const eventDate = card.getAttribute('data-date') || '';
 
           const matchesSearch = title.includes(searchTerm);
           const matchesType = !selectedType || type === selectedType;
           const matchesClub = !selectedClub || club === selectedClub;
+          const matchesFromDate = !fromDate || eventDate >= fromDate;
+          const matchesToDate = !toDate || eventDate <= toDate;
 
-          if (matchesSearch && matchesType && matchesClub) {
-            card.style.display = 'block'; // Or 'flex' depending on your card layout
-            // We need to ensure the parent <a> or <div> is visible
-            // Since Card.astro might render as <a>, we target the card directly
+          if (matchesSearch && matchesType && matchesClub && matchesFromDate && matchesToDate) {
+            card.style.display = 'block';
             visibleCount++;
           } else {
             card.style.display = 'none';
@@ -233,11 +258,15 @@ const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filt
       searchInput?.addEventListener('input', filterEvents);
       typeSelect?.addEventListener('change', filterEvents);
       clubSelect?.addEventListener('change', filterEvents);
+      fromDateInput?.addEventListener('change', filterEvents);
+      toDateInput?.addEventListener('change', filterEvents);
 
       const resetAll = () => {
         if (searchInput) searchInput.value = '';
         if (typeSelect) typeSelect.value = '';
         if (clubSelect) clubSelect.value = '';
+        if (fromDateInput) fromDateInput.value = '';
+        if (toDateInput) toDateInput.value = '';
         filterEvents();
       }
 
