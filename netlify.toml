@@ -1,0 +1,35 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirects for SPA-like behavior (optional, Astro handles routing)
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
+
+# Headers for better caching and security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/documents/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
