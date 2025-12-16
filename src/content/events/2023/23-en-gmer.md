@@ -2,19 +2,19 @@
 title: Three Springs
 summary: Teetering on the edge
 draft: false
-date: '2023-08-06'
-keyTime: '2023-08-06T09:00:00'
-checkInTime: '2023-08-06T07:00:00'
+date: 2023-08-06
 location: TBA
 hostingClubs:
   - GMER
 eventType: Enduro
 format: Restart
 series: ECEA Enduro Championship Series
+keyTime: '2023-08-06T09:00:00'
+checkInTime: '2023-08-06T07:00:00'
 closedCourse: false
 gasAway: true
-image: '@assets/images/logos/clubs/gmer.gif'
-flyer: '@assets/images/events/flyers/23-en-gmer-flyer.jpg'
+image: '../../../assets/images/logos/clubs/gmer.gif'
+flyer: '@assets/events/flyers/23-en-gmer-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=10'
 downloads:
   - label: Confirmation Sheet

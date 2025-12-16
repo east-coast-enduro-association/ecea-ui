@@ -1,20 +1,20 @@
 ---
 title: Shotgun Enduro
-summary: 'Old School Rock run but in Delano, good trail....'
+summary: Old School Rock run but in Delano, good trail....
 draft: false
-date: '2024-06-23'
-keyTime: '2024-06-23T09:00:00'
-checkInTime: '2024-06-23T07:00:00'
-location: 'Ryan Twp Grove Rt, State Route 1017, Barnsville, PA'
+date: 2024-06-23
+location: Ryan Twp Grove Rt, State Route 1017, Barnsville, PA
 hostingClubs:
   - HMDR
 eventType: Enduro
 format: Restart
 series: ECEA Enduro Championship Series
+keyTime: '2024-06-23T09:00:00'
+checkInTime: '2024-06-23T07:00:00'
 closedCourse: true
 gasAway: false
-image: '@assets/images/logos/clubs/hmdr.png'
-flyer: '@assets/images/events/flyers/240529-enduro-flyer-01.jpg'
+image: '../../../assets/images/logos/clubs/hmdr.png'
+flyer: '@assets/events/flyers/240529-enduro-flyer-01.jpg'
 downloads:
   - label: Confirmation Sheet
     url: /events/240623-shotgun-enduro-confirmation-sheet-v4.pdf

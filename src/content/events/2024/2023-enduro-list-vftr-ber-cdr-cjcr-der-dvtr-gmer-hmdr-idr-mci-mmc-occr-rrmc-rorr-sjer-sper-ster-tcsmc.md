@@ -1,10 +1,9 @@
 ---
 title: 2023 AWARDS BANQUET
-summary: 'ECEA Awards Banquet, Vendor show, Dinner, FastKIDZ Ceremony.'
+summary: ECEA Awards Banquet, Vendor show, Dinner, FastKIDZ Ceremony.
 draft: false
-date: '2024-01-20T17:00:52.767000+00:00'
-checkInTime: '2024-01-20T21:00:52.787000+00:00'
-location: 'Sheraton Valley Forge, PA'
+date: '2024-01-20T17:00:52.767Z'
+location: Sheraton Valley Forge, PA
 hostingClubs:
   - VFTR
   - BER
@@ -27,11 +26,11 @@ hostingClubs:
 eventType: Special
 format: Special
 series: Special Series
+checkInTime: '2024-01-20T21:00:52.787Z'
 closedCourse: false
 gasAway: false
-gateFee: N/A
-image: '@assets/images/logos/clubs/ecea24l2.png'
-flyer: '@assets/images/events/flyers/eceatick23info.jpg'
+image: '../../../assets/images/logos/clubs/ecea24l2.png'
+flyer: '@assets/events/flyers/eceatick23info.jpg'
 ---
 More info will be posted in the Announcements/News Blog here on website and on Facebook etc,,\
 \

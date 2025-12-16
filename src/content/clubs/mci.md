@@ -1,17 +1,9 @@
 ---
 name: Motorcycle Competition Inc
-slug: motorcycle-competition-inc
 abbreviatedName: MCI
-summary: Motorcycle Competition Inc
+logo: '../../assets/images/logos/clubs/mci.jpg'
+summary: MCI
 draft: false
-logo: '@assets/clubs/logos/mci-large.jpg'
-category:
-  - New Jersey
-website: 'https://ride-mci.com/'
-president: TODO
-contact: bwoodrick82@gmail.com
-order: 7
-location: 'Wrightstown, NJ'
 ---
 
 ## About Our Club

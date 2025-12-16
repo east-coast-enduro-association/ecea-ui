@@ -2,19 +2,19 @@
 title: Barbed Wire Enduro
 summary: Alcohol Prohibited
 draft: false
-date: '2023-07-09'
-keyTime: '2023-07-09T09:00:00'
-checkInTime: '2023-07-09T07:00:00'
+date: 2023-07-09
 location: TBA
 hostingClubs:
   - STER
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
+keyTime: '2023-07-09T09:00:00'
+checkInTime: '2023-07-09T07:00:00'
 closedCourse: false
 gasAway: true
-image: '@assets/images/logos/clubs/ster.jpg'
-flyer: '@assets/images/events/flyers/2023-en-sper-flyer.jpg'
+image: '../../../assets/images/logos/clubs/ster.jpg'
+flyer: '@assets/events/flyers/2023-en-sper-flyer.jpg'
 downloads:
   - label: Flyer
     url: /events/ster-2023-flyer.pdf

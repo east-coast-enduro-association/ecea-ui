@@ -2,8 +2,8 @@
 title: Stump Jumper
 summary: A premier sand run in NJ
 draft: false
-date: '2024-05-19T11:00:00+00:00'
-location: '942 Main St (RT 9), Eagleswood, NJ 08092'
+date: '2024-05-19T11:00:00.000Z'
+location: 942 Main St (RT 9), Eagleswood, NJ 08092
 hostingClubs:
   - MCI
 eventType: Hare Scramble
@@ -11,9 +11,8 @@ format: Hare Scramble
 series: Hare Scramble Series
 closedCourse: false
 gasAway: false
-gateFee: '$10 per person, Kids 5 and under Free'
-image: '@assets/images/logos/clubs/mci.jpg'
-flyer: '@assets/images/events/flyers/24mci-hs.jpg'
+image: '../../../assets/images/logos/clubs/mci.jpg'
+flyer: '@assets/events/flyers/24mci-hs.jpg'
 ---
 **NO ENTRY FRIDAY NIGHT**
 

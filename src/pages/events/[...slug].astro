@@ -31,10 +31,8 @@ if (!displayImage && entry.data.hostingClubs && entry.data.hostingClubs.length >
   }
 }
 
-// 3. Last resort fallback
-if (!displayImage) {
-  displayImage = "/images/feature-bg.jpg";
-}
+// Check if displayImage is an ImageMetadata object (has .src property)
+const hasImageMetadata = displayImage && typeof displayImage === 'object' && 'src' in displayImage;
 // ----------------------------
 
 const formattedDate = formatDate(entry.data.date);
@@ -45,13 +43,12 @@ const isFutureEvent = new Date(entry.data.date) > new Date();
 <BaseLayout
   title={`${entry.data.title} - ECEA Events`}
   description={entry.data.summary}
-  image={{ url: displayImage, alt: entry.data.title }}
   type="article"
 >
   <PostLayout
     title={entry.data.title}
     description={entry.data.summary}
-    image={{ url: displayImage, alt: entry.data.title }}
+    image={hasImageMetadata ? { src: displayImage, alt: entry.data.title } : undefined}
     date={entry.data.date}
     tags={entry.data.tags}
     type="event"

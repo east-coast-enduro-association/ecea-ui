@@ -2,19 +2,17 @@
 title: OXBO-Skip Stoner Memorial
 summary: SPER is back
 draft: false
-date: '2025-06-28T12:00:15.995000+00:00'
-checkInTime: '2025-06-28T14:00:16.009000+00:00'
-location: 'Summit Quarry Road, Good Springs, PA'
+date: '2025-06-28T12:00:15.995Z'
+location: Summit Quarry Road, Good Springs, PA
 hostingClubs:
   - SPER
-eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
+checkInTime: '2025-06-28T14:00:16.009Z'
 closedCourse: false
 gasAway: false
-gateFee: '$10, under 5 Free'
-image: '@assets/images/logos/clubs/sper.jpg'
-flyer: '@assets/images/events/flyers/25-sper-hs.png'
+image: '../../../assets/images/logos/clubs/sper.jpg'
+flyer: '@assets/events/flyers/25-sper-hs.png'
 ---
 South Penn  is back with an all new Hare Scramble , new Location.\
 \

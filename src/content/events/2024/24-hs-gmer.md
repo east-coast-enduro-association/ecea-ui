@@ -2,19 +2,18 @@
 title: Broken Anvil
 summary: Great woods racing
 draft: false
-date: '2024-06-02T11:00:23.434000+00:00'
-checkInTime: '2024-06-02T11:05:23.454000+00:00'
-location: 'see flyer, Rocket Raceway'
+date: '2024-06-02T11:00:23.434Z'
+location: see flyer, Rocket Raceway
 hostingClubs:
   - GMER
 eventType: Hare Scramble
 format: Hare Scramble
 series: ECEA Hare Scramble Series
+checkInTime: '2024-06-02T11:05:23.454Z'
 closedCourse: false
 gasAway: false
-gateFee: TBA
-image: '@assets/images/logos/clubs/gmer.gif'
-flyer: '@assets/images/events/flyers/24-gmer-hs-flyer.jpg'
+image: '../../../assets/images/logos/clubs/gmer.gif'
+flyer: '@assets/events/flyers/24-gmer-hs-flyer.jpg'
 ---
 Gates OPEN FRIDAY 2pm\
 **NO GO PRO’s**

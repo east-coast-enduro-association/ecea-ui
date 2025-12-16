@@ -2,167 +2,226 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroSection from "../components/Sections/HeroSection.astro";
 import EventList from "../components/Sections/EventList.astro";
-import SermonList from "../components/Sections/SermonList.astro";
 import Button from "../components/UI/Button.astro";
+import Card from "../components/UI/Card.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { formatDate } from "../utils/dateUtils";
+import ecealogo from "@assets/images/logos/clubs/ecea24l2.png";
+
+// Get latest blog posts
+const allPosts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+});
+const latestPosts = allPosts
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+  .slice(0, 3);
 ---
 
 <BaseLayout>
-  <HeroSection 
-    title="Welcome to Our Church"
-    subtitle="A place of worship, community, and spiritual growth"
-    backgroundImage="/uploads/hero-bg.webp"
-    ctaText="Plan Your Visit"
-    ctaLink="/im-new"
-    secondaryCtaText="Watch Sermons"
-    secondaryCtaLink="/sermons"
+  <HeroSection
+    title="East Coast Enduro Association"
+    subtitle="AMA sanctioned off-road motorcycle racing since 1971"
+    backgroundImage="/images/feature-bg.jpg"
+    ctaText="View Events"
+    ctaLink="/events"
+    secondaryCtaText="Get Started"
+    secondaryCtaLink="/get-started"
   />
-  
-  <!-- Service Times -->
+
+  <!-- Racing Series -->
   <section class="py-16 bg-white">
     <div class="container">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Join Us This Sunday</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
-            <h3 class="text-xl font-bold mb-3">Morning Service</h3>
-            <p class="text-2xl font-bold text-primary-600 mb-2">8:00 AM</p>
-            <p class="text-gray-600 mb-4">Traditional service with hymns and choir</p>
-            <p class="italic text-gray-500">In-person & Livestream</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Racing Series</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-3">Enduro</h3>
+            <p class="text-gray-600 mb-4">Time-keeping format racing through woods and trails</p>
+            <a href="/series/enduro" class="text-primary-600 font-medium hover:text-primary-700">
+              Learn More →
+            </a>
           </div>
-          
-          <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
-            <h3 class="text-xl font-bold mb-3">Family Service</h3>
-            <p class="text-2xl font-bold text-primary-600 mb-2">10:30 AM</p>
-            <p class="text-gray-600 mb-4">Contemporary worship with children's ministry</p>
-            <p class="italic text-gray-500">In-person only</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-3">Hare Scramble</h3>
+            <p class="text-gray-600 mb-4">Mass start racing over varied terrain</p>
+            <a href="/series/harescramble" class="text-primary-600 font-medium hover:text-primary-700">
+              Learn More →
+            </a>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-3">FastKIDZ</h3>
+            <p class="text-gray-600 mb-4">Youth racing program for future champions</p>
+            <a href="/series/fastkidz" class="text-primary-600 font-medium hover:text-primary-700">
+              Learn More →
+            </a>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-3">Dual Sport</h3>
+            <p class="text-gray-600 mb-4">Street-legal adventure riding events</p>
+            <a href="/series/dual-sport" class="text-primary-600 font-medium hover:text-primary-700">
+              Learn More →
+            </a>
           </div>
         </div>
-        
-        <Button href="/im-new" variant="outline">
-          Plan Your Visit
+
+        <Button href="/faq" variant="outline">
+          New to Racing? Read the FAQ
         </Button>
       </div>
     </div>
   </section>
-  
+
   <!-- About Section -->
   <section class="py-16 bg-gray-50">
     <div class="container">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <img 
-            src="/uploads/church-default.webp" 
-            alt="Our Church" 
-            class="rounded-lg shadow-lg object-cover w-full h-full"
+          <Image
+            src={ecealogo}
+            alt="ECEA Logo"
+            class="rounded-lg object-contain w-full max-w-md mx-auto"
           />
         </div>
-        
+
         <div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6">About Our Church</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">About ECEA</h2>
           <p class="text-gray-700 mb-6 text-lg">
-            We are a welcoming Christian community dedicated to sharing God's love through worship, fellowship, and service. Our church has been serving the community for over 50 years, providing a place for spiritual growth and connection.
+            The East Coast Enduro Association has been promoting off-road motorcycle racing since 1971. We are an AMA sanctioned organization that hosts Enduros, Hare Scrambles, Dual Sports, and FastKIDZ events across the East Coast.
           </p>
           <p class="text-gray-700 mb-8 text-lg">
-            Whether you're exploring faith for the first time or looking for a church home, we invite you to join us. Our diverse congregation welcomes people of all ages, backgrounds, and walks of life.
+            Our member clubs organize events throughout the year, providing competitive racing opportunities for riders of all skill levels. Whether you're a seasoned pro or just getting started, ECEA has a place for you.
           </p>
-          
+
           <Button href="/about-us">
-            Learn More About Us
+            Learn More About ECEA
           </Button>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Events Section -->
+
+  <!-- Upcoming Events Section -->
   <EventList />
-  
-  <!-- Sermons Section -->
-  <SermonList />
-  
-  <!-- Ministries Preview -->
-  <section class="py-16 bg-gray-50">
+
+  <!-- Latest Blog Posts -->
+  <section class="py-16 bg-white">
     <div class="container">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Ministries</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Latest News</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Discover how you can connect, serve, and grow through our various ministries
+          Stay up to date with ECEA announcements, event recaps, and racing news
         </p>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="card text-center p-8">
-          <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-primary-100 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Children's Ministry</h3>
-          <p class="text-gray-700 mb-4">
-            Nurturing the spiritual growth of our children through engaging, age-appropriate activities.
-          </p>
-          <a href="/ministries/childrens-ministry" class="text-primary-600 font-medium hover:text-primary-700">
-            Learn More →
-          </a>
-        </div>
-        
-        <div class="card text-center p-8">
-          <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-secondary-100 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-secondary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Worship Ministry</h3>
-          <p class="text-gray-700 mb-4">
-            Leading our congregation in worship through music, song, and creative expression.
-          </p>
-          <a href="/ministries/worship-ministry" class="text-primary-600 font-medium hover:text-primary-700">
-            Learn More →
-          </a>
-        </div>
-        
-        <div class="card text-center p-8">
-          <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-accent-100 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Community Outreach</h3>
-          <p class="text-gray-700 mb-4">
-            Serving our local community through various programs and initiatives to share God's love.
-          </p>
-          <a href="/ministries/community-outreach" class="text-primary-600 font-medium hover:text-primary-700">
-            Learn More →
-          </a>
-        </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {latestPosts.map((post) => (
+          <Card
+            title={post.data.title}
+            image={post.data.image && {
+              src: post.data.image.src,
+              alt: post.data.image.alt
+            }}
+            href={`/blog/${post.slug}`}
+            className="h-full"
+          >
+            <div class="mb-3 flex items-center text-gray-500 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>{formatDate(post.data.pubDate)}</span>
+            </div>
+            <p class="text-gray-700 line-clamp-2">{post.data.description}</p>
+          </Card>
+        ))}
       </div>
-      
-      <div class="mt-12 text-center">
-        <Button href="/ministries" variant="outline">
-          View All Ministries
+
+      <div class="text-center">
+        <Button href="/blog" variant="outline">
+          View All Posts
         </Button>
       </div>
     </div>
   </section>
-  
+
+  <!-- Member Clubs Preview -->
+  <section class="py-16 bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Member Clubs</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          ECEA is made up of dedicated AMA-chartered clubs across the region
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">CDR</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">DER</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">DVTR</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">GMER</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">HMDR</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">IDR</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">MCI</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">MMC</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">OCCR</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">PBER</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">RORR</span>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <span class="font-bold text-primary-600">+ More</span>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button href="/clubs" variant="outline">
+          View All Clubs
+        </Button>
+      </div>
+    </div>
+  </section>
+
   <!-- Call to Action -->
-  <section 
+  <section
     class="py-20 bg-cover bg-center text-white"
-    style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/uploads/thank-you-bg.webp)"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/images/feature-bg.jpg)"
   >
     <div class="container">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Join Our Community?</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Start Racing?</h2>
         <p class="text-xl mb-8">
-          We'd love to welcome you to our church family. Come visit us this Sunday or reach out with any questions.
+          Join the ECEA community and experience the thrill of off-road motorcycle racing. Check out our getting started guide or browse upcoming events.
         </p>
-        
+
         <div class="flex flex-wrap justify-center gap-4">
-          <Button href="/im-new" variant="primary" size="lg">
-            I'm New Here
+          <Button href="/get-started" variant="primary" size="lg">
+            Get Started
           </Button>
-          
+
           <Button href="/contact" variant="outline" size="lg" class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm">
             Contact Us
           </Button>

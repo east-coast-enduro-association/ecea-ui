@@ -1,20 +1,20 @@
 ---
 title: Foggy Mountain
-summary: 'This one is easy, you should do it'
+summary: This one is easy, you should do it
 draft: false
-date: '2023-07-30'
-keyTime: '2023-07-30T09:00:00'
-checkInTime: '2023-07-30T07:00:00'
-location: '532 PICNIC GROVE RD, BLAIN, PA 17006'
+date: 2023-07-30
+location: 532 PICNIC GROVE RD, BLAIN, PA 17006
 hostingClubs:
   - DVTR
 eventType: Enduro
 format: Restart
 series: ECEA Enduro Championship Series
+keyTime: '2023-07-30T09:00:00'
+checkInTime: '2023-07-30T07:00:00'
 closedCourse: true
 gasAway: true
-image: '@assets/images/logos/clubs/dvtr.jpg'
-flyer: '@assets/images/events/flyers/2023-en-dvtr-flyer.png'
+image: '../../../assets/images/logos/clubs/dvtr.jpg'
+flyer: '@assets/events/flyers/2023-en-dvtr-flyer.png'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=9'
 downloads:
   - label: Confirmation Sheet

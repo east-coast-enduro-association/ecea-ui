@@ -1,17 +1,9 @@
 ---
 name: Ithaca Dirt Riders
-slug: ithaca-dirt-riders
 abbreviatedName: IDR
-summary: Ithaca Dirt Riders
+logo: '../../assets/images/logos/clubs/idrlogo.jpg'
+summary: IDR
 draft: false
-logo: '@assets/clubs/logos/ecea-small.png'
-category:
-  - New York
-website: www.ithacadirtriders.com
-president: Norm Foley
-contact: ironwd@frontiernet.net
-order: 6
-location: 'Richford, NY'
 ---
 
 ## About Our Club

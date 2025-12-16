@@ -2,20 +2,20 @@
 title: Beehive
 summary: Back in the sand
 draft: false
-date: '2024-08-25T04:00:00+00:00'
-keyTime: '2024-08-25T09:00:00'
-checkInTime: '2024-08-25T07:00:00'
-location: '9544 Noble St Mauricetown, NJ 08329'
+date: '2024-08-25T04:00:00.000Z'
+location: 9544 Noble St Mauricetown, NJ 08329
 hostingClubs:
   - CDR
   - DER
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
+keyTime: '2024-08-25T09:00:00'
+checkInTime: '2024-08-25T07:00:00'
 closedCourse: false
 gasAway: true
-image: '@assets/images/logos/clubs/cdr.png'
-flyer: '@assets/images/events/flyers/51st-beehive-final.png'
+image: '../../../assets/images/logos/clubs/cdr.png'
+flyer: '@assets/events/flyers/51st-beehive-final.png'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=13'
 downloads:
   - label: Confirmation Sheet

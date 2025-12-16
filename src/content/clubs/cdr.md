@@ -1,19 +1,10 @@
 ---
 name: Competition Dirt Riders
-slug: competition-dirt-riders
 abbreviatedName: CDR
-summary: Competition Dirt Riders
+logo: '../../assets/images/logos/clubs/cdr.png'
+summary: CDR
 draft: false
-logo: '@assets/clubs/logos/cdr.png'
-category:
-  - New Jersey
-website: 'http://www.eceacompetitiondirtriders.com/'
-president: TODO
-contact: davebostrom@comcast.net
-order: 2
-location: 'Vineland, NJ'
 ---
-
 
 ## About Our Club
 

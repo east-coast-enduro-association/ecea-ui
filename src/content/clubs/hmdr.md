@@ -1,17 +1,9 @@
 ---
 name: High Mountain Dirt Riders
-slug: high-mountain-dirt-riders
 abbreviatedName: HMDR
-summary: High Mountain Dirt Riders
+logo: '../../assets/images/logos/clubs/hmdr.png'
+summary: HMDR
 draft: false
-logo: '@assets/clubs/logos/hmdr.png'
-category:
-  - Pennsylvania
-website: 'https://hmdr.org/'
-president: Joanne Apple
-contact: msoudas@comcast.net
-order: 6
-location: 'Sugarloaf, PA'
 ---
 
 ## About Our Club

@@ -1,20 +1,12 @@
 ---
 name: Brandywine Enduro Riders
-slug: brandywine-enduro-riders
 abbreviatedName: BER
-summary: Brandywine Enduro Riders
+logo: '../../assets/images/logos/clubs/ber.gif'
+summary: BER
 draft: false
-logo: '@assets/clubs/logos/ber.gif'
-category:
-  - Pennsylvania
-website: 'http://www.ber.us/'
-president: TODO
-contact: jfpenny@verizon.net
-order: 1
-location: 'West Chester, PA'
 ---
 
-# About Our Club
+## About Our Club
 
 The Brandywine Enduro Riders (BER) have been an active part of the East Coast Enduro Association (ECEA) since the mid-70′s, and many of it’s original members remain active members. 
 

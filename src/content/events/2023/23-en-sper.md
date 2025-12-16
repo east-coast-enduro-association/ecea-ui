@@ -2,10 +2,8 @@
 title: Michaux
 summary: Why does it always rain here?
 draft: false
-date: '2023-09-10'
-keyTime: '2023-09-10T09:00:00'
-checkInTime: '2023-09-10T07:00:00'
-location: '1975 Birch Run Road, Biglerville, PA 17307'
+date: 2023-09-10
+location: 1975 Birch Run Road, Biglerville, PA 17307
 hostingClubs:
   - SPER
   - RORR
@@ -13,10 +11,12 @@ hostingClubs:
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
+keyTime: '2023-09-10T09:00:00'
+checkInTime: '2023-09-10T07:00:00'
 closedCourse: true
 gasAway: false
-image: '@assets/images/logos/clubs/michaux.jpg'
-flyer: '@assets/images/events/flyers/2023-en-michaux-flyer.jpg'
+image: '../../../assets/images/logos/clubs/michaux.jpg'
+flyer: '@assets/events/flyers/2023-en-michaux-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=13'
 downloads:
   - label: Confirmation Sheet

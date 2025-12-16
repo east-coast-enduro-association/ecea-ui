@@ -2,8 +2,8 @@
 title: Tough Like RORR Hard Enduro
 summary: Test your mettle
 draft: false
-date: '2023-05-27'
-location: 'Tamaqua, PA'
+date: 2023-05-27
+location: Tamaqua, PA
 hostingClubs:
   - RORR
 eventType: Special
@@ -11,9 +11,7 @@ format: Extreme Enduro
 series: Special Series
 closedCourse: false
 gasAway: false
-gateFee: None
-image: '@assets/images/logos/clubs/rorr.png'
-flyer: null
+image: '../../../assets/images/logos/clubs/rorr.png'
 ---
 
 Tough Like RORR brings the AMA Extreme Enduro Series to PA! This event has become iconic among PA locals and everyone comes out to test their skills against pro enduro riders from around the world.

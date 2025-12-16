@@ -1,17 +1,9 @@
 ---
 name: Pine Baron Enduro Riders
-slug: pine-baron-enduro-riders
 abbreviatedName: PBER
-summary: Pine Baron Enduro Riders
+logo: '../../assets/images/logos/clubs/pber.webp'
+summary: PBER
 draft: false
-logo: '@assets/clubs/logos/pber.webp'
-category:
-  - New Jersey
-website: 'http://www.pber.org/'
-president: TODO
-contact: pinebaronsnj@gmail.com
-order: 10
-location: 'Shamong, NJ'
 ---
 
 ## About Our Club

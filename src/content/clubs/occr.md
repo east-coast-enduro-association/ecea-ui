@@ -1,17 +1,9 @@
 ---
 name: Ocean County Competition Riders
-slug: ocean-county-competition-riders
 abbreviatedName: OCCR
-summary: Ocean County Competition Riders
+logo: '../../assets/images/logos/clubs/occr.jpg'
+summary: OCCR
 draft: false
-logo: '@assets/clubs/logos/occr.jpg'
-category:
-  - New Jersey
-website: 'http://occr.net/home.php'
-president: Donovan Marvin
-contact: donovan.marvin@gmail.com
-order: 8
-location: 'Jackson, NJ'
 ---
 
 ## About Our Club

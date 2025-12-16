@@ -14,8 +14,8 @@ const {
   title,
   description,
   image = {
-    url: "/uploads/church-default.webp",
-    alt: "Church Name",
+    url: "/images/og/ecea-og.png",
+    alt: "ECEA - East Coast Enduro Association",
   },
   type = "website",
   canonicalUrl,
@@ -24,19 +24,14 @@ const {
 // Get the canonical URL
 const canonicalURL = canonicalUrl || new URL(Astro.url.pathname, Astro.site);
 
-// Get Church address and contact info (would come from site config in a real implementation)
-const churchInfo = {
-  name: "Church Name",
-  address: {
-    streetAddress: "123 Main Street",
-    addressLocality: "Anytown",
-    addressRegion: "ST",
-    postalCode: "12345",
-    addressCountry: "US",
-  },
-  telephone: "+1-555-123-4567",
-  email: "info@churchname.org",
-  url: Astro.site?.toString() || "https://example.com",
+// ECEA Organization info
+const orgInfo = {
+  name: "East Coast Enduro Association",
+  shortName: "ECEA",
+  description: "AMA sanctioned off-road motorcycle racing organization",
+  url: Astro.site?.toString() || "https://ecea.org",
+  email: "info@ecea.org",
+  foundingDate: "1971",
 };
 ---
 
@@ -61,23 +56,18 @@ const churchInfo = {
 <meta property="twitter:image" content={new URL(image.url, Astro.site)} />
 <meta property="twitter:image:alt" content={image.alt} />
 
-<!-- JSON-LD Schema for Church -->
+<!-- JSON-LD Schema for Sports Organization -->
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Church",
-    "name": "${churchInfo.name}",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "${churchInfo.address.streetAddress}",
-      "addressLocality": "${churchInfo.address.addressLocality}",
-      "addressRegion": "${churchInfo.address.addressRegion}",
-      "postalCode": "${churchInfo.address.postalCode}",
-      "addressCountry": "${churchInfo.address.addressCountry}"
-    },
-    "telephone": "${churchInfo.telephone}",
-    "email": "${churchInfo.email}",
-    "url": "${churchInfo.url}"
+    "@type": "SportsOrganization",
+    "name": "${orgInfo.name}",
+    "alternateName": "${orgInfo.shortName}",
+    "description": "${orgInfo.description}",
+    "email": "${orgInfo.email}",
+    "url": "${orgInfo.url}",
+    "foundingDate": "${orgInfo.foundingDate}",
+    "sport": "Motorcycle Racing"
   }
 </script>
 
@@ -92,10 +82,10 @@ const churchInfo = {
         "description": "${description}",
         "publisher": {
           "@type": "Organization",
-          "name": "${churchInfo.name}",
+          "name": "${orgInfo.name}",
           "logo": {
             "@type": "ImageObject",
-            "url": "${new URL("/uploads/logo.png", Astro.site)}"
+            "url": "${new URL("/images/og/ecea-og.png", Astro.site)}"
           }
         },
         "url": "${canonicalURL}",

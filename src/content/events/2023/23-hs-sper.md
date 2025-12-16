@@ -1,20 +1,19 @@
 ---
 title: OxBo
-summary: 'Fast, flowy, rocky'
+summary: Fast, flowy, rocky
 draft: false
-date: '2023-07-16'
-checkInTime: '2023-07-16T11:00:02.084000+00:00'
-location: '342 Morea Rd, Frackville, PA'
+date: 2023-07-16
+location: 342 Morea Rd, Frackville, PA
 hostingClubs:
   - SPER
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
+checkInTime: '2023-07-16T11:00:02.084Z'
 closedCourse: false
 gasAway: false
-gateFee: $10
-image: '@assets/images/logos/clubs/sper.jpg'
-flyer: '@assets/images/events/flyers/2023-hs-sper-flyer.jpg'
+image: '../../../assets/images/logos/clubs/sper.jpg'
+flyer: '@assets/events/flyers/2023-hs-sper-flyer.jpg'
 ---
 There is Friday night camping.\
 Friday Gates will OPEN at 5pm and CLOSE at 10PM. \

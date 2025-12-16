@@ -1,17 +1,9 @@
 ---
 name: Meteor Motorcycle Club
-slug: meteor-motorcycle-club
 abbreviatedName: MMC
-summary: Meteor Motorcycle Club
+logo: '../../assets/images/logos/clubs/mmc.jpg'
+summary: MMC
 draft: false
-logo: '@assets/clubs/logos/mmc.jpg'
-category:
-  - New Jersey
-website: 'http://www.meteormc.com/'
-president: TODO
-contact: meteormc1930@gmail.com
-order: 8
-location: 'Gibbstown, NJ'
 ---
 
 ## About Our Club

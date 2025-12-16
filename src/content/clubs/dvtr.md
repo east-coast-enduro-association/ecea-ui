@@ -1,17 +1,9 @@
 ---
 name: Delaware Valley Trail Riders
-slug: delaware-valley-trail-riders
 abbreviatedName: DVTR
-summary: Delaware Valley Trail Riders
+logo: '../../assets/images/logos/clubs/dvtr.jpg'
+summary: DVTR
 draft: false
-logo: '@assets/clubs/logos/dvtr.jpg'
-category:
-  - Pennsylvania
-website: 'https://www.dvtrailriders.org/'
-president: Corey Chandler
-contact: dvtrailriders@gmail.com
-order: 4
-location: 'Pittstown, NJ'
 ---
 
 ## About Our Club

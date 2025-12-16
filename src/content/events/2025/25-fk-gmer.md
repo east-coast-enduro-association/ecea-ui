@@ -2,19 +2,18 @@
 title: Broken Anvil
 summary: Rocket Raceway
 draft: false
-date: '2025-05-31T16:00:00+00:00'
-checkInTime: '2025-05-31T14:00:57.675000+00:00'
+date: '2025-05-31T16:00:00.000Z'
 location: Rocket Raceway
 hostingClubs:
   - GMER
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
+checkInTime: '2025-05-31T14:00:57.675Z'
 closedCourse: false
 gasAway: false
-gateFee: '$10, under 5 $5'
-image: '@assets/images/logos/clubs/gmer.gif'
-flyer: '@assets/images/events/flyers/25gmerhs-revised.jpg'
+image: '../../../assets/images/logos/clubs/gmer.gif'
+flyer: '@assets/events/flyers/25gmerhs-revised.jpg'
 ---
 **NO GO PRO's  DSQ if found on person or bike,  NO SATURDAY PRACTICE**
 

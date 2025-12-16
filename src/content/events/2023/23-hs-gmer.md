@@ -2,19 +2,18 @@
 title: Broken Anvil
 summary: Rocket Raceway
 draft: false
-date: '2023-06-04T11:00:00+00:00'
-checkInTime: '2023-06-04T11:00:43.954000+00:00'
+date: '2023-06-04T11:00:00.000Z'
 location: Rocket Raceway see flyer directions
 hostingClubs:
   - GMER
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
+checkInTime: '2023-06-04T11:00:43.954Z'
 closedCourse: false
 gasAway: false
-gateFee: $10 Person under 5 free
-image: '@assets/images/logos/clubs/gmer.gif'
-flyer: '@assets/images/events/flyers/23-hs-gmde-flyer.jpeg'
+image: '../../../assets/images/logos/clubs/gmer.gif'
+flyer: '@assets/events/flyers/23-hs-gmde-flyer.jpeg'
 ---
 Gates OPEN FRIDAY 1pm\
 Practice will be open go to office..

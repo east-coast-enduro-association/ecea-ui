@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/Sections/PageHeader.astro";
+import { getEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+const page = await getEntry("pages", "get-started");
+if (!page) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await page.render();
+---
+
+<BaseLayout
+  title={`${page.data.title} - ECEA`}
+  description={page.data.description}
+>
+  <PageHeader title={page.data.title} />
+
+  <main class="container py-8">
+    <div class="mx-auto max-w-4xl">
+      <!-- Welcome Section -->
+      <div class="bg-primary-50 rounded-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold text-primary-800 mb-4">Welcome to the East Coast Enduro Association</h2>
+        <p class="text-gray-700 mb-6">
+          The ECEA is the most diverse off road association around with something for the family, youth rider, racer or enthusiast.
+          As an American Motorcyclist Association chartered organization, we urge you to join the AMA.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/documents/ecea-welcome-book.pdf" class="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+            Download Welcome Book
+          </a>
+          <a href="https://americanmotorcyclist.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-white border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors">
+            Register with AMA
+          </a>
+        </div>
+      </div>
+
+      <!-- Racing Series -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Come Ride With Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a href="/series/enduro" class="block p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-bold text-primary-800 mb-2">Enduro</h3>
+            <p class="text-gray-600">Since the early 70's the ECEA has been providing some of the best Enduro events on the east coast.</p>
+          </a>
+          <a href="/series/harescramble" class="block p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-bold text-primary-800 mb-2">Hare Scramble</h3>
+            <p class="text-gray-600">The ECEA provides some of the most diverse off road events in the country.</p>
+          </a>
+          <a href="/series/fastkidz" class="block p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-bold text-primary-800 mb-2">FastKIDZ</h3>
+            <p class="text-gray-600">ECEA Youth Racing - The Future Champions Start Here.</p>
+          </a>
+          <a href="/series/dual-sport" class="block p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-bold text-primary-800 mb-2">Dual Sport</h3>
+            <p class="text-gray-600">Some of the best Dual Sports in the USA including the AMA-awarded Hammer Run.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Additional Content from markdown -->
+      <article class="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-primary-600 hover:prose-a:text-primary-700">
+        <Content />
+      </article>
+    </div>
+  </main>
+</BaseLayout>

@@ -2,8 +2,8 @@
 title: CDR Fun Day
 summary: Family fun ride at the farm
 draft: false
-date: '2023-06-24'
-location: 'Millville, NJ'
+date: 2023-06-24
+location: Millville, NJ
 hostingClubs:
   - CDR
 eventType: Special
@@ -11,9 +11,7 @@ format: Family Fun Ride
 series: Special Series
 closedCourse: false
 gasAway: false
-gateFee: None
-image: '@assets/images/logos/clubs/cdr.png'
-flyer: null
+image: '../../../assets/images/logos/clubs/cdr.png'
 ---
 
 A 2-day family fun ride hosted at Ormond Farms. Bring your camping gear and the whole family. Many trails to choose from that cater to all skill levels!

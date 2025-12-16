@@ -2,19 +2,18 @@
 title: Reading
 summary: Turn out your clickers
 draft: false
-date: '2023-06-18'
-checkInTime: '2023-06-18T11:00:50.686000+00:00'
-location: 'Rt 209S Tamaqua, PA  '
+date: 2023-06-18
+location: Rt 209S Tamaqua, PA  
 hostingClubs:
   - RORR
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
+checkInTime: '2023-06-18T11:00:50.686Z'
 closedCourse: false
 gasAway: false
-gateFee: $10 5 and under Free
-image: '@assets/images/logos/clubs/rorr.png'
-flyer: '@assets/images/events/flyers/rorr23hs.jpg'
+image: '../../../assets/images/logos/clubs/rorr.png'
+flyer: '@assets/events/flyers/rorr23hs.jpg'
 ---
 Please use PreEntry to AVOID Lines and long waits..\
 \

@@ -1,20 +1,19 @@
 ---
 title: Sahara Sands (Cancelled)
-summary: 'This is (almost) desert racing, PBER and SJER team up for great trails '
+summary: This is (almost) desert racing, PBER and SJER team up for great trails 
 draft: false
-date: '2024-10-26T15:00:57.712000+00:00'
-checkInTime: '2024-10-26T13:00:24.638000+00:00'
-location: 'Eagleswood Township, NJ'
+date: '2024-10-26T15:00:57.712Z'
+location: Eagleswood Township, NJ
 hostingClubs:
   - SJER
   - PBER
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
+checkInTime: '2024-10-26T13:00:24.638Z'
 closedCourse: false
 gasAway: false
-gateFee: $10
-image: '@assets/images/logos/clubs/sjer.png'
+image: '../../../assets/images/logos/clubs/sjer.png'
 ---
 A message from PBER and SJER.
 

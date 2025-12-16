@@ -1,6 +1,7 @@
 ---
 export const layout = "../layouts/BaseLayout.astro";
 
+import { Image } from "astro:assets";
 import PageHeader from "../components/Sections/PageHeader.astro";
 import { formatDate } from "../utils/dateUtils";
 
@@ -8,13 +9,13 @@ export interface Props {
   title: string;
   description?: string;
   image?: {
-    url: string;
+    src: ImageMetadata;
     alt: string;
   };
   date?: Date;
   author?: string;
   tags?: string[];
-  type?: "sermon" | "event" | "blog" | "ministry";
+  type?: "event" | "blog" | "series";
 }
 
 const {
@@ -30,12 +31,10 @@ const {
 const seoType = "article";
 
 let pageTitle = title;
-if (type === "sermon") {
-  pageTitle = `Sermon: ${title}`;
-} else if (type === "event") {
+if (type === "event") {
   pageTitle = `Event: ${title}`;
-} else if (type === "ministry") {
-  pageTitle = `${title} Ministry`;
+} else if (type === "series") {
+  pageTitle = `${title} Series`;
 }
 
 const formattedDate = date ? formatDate(date) : null;
@@ -50,8 +49,8 @@ const formattedDate = date ? formatDate(date) : null;
 
     {image && (
       <div class="mb-8 overflow-hidden rounded-lg">
-        <img
-          src={image.url}
+        <Image
+          src={image.src}
           alt={image.alt}
           class="object-cover w-full h-64 md:h-96"
           widths={[320, 640, 1024]}

@@ -1,17 +1,9 @@
 ---
 name: South Jersey Enduro Riders
-slug: south-jersey-enduro-riders
 abbreviatedName: SJER
-summary: South Jersey Enduro Riders
+logo: '../../assets/images/logos/clubs/sjer.png'
+summary: SJER
 draft: false
-logo: '@assets/clubs/logos/sjer.png'
-category:
-  - New Jersey
-website: 'http://sjer.org/'
-president: TODO
-contact: sjer@sjer.org
-order: 10
-location: 'Hainesport, NJ'
 ---
 
 ## About Our Club

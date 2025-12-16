@@ -2,7 +2,7 @@
 title: Broken Anvil
 summary: Rocket Raceway
 draft: false
-date: '2023-06-03'
+date: 2023-06-03
 location: Rocket Raceway
 hostingClubs:
   - GMER
@@ -11,9 +11,7 @@ format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
-gateFee: TBA
-image: '@assets/images/logos/clubs/gmer.gif'
-flyer: null
+image: '../../../assets/images/logos/clubs/gmer.gif'
 ---
 
 Pee-Wee: 11:00AM

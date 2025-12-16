@@ -1,0 +1,29 @@
+---
+title: ECEA FastKIDZ Awards Banquet Jan 11
+pubDate: '2025-11-28T23:08:11.167Z'
+description: FastKIDZ 2025 Awards at the FunPlex in NJ
+author: soudas
+draft: false
+image:
+  src: '../../assets/blog/2025fastkidzbq.jpg'
+  alt: ECEA FastKIDZ Awards Banquet Jan 11
+tags:
+  - FastKIDZ
+  - Harescramble
+---
+Get Ready for another **Great Banquet for the ECEA FastKIDZ.**\
+\
+**Tickets are Required for ALL** (adults and children) Attending over 4 years old.\
+Tickets **Go on Sale DEC 1st 6pm**\
+[Get Tickets HERE](https://brushfire.com/eastcoastenduroassociation/ecea-fastkidz-banquet-2025/619985)\
+\
+Doors open at 9am at FunPlex. **CHECK IN is at 10AM**\
+\
+**First** will be the PeeWee and Juniors at 11am getting awards…..\
+**Next** around 1pm, the Youth and SchoolKIDZ Awards will start.\
+\
+Food will be served during the awards at the back of the room starting around Noon.\
+\
+[FUNPLEX INFO on web](https://thefunplex.com/mount-laurel/)\
+Location : 3320-24 NJ-38, Mt Laurel Township, NJ 08054\
+[Hotel INFO](https://thefunplex.com/mount-laurel/hotel/)

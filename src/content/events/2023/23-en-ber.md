@@ -2,19 +2,18 @@
 title: Rattlesnake National Enduro
 summary: 'Sometimes it''s rocky, sometimes not, who knows?'
 draft: false
-date: '2023-07-23'
-keyTime: '2023-07-23T09:00:00'
-checkInTime: '2023-07-23T07:00:00'
+date: 2023-07-23
 location: TBA
 hostingClubs:
   - BER
 eventType: Enduro
 format: National Enduro
 series: ECEA Enduro Championship Series
+keyTime: '2023-07-23T09:00:00'
+checkInTime: '2023-07-23T07:00:00'
 closedCourse: true
 gasAway: true
-image: '@assets/images/logos/clubs/ber.gif'
-flyer: null
+image: '../../../assets/images/logos/clubs/ber.gif'
 registrationLink: 'https://www.livelaps.com/event?12156'
 ---
 

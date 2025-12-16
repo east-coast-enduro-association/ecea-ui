@@ -2,18 +2,17 @@
 title: Fall Brawl
 summary: Back at the farm
 draft: false
-date: '2024-10-12'
-checkInTime: '2024-10-12T14:00:28.070000+00:00'
-location: 'Hesstown Road, Millville NJ'
+date: 2024-10-12
+location: Hesstown Road, Millville NJ
 hostingClubs:
   - MMC
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
+checkInTime: '2024-10-12T14:00:28.070Z'
 closedCourse: false
 gasAway: false
-gateFee: 10/5
-image: '@assets/images/logos/clubs/mmc.jpg'
+image: '../../../assets/images/logos/clubs/mmc.jpg'
 ---
 AMA Required to RACE \
 Series Membership or Day Pass Required to Enter. If needed [GO HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)

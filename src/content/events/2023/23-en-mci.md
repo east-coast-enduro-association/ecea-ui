@@ -2,19 +2,18 @@
 title: Stumpjumper (Cancelled)
 summary: 'Forest so nice, you''ve come back twice'
 draft: false
-date: '2023-11-12'
-keyTime: '2023-11-12T09:00:00'
-checkInTime: '2023-11-12T07:00:00'
+date: 2023-11-12
 location: TBA
 hostingClubs:
   - MCI
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
+keyTime: '2023-11-12T09:00:00'
+checkInTime: '2023-11-12T07:00:00'
 closedCourse: false
 gasAway: true
-image: '@assets/images/logos/clubs/mci.jpg'
-flyer: null
+image: '../../../assets/images/logos/clubs/mci.jpg'
 ---
 **This event is cancelled for 2023.**
 

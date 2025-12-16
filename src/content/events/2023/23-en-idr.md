@@ -2,19 +2,19 @@
 title: Ithaca Sprint
 summary: Finger lakes mud welcomes you
 draft: false
-date: '2023-08-20T14:00:00+00:00'
-keyTime: '2023-08-20T10:00:00+00:00'
-checkInTime: '2023-08-20T07:30:00+00:00'
+date: '2023-08-20T14:00:00.000Z'
 location: TBA
 hostingClubs:
   - IDR
 eventType: Enduro
 format: Sprint Enduro
 series: ECEA Enduro Championship Series
+keyTime: '2023-08-20T10:00:00.000Z'
+checkInTime: '2023-08-20T07:30:00.000Z'
 closedCourse: true
 gasAway: false
-image: '@assets/images/logos/clubs/idrlogo.jpg'
-flyer: '@assets/images/events/flyers/2023-en-idr-flyer.jpg'
+image: '../../../assets/images/logos/clubs/idrlogo.jpg'
+flyer: '@assets/events/flyers/2023-en-idr-flyer.jpg'
 downloads:
   - label: Rider Information
     url: /events/2023-en-idr-confirmation.pdf

@@ -12,13 +12,13 @@ export interface Props {
 }
 
 const {
-  title = "Welcome to Our Church",
-  subtitle = "A place of worship, community, and spiritual growth",
-  backgroundImage = "/uploads/hero-bg.jpg",
-  ctaText = "Plan Your Visit",
-  ctaLink = "/im-new",
-  secondaryCtaText = "Watch Sermons",
-  secondaryCtaLink = "/sermons",
+  title = "East Coast Enduro Association",
+  subtitle = "AMA sanctioned off-road motorcycle racing since 1971",
+  backgroundImage = "/images/feature-bg.jpg",
+  ctaText = "View Events",
+  ctaLink = "/events",
+  secondaryCtaText = "Get Started",
+  secondaryCtaLink = "/get-started",
 } = Astro.props;
 ---
 
@@ -31,12 +31,12 @@ const {
     <div class="max-w-3xl text-white">
       <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">{title}</h1>
       <p class="text-xl md:text-2xl mb-8">{subtitle}</p>
-      
+
       <div class="flex flex-wrap gap-4">
         <Button href={ctaLink} variant="primary" size="lg">
           {ctaText}
         </Button>
-        
+
         <Button href={secondaryCtaLink} variant="outline" size="lg" class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm">
           {secondaryCtaText}
         </Button>

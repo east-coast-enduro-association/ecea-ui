@@ -1,21 +1,20 @@
 ---
 title: Ormond Farms
-summary: 'Great Sand track, open woods, open field camping.'
+summary: Great Sand track, open woods, open field camping.
 draft: false
-date: '2025-05-04T14:00:00+00:00'
-checkInTime: '2025-05-04T11:00:00+00:00'
-location: '161 Hesstown Rd, Millville, NJ'
+date: '2025-05-04T14:00:00.000Z'
+location: 161 Hesstown Rd, Millville, NJ
 hostingClubs:
   - CDR
   - DER
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
+checkInTime: '2025-05-04T11:00:00.000Z'
 closedCourse: false
 gasAway: false
-gateFee: $10
-image: '@assets/images/logos/clubs/cdr.png'
-flyer: '@assets/images/events/flyers/25_cdr_ormand_hs.jpg'
+image: '../../../assets/images/logos/clubs/cdr.png'
+flyer: '@assets/events/flyers/25_cdr_ormand_hs.jpg'
 ---
 **RIDER LIMIT for Sunday, ONLINE SIGN UP ONLY., You need a Series Number** to use the online system\
 GATES open Friday 7PM. SATURDAY 8AM, SUNDAY 6am

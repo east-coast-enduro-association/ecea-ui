@@ -2,19 +2,18 @@
 title: Fern Glen
 summary: VFTR return to the Fern
 draft: false
-date: '2025-04-27T10:00:00+00:00'
-checkInTime: '2025-04-27T07:00:00+00:00'
+date: '2025-04-27T10:00:00.000Z'
 location: 1478 Tomhicken Rd. Fern Glen PA
 hostingClubs:
   - VFTR
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
+checkInTime: '2025-04-27T07:00:00.000Z'
 closedCourse: false
 gasAway: false
-gateFee: $10
-image: '@assets/images/logos/clubs/vftr.jpg'
-flyer: '@assets/images/events/flyers/25-vftr-hs.jpeg'
+image: '../../../assets/images/logos/clubs/vftr.jpg'
+flyer: '@assets/events/flyers/25-vftr-hs.jpeg'
 ---
 # ***ADULT RACE DETAILS***
 

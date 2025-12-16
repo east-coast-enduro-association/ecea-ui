@@ -1,23 +1,20 @@
 ---
 title: Sahara Sands
-summary: >-
-  This is (almost) desert racing, PBER and SJER tag team this event to bring out
-  the best...
+summary: This is (almost) desert racing, PBER and SJER tag team this event
 draft: false
-date: '2025-10-19'
-checkInTime: '2025-10-19T11:00:10.615000+00:00'
-location: 'Eagleswood Township, NJ'
+date: 2025-10-19
+location: Eagleswood Township, NJ
 hostingClubs:
   - SJER
   - PBER
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
+checkInTime: '2025-10-19T11:00:10.615Z'
 closedCourse: false
 gasAway: false
-gateFee: '$10 '
-image: '@assets/images/logos/clubs/sjer.png'
-flyer: '@assets/images/events/flyers/25pberhs.jpg'
+image: '../../../assets/images/logos/clubs/sjer.png'
+flyer: '@assets/events/flyers/25pberhs.jpg'
 ---
 **NO FRIDAY ADMITTANCE**,,, No Entry, NO Camping FRIDAY\
 **GATES OPEN 6am Saturday and Sunday** \

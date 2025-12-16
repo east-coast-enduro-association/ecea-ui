@@ -20,13 +20,13 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))];
 ---
 
 <BaseLayout
-  title="Blog - Church Name"
-  description="Read our latest articles, devotionals, and updates from our church community."
+  title="Blog - ECEA"
+  description="Read the latest news, event recaps, and announcements from the East Coast Enduro Association."
 >
-  <PageHeader 
-    title="Blog" 
-    subtitle="Insights, devotionals, and updates from our church community"
-    backgroundImage="/uploads/blog-header-bg.webp"
+  <PageHeader
+    title="Blog"
+    subtitle="News, event recaps, and announcements from ECEA"
+    backgroundImage="/images/feature-bg.jpg"
   />
   
   <!-- Blog Posts List -->
@@ -119,7 +119,7 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))];
               <Card
                 title={post.data.title}
                 image={post.data.image && {
-                  src: post.data.image.url,
+                  src: post.data.image.src,
                   alt: post.data.image.alt
                 }}
                 href={`/blog/${post.slug}`}

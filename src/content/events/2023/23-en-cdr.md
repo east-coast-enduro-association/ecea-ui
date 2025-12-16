@@ -2,19 +2,19 @@
 title: Beehive
 summary: Back in the sand
 draft: false
-date: '2023-08-27'
-keyTime: '2023-08-27T09:00:00'
-checkInTime: '2023-08-27T07:00:00'
-location: '9544 Noble St Mauricetown, NJ 08329'
+date: 2023-08-27
+location: 9544 Noble St Mauricetown, NJ 08329
 hostingClubs:
   - CDR
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
+keyTime: '2023-08-27T09:00:00'
+checkInTime: '2023-08-27T07:00:00'
 closedCourse: false
 gasAway: true
-image: '@assets/images/logos/clubs/cdr.png'
-flyer: '@assets/images/events/flyers/2023-en-cdr-flyer.png'
+image: '../../../assets/images/logos/clubs/cdr.png'
+flyer: '@assets/events/flyers/2023-en-cdr-flyer.png'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=12'
 downloads:
   - label: Confirmation

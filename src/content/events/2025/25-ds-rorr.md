@@ -2,7 +2,7 @@
 title: Reading
 summary: This is basically an enduro
 draft: false
-date: '2025-10-12'
+date: 2025-10-12
 location: TBA
 hostingClubs:
   - RORR
@@ -11,8 +11,7 @@ format: Dual Sport
 series: Dual Sport Series
 closedCourse: false
 gasAway: false
-image: '@assets/images/logos/clubs/rorr.png'
-flyer: null
+image: '../../../assets/images/logos/clubs/rorr.png'
 ---
 
 Rocks run hosted on private property not usually accessible to riders! 

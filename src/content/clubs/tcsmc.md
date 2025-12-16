@@ -1,17 +1,9 @@
 ---
 name: Tri-County Sportsman Motorcycle Club
-slug: tri-county-sportsman-motorcycle-club
 abbreviatedName: TCSMC
-summary: Tri-County Sportsman Motorcycle Club
+logo: '../../assets/images/logos/clubs/tcsmc.png'
+summary: TCSMC
 draft: false
-logo: '@assets/clubs/logos/tcsmc.png'
-category:
-  - New Jersey
-website: 'http://www.teamhammer.org/'
-president: TODO
-contact: hammerhead@teamhammer.org
-order: 10
-location: 'Port Elizabeth, NJ'
 ---
 
 ## About Our Club

@@ -2,18 +2,18 @@
 title: Curly Fern (Canceled)
 summary: A New Jersey Classic
 draft: false
-date: '2024-03-17'
-keyTime: '2024-03-17T09:00:00'
-checkInTime: '2024-03-17T07:00:00'
-location: 'Indian Mills Deer Club, Atsion, NJ'
+date: 2024-03-17
+location: Indian Mills Deer Club, Atsion, NJ
 hostingClubs:
   - SJER
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
+keyTime: '2024-03-17T09:00:00'
+checkInTime: '2024-03-17T07:00:00'
 closedCourse: false
 gasAway: true
-image: '@assets/images/logos/clubs/sjer-green.png'
+image: '../../../assets/images/logos/clubs/sjer-green.png'
 ---
 Curly Fern Enduro is canceled for the 2024 season
 

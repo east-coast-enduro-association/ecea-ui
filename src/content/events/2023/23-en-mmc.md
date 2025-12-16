@@ -2,19 +2,19 @@
 title: Sandy Lane
 summary: Bark-busting and knuckle bashing fun
 draft: false
-date: '2023-03-26'
-keyTime: '2023-03-26T09:00:00'
-checkInTime: '2023-03-26T06:00:00+00:00'
-location: 'Interboro Gun Club, 2587 County Road 563, Egg Harbor City, NJ'
+date: 2023-03-26
+location: Interboro Gun Club, 2587 County Road 563, Egg Harbor City, NJ
 hostingClubs:
   - MMC
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
+keyTime: '2023-03-26T09:00:00'
+checkInTime: '2023-03-26T06:00:00.000Z'
 closedCourse: false
 gasAway: true
-image: '@assets/images/logos/clubs/mmc.jpg'
-flyer: '@assets/images/events/flyers/23-en-mmc-flyer.png'
+image: '../../../assets/images/logos/clubs/mmc.jpg'
+flyer: '@assets/events/flyers/23-en-mmc-flyer.png'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=3'
 downloads:
   - label: Confirmation Sheet
