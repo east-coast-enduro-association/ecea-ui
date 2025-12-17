@@ -11,3 +11,11 @@ package-lock.json
 .hugo_build.lock
 .astro
 dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# TinaCMS generated files
+tina/__generated__/

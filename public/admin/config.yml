@@ -1,0 +1,257 @@
+backend:
+  name: github
+  repo: east-coast-enduro-association/ecea-ui
+  branch: cms-setup
+
+# Media files
+media_folder: src/assets/images/uploads
+public_folder: /assets/images/uploads
+
+# Site URL for previews
+site_url: https://ecea.org
+display_url: https://ecea.org
+
+# Slug settings
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  # Blog Posts
+  - name: blog
+    label: Blog Posts
+    label_singular: Blog Post
+    folder: src/content/blog
+    create: true
+    sortable_fields:
+      fields: [pubDate, title]
+      default:
+        field: pubDate
+        direction: Descending
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string, required: true }
+      - { name: pubDate, label: Publication Date, widget: datetime, required: true }
+      - { name: description, label: Description, widget: text, required: true }
+      - { name: author, label: Author, widget: string, default: ECEA }
+      - name: category
+        label: Category
+        widget: select
+        options:
+          - { label: Announcement, value: announcement }
+          - { label: News, value: news }
+          - { label: Recap, value: recap }
+          - { label: Article, value: article }
+        default: news
+      - name: image
+        label: Featured Image
+        widget: object
+        required: false
+        fields:
+          - { name: src, label: Image, widget: image, required: false }
+          - { name: alt, label: Alt Text, widget: string, required: false }
+      - name: tags
+        label: Tags
+        widget: list
+        default: [general]
+      - { name: pinned, label: Pinned (Featured on Homepage), widget: boolean, default: false }
+      - { name: draft, label: Draft, widget: boolean, default: false }
+      - { name: body, label: Content, widget: markdown }
+
+  # Events 2025
+  - name: events-2025
+    label: Events (2025)
+    label_singular: Event
+    folder: src/content/events/2025
+    create: true
+    sortable_fields:
+      fields: [date, title]
+      default:
+        field: date
+        direction: Ascending
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: title, label: Event Title, widget: string, required: true }
+      - { name: summary, label: Summary, widget: text, required: true }
+      - { name: date, label: Event Date, widget: datetime, required: true }
+      - { name: endDate, label: End Date (multi-day events), widget: datetime, required: false }
+      - { name: keyTime, label: Key/Start Time, widget: datetime, required: false }
+      - { name: checkInTime, label: Check-in Time, widget: datetime, required: false }
+      - { name: location, label: Location, widget: string, required: true }
+      - name: hostingClubs
+        label: Hosting Clubs
+        widget: list
+        hint: Club abbreviations (e.g., DVTR, OCCR)
+      - name: eventType
+        label: Event Type
+        widget: select
+        options:
+          - Enduro
+          - Hare Scramble
+          - FastKIDZ
+          - Dual Sport
+          - Fun Ride
+          - ECEA
+          - Special
+          - Meeting
+      - { name: format, label: Format, widget: string, required: false }
+      - { name: series, label: Series, widget: string, required: false }
+      - { name: closedCourse, label: Closed Course, widget: boolean, default: false }
+      - { name: gasAway, label: Gas Away, widget: boolean, default: false }
+      - { name: gateFee, label: Gate Fee, widget: string, required: false }
+      - { name: image, label: Event Image, widget: image, required: false }
+      - { name: flyer, label: Event Flyer, widget: image, required: false }
+      - { name: flyerPdf, label: Flyer PDF URL, widget: string, required: false }
+      - { name: motoTallyId, label: Moto-Tally ID, widget: number, required: false }
+      - { name: registrationLink, label: Registration Link, widget: string, required: false }
+      - { name: startGridLink, label: Start Grid Link, widget: string, required: false }
+      - { name: resultsLink, label: Results Link, widget: string, required: false }
+      - name: tags
+        label: Tags
+        widget: list
+        required: false
+      - { name: draft, label: Draft, widget: boolean, default: false }
+      - { name: body, label: Additional Details, widget: markdown, required: false }
+
+  # Events 2026
+  - name: events-2026
+    label: Events (2026)
+    label_singular: Event
+    folder: src/content/events/2026
+    create: true
+    sortable_fields:
+      fields: [date, title]
+      default:
+        field: date
+        direction: Ascending
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: title, label: Event Title, widget: string, required: true }
+      - { name: summary, label: Summary, widget: text, required: true }
+      - { name: date, label: Event Date, widget: datetime, required: true }
+      - { name: endDate, label: End Date (multi-day events), widget: datetime, required: false }
+      - { name: keyTime, label: Key/Start Time, widget: datetime, required: false }
+      - { name: checkInTime, label: Check-in Time, widget: datetime, required: false }
+      - { name: location, label: Location, widget: string, required: true }
+      - name: hostingClubs
+        label: Hosting Clubs
+        widget: list
+        hint: Club abbreviations (e.g., DVTR, OCCR)
+      - name: eventType
+        label: Event Type
+        widget: select
+        options:
+          - Enduro
+          - Hare Scramble
+          - FastKIDZ
+          - Dual Sport
+          - Fun Ride
+          - ECEA
+          - Special
+          - Meeting
+      - { name: format, label: Format, widget: string, required: false }
+      - { name: series, label: Series, widget: string, required: false }
+      - { name: closedCourse, label: Closed Course, widget: boolean, default: false }
+      - { name: gasAway, label: Gas Away, widget: boolean, default: false }
+      - { name: gateFee, label: Gate Fee, widget: string, required: false }
+      - { name: image, label: Event Image, widget: image, required: false }
+      - { name: flyer, label: Event Flyer, widget: image, required: false }
+      - { name: flyerPdf, label: Flyer PDF URL, widget: string, required: false }
+      - { name: motoTallyId, label: Moto-Tally ID, widget: number, required: false }
+      - { name: registrationLink, label: Registration Link, widget: string, required: false }
+      - { name: startGridLink, label: Start Grid Link, widget: string, required: false }
+      - { name: resultsLink, label: Results Link, widget: string, required: false }
+      - name: tags
+        label: Tags
+        widget: list
+        required: false
+      - { name: draft, label: Draft, widget: boolean, default: false }
+      - { name: body, label: Additional Details, widget: markdown, required: false }
+
+  # Clubs
+  - name: clubs
+    label: Clubs
+    label_singular: Club
+    folder: src/content/clubs
+    create: true
+    identifier_field: abbreviatedName
+    sortable_fields:
+      fields: [order, name]
+      default:
+        field: order
+        direction: Ascending
+    fields:
+      - { name: name, label: Club Name, widget: string, required: true }
+      - { name: abbreviatedName, label: Abbreviation, widget: string, required: true, hint: "e.g., DVTR, OCCR, MMC" }
+      - { name: logo, label: Club Logo, widget: image, required: false }
+      - { name: summary, label: Summary, widget: text, required: false }
+      - { name: website, label: Website URL, widget: string, required: false }
+      - { name: contact, label: Contact Email, widget: string, required: false }
+      - { name: phone, label: Phone, widget: string, required: false }
+      - { name: president, label: President/Contact Name, widget: string, required: false }
+      - { name: location, label: Location (City, State), widget: string, required: false }
+      - { name: order, label: Display Order, widget: number, required: false }
+      - { name: draft, label: Draft, widget: boolean, default: false }
+      - { name: body, label: Club Description, widget: markdown, required: false }
+
+  # Racing Series
+  - name: series
+    label: Racing Series
+    label_singular: Series
+    folder: src/content/series
+    create: true
+    fields:
+      - { name: name, label: Series Name, widget: string, required: true }
+      - { name: description, label: Description, widget: text, required: false }
+      - { name: facebookGroup, label: Facebook Group URL, widget: string, required: false }
+      - name: documents
+        label: Documents
+        widget: list
+        required: false
+        fields:
+          - { name: label, label: Label, widget: string }
+          - { name: url, label: URL, widget: string }
+      - name: faqLinks
+        label: FAQ Links
+        widget: list
+        required: false
+        fields:
+          - { name: label, label: Label, widget: string }
+          - { name: url, label: URL, widget: string }
+      - { name: draft, label: Draft, widget: boolean, default: false }
+      - { name: body, label: Series Details, widget: markdown, required: false }
+
+  # Board Members
+  - name: board
+    label: Board Members
+    label_singular: Board Member
+    folder: src/content/board
+    create: true
+    sortable_fields:
+      fields: [order, name]
+      default:
+        field: order
+        direction: Ascending
+    fields:
+      - { name: name, label: Name, widget: string, required: true }
+      - { name: title, label: Title/Position, widget: string, required: true }
+      - { name: image, label: Photo URL, widget: string, required: false }
+      - { name: email, label: Email, widget: string, required: false }
+      - { name: phone, label: Phone, widget: string, required: false }
+      - { name: bio, label: Bio, widget: text, required: false }
+      - { name: order, label: Display Order, widget: number, default: 0 }
+      - { name: draft, label: Draft, widget: boolean, default: false }
+      - { name: body, label: Additional Info, widget: markdown, required: false }
+
+  # Static Pages
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: src/content/pages
+    create: true
+    fields:
+      - { name: title, label: Page Title, widget: string, required: true }
+      - { name: description, label: Description, widget: text, required: false }
+      - { name: draft, label: Draft, widget: boolean, default: false }
+      - { name: body, label: Page Content, widget: markdown }
