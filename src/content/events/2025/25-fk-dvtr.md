@@ -13,7 +13,7 @@ checkInTime: '2025-09-14T02:00:03.444Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/dvtr.jpg'
-flyer: '@assets/events/flyers/25dvterhs.jpg'
+flyer: '../../../assets/images/events/flyers/25dvterhs.jpg'
 ---
 AMA Required.\
 \

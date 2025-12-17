@@ -14,7 +14,7 @@ checkInTime: '2024-05-04T14:00:00.000Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/cdr.png'
-flyer: '@assets/events/flyers/updated-2024-cdr-hare-scramble-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/updated-2024-cdr-hare-scramble-flyer.jpg'
 ---
 **GATES OPEN Friday 7PM SATURDAY at 8 AM.**\
 \

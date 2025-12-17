@@ -13,7 +13,7 @@ checkInTime: '2023-06-17T14:00:43.190Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/rorr.png'
-flyer: '@assets/events/flyers/rorr23hs.jpg'
+flyer: '../../../assets/images/events/flyers/rorr23hs.jpg'
 ---
 Please use Preentry System prior to event.\
 \

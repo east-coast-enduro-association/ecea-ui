@@ -14,7 +14,7 @@ checkInTime: '2024-07-14T07:00:00'
 closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/ster.jpg'
-flyer: '@assets/events/flyers/ster-en-2024-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/ster-en-2024-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/startingGrid.aspx?EY=2024&EID=8'
 downloads:
   - label: Confirmation Sheet

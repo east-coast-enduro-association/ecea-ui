@@ -13,7 +13,7 @@ checkInTime: '2023-06-04T11:00:43.954Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/gmer.gif'
-flyer: '@assets/events/flyers/23-hs-gmde-flyer.jpeg'
+flyer: '../../../assets/images/events/flyers/23-hs-gmde-flyer.jpeg'
 ---
 Gates OPEN FRIDAY 1pm\
 Practice will be open go to office..

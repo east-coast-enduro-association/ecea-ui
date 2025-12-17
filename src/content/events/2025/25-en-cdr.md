@@ -15,7 +15,7 @@ checkInTime: '2025-08-24T07:00:00'
 closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/cdr.png'
-flyer: '@assets/events/flyers/2025-en-cdr-flyer.jpeg'
+flyer: '../../../assets/images/events/flyers/2025-en-cdr-flyer.jpeg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=13'
 downloads:
   - label: Confirmation Sheet

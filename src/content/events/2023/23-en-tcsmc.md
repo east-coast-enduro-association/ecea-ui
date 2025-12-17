@@ -14,7 +14,7 @@ checkInTime: '2023-03-12T07:00:00'
 closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/tcsmc.png'
-flyer: '@assets/events/flyers/23-en-tcsmc-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/23-en-tcsmc-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=1'
 ---
 

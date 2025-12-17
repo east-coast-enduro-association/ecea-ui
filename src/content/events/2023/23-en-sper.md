@@ -16,7 +16,7 @@ checkInTime: '2023-09-10T07:00:00'
 closedCourse: true
 gasAway: false
 image: '../../../assets/images/logos/clubs/michaux.jpg'
-flyer: '@assets/events/flyers/2023-en-michaux-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/2023-en-michaux-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=13'
 downloads:
   - label: Confirmation Sheet

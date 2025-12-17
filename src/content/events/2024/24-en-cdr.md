@@ -15,7 +15,7 @@ checkInTime: '2024-08-25T07:00:00'
 closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/cdr.png'
-flyer: '@assets/events/flyers/51st-beehive-final.png'
+flyer: '../../../assets/images/events/flyers/51st-beehive-final.png'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=13'
 downloads:
   - label: Confirmation Sheet

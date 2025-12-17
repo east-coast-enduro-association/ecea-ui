@@ -14,7 +14,7 @@ checkInTime: '2025-04-13T07:00:00.013Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/cjcr.jpg'
-flyer: '@assets/events/flyers/25-en-cjcr-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/25-en-cjcr-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=5'
 downloads:
   - label: Route Sheet

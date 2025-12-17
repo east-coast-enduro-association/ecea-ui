@@ -30,7 +30,7 @@ checkInTime: '2024-01-20T21:00:52.787Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/ecea24l2.png'
-flyer: '@assets/events/flyers/eceatick23info.jpg'
+flyer: '../../../assets/images/events/flyers/eceatick23info.jpg'
 ---
 More info will be posted in the Announcements/News Blog here on website and on Facebook etc,,\
 \

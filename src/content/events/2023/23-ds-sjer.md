@@ -12,7 +12,7 @@ series: Dual Sport Series
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/sjer.png'
-flyer: '@assets/events/flyers/23-ds-icebreaker.jpg'
+flyer: '../../../assets/images/events/flyers/23-ds-icebreaker.jpg'
 ---
 
 Come out of hibernation

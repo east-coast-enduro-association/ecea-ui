@@ -13,7 +13,7 @@ checkInTime: '2024-09-22T23:01:08.120Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/dvtr.jpg'
-flyer: '@assets/events/flyers/24highsteakshs.jpg'
+flyer: '../../../assets/images/events/flyers/24highsteakshs.jpg'
 ---
 Morning race: 10:00am
 Afternoon race: 1:00pm\

@@ -13,7 +13,7 @@ checkInTime: '2023-08-12T14:00:57.754Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/hmdr.png'
-flyer: '@assets/events/flyers/2023-hs-hmdr-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/2023-hs-hmdr-flyer.jpg'
 ---
 PLEASE PRENTER Save a few $$$ and speed the process  [CLICK HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx)\
 \

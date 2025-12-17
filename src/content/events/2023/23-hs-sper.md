@@ -13,7 +13,7 @@ checkInTime: '2023-07-16T11:00:02.084Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/sper.jpg'
-flyer: '@assets/events/flyers/2023-hs-sper-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/2023-hs-sper-flyer.jpg'
 ---
 There is Friday night camping.\
 Friday Gates will OPEN at 5pm and CLOSE at 10PM. \

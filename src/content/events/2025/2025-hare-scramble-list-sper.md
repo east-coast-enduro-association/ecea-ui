@@ -13,7 +13,7 @@ checkInTime: '2025-06-28T19:00:18.350Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/michaux.jpg'
-flyer: '@assets/events/flyers/25-sper-hs.png'
+flyer: '../../../assets/images/events/flyers/25-sper-hs.png'
 ---
 SPER is back with an all new Hare Scramble , NEW LOCATION \
 \

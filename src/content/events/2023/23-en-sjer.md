@@ -14,7 +14,7 @@ checkInTime: '2023-03-19T07:00:00'
 closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/sjer-green.png'
-flyer: '@assets/events/flyers/23-en-sjer-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/23-en-sjer-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=2'
 downloads:
   - label: Confirmation Sheet

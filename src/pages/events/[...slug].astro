@@ -17,13 +17,12 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 
 // --- IMAGE FALLBACK LOGIC ---
-// 1. Default to the event's specific image
-let displayImage = entry.data.image;
+// Priority: 1. Flyer, 2. Event image, 3. Hosting club logo
+let displayImage = entry.data.flyer || entry.data.image;
 
-// 2. If no event image, look up the hosting club's logo
+// If no flyer or image, look up the hosting club's logo
 if (!displayImage && entry.data.hostingClubs && entry.data.hostingClubs.length > 0) {
   const clubs = await getCollection("clubs");
-  // Find the club that matches the first abbreviation in the list
   const hostingClubEntry = clubs.find(c => c.data.abbreviatedName === entry.data.hostingClubs[0]);
 
   if (hostingClubEntry && hostingClubEntry.data.logo) {
@@ -33,6 +32,9 @@ if (!displayImage && entry.data.hostingClubs && entry.data.hostingClubs.length >
 
 // Check if displayImage is an ImageMetadata object (has .src property)
 const hasImageMetadata = displayImage && typeof displayImage === 'object' && 'src' in displayImage;
+
+// Get PDF flyer URL for download button (separate from image flyer)
+const flyerPdfUrl = entry.data.flyerPdf || null;
 // ----------------------------
 
 const formattedDate = formatDate(entry.data.date);
@@ -162,9 +164,9 @@ const mapsEmbedUrl = entry.data.location ? `https://www.google.com/maps?q=${enco
           </Button>
         )}
 
-        {entry.data.flyer && (
-          <Button href={entry.data.flyer} target="_blank" variant="secondary">
-            View Flyer
+        {flyerPdfUrl && (
+          <Button href={flyerPdfUrl} target="_blank" variant="secondary">
+            Download Flyer (PDF)
           </Button>
         )}
       </div>

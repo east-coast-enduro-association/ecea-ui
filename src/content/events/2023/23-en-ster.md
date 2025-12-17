@@ -14,7 +14,7 @@ checkInTime: '2023-07-09T07:00:00'
 closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/ster.jpg'
-flyer: '@assets/events/flyers/2023-en-sper-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/2023-en-sper-flyer.jpg'
 downloads:
   - label: Flyer
     url: /events/ster-2023-flyer.pdf

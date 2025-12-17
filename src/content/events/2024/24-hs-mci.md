@@ -12,7 +12,7 @@ series: Hare Scramble Series
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/mci.jpg'
-flyer: '@assets/events/flyers/24mci-hs.jpg'
+flyer: '../../../assets/images/events/flyers/24mci-hs.jpg'
 ---
 **NO ENTRY FRIDAY NIGHT**
 

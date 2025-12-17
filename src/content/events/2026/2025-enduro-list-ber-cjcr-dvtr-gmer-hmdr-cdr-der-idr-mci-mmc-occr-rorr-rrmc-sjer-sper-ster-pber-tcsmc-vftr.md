@@ -31,7 +31,7 @@ checkInTime: '2026-01-24T17:00:08.503Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/ecea24l2.png'
-flyer: '@assets/events/flyers/25adultbanq.jpg'
+flyer: '../../../assets/images/events/flyers/25adultbanq.jpg'
 ---
 **ECEA AWARDS BANQUET** is back at the Valley Forge Casino by popular request, also we will have the **Vendor show, Seminar**s and all **New SWAPMEET**... so Register for a spot and sell your stuff-bikes, gear etc.... 
 

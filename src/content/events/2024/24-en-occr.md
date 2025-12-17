@@ -14,7 +14,7 @@ checkInTime: '2024-11-10T07:00:00'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/occr.jpg'
-flyer: '@assets/events/flyers/1000003904.jpg'
+flyer: '../../../assets/images/events/flyers/1000003904.jpg'
 ---
 
 A classic New Jersey timekeeper hosted in the same forest as [CJCR's Pine Hill enduro](/events/23-en-cjcr). Bring the family for a nice weekend camping in Brendan T. Byrne.

@@ -14,7 +14,7 @@ checkInTime: '2025-03-09T07:00:00'
 closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/tcsmc.png'
-flyer: '@assets/events/flyers/25-en-tcsmc-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/25-en-tcsmc-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=1'
 downloads:
   - label: Route Sheet

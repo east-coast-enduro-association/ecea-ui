@@ -14,7 +14,7 @@ checkInTime: '2025-05-23T22:30:12.374Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/2023-series-east-irc-logo-black-with-color-logos.png'
-flyer: '@assets/events/flyers/25_key_challenege.jpg'
+flyer: '../../../assets/images/events/flyers/25_key_challenege.jpg'
 ---
 Got to .. [www.hmdr.org](https://www.hmdr.org/hard-scramble)  and [www.rorr.org](https://www.rorr.org/tough-like-rorr) visit each for spectating/camping info.
 

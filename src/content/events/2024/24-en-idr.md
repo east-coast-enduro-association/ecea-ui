@@ -14,7 +14,7 @@ checkInTime: '2024-08-18T07:30:00.000Z'
 closedCourse: true
 gasAway: false
 image: '../../../assets/images/logos/clubs/idrlogo.jpg'
-flyer: '@assets/events/flyers/image0.png'
+flyer: '../../../assets/images/events/flyers/image0.png'
 downloads:
   - label: Rider Info Sheet
     url: /events/idr-rider-info-sheet-2024.pdf

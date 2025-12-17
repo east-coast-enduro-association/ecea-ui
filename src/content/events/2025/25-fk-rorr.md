@@ -13,7 +13,7 @@ checkInTime: '2025-06-15T14:00:43.190Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/rorr.png'
-flyer: '@assets/events/flyers/rorrhs25.jpg'
+flyer: '../../../assets/images/events/flyers/rorrhs25.jpg'
 ---
 **SPECIAL EVENT WAIVER and GATE FEE's** \
 [GO HERE NOW  Required prior to Entering  site. ](https://rorr.redpodium.com/2025-rorr-ecea-hare-scramble-series)\

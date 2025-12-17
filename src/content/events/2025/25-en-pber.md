@@ -14,7 +14,7 @@ checkInTime: '2025-11-23T07:00:00.000Z'
 closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/pber.webp'
-flyer: '@assets/events/flyers/2025clockrunflyer.jpg'
+flyer: '../../../assets/images/events/flyers/2025clockrunflyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=4'
 downloads:
   - label: Confirmation Sheet

@@ -14,7 +14,7 @@ checkInTime: '2025-09-07T07:00:00'
 closedCourse: true
 gasAway: false
 image: '../../../assets/images/logos/clubs/michaux.jpg'
-flyer: '@assets/events/flyers/michaux-2025-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/michaux-2025-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=14'
 downloads:
   - label: Confirmation

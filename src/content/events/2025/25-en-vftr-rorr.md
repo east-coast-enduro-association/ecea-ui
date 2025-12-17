@@ -15,7 +15,7 @@ checkInTime: '2025-09-22T07:00:00'
 closedCourse: true
 gasAway: false
 image: '../../../assets/images/logos/clubs/vftr.jpg'
-flyer: '@assets/events/flyers/2025-en-vftr-flyer.jpeg'
+flyer: '../../../assets/images/events/flyers/2025-en-vftr-flyer.jpeg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=15'
 downloads:
   - label: Confirmation Sheet

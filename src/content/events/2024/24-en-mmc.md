@@ -14,7 +14,7 @@ checkInTime: '2024-11-17T07:00:00.000Z'
 closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/mmc.jpg'
-flyer: '@assets/events/flyers/sandy-lane-2024-10-22-.jpg'
+flyer: '../../../assets/images/events/flyers/sandy-lane-2024-10-22-.jpg'
 ---
 **Regrettably, Sandy Lane Enduro is cancelled for 2024.** 
 

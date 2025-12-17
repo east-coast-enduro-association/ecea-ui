@@ -14,7 +14,7 @@ checkInTime: '2023-08-20T07:30:00.000Z'
 closedCourse: true
 gasAway: false
 image: '../../../assets/images/logos/clubs/idrlogo.jpg'
-flyer: '@assets/events/flyers/2023-en-idr-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/2023-en-idr-flyer.jpg'
 downloads:
   - label: Rider Information
     url: /events/2023-en-idr-confirmation.pdf

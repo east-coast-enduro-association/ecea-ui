@@ -74,7 +74,8 @@ const eventsCollection = defineCollection({
 
       // Media
       image: image().nullable().optional(),
-      flyer: z.string().nullable().optional(),
+      flyer: image().nullable().optional(),
+      flyerPdf: z.string().nullable().optional(), // PDF version of flyer for download
 
       // Links
       registrationLink: optionalUrl,

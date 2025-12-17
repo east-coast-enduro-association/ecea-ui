@@ -13,7 +13,7 @@ checkInTime: '2025-08-29T20:00:54.249Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/hmdr.png'
-flyer: '@assets/events/flyers/wallow.jpg'
+flyer: '../../../assets/images/events/flyers/wallow.jpg'
 ---
 A 2-day family fun weekend! Bring your camping gear, enjoy the campground, and ride the trails.  Kids and beginner friendly sections. Hard core enduro for the needy...
 

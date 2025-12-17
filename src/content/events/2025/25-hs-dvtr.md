@@ -13,7 +13,7 @@ checkInTime: '2025-09-14T23:01:08.120Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/dvtr.jpg'
-flyer: '@assets/events/flyers/25dvterhs.jpg'
+flyer: '../../../assets/images/events/flyers/25dvterhs.jpg'
 ---
 Morning race: 10:00am
 Afternoon race: 1:00pm\

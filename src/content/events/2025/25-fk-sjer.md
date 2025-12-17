@@ -14,7 +14,7 @@ checkInTime: '2025-10-18T13:00:24.638Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/sjer.png'
-flyer: '@assets/events/flyers/25pberhs.jpg'
+flyer: '../../../assets/images/events/flyers/25pberhs.jpg'
 ---
 ### ATTENTION 
 

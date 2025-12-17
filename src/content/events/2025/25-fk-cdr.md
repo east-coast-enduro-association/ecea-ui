@@ -14,7 +14,7 @@ checkInTime: '2025-05-03T14:00:00.000Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/cdr.png'
-flyer: '@assets/events/flyers/25_cdr_ormand_hs.jpg'
+flyer: '../../../assets/images/events/flyers/25_cdr_ormand_hs.jpg'
 ---
 **GATES OPEN Friday 7PM SATURDAY at 8 AM.**\
 \

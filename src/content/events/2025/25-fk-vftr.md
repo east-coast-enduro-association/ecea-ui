@@ -13,7 +13,7 @@ checkInTime: '2025-04-26T10:00:10.615Z'
 closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/vftr.jpg'
-flyer: '@assets/events/flyers/25-vftr-hs.jpeg'
+flyer: '../../../assets/images/events/flyers/25-vftr-hs.jpeg'
 ---
 **PEE WEE/JUNIOR/YOUTH RACE DETAILS**
 

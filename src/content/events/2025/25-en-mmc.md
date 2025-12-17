@@ -14,7 +14,7 @@ checkInTime: '2025-03-23T07:00:00.000Z'
 closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/mmc.jpg'
-flyer: '@assets/events/flyers/25-en-mmc-flyer.jpg'
+flyer: '../../../assets/images/events/flyers/25-en-mmc-flyer.jpg'
 startGridLink: 'https://moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=3'
 downloads:
   - label: State Waiver (Print and Sign)
