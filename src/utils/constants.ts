@@ -14,17 +14,11 @@ export const SITE_INFO = {
 
 // Social media links
 export const SOCIAL_LINKS = {
-  facebook: "https://www.facebook.com/groups/167702099912197",
   instagram: "https://instagram.com/eaborama",
 };
 
 // Facebook groups by purpose
 export const FACEBOOK_GROUPS = {
-  main: {
-    name: "ECEA",
-    url: "https://www.facebook.com/groups/167702099912197",
-    description: "Main ECEA discussion group",
-  },
   enduro: {
     name: "Enduro",
     url: "https://www.facebook.com/groups/133551240256",
@@ -92,7 +86,7 @@ export const FOOTER_NAV = [
       { text: "About ECEA", href: "/about-us" },
       { text: "Meet the Board", href: "/board" },
       { text: "Contact", href: "/contact" },
-      { text: "Facebook Group", href: SOCIAL_LINKS.facebook },
+      { text: "Facebook Groups", href: "/resources#community" },
       { text: "Join a Club", href: "/clubs" },
     ],
   },
