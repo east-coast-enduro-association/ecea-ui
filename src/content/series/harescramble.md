@@ -1,6 +1,7 @@
 ---
 name: Hare Scramble
 description: Mass-start racing on marked courses. Line up, drop the flag, and race to be first across the finish line.
+facebookGroup: https://www.facebook.com/groups/HareScrambles
 documents:
   - label: ECEA Rule Book
     url: /documents/ecea-rulebook-current.pdf

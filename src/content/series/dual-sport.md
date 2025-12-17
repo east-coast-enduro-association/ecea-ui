@@ -1,6 +1,7 @@
 ---
 name: Dual Sport
 description: Adventure rides mixing pavement and off-road trails. Explore scenic routes on street-legal motorcycles.
+facebookGroup: https://www.facebook.com/groups/ecea.noncompetitiveeventgroups
 documents:
   - label: ECEA Rule Book
     url: /documents/ecea-rulebook-current.pdf

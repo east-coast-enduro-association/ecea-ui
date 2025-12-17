@@ -1,0 +1,380 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/Sections/PageHeader.astro";
+import { getCollection } from "astro:content";
+
+// Get all member lists
+const allMembers = await getCollection("members");
+
+// Get clubs collection for full names and slugs
+const clubs = await getCollection("clubs");
+const clubNameMap = Object.fromEntries(
+  clubs.map(club => [club.data.abbreviatedName, club.data.name])
+);
+const clubSlugMap = Object.fromEntries(
+  clubs.map(club => [club.data.abbreviatedName, club.id.replace(/\.md$/, '')])
+);
+
+// Get all members list
+const allMembersList = allMembers.flatMap(m => m.data.members);
+
+// Get unique members across all series using name + city + state
+// Merge data from multiple entries (e.g., AMA from Enduro, bike# from Hare Scramble)
+const uniqueMembersMap = new Map<string, typeof allMembersList[0]>();
+allMembersList.forEach(m => {
+  const key = `${m.name}|${m.city || ''}|${m.state || ''}`.toLowerCase();
+  if (!uniqueMembersMap.has(key)) {
+    uniqueMembersMap.set(key, { ...m });
+  } else {
+    // Merge data - take first non-empty value for each field
+    const existing = uniqueMembersMap.get(key)!;
+    if (!existing.ama && m.ama) existing.ama = m.ama;
+    if (!existing.number && m.number) existing.number = m.number;
+    if (!existing.club && m.club) existing.club = m.club;
+    if (!existing.city && m.city) existing.city = m.city;
+    if (!existing.state && m.state) existing.state = m.state;
+  }
+});
+const uniqueMembersList = [...uniqueMembersMap.values()].sort((a, b) => a.name.localeCompare(b.name));
+const totalUniqueMembers = uniqueMembersList.length;
+
+// Get unique clubs from all members for filter dropdown
+const memberClubs = [...new Set(allMembersList.map(m => m.club).filter(c => c))].sort();
+
+// Organize by series, with "All" first
+const membersBySeries: Record<string, { year: number; series: string; lastUpdated: string; members: typeof allMembersList }> = {
+  'All': {
+    year: 2025,
+    series: 'All',
+    lastUpdated: new Date().toISOString().split('T')[0],
+    members: uniqueMembersList,
+  },
+};
+
+allMembers.forEach(entry => {
+  const key = `${entry.data.year}-${entry.data.series}`;
+  membersBySeries[key] = entry.data;
+});
+
+// Default to All members
+const defaultSeries = membersBySeries['All'];
+
+// Pass member data for client-side tab switching
+const memberDataJson = JSON.stringify(membersBySeries);
+---
+
+<BaseLayout
+  title="Member List - ECEA"
+  description="ECEA membership roster. Search and filter members by name, AMA number, bike number, or club."
+>
+  <PageHeader
+    title="Member List"
+    subtitle="ECEA Membership Roster"
+    backgroundImage="/images/feature-bg.jpg"
+  />
+
+  <section class="py-12">
+    <div class="container">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Series Tabs -->
+        {Object.keys(membersBySeries).length > 1 && (
+          <div class="mb-6 flex flex-wrap gap-2">
+            {Object.entries(membersBySeries).map(([key, data], idx) => (
+              <button
+                class={`series-tab px-4 py-2 rounded-lg font-medium transition-colors ${idx === 0 ? 'bg-primary-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+                data-series={key}
+              >
+                {data.series} ({data.members.length})
+              </button>
+            ))}
+          </div>
+        )}
+
+        {defaultSeries ? (
+          <>
+            <!-- Stats and Info -->
+            <div class="mb-6 flex flex-wrap gap-4 items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="bg-primary-50 px-4 py-2 rounded-lg">
+                  <span class="text-2xl font-bold text-primary-700" id="series-count">{defaultSeries.members.length}</span>
+                  <span class="text-sm text-primary-600 ml-1" id="series-label">Members</span>
+                </div>
+                <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                  <span class="text-2xl font-bold text-gray-700">{memberClubs.length}</span>
+                  <span class="text-sm text-gray-600 ml-1">Clubs</span>
+                </div>
+              </div>
+              <p class="text-sm text-gray-500" id="last-updated">
+                Last updated: {new Date(defaultSeries.lastUpdated).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+              </p>
+            </div>
+
+            <!-- Search and Filter Controls -->
+            <div class="bg-white rounded-lg border border-gray-200 p-4 mb-6 sticky top-20 z-30 shadow-sm">
+              <div class="flex flex-col sm:flex-row gap-4">
+                <!-- Search Input -->
+                <div class="flex-1">
+                  <label for="search" class="sr-only">Search members</label>
+                  <div class="relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input
+                      type="text"
+                      id="search"
+                      placeholder="Search by name, AMA #, or bike #..."
+                      class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
+                    />
+                  </div>
+                </div>
+
+                <!-- Club Filter -->
+                <div class="sm:w-64">
+                  <label for="club-filter" class="sr-only">Filter by club</label>
+                  <select
+                    id="club-filter"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none bg-white"
+                  >
+                    <option value="">All Clubs</option>
+                    {memberClubs.map(club => (
+                      <option value={club}>{club} - {clubNameMap[club] || club}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <!-- Results count -->
+              <div class="mt-3 text-sm text-gray-600">
+                <span id="results-count">{defaultSeries.members.length}</span> members shown
+              </div>
+            </div>
+
+            <!-- Members Table -->
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200" id="members-table">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Bike #</th>
+                      <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">AMA #</th>
+                      <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Name</th>
+                      <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">City, ST</th>
+                      <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Club</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200" id="members-body">
+                    {defaultSeries.members.map((member) => (
+                      <tr
+                        class="member-row hover:bg-gray-50"
+                        data-name={member.name.toLowerCase()}
+                        data-ama={member.ama || ''}
+                        data-number={member.number || ''}
+                        data-club={member.club || ''}
+                      >
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-mono">
+                          {member.number ? (
+                            <span class="text-gray-900 font-semibold">{member.number}</span>
+                          ) : (
+                            <span class="text-gray-300">-</span>
+                          )}
+                        </td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 font-mono">
+                          {member.ama || <span class="text-gray-300">-</span>}
+                        </td>
+                        <td class="px-4 py-3 whitespace-nowrap">
+                          <span class="font-medium text-gray-900">{member.name}</span>
+                        </td>
+                        <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">
+                          {member.city && member.state ? (
+                            `${member.city}, ${member.state}`
+                          ) : member.city || member.state || (
+                            <span class="text-gray-300">-</span>
+                          )}
+                        </td>
+                        <td class="px-4 py-3 whitespace-nowrap">
+                          {member.club && clubSlugMap[member.club] ? (
+                            <a href={`/clubs/${clubSlugMap[member.club]}`} class="text-primary-600 hover:text-primary-700 font-medium">
+                              {member.club}
+                            </a>
+                          ) : member.club ? (
+                            <span class="text-gray-600">{member.club}</span>
+                          ) : (
+                            <span class="text-gray-300">-</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- No results message -->
+              <div id="no-results" class="hidden p-8 text-center text-gray-500">
+                No members found matching your search.
+              </div>
+            </div>
+
+            <!-- Back link -->
+            <div class="mt-8">
+              <a href="/resources" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Resources
+              </a>
+            </div>
+          </>
+        ) : (
+          <p class="text-gray-500 italic text-center">No membership data available.</p>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pass data to client-side script -->
+  <script define:vars={{ memberDataJson, clubSlugMap }}>
+    window.memberData = JSON.parse(memberDataJson);
+    window.clubSlugMap = clubSlugMap;
+  </script>
+</BaseLayout>
+
+<script>
+  // Client-side search, filter, and tab switching
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search') as HTMLInputElement;
+    const clubFilter = document.getElementById('club-filter') as HTMLSelectElement;
+    const resultsCount = document.getElementById('results-count');
+    const seriesCount = document.getElementById('series-count');
+    const noResults = document.getElementById('no-results');
+    const table = document.getElementById('members-table');
+    const membersBody = document.getElementById('members-body');
+    const seriesTabs = document.querySelectorAll('.series-tab');
+    const lastUpdated = document.getElementById('last-updated');
+
+    let currentMembers: any[] = [];
+
+    // @ts-ignore
+    const memberData = window.memberData || {};
+    // @ts-ignore
+    const clubSlugMap = window.clubSlugMap || {};
+
+    function renderMembers(members: any[]) {
+      if (!membersBody) return;
+
+      membersBody.innerHTML = members.map(member => `
+        <tr class="member-row hover:bg-gray-50"
+            data-name="${member.name.toLowerCase()}"
+            data-ama="${member.ama || ''}"
+            data-number="${member.number || ''}"
+            data-club="${member.club || ''}">
+          <td class="px-4 py-3 whitespace-nowrap text-sm font-mono">
+            ${member.number ? `<span class="text-gray-900 font-semibold">${member.number}</span>` : '<span class="text-gray-300">-</span>'}
+          </td>
+          <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 font-mono">
+            ${member.ama || '<span class="text-gray-300">-</span>'}
+          </td>
+          <td class="px-4 py-3 whitespace-nowrap">
+            <span class="font-medium text-gray-900">${member.name}</span>
+          </td>
+          <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">
+            ${member.city && member.state ? `${member.city}, ${member.state}` : member.city || member.state || '<span class="text-gray-300">-</span>'}
+          </td>
+          <td class="px-4 py-3 whitespace-nowrap">
+            ${member.club && clubSlugMap[member.club]
+              ? `<a href="/clubs/${clubSlugMap[member.club]}" class="text-primary-600 hover:text-primary-700 font-medium">${member.club}</a>`
+              : member.club
+                ? `<span class="text-gray-600">${member.club}</span>`
+                : '<span class="text-gray-300">-</span>'}
+          </td>
+        </tr>
+      `).join('');
+
+      currentMembers = members;
+      filterMembers();
+    }
+
+    function filterMembers() {
+      const searchTerm = searchInput?.value.toLowerCase() || '';
+      const selectedClub = clubFilter?.value || '';
+      const memberRows = document.querySelectorAll('.member-row');
+      let visibleCount = 0;
+
+      memberRows.forEach(row => {
+        const name = row.getAttribute('data-name') || '';
+        const ama = row.getAttribute('data-ama') || '';
+        const number = row.getAttribute('data-number') || '';
+        const club = row.getAttribute('data-club') || '';
+
+        const matchesSearch = name.includes(searchTerm) ||
+                              ama.includes(searchTerm) ||
+                              number.includes(searchTerm);
+        const matchesClub = !selectedClub || club === selectedClub;
+
+        if (matchesSearch && matchesClub) {
+          (row as HTMLElement).style.display = '';
+          visibleCount++;
+        } else {
+          (row as HTMLElement).style.display = 'none';
+        }
+      });
+
+      if (resultsCount) {
+        resultsCount.textContent = String(visibleCount);
+      }
+
+      if (noResults && table) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+          table.classList.add('hidden');
+        } else {
+          noResults.classList.add('hidden');
+          table.classList.remove('hidden');
+        }
+      }
+    }
+
+    searchInput?.addEventListener('input', filterMembers);
+    clubFilter?.addEventListener('change', filterMembers);
+
+    // Series tab handling
+    const seriesLabel = document.getElementById('series-label');
+
+    seriesTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const seriesKey = tab.getAttribute('data-series');
+        if (!seriesKey || !memberData[seriesKey]) return;
+
+        // Update tab styles
+        seriesTabs.forEach(t => {
+          t.classList.remove('bg-primary-600', 'text-white');
+          t.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+        });
+        tab.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+        tab.classList.add('bg-primary-600', 'text-white');
+
+        // Update series count and label
+        const data = memberData[seriesKey];
+        if (seriesCount) {
+          seriesCount.textContent = String(data.members.length);
+        }
+        if (seriesLabel) {
+          seriesLabel.textContent = seriesKey === 'All' ? 'Members' : 'in Series';
+        }
+
+        // Update last updated
+        if (lastUpdated) {
+          const date = new Date(data.lastUpdated);
+          lastUpdated.textContent = `Last updated: ${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`;
+        }
+
+        // Clear search/filter
+        if (searchInput) searchInput.value = '';
+        if (clubFilter) clubFilter.value = '';
+
+        // Render new members
+        renderMembers(data.members);
+      });
+    });
+  });
+</script>

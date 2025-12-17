@@ -1,6 +1,7 @@
 ---
 name: FastKIDZ
 description: Youth racing program for riders ages 4-15. A safe, fun environment to learn racing skills and build confidence.
+facebookGroup: https://www.facebook.com/groups/390201834347069
 documents:
   - label: ECEA Rule Book
     url: /documents/ecea-rulebook-current.pdf

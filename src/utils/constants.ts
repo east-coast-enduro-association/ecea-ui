@@ -18,6 +18,40 @@ export const SOCIAL_LINKS = {
   instagram: "https://instagram.com/eaborama",
 };
 
+// Facebook groups by purpose
+export const FACEBOOK_GROUPS = {
+  main: {
+    name: "ECEA",
+    url: "https://www.facebook.com/groups/167702099912197",
+    description: "Main ECEA discussion group",
+  },
+  enduro: {
+    name: "Enduro",
+    url: "https://www.facebook.com/groups/133551240256",
+    description: "Enduro series discussion",
+  },
+  harescramble: {
+    name: "Hare Scrambles",
+    url: "https://www.facebook.com/groups/HareScrambles",
+    description: "Hare Scramble series discussion",
+  },
+  fastkidz: {
+    name: "FastKIDZ",
+    url: "https://www.facebook.com/groups/390201834347069",
+    description: "FastKIDZ youth racing",
+  },
+  photos: {
+    name: "ECEA Photos",
+    url: "https://www.facebook.com/groups/1214033069241014",
+    description: "Share and view race photos",
+  },
+  nonCompetitive: {
+    name: "Non-Competitive Events",
+    url: "https://www.facebook.com/groups/ecea.noncompetitiveeventgroups",
+    description: "Dual sport and fun rides",
+  },
+};
+
 // Main navigation items
 export const NAV_ITEMS = [
   { text: "Home", href: "/" },

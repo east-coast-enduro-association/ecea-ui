@@ -1,6 +1,7 @@
 ---
 name: Enduro
 description: Traditional time-keeping format racing on challenging off-road trails. Test your precision, navigation, and endurance.
+facebookGroup: https://www.facebook.com/groups/133551240256
 documents:
   - label: ECEA Rule Book
     url: /documents/ecea-rulebook-current.pdf

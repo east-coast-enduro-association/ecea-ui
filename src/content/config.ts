@@ -138,6 +138,7 @@ const seriesCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     description: z.string().optional(),
+    facebookGroup: z.string().url().optional(),
     documents: z
       .array(
         z.object({
