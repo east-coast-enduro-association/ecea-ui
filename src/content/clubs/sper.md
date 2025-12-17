@@ -4,6 +4,11 @@ abbreviatedName: SPER
 logo: '../../assets/images/logos/clubs/sper.jpg'
 summary: SPER
 draft: false
+website: 'https://www.facebook.com/SouthPennEnduroRiders'
+president: TODO
+contact: dashughart@aol.com
+order: 10
+location: 'Carlisle, PA'
 ---
 
 ## About Our Club

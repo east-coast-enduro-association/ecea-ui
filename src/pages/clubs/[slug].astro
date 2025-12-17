@@ -33,7 +33,7 @@ const { Content } = await entry.render();
 >
   <PageHeader
     title={entry.data.name}
-    backgroundImage="/uploads/ministry-detail-bg.webp"
+    backgroundImage="/images/feature-bg.jpg"
   />
 
   <section class="py-16">
@@ -64,6 +64,19 @@ const { Content } = await entry.render();
             <h3 class="text-xl font-bold mb-4">Club Information</h3>
 
             <div class="space-y-4 mb-6">
+              {entry.data.location && (
+                <div>
+                  <h4 class="font-bold text-gray-700">Location</h4>
+                  <p class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {entry.data.location}
+                  </p>
+                </div>
+              )}
+
               {entry.data.president && (
                 <div>
                   <h4 class="font-bold text-gray-700">President</h4>
@@ -74,16 +87,25 @@ const { Content } = await entry.render();
               {entry.data.contact && (
                 <div>
                   <h4 class="font-bold text-gray-700">Contact</h4>
-                  {entry.data.contact.includes('@') ? (
-                    <a href={`mailto:${entry.data.contact}`} class="text-primary-600 hover:text-primary-700">
-                      {entry.data.contact}
-                    </a>
-                  ) : (
-                    <p>{entry.data.contact}</p>
-                  )}
+                  <div id="contact-reveal-container">
+                    <button
+                      id="reveal-contact-btn"
+                      class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-primary-600 bg-primary-50 hover:bg-primary-100 rounded-md transition-colors"
+                      data-contact={Buffer.from(entry.data.contact).toString('base64')}
+                      data-is-email={entry.data.contact.includes('@') ? 'true' : 'false'}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Click to reveal contact
+                    </button>
+                    <div id="contact-info" class="hidden">
+                      <!-- Contact info will be inserted here via JS -->
+                    </div>
+                  </div>
                 </div>
               )}
-
             </div>
 
             <div class="flex flex-col space-y-3">
@@ -100,4 +122,31 @@ const { Content } = await entry.render();
       </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealBtn = document.getElementById('reveal-contact-btn');
+      const contactInfo = document.getElementById('contact-info');
+
+      if (revealBtn && contactInfo) {
+        revealBtn.addEventListener('click', () => {
+          const encodedContact = revealBtn.getAttribute('data-contact');
+          const isEmail = revealBtn.getAttribute('data-is-email') === 'true';
+
+          if (encodedContact) {
+            const contact = atob(encodedContact);
+
+            if (isEmail) {
+              contactInfo.innerHTML = `<a href="mailto:${contact}" class="text-primary-600 hover:text-primary-700">${contact}</a>`;
+            } else {
+              contactInfo.innerHTML = `<p>${contact}</p>`;
+            }
+
+            revealBtn.classList.add('hidden');
+            contactInfo.classList.remove('hidden');
+          }
+        });
+      }
+    });
+  </script>
 </BaseLayout>

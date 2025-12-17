@@ -1,0 +1,372 @@
+---
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/Sections/PageHeader.astro";
+import Card from "../../components/UI/Card.astro";
+import Button from "../../components/UI/Button.astro";
+import { getCollection } from "astro:content";
+import { formatDate } from "../../utils/dateUtils";
+import { EVENT_TYPES } from "../../utils/constants";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allEvents = await getCollection("events", ({ data }) => {
+    return import.meta.env.PROD ? !data.draft : true;
+  });
+
+  const allClubs = await getCollection("clubs");
+
+  // Club Logo Map
+  const clubLogoMap: Record<string, any> = {};
+  allClubs.forEach((club) => {
+    if (club.data.abbreviatedName) {
+      clubLogoMap[club.data.abbreviatedName] = club.data.logo;
+    }
+  });
+
+  // Separate Upcoming and Past Events (Based on BUILD TIME)
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+
+  const upcomingEvents = allEvents
+    .filter(event => new Date(event.data.date) >= now)
+    .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+
+  const pastEvents = allEvents
+    .filter(event => new Date(event.data.date) < now)
+    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+  // Extract filters
+  const eventTypes = [...new Set(allEvents.map(e => e.data.eventType).filter(Boolean))].sort();
+  const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filter(Boolean))].sort();
+
+  // Paginate past events (12 per page)
+  return paginate(pastEvents, {
+    pageSize: 12,
+    props: { upcomingEvents, eventTypes, clubs, clubLogoMap, totalPastEvents: pastEvents.length }
+  });
+}) satisfies GetStaticPaths;
+
+const { page, upcomingEvents, eventTypes, clubs, clubLogoMap, totalPastEvents } = Astro.props;
+
+// On page 1, show all upcoming events + paginated past events
+// On page 2+, show only past events (no upcoming section)
+const isFirstPage = page.currentPage === 1;
+---
+
+<BaseLayout
+  title={isFirstPage ? "ECEA Events Calendar" : `Past Events - Page ${page.currentPage} - ECEA`}
+  description="Upcoming Enduros, Hare Scrambles, and Dual Sports in the ECEA."
+>
+  <PageHeader
+    title={isFirstPage ? "Event Schedule" : "Past Events"}
+    subtitle={isFirstPage ? "Enduros, Hare Scrambles, FastKIDZ, and Dual Sports" : `Page ${page.currentPage} of ${page.lastPage}`}
+    backgroundImage="/images/feature-bg.jpg"
+  />
+
+  <section class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+        <div class="lg:col-span-1">
+          <div class="bg-white p-6 rounded-lg shadow-sm sticky top-24">
+            <h2 class="text-xl font-bold mb-6">Filter Events</h2>
+
+            <div class="mb-6">
+              <label for="search" class="block text-sm font-medium text-gray-700 mb-1">Search</label>
+              <input type="text" id="search" placeholder="Search event name..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" />
+            </div>
+
+            <div class="mb-6">
+              <label for="eventType" class="block text-sm font-medium text-gray-700 mb-1">Event Type</label>
+              <select id="eventType" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
+                <option value="">All Types</option>
+                {eventTypes.map(type => <option value={type}>{type}</option>)}
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label for="club" class="block text-sm font-medium text-gray-700 mb-1">Hosting Club</label>
+              <select id="club" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
+                <option value="">All Clubs</option>
+                {clubs.map(c => <option value={c}>{c}</option>)}
+              </select>
+            </div>
+
+            <button id="reset-filters" class="w-full mt-6 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
+              Reset Filters
+            </button>
+
+            <p class="text-xs text-gray-500 mt-4">
+              Filters apply to this page.
+            </p>
+
+            {!isFirstPage && (
+              <a href="/events" class="block mt-4 text-center text-primary-600 hover:text-primary-700 font-medium">
+                ← Back to Upcoming Events
+              </a>
+            )}
+          </div>
+        </div>
+
+        <div class="lg:col-span-3 space-y-12">
+
+          {/* Upcoming Events - Only on first page */}
+          {isFirstPage && (
+            <div id="upcoming-section">
+              <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2 flex items-center">
+                <span class="mr-2">📅</span> Upcoming Events
+                <span class="ml-auto text-sm font-normal text-gray-500">{upcomingEvents.length} events</span>
+              </h2>
+
+              {upcomingEvents.length > 0 ? (
+                <div id="upcoming-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {upcomingEvents.map((event) => {
+                    let displayImage = event.data.image ||
+                      (event.data.hostingClubs?.[0] ? clubLogoMap[event.data.hostingClubs[0]] : null) ||
+                      "/images/feature-bg.jpg";
+
+                    return (
+                      <Card
+                        title={event.data.title}
+                        image={{ src: displayImage, alt: event.data.title }}
+                        href={`/events/${event.slug}`}
+                        className="event-card upcoming"
+                        data-type={event.data.eventType || ""}
+                        data-club={event.data.hostingClubs?.[0] || ""}
+                        data-date={event.data.date.toISOString().slice(0, 10)}
+                      >
+                        <div class="mb-3 flex items-center text-primary-700 font-medium">
+                          <span class="mr-2">📅</span> {formatDate(event.data.date)}
+                        </div>
+                        {event.data.hostingClubs && (
+                          <div class="mb-3 flex items-center text-gray-600">
+                            <span class="mr-2">🏁</span> {event.data.hostingClubs.join(", ")}
+                          </div>
+                        )}
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-3">
+                          {event.data.eventType}
+                        </span>
+                      </Card>
+                    );
+                  })}
+                </div>
+              ) : (
+                <p class="text-gray-500 italic">No upcoming events scheduled.</p>
+              )}
+            </div>
+          )}
+
+          {/* Past Events */}
+          <div id="past-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-500 border-b pb-2 flex items-center">
+              <span class="mr-2">🕰️</span> Past Events
+              <span class="ml-auto text-sm font-normal">{totalPastEvents} total</span>
+            </h2>
+
+            <div id="past-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {page.data.map((event) => {
+                let displayImage = event.data.image ||
+                  (event.data.hostingClubs?.[0] ? clubLogoMap[event.data.hostingClubs[0]] : null) ||
+                  "/images/feature-bg.jpg";
+
+                return (
+                  <Card
+                    title={event.data.title}
+                    image={{ src: displayImage, alt: event.data.title }}
+                    href={`/events/${event.slug}`}
+                    className="event-card past grayscale hover:grayscale-0 transition-all"
+                    data-type={event.data.eventType || ""}
+                    data-club={event.data.hostingClubs?.[0] || ""}
+                    data-date={event.data.date.toISOString().slice(0, 10)}
+                  >
+                    <div class="mb-3 flex items-center text-gray-500">
+                      <span class="mr-2">📅</span> <span class="line-through">{formatDate(event.data.date)}</span>
+                    </div>
+                    {event.data.hostingClubs && (
+                      <div class="mb-3 flex items-center text-gray-500">
+                        <span class="mr-2">🏁</span> {event.data.hostingClubs.join(", ")}
+                      </div>
+                    )}
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 mb-3">
+                      {event.data.eventType}
+                    </span>
+                  </Card>
+                );
+              })}
+            </div>
+
+            {/* Pagination */}
+            {page.lastPage > 1 && (
+              <nav class="mt-12 flex justify-center" aria-label="Events pagination">
+                <ul class="flex items-center gap-1">
+                  <li>
+                    {page.url.prev ? (
+                      <a href={page.url.prev} class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Previous
+                      </a>
+                    ) : (
+                      <span class="px-4 py-2 rounded-lg border border-gray-200 text-gray-400 cursor-not-allowed flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Previous
+                      </span>
+                    )}
+                  </li>
+
+                  {page.currentPage > 2 && (
+                    <li>
+                      <a href="/events" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">1</a>
+                    </li>
+                  )}
+
+                  {page.currentPage > 3 && (
+                    <li><span class="px-2 py-2 text-gray-400">...</span></li>
+                  )}
+
+                  {page.currentPage > 1 && (
+                    <li>
+                      <a href={page.url.prev} class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
+                        {page.currentPage - 1}
+                      </a>
+                    </li>
+                  )}
+
+                  <li>
+                    <span class="px-4 py-2 rounded-lg bg-primary-600 text-white font-medium">{page.currentPage}</span>
+                  </li>
+
+                  {page.currentPage < page.lastPage && (
+                    <li>
+                      <a href={page.url.next} class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
+                        {page.currentPage + 1}
+                      </a>
+                    </li>
+                  )}
+
+                  {page.currentPage < page.lastPage - 2 && (
+                    <li><span class="px-2 py-2 text-gray-400">...</span></li>
+                  )}
+
+                  {page.currentPage < page.lastPage - 1 && (
+                    <li>
+                      <a href={`/events/${page.lastPage}`} class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
+                        {page.lastPage}
+                      </a>
+                    </li>
+                  )}
+
+                  <li>
+                    {page.url.next ? (
+                      <a href={page.url.next} class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors flex items-center gap-1">
+                        Next
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    ) : (
+                      <span class="px-4 py-2 rounded-lg border border-gray-200 text-gray-400 cursor-not-allowed flex items-center gap-1">
+                        Next
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    )}
+                  </li>
+                </ul>
+              </nav>
+            )}
+
+            {/* Page Info */}
+            {page.lastPage > 1 && (
+              <p class="text-center text-gray-500 text-sm mt-4">
+                Showing {page.start + 1}-{page.end + 1} of {totalPastEvents} past events
+              </p>
+            )}
+          </div>
+
+          <div id="no-results" class="hidden text-center py-12 bg-gray-50 rounded-lg">
+            <p class="text-gray-600">No events match your filters.</p>
+            <button id="clear-search-btn" class="mt-2 text-primary-600 hover:underline">Clear all filters</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- 1. AUTO-CORRECT DATES (The "Self-Healing" Logic) ---
+      const upcomingGrid = document.getElementById('upcoming-grid');
+      const pastGrid = document.getElementById('past-grid');
+      const today = new Date().toISOString().slice(0, 10);
+
+      if (upcomingGrid && pastGrid) {
+        const upcomingCards = upcomingGrid.querySelectorAll('.event-card');
+        upcomingCards.forEach(card => {
+          const eventDate = card.getAttribute('data-date');
+          if (eventDate && eventDate < today) {
+            card.classList.add('grayscale', 'opacity-75');
+            pastGrid.prepend(card);
+          }
+        });
+      }
+
+      // --- 2. FILTERING LOGIC ---
+      const searchInput = document.getElementById('search') as HTMLInputElement;
+      const typeSelect = document.getElementById('eventType') as HTMLSelectElement;
+      const clubSelect = document.getElementById('club') as HTMLSelectElement;
+      const resetButton = document.getElementById('reset-filters');
+      const clearSearchBtn = document.getElementById('clear-search-btn');
+      const noResults = document.getElementById('no-results');
+
+      const filterEvents = () => {
+        const searchTerm = searchInput?.value.toLowerCase() || '';
+        const selectedType = typeSelect?.value || '';
+        const selectedClub = clubSelect?.value || '';
+
+        let visibleCount = 0;
+        const allCards = document.querySelectorAll('.event-card') as NodeListOf<HTMLElement>;
+
+        allCards.forEach(card => {
+          const title = card.querySelector('h3')?.textContent?.toLowerCase() || '';
+          const type = card.getAttribute('data-type') || '';
+          const club = card.getAttribute('data-club') || '';
+
+          const matchesSearch = title.includes(searchTerm);
+          const matchesType = !selectedType || type === selectedType;
+          const matchesClub = !selectedClub || club === selectedClub;
+
+          if (matchesSearch && matchesType && matchesClub) {
+            card.style.display = 'block';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (noResults) {
+          noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      };
+
+      searchInput?.addEventListener('input', filterEvents);
+      typeSelect?.addEventListener('change', filterEvents);
+      clubSelect?.addEventListener('change', filterEvents);
+
+      const resetAll = () => {
+        if (searchInput) searchInput.value = '';
+        if (typeSelect) typeSelect.value = '';
+        if (clubSelect) clubSelect.value = '';
+        filterEvents();
+      }
+
+      resetButton?.addEventListener('click', resetAll);
+      clearSearchBtn?.addEventListener('click', resetAll);
+    });
+  </script>
+</BaseLayout>

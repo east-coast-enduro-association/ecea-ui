@@ -62,7 +62,7 @@ const eventsCollection = defineCollection({
       // Organization
       hostingClubs: z.array(z.string()).default([]),
       eventType: z
-        .enum(['Enduro', 'Hare Scramble', 'FastKIDZ', 'Dual Sport', 'Special', 'Meeting'])
+        .enum(['Enduro', 'Hare Scramble', 'FastKIDZ', 'Dual Sport', 'Fun Ride', 'ECEA', 'Special', 'Meeting'])
         .optional(),
       format: z.string().optional(),
       series: z.string().optional(),

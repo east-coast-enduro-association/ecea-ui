@@ -4,6 +4,11 @@ abbreviatedName: VFTR
 logo: '../../assets/images/logos/clubs/vftr.jpg'
 summary: VFTR
 draft: false
+website: 'http://www.vftr.org/'
+president: TODO
+contact: tomwheeler6318@gmail.com
+order: 10
+location: 'Exton, PA'
 ---
 
 ## About Our Club

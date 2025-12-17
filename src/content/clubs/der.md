@@ -2,8 +2,13 @@
 name: Delaware Enduro Riders
 abbreviatedName: DER
 logo: '../../assets/images/logos/clubs/der.gif'
-summary: DER
+summary: Delaware Enduro Riders
 draft: false
+website: 'http://delawareenduroriders.com/'
+president: Neil Newcomb
+contact: neil.newcomb@yahoo.com
+order: 3
+location: 'Newark, DE'
 ---
 
 ## About Our Club

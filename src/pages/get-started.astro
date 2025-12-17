@@ -1,69 +1,189 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/Sections/PageHeader.astro";
-import { getEntry } from "astro:content";
-import { Image } from "astro:assets";
+import Button from "../components/UI/Button.astro";
+import { getCollection } from "astro:content";
+import { COMPETITIVE_SERIES } from "../utils/constants";
 
-const page = await getEntry("pages", "get-started");
-if (!page) {
-  return Astro.redirect("/404");
-}
+// Get all series
+const allSeries = await getCollection("series", ({ data }) => !data.draft);
 
-const { Content } = await page.render();
+// Get upcoming events to show count per series
+const allEvents = await getCollection("events", ({ data }) => {
+  return !data.draft && new Date(data.date) >= new Date();
+});
+
+// Count events per series type
+const eventCounts: Record<string, number> = {};
+allEvents.forEach(event => {
+  const type = event.data.eventType;
+  if (type) {
+    eventCounts[type] = (eventCounts[type] || 0) + 1;
+  }
+});
+
+// Series metadata for display
+const seriesInfo: Record<string, { icon: string; bgColor: string }> = {
+  enduro: { icon: "🏁", bgColor: "bg-blue-50" },
+  harescramble: { icon: "🏆", bgColor: "bg-green-50" },
+  fastkidz: { icon: "🚵", bgColor: "bg-yellow-50" },
+  "dual-sport": { icon: "🌲", bgColor: "bg-orange-50" },
+};
+
+// Map series slug to event type
+const slugToEventType: Record<string, string> = {
+  enduro: "Enduro",
+  harescramble: "Hare Scramble",
+  fastkidz: "FastKIDZ",
+  "dual-sport": "Dual Sport",
+};
 ---
 
 <BaseLayout
-  title={`${page.data.title} - ECEA`}
-  description={page.data.description}
+  title="Get Started - ECEA"
+  description="Welcome to the East Coast Enduro Association. Learn about our racing series and how to join."
 >
-  <PageHeader title={page.data.title} />
+  <PageHeader
+    title="Get Started"
+    subtitle="Your guide to riding with the ECEA"
+    backgroundImage="/images/feature-bg.jpg"
+  />
 
-  <main class="container py-8">
-    <div class="mx-auto max-w-4xl">
-      <!-- Welcome Section -->
-      <div class="bg-primary-50 rounded-lg p-8 mb-8">
-        <h2 class="text-2xl font-bold text-primary-800 mb-4">Welcome to the East Coast Enduro Association</h2>
-        <p class="text-gray-700 mb-6">
-          The ECEA is the most diverse off road association around with something for the family, youth rider, racer or enthusiast.
-          As an American Motorcyclist Association chartered organization, we urge you to join the AMA.
+  <!-- Welcome Section -->
+  <section class="py-12 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold mb-6">Welcome to the East Coast Enduro Association</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          The ECEA is the most diverse off-road association around with something for everyone—families, youth riders, racers, and enthusiasts alike. As an AMA-chartered organization since 1971, we've been bringing riders together for over 50 years.
         </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="/documents/ecea-welcome-book.pdf" class="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+        <p class="text-gray-600 mb-8">
+          Racing is just part of what we do. Many of our members volunteer, spectate, and enjoy the lifelong friendships formed at our events. Whether you want to compete for championships or just enjoy a weekend ride with family, there's a place for you here.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button href="/documents/ecea-welcome-book.pdf" target="_blank" variant="primary">
             Download Welcome Book
-          </a>
-          <a href="https://americanmotorcyclist.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-white border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors">
-            Register with AMA
-          </a>
+          </Button>
+          <Button href="https://americanmotorcyclist.com/" target="_blank" variant="outline">
+            Join the AMA
+          </Button>
         </div>
       </div>
-
-      <!-- Racing Series -->
-      <div class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">Come Ride With Us</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <a href="/series/enduro" class="block p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-            <h3 class="text-xl font-bold text-primary-800 mb-2">Enduro</h3>
-            <p class="text-gray-600">Since the early 70's the ECEA has been providing some of the best Enduro events on the east coast.</p>
-          </a>
-          <a href="/series/harescramble" class="block p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-            <h3 class="text-xl font-bold text-primary-800 mb-2">Hare Scramble</h3>
-            <p class="text-gray-600">The ECEA provides some of the most diverse off road events in the country.</p>
-          </a>
-          <a href="/series/fastkidz" class="block p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-            <h3 class="text-xl font-bold text-primary-800 mb-2">FastKIDZ</h3>
-            <p class="text-gray-600">ECEA Youth Racing - The Future Champions Start Here.</p>
-          </a>
-          <a href="/series/dual-sport" class="block p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-            <h3 class="text-xl font-bold text-primary-800 mb-2">Dual Sport</h3>
-            <p class="text-gray-600">Some of the best Dual Sports in the USA including the AMA-awarded Hammer Run.</p>
-          </a>
-        </div>
-      </div>
-
-      <!-- Additional Content from markdown -->
-      <article class="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-primary-600 hover:prose-a:text-primary-700">
-        <Content />
-      </article>
     </div>
-  </main>
+  </section>
+
+  <!-- Racing Series -->
+  <section class="py-12 bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-4">Choose Your Discipline</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          We offer four distinct types of events. Click any series to learn more about what to expect, how to register, and see upcoming events.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {allSeries.map((series) => {
+          const info = seriesInfo[series.slug] || { icon: "🏁", bgColor: "bg-gray-50" };
+          const eventType = slugToEventType[series.slug];
+          const upcomingCount = eventType ? eventCounts[eventType] || 0 : 0;
+          const isCompetitive = COMPETITIVE_SERIES.includes(series.slug as typeof COMPETITIVE_SERIES[number]);
+
+          return (
+            <a
+              href={`/series/${series.slug}`}
+              class={`group block p-6 rounded-xl border-2 border-gray-100 hover:border-primary-200 ${info.bgColor} hover:shadow-lg transition-all`}
+            >
+              <div class="flex items-start gap-4">
+                <span class="text-4xl">{info.icon}</span>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-2">
+                    <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">
+                      {series.data.name}
+                    </h3>
+                    {isCompetitive ? (
+                      <span class="px-2 py-0.5 bg-primary-100 text-primary-700 text-xs font-medium rounded">Championship</span>
+                    ) : (
+                      <span class="px-2 py-0.5 bg-orange-100 text-orange-700 text-xs font-medium rounded">Non-Competitive</span>
+                    )}
+                  </div>
+                  <p class="text-gray-600 text-sm mb-3">{series.data.description}</p>
+
+                  {upcomingCount > 0 && (
+                    <div class="inline-flex items-center px-3 py-1 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm">
+                      <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                      {upcomingCount} upcoming event{upcomingCount !== 1 ? 's' : ''}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div class="mt-4 flex items-center text-primary-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+                Learn more & see events
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps -->
+  <section class="py-12 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">How to Get Started</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+            <h3 class="font-bold mb-2">Join the AMA</h3>
+            <p class="text-gray-600 text-sm">All ECEA events require AMA membership. It supports motorcycling advocacy and provides insurance coverage.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+            <h3 class="font-bold mb-2">Pick an Event</h3>
+            <p class="text-gray-600 text-sm">Browse our calendar and choose an event that matches your skill level and interests.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+            <h3 class="font-bold mb-2">Register & Ride</h3>
+            <p class="text-gray-600 text-sm">Sign up online or at the event. Show up, have fun, and become part of the ECEA family.</p>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <Button href="/events" variant="primary" size="lg">
+            Browse Upcoming Events
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Teaser -->
+  <section class="py-12 bg-gray-900 text-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-4 text-white">Have Questions?</h2>
+        <p class="text-gray-400 mb-6">
+          Check out our FAQ for detailed information about each event type, what to bring, how scoring works, and more.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button href="/faq" variant="outline" class="!text-white border-gray-600 hover:bg-gray-800">
+            Read the FAQ
+          </Button>
+          <Button href="/clubs" variant="outline" class="!text-white border-gray-600 hover:bg-gray-800">
+            Find a Club Near You
+          </Button>
+          <Button href="/contact" variant="outline" class="!text-white border-gray-600 hover:bg-gray-800">
+            Contact Us
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

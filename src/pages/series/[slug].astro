@@ -5,6 +5,7 @@ import Card from "../../components/UI/Card.astro";
 import Button from "../../components/UI/Button.astro";
 import { getCollection } from "astro:content";
 import { formatDate } from "../../utils/dateUtils";
+import { COMPETITIVE_SERIES } from "../../utils/constants";
 
 export async function getStaticPaths() {
   const seriesEntries = await getCollection("series");
@@ -60,6 +61,10 @@ const seriesInfo: Record<string, { icon: string; color: string; headerBg: string
 
 const info = seriesInfo[entry.slug] || { icon: "🏁", color: "primary", headerBg: "/images/feature-bg.jpg" };
 
+// Check if this is a competitive series (with points/championships)
+const isCompetitive = COMPETITIVE_SERIES.includes(entry.slug as typeof COMPETITIVE_SERIES[number]);
+const seriesLabel = isCompetitive ? "Series" : "Events";
+
 // Helper to get event image
 const getEventImage = (event: typeof upcomingEvents[0]) => {
   if (event.data.image) return event.data.image;
@@ -71,11 +76,11 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
 ---
 
 <BaseLayout
-  title={`${entry.data.name} Series - ECEA`}
-  description={entry.data.description || `${entry.data.name} racing series information and upcoming events.`}
+  title={`${entry.data.name} ${seriesLabel} - ECEA`}
+  description={entry.data.description || `${entry.data.name} ${seriesLabel.toLowerCase()} information and upcoming events.`}
 >
   <PageHeader
-    title={`${info.icon} ${entry.data.name} Series`}
+    title={`${info.icon} ${entry.data.name} ${seriesLabel}`}
     subtitle={entry.data.description}
     backgroundImage={info.headerBg}
   />
@@ -204,7 +209,7 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
       <!-- Back to Series -->
       <div class="mt-12 pt-8 border-t border-gray-200">
         <Button href="/series" variant="outline">
-          ← Back to All Series
+          ← Back to Racing Series
         </Button>
       </div>
     </div>

@@ -4,6 +4,11 @@ abbreviatedName: TCSMC
 logo: '../../assets/images/logos/clubs/tcsmc.png'
 summary: TCSMC
 draft: false
+website: 'http://www.teamhammer.org/'
+president: TODO
+contact: hammerhead@teamhammer.org
+order: 10
+location: 'Port Elizabeth, NJ'
 ---
 
 ## About Our Club

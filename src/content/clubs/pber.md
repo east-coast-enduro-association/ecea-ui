@@ -4,6 +4,11 @@ abbreviatedName: PBER
 logo: '../../assets/images/logos/clubs/pber.webp'
 summary: PBER
 draft: false
+website: 'http://www.pber.org/'
+president: TODO
+contact: pinebaronsnj@gmail.com
+order: 10
+location: 'Shamong, NJ'
 ---
 
 ## About Our Club

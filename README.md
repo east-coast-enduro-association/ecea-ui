@@ -1,59 +1,43 @@
-# maucariapacom-church-starter [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+# East Coast Enduro Association (ECEA) Website
 
-An open-source starter template for building high-performance, content-driven church websites with Astro. Pure SSG, SEO-ready, built with Tailwind CSS, Markdown content, ready to integrate with any CMS
+The official website for the East Coast Enduro Association, built with Astro. This is a modern, fast, static site that serves as the central hub for event schedules, news, results, and information for the ECEA community.
 
-## Demo and Screenshot
-![Home Page](https://imgs.maucariapa.com/uploads/452546054-84337aa6-eea8-4879-9461-d2e7d3665aee.png)
+## Tech Stack
 
-Demo URL: [https://maucariapacom-church-starter.pages.dev](https://maucariapacom-church-starter.pages.dev/)
-
-## Features
-
-- **Pure Static Site Generation (SSG)**: Fast, SEO-friendly pages generated at build time
-- **Content-Driven Architecture**: Content managed via Markdown files using Astro Content Collections
-- **Mobile-First Responsive Design**: Tailwind CSS for beautiful, responsive layouts
-- **SEO Optimized**: Complete meta tags, JSON-LD Schema, and sitemap.xml
-- **CMS-Ready Structure**: Easily integrate with headless CMS solutions
-- **Comprehensive Church Website Sections**: All essential pages for a complete church website
-- **Accessibility Focus**: WCAG compliant design and markup
-- **Modern UI Components**: Reusable components with hover states and micro-interactions
-- **Integrated Church Icon**: Custom SVG church icon used throughout the site
-- **Image Optimization**: Proper image organization and fallback handling
+- **[Astro](https://astro.build/)** - Static site generator with excellent performance and developer experience
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework for styling
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript for better developer experience
+- **[Astro Content Collections](https://docs.astro.build/en/guides/content-collections/)** - Type-safe content management using Markdown files
+- **[Decap CMS](https://decapcms.org/)** (optional) - Git-based headless CMS for content editing
 
 ## Project Structure
 
 ```
-maucariapacom-church-starter/
-├── public/
-│   ├── uploads/          # Images directories (staff, events, sermons, etc.)
-│   │   ├── staff/        # Staff profile images
-│   │   ├── events/       # Event images
-│   │   ├── sermons/      # Sermon thumbnail images
-│   │   ├── ministries/   # Ministry logo images
-│   │   └── blog/         # Blog post images
-│   ├── favicon.svg
-│   ├── robots.txt
-│   └── site.webmanifest
-├── src/
-│   ├── assets/           # Astro-processed assets
-│   ├── components/       # Reusable Astro components
-│   │   ├── Global/       # Header, Footer, Navigation
-│   │   ├── Sections/     # Page sections (Hero, Events, etc.)
-│   │   └── UI/           # UI components (Button, Card, SEO)
-│   ├── content/          # Astro Content Collections
-│   │   ├── config.ts     # Collection schemas
-│   │   ├── staff/        # Staff member profiles
-│   │   ├── events/       # Church events
-│   │   ├── sermons/      # Sermon content
-│   │   ├── ministries/   # Ministry descriptions
-│   │   ├── blog/         # Blog posts
-│   │   └── siteInfo/     # Site configuration content
-│   ├── layouts/          # Page layouts
-│   ├── pages/            # Astro pages
-│   └── utils/            # Utility functions
-├── astro.config.mjs
-├── tailwind.config.cjs
-└── tsconfig.json
+src/
+├── assets/           # Images processed by Astro (optimized at build time)
+│   ├── blog/         # Blog post images
+│   └── images/       # General images and logos
+├── components/       # Reusable Astro components
+│   ├── Cards/        # Card components (BlogCard, EventCard)
+│   ├── Global/       # Site-wide components (Header, Footer, Navigation)
+│   ├── Icons/        # Reusable SVG icon components
+│   ├── Sections/     # Page section components (HeroSection, PageHeader)
+│   └── UI/           # UI components (Button, Card, Seo)
+├── content/          # Markdown content files (Content Collections)
+│   ├── blog/         # Blog posts
+│   ├── clubs/        # Club information
+│   ├── events/       # Event listings
+│   ├── series/       # Racing series descriptions
+│   └── config.ts     # Content collection schemas
+├── layouts/          # Page layouts (BaseLayout, PostLayout)
+├── pages/            # Astro pages (routes)
+└── utils/            # Utility functions and constants
+    └── constants.ts  # Site-wide configuration and constants
+
+public/
+├── documents/        # PDFs (rulebook, welcome book)
+├── images/           # Static images (backgrounds, etc.)
+└── uploads/          # User-uploaded content
 ```
 
 ## Getting Started
@@ -61,14 +45,16 @@ maucariapacom-church-starter/
 ### Prerequisites
 
 - Node.js 18 or later
-- npm or yarn
+- npm, yarn, or pnpm
 
 ### Installation
 
-1. Clone this repository:
+1. Clone the repository and navigate to the project:
    ```bash
-   git clone https://github.com/MauCariApa-com/maucariapacom-church-starter.git
-   cd maucariapacom-church-starter
+   git clone https://github.com/east-coast-enduro-association/ecea-ui.git
+   cd ecea-ui
+   git worktree add migration-complete migration-complete
+   cd migration-complete
    ```
 
 2. Install dependencies:
@@ -81,234 +67,229 @@ maucariapacom-church-starter/
    npm run dev
    ```
 
-4. Open your browser and navigate to `http://localhost:4321`
+4. Open your browser to `http://localhost:4321`
 
-## Content Management
+### Available Scripts
 
-### Adding/Editing Content
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with hot reload |
+| `npm run build` | Build production site to `dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run astro` | Run Astro CLI commands |
 
-All content is stored in Markdown (`.md`) files in the `src/content/` directory.
+## Adding and Editing Content
 
-#### Creating a New Staff Member
+All content is stored as Markdown files in the `src/content/` directory. Each content type has a defined schema in `src/content/config.ts`.
 
-1. Create a new file in `src/content/staff/` with a `.md` extension (e.g., `john-smith.md`)
-2. Add the required frontmatter fields:
+### Creating a New Blog Post
 
-```markdown
----
-name: "John Smith"
-title: "Youth Pastor"
-image: "/uploads/staff/john-smith.webp"
-email: "john@example.com"
-phone: "+1-555-1234"
-bio: "John has been serving in youth ministry for 10 years."
-order: 3
-draft: false
----
-
-Detailed biography and information about John goes here...
-```
-
-#### Creating a New Event
-
-1. Create a new file in `src/content/events/` with a `.md` extension
-2. Add the required frontmatter fields:
+1. Create a new `.md` file in `src/content/blog/` (filename becomes the URL slug)
+2. Add the required frontmatter:
 
 ```markdown
 ---
-title: "Youth Summer Camp"
-date: 2025-07-15
-endDate: 2025-07-20
-time: "9:00 AM - 5:00 PM"
-location: "Camp Wilderness"
-image: "/uploads/events/summer-camp.webp"
-summary: "A week-long adventure for teens to grow in faith and have fun!"
-tags: ["youth", "summer", "camp"]
-registrationRequired: true
-registrationLink: "https://example.com/register"
+title: "Your Post Title"
+pubDate: 2025-01-15
+author: "Author Name"
+image: "../../assets/blog/your-image.jpg"
+category: "announcement"
+tags:
+  - news
+  - racing
+summary: "A brief description for previews and SEO"
 draft: false
 ---
 
-## About Summer Camp
-
-Join us for an exciting week of activities, worship, and spiritual growth...
+Your post content goes here in Markdown format...
 ```
 
-#### Creating a New Sermon
+**Frontmatter Fields:**
+- `title` (required) - Post title
+- `pubDate` (required) - Publication date (YYYY-MM-DD)
+- `author` (required) - Author name
+- `image` (optional) - Path to featured image
+- `category` (required) - One of: `announcement`, `news`, `recap`, `article`
+- `tags` (optional) - Array of tags for filtering
+- `summary` (required) - Short description
+- `draft` (optional) - Set to `true` to hide in production
 
-1. Create a new file in `src/content/sermons/` with a `.md` extension
-2. Add the required frontmatter fields:
+### Creating a New Event
+
+1. Create a new `.md` file in `src/content/events/`
+2. Add the required frontmatter:
 
 ```markdown
 ---
-title: "Walking in Faith"
-date: 2025-02-02
-speaker: "Rev. Dr. John Smith"
-series: "Faith Foundations"
-scripture: "Proverbs 3:5-6"
-audioUrl: "https://example.com/sermons/walking-in-faith.mp3"
-videoUrl: "https://www.youtube.com/embed/example789"
-image: "/uploads/sermons/walking-in-faith.webp"
-summary: "Learn how to trust God completely and walk confidently in His plan."
-tags: ["faith", "trust", "guidance"]
+title: "Event Name Enduro"
+date: 2025-03-15
+time: "9:00 AM"
+location: "Event Location, PA"
+club: "ABC"
+eventType: "Enduro"
+flyerImage: "../../assets/images/flyers/event-flyer.jpg"
+registrationLink: "https://registration-url.com"
+resultsLink: ""
+summary: "Brief event description"
 draft: false
 ---
 
-## Sermon Overview
-
-Content of your sermon goes here...
+Additional event details and information...
 ```
 
-### Content Schema
+**Event Types:** `Enduro`, `Hare Scramble`, `FastKIDZ`, `Dual Sport`, `Fun Ride`, `ECEA`, `Special`, `Meeting`
 
-See `src/content/config.ts` for the complete schema definitions for all content types.
+### Editing Club Information
 
-## Key Pages and Features
+Club files are in `src/content/clubs/`. Each club has:
 
-### Main Pages
-- **Homepage** (`/`): Hero section, service times, about preview, recent events/sermons
-- **About Us** (`/about-us`): Mission, values, history, staff preview
-- **Staff** (`/staff`): Complete staff directory with contact information
-- **Ministries** (`/ministries`): All church ministries with detailed pages
-- **Sermons** (`/sermons`): Sermon archive with audio/video support and filtering
-- **Events** (`/events`): Upcoming and past events with registration support
-- **Blog** (`/blog`): Church blog with filtering and search
-- **I'm New** (`/im-new`): First-time visitor information
-- **Contact** (`/contact`): Contact forms, location, staff contacts
-- **Giving** (`/giving`): Online giving information and financial transparency
+```markdown
+---
+name: "Full Club Name"
+abbreviatedName: "FCN"
+logo: "../../assets/images/logos/clubs/club-logo.jpg"
+summary: "Brief description"
+draft: false
+website: "https://club-website.com"
+president: "President Name"
+contact: "email@club.org"
+order: 1
+location: "City, State"
+---
 
-### Special Features
-- **Responsive Design**: Mobile-first approach with proper breakpoints
-- **Content Filtering**: Advanced filtering on sermons and blog posts
-- **SEO Optimization**: Complete meta tags, JSON-LD schema, and sitemap
-- **Accessibility**: WCAG compliant with proper ARIA labels and keyboard navigation
-- **Performance**: Optimized images and fast loading times
-- **Modern UI**: Hover states, transitions, and micro-interactions
+## About Our Club
 
-## Customization
+Club description and history...
+```
 
-### Site Information
+### Editing Racing Series
 
-Update your church information in the following files:
+Series files are in `src/content/series/`:
 
-- Site metadata in `astro.config.mjs`
-- SEO defaults in `src/layouts/BaseLayout.astro`
-- Contact information in `src/components/Global/Footer.astro`
-- Church details throughout the content files
+```markdown
+---
+name: "Series Name"
+description: "Brief series description"
+draft: false
+---
+
+Detailed series information...
+```
+
+## Configuration
+
+### Site-Wide Constants
+
+Edit `src/utils/constants.ts` to change:
+
+- **SITE_INFO** - Site name, tagline, email
+- **NAV_ITEMS** - Main navigation links
+- **FOOTER_NAV** - Footer navigation groups
+- **SERIES_LINKS** - Racing series quick links with icons
+- **DISPLAY_LIMITS** - Number of items to show on pages
+- **EVENT_TYPES** - Available event type options
+- **BLOG_CATEGORIES** - Available blog categories
 
 ### Styling
 
-This template uses Tailwind CSS for styling:
+- **Tailwind Config** - `tailwind.config.mjs` for colors, fonts, spacing
+- **Global Styles** - `src/assets/styles/global.css`
+- **Primary Color** - Defined in Tailwind config (currently red/maroon theme)
 
-1. Customize colors and other theme settings in `tailwind.config.cjs`
-2. Global styles are in `src/assets/styles/global.css`
-3. The template includes a comprehensive color system with primary, secondary, and accent colors
+### Adding Images
 
-### Logo & Branding
+**For blog/content images (optimized by Astro):**
+1. Add images to `src/assets/blog/` or `src/assets/images/`
+2. Reference with relative path: `../../assets/blog/image.jpg`
 
-The template includes a built-in church SVG icon that's used throughout the site. To customize:
+**For static images (not processed):**
+1. Add to `public/images/` or `public/uploads/`
+2. Reference with absolute path: `/images/image.jpg`
 
-1. Replace the SVG icon in `src/components/Global/Header.astro` and `src/components/Global/Footer.astro`
-2. Update favicon in `public/favicon.svg`
-3. Modify the site manifest in `public/site.webmanifest`
+## Testing
 
-### Images
+### Local Testing
 
-Images are organized in the `/public/uploads/` directory:
-- `/uploads/staff/` - Staff profile images
-- `/uploads/events/` - Event images
-- `/uploads/sermons/` - Sermon thumbnails
-- `/uploads/ministries/` - Ministry logos
-- `/uploads/blog/` - Blog post images
+```bash
+# Run development server
+npm run dev
 
-The template includes fallback handling for missing images and uses external Unsplash images for some sections.
+# Build and preview production version
+npm run build && npm run preview
+```
 
-## Headless CMS Integration
+### What to Test
 
-This starter is designed to work well with these headless CMS solutions:
-
-### TinaCMS
-
-1. Install TinaCMS:
-   ```bash
-   npm install tinacms @tinacms/cli
-   ```
-
-2. Add the Tina config file (see TinaCMS documentation)
-
-3. The existing Content Collections schemas can be adapted for TinaCMS
-
-### Decap CMS (formerly Netlify CMS)
-
-1. Add Decap CMS config to `public/admin/config.yml`
-2. The existing Content Collections structure works well with Decap CMS
+1. **Navigation** - All links work, mobile menu functions
+2. **Events Page** - Upcoming/past events display correctly, pagination works
+3. **Blog** - Posts display, category filter works, pagination works
+4. **Clubs** - Club cards display with location, detail pages work
+5. **Contact Reveal** - Click-to-reveal on club pages protects email addresses
+6. **Responsive** - Test on mobile, tablet, and desktop sizes
+7. **SEO** - Check meta tags, sitemap generation
 
 ## Deployment
 
-This site can be deployed to any static hosting platform:
+This site deploys automatically via Netlify when changes are pushed to the main branch.
 
-### Netlify
+### Manual Deployment
 
-1. Push your repository to GitHub
-2. Connect to Netlify
-3. Set build command to `npm run build` and publish directory to `dist/`
-
-### Vercel
-
-1. Push your repository to GitHub
-2. Import in Vercel
-3. It will automatically detect Astro and set up the correct build settings
-
-### GitHub Pages
-
-1. Install gh-pages:
+1. Build the site:
    ```bash
-   npm install -D gh-pages
+   npm run build
    ```
 
-2. Add deploy script to package.json:
-   ```json
-   "scripts": {
-     "deploy": "npm run build && gh-pages -d dist"
-   }
-   ```
+2. The `dist/` folder contains the complete static site
 
-3. Run `npm run deploy`
+### Deployment Platforms
 
-## Browser Support
+**Netlify (Recommended):**
+- Connect your GitHub repository
+- Build command: `npm run build`
+- Publish directory: `dist`
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+**Vercel:**
+- Import from GitHub
+- Auto-detects Astro settings
 
-## License
+**Cloudflare Pages:**
+- Build command: `npm run build`
+- Output directory: `dist`
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Environment Variables
 
-## Bugs / Issues
+No environment variables are required for basic operation. For CMS integration, configure according to your CMS provider's documentation.
 
-We appreciate your understanding and encourage you to report any new bugs you find by
-[opening an issue](https://github.com/MauCariApa-com/maucariapacom-church-starter/issues)
-on our GitHub repository.
+## Content Management (CMS)
 
-## Acknowledgments
+The site supports integration with Git-based headless CMS solutions:
 
-- [Astro](https://astro.build) for the awesome static site generator
-- [Tailwind CSS](https://tailwindcss.com) for the utility-first CSS framework
-- [Heroicons](https://heroicons.com) for the icon system
-- [Pexels](https://pexels.com) & [Unsplash](https://unsplash.com) for stock photography
+- **[Decap CMS](https://decapcms.org/)** - Add config to `public/admin/config.yml`
+- **[TinaCMS](https://tina.io/)** - Install and configure per TinaCMS docs
+- **[Sveltia CMS](https://github.com/sveltia/sveltia-cms)** - Drop-in Decap CMS alternative
+
+## Contributing
+
+1. Create a feature branch from `master`
+2. Make your changes
+3. Test locally with `npm run dev` and `npm run build`
+4. Submit a pull request
+
+## Key Files Reference
+
+| File | Purpose |
+|------|---------|
+| `src/utils/constants.ts` | Site configuration, navigation, limits |
+| `src/content/config.ts` | Content collection schemas |
+| `tailwind.config.mjs` | Tailwind CSS customization |
+| `astro.config.mjs` | Astro configuration |
 
 ## Support
 
-For questions, issues, or contributions, please visit our GitHub repository or contact the development team.
-
-## Donate
-
-Love our work? 
-
-[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/kodester/)
+For questions or issues:
+- Open an issue on [GitHub](https://github.com/east-coast-enduro-association/ecea-ui/issues)
+- Contact the ECEA board
 
 ---
 
-Created with ❤️ for church communities worldwide
+Built with Astro for the East Coast Enduro Association

@@ -4,6 +4,11 @@ abbreviatedName: RORR
 logo: '../../assets/images/logos/clubs/rorr.png'
 summary: RORR
 draft: false
+website: 'http://www.rorr.org/'
+president: TODO
+contact: readingoffroadriders@gmail.com
+order: 10
+location: 'Reading, PA'
 ---
 
 ## About Our Club

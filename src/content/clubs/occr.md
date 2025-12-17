@@ -4,6 +4,11 @@ abbreviatedName: OCCR
 logo: '../../assets/images/logos/clubs/occr.jpg'
 summary: OCCR
 draft: false
+website: 'http://occr.net/home.php'
+president: Donovan Marvin
+contact: donovan.marvin@gmail.com
+order: 8
+location: 'Jackson, NJ'
 ---
 
 ## About Our Club

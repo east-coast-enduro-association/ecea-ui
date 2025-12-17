@@ -2,8 +2,13 @@
 name: Brandywine Enduro Riders
 abbreviatedName: BER
 logo: '../../assets/images/logos/clubs/ber.gif'
-summary: BER
+summary: Brandywine Enduro Riders
 draft: false
+website: 'http://www.ber.us/'
+president: TODO
+contact: jfpenny@verizon.net
+order: 1
+location: 'West Chester, PA'
 ---
 
 ## About Our Club
