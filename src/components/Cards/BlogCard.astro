@@ -6,6 +6,7 @@
  */
 import { Image } from "astro:assets";
 import { formatDate } from "../../utils/dateUtils";
+import { CATEGORY_COLORS, UI_STYLES } from "../../utils/constants";
 
 interface Props {
   title: string;
@@ -31,13 +32,6 @@ const {
   featured = false,
   class: className = ""
 } = Astro.props;
-
-const categoryColors: Record<string, string> = {
-  announcement: "bg-accent-600",
-  news: "bg-primary-600/80",
-  recap: "bg-secondary-600/80",
-  article: "bg-gray-600/80",
-};
 ---
 
 <a
@@ -59,14 +53,14 @@ const categoryColors: Record<string, string> = {
     <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900"></div>
   )}
 
-  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+  <div class:list={["absolute inset-0", UI_STYLES.gradientOverlay]}></div>
 
   <div class="absolute bottom-0 left-0 right-0 p-4 md:p-5">
     <div class="flex items-center gap-2 mb-1">
       {category && (
         <span class:list={[
-          "px-2 py-0.5 text-white text-xs font-medium rounded uppercase tracking-wider",
-          categoryColors[category] || "bg-primary-600/80"
+          UI_STYLES.badge,
+          CATEGORY_COLORS[category] || "bg-primary-600/80"
         ]}>
           {category}
         </span>

@@ -77,7 +77,11 @@ const eventsCollection = defineCollection({
       flyer: image().nullable().optional(),
       flyerPdf: z.string().nullable().optional(), // PDF version of flyer for download
 
-      // Links
+      // Moto-Tally Integration
+      // EID is the chronological event order within a series for the year
+      motoTallyId: z.number().nullable().optional(),
+
+      // Links (manual overrides - used if motoTallyId not set)
       registrationLink: optionalUrl,
       startGridLink: optionalUrl,
       resultsLink: optionalUrl,
@@ -120,6 +124,7 @@ const blogCollection = defineCollection({
         })
         .optional(),
       tags: z.array(z.string()).default(['general']),
+      pinned: z.boolean().default(false),
       draft: z.boolean().default(false),
     }),
 });
@@ -185,6 +190,36 @@ const pagesCollection = defineCollection({
 });
 
 /**
+ * Team Results Collection
+ * Enduro team competition standings by year
+ */
+const teamResultsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    year: z.number(),
+    series: z.string(),
+    lastUpdated: z.string(),
+    events: z.array(
+      z.object({
+        abbr: z.string(),           // Event/club abbreviation (e.g., "TCSMC")
+        name: z.string(),           // Event name (e.g., "Greenbrier")
+        date: z.string(),           // Date string (e.g., "2025-03-09")
+        completed: z.boolean().default(false),
+      })
+    ),
+    standings: z.array(
+      z.object({
+        place: z.number(),
+        club: z.string(),           // Club abbreviation
+        total: z.number(),
+        // Per-event results: number = points, "W" = host, null = not yet held
+        results: z.record(z.union([z.number(), z.literal("W"), z.null()])),
+      })
+    ),
+  }),
+});
+
+/**
  * Site Info Collection
  * Global site configuration
  */
@@ -192,6 +227,31 @@ const siteInfoCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+  }),
+});
+
+/**
+ * Members Collection
+ * ECEA membership roster by year
+ * Portable JSON format for easy import/export
+ * Unique rider identification: name + city + state
+ */
+const membersCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    year: z.number(),
+    series: z.string(),  // "Enduro", "Hare Scramble", "FastKIDZ"
+    lastUpdated: z.string(),
+    members: z.array(
+      z.object({
+        ama: z.string().optional(),     // AMA number (Enduro series)
+        number: z.string().optional(),  // Bike/rider number
+        name: z.string(),
+        club: z.string(),               // Club abbreviation (e.g., "OCCR")
+        city: z.string().optional(),    // For unique rider identification
+        state: z.string().optional(),   // For unique rider identification
+      })
+    ),
   }),
 });
 
@@ -203,4 +263,6 @@ export const collections = {
   board: boardCollection,
   pages: pagesCollection,
   siteInfo: siteInfoCollection,
+  teamResults: teamResultsCollection,
+  members: membersCollection,
 };

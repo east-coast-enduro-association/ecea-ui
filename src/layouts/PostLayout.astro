@@ -16,6 +16,7 @@ export interface Props {
   author?: string;
   tags?: string[];
   type?: "event" | "blog" | "series";
+  fullImage?: boolean; // Show full image without cropping (for flyers)
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   author,
   tags = [],
   type = "blog",
+  fullImage = false,
 } = Astro.props;
 
 const seoType = "article";
@@ -52,7 +54,7 @@ const formattedDate = date ? formatDate(date) : null;
         <Image
           src={image.src}
           alt={image.alt}
-          class="object-cover w-full h-64 md:h-96"
+          class={fullImage ? "w-full h-auto" : "object-cover w-full h-64 md:h-96"}
           widths={[320, 640, 1024]}
           format="webp"
           loading="lazy" />

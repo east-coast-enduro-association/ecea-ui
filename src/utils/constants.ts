@@ -24,9 +24,11 @@ export const NAV_ITEMS = [
   { text: "Events", href: "/events" },
   { text: "Clubs", href: "/clubs" },
   { text: "Results", href: "/results" },
+  { text: "Resources", href: "/resources" },
   { text: "Get Started", href: "/get-started" },
   { text: "Blog", href: "/blog" },
   { text: "About", href: "/about-us" },
+  { text: "Contact", href: "/contact" },
 ];
 
 // Footer navigation groups
@@ -43,9 +45,9 @@ export const FOOTER_NAV = [
   {
     title: "Resources",
     items: [
-      { text: "FAQ", href: "/faq" },
+      { text: "Rider Resources", href: "/resources" },
       { text: "Rule Book", href: "/documents/ecea-rulebook-current.pdf" },
-      { text: "Welcome Book", href: "/documents/ecea-welcome-book.pdf" },
+      { text: "FAQ", href: "/faq" },
       { text: "Blog", href: "/blog" },
       { text: "RSS Feed", href: "/rss.xml" },
     ],
@@ -54,6 +56,7 @@ export const FOOTER_NAV = [
     title: "Connect",
     items: [
       { text: "About ECEA", href: "/about-us" },
+      { text: "Meet the Board", href: "/board" },
       { text: "Contact", href: "/contact" },
       { text: "Facebook Group", href: SOCIAL_LINKS.facebook },
       { text: "Join a Club", href: "/clubs" },
@@ -108,3 +111,58 @@ export const BLOG_CATEGORIES = [
   "recap",
   "article",
 ] as const;
+
+// Moto-Tally configuration
+export const MOTO_TALLY = {
+  baseUrl: "https://www.moto-tally.com/ECEA",
+  paths: {
+    "Enduro": "Enduro",
+    "Hare Scramble": "ECEA",
+    "FastKIDZ": "ECEA_PWY",
+  } as Record<string, string>,
+  pages: {
+    startGrid: "StartingGrid.aspx",
+    results: "Results.aspx",
+    standings: "Standings.aspx",
+    registration: "SeriesRegistration.aspx",
+  },
+};
+
+// Default images
+export const DEFAULT_IMAGES = {
+  background: "/images/feature-bg.jpg",
+  ogImage: "/images/og/ecea-og.png",
+  favicon: "/favicon.png",
+};
+
+// Blog category colors (Tailwind classes)
+export const CATEGORY_COLORS: Record<string, string> = {
+  announcement: "bg-accent-600",
+  news: "bg-primary-600/80",
+  recap: "bg-secondary-600/80",
+  article: "bg-gray-600/80",
+};
+
+// Event type colors (Tailwind classes)
+export const EVENT_TYPE_COLORS: Record<string, string> = {
+  Enduro: "bg-primary-600",
+  "Hare Scramble": "bg-secondary-600",
+  FastKIDZ: "bg-accent-600",
+  "Dual Sport": "bg-green-600",
+  "Fun Ride": "bg-teal-600",
+  ECEA: "bg-gray-600",
+  Special: "bg-purple-600",
+  Meeting: "bg-slate-600",
+};
+
+// Shared UI styles (Tailwind classes)
+export const UI_STYLES = {
+  // Badges
+  badge: "px-2 py-0.5 text-white text-xs font-medium rounded uppercase tracking-wider",
+  badgeLg: "px-2.5 py-1 text-white text-xs font-bold rounded uppercase tracking-wider",
+  // Card overlays
+  gradientOverlay: "bg-gradient-to-t from-black/80 via-black/30 to-transparent",
+  gradientOverlaySubtle: "bg-gradient-to-t from-black/60 to-transparent",
+  // Common patterns
+  cardHover: "hover:shadow-lg hover:-translate-y-1 transition-all duration-300",
+};

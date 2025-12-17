@@ -60,6 +60,11 @@ const sortedPosts = allPosts
 // Get latest announcement for the hero
 const latestAnnouncement = sortedPosts.find(post => post.data.category === 'announcement');
 
+// Get pinned posts for the hero (excluding the announcement if it's also pinned)
+const pinnedPosts = sortedPosts
+  .filter(post => post.data.pinned && post.slug !== latestAnnouncement?.slug)
+  .slice(0, 2); // Limit to 2 pinned posts in hero
+
 // Get latest posts for news section
 const latestPosts = sortedPosts.slice(0, DISPLAY_LIMITS.latestPosts);
 
@@ -98,33 +103,67 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
       </div>
     </div>
 
-    <!-- Featured Announcement Overlay Card -->
-    {latestAnnouncement && (
-      <a
-        href={`/blog/${latestAnnouncement.slug}`}
-        class="group absolute bottom-8 right-8 hidden lg:block w-80 bg-black/40 backdrop-blur-lg rounded-xl overflow-hidden border border-white/30 hover:bg-black/50 hover:border-white/50 transition-all duration-300 shadow-2xl"
-      >
-        <div class="p-5">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="px-2.5 py-1 bg-accent-600 text-white text-xs font-bold rounded uppercase tracking-wider">
-              Announcement
-            </span>
-            <span class="text-white/80 text-sm">{formatDate(latestAnnouncement.data.pubDate)}</span>
-          </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight">
-            {latestAnnouncement.data.title}
-          </h3>
-          <p class="text-white/70 text-sm mt-2 line-clamp-2">
-            {latestAnnouncement.data.description}
-          </p>
-          <div class="mt-3 flex items-center text-primary-400 text-sm font-medium group-hover:text-primary-300">
-            Read more
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-        </div>
-      </a>
+    <!-- Featured Cards Overlay (Pinned + Announcement) -->
+    {(pinnedPosts.length > 0 || latestAnnouncement) && (
+      <div class="absolute bottom-8 right-8 hidden lg:flex flex-col gap-3 w-80">
+        {/* Pinned Posts */}
+        {pinnedPosts.map((post) => (
+          <a
+            href={`/blog/${post.slug}`}
+            class="group bg-black/40 backdrop-blur-lg rounded-xl overflow-hidden border border-white/30 hover:bg-black/50 hover:border-white/50 transition-all duration-300 shadow-2xl"
+          >
+            <div class="p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="px-2.5 py-1 bg-primary-600 text-white text-xs font-bold rounded uppercase tracking-wider">
+                  Featured
+                </span>
+                <span class="text-white/80 text-sm">{formatDate(post.data.pubDate)}</span>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight">
+                {post.data.title}
+              </h3>
+              <p class="text-white/70 text-sm mt-2 line-clamp-2">
+                {post.data.description}
+              </p>
+              <div class="mt-3 flex items-center text-primary-400 text-sm font-medium group-hover:text-primary-300">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+
+        {/* Latest Announcement */}
+        {latestAnnouncement && (
+          <a
+            href={`/blog/${latestAnnouncement.slug}`}
+            class="group bg-black/40 backdrop-blur-lg rounded-xl overflow-hidden border border-white/30 hover:bg-black/50 hover:border-white/50 transition-all duration-300 shadow-2xl"
+          >
+            <div class="p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="px-2.5 py-1 bg-accent-600 text-white text-xs font-bold rounded uppercase tracking-wider">
+                  Announcement
+                </span>
+                <span class="text-white/80 text-sm">{formatDate(latestAnnouncement.data.pubDate)}</span>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight">
+                {latestAnnouncement.data.title}
+              </h3>
+              <p class="text-white/70 text-sm mt-2 line-clamp-2">
+                {latestAnnouncement.data.description}
+              </p>
+              <div class="mt-3 flex items-center text-primary-400 text-sm font-medium group-hover:text-primary-300">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        )}
+      </div>
     )}
   </section>
 
@@ -213,6 +252,23 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
 
       <div class="text-center mt-6 md:hidden">
         <Button href="/blog" variant="outline">View All Posts</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Quick Links -->
+  <section class="py-8 bg-gray-100">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Race Results</span>
+          <h2 class="text-xl md:text-2xl font-bold">View {new Date().getFullYear()} Results</h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3">
+          <Button href="/results" variant="primary">
+            All Results
+          </Button>
+        </div>
       </div>
     </div>
   </section>

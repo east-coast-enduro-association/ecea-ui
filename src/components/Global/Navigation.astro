@@ -1,8 +1,34 @@
 ---
-import { NAV_ITEMS, SOCIAL_LINKS } from "../../utils/constants";
+import { NAV_ITEMS, SOCIAL_LINKS, MOTO_TALLY } from "../../utils/constants";
 
 // Get the current URL path to highlight the active link
 const currentPath = Astro.url.pathname;
+
+// Current year for results dropdown
+const currentYear = new Date().getFullYear();
+
+// Results dropdown items
+const resultsDropdown = [
+  { text: "Enduro Results", href: `${MOTO_TALLY.baseUrl}/${MOTO_TALLY.paths["Enduro"]}/${MOTO_TALLY.pages.results}?EY=${currentYear}`, external: true },
+  { text: "Hare Scramble Results", href: `${MOTO_TALLY.baseUrl}/${MOTO_TALLY.paths["Hare Scramble"]}/${MOTO_TALLY.pages.results}?EY=${currentYear}`, external: true },
+  { text: "FastKIDZ Results", href: `${MOTO_TALLY.baseUrl}/${MOTO_TALLY.paths["FastKIDZ"]}/${MOTO_TALLY.pages.results}?EY=${currentYear}`, external: true },
+  { text: "Enduro Team Results", href: "/results/team", external: false },
+  { text: "All Results by Year", href: "/results", external: false },
+];
+
+// Championship standings links
+const standingsDropdown = [
+  { text: "Enduro Standings", href: `${MOTO_TALLY.baseUrl}/${MOTO_TALLY.paths["Enduro"]}/${MOTO_TALLY.pages.standings}`, external: true },
+  { text: "Hare Scramble Standings", href: `${MOTO_TALLY.baseUrl}/${MOTO_TALLY.paths["Hare Scramble"]}/${MOTO_TALLY.pages.standings}`, external: true },
+  { text: "FastKIDZ Standings", href: `${MOTO_TALLY.baseUrl}/${MOTO_TALLY.paths["FastKIDZ"]}/${MOTO_TALLY.pages.standings}`, external: true },
+];
+
+// Series registration links
+const registrationDropdown = [
+  { text: "Enduro Registration", href: `${MOTO_TALLY.baseUrl}/${MOTO_TALLY.paths["Enduro"]}/${MOTO_TALLY.pages.registration}`, external: true },
+  { text: "Hare Scramble Registration", href: `${MOTO_TALLY.baseUrl}/${MOTO_TALLY.paths["Hare Scramble"]}/${MOTO_TALLY.pages.registration}`, external: true },
+  { text: "FastKIDZ Registration", href: `${MOTO_TALLY.baseUrl}/${MOTO_TALLY.paths["FastKIDZ"]}/${MOTO_TALLY.pages.registration}`, external: true },
+];
 ---
 
 <!-- Desktop Navigation -->
@@ -12,6 +38,78 @@ const currentPath = Astro.url.pathname;
       NAV_ITEMS.map((item) => {
         const isActive = currentPath === item.href ||
                          (item.href !== "/" && currentPath.startsWith(item.href));
+        const isResults = item.text === "Results";
+
+        if (isResults) {
+          // Results dropdown
+          return (
+            <li class="relative group">
+              <a
+                href={item.href}
+                class={`text-base font-medium transition-colors hover:text-primary-600 inline-flex items-center ${
+                  isActive ? "text-primary-600" : "text-gray-700"
+                }`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {item.text}
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <!-- Dropdown -->
+              <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[220px]">
+                  <div class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">{currentYear} Results</div>
+                  {resultsDropdown.map((dropItem) => (
+                    <a
+                      href={dropItem.href}
+                      target={dropItem.external ? "_blank" : undefined}
+                      rel={dropItem.external ? "noopener noreferrer" : undefined}
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                    >
+                      {dropItem.text}
+                      {dropItem.external && (
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 inline ml-1 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      )}
+                    </a>
+                  ))}
+                  <div class="border-t border-gray-100 my-2"></div>
+                  <div class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">Championship Standings</div>
+                  {standingsDropdown.map((dropItem) => (
+                    <a
+                      href={dropItem.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                    >
+                      {dropItem.text}
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 inline ml-1 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  ))}
+                  <div class="border-t border-gray-100 my-2"></div>
+                  <div class="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">Series Registration</div>
+                  {registrationDropdown.map((dropItem) => (
+                    <a
+                      href={dropItem.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                    >
+                      {dropItem.text}
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 inline ml-1 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </li>
+          );
+        }
 
         return (
           <li>

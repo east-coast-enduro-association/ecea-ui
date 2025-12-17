@@ -1,0 +1,33 @@
+---
+/**
+ * Calendar Icon Component
+ * Used for event dates and scheduling
+ */
+interface Props {
+  class?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { class: className = '', size = 'sm' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'h-4 w-4',
+  md: 'h-5 w-5',
+  lg: 'h-6 w-6',
+};
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class:list={[sizeClasses[size], className]}
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke="currentColor"
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+  />
+</svg>

@@ -2,8 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostLayout from "../../layouts/PostLayout.astro";
 import Button from "../../components/UI/Button.astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import { formatDate } from "../../utils/dateUtils";
+import { getEventMotoTallyUrls } from "../../utils/motoTally";
 
 export async function getStaticPaths() {
   const eventEntries = await getCollection("events");
@@ -19,14 +20,21 @@ const { Content } = await entry.render();
 // --- IMAGE FALLBACK LOGIC ---
 // Priority: 1. Flyer, 2. Event image, 3. Hosting club logo
 let displayImage = entry.data.flyer || entry.data.image;
+let isFlyer = !!entry.data.flyer; // Track if we're showing a flyer (for full-size display)
+
+// Get clubs collection for logo fallback and slug mapping
+const clubs = await getCollection("clubs");
+const clubSlugMap = Object.fromEntries(
+  clubs.map(club => [club.data.abbreviatedName, club.id])
+);
 
 // If no flyer or image, look up the hosting club's logo
 if (!displayImage && entry.data.hostingClubs && entry.data.hostingClubs.length > 0) {
-  const clubs = await getCollection("clubs");
   const hostingClubEntry = clubs.find(c => c.data.abbreviatedName === entry.data.hostingClubs[0]);
 
   if (hostingClubEntry && hostingClubEntry.data.logo) {
     displayImage = hostingClubEntry.data.logo;
+    isFlyer = false; // Club logo should not be displayed full-size
   }
 }
 
@@ -35,6 +43,14 @@ const hasImageMetadata = displayImage && typeof displayImage === 'object' && 'sr
 
 // Get PDF flyer URL for download button (separate from image flyer)
 const flyerPdfUrl = entry.data.flyerPdf || null;
+
+// Generate Moto-Tally URLs (auto-calculated from eventType, year, and position)
+const allEvents = await getCollection("events");
+const motoTallyUrls = getEventMotoTallyUrls(entry, allEvents);
+
+// Use auto-generated URLs if available, otherwise fall back to manual links
+const startGridUrl = motoTallyUrls.startGrid || entry.data.startGridLink || null;
+const registrationUrl = entry.data.registrationLink || null;
 // ----------------------------
 
 const formattedDate = formatDate(entry.data.date);
@@ -68,6 +84,32 @@ const icsDataUrl = `data:text/calendar;charset=utf-8,${encodeURIComponent(icsCon
 // Google Maps embed URL
 const mapsSearchUrl = entry.data.location ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(entry.data.location)}` : null;
 const mapsEmbedUrl = entry.data.location ? `https://www.google.com/maps?q=${encodeURIComponent(entry.data.location)}&output=embed` : null;
+
+// Team Results (for Enduro events)
+let teamEventResults: Array<{ club: string; points: number }> = [];
+let teamEventInfo: { abbr: string; name: string } | null = null;
+
+if (entry.data.eventType === "Enduro" && entry.data.hostingClubs?.[0]) {
+  const teamResults2025 = await getEntry("teamResults", "2025");
+  if (teamResults2025?.data) {
+    const hostingClub = entry.data.hostingClubs[0];
+    // Find the event in team results by matching hosting club
+    const teamEvent = teamResults2025.data.events.find(e => e.abbr === hostingClub);
+
+    if (teamEvent?.completed) {
+      teamEventInfo = { abbr: teamEvent.abbr, name: teamEvent.name };
+      // Get results for this event
+      teamEventResults = teamResults2025.data.standings
+        .map(standing => ({
+          club: standing.club,
+          result: standing.results[hostingClub],
+        }))
+        .filter(r => typeof r.result === "number" && r.result > 0)
+        .sort((a, b) => (b.result as number) - (a.result as number))
+        .map((r, idx) => ({ club: r.club, points: r.result as number }));
+    }
+  }
+}
 ---
 
 <BaseLayout
@@ -82,6 +124,7 @@ const mapsEmbedUrl = entry.data.location ? `https://www.google.com/maps?q=${enco
     date={entry.data.date}
     tags={entry.data.tags}
     type="event"
+    fullImage={isFlyer}
   >
     <div class="bg-gray-50 rounded-lg p-6 mb-8 border border-gray-100">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -124,7 +167,18 @@ const mapsEmbedUrl = entry.data.location ? `https://www.google.com/maps?q=${enco
                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                </svg>
-               <p>{entry.data.hostingClubs.join(", ")}</p>
+               <p>
+                 {entry.data.hostingClubs.map((club, idx) => (
+                   <>
+                     {idx > 0 && ", "}
+                     {clubSlugMap[club] ? (
+                       <a href={`/clubs/${clubSlugMap[club]}`} class="text-primary-600 hover:text-primary-700 font-medium">{club}</a>
+                     ) : (
+                       <span>{club}</span>
+                     )}
+                   </>
+                 ))}
+               </p>
             </div>
           )}
 
@@ -152,15 +206,24 @@ const mapsEmbedUrl = entry.data.location ? `https://www.google.com/maps?q=${enco
       </div>
 
       <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap gap-4">
-        {entry.data.registrationLink && (
-          <Button href={entry.data.registrationLink} target="_blank" variant="primary">
+        {/* Show Registration for future events */}
+        {isFutureEvent && registrationUrl && (
+          <Button href={registrationUrl} target="_blank" variant="primary">
             Register Online
           </Button>
         )}
 
-        {entry.data.startGridLink && (
-          <Button href={entry.data.startGridLink} target="_blank" variant="outline">
+        {/* Start Grid - always show if available */}
+        {startGridUrl && (
+          <Button href={startGridUrl} target="_blank" variant={isFutureEvent ? "outline" : "primary"}>
             View Start Grid
+          </Button>
+        )}
+
+        {/* Results - link to results page for past events */}
+        {!isFutureEvent && (
+          <Button href="/results" variant="outline">
+            View Results
           </Button>
         )}
 
@@ -249,6 +312,61 @@ const mapsEmbedUrl = entry.data.location ? `https://www.google.com/maps?q=${enco
           </svg>
           Open in Google Maps
         </a>
+      </div>
+    )}
+
+    <!-- Team Results (for Enduro events with completed team competition) -->
+    {teamEventResults.length > 0 && (
+      <div class="mt-8 mb-8">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold">Team Competition Results</h3>
+          <a href="/results/team" class="text-sm text-primary-600 hover:text-primary-700 font-medium">
+            View Full Standings →
+          </a>
+        </div>
+        <div class="bg-amber-50 rounded-lg border border-amber-200 overflow-hidden">
+          <table class="min-w-full">
+            <thead class="bg-amber-100">
+              <tr>
+                <th class="px-4 py-2 text-left text-xs font-semibold text-amber-800 uppercase">Pos</th>
+                <th class="px-4 py-2 text-left text-xs font-semibold text-amber-800 uppercase">Club</th>
+                <th class="px-4 py-2 text-right text-xs font-semibold text-amber-800 uppercase">Points</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-amber-100">
+              {teamEventResults.slice(0, 10).map((result, idx) => (
+                <tr class={idx < 3 ? "bg-amber-50" : "bg-white"}>
+                  <td class="px-4 py-2 whitespace-nowrap">
+                    {idx < 3 ? (
+                      <span class={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${
+                        idx === 0 ? 'bg-amber-400 text-amber-900' :
+                        idx === 1 ? 'bg-gray-300 text-gray-700' :
+                        'bg-amber-600 text-white'
+                      }`}>
+                        {idx + 1}
+                      </span>
+                    ) : (
+                      <span class="text-gray-600 text-sm">{idx + 1}</span>
+                    )}
+                  </td>
+                  <td class="px-4 py-2 whitespace-nowrap font-medium">
+                    {clubSlugMap[result.club] ? (
+                      <a href={`/clubs/${clubSlugMap[result.club]}`} class="text-gray-900 hover:text-primary-600 transition-colors">{result.club}</a>
+                    ) : (
+                      <span class="text-gray-900">{result.club}</span>
+                    )}
+                  </td>
+                  <td class="px-4 py-2 whitespace-nowrap text-right font-bold text-primary-700">{result.points}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {teamEventResults.length > 10 && (
+            <div class="px-4 py-2 bg-amber-50 text-sm text-amber-700 text-center border-t border-amber-100">
+              + {teamEventResults.length - 10} more teams
+            </div>
+          )}
+        </div>
       </div>
     )}
 

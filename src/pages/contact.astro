@@ -2,6 +2,55 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/Sections/PageHeader.astro";
 import Button from "../components/UI/Button.astro";
+
+// Other contacts organized by category
+const otherContacts = [
+  {
+    category: "ECEA Referee",
+    contacts: [
+      { name: "Kenny Lee Taylor", role: "ECEA Referee", email: "mrtaylor58@comcast.net" },
+    ],
+  },
+  {
+    category: "Enduro Series",
+    contacts: [
+      { name: "Merle Compton", role: "Series Director / Scoring / Points Keeper", email: "ecea.secy@verizon.net" },
+      { name: "Ron DeCaro", role: "Enduro Referee", email: "" },
+      { name: "Holly DeCaro", role: "Scoring / Membership", email: "" },
+    ],
+  },
+  {
+    category: "Hare Scramble / FastKIDZ",
+    contacts: [
+      { name: "Dave Glenn", role: "Series Director and Referee", email: "daveglenn112@yahoo.com" },
+      { name: "Joe Young", role: "Youth Series Chair", email: "jyoung311@comcast.net" },
+      { name: "Lisa Soudas", role: "Numbers / Sign Up Coordinator", email: "lsoudas@comcast.net" },
+      { name: "Mike Soudas", role: "Points Keeper", email: "msoudas@comcast.net" },
+      { name: "Mitch Walker", role: "Event Scoring", email: "" },
+      { name: "Amanda Walker", role: "Event Signup", email: "" },
+    ],
+  },
+  {
+    category: "Marketing & Sponsorships",
+    contacts: [
+      { name: "Neil Newcomb", role: "Marketing / Promotions", email: "neil.newcomb@yahoo.com" },
+      { name: "Joe Young", role: "Sponsorships", email: "jyoung311@comcast.net" },
+    ],
+  },
+  {
+    category: "Web Masters",
+    contacts: [
+      { name: "Mike Soudas", role: "", email: "msoudas@comcast.net" },
+      { name: "Michael Abramo", role: "", email: "abramomichael@gmail.com" },
+      { name: "Justin McKenzie", role: "", email: "justinmckenzie15@gmail.com" },
+    ],
+  },
+];
+
+// Helper to encode email for click-to-reveal
+function encodeEmail(email: string): string {
+  return btoa(email);
+}
 ---
 
 <BaseLayout
@@ -10,11 +59,11 @@ import Button from "../components/UI/Button.astro";
 >
   <PageHeader
     title="Contact Us"
-    subtitle="We'd love to hear from you"
+    subtitle="Get in touch with ECEA"
     backgroundImage="/images/feature-bg.jpg"
   />
 
-  <!-- Contact Information -->
+  <!-- Contact Form and General Info -->
   <section class="py-16">
     <div class="container">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -80,40 +129,13 @@ import Button from "../components/UI/Button.astro";
               </Button>
             </div>
           </form>
-
-          <script>
-            // Handle form submission
-            document.getElementById('contact-form')?.addEventListener('submit', function(e) {
-              e.preventDefault();
-              alert('Thank you for your message! We will get back to you soon.');
-              this.reset();
-            });
-          </script>
         </div>
 
-        <!-- Contact Information -->
+        <!-- General Contact Info -->
         <div>
           <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
 
           <div class="space-y-8">
-            <div class="flex items-start">
-              <div class="flex-shrink-0 mt-1">
-                <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-              </div>
-              <div class="ml-4">
-                <h3 class="text-xl font-bold mb-1">Email</h3>
-                <p class="text-gray-700">
-                  <a href="mailto:info@ecea.org" class="hover:text-primary-600">
-                    info@ecea.org
-                  </a>
-                </p>
-              </div>
-            </div>
-
             <div class="flex items-start">
               <div class="flex-shrink-0 mt-1">
                 <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center">
@@ -139,6 +161,11 @@ import Button from "../components/UI/Button.astro";
             <h3 class="text-xl font-bold mb-4">Quick Links</h3>
             <ul class="space-y-3">
               <li>
+                <a href="/board" class="text-primary-600 hover:text-primary-700">
+                  → Meet the Board of Directors
+                </a>
+              </li>
+              <li>
                 <a href="/faq" class="text-primary-600 hover:text-primary-700">
                   → Frequently Asked Questions
                 </a>
@@ -154,8 +181,8 @@ import Button from "../components/UI/Button.astro";
                 </a>
               </li>
               <li>
-                <a href="/documents/ecea-rulebook-current.pdf" class="text-primary-600 hover:text-primary-700">
-                  → ECEA Rule Book (PDF)
+                <a href="/resources" class="text-primary-600 hover:text-primary-700">
+                  → Rider Resources
                 </a>
               </li>
             </ul>
@@ -165,8 +192,51 @@ import Button from "../components/UI/Button.astro";
     </div>
   </section>
 
-  <!-- Club Contacts -->
+  <!-- Series & Staff Contacts -->
   <section class="py-16 bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Series & Staff Contacts</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Contact the right person for your specific needs
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {otherContacts.map((category) => (
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-4 text-primary-800 border-b border-primary-100 pb-2">
+              {category.category}
+            </h3>
+            <ul class="space-y-4">
+              {category.contacts.map((contact) => (
+                <li>
+                  <div class="font-medium">{contact.name}</div>
+                  {contact.role && (
+                    <div class="text-sm text-gray-600">{contact.role}</div>
+                  )}
+                  {contact.email && (
+                    <button
+                      class="reveal-email inline-flex items-center text-sm text-gray-500 hover:text-primary-600 transition-colors mt-1"
+                      data-email={encodeEmail(contact.email)}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <span class="email-text">Click to reveal</span>
+                    </button>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Club Contacts -->
+  <section class="py-16">
     <div class="container">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact a Club Directly</h2>
@@ -183,3 +253,33 @@ import Button from "../components/UI/Button.astro";
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Click-to-reveal email functionality
+  document.querySelectorAll('.reveal-email').forEach(button => {
+    button.addEventListener('click', function() {
+      const encodedEmail = this.getAttribute('data-email');
+      if (encodedEmail) {
+        const email = atob(encodedEmail);
+        const emailText = this.querySelector('.email-text');
+        if (emailText) {
+          // Create a mailto link
+          const link = document.createElement('a');
+          link.href = `mailto:${email}`;
+          link.textContent = email;
+          link.className = 'text-primary-600 hover:underline';
+
+          // Replace the button with the link
+          this.parentNode?.replaceChild(link, this);
+        }
+      }
+    });
+  });
+
+  // Handle form submission
+  document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you soon.');
+    this.reset();
+  });
+</script>

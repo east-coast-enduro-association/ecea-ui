@@ -1,0 +1,152 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/Sections/PageHeader.astro";
+import Button from "../components/UI/Button.astro";
+import { getCollection } from "astro:content";
+
+// Get board members (officers) sorted by order
+const officers = (await getCollection("board"))
+  .filter((member) => !member.data.draft)
+  .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+
+// Board of Trustees
+const trustees = [
+  { name: "Bob Stuart", role: "Chair" },
+  { name: "Jack Lafferty Sr.", role: "Vice Chair" },
+  { name: "Merle Compton", role: "" },
+  { name: "David Glenn", role: "" },
+  { name: "Mark Moyer", role: "" },
+];
+
+// Helper to encode email for click-to-reveal
+function encodeEmail(email: string): string {
+  return btoa(email);
+}
+---
+
+<BaseLayout
+  title="Board of Directors - ECEA"
+  description="Meet the elected officers and Board of Trustees of the East Coast Enduro Association."
+>
+  <PageHeader
+    title="Board of Directors"
+    subtitle="The leadership of the East Coast Enduro Association"
+    backgroundImage="/images/feature-bg.jpg"
+  />
+
+  <!-- ECEA Officers Section -->
+  <section class="py-16">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">ECEA Officers</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          The elected leadership responsible for the day-to-day operations of the association
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {officers.map((member) => (
+          <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+            <div class="w-24 h-24 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-1">{member.data.name}</h3>
+            <p class="text-primary-600 font-medium mb-4">{member.data.title}</p>
+            {member.data.email && (
+              <button
+                class="reveal-email inline-flex items-center text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                data-email={encodeEmail(member.data.email)}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span class="email-text">Click to reveal email</span>
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Board of Trustees -->
+  <section class="py-16 bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Board of Trustees</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          The governing body that provides oversight and strategic direction for ECEA
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <ul class="space-y-4">
+            {trustees.map((trustee) => (
+              <li class="flex items-center justify-between py-3 border-b border-gray-100 last:border-0">
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                  <span class="font-medium text-lg">{trustee.name}</span>
+                </div>
+                {trustee.role && (
+                  <span class="text-primary-600 font-medium">{trustee.role}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About ECEA Governance -->
+  <section class="py-16">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">About ECEA Governance</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          The East Coast Enduro Association is a volunteer-run organization dedicated to promoting
+          off-road motorcycle racing on the East Coast. Our officers and trustees work together
+          to coordinate events, maintain fair competition standards, and grow our racing community.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/contact" variant="primary">
+            Contact Us
+          </Button>
+          <Button href="/clubs" variant="outline">
+            View Member Clubs
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Click-to-reveal email functionality
+  document.querySelectorAll('.reveal-email').forEach(button => {
+    button.addEventListener('click', function() {
+      const encodedEmail = this.getAttribute('data-email');
+      if (encodedEmail) {
+        const email = atob(encodedEmail);
+        const emailText = this.querySelector('.email-text');
+        if (emailText) {
+          // Create a mailto link
+          const link = document.createElement('a');
+          link.href = `mailto:${email}`;
+          link.textContent = email;
+          link.className = 'text-primary-600 hover:underline';
+
+          // Replace the button with the link
+          this.parentNode?.replaceChild(link, this);
+        }
+      }
+    });
+  });
+</script>
