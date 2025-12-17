@@ -21,11 +21,11 @@ export const SOCIAL_LINKS = {
 // Main navigation items
 export const NAV_ITEMS = [
   { text: "Home", href: "/" },
-  { text: "Events", href: "/events" },
-  { text: "Clubs", href: "/clubs" },
-  { text: "Results", href: "/results" },
-  { text: "Resources", href: "/resources" },
   { text: "Get Started", href: "/get-started" },
+  { text: "Events", href: "/events" },
+  { text: "Results", href: "/results" },
+  { text: "Clubs", href: "/clubs" },
+  { text: "Resources", href: "/resources" },
   { text: "Blog", href: "/blog" },
   { text: "About", href: "/about-us" },
   { text: "Contact", href: "/contact" },
