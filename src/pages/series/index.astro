@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/Sections/PageHeader.astro";
+import { getCollection } from "astro:content";
+
+// Get all series
+const allSeries = await getCollection("series", ({ data }) => !data.draft);
+
+// Get upcoming events to show count per series
+const allEvents = await getCollection("events", ({ data }) => {
+  return !data.draft && new Date(data.date) >= new Date();
+});
+
+// Count events per series type
+const eventCounts: Record<string, number> = {};
+allEvents.forEach(event => {
+  const type = event.data.eventType;
+  if (type) {
+    eventCounts[type] = (eventCounts[type] || 0) + 1;
+  }
+});
+
+// Series metadata for display
+const seriesInfo: Record<string, { icon: string; color: string; bgColor: string }> = {
+  enduro: { icon: "🏁", color: "text-blue-600", bgColor: "bg-blue-50" },
+  harescramble: { icon: "🏍️", color: "text-green-600", bgColor: "bg-green-50" },
+  fastkidz: { icon: "⭐", color: "text-yellow-600", bgColor: "bg-yellow-50" },
+  "dual-sport": { icon: "🌲", color: "text-orange-600", bgColor: "bg-orange-50" },
+};
+
+// Map series slug to event type
+const slugToEventType: Record<string, string> = {
+  enduro: "Enduro",
+  harescramble: "Hare Scramble",
+  fastkidz: "FastKIDZ",
+  "dual-sport": "Dual Sport",
+};
+---
+
+<BaseLayout
+  title="Racing Series - ECEA"
+  description="Explore ECEA racing series: Enduro, Hare Scramble, FastKIDZ youth racing, and Dual Sport adventures."
+>
+  <PageHeader
+    title="Racing Series"
+    subtitle="Four unique disciplines for every type of rider"
+    backgroundImage="/images/feature-bg.jpg"
+  />
+
+  <section class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {allSeries.map((series) => {
+          const info = seriesInfo[series.slug] || { icon: "🏁", color: "text-gray-600", bgColor: "bg-gray-50" };
+          const eventType = slugToEventType[series.slug];
+          const upcomingCount = eventType ? eventCounts[eventType] || 0 : 0;
+
+          return (
+            <a
+              href={`/series/${series.slug}`}
+              class={`group block p-8 rounded-xl border-2 border-gray-100 hover:border-primary-200 ${info.bgColor} hover:shadow-lg transition-all`}
+            >
+              <div class="flex items-start gap-4">
+                <span class="text-4xl">{info.icon}</span>
+                <div class="flex-1">
+                  <h2 class={`text-2xl font-bold mb-2 group-hover:text-primary-600 transition-colors`}>
+                    {series.data.name}
+                  </h2>
+                  <p class="text-gray-600 mb-4">{series.data.description}</p>
+
+                  {upcomingCount > 0 && (
+                    <div class="inline-flex items-center px-3 py-1 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm">
+                      <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                      {upcomingCount} upcoming event{upcomingCount !== 1 ? 's' : ''}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div class="mt-6 flex items-center text-primary-600 font-medium group-hover:translate-x-1 transition-transform">
+                View Series Details
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <!-- Quick Info -->
+      <div class="mt-16 bg-gray-900 text-white rounded-xl p-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">Which Series is Right for You?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center">
+            <span class="text-3xl mb-3 block">🏁</span>
+            <h3 class="font-bold mb-2">Enduro</h3>
+            <p class="text-gray-400 text-sm">Timed sections on challenging trails. Test your precision and endurance.</p>
+          </div>
+          <div class="text-center">
+            <span class="text-3xl mb-3 block">🏍️</span>
+            <h3 class="font-bold mb-2">Hare Scramble</h3>
+            <p class="text-gray-400 text-sm">Mass start racing on marked courses. First across the line wins.</p>
+          </div>
+          <div class="text-center">
+            <span class="text-3xl mb-3 block">⭐</span>
+            <h3 class="font-bold mb-2">FastKIDZ</h3>
+            <p class="text-gray-400 text-sm">Youth racing program for riders ages 4-15. Build skills safely.</p>
+          </div>
+          <div class="text-center">
+            <span class="text-3xl mb-3 block">🌲</span>
+            <h3 class="font-bold mb-2">Dual Sport</h3>
+            <p class="text-gray-400 text-sm">Street-legal adventure rides mixing pavement and trails.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

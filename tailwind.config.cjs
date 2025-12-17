@@ -45,8 +45,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Source Sans Pro"', 'system-ui', 'sans-serif'],
+        heading: ['Barlow', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

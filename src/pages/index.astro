@@ -6,6 +6,34 @@ import { getCollection } from "astro:content";
 import { formatDate } from "../utils/dateUtils";
 import heroBg from "@assets/images/feature-bg.jpg";
 
+// Sponsor images
+import kendaLogo from "@assets/images/sponsors/kenda1.png";
+import amsoilLogo from "@assets/images/sponsors/amsoil-logo.png";
+import hundredPercentLogo from "@assets/images/sponsors/100percent.png";
+import araiLogo from "@assets/images/sponsors/arai.png";
+import blackrockLogo from "@assets/images/sponsors/blackrock-synthetics.png";
+import dpBrakesLogo from "@assets/images/sponsors/dp-brakes-logo.png";
+import evansCoolantLogo from "@assets/images/sponsors/evans-coolant.png";
+import funnelwebLogo from "@assets/images/sponsors/funnelweb-logo.png";
+import liquimolyLogo from "@assets/images/sponsors/liquimoly.png";
+import revzillaLogo from "@assets/images/sponsors/revzilla.png";
+import vpFuelsLogo from "@assets/images/sponsors/vp-fuels.jpg";
+
+// Sponsor data
+const titleSponsor = { name: "Kenda Tires", logo: kendaLogo, url: "#" };
+const sponsors = [
+  { name: "AMSOIL", logo: amsoilLogo, url: "#" },
+  { name: "100%", logo: hundredPercentLogo, url: "#" },
+  { name: "Arai", logo: araiLogo, url: "#" },
+  { name: "Blackrock Synthetics", logo: blackrockLogo, url: "#" },
+  { name: "DP Brakes", logo: dpBrakesLogo, url: "#" },
+  { name: "Evans Coolant", logo: evansCoolantLogo, url: "#" },
+  { name: "Funnelweb", logo: funnelwebLogo, url: "#" },
+  { name: "Liqui Moly", logo: liquimolyLogo, url: "#" },
+  { name: "RevZilla", logo: revzillaLogo, url: "#" },
+  { name: "VP Fuels", logo: vpFuelsLogo, url: "#" },
+];
+
 // Get upcoming events
 const allEvents = await getCollection("events", ({ data }) => {
   return !data.draft && new Date(data.date) >= new Date();
@@ -24,9 +52,14 @@ const clubLogoMap = Object.fromEntries(
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? !data.draft : true;
 });
-const latestPosts = allPosts
-  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-  .slice(0, 4);
+const sortedPosts = allPosts
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+// Get latest announcement for the hero
+const latestAnnouncement = sortedPosts.find(post => post.data.category === 'announcement');
+
+// Get latest posts for news section (7 posts)
+const latestPosts = sortedPosts.slice(0, 7);
 
 // Helper to get event image
 const getEventImage = (event: typeof upcomingEvents[0]) => {
@@ -39,14 +72,14 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
 ---
 
 <BaseLayout>
-  <!-- Hero Section - Compact -->
+  <!-- Hero Section - Option B: Small Card Overlay -->
   <section
-    class="relative min-h-[50vh] flex items-center bg-cover bg-center pt-24 pb-16"
-    style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/images/feature-bg.jpg);"
+    class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url(/images/feature-bg.jpg);"
   >
     <div class="container">
-      <div class="max-w-3xl text-white">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
           East Coast Enduro Association
         </h1>
         <p class="text-xl md:text-2xl mb-8 text-white/90">
@@ -62,6 +95,35 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
         </div>
       </div>
     </div>
+
+    <!-- Featured Announcement Overlay Card -->
+    {latestAnnouncement && (
+      <a
+        href={`/blog/${latestAnnouncement.slug}`}
+        class="group absolute bottom-8 right-8 hidden lg:block w-80 bg-black/40 backdrop-blur-lg rounded-xl overflow-hidden border border-white/30 hover:bg-black/50 hover:border-white/50 transition-all duration-300 shadow-2xl"
+      >
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="px-2.5 py-1 bg-accent-600 text-white text-xs font-bold rounded uppercase tracking-wider">
+              Announcement
+            </span>
+            <span class="text-white/80 text-sm">{formatDate(latestAnnouncement.data.pubDate)}</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight">
+            {latestAnnouncement.data.title}
+          </h3>
+          <p class="text-white/70 text-sm mt-2 line-clamp-2">
+            {latestAnnouncement.data.description}
+          </p>
+          <div class="mt-3 flex items-center text-primary-400 text-sm font-medium group-hover:text-primary-300">
+            Read more
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
+      </a>
+    )}
   </section>
 
   <!-- Racing Series - Dark Banner with Button Links -->
@@ -159,8 +221,70 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
     </div>
   </section>
 
+  <!-- Sponsors Section -->
+  <section class="py-8 bg-gray-50 overflow-hidden">
+    <div class="container">
+      <!-- Title + Title Sponsor inline -->
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6">
+        <div class="text-center md:text-left">
+          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Proudly Supported By</span>
+          <h2 class="text-xl md:text-2xl font-bold">Our Sponsors</h2>
+        </div>
+        <div class="hidden md:block w-px h-12 bg-gray-300"></div>
+        <a
+          href={titleSponsor.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center gap-3"
+        >
+          <span class="text-xs uppercase tracking-wider text-gray-500">Title Sponsor</span>
+          <div class="bg-white rounded-lg px-4 py-2 border border-gray-200 group-hover:border-primary-300 transition-colors">
+            <Image
+              src={titleSponsor.logo}
+              alt={titleSponsor.name}
+              class="h-10 md:h-12 w-auto object-contain"
+            />
+          </div>
+        </a>
+      </div>
+
+      <!-- Sponsor Carousel -->
+      <div class="relative">
+        <div class="sponsor-carousel flex items-center gap-8 md:gap-12">
+          {[...sponsors, ...sponsors].map((sponsor) => (
+            <a
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-shrink-0 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+            >
+              <Image
+                src={sponsor.logo}
+                alt={sponsor.name}
+                class="h-8 md:h-10 w-auto object-contain"
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .sponsor-carousel {
+      animation: scroll 30s linear infinite;
+    }
+    .sponsor-carousel:hover {
+      animation-play-state: paused;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+
   <!-- Latest News -->
-  <section class="py-10 md:py-12 bg-gray-50">
+  <section class="py-10 md:py-12 bg-white">
     <div class="container">
       <div class="flex justify-between items-end mb-6">
         <div>
@@ -175,8 +299,8 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
         </a>
       </div>
 
-      <!-- Featured + Grid Layout -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+      <!-- Featured + Grid Layout for 7 posts -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
         {latestPosts.map((post, index) => {
           const isFeature = index === 0;
 
@@ -185,7 +309,7 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
               href={`/blog/${post.slug}`}
               class:list={[
                 "group relative overflow-hidden rounded-xl bg-gray-100",
-                isFeature ? "md:row-span-2 aspect-[4/3] md:aspect-auto" : "aspect-[16/9]"
+                isFeature ? "md:col-span-2 lg:col-span-2 aspect-[16/9] md:aspect-[2/1]" : "aspect-[16/9]"
               ]}
             >
               {post.data.image ? (
@@ -201,16 +325,26 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
 
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                <span class="text-white/70 text-sm">{formatDate(post.data.pubDate)}</span>
+              <div class="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+                <div class="flex items-center gap-2 mb-1">
+                  {post.data.category && (
+                    <span class:list={[
+                      "px-2 py-0.5 text-white text-xs font-medium rounded uppercase tracking-wider",
+                      post.data.category === 'announcement' ? 'bg-accent-600' : 'bg-primary-600/80'
+                    ]}>
+                      {post.data.category}
+                    </span>
+                  )}
+                  <span class="text-white/70 text-sm">{formatDate(post.data.pubDate)}</span>
+                </div>
                 <h3 class:list={[
-                  "font-bold text-white group-hover:text-primary-300 transition-colors mt-1",
-                  isFeature ? "text-xl md:text-2xl" : "text-lg"
+                  "font-bold text-white group-hover:text-primary-300 transition-colors",
+                  isFeature ? "text-lg md:text-xl" : "text-base md:text-lg line-clamp-2"
                 ]}>
                   {post.data.title}
                 </h3>
                 {isFeature && (
-                  <p class="text-white/70 text-sm mt-2 line-clamp-2 hidden md:block">{post.data.description}</p>
+                  <p class="text-white/70 text-sm mt-1 line-clamp-2 hidden md:block">{post.data.description}</p>
                 )}
               </div>
             </a>

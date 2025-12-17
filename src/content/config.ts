@@ -109,6 +109,9 @@ const blogCollection = defineCollection({
       pubDate: z.coerce.date(),
       description: z.string(),
       author: z.string().default('ECEA'),
+      category: z
+        .enum(['announcement', 'news', 'recap', 'article'])
+        .default('news'),
       image: z
         .object({
           src: image(),

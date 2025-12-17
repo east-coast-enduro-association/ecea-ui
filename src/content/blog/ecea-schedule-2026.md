@@ -3,6 +3,7 @@ title: ECEA Schedule 2026
 pubDate: '2025-12-13T03:09:29.483Z'
 description: Mark your calendars for a full year of racing
 author: Michael Abramo
+category: announcement
 draft: false
 image:
   src: '../../assets/blog/2026-ecea-event-schedule-announcement-111025.jpg'
