@@ -15,6 +15,7 @@ closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/tcsmc.png'
 flyer: '../../../assets/images/events/flyers/23-en-tcsmc-flyer.jpg'
+flyerPdf: '/attachments/events/23-en-tcsmc-flyer.pdf'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=1'
 ---
 

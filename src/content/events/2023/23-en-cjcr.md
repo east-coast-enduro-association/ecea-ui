@@ -15,6 +15,7 @@ closedCourse: false
 gasAway: false
 image: '../../../assets/images/logos/clubs/cjcr.jpg'
 flyer: '../../../assets/images/events/flyers/23-en-cjcr-flyer.jpg'
+flyerPdf: '/attachments/events/23-en-cjcr-flyer.pdf'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=4'
 downloads:
   - label: Confirmation Sheet (Revision 1)

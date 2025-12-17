@@ -15,6 +15,7 @@ closedCourse: true
 gasAway: true
 image: '../../../assets/images/logos/clubs/dvtr.jpg'
 flyer: '../../../assets/images/events/flyers/2023-en-dvtr-flyer.png'
+flyerPdf: '/attachments/events/2023-en-dvtr-flyer.pdf'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=9'
 downloads:
   - label: Confirmation Sheet

@@ -15,6 +15,7 @@ closedCourse: false
 gasAway: true
 image: '../../../assets/images/logos/clubs/ster.jpg'
 flyer: '../../../assets/images/events/flyers/2023-en-sper-flyer.jpg'
+flyerPdf: '/attachments/events/ster-2023-flyer.pdf'
 downloads:
   - label: Flyer
     url: /events/ster-2023-flyer.pdf

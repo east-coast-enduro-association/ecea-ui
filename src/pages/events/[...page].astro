@@ -1,65 +1,56 @@
 ---
-import type { GetStaticPaths } from "astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
 import Card from "../../components/UI/Card.astro";
-import Button from "../../components/UI/Button.astro";
 import { getCollection } from "astro:content";
 import { formatDate } from "../../utils/dateUtils";
-import { EVENT_TYPES } from "../../utils/constants";
 
-export const getStaticPaths = (async ({ paginate }) => {
-  const allEvents = await getCollection("events", ({ data }) => {
-    return import.meta.env.PROD ? !data.draft : true;
-  });
+// Fetch all events and clubs
+const allEvents = await getCollection("events", ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+});
 
-  const allClubs = await getCollection("clubs");
+const allClubs = await getCollection("clubs");
 
-  // Club Logo Map
-  const clubLogoMap: Record<string, any> = {};
-  allClubs.forEach((club) => {
-    if (club.data.abbreviatedName) {
-      clubLogoMap[club.data.abbreviatedName] = club.data.logo;
-    }
-  });
+// Club Logo Map
+const clubLogoMap: Record<string, any> = {};
+allClubs.forEach((club) => {
+  if (club.data.abbreviatedName) {
+    clubLogoMap[club.data.abbreviatedName] = club.data.logo;
+  }
+});
 
-  // Separate Upcoming and Past Events (Based on BUILD TIME)
-  const now = new Date();
-  now.setHours(0, 0, 0, 0);
+// Separate Upcoming and Past Events
+const now = new Date();
+now.setHours(0, 0, 0, 0);
 
-  const upcomingEvents = allEvents
-    .filter(event => new Date(event.data.date) >= now)
-    .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+const upcomingEvents = allEvents
+  .filter(event => new Date(event.data.date) >= now)
+  .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
 
-  const pastEvents = allEvents
-    .filter(event => new Date(event.data.date) < now)
-    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+const pastEvents = allEvents
+  .filter(event => new Date(event.data.date) < now)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-  // Extract filters
-  const eventTypes = [...new Set(allEvents.map(e => e.data.eventType).filter(Boolean))].sort();
-  const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filter(Boolean))].sort();
+// Extract filter options
+const eventTypes = [...new Set(allEvents.map(e => e.data.eventType).filter(Boolean))].sort();
+const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filter(Boolean))].sort();
 
-  // Paginate past events (12 per page)
-  return paginate(pastEvents, {
-    pageSize: 12,
-    props: { upcomingEvents, eventTypes, clubs, clubLogoMap, totalPastEvents: pastEvents.length }
-  });
-}) satisfies GetStaticPaths;
+// Initial items to show
+const ITEMS_PER_PAGE = 12;
 
-const { page, upcomingEvents, eventTypes, clubs, clubLogoMap, totalPastEvents } = Astro.props;
-
-// On page 1, show all upcoming events + paginated past events
-// On page 2+, show only past events (no upcoming section)
-const isFirstPage = page.currentPage === 1;
+export function getStaticPaths() {
+  return [{ params: { page: undefined } }];
+}
 ---
 
 <BaseLayout
-  title={isFirstPage ? "ECEA Events Calendar" : `Past Events - Page ${page.currentPage} - ECEA`}
+  title="ECEA Events Calendar"
   description="Upcoming Enduros, Hare Scrambles, and Dual Sports in the ECEA."
 >
   <PageHeader
-    title={isFirstPage ? "Event Schedule" : "Past Events"}
-    subtitle={isFirstPage ? "Enduros, Hare Scrambles, FastKIDZ, and Dual Sports" : `Page ${page.currentPage} of ${page.lastPage}`}
+    title="Event Schedule"
+    subtitle="Enduros, Hare Scrambles, FastKIDZ, and Dual Sports"
     backgroundImage="/images/feature-bg.jpg"
   />
 
@@ -96,88 +87,79 @@ const isFirstPage = page.currentPage === 1;
               Reset Filters
             </button>
 
-            <p class="text-xs text-gray-500 mt-4">
-              Filters apply to this page.
-            </p>
-
-            {!isFirstPage && (
-              <a href="/events" class="block mt-4 text-center text-primary-600 hover:text-primary-700 font-medium">
-                ← Back to Upcoming Events
-              </a>
-            )}
+            <p id="filter-status" class="text-sm text-gray-600 mt-4"></p>
           </div>
         </div>
 
         <div class="lg:col-span-3 space-y-12">
 
-          {/* Upcoming Events - Only on first page */}
-          {isFirstPage && (
-            <div id="upcoming-section">
-              <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2 flex items-center">
-                <span class="mr-2">📅</span> Upcoming Events
-                <span class="ml-auto text-sm font-normal text-gray-500">{upcomingEvents.length} events</span>
-              </h2>
+          {/* Upcoming Events */}
+          <div id="upcoming-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2 flex items-center">
+              <span class="mr-2">📅</span> Upcoming Events
+              <span id="upcoming-count" class="ml-auto text-sm font-normal text-gray-500">{upcomingEvents.length} events</span>
+            </h2>
 
-              {upcomingEvents.length > 0 ? (
-                <div id="upcoming-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {upcomingEvents.map((event) => {
-                    let displayImage = event.data.image ||
-                      (event.data.hostingClubs?.[0] ? clubLogoMap[event.data.hostingClubs[0]] : null) ||
-                      "/images/feature-bg.jpg";
+            {upcomingEvents.length > 0 ? (
+              <div id="upcoming-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {upcomingEvents.map((event) => {
+                  const displayImage = event.data.flyer || event.data.image ||
+                    (event.data.hostingClubs?.[0] ? clubLogoMap[event.data.hostingClubs[0]] : null);
 
-                    return (
-                      <Card
-                        title={event.data.title}
-                        image={{ src: displayImage, alt: event.data.title }}
-                        href={`/events/${event.slug}`}
-                        className="event-card upcoming"
-                        data-type={event.data.eventType || ""}
-                        data-club={event.data.hostingClubs?.[0] || ""}
-                        data-date={event.data.date.toISOString().slice(0, 10)}
-                      >
-                        <div class="mb-3 flex items-center text-primary-700 font-medium">
-                          <span class="mr-2">📅</span> {formatDate(event.data.date)}
+                  return (
+                    <Card
+                      title={event.data.title}
+                      image={displayImage ? { src: displayImage, alt: event.data.title } : undefined}
+                      href={`/events/${event.slug}`}
+                      className="event-card upcoming"
+                      data-type={event.data.eventType || ""}
+                      data-club={event.data.hostingClubs?.join(",") || ""}
+                      data-title={event.data.title.toLowerCase()}
+                      data-date={event.data.date.toISOString().slice(0, 10)}
+                    >
+                      <div class="mb-3 flex items-center text-primary-700 font-medium">
+                        <span class="mr-2">📅</span> {formatDate(event.data.date)}
+                      </div>
+                      {event.data.hostingClubs && (
+                        <div class="mb-3 flex items-center text-gray-600">
+                          <span class="mr-2">🏁</span> {event.data.hostingClubs.join(", ")}
                         </div>
-                        {event.data.hostingClubs && (
-                          <div class="mb-3 flex items-center text-gray-600">
-                            <span class="mr-2">🏁</span> {event.data.hostingClubs.join(", ")}
-                          </div>
-                        )}
-                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-3">
-                          {event.data.eventType}
-                        </span>
-                      </Card>
-                    );
-                  })}
-                </div>
-              ) : (
-                <p class="text-gray-500 italic">No upcoming events scheduled.</p>
-              )}
-            </div>
-          )}
+                      )}
+                      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-3">
+                        {event.data.eventType}
+                      </span>
+                    </Card>
+                  );
+                })}
+              </div>
+            ) : (
+              <p class="text-gray-500 italic">No upcoming events scheduled.</p>
+            )}
+          </div>
 
           {/* Past Events */}
           <div id="past-section">
             <h2 class="text-2xl font-bold mb-6 text-gray-500 border-b pb-2 flex items-center">
               <span class="mr-2">🕰️</span> Past Events
-              <span class="ml-auto text-sm font-normal">{totalPastEvents} total</span>
+              <span id="past-count" class="ml-auto text-sm font-normal">{pastEvents.length} total</span>
             </h2>
 
             <div id="past-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {page.data.map((event) => {
-                let displayImage = event.data.image ||
-                  (event.data.hostingClubs?.[0] ? clubLogoMap[event.data.hostingClubs[0]] : null) ||
-                  "/images/feature-bg.jpg";
+              {pastEvents.map((event, index) => {
+                const displayImage = event.data.flyer || event.data.image ||
+                  (event.data.hostingClubs?.[0] ? clubLogoMap[event.data.hostingClubs[0]] : null);
 
                 return (
                   <Card
                     title={event.data.title}
-                    image={{ src: displayImage, alt: event.data.title }}
+                    image={displayImage ? { src: displayImage, alt: event.data.title } : undefined}
                     href={`/events/${event.slug}`}
-                    className="event-card past grayscale hover:grayscale-0 transition-all"
+                    className={`event-card past grayscale hover:grayscale-0 transition-all ${index >= ITEMS_PER_PAGE ? 'hidden' : ''}`}
                     data-type={event.data.eventType || ""}
-                    data-club={event.data.hostingClubs?.[0] || ""}
+                    data-club={event.data.hostingClubs?.join(",") || ""}
+                    data-title={event.data.title.toLowerCase()}
                     data-date={event.data.date.toISOString().slice(0, 10)}
+                    data-index={index}
                   >
                     <div class="mb-3 flex items-center text-gray-500">
                       <span class="mr-2">📅</span> <span class="line-through">{formatDate(event.data.date)}</span>
@@ -195,96 +177,16 @@ const isFirstPage = page.currentPage === 1;
               })}
             </div>
 
-            {/* Pagination */}
-            {page.lastPage > 1 && (
-              <nav class="mt-12 flex justify-center" aria-label="Events pagination">
-                <ul class="flex items-center gap-1">
-                  <li>
-                    {page.url.prev ? (
-                      <a href={page.url.prev} class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors flex items-center gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                        Previous
-                      </a>
-                    ) : (
-                      <span class="px-4 py-2 rounded-lg border border-gray-200 text-gray-400 cursor-not-allowed flex items-center gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                        Previous
-                      </span>
-                    )}
-                  </li>
-
-                  {page.currentPage > 2 && (
-                    <li>
-                      <a href="/events" class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">1</a>
-                    </li>
-                  )}
-
-                  {page.currentPage > 3 && (
-                    <li><span class="px-2 py-2 text-gray-400">...</span></li>
-                  )}
-
-                  {page.currentPage > 1 && (
-                    <li>
-                      <a href={page.url.prev} class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
-                        {page.currentPage - 1}
-                      </a>
-                    </li>
-                  )}
-
-                  <li>
-                    <span class="px-4 py-2 rounded-lg bg-primary-600 text-white font-medium">{page.currentPage}</span>
-                  </li>
-
-                  {page.currentPage < page.lastPage && (
-                    <li>
-                      <a href={page.url.next} class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
-                        {page.currentPage + 1}
-                      </a>
-                    </li>
-                  )}
-
-                  {page.currentPage < page.lastPage - 2 && (
-                    <li><span class="px-2 py-2 text-gray-400">...</span></li>
-                  )}
-
-                  {page.currentPage < page.lastPage - 1 && (
-                    <li>
-                      <a href={`/events/${page.lastPage}`} class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
-                        {page.lastPage}
-                      </a>
-                    </li>
-                  )}
-
-                  <li>
-                    {page.url.next ? (
-                      <a href={page.url.next} class="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors flex items-center gap-1">
-                        Next
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                      </a>
-                    ) : (
-                      <span class="px-4 py-2 rounded-lg border border-gray-200 text-gray-400 cursor-not-allowed flex items-center gap-1">
-                        Next
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    )}
-                  </li>
-                </ul>
-              </nav>
-            )}
-
-            {/* Page Info */}
-            {page.lastPage > 1 && (
-              <p class="text-center text-gray-500 text-sm mt-4">
-                Showing {page.start + 1}-{page.end + 1} of {totalPastEvents} past events
-              </p>
+            {/* Load More Button */}
+            {pastEvents.length > ITEMS_PER_PAGE && (
+              <div id="load-more-container" class="mt-8 text-center">
+                <button id="load-more-btn" class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium">
+                  Load More Events
+                </button>
+                <p id="showing-count" class="text-sm text-gray-500 mt-2">
+                  Showing {ITEMS_PER_PAGE} of {pastEvents.length} past events
+                </p>
+              </div>
             )}
           </div>
 
@@ -298,61 +200,126 @@ const isFirstPage = page.currentPage === 1;
     </div>
   </section>
 
-  <script>
+  <script define:vars={{ ITEMS_PER_PAGE }}>
     document.addEventListener('DOMContentLoaded', () => {
-      // --- 1. AUTO-CORRECT DATES (The "Self-Healing" Logic) ---
-      const upcomingGrid = document.getElementById('upcoming-grid');
-      const pastGrid = document.getElementById('past-grid');
-      const today = new Date().toISOString().slice(0, 10);
-
-      if (upcomingGrid && pastGrid) {
-        const upcomingCards = upcomingGrid.querySelectorAll('.event-card');
-        upcomingCards.forEach(card => {
-          const eventDate = card.getAttribute('data-date');
-          if (eventDate && eventDate < today) {
-            card.classList.add('grayscale', 'opacity-75');
-            pastGrid.prepend(card);
-          }
-        });
-      }
-
-      // --- 2. FILTERING LOGIC ---
-      const searchInput = document.getElementById('search') as HTMLInputElement;
-      const typeSelect = document.getElementById('eventType') as HTMLSelectElement;
-      const clubSelect = document.getElementById('club') as HTMLSelectElement;
+      const searchInput = document.getElementById('search');
+      const typeSelect = document.getElementById('eventType');
+      const clubSelect = document.getElementById('club');
       const resetButton = document.getElementById('reset-filters');
       const clearSearchBtn = document.getElementById('clear-search-btn');
       const noResults = document.getElementById('no-results');
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      const loadMoreContainer = document.getElementById('load-more-container');
+      const showingCount = document.getElementById('showing-count');
+      const upcomingCount = document.getElementById('upcoming-count');
+      const pastCount = document.getElementById('past-count');
+      const filterStatus = document.getElementById('filter-status');
+      const upcomingSection = document.getElementById('upcoming-section');
+      const pastSection = document.getElementById('past-section');
+
+      let currentlyShowing = ITEMS_PER_PAGE;
+      let isFiltering = false;
 
       const filterEvents = () => {
         const searchTerm = searchInput?.value.toLowerCase() || '';
         const selectedType = typeSelect?.value || '';
         const selectedClub = clubSelect?.value || '';
 
-        let visibleCount = 0;
-        const allCards = document.querySelectorAll('.event-card') as NodeListOf<HTMLElement>;
+        isFiltering = !!(searchTerm || selectedType || selectedClub);
 
-        allCards.forEach(card => {
-          const title = card.querySelector('h3')?.textContent?.toLowerCase() || '';
+        let upcomingVisible = 0;
+        let pastVisible = 0;
+        let pastMatchingTotal = 0;
+
+        // Filter upcoming events
+        const upcomingCards = document.querySelectorAll('#upcoming-grid .event-card');
+        upcomingCards.forEach(card => {
+          const title = card.getAttribute('data-title') || '';
           const type = card.getAttribute('data-type') || '';
-          const club = card.getAttribute('data-club') || '';
+          const clubs = card.getAttribute('data-club') || '';
 
           const matchesSearch = title.includes(searchTerm);
           const matchesType = !selectedType || type === selectedType;
-          const matchesClub = !selectedClub || club === selectedClub;
+          const matchesClub = !selectedClub || clubs.split(',').includes(selectedClub);
 
           if (matchesSearch && matchesType && matchesClub) {
             card.style.display = 'block';
-            visibleCount++;
+            upcomingVisible++;
           } else {
             card.style.display = 'none';
           }
         });
 
+        // Filter past events
+        const pastCards = document.querySelectorAll('#past-grid .event-card');
+        pastCards.forEach((card, idx) => {
+          const title = card.getAttribute('data-title') || '';
+          const type = card.getAttribute('data-type') || '';
+          const clubs = card.getAttribute('data-club') || '';
+
+          const matchesSearch = title.includes(searchTerm);
+          const matchesType = !selectedType || type === selectedType;
+          const matchesClub = !selectedClub || clubs.split(',').includes(selectedClub);
+
+          if (matchesSearch && matchesType && matchesClub) {
+            pastMatchingTotal++;
+            // When filtering, show all matching events; otherwise respect pagination
+            if (isFiltering || pastMatchingTotal <= currentlyShowing) {
+              card.style.display = 'block';
+              card.classList.remove('hidden');
+              pastVisible++;
+            } else {
+              card.style.display = 'none';
+            }
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Update counts
+        if (upcomingCount) upcomingCount.textContent = `${upcomingVisible} events`;
+        if (pastCount) pastCount.textContent = `${pastMatchingTotal} total`;
+
+        // Show/hide sections based on results
+        if (upcomingSection) {
+          upcomingSection.style.display = upcomingVisible > 0 || !isFiltering ? 'block' : 'none';
+        }
+
+        // Update load more button
+        if (loadMoreContainer) {
+          if (isFiltering) {
+            loadMoreContainer.style.display = 'none';
+          } else {
+            loadMoreContainer.style.display = pastMatchingTotal > currentlyShowing ? 'block' : 'none';
+            if (showingCount) {
+              showingCount.textContent = `Showing ${Math.min(currentlyShowing, pastMatchingTotal)} of ${pastMatchingTotal} past events`;
+            }
+          }
+        }
+
+        // Show/hide no results message
+        const totalVisible = upcomingVisible + pastVisible;
         if (noResults) {
-          noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+          noResults.style.display = totalVisible === 0 ? 'block' : 'none';
+        }
+
+        // Update filter status
+        if (filterStatus) {
+          if (isFiltering) {
+            filterStatus.textContent = `Showing ${totalVisible} matching events`;
+          } else {
+            filterStatus.textContent = '';
+          }
         }
       };
+
+      // Load more functionality
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+          currentlyShowing += ITEMS_PER_PAGE;
+          filterEvents();
+        });
+      }
 
       searchInput?.addEventListener('input', filterEvents);
       typeSelect?.addEventListener('change', filterEvents);
@@ -362,11 +329,15 @@ const isFirstPage = page.currentPage === 1;
         if (searchInput) searchInput.value = '';
         if (typeSelect) typeSelect.value = '';
         if (clubSelect) clubSelect.value = '';
+        currentlyShowing = ITEMS_PER_PAGE;
         filterEvents();
-      }
+      };
 
       resetButton?.addEventListener('click', resetAll);
       clearSearchBtn?.addEventListener('click', resetAll);
+
+      // Initial filter to set up correct display
+      filterEvents();
     });
   </script>
 </BaseLayout>
