@@ -100,10 +100,67 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
             Get Started
           </Button>
         </div>
+
+        <!-- Featured Cards - Mobile only (below buttons) -->
+        {(pinnedPosts.length > 0 || latestAnnouncement) && (
+          <div class="mt-6 flex flex-col gap-3 lg:hidden">
+            {/* Pinned Posts - Mobile */}
+            {pinnedPosts.map((post) => (
+              <a
+                href={`/blog/${post.slug}`}
+                class="group bg-black/40 backdrop-blur-lg rounded-xl overflow-hidden border border-white/30 hover:bg-black/50 hover:border-white/50 transition-all duration-300"
+              >
+                <div class="p-4">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 bg-primary-600 text-white text-xs font-bold rounded uppercase tracking-wider">
+                      Featured
+                    </span>
+                    <span class="text-white/80 text-xs">{formatDate(post.data.pubDate)}</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight">
+                    {post.data.title}
+                  </h3>
+                  <div class="mt-2 flex items-center text-primary-400 text-sm font-medium group-hover:text-primary-300">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+
+            {/* Latest Announcement - Mobile */}
+            {latestAnnouncement && (
+              <a
+                href={`/blog/${latestAnnouncement.slug}`}
+                class="group bg-black/40 backdrop-blur-lg rounded-xl overflow-hidden border border-white/30 hover:bg-black/50 hover:border-white/50 transition-all duration-300"
+              >
+                <div class="p-4">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 bg-accent-600 text-white text-xs font-bold rounded uppercase tracking-wider">
+                      Announcement
+                    </span>
+                    <span class="text-white/80 text-xs">{formatDate(latestAnnouncement.data.pubDate)}</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight">
+                    {latestAnnouncement.data.title}
+                  </h3>
+                  <div class="mt-2 flex items-center text-primary-400 text-sm font-medium group-hover:text-primary-300">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
 
-    <!-- Featured Cards Overlay (Pinned + Announcement) -->
+    <!-- Featured Cards Overlay - Desktop only -->
     {(pinnedPosts.length > 0 || latestAnnouncement) && (
       <div class="absolute bottom-8 right-8 hidden lg:flex flex-col gap-3 w-80">
         {/* Pinned Posts */}

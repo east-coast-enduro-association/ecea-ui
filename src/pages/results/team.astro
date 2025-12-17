@@ -98,8 +98,8 @@ const getEventResults = (eventAbbr: string) => {
                 <table class="min-w-full divide-y divide-gray-200">
                   <thead class="bg-gray-900">
                     <tr>
-                      <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider sticky left-0 bg-gray-900 text-white z-10">Pos</th>
-                      <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider sticky left-12 bg-gray-900 text-white z-10">Club</th>
+                      <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider md:sticky left-0 bg-gray-900 text-white z-10">Pos</th>
+                      <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider md:sticky left-12 bg-gray-900 text-white z-10">Club</th>
                       <th class="px-4 py-3 text-center text-xs font-semibold uppercase tracking-wider bg-primary-700 text-white">Total</th>
                       {data.events.map(event => (
                         <th class={`px-3 py-3 text-center text-xs font-medium uppercase tracking-wider whitespace-nowrap ${event.completed ? 'text-white' : 'text-gray-500'}`}>
@@ -112,7 +112,7 @@ const getEventResults = (eventAbbr: string) => {
                   <tbody class="bg-white divide-y divide-gray-200">
                     {data.standings.map((standing, idx) => (
                       <tr class={idx < 3 ? "bg-amber-50/50" : idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                        <td class="px-4 py-3 whitespace-nowrap text-sm font-bold text-gray-900 sticky left-0 bg-inherit z-10">
+                        <td class="px-4 py-3 whitespace-nowrap text-sm font-bold text-gray-900 md:sticky left-0 bg-inherit z-10">
                           {standing.place <= 3 ? (
                             <span class={`inline-flex items-center justify-center w-6 h-6 rounded-full ${
                               standing.place === 1 ? 'bg-amber-400 text-amber-900' :
@@ -123,7 +123,7 @@ const getEventResults = (eventAbbr: string) => {
                             </span>
                           ) : standing.place}
                         </td>
-                        <td class="px-4 py-3 whitespace-nowrap sticky left-12 bg-inherit z-10">
+                        <td class="px-4 py-3 whitespace-nowrap md:sticky left-12 bg-inherit z-10">
                           {clubSlugMap[standing.club] ? (
                             <a href={`/clubs/${clubSlugMap[standing.club]}`} class="group">
                               <div class="text-sm font-bold text-gray-900 group-hover:text-primary-600 transition-colors">{standing.club}</div>
