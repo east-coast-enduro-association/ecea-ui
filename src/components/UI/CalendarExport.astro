@@ -1,7 +1,7 @@
 ---
 /**
- * CalendarExport - Download button for adding events to personal calendars
- * Generates ICS file compatible with Apple Calendar, Outlook, and Google Calendar
+ * CalendarExport - Buttons for adding events to personal calendars
+ * Supports Google Calendar, Apple Calendar, Outlook, and ICS download
  */
 import { createICSDataUrl, type ICSEvent } from '../../utils/calendarUtils';
 
@@ -15,23 +15,70 @@ const { events, class: className } = Astro.props;
 const icsDataUrl = createICSDataUrl(events);
 const eventCount = events.length;
 const eventText = eventCount === 1 ? 'event' : 'events';
+
+// Base URL for the hosted ICS file (for subscriptions)
+const siteUrl = import.meta.env.SITE || 'https://ecea.org';
+const icsSubscribeUrl = `${siteUrl}/calendar/ecea-events.ics`;
+const webcalUrl = icsSubscribeUrl.replace('https://', 'webcal://');
 ---
 
 <div class={`calendar-export ${className || ''}`}>
-  <h3 class="text-sm font-semibold text-gray-900 mb-3">Add to Calendar</h3>
+  <h3 class="text-sm font-semibold text-gray-900 mb-3">Subscribe to Calendar</h3>
 
-  <a
-    href={icsDataUrl}
-    download="ecea-events.ics"
-    class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
-  >
-    <svg class="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-    </svg>
-    <span>Download Calendar (.ics)</span>
-  </a>
+  <div class="space-y-2">
+    <!-- Google Calendar -->
+    <a
+      href={`https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcalUrl)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+    >
+      <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.5 22h-15A2.5 2.5 0 0 1 2 19.5v-15A2.5 2.5 0 0 1 4.5 2H6v1.5a.5.5 0 0 0 1 0V2h10v1.5a.5.5 0 0 0 1 0V2h1.5A2.5 2.5 0 0 1 22 4.5v15a2.5 2.5 0 0 1-2.5 2.5zM4.5 3A1.5 1.5 0 0 0 3 4.5v15A1.5 1.5 0 0 0 4.5 21h15a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 19.5 3H18v.5a1.5 1.5 0 0 1-3 0V3H9v.5a1.5 1.5 0 0 1-3 0V3H4.5z" fill="#4285F4"/>
+        <path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-9a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fill="#EA4335"/>
+      </svg>
+      <span>Google Calendar</span>
+    </a>
 
-  <p class="text-xs text-gray-500 mt-2">
-    Downloads {eventCount} upcoming {eventText} for Apple Calendar, Outlook, or Google Calendar
-  </p>
+    <!-- Apple Calendar (webcal) -->
+    <a
+      href={webcalUrl}
+      class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+    >
+      <svg class="w-4 h-4 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+      <span>Apple Calendar</span>
+    </a>
+
+    <!-- Outlook -->
+    <a
+      href={`https://outlook.live.com/calendar/0/addfromweb?url=${encodeURIComponent(icsSubscribeUrl)}&name=ECEA%20Events`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+    >
+      <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="#0078D4">
+        <path d="M24 7.387v10.478c0 .23-.08.424-.238.576-.16.154-.352.23-.578.23h-8.547v-6.959l1.6 1.229c.102.086.227.129.375.129a.548.548 0 0 0 .375-.13l5.81-4.48a.624.624 0 0 0 .165-.207.487.487 0 0 0 .05-.191V7.39c0-.09-.027-.16-.082-.207a.228.228 0 0 0-.191-.054.56.56 0 0 0-.246.11l-5.88 4.507-1.976-1.518V6.33h8.547c.226 0 .418.074.578.223.158.148.238.337.238.57v.265zm-10.363 4.478V18.4c0 .236-.08.436-.238.598a.794.794 0 0 1-.586.242H.824a.794.794 0 0 1-.586-.242A.825.825 0 0 1 0 18.4V5.6c0-.235.08-.434.238-.597a.794.794 0 0 1 .586-.242h11.989c.234 0 .43.08.586.242.159.163.238.362.238.597v6.065zm-1.64-3.856L6.406 12.03 .824 8.009v9.664h11.173V8.009z"/>
+      </svg>
+      <span>Outlook</span>
+    </a>
+  </div>
+
+  <div class="mt-4 pt-4 border-t border-gray-200">
+    <h4 class="text-xs font-medium text-gray-700 mb-2">Or download file</h4>
+    <a
+      href={icsDataUrl}
+      download="ecea-events.ics"
+      class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+    >
+      <svg class="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+      </svg>
+      <span>Download .ics file</span>
+    </a>
+    <p class="text-xs text-gray-500 mt-2">
+      {eventCount} upcoming {eventText}
+    </p>
+  </div>
 </div>
