@@ -4,11 +4,11 @@ The official website for the East Coast Enduro Association, built with Astro. Th
 
 ## Tech Stack
 
-- **[Astro](https://astro.build/)** - Static site generator with excellent performance and developer experience
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework for styling
-- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript for better developer experience
-- **[Astro Content Collections](https://docs.astro.build/en/guides/content-collections/)** - Type-safe content management using Markdown files
-- **[Decap CMS](https://decapcms.org/)** (optional) - Git-based headless CMS for content editing
+- **[Astro](https://astro.build/)** - Static site generator with excellent performance
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[Astro Content Collections](https://docs.astro.build/en/guides/content-collections/)** - Type-safe Markdown content management
+- **[Netlify](https://netlify.com/)** - Hosting and deployment
 
 ## Project Structure
 
@@ -16,29 +16,49 @@ The official website for the East Coast Enduro Association, built with Astro. Th
 src/
 ├── assets/           # Images processed by Astro (optimized at build time)
 │   ├── blog/         # Blog post images
-│   └── images/       # General images and logos
+│   └── images/       # General images, logos, flyers
 ├── components/       # Reusable Astro components
 │   ├── Cards/        # Card components (BlogCard, EventCard)
 │   ├── Global/       # Site-wide components (Header, Footer, Navigation)
 │   ├── Icons/        # Reusable SVG icon components
 │   ├── Sections/     # Page section components (HeroSection, PageHeader)
-│   └── UI/           # UI components (Button, Card, Seo)
+│   └── UI/           # UI components (Button, Card, Seo, MiniCalendar, CalendarExport)
 ├── content/          # Markdown content files (Content Collections)
-│   ├── blog/         # Blog posts
-│   ├── clubs/        # Club information
-│   ├── events/       # Event listings
-│   ├── series/       # Racing series descriptions
+│   ├── blog/         # Blog posts and announcements
+│   ├── board/        # Board member information
+│   ├── clubs/        # Club profiles
+│   ├── events/       # Event listings (organized by year)
+│   ├── members/      # Protected member resources
+│   ├── pages/        # Static page content
+│   ├── series/       # Racing series (Enduro, Hare Scramble, etc.)
+│   ├── siteInfo/     # Site configuration (sponsors, etc.)
+│   ├── teamResults/  # Team competition results data
 │   └── config.ts     # Content collection schemas
 ├── layouts/          # Page layouts (BaseLayout, PostLayout)
 ├── pages/            # Astro pages (routes)
+├── scripts/          # Client-side TypeScript modules
+│   └── miniCalendar.ts  # Calendar navigation and tooltip logic
 └── utils/            # Utility functions and constants
-    └── constants.ts  # Site-wide configuration and constants
+    ├── calendarUtils.ts  # Calendar utilities and ICS generation
+    ├── constants.ts      # Site-wide configuration
+    └── dateUtils.ts      # Date formatting helpers
 
 public/
-├── documents/        # PDFs (rulebook, welcome book)
-├── images/           # Static images (backgrounds, etc.)
-└── uploads/          # User-uploaded content
+├── attachments/      # PDFs and downloadable files
+├── documents/        # Rulebook, welcome book
+└── images/           # Static images (backgrounds)
 ```
+
+## Content Overview
+
+| Collection | Count | Description |
+|------------|-------|-------------|
+| `blog/` | ~60 | News, announcements, recaps |
+| `events/` | ~150 | Race events by year (2023-2026) |
+| `clubs/` | 19 | Member club profiles |
+| `series/` | 4 | Enduro, Hare Scramble, FastKIDZ, Dual Sport |
+| `board/` | 6 | Board member bios |
+| `teamResults/` | 1 | Team competition standings (JSON-like) |
 
 ## Getting Started
 
@@ -49,25 +69,23 @@ public/
 
 ### Installation
 
-1. Clone the repository and navigate to the project:
-   ```bash
-   git clone https://github.com/east-coast-enduro-association/ecea-ui.git
-   cd ecea-ui
-   git worktree add migration-complete migration-complete
-   cd migration-complete
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/east-coast-enduro-association/ecea-ui.git
+cd ecea-ui
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+# Switch to the Astro branch
+git worktree add migration-complete migration-complete
+cd migration-complete
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+# Install dependencies
+npm install
 
-4. Open your browser to `http://localhost:4321`
+# Start development server
+npm run dev
+```
+
+Open your browser to `http://localhost:4321`
 
 ### Available Scripts
 
@@ -76,16 +94,14 @@ public/
 | `npm run dev` | Start development server with hot reload |
 | `npm run build` | Build production site to `dist/` |
 | `npm run preview` | Preview production build locally |
-| `npm run astro` | Run Astro CLI commands |
 
-## Adding and Editing Content
+## Adding Content
 
-All content is stored as Markdown files in the `src/content/` directory. Each content type has a defined schema in `src/content/config.ts`.
+All content is stored as Markdown files in `src/content/`. Each content type has a defined schema in `src/content/config.ts`.
 
-### Creating a New Blog Post
+### Blog Posts
 
-1. Create a new `.md` file in `src/content/blog/` (filename becomes the URL slug)
-2. Add the required frontmatter:
+Create a new `.md` file in `src/content/blog/`:
 
 ```markdown
 ---
@@ -97,27 +113,19 @@ category: "announcement"
 tags:
   - news
   - racing
-summary: "A brief description for previews and SEO"
+description: "A brief description for previews and SEO"
 draft: false
+pinned: false
 ---
 
-Your post content goes here in Markdown format...
+Your post content in Markdown...
 ```
 
-**Frontmatter Fields:**
-- `title` (required) - Post title
-- `pubDate` (required) - Publication date (YYYY-MM-DD)
-- `author` (required) - Author name
-- `image` (optional) - Path to featured image
-- `category` (required) - One of: `announcement`, `news`, `recap`, `article`
-- `tags` (optional) - Array of tags for filtering
-- `summary` (required) - Short description
-- `draft` (optional) - Set to `true` to hide in production
+**Categories:** `announcement`, `news`, `recap`, `article`
 
-### Creating a New Event
+### Events
 
-1. Create a new `.md` file in `src/content/events/`
-2. Add the required frontmatter:
+Create in `src/content/events/YYYY/` (organized by year):
 
 ```markdown
 ---
@@ -125,36 +133,38 @@ title: "Event Name Enduro"
 date: 2025-03-15
 time: "9:00 AM"
 location: "Event Location, PA"
-club: "ABC"
+hostingClubs:
+  - "ABC"
 eventType: "Enduro"
-flyerImage: "../../assets/images/flyers/event-flyer.jpg"
+image: "../../assets/images/flyers/event-flyer.jpg"
 registrationLink: "https://registration-url.com"
 resultsLink: ""
-summary: "Brief event description"
+description: "Brief event description"
 draft: false
 ---
 
-Additional event details and information...
+Additional event details...
 ```
 
-**Event Types:** `Enduro`, `Hare Scramble`, `FastKIDZ`, `Dual Sport`, `Fun Ride`, `ECEA`, `Special`, `Meeting`
+**Event Types:** `Enduro`, `Hare Scramble`, `FastKIDZ`, `Dual Sport`, `Fun Ride`, `Special`, `Meeting`
 
-### Editing Club Information
+### Clubs
 
-Club files are in `src/content/clubs/`. Each club has:
+Club files in `src/content/clubs/`:
 
 ```markdown
 ---
 name: "Full Club Name"
 abbreviatedName: "FCN"
 logo: "../../assets/images/logos/clubs/club-logo.jpg"
-summary: "Brief description"
-draft: false
+description: "Brief description"
 website: "https://club-website.com"
+facebookGroup: "https://facebook.com/groups/..."
 president: "President Name"
-contact: "email@club.org"
-order: 1
+email: "email@club.org"
 location: "City, State"
+order: 1
+draft: false
 ---
 
 ## About Our Club
@@ -162,132 +172,113 @@ location: "City, State"
 Club description and history...
 ```
 
-### Editing Racing Series
-
-Series files are in `src/content/series/`:
-
-```markdown
----
-name: "Series Name"
-description: "Brief series description"
-draft: false
----
-
-Detailed series information...
-```
-
 ## Configuration
 
-### Site-Wide Constants
+### Site Constants (`src/utils/constants.ts`)
 
-Edit `src/utils/constants.ts` to change:
-
-- **SITE_INFO** - Site name, tagline, email
-- **NAV_ITEMS** - Main navigation links
-- **FOOTER_NAV** - Footer navigation groups
-- **SERIES_LINKS** - Racing series quick links with icons
-- **DISPLAY_LIMITS** - Number of items to show on pages
-- **EVENT_TYPES** - Available event type options
-- **BLOG_CATEGORIES** - Available blog categories
+- **SITE_INFO** - Site name, tagline, contact email
+- **NAV_ITEMS** - Main navigation structure
+- **FOOTER_NAV** - Footer link groups
+- **SERIES_LINKS** - Racing series quick links
+- **DISPLAY_LIMITS** - Items per page for lists
+- **EVENT_TYPES** - Available event categories
+- **BLOG_CATEGORIES** - Blog category options
 
 ### Styling
 
-- **Tailwind Config** - `tailwind.config.mjs` for colors, fonts, spacing
-- **Global Styles** - `src/assets/styles/global.css`
-- **Primary Color** - Defined in Tailwind config (currently red/maroon theme)
+- **Tailwind Config** - `tailwind.config.cjs` for colors, fonts
+- **Primary Color** - Red/maroon theme (#dc2626)
 
-### Adding Images
+## Features
 
-**For blog/content images (optimized by Astro):**
-1. Add images to `src/assets/blog/` or `src/assets/images/`
-2. Reference with relative path: `../../assets/blog/image.jpg`
+### Events Calendar
 
-**For static images (not processed):**
-1. Add to `public/images/` or `public/uploads/`
-2. Reference with absolute path: `/images/image.jpg`
+The events page includes a visual mini calendar in the sidebar:
 
-## Testing
+- **Visual Calendar** - Month view with navigation showing dots for days with events
+- **Clickable Dots** - Click event dots to see a tooltip with event titles and links
+- **Calendar Export** - Download all upcoming events as an ICS file for Apple Calendar, Outlook, or Google Calendar
 
-### Local Testing
-
-```bash
-# Run development server
-npm run dev
-
-# Build and preview production version
-npm run build && npm run preview
-```
-
-### What to Test
-
-1. **Navigation** - All links work, mobile menu functions
-2. **Events Page** - Upcoming/past events display correctly, pagination works
-3. **Blog** - Posts display, category filter works, pagination works
-4. **Clubs** - Club cards display with location, detail pages work
-5. **Contact Reveal** - Click-to-reveal on club pages protects email addresses
-6. **Responsive** - Test on mobile, tablet, and desktop sizes
-7. **SEO** - Check meta tags, sitemap generation
+**Components:**
+- `src/components/UI/MiniCalendar.astro` - Calendar component with month navigation
+- `src/components/UI/CalendarExport.astro` - ICS download button
+- `src/scripts/miniCalendar.ts` - Client-side calendar logic (rendering, tooltips)
+- `src/utils/calendarUtils.ts` - Shared utilities for date handling and ICS generation
 
 ## Deployment
 
-This site deploys automatically via Netlify when changes are pushed to the main branch.
+The site deploys automatically via Netlify when changes are pushed.
 
-### Manual Deployment
-
-1. Build the site:
-   ```bash
-   npm run build
-   ```
-
-2. The `dist/` folder contains the complete static site
-
-### Deployment Platforms
-
-**Netlify (Recommended):**
-- Connect your GitHub repository
+**Build Settings:**
 - Build command: `npm run build`
 - Publish directory: `dist`
+- Node version: 18+
 
-**Vercel:**
-- Import from GitHub
-- Auto-detects Astro settings
+## Known Issues & Future Work
 
-**Cloudflare Pages:**
-- Build command: `npm run build`
-- Output directory: `dist`
+### Media Storage (Priority)
 
-### Environment Variables
+Currently, ~180MB of images are stored in the git repository. This causes:
+- Slow clones and pulls
+- Repository bloat over time
+- Difficult for non-technical contributors
 
-No environment variables are required for basic operation. For CMS integration, configure according to your CMS provider's documentation.
+**Recommended Solutions:**
 
-## Content Management (CMS)
+1. **Cloudinary** - Move images to Cloudinary CDN
+   - Free tier: 25GB storage, 25GB bandwidth/month
+   - Automatic image optimization
+   - Easy integration with any CMS
 
-The site supports integration with Git-based headless CMS solutions:
+2. **S3 + CloudFront** - AWS storage
+   - Cheapest at scale
+   - More setup required
 
-- **[Decap CMS](https://decapcms.org/)** - Add config to `public/admin/config.yml`
-- **[TinaCMS](https://tina.io/)** - Install and configure per TinaCMS docs
-- **[Sveltia CMS](https://github.com/sveltia/sveltia-cms)** - Drop-in Decap CMS alternative
+### CMS Integration (Recommended)
 
-## Contributing
+For easier content management, consider:
 
-1. Create a feature branch from `master`
-2. Make your changes
-3. Test locally with `npm run dev` and `npm run build`
-4. Submit a pull request
+| CMS | Pros | Cons |
+|-----|------|------|
+| **[Sanity](https://sanity.io)** | Built-in media hosting, modern UI, real-time collaboration | Content not in git |
+| **[TinaCMS](https://tina.io)** | Git-based, visual editing, live preview | Paid for teams |
+| **[Decap CMS](https://decapcms.org)** | Free, simple, git-based | Dated UI |
 
-## Key Files Reference
+**Recommended:** Sanity + Cloudinary for media would reduce repo to ~2MB while providing a polished editing experience.
+
+## Testing Checklist
+
+- [ ] Navigation - All links work, mobile menu functions
+- [ ] Events - Upcoming/past display, filters work, pagination
+- [ ] Events Calendar - Mini calendar shows dots, tooltips work, month navigation
+- [ ] Calendar Export - ICS download works, opens in calendar apps
+- [ ] Blog - Posts display, category filter, pagination
+- [ ] Clubs - Cards display with logos, detail pages load
+- [ ] Results - Team results table scrolls properly on mobile
+- [ ] Responsive - Mobile, tablet, and desktop layouts
+- [ ] Build - `npm run build` completes without errors
+
+## Key Files
 
 | File | Purpose |
 |------|---------|
-| `src/utils/constants.ts` | Site configuration, navigation, limits |
+| `src/utils/constants.ts` | Site config, navigation, limits |
+| `src/utils/calendarUtils.ts` | Calendar utilities, ICS generation |
 | `src/content/config.ts` | Content collection schemas |
-| `tailwind.config.mjs` | Tailwind CSS customization |
+| `tailwind.config.cjs` | Tailwind CSS customization |
 | `astro.config.mjs` | Astro configuration |
+| `netlify.toml` | Netlify build settings |
+
+## Contributing
+
+1. Create a feature branch from `migration-complete`
+2. Make changes and test locally
+3. Run `npm run build` to verify no errors
+4. Submit a pull request
 
 ## Support
 
-For questions or issues:
-- Open an issue on [GitHub](https://github.com/east-coast-enduro-association/ecea-ui/issues)
+- [GitHub Issues](https://github.com/east-coast-enduro-association/ecea-ui/issues)
 - Contact the ECEA board
 
 ---
