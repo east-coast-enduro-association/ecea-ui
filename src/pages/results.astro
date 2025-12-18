@@ -17,7 +17,7 @@ const topTeams = teamData?.standings.slice(0, 5) || [];
 // Get clubs collection for slug mapping
 const clubs = await getCollection("clubs");
 const clubSlugMap = Object.fromEntries(
-  clubs.map(club => [club.data.abbreviatedName, club.id])
+  clubs.map(club => [club.data.abbreviatedName, club.slug])
 );
 
 // Competitive event types that use Moto-Tally

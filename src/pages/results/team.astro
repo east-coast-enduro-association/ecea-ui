@@ -13,7 +13,7 @@ const clubNameMap = Object.fromEntries(
   clubs.map(club => [club.data.abbreviatedName, club.data.name])
 );
 const clubSlugMap = Object.fromEntries(
-  clubs.map(club => [club.data.abbreviatedName, club.id])
+  clubs.map(club => [club.data.abbreviatedName, club.slug])
 );
 
 // Sort events by date for display
