@@ -2,25 +2,35 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
 import Card from "../../components/UI/Card.astro";
+import MiniCalendar from "../../components/UI/MiniCalendar.astro";
+import CalendarExport from "../../components/UI/CalendarExport.astro";
 import { getCollection } from "astro:content";
 import { formatDate } from "../../utils/dateUtils";
+import { groupEventsByDate, type ICSEvent } from "../../utils/calendarUtils";
+import { DISPLAY_LIMITS } from "../../utils/constants";
 
-// Fetch all events and clubs
+// ============================================================================
+// Data Fetching
+// ============================================================================
+
 const allEvents = await getCollection("events", ({ data }) => {
   return import.meta.env.PROD ? !data.draft : true;
 });
 
 const allClubs = await getCollection("clubs");
 
-// Club Logo Map
-const clubLogoMap: Record<string, any> = {};
-allClubs.forEach((club) => {
-  if (club.data.abbreviatedName) {
-    clubLogoMap[club.data.abbreviatedName] = club.data.logo;
-  }
-});
+// ============================================================================
+// Data Transformations
+// ============================================================================
 
-// Separate Upcoming and Past Events
+// Create club logo lookup map
+const clubLogoMap = Object.fromEntries(
+  allClubs
+    .filter(club => club.data.abbreviatedName)
+    .map(club => [club.data.abbreviatedName, club.data.logo])
+);
+
+// Partition events into upcoming and past
 const now = new Date();
 now.setHours(0, 0, 0, 0);
 
@@ -32,12 +42,25 @@ const pastEvents = allEvents
   .filter(event => new Date(event.data.date) < now)
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-// Extract filter options
+// Extract unique filter options
 const eventTypes = [...new Set(allEvents.map(e => e.data.eventType).filter(Boolean))].sort();
 const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filter(Boolean))].sort();
 
-// Initial items to show
-const ITEMS_PER_PAGE = 12;
+// Group events by date for calendar display
+const eventsByDate = groupEventsByDate(allEvents);
+
+// Prepare events for ICS export
+const calendarEvents: ICSEvent[] = upcomingEvents.map(event => ({
+  title: event.data.title,
+  date: event.data.date,
+  endDate: event.data.endDate,
+  location: event.data.location || '',
+  summary: event.data.summary || '',
+  slug: event.slug,
+}));
+
+// Pagination
+const ITEMS_PER_PAGE = DISPLAY_LIMITS.upcomingEventsPerPage;
 
 export function getStaticPaths() {
   return [{ params: { page: undefined } }];
@@ -88,6 +111,17 @@ export function getStaticPaths() {
             </button>
 
             <p id="filter-status" class="text-sm text-gray-600 mt-4"></p>
+
+            <!-- Visual Calendar -->
+            <div class="mt-6 pt-6 border-t border-gray-200">
+              <h2 class="text-lg font-bold mb-4">Calendar View</h2>
+              <MiniCalendar eventsByDate={eventsByDate} />
+            </div>
+
+            <!-- Add to Calendar -->
+            <div class="mt-6 pt-6 border-t border-gray-200">
+              <CalendarExport events={calendarEvents} />
+            </div>
           </div>
         </div>
 
