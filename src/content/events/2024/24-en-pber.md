@@ -13,8 +13,8 @@ keyTime: '2024-11-24T09:00:20.513Z'
 checkInTime: '2024-11-24T07:00:00.000Z'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/pber.webp'
-flyer: '../../../assets/images/events/flyers/24-en-pber-flyer_page-0001.jpg'
+image: '../../../assets/clubs/logos/pber.webp'
+flyer: '../../../assets/events/flyers/24-en-pber-flyer_page-0001.jpg'
 downloads:
   - label: Confirmation Sheet
     url: /events/2024-clock-run-confirmation.pdf

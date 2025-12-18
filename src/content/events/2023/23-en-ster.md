@@ -13,8 +13,8 @@ keyTime: '2023-07-09T09:00:00'
 checkInTime: '2023-07-09T07:00:00'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/ster.jpg'
-flyer: '../../../assets/images/events/flyers/2023-en-sper-flyer.jpg'
+image: '../../../assets/clubs/logos/ster.jpg'
+flyer: '../../../assets/events/flyers/2023-en-sper-flyer.jpg'
 flyerPdf: '/attachments/events/ster-2023-flyer.pdf'
 downloads:
   - label: Flyer

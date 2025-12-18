@@ -13,8 +13,8 @@ series: Hare Scramble Series
 checkInTime: '2025-05-04T11:00:00.000Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/cdr.png'
-flyer: '../../../assets/images/events/flyers/25_cdr_ormand_hs.jpg'
+image: '../../../assets/clubs/logos/cdr.png'
+flyer: '../../../assets/events/flyers/25_cdr_ormand_hs.jpg'
 ---
 **RIDER LIMIT for Sunday, ONLINE SIGN UP ONLY., You need a Series Number** to use the online system\
 GATES open Friday 7PM. SATURDAY 8AM, SUNDAY 6am

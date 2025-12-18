@@ -13,7 +13,7 @@ series: Special Series
 checkInTime: '2024-05-24T22:30:12.374Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/2023-series-east-irc-logo-black-with-color-logos.png'
+image: '../../../assets/ecea/logos/2023-series-east-irc-logo-black-with-color-logos.png'
 ---
 INFO coming.\
 \

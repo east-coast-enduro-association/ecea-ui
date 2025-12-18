@@ -14,7 +14,7 @@ keyTime: '2023-09-17T09:00:00'
 checkInTime: '2023-09-17T07:00:00'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/vftr.jpg'
+image: '../../../assets/clubs/logos/vftr.jpg'
 ---
 
 This event is co-hosted between [Valley Forge Trail Riders](/clubs/vftr) and [Reading Off Road Riders](/clubs/rorr). Top notch event with a ton of variety.

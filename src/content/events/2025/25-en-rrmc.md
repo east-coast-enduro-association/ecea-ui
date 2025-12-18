@@ -13,8 +13,8 @@ keyTime: '2025-06-08T09:00:00'
 checkInTime: '2025-06-08T07:00:00'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/rrmc-large.png'
-flyer: '../../../assets/images/events/flyers/jim-smith-memorial-enduro-2-.jpg'
+image: '../../../assets/clubs/logos/rrmc-large.png'
+flyer: '../../../assets/events/flyers/jim-smith-memorial-enduro-2-.jpg'
 startGridLink: 'https://www.moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=6'
 downloads:
   - label: Confirmation

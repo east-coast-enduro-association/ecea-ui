@@ -5,7 +5,7 @@ description: Better luck next time
 author: Kelli Silvers
 draft: false
 image:
-  src: '@assets/images/logos/clubs/tcsmc.png'
+  src: '@assets/clubs/logos/tcsmc.png'
   alt: Greenbrier Sold Out... Again
 tags:
   - '2023'

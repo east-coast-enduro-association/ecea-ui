@@ -1,7 +1,7 @@
 ---
 name: Southern Tier Enduro Riders
 abbreviatedName: STER
-logo: '../../assets/images/logos/clubs/ster.jpg'
+logo: '../../assets/clubs/logos/ster.jpg'
 summary: STER
 draft: false
 website: ''

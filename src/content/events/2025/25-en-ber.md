@@ -13,7 +13,7 @@ keyTime: '2025-07-27T09:00:00'
 checkInTime: '2025-07-27T07:00:00'
 closedCourse: true
 gasAway: true
-image: '../../../assets/images/logos/clubs/ber.gif'
+image: '../../../assets/clubs/logos/ber.gif'
 ---
 BER are bringing NEPG to PA. This one sells out fast (like, in 20 minutes or less), so be ready to sign up quickly! Note that signups do NOT happen on moto-tally. They will be present on LiveLaps and can be accessed here https://www.livelaps.com/event?16020 
 

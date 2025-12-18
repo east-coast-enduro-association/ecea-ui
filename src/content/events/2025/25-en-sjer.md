@@ -13,8 +13,8 @@ keyTime: '2025-03-16T09:00:00'
 checkInTime: '2025-03-16T07:00:00'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/sjer-green.png'
-flyer: '../../../assets/images/events/flyers/25-en-sjer-flyer.jpg'
+image: '../../../assets/clubs/logos/sjer-green.png'
+flyer: '../../../assets/events/flyers/25-en-sjer-flyer.jpg'
 startGridLink: 'https://moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=2'
 downloads:
   - label: State Waiver (Print and Sign)

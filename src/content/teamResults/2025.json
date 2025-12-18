@@ -14,7 +14,7 @@
     { "abbr": "BER", "name": "Rattlesnake Enduro", "date": "2025-07-27", "completed": true },
     { "abbr": "GMER", "name": "Three Springs", "date": "2025-08-10", "completed": true },
     { "abbr": "IDR", "name": "Ithaca Sprint", "date": "2025-08-17", "completed": true },
-    { "abbr": "CDR", "name": "Beehive", "date": "2025-08-24", "completed": true },
+    { "abbr": "CDR", "name": "Clock Run", "date": "2025-08-24", "completed": true },
     { "abbr": "SPER", "name": "Michaux", "date": "2025-09-07", "completed": true },
     { "abbr": "VFTR", "name": "Moonshine", "date": "2025-09-21", "completed": true },
     { "abbr": "OCCR", "name": "TBD", "date": "2025-10-26", "completed": false },
@@ -26,153 +26,457 @@
       "place": 1,
       "club": "OCCR",
       "total": 283,
-      "results": {
-        "TCSMC": 20, "SJER": 25, "MMC": 25, "CJCR": 20, "RRMC": 20, "HMDR": 25, "STER": 20, "DVTR": 0, "BER": 25, "GMER": 22, "IDR": 25, "CDR": 22, "SPER": 18, "VFTR": 16, "OCCR": "W", "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "20" },
+        { "event": "SJER", "points": "25" },
+        { "event": "MMC", "points": "25" },
+        { "event": "CJCR", "points": "20" },
+        { "event": "RRMC", "points": "20" },
+        { "event": "HMDR", "points": "25" },
+        { "event": "STER", "points": "20" },
+        { "event": "DVTR", "points": "0" },
+        { "event": "BER", "points": "25" },
+        { "event": "GMER", "points": "22" },
+        { "event": "IDR", "points": "25" },
+        { "event": "CDR", "points": "22" },
+        { "event": "SPER", "points": "18" },
+        { "event": "VFTR", "points": "16" },
+        { "event": "OCCR", "points": "W" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 2,
       "club": "SPER",
       "total": 262,
-      "results": {
-        "TCSMC": 15, "SJER": 14, "MMC": 20, "CJCR": 13, "RRMC": 25, "HMDR": 22, "STER": 22, "DVTR": 25, "BER": 18, "GMER": 25, "IDR": 22, "CDR": 16, "SPER": "W", "VFTR": 25, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "15" },
+        { "event": "SJER", "points": "14" },
+        { "event": "MMC", "points": "20" },
+        { "event": "CJCR", "points": "13" },
+        { "event": "RRMC", "points": "25" },
+        { "event": "HMDR", "points": "22" },
+        { "event": "STER", "points": "22" },
+        { "event": "DVTR", "points": "25" },
+        { "event": "BER", "points": "18" },
+        { "event": "GMER", "points": "25" },
+        { "event": "IDR", "points": "22" },
+        { "event": "CDR", "points": "16" },
+        { "event": "SPER", "points": "W" },
+        { "event": "VFTR", "points": "25" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 3,
       "club": "DER",
       "total": 253,
-      "results": {
-        "TCSMC": 16, "SJER": 16, "MMC": 18, "CJCR": 18, "RRMC": 22, "HMDR": 18, "STER": 25, "DVTR": 22, "BER": 16, "GMER": 20, "IDR": 20, "CDR": "W", "SPER": 20, "VFTR": 22, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "16" },
+        { "event": "SJER", "points": "16" },
+        { "event": "MMC", "points": "18" },
+        { "event": "CJCR", "points": "18" },
+        { "event": "RRMC", "points": "22" },
+        { "event": "HMDR", "points": "18" },
+        { "event": "STER", "points": "25" },
+        { "event": "DVTR", "points": "22" },
+        { "event": "BER", "points": "16" },
+        { "event": "GMER", "points": "20" },
+        { "event": "IDR", "points": "20" },
+        { "event": "CDR", "points": "W" },
+        { "event": "SPER", "points": "20" },
+        { "event": "VFTR", "points": "22" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 4,
       "club": "MMC",
       "total": 232,
-      "results": {
-        "TCSMC": 25, "SJER": 22, "MMC": "W", "CJCR": 15, "RRMC": 18, "HMDR": 20, "STER": 16, "DVTR": 18, "BER": 22, "GMER": 0, "IDR": 18, "CDR": 18, "SPER": 22, "VFTR": 18, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "25" },
+        { "event": "SJER", "points": "22" },
+        { "event": "MMC", "points": "W" },
+        { "event": "CJCR", "points": "15" },
+        { "event": "RRMC", "points": "18" },
+        { "event": "HMDR", "points": "20" },
+        { "event": "STER", "points": "16" },
+        { "event": "DVTR", "points": "18" },
+        { "event": "BER", "points": "22" },
+        { "event": "GMER", "points": "0" },
+        { "event": "IDR", "points": "18" },
+        { "event": "CDR", "points": "18" },
+        { "event": "SPER", "points": "22" },
+        { "event": "VFTR", "points": "18" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 5,
       "club": "CDR",
       "total": 85,
-      "results": {
-        "TCSMC": 13, "SJER": 18, "MMC": 22, "CJCR": 16, "RRMC": 16, "HMDR": null, "STER": null, "DVTR": null, "BER": null, "GMER": null, "IDR": null, "CDR": "W", "SPER": 0, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "13" },
+        { "event": "SJER", "points": "18" },
+        { "event": "MMC", "points": "22" },
+        { "event": "CJCR", "points": "16" },
+        { "event": "RRMC", "points": "16" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "W" },
+        { "event": "SPER", "points": "0" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 6,
       "club": "CJCR",
       "total": 73,
-      "results": {
-        "TCSMC": 11, "SJER": 12, "MMC": 16, "CJCR": "W", "RRMC": null, "HMDR": 0, "STER": null, "DVTR": null, "BER": null, "GMER": null, "IDR": 9, "CDR": 25, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "11" },
+        { "event": "SJER", "points": "12" },
+        { "event": "MMC", "points": "16" },
+        { "event": "CJCR", "points": "W" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "0" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "9" },
+        { "event": "CDR", "points": "25" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 7,
       "club": "SJER",
       "total": 67,
-      "results": {
-        "TCSMC": 22, "SJER": "W", "MMC": null, "CJCR": null, "RRMC": null, "HMDR": 25, "STER": null, "DVTR": null, "BER": null, "GMER": null, "IDR": null, "CDR": 20, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "22" },
+        { "event": "SJER", "points": "W" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "25" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "20" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 8,
       "club": "HMDR",
       "total": 30,
-      "results": {
-        "TCSMC": 0, "SJER": null, "MMC": 15, "CJCR": null, "RRMC": null, "HMDR": "W", "STER": 15, "DVTR": null, "BER": null, "GMER": null, "IDR": null, "CDR": null, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "0" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "15" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "W" },
+        { "event": "STER", "points": "15" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 9,
       "club": "TCSMC",
       "total": 25,
-      "results": {
-        "TCSMC": "W", "SJER": null, "MMC": null, "CJCR": null, "RRMC": null, "HMDR": null, "STER": null, "DVTR": 25, "BER": null, "GMER": null, "IDR": null, "CDR": null, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "W" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "25" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 10,
       "club": "PBER",
       "total": 22,
-      "results": {
-        "TCSMC": null, "SJER": null, "MMC": null, "CJCR": 22, "RRMC": null, "HMDR": null, "STER": null, "DVTR": null, "BER": null, "GMER": null, "IDR": null, "CDR": null, "SPER": null, "VFTR": null, "OCCR": null, "PBER": "W", "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "22" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "W" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 11,
       "club": "BER",
       "total": 7,
-      "results": {
-        "TCSMC": null, "SJER": null, "MMC": null, "CJCR": null, "RRMC": null, "HMDR": null, "STER": null, "DVTR": null, "BER": "W", "GMER": 7, "IDR": null, "CDR": null, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "W" },
+        { "event": "GMER", "points": "7" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 12,
       "club": "DVTR",
       "total": 0,
-      "results": {
-        "TCSMC": null, "SJER": null, "MMC": null, "CJCR": null, "RRMC": null, "HMDR": null, "STER": null, "DVTR": "W", "BER": null, "GMER": null, "IDR": null, "CDR": null, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "W" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 13,
       "club": "RORR",
       "total": 0,
-      "results": {
-        "TCSMC": null, "SJER": null, "MMC": null, "CJCR": null, "RRMC": null, "HMDR": null, "STER": null, "DVTR": null, "BER": null, "GMER": null, "IDR": null, "CDR": null, "SPER": null, "VFTR": "W", "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "W" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 14,
       "club": "VFTR",
       "total": 0,
-      "results": {
-        "TCSMC": null, "SJER": null, "MMC": null, "CJCR": null, "RRMC": null, "HMDR": null, "STER": null, "DVTR": null, "BER": null, "GMER": null, "IDR": null, "CDR": null, "SPER": null, "VFTR": "W", "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "W" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 15,
       "club": "GMER",
       "total": 0,
-      "results": {
-        "TCSMC": null, "SJER": null, "MMC": null, "CJCR": null, "RRMC": null, "HMDR": null, "STER": null, "DVTR": null, "BER": null, "GMER": "W", "IDR": null, "CDR": null, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "W" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 16,
       "club": "IDR",
       "total": 0,
-      "results": {
-        "TCSMC": null, "SJER": null, "MMC": null, "CJCR": null, "RRMC": null, "HMDR": null, "STER": null, "DVTR": null, "BER": null, "GMER": null, "IDR": "W", "CDR": null, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "W" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 17,
       "club": "MCI",
       "total": 0,
-      "results": {
-        "TCSMC": null, "SJER": null, "MMC": null, "CJCR": null, "RRMC": null, "HMDR": null, "STER": null, "DVTR": null, "BER": null, "GMER": null, "IDR": null, "CDR": null, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": "W"
-      }
+      "results": [
+        { "event": "TCSMC", "points": "" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "W" }
+      ]
     },
     {
       "place": 18,
       "club": "RRMC",
       "total": 0,
-      "results": {
-        "TCSMC": null, "SJER": null, "MMC": null, "CJCR": null, "RRMC": "W", "HMDR": null, "STER": null, "DVTR": null, "BER": null, "GMER": null, "IDR": null, "CDR": null, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "W" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     },
     {
       "place": 19,
       "club": "STER",
       "total": 0,
-      "results": {
-        "TCSMC": null, "SJER": null, "MMC": null, "CJCR": null, "RRMC": null, "HMDR": null, "STER": "W", "DVTR": null, "BER": null, "GMER": null, "IDR": null, "CDR": null, "SPER": null, "VFTR": null, "OCCR": null, "PBER": null, "MCI": null
-      }
+      "results": [
+        { "event": "TCSMC", "points": "" },
+        { "event": "SJER", "points": "" },
+        { "event": "MMC", "points": "" },
+        { "event": "CJCR", "points": "" },
+        { "event": "RRMC", "points": "" },
+        { "event": "HMDR", "points": "" },
+        { "event": "STER", "points": "W" },
+        { "event": "DVTR", "points": "" },
+        { "event": "BER", "points": "" },
+        { "event": "GMER", "points": "" },
+        { "event": "IDR", "points": "" },
+        { "event": "CDR", "points": "" },
+        { "event": "SPER", "points": "" },
+        { "event": "VFTR", "points": "" },
+        { "event": "OCCR", "points": "" },
+        { "event": "PBER", "points": "" },
+        { "event": "MCI", "points": "" }
+      ]
     }
   ]
 }

@@ -13,8 +13,8 @@ keyTime: '2023-06-11T09:00:00'
 checkInTime: '2023-06-11T07:00:00'
 closedCourse: true
 gasAway: false
-image: '../../../assets/images/logos/clubs/rrmc-large.png'
-flyer: '../../../assets/images/events/flyers/23-en-rrmc-flyer.jpg'
+image: '../../../assets/clubs/logos/rrmc-large.png'
+flyer: '../../../assets/events/flyers/23-en-rrmc-flyer.jpg'
 downloads:
   - label: Rider Information
     url: /events/2023-ridge-sprint-rider-information.pdf

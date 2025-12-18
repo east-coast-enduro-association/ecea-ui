@@ -1,7 +1,7 @@
 ---
 name: Ridge Rider Motorcycle Club
 abbreviatedName: RRMC
-logo: '../../assets/images/logos/clubs/rrmc.gif'
+logo: '../../assets/clubs/logos/rrmc.gif'
 summary: RRMC
 draft: false
 website: 'http://www.ridgeriders.org/'

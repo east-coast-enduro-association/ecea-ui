@@ -12,8 +12,8 @@ series: ECEA Youth Series
 checkInTime: '2023-10-28T13:00:24.638Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/sjer.png'
-flyer: '../../../assets/images/events/flyers/23_hs_pber.jpg'
+image: '../../../assets/clubs/logos/sjer.png'
+flyer: '../../../assets/events/flyers/23_hs_pber.jpg'
 ---
 **NO** FRIDAY ENTRY
 

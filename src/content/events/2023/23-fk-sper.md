@@ -12,8 +12,8 @@ series: ECEA Youth Series
 checkInTime: '2023-07-15T14:13:40.331Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/sper.jpg'
-flyer: '../../../assets/images/events/flyers/2023-hs-sper-flyer.jpg'
+image: '../../../assets/clubs/logos/sper.jpg'
+flyer: '../../../assets/events/flyers/2023-hs-sper-flyer.jpg'
 ---
 PreEntry is [OPEN CLICK HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx)\
 \

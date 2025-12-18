@@ -12,8 +12,8 @@ series: Special Series
 checkInTime: '2024-08-30T20:00:54.249Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/hmdr.png'
-flyer: '../../../assets/images/events/flyers/wallow23.jpg'
+image: '../../../assets/clubs/logos/hmdr.png'
+flyer: '../../../assets/events/flyers/wallow23.jpg'
 ---
 A 2-day family fun weekend! Bring your camping gear, enjoy the campground, and ride the trails. There's something for all skill levels here so bring the whole family!\
 \

@@ -1,7 +1,7 @@
 ---
 name: Delaware Valley Trail Riders
 abbreviatedName: DVTR
-logo: '../../assets/images/logos/clubs/dvtr.jpg'
+logo: '../../assets/clubs/logos/dvtr.jpg'
 summary: Delaware Valley Trail Riders
 draft: false
 website: 'https://www.dvtrailriders.org/'

@@ -1,7 +1,7 @@
 ---
 name: Valley Forge Trail Riders
 abbreviatedName: VFTR
-logo: '../../assets/images/logos/clubs/vftr.jpg'
+logo: '../../assets/clubs/logos/vftr.jpg'
 summary: VFTR
 draft: false
 website: 'http://www.vftr.org/'

@@ -13,8 +13,8 @@ keyTime: '2025-07-20T09:00:00'
 checkInTime: '2025-07-20T07:00:00'
 closedCourse: true
 gasAway: true
-image: '../../../assets/images/logos/clubs/dvtr.jpg'
-flyer: '../../../assets/images/events/flyers/506449518_1132222292277842_581084921244868926_n.jpg'
+image: '../../../assets/clubs/logos/dvtr.jpg'
+flyer: '../../../assets/events/flyers/506449518_1132222292277842_581084921244868926_n.jpg'
 startGridLink: 'https://moto-tally.com/ecea/enduro/startingGrid.aspx?EY=2025&EID=9'
 downloads:
   - label: Confirmation Sheet

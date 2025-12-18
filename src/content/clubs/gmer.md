@@ -1,7 +1,7 @@
 ---
 name: Green Marble Enduro Riders
 abbreviatedName: GMER
-logo: '../../assets/images/logos/clubs/gmer.gif'
+logo: '../../assets/clubs/logos/gmer.gif'
 summary: Green Marble Enduro Riders
 draft: false
 website: 'http://www.gmer.us/'

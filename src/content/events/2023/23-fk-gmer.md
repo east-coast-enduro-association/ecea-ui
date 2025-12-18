@@ -11,7 +11,7 @@ format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/gmer.gif'
+image: '../../../assets/clubs/logos/gmer.gif'
 ---
 
 Pee-Wee: 11:00AM

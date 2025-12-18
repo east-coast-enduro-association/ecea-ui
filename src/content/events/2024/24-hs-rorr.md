@@ -12,8 +12,8 @@ series: Hare Scramble Series
 checkInTime: '2024-06-16T11:00:50.686Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/rorr.png'
-flyer: '../../../assets/images/events/flyers/24rorr.jpg'
+image: '../../../assets/clubs/logos/rorr.png'
+flyer: '../../../assets/events/flyers/24rorr.jpg'
 ---
 Please use PreEntry to AVOID Lines and long waits..\
 \

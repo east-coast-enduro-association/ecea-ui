@@ -13,7 +13,7 @@ keyTime: '2024-04-14T09:00:00.000Z'
 checkInTime: '2024-04-14T07:00:00.013Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/cjcr.jpg'
+image: '../../../assets/clubs/logos/cjcr.jpg'
 ---
 
 A classic course hosted in the lovely Brendan T. Byrne State Forest. Expect fast trail with some familiar stick farms thrown in.

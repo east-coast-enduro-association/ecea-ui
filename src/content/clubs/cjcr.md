@@ -1,7 +1,7 @@
 ---
 name: Central Jersey Competition Riders
 abbreviatedName: CJCR
-logo: '../../assets/images/logos/clubs/cjcr.jpg'
+logo: '../../assets/clubs/logos/cjcr.jpg'
 summary: Central Jersey Competition Riders
 draft: false
 website: 'http://cjcrmc.org/'

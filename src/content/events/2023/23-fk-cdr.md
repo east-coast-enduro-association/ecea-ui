@@ -13,8 +13,8 @@ series: ECEA Youth Series
 checkInTime: '2023-05-06T11:00:00.000Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/cdr.png'
-flyer: '../../../assets/images/events/flyers/23-hs-cdr-flyer.png'
+image: '../../../assets/clubs/logos/cdr.png'
+flyer: '../../../assets/events/flyers/23-hs-cdr-flyer.png'
 ---
 **NO FRIDAY CAMPING..Sorry,,  GATES OPEN SATURDAY at 8 AM.**\
 \

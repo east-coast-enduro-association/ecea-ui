@@ -1,7 +1,7 @@
 ---
 name: Brandywine Enduro Riders
 abbreviatedName: BER
-logo: '../../assets/images/logos/clubs/ber.gif'
+logo: '../../assets/clubs/logos/ber.gif'
 summary: Brandywine Enduro Riders
 draft: false
 website: 'http://www.ber.us/'

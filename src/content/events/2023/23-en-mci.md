@@ -13,7 +13,7 @@ keyTime: '2023-11-12T09:00:00'
 checkInTime: '2023-11-12T07:00:00'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/mci.jpg'
+image: '../../../assets/clubs/logos/mci.jpg'
 ---
 **This event is cancelled for 2023.**
 

@@ -41,12 +41,17 @@ const formatDate = (dateStr: string) => {
   return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 };
 
-// Helper to get result display
-const getResultDisplay = (result: number | "W" | null) => {
-  if (result === "W") return { text: "W", class: "bg-amber-100 text-amber-800", title: "Host Club" };
-  if (result === null) return { text: "-", class: "text-gray-300", title: "Did not compete" };
-  if (result === 0) return { text: "0", class: "text-gray-400", title: "0 points" };
-  return { text: String(result), class: "text-gray-900 font-medium", title: `${result} points` };
+// Helper to get result display (points is a string: number, "W", or empty)
+const getResultDisplay = (points: string | undefined) => {
+  if (points === "W") return { text: "W", class: "bg-amber-100 text-amber-800", title: "Host Club" };
+  if (!points || points === "") return { text: "-", class: "text-gray-300", title: "Did not compete" };
+  if (points === "0") return { text: "0", class: "text-gray-400", title: "0 points" };
+  return { text: points, class: "text-gray-900 font-medium", title: `${points} points` };
+};
+
+// Helper to get result for a specific event from array format
+const getResult = (results: Array<{event: string, points: string}>, eventAbbr: string) => {
+  return results.find(r => r.event === eventAbbr)?.points;
 };
 
 // Get event results for a specific event
@@ -55,12 +60,12 @@ const getEventResults = (eventAbbr: string) => {
   return data.standings
     .map(standing => ({
       club: standing.club,
-      result: standing.results[eventAbbr],
+      result: getResult(standing.results, eventAbbr),
     }))
-    .filter(r => r.result !== null && r.result !== "W")
+    .filter(r => r.result && r.result !== "" && r.result !== "W")
     .sort((a, b) => {
-      const aVal = typeof a.result === "number" ? a.result : 0;
-      const bVal = typeof b.result === "number" ? b.result : 0;
+      const aVal = parseInt(a.result || "0", 10);
+      const bVal = parseInt(b.result || "0", 10);
       return bVal - aVal;
     });
 };
@@ -140,7 +145,7 @@ const getEventResults = (eventAbbr: string) => {
                           {standing.total}
                         </td>
                         {data.events.map(event => {
-                          const result = standing.results[event.abbr];
+                          const result = getResult(standing.results, event.abbr);
                           const display = getResultDisplay(result);
                           return (
                             <td class={`px-3 py-3 whitespace-nowrap text-center text-sm ${display.class}`} title={display.title}>

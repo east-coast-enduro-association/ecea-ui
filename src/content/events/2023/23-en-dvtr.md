@@ -13,8 +13,8 @@ keyTime: '2023-07-30T09:00:00'
 checkInTime: '2023-07-30T07:00:00'
 closedCourse: true
 gasAway: true
-image: '../../../assets/images/logos/clubs/dvtr.jpg'
-flyer: '../../../assets/images/events/flyers/2023-en-dvtr-flyer.png'
+image: '../../../assets/clubs/logos/dvtr.jpg'
+flyer: '../../../assets/events/flyers/2023-en-dvtr-flyer.png'
 flyerPdf: '/attachments/events/2023-en-dvtr-flyer.pdf'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2023&EID=9'
 downloads:

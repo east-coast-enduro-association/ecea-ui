@@ -1,7 +1,7 @@
 ---
 name: Ithaca Dirt Riders
 abbreviatedName: IDR
-logo: '../../assets/images/logos/clubs/idrlogo.jpg'
+logo: '../../assets/clubs/logos/idrlogo.jpg'
 summary: Ithaca Dirt Riders
 draft: false
 website: 'www.ithacadirtriders.com'

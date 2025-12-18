@@ -2,8 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/Sections/PageHeader.astro";
 import Button from "../components/UI/Button.astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import { COMPETITIVE_SERIES } from "../utils/constants";
+
+// Get page content from markdown
+const page = await getEntry("pages", "get-started");
+const { title, subtitle, description, welcomeTitle, welcomeContent, welcomeBookUrl, amaUrl, seriesTitle, seriesDescription, stepsTitle, steps, faqTitle, faqDescription } = page.data;
 
 // Get all series
 const allSeries = await getCollection("series", ({ data }) => !data.draft);
@@ -40,12 +44,12 @@ const slugToEventType: Record<string, string> = {
 ---
 
 <BaseLayout
-  title="Get Started - ECEA"
-  description="Welcome to the East Coast Enduro Association. Learn about our racing series and how to join."
+  title={`${title} - ECEA`}
+  description={description}
 >
   <PageHeader
-    title="Get Started"
-    subtitle="Your guide to riding with the ECEA"
+    title={title}
+    subtitle={subtitle}
     backgroundImage="/images/feature-bg.jpg"
   />
 
@@ -53,18 +57,15 @@ const slugToEventType: Record<string, string> = {
   <section class="py-12 bg-white">
     <div class="container">
       <div class="max-w-4xl mx-auto text-center mb-12">
-        <h2 class="text-3xl font-bold mb-6">Welcome to the East Coast Enduro Association</h2>
-        <p class="text-lg text-gray-600 mb-6">
-          The ECEA is the most diverse off-road association around with something for everyone—families, youth riders, racers, and enthusiasts alike. As an AMA-chartered organization since 1971, we've been bringing riders together for over 50 years.
-        </p>
-        <p class="text-gray-600 mb-8">
-          Racing is just part of what we do. Many of our members volunteer, spectate, and enjoy the lifelong friendships formed at our events. Whether you want to compete for championships or just enjoy a weekend ride with family, there's a place for you here.
-        </p>
+        <h2 class="text-3xl font-bold mb-6">{welcomeTitle}</h2>
+        <div class="text-lg text-gray-600 mb-8 whitespace-pre-line">
+          {welcomeContent}
+        </div>
         <div class="flex flex-wrap justify-center gap-4">
-          <Button href="/documents/ecea-welcome-book.pdf" target="_blank" variant="primary">
+          <Button href={welcomeBookUrl} target="_blank" variant="primary">
             Download Welcome Book
           </Button>
-          <Button href="https://americanmotorcyclist.com/" target="_blank" variant="outline">
+          <Button href={amaUrl} target="_blank" variant="outline">
             Join the AMA
           </Button>
         </div>
@@ -76,9 +77,9 @@ const slugToEventType: Record<string, string> = {
   <section class="py-12 bg-gray-50">
     <div class="container">
       <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold mb-4">Choose Your Discipline</h2>
+        <h2 class="text-3xl font-bold mb-4">{seriesTitle}</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">
-          We offer four distinct types of events. Click any series to learn more about what to expect, how to register, and see upcoming events.
+          {seriesDescription}
         </p>
       </div>
 
@@ -135,24 +136,16 @@ const slugToEventType: Record<string, string> = {
   <section class="py-12 bg-white">
     <div class="container">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8 text-center">How to Get Started</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center">{stepsTitle}</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="text-center">
-            <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
-            <h3 class="font-bold mb-2">Join the AMA</h3>
-            <p class="text-gray-600 text-sm">All ECEA events require AMA membership. It supports motorcycling advocacy and provides insurance coverage.</p>
-          </div>
-          <div class="text-center">
-            <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
-            <h3 class="font-bold mb-2">Pick an Event</h3>
-            <p class="text-gray-600 text-sm">Browse our calendar and choose an event that matches your skill level and interests.</p>
-          </div>
-          <div class="text-center">
-            <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
-            <h3 class="font-bold mb-2">Register & Ride</h3>
-            <p class="text-gray-600 text-sm">Sign up online or at the event. Show up, have fun, and become part of the ECEA family.</p>
-          </div>
+          {steps?.map((step, index) => (
+            <div class="text-center">
+              <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{index + 1}</div>
+              <h3 class="font-bold mb-2">{step.title}</h3>
+              <p class="text-gray-600 text-sm">{step.description}</p>
+            </div>
+          ))}
         </div>
 
         <div class="mt-12 text-center">
@@ -168,9 +161,9 @@ const slugToEventType: Record<string, string> = {
   <section class="py-12 bg-gray-900 text-white">
     <div class="container">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-4 text-white">Have Questions?</h2>
+        <h2 class="text-2xl font-bold mb-4 text-white">{faqTitle}</h2>
         <p class="text-gray-400 mb-6">
-          Check out our FAQ for detailed information about each event type, what to bring, how scoring works, and more.
+          {faqDescription}
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <Button href="/faq" variant="outline" class="!bg-transparent !text-white !border-gray-500 hover:!bg-gray-800">

@@ -12,7 +12,7 @@ series: ECEA Youth Series
 checkInTime: '2023-08-23T03:56:14.256Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/rrmc-large.png'
+image: '../../../assets/clubs/logos/rrmc-large.png'
 ---
 
 Pee-Wee: 11:00AM

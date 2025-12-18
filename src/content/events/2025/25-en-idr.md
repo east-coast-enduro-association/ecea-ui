@@ -13,7 +13,7 @@ keyTime: '2025-08-17T10:00:00.000Z'
 checkInTime: '2025-08-17T07:30:00.000Z'
 closedCourse: true
 gasAway: false
-image: '../../../assets/images/logos/clubs/idrlogo.jpg'
-flyer: '../../../assets/images/events/flyers/2025-en-idr-flyer.jpg'
+image: '../../../assets/clubs/logos/idrlogo.jpg'
+flyer: '../../../assets/events/flyers/2025-en-idr-flyer.jpg'
 ---
 All classes will ride and start at 10AM and all riders will have a time limit of 3 hours to complete all their sections

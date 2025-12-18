@@ -11,7 +11,7 @@ format: Dual Sport
 series: Dual Sport Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/rorr.png'
+image: '../../../assets/clubs/logos/rorr.png'
 ---
 
 Rocks run hosted on private property not usually accessible to riders! 

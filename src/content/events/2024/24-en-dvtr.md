@@ -13,8 +13,8 @@ keyTime: '2024-07-21T09:00:00'
 checkInTime: '2024-07-21T07:00:00'
 closedCourse: true
 gasAway: true
-image: '../../../assets/images/logos/clubs/dvtr.jpg'
-flyer: '../../../assets/images/events/flyers/24-en-dvtr-flyer.jpg'
+image: '../../../assets/clubs/logos/dvtr.jpg'
+flyer: '../../../assets/events/flyers/24-en-dvtr-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=9'
 ---
 There's a mountain. There are rocks on it. Sometimes it's foggy, sometimes it's not. Point your dirtbike at it and open the throttle already.

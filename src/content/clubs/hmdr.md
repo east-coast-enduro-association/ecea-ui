@@ -1,7 +1,7 @@
 ---
 name: High Mountain Dirt Riders
 abbreviatedName: HMDR
-logo: '../../assets/images/logos/clubs/hmdr.png'
+logo: '../../assets/clubs/logos/hmdr.png'
 summary: High Mountain Dirt Riders
 draft: false
 website: 'https://hmdr.org/'

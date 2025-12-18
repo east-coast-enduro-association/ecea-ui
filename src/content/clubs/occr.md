@@ -1,7 +1,7 @@
 ---
 name: Ocean County Competition Riders
 abbreviatedName: OCCR
-logo: '../../assets/images/logos/clubs/occr.jpg'
+logo: '../../assets/clubs/logos/occr.jpg'
 summary: OCCR
 draft: false
 website: 'http://occr.net/home.php'

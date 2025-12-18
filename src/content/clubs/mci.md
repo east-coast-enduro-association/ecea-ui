@@ -1,7 +1,7 @@
 ---
 name: Motorcycle Competition Inc
 abbreviatedName: MCI
-logo: '../../assets/images/logos/clubs/mci.jpg'
+logo: '../../assets/clubs/logos/mci.jpg'
 summary: Motorcycle Competition Inc
 draft: false
 website: 'https://ride-mci.com/'

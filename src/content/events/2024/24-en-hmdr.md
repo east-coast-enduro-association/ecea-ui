@@ -13,8 +13,8 @@ keyTime: '2024-06-23T09:00:00'
 checkInTime: '2024-06-23T07:00:00'
 closedCourse: true
 gasAway: false
-image: '../../../assets/images/logos/clubs/hmdr.png'
-flyer: '../../../assets/images/events/flyers/240529-enduro-flyer-01.jpg'
+image: '../../../assets/clubs/logos/hmdr.png'
+flyer: '../../../assets/events/flyers/240529-enduro-flyer-01.jpg'
 downloads:
   - label: Confirmation Sheet
     url: /events/240623-shotgun-enduro-confirmation-sheet-v4.pdf

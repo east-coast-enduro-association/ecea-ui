@@ -13,6 +13,6 @@ keyTime: '2023-06-25T09:00:00'
 checkInTime: '2023-06-25T07:00:00'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/hmdr.png'
+image: '../../../assets/clubs/logos/hmdr.png'
 ---
 Do to land issues the 2023 Enduro is Canceled

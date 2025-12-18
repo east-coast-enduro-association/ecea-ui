@@ -11,8 +11,8 @@ series: ECEA Youth Series
 checkInTime: '2025-06-28T14:00:16.009Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/sper.jpg'
-flyer: '../../../assets/images/events/flyers/25-sper-hs.png'
+image: '../../../assets/clubs/logos/sper.jpg'
+flyer: '../../../assets/events/flyers/25-sper-hs.png'
 ---
 South Penn  is back with an all new Hare Scramble , new Location.\
 \

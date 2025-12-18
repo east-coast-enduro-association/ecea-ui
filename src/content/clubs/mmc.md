@@ -1,7 +1,7 @@
 ---
 name: Meteor Motorcycle Club
 abbreviatedName: MMC
-logo: '../../assets/images/logos/clubs/mmc.jpg'
+logo: '../../assets/clubs/logos/mmc.jpg'
 summary: MMC
 draft: false
 website: 'http://www.meteormc.com/'

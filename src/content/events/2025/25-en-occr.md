@@ -13,8 +13,8 @@ keyTime: '2025-10-26T09:00:00'
 checkInTime: '2025-10-26T07:00:00'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/occr.jpg'
-flyer: '../../../assets/images/events/flyers/scrubpine25flyer.gif'
+image: '../../../assets/clubs/logos/occr.jpg'
+flyer: '../../../assets/events/flyers/scrubpine25flyer.gif'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=16'
 downloads:
   - label: Confirmation

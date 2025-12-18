@@ -98,15 +98,16 @@ if (entry.data.eventType === "Enduro" && entry.data.hostingClubs?.[0]) {
 
     if (teamEvent?.completed) {
       teamEventInfo = { abbr: teamEvent.abbr, name: teamEvent.name };
-      // Get results for this event
+      // Get results for this event (results is now an array of {event, points})
       teamEventResults = teamResults2025.data.standings
-        .map(standing => ({
-          club: standing.club,
-          result: standing.results[hostingClub],
-        }))
-        .filter(r => typeof r.result === "number" && r.result > 0)
-        .sort((a, b) => (b.result as number) - (a.result as number))
-        .map((r, idx) => ({ club: r.club, points: r.result as number }));
+        .map(standing => {
+          const eventResult = standing.results.find(r => r.event === hostingClub);
+          const points = eventResult?.points ? parseInt(eventResult.points, 10) : 0;
+          return { club: standing.club, result: points };
+        })
+        .filter(r => r.result > 0)
+        .sort((a, b) => b.result - a.result)
+        .map(r => ({ club: r.club, points: r.result }));
     }
   }
 }

@@ -180,13 +180,29 @@ const boardCollection = defineCollection({
 /**
  * Pages Collection
  * Static content pages (FAQ, Get Started, etc.)
+ * Uses passthrough to allow page-specific fields
  */
 const pagesCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    subtitle: z.string().optional(),
     description: z.string().optional(),
     draft: z.boolean().default(false),
+    // Get Started page fields
+    welcomeTitle: z.string().optional(),
+    welcomeContent: z.string().optional(),
+    welcomeBookUrl: z.string().optional(),
+    amaUrl: z.string().optional(),
+    seriesTitle: z.string().optional(),
+    seriesDescription: z.string().optional(),
+    stepsTitle: z.string().optional(),
+    steps: z.array(z.object({
+      title: z.string(),
+      description: z.string(),
+    })).optional(),
+    faqTitle: z.string().optional(),
+    faqDescription: z.string().optional(),
   }),
 });
 
@@ -213,8 +229,13 @@ const teamResultsCollection = defineCollection({
         place: z.number(),
         club: z.string(),           // Club abbreviation
         total: z.number(),
-        // Per-event results: number = points, "W" = host, null = not yet held
-        results: z.record(z.union([z.number(), z.literal("W"), z.null()])),
+        // Per-event results as array: points can be number string, "W" for host, or empty for not held
+        results: z.array(
+          z.object({
+            event: z.string(),      // Event abbreviation
+            points: z.string(),     // Number string, "W", or empty string
+          })
+        ),
       })
     ),
   }),

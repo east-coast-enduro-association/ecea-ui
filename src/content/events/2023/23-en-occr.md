@@ -13,7 +13,7 @@ keyTime: '2023-10-22T09:00:00'
 checkInTime: '2023-10-22T07:00:00'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/occr.jpg'
+image: '../../../assets/clubs/logos/occr.jpg'
 ---
 **This event is cancelled for 2023.**
 

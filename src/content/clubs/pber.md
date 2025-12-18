@@ -1,7 +1,7 @@
 ---
 name: Pine Baron Enduro Riders
 abbreviatedName: PBER
-logo: '../../assets/images/logos/clubs/pber.webp'
+logo: '../../assets/clubs/logos/pber.webp'
 summary: PBER
 draft: false
 website: 'http://www.pber.org/'

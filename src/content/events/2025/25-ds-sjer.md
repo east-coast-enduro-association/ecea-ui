@@ -11,5 +11,5 @@ format: Dual Sport
 series: Dual Sport Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/sjer.png'
+image: '../../../assets/clubs/logos/sjer.png'
 ---

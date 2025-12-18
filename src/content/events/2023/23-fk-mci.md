@@ -12,8 +12,8 @@ series: ECEA Youth Series
 checkInTime: '2023-05-20T10:01:43.367Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/mci.jpg'
-flyer: '../../../assets/images/events/flyers/stump.jpg'
+image: '../../../assets/clubs/logos/mci.jpg'
+flyer: '../../../assets/events/flyers/stump.jpg'
 ---
 **NO ENTRY FRIDAY NIGHT**
 

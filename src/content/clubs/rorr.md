@@ -1,7 +1,7 @@
 ---
 name: Reading Off-Road Riders
 abbreviatedName: RORR
-logo: '../../assets/images/logos/clubs/rorr.png'
+logo: '../../assets/clubs/logos/rorr.png'
 summary: RORR
 draft: false
 website: 'http://www.rorr.org/'

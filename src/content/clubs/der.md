@@ -1,7 +1,7 @@
 ---
 name: Delaware Enduro Riders
 abbreviatedName: DER
-logo: '../../assets/images/logos/clubs/der.gif'
+logo: '../../assets/clubs/logos/der.gif'
 summary: Delaware Enduro Riders
 draft: false
 website: 'http://delawareenduroriders.com/'

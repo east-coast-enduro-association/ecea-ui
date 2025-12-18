@@ -7,7 +7,9 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.ecea.org',
-  trailingSlash: 'always',
+  redirects: {
+    '/admin': '/admin/index.html',
+  },
   integrations: [tailwind(), sitemap(), react()],
   markdown: {
     shikiConfig: {

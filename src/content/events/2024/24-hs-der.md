@@ -11,7 +11,7 @@ format: Hare Scramble
 series: Hare Scramble Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/der.gif'
+image: '../../../assets/clubs/logos/der.gif'
 ---
 
 Morning race: 10:00am

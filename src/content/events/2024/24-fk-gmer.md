@@ -12,8 +12,8 @@ series: ECEA Youth Series
 checkInTime: '2024-06-01T14:00:57.675Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/gmer.gif'
-flyer: '../../../assets/images/events/flyers/24-gmer-hs-flyer.jpg'
+image: '../../../assets/clubs/logos/gmer.gif'
+flyer: '../../../assets/events/flyers/24-gmer-hs-flyer.jpg'
 ---
 **NO GO PRO's  DSQ if found on person or bike**
 

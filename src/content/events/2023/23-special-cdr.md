@@ -11,7 +11,7 @@ format: Family Fun Ride
 series: Special Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/cdr.png'
+image: '../../../assets/clubs/logos/cdr.png'
 ---
 
 A 2-day family fun ride hosted at Ormond Farms. Bring your camping gear and the whole family. Many trails to choose from that cater to all skill levels!

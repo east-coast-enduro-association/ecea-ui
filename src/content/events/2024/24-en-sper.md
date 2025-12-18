@@ -13,8 +13,8 @@ keyTime: '2024-09-08T09:00:00'
 checkInTime: '2024-09-08T07:00:00'
 closedCourse: true
 gasAway: false
-image: '../../../assets/images/logos/clubs/michaux.jpg'
-flyer: '../../../assets/images/events/flyers/micheaux-2024-2-.jpg'
+image: '../../../assets/ecea/logos/michaux.jpg'
+flyer: '../../../assets/events/flyers/micheaux-2024-2-.jpg'
 downloads:
   - label: Confirmation Sheet
     url: /events/24confirmation.pdf

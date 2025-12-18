@@ -13,7 +13,7 @@ keyTime: '2025-11-16T09:00:00'
 checkInTime: '2025-11-16T07:00:00'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/mci.jpg'
+image: '../../../assets/clubs/logos/mci.jpg'
 ---
 
 The season closer... it's gonna be cold. It's gonna be wet. And it's gonna be fun.

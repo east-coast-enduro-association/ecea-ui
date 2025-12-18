@@ -1,9 +1,9 @@
 ---
 title: 2025 ECEA AWARDS BANQUET - Swap Meet - Vendor Show
-summary: Celebrate with ECEA, Friends, Family the 2025 Race Season.
-draft: false
-date: '2026-01-24T15:00:08.480Z'
-location: 1160 FIRST AVENUE • KING OF PRUSSIA, PA 19406 
+summary: 'Celebrate with ECEA, Friends, Family the 2025 Race Season.'
+date: 2026-01-24T15:00:08.480Z
+checkInTime: '2026-01-24T17:00:08.503Z'
+location: '1160 FIRST AVENUE • KING OF PRUSSIA, PA 19406'
 hostingClubs:
   - BER
   - CJCR
@@ -27,13 +27,14 @@ hostingClubs:
 eventType: Enduro
 format: Special
 series: Special Series
-checkInTime: '2026-01-24T17:00:08.503Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/ecea24l2.png'
-flyer: '../../../assets/images/events/flyers/25adultbanq.jpg'
+image: ../../../assets/ecea/logos/ecea24l2.png
+flyer: ../../../assets/events/flyers/25adultbanq.jpg
+draft: false
 ---
-**ECEA AWARDS BANQUET** is back at the Valley Forge Casino by popular request, also we will have the **Vendor show, Seminar**s and all **New SWAPMEET**... so Register for a spot and sell your stuff-bikes, gear etc.... 
+
+**ECEA AWARDS BANQUET** is back at the Valley Forge Casino by popular request, also we will have the **Vendor show, Seminar**s and all **New SWAPMEET**... so Register for a spot and sell your stuff-bikes, gear etc....
 
 ![](/images/blog/26swap.png)
 

@@ -13,7 +13,7 @@ series: Hare Scramble Series
 checkInTime: '2024-10-27T14:00:10.615Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/sjer.png'
+image: '../../../assets/clubs/logos/sjer.png'
 ---
 A message from PBER and SJER.
 

@@ -5,7 +5,7 @@ description: Race and get paid!
 author: Michael Abramo
 draft: false
 image:
-  src: '@assets/images/logos/ecea/ecea-small.png'
+  src: '@assets/ecea/logos/ecea-small.png'
   alt: 2023 Contingency Awards Announced
 tags:
   - '2023'

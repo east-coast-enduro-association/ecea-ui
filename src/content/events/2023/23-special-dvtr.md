@@ -11,7 +11,7 @@ format: Family Fun Ride
 series: Special Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/dvtr.jpg'
+image: '../../../assets/clubs/logos/dvtr.jpg'
 ---
 
 The annual Toys For Tots charity event hosted by Delaware Valley Trail Riders. Pay your entry fee and bring a new, wrapped toy to donate. December is a toss-up as it pertains to weather and riding conditions - it might be wet, it might be dry, it might be icy, it might be loamy. Who cares? Just come out and enjoy good people, trails, food, and possibly win some raffle prizes.

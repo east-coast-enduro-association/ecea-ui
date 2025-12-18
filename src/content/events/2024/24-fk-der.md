@@ -11,5 +11,5 @@ format: Hare Scramble
 series: ECEA Youth Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/der.gif'
+image: '../../../assets/clubs/logos/der.gif'
 ---

@@ -1,7 +1,7 @@
 ---
 name: Competition Dirt Riders
 abbreviatedName: CDR
-logo: '../../assets/images/logos/clubs/cdr.png'
+logo: '../../assets/clubs/logos/cdr.png'
 summary: Competition Dirt Riders
 draft: false
 website: 'http://www.eceacompetitiondirtriders.com/'

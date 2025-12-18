@@ -19,8 +19,8 @@ series: ECEA Youth Series
 checkInTime: '2026-01-11T15:00:02.452Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/kidz25banq.png'
-flyer: '../../../assets/images/events/flyers/2025fastkidzbq.jpg'
+image: '../../../assets/ecea/logos/kidz25banq.png'
+flyer: '../../../assets/events/flyers/2025fastkidzbq.jpg'
 ---
 Get Ready for another **Great Banquet for the ECEA FastKIDZ.**\
 \

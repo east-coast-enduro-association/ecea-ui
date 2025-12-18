@@ -13,8 +13,8 @@ series: Hare Scramble Series
 checkInTime: '2025-10-19T11:00:10.615Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/sjer.png'
-flyer: '../../../assets/images/events/flyers/25pberhs.jpg'
+image: '../../../assets/clubs/logos/sjer.png'
+flyer: '../../../assets/events/flyers/25pberhs.jpg'
 ---
 **NO FRIDAY ADMITTANCE**,,, No Entry, NO Camping FRIDAY\
 **GATES OPEN 6am Saturday and Sunday** \

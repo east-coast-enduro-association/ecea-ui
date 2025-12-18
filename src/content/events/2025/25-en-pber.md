@@ -14,8 +14,8 @@ keyTime: '2025-11-23T09:00:20.513Z'
 checkInTime: '2025-11-23T07:00:00.000Z'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/pber.webp'
-flyer: '../../../assets/images/events/flyers/2025clockrunflyer.jpg'
+image: '../../../assets/clubs/logos/pber.webp'
+flyer: '../../../assets/events/flyers/2025clockrunflyer.jpg'
 downloads:
   - label: Confirmation Sheet
     url: /events/pber-11_30_25-enduro-rider-information.pdf

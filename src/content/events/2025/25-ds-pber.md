@@ -11,7 +11,7 @@ format: Dual Sport
 series: Dual Sport Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/pber.webp'
+image: '../../../assets/clubs/logos/pber.webp'
 ---
 **This event is CANCELLED**
 A PBER classic. Wear your ski suit.

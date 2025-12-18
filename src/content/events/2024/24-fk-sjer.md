@@ -13,7 +13,7 @@ series: ECEA Youth Series
 checkInTime: '2024-10-26T13:00:24.638Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/sjer.png'
+image: '../../../assets/clubs/logos/sjer.png'
 ---
 A message from PBER and SJER.
 

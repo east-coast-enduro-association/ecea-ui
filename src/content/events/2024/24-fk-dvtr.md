@@ -12,8 +12,8 @@ series: ECEA Youth Series
 checkInTime: '2023-09-22T02:00:03.444Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/dvtr.jpg'
-flyer: '../../../assets/images/events/flyers/24highsteakshs.jpg'
+image: '../../../assets/clubs/logos/dvtr.jpg'
+flyer: '../../../assets/events/flyers/24highsteakshs.jpg'
 ---
 AMA Required.\
 \

@@ -11,7 +11,7 @@ format: Dual Sport
 series: Dual Sport Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/rorr.png'
+image: '../../../assets/clubs/logos/rorr.png'
 ---
 
 **Event is full! Registration is closed**

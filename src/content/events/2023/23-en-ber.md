@@ -13,7 +13,7 @@ keyTime: '2023-07-23T09:00:00'
 checkInTime: '2023-07-23T07:00:00'
 closedCourse: true
 gasAway: true
-image: '../../../assets/images/logos/clubs/ber.gif'
+image: '../../../assets/clubs/logos/ber.gif'
 registrationLink: 'https://www.livelaps.com/event?12156'
 ---
 

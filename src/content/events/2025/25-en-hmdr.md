@@ -13,8 +13,8 @@ keyTime: '2025-06-22T09:00:00'
 checkInTime: '2025-06-22T07:00:00'
 closedCourse: true
 gasAway: false
-image: '../../../assets/images/logos/clubs/hmdr.png'
-flyer: '../../../assets/images/events/flyers/250409-shotgun-enduro-flyer.jpg'
+image: '../../../assets/clubs/logos/hmdr.png'
+flyer: '../../../assets/events/flyers/250409-shotgun-enduro-flyer.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2025&EID=7'
 ---
 ## **This event is sold out and will not be accepting any further entries**

@@ -13,8 +13,8 @@ keyTime: '2024-07-14T09:00:00'
 checkInTime: '2025-07-13T07:00:00'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/ster.jpg'
-flyer: '../../../assets/images/events/flyers/508646955_1132986628868075_3206152154755568562_n.jpg'
+image: '../../../assets/clubs/logos/ster.jpg'
+flyer: '../../../assets/events/flyers/508646955_1132986628868075_3206152154755568562_n.jpg'
 downloads:
   - label: Confirmation
     url: /events/25-confirmation-ster-barbed-wire-enduro.pdf

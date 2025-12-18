@@ -12,8 +12,8 @@ series: Hare Scramble Series
 checkInTime: '2025-04-27T07:00:00.000Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/vftr.jpg'
-flyer: '../../../assets/images/events/flyers/25-vftr-hs.jpeg'
+image: '../../../assets/clubs/logos/vftr.jpg'
+flyer: '../../../assets/events/flyers/25-vftr-hs.jpeg'
 ---
 # ***ADULT RACE DETAILS***
 

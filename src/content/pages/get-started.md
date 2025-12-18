@@ -1,127 +1,35 @@
 ---
-title: "Get Started In The ECEA"
-description: "The premier off road racing organization in the mid-Atlantic"
+title: "Get Started"
+subtitle: "Your guide to riding with the ECEA"
+description: "Welcome to the East Coast Enduro Association. Learn about our racing series and how to join."
 draft: false
 
-################################## Get Started #####################################
-get_started:
-  enable : true
-  image : "images/riders/image17.jpg"
-  title : "Welcome To The East Coast Enduro Association"
-  content : "The ECEA is the most diverse off road association around with something for the family, youth rider, racer or enthusiast.
-  <br/><br/>
-  As we are an American Motorcyclist Association chartered organization, we urge you to join to the AMA. The AMA has many benefits to both the ECEA and to you. The AMA supports motorcycling and our organization and as a member, you will be provided with many benefits.
-  <br><br>
-  The ECEA is about racing but only a small percentage of our members race and many don’t even ride. Many of our ECEA members just volunteer to help and enjoy the life long friendships that are formed. Our youth racing is a complete family oriented program. Camping for the weekend is very popular with the kids racing on Saturday. Older kids(12+) and adults race on Sunday."
-  button:
-    enable : true
-    label : "Download Our Welcome Book"
-    link : /documents/ecea-welcome-book.pdf
-  button_secondary:
-    enable: true
-    label: "Register or Renew with AMA"
-    link: "https://americanmotorcyclist.com/"
+# Welcome Section
+welcomeTitle: "Welcome to the East Coast Enduro Association"
+welcomeContent: |
+  The ECEA is the most diverse off-road association around with something for everyone—families, youth riders, racers, and enthusiasts alike. As an AMA-chartered organization since 1971, we've been bringing riders together for over 50 years.
 
-  funfacts:
-  # funfacts loop
-  - icon : "fas fa-flask" #https://fontawesome.com/v5.15/icons
-    name : "Completed Projects"
-    count : "349"
+  Racing is just part of what we do. Many of our members volunteer, spectate, and enjoy the lifelong friendships formed at our events. Whether you want to compete for championships or just enjoy a weekend ride with family, there's a place for you here.
 
-  # funfacts loop
-  - icon : "fas fa-fire-alt" #https://fontawesome.com/v5.15/icons
-    name : "Lines Of Code"
-    count : "35000"
+# Buttons
+welcomeBookUrl: "/documents/ecea-welcome-book.pdf"
+amaUrl: "https://americanmotorcyclist.com/"
 
-  # funfacts loop
-  - icon : "fas fa-glasses" #https://fontawesome.com/v5.15/icons
-    name : "Satisfied Customer"
-    count : "70"
+# Series Section
+seriesTitle: "Choose Your Discipline"
+seriesDescription: "We offer four distinct types of events. Click any series to learn more about what to expect, how to register, and see upcoming events."
 
-  # funfacts loop
-  - icon : "fas fa-trophy" #https://fontawesome.com/v5.15/icons
-    name : "Awards Winner"
-    count : "10"
+# Steps Section
+stepsTitle: "How to Get Started"
+steps:
+  - title: "Join the AMA"
+    description: "All ECEA events require AMA membership. It supports motorcycling advocacy and provides insurance coverage."
+  - title: "Pick an Event"
+    description: "Browse our calendar and choose an event that matches your skill level and interests."
+  - title: "Register & Ride"
+    description: "Sign up online or at the event. Show up, have fun, and become part of the ECEA family."
 
-  # funfacts loop
-  - icon : "fas fa-glass-cheers" #https://fontawesome.com/v5.15/icons
-    name : "Satisfied Customer"
-    count : "75"
-
-  # funfacts loop
-  - icon : "fas fa-certificate" #https://fontawesome.com/v5.15/icons
-    name : "Awards Winner"
-    count : "20"
-
-################################ feature #####################################
-features:
-  enable : true
-  title : "Come Ride With Us"
-  feature_item:
-  # feature item loop
-  - logo: "images/logos/ecea/enduro-compact.png"
-    name: "Enduro"
-    link: /series/enduro
-    content: "Since the early 70's the ECEA has been providing some of the best Enduro events on the east coast. We host old school time keepers to restarts to sprint enduros."
-
-  - logo: "images/logos/ecea/harescramble-compact.png"
-    name: "Hare Scramble"
-    link: /series/harescramble
-    content: "The ECEA has always been the home of select National Events back in the day and now provide some of the most diverse off road events in the country"
-
-  - logo: "images/logos/ecea/fastkidz-compact.png"
-    name: "Fast Kidz"
-    link: /series/fastkidz
-    content: "ECEA Youth Racing started in 2000 and formalized in 2006 as the ECEA FastKIDZ. The Future Champions Start Here."
-
-  - logo: "images/logos/ecea/dualsport-compact.png"
-    name: "Dual Sport"
-    link: /series/dual-sport
-    content: "Some of the best Dual Sports in the USA. AMA awarded Hammer Run Dual Sport and more."
-
-#################################### testimonial & mission vision #######################################
-testimonial:
-  enable : true
-  # testimonial content comes from "data/*/homepage.yml" file
-
-mission_vision:
-  enable : true
-  tabs:
-  # tab item loop
-  - name : "Vision"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis ducimus facere repellat
-    harum, eius cupiditate, aliquam aut deserunt. Nemo illo ex impedit autem quod nobis architecto, velit
-    quasi, aut voluptas porro natus. Fuga magnam perspiciatis fugit, placeat possimus officia non ducimus
-    voluptatum aspernatur ad quidem neque accusantium repudiandae cupiditate nobis corporis, cum facere
-    iusto, modi cumque consectetur saepe. Officia, molestiae tempore! Consequatur ipsa consequuntur saepe
-    suscipit vero laudantium, mollitia, quaerat soluta nihil non tempore, quos dignissimos quasi ab officiis
-    illum numquam quibusdam ducimus, veritatis ad. Quia, aliquid. Quaerat quos ducimus ipsam amet minus
-    temporibus eos sequi alias hic nemo."
-
-  # tab item loop
-  - name : "Mission"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis ducimus facere repellat
-    harum, eius cupiditate, aliquam aut deserunt. Nemo illo ex impedit autem quod nobis architecto, velit
-    quasi, aut voluptas porro natus. Fuga magnam perspiciatis fugit, placeat possimus officia non ducimus
-    voluptatum aspernatur ad quidem neque accusantium repudiandae cupiditate nobis corporis, cum facere
-    iusto, modi cumque consectetur saepe. Officia, molestiae tempore! Consequatur ipsa consequuntur saepe
-    suscipit vero laudantium, mollitia, quaerat soluta nihil non tempore, quos dignissimos quasi ab officiis
-    illum numquam quibusdam ducimus, veritatis ad. Quia, aliquid. Quaerat quos ducimus ipsam amet minus
-    temporibus eos sequi alias hic nemo."
-
-  # tab item loop
-  - name : "Approach"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis ducimus facere repellat
-    harum, eius cupiditate, aliquam aut deserunt. Nemo illo ex impedit autem quod nobis architecto, velit
-    quasi, aut voluptas porro natus. Fuga magnam perspiciatis fugit, placeat possimus officia non ducimus
-    voluptatum aspernatur ad quidem neque accusantium repudiandae cupiditate nobis corporis, cum facere
-    iusto, modi cumque consectetur saepe. Officia, molestiae tempore! Consequatur ipsa consequuntur saepe
-    suscipit vero laudantium, mollitia, quaerat soluta nihil non tempore, quos dignissimos quasi ab officiis
-    illum numquam quibusdam ducimus, veritatis ad. Quia, aliquid. Quaerat quos ducimus ipsam amet minus
-    temporibus eos sequi alias hic nemo."
-
-############################# call to action #################################
-cta_contact:
-  enable: true
-  # call to action content comes from "_index.md"
+# FAQ Section
+faqTitle: "Have Questions?"
+faqDescription: "Check out our FAQ for detailed information about each event type, what to bring, how scoring works, and more."
 ---

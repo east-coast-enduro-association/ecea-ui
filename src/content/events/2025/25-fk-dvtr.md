@@ -12,8 +12,8 @@ series: ECEA Youth Series
 checkInTime: '2025-09-14T02:00:03.444Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/dvtr.jpg'
-flyer: '../../../assets/images/events/flyers/25dvterhs.jpg'
+image: '../../../assets/clubs/logos/dvtr.jpg'
+flyer: '../../../assets/events/flyers/25dvterhs.jpg'
 ---
 AMA Required.\
 \

@@ -1,7 +1,7 @@
 ---
 name: South Penn Enduro Riders
 abbreviatedName: SPER
-logo: '../../assets/images/logos/clubs/sper.jpg'
+logo: '../../assets/clubs/logos/sper.jpg'
 summary: SPER
 draft: false
 website: 'https://www.facebook.com/SouthPennEnduroRiders'

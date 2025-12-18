@@ -13,8 +13,8 @@ series: Hare Scramble Series
 checkInTime: '2023-05-07T07:00:00.000Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/cdr.png'
-flyer: '../../../assets/images/events/flyers/23-hs-cdr-flyer.png'
+image: '../../../assets/clubs/logos/cdr.png'
+flyer: '../../../assets/events/flyers/23-hs-cdr-flyer.png'
 ---
 **RIDER LIMIT, ONLINE SIGN UP ONLY., You need a Series Number** to use the online system\
 **NO FRIDAY Night CAMPING** , GATES open SATURDAY 8AM, SUNDAY 6am

@@ -12,8 +12,8 @@ series: ECEA Youth Series
 checkInTime: '2023-10-14T14:00:28.070Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/mmc.jpg'
-flyer: '../../../assets/images/events/flyers/23fallbrawlhs.jpg'
+image: '../../../assets/clubs/logos/mmc.jpg'
+flyer: '../../../assets/events/flyers/23fallbrawlhs.jpg'
 ---
 AMA Required to RACE \
 Series Membership or Day Pass Required to Enter. If needed [GO HERE](https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx)

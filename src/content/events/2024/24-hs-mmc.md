@@ -12,7 +12,7 @@ series: Hare Scramble Series
 checkInTime: '2024-05-12T11:00:04.369Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/mmc.jpg'
+image: '../../../assets/clubs/logos/mmc.jpg'
 ---
 Riders must Have current AMA Membership.\
 Series Number or DAY Pass Required to Enter, if needed first [GO HERE ](https://www.moto-tally.com/ECEA/ECEA/SeriesRegistration.aspx)

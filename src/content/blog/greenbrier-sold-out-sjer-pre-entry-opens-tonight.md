@@ -5,7 +5,7 @@ description: 'Let''s sell out more enduros!'
 author: Michael Abramo
 draft: false
 image:
-  src: '@assets/images/logos/ecea/ecea-small.png'
+  src: '@assets/ecea/logos/ecea-small.png'
   alt: Greenbrier Sold Out! SJER Pre-Entry Opens Tonight!
 tags:
   - '2023'

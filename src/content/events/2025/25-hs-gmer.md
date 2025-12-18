@@ -12,8 +12,8 @@ series: ECEA Hare Scramble Series
 checkInTime: '2025-06-01T11:05:23.454Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/gmer.gif'
-flyer: '../../../assets/images/events/flyers/25gmerhs-revised.jpg'
+image: '../../../assets/clubs/logos/gmer.gif'
+flyer: '../../../assets/events/flyers/25gmerhs-revised.jpg'
 ---
 Gates OPEN FRIDAY 2pm\
 **NO GO PRO’s,  NO PRACTICE SATURDAY**      

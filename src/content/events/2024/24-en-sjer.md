@@ -13,7 +13,7 @@ keyTime: '2024-03-17T09:00:00'
 checkInTime: '2024-03-17T07:00:00'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/sjer-green.png'
+image: '../../../assets/clubs/logos/sjer-green.png'
 ---
 Curly Fern Enduro is canceled for the 2024 season
 

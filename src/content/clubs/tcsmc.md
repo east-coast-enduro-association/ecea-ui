@@ -1,7 +1,7 @@
 ---
 name: Tri-County Sportsman Motorcycle Club
 abbreviatedName: TCSMC
-logo: '../../assets/images/logos/clubs/tcsmc.png'
+logo: '../../assets/clubs/logos/tcsmc.png'
 summary: TCSMC
 draft: false
 website: 'http://www.teamhammer.org/'

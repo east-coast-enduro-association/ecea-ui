@@ -1,7 +1,7 @@
 ---
 name: South Jersey Enduro Riders
 abbreviatedName: SJER
-logo: '../../assets/images/logos/clubs/sjer.png'
+logo: '../../assets/clubs/logos/sjer.png'
 summary: SJER
 draft: false
 website: 'http://sjer.org/'

@@ -12,8 +12,8 @@ series: ECEA Youth Series
 checkInTime: '2024-06-15T14:00:43.190Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/rorr.png'
-flyer: '../../../assets/images/events/flyers/24rorr.jpg'
+image: '../../../assets/clubs/logos/rorr.png'
+flyer: '../../../assets/events/flyers/24rorr.jpg'
 ---
 **SPECIAL EVENT WAIVER and GATE FEE's** \
 [GO HERE NOW  Required prior to Entering  site. ](https://rorr.redpodium.com/2024-rorr-ecea-hare-scramble-series)\

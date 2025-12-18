@@ -12,7 +12,7 @@ series: Hare Scramble Series
 checkInTime: '2023-08-23T03:55:45.714Z'
 closedCourse: false
 gasAway: false
-image: '../../../assets/images/logos/clubs/rrmc-large.png'
+image: '../../../assets/clubs/logos/rrmc-large.png'
 ---
 
 Morning race: 10:00am

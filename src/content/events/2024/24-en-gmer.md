@@ -13,8 +13,8 @@ keyTime: '2024-08-04T09:00:00'
 checkInTime: '2024-08-04T07:00:00'
 closedCourse: false
 gasAway: true
-image: '../../../assets/images/logos/clubs/gmer.gif'
-flyer: '../../../assets/images/events/flyers/three-springs-enduro-flyer-24-r1_page-0001.jpg'
+image: '../../../assets/clubs/logos/gmer.gif'
+flyer: '../../../assets/events/flyers/three-springs-enduro-flyer-24-r1_page-0001.jpg'
 startGridLink: 'https://www.moto-tally.com/ECEA/Enduro/StartingGrid.aspx?EY=2024&EID=11'
 downloads:
   - label: Confirmation Sheet
