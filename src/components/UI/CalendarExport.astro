@@ -1,0 +1,37 @@
+---
+/**
+ * CalendarExport - Download button for adding events to personal calendars
+ * Generates ICS file compatible with Apple Calendar, Outlook, and Google Calendar
+ */
+import { createICSDataUrl, type ICSEvent } from '../../utils/calendarUtils';
+
+interface Props {
+  events: ICSEvent[];
+  class?: string;
+}
+
+const { events, class: className } = Astro.props;
+
+const icsDataUrl = createICSDataUrl(events);
+const eventCount = events.length;
+const eventText = eventCount === 1 ? 'event' : 'events';
+---
+
+<div class={`calendar-export ${className || ''}`}>
+  <h3 class="text-sm font-semibold text-gray-900 mb-3">Add to Calendar</h3>
+
+  <a
+    href={icsDataUrl}
+    download="ecea-events.ics"
+    class="flex items-center w-full px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+  >
+    <svg class="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+    <span>Download Calendar (.ics)</span>
+  </a>
+
+  <p class="text-xs text-gray-500 mt-2">
+    Downloads {eventCount} upcoming {eventText} for Apple Calendar, Outlook, or Google Calendar
+  </p>
+</div>
