@@ -1,0 +1,435 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/Sections/PageHeader.astro";
+import { DownloadIcon } from "../../components/Icons";
+import { getCollection } from "astro:content";
+import { FACEBOOK_GROUPS } from "../../utils/constants";
+
+// Get member count for display (from all series, deduplicated by AMA)
+const allMemberLists = await getCollection("members");
+const allMembers = allMemberLists.flatMap(m => m.data.members);
+const uniqueMembers = allMembers.filter((m, i, arr) => arr.findIndex(x => x.ama === m.ama) === i);
+const memberCount = uniqueMembers.length;
+---
+
+<BaseLayout
+  title="Rider Resources - ECEA"
+  description="Download rulebooks, forms, and other resources for ECEA riders and clubs."
+>
+  <PageHeader
+    title="Rider Resources"
+    subtitle="Rulebooks, forms, and documents for ECEA riders"
+    backgroundImage="/images/feature-bg.jpg"
+  />
+
+  <section class="py-12">
+    <div class="container">
+      <div class="max-w-4xl mx-auto space-y-12">
+
+        <!-- Getting Started -->
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center text-xl">1</span>
+            Getting Started
+          </h2>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <a
+              href="/documents/ecea-welcome-book.pdf"
+              class="group flex items-start gap-4 p-5 bg-white rounded-lg border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all"
+              target="_blank"
+            >
+              <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-bold text-gray-900 group-hover:text-primary-600 transition-colors">Welcome Book</h3>
+                <p class="text-sm text-gray-600 mt-1">Complete introduction to ECEA racing. Everything a new rider needs to know.</p>
+              </div>
+              <DownloadIcon size="sm" class="text-gray-400 group-hover:text-primary-600 flex-shrink-0" />
+            </a>
+
+            <a
+              href="/documents/ecea-rulebook-current.pdf"
+              class="group flex items-start gap-4 p-5 bg-white rounded-lg border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all"
+              target="_blank"
+            >
+              <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+                  Rule Book
+                  <span class="ml-2 px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded">Current</span>
+                </h3>
+                <p class="text-sm text-gray-600 mt-1">Official ECEA rules and regulations for all series.</p>
+              </div>
+              <DownloadIcon size="sm" class="text-gray-400 group-hover:text-primary-600 flex-shrink-0" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Series Registration -->
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center text-xl">2</span>
+            Series Registration
+          </h2>
+          <div class="bg-white rounded-lg border border-gray-200 p-6">
+            <p class="text-gray-600 mb-4">
+              Register for championship series on Moto-Tally. Series registration makes you eligible for year-end awards and championship points.
+            </p>
+            <div class="grid gap-3 sm:grid-cols-3">
+              <a
+                href="https://www.moto-tally.com/ECEA/Enduro/SeriesRegistration.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center gap-2 px-4 py-3 bg-primary-50 text-primary-700 rounded-lg hover:bg-primary-100 transition-colors font-medium"
+              >
+                Enduro Registration
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              <a
+                href="https://www.moto-tally.com/ECEA/ECEA/SeriesRegistration.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center gap-2 px-4 py-3 bg-secondary-50 text-secondary-700 rounded-lg hover:bg-secondary-100 transition-colors font-medium"
+              >
+                Hare Scramble Registration
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              <a
+                href="https://www.moto-tally.com/ECEA/ECEA_PWY/SeriesRegistration.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center gap-2 px-4 py-3 bg-accent-50 text-accent-700 rounded-lg hover:bg-accent-100 transition-colors font-medium"
+              >
+                FastKIDZ Registration
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member List -->
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center text-xl">3</span>
+            Member List
+          </h2>
+          <a
+            href="/resources/members"
+            class="group flex items-center gap-4 p-5 bg-white rounded-lg border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all"
+          >
+            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+                ECEA Membership Roster
+                <span class="ml-2 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded">{memberCount} members</span>
+              </h3>
+              <p class="text-sm text-gray-600 mt-1">Search and browse the current ECEA member list by name or club.</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-primary-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Rider Forms -->
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center text-xl">4</span>
+            Rider Forms
+          </h2>
+          <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div class="divide-y divide-gray-200">
+              <a
+                href="/documents/ecea-enduro-statement-of-responsibility.pdf"
+                class="group flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors"
+                target="_blank"
+              >
+                <div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-medium text-gray-900 group-hover:text-primary-600 transition-colors">Statement of Responsibility</h3>
+                  <p class="text-sm text-gray-500">Required liability waiver for all enduro events</p>
+                </div>
+                <DownloadIcon size="sm" class="text-gray-400 group-hover:text-primary-600 flex-shrink-0" />
+              </a>
+
+              <a
+                href="/documents/ecea-enduro-team-signup.pdf"
+                class="group flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors"
+                target="_blank"
+              >
+                <div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-medium text-gray-900 group-hover:text-primary-600 transition-colors">Enduro Team Signup</h3>
+                  <p class="text-sm text-gray-500">Register your club team for the team competition</p>
+                </div>
+                <DownloadIcon size="sm" class="text-gray-400 group-hover:text-primary-600 flex-shrink-0" />
+              </a>
+
+              <a
+                href="/documents/ecea-advancement-petition-form.pdf"
+                class="group flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors"
+                target="_blank"
+              >
+                <div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-medium text-gray-900 group-hover:text-primary-600 transition-colors">Advancement Petition Form</h3>
+                  <p class="text-sm text-gray-500">Request to move to a different class</p>
+                </div>
+                <DownloadIcon size="sm" class="text-gray-400 group-hover:text-primary-600 flex-shrink-0" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Protests & Rules -->
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center text-xl">5</span>
+            Protests & Rules
+          </h2>
+          <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div class="divide-y divide-gray-200">
+              <a
+                href="/documents/ecea-protest-form.pdf"
+                class="group flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors"
+                target="_blank"
+              >
+                <div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-medium text-gray-900 group-hover:text-primary-600 transition-colors">Protest Form</h3>
+                  <p class="text-sm text-gray-500">Official form to file a protest at an event</p>
+                </div>
+                <DownloadIcon size="sm" class="text-gray-400 group-hover:text-primary-600 flex-shrink-0" />
+              </a>
+
+              <a
+                href="/documents/ecea-protest-procedure-flow-chart.pdf"
+                class="group flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors"
+                target="_blank"
+              >
+                <div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-medium text-gray-900 group-hover:text-primary-600 transition-colors">Protest Procedure Flow Chart</h3>
+                  <p class="text-sm text-gray-500">Visual guide to the protest process</p>
+                </div>
+                <DownloadIcon size="sm" class="text-gray-400 group-hover:text-primary-600 flex-shrink-0" />
+              </a>
+
+              <a
+                href="/documents/ecea-rule-proposal-form.pdf"
+                class="group flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors"
+                target="_blank"
+              >
+                <div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-medium text-gray-900 group-hover:text-primary-600 transition-colors">Rule Proposal Form</h3>
+                  <p class="text-sm text-gray-500">Submit a proposal to change ECEA rules</p>
+                </div>
+                <DownloadIcon size="sm" class="text-gray-400 group-hover:text-primary-600 flex-shrink-0" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Club Resources -->
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center text-xl">6</span>
+            Club Resources
+          </h2>
+          <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div class="divide-y divide-gray-200">
+              <a
+                href="/documents/ecea-club-referee-protest-log.pdf"
+                class="group flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors"
+                target="_blank"
+              >
+                <div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-medium text-gray-900 group-hover:text-primary-600 transition-colors">Club Referee Protest Log</h3>
+                  <p class="text-sm text-gray-500">For club officials to track protests at events</p>
+                </div>
+                <DownloadIcon size="sm" class="text-gray-400 group-hover:text-primary-600 flex-shrink-0" />
+              </a>
+
+              <a
+                href="/documents/ecea-hall-of-fame-nomination-form.pdf"
+                class="group flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors"
+                target="_blank"
+              >
+                <div class="flex-shrink-0 w-10 h-10 bg-red-50 rounded flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-medium text-gray-900 group-hover:text-primary-600 transition-colors">Hall of Fame Nomination Form</h3>
+                  <p class="text-sm text-gray-500">Nominate a deserving member for the ECEA Hall of Fame</p>
+                </div>
+                <DownloadIcon size="sm" class="text-gray-400 group-hover:text-primary-600 flex-shrink-0" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contingency & Sponsorship -->
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center text-xl">7</span>
+            Contingency Programs
+          </h2>
+          <div class="bg-gradient-to-r from-purple-50 to-primary-50 rounded-lg border border-purple-200 p-6">
+            <p class="text-gray-700 mb-4">
+              ECEA has contingency programs with various manufacturers. Download the current contingency information to learn about payouts and requirements.
+            </p>
+            <a
+              href="/attachments/ECEA-contingency-announcement-2025-interactive.pdf"
+              class="inline-flex items-center gap-2 px-5 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
+              target="_blank"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              2025 Contingency Information
+            </a>
+          </div>
+        </div>
+
+        <!-- Archive -->
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 bg-gray-100 text-gray-600 rounded-lg flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+              </svg>
+            </span>
+            Archive
+          </h2>
+          <div class="bg-gray-50 rounded-lg border border-gray-200 p-6">
+            <p class="text-gray-600 mb-4 text-sm">Previous rulebooks and historical documents.</p>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="/documents/ecea-rulebook-2023.pdf"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm"
+                target="_blank"
+              >
+                <DownloadIcon size="sm" class="text-gray-400" />
+                2023 Rule Book
+              </a>
+              <a
+                href="/documents/ecea-2023-rulebook-changes.pdf"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm"
+                target="_blank"
+              >
+                <DownloadIcon size="sm" class="text-gray-400" />
+                2023 Rule Changes
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Community -->
+        <div id="community">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+              </svg>
+            </span>
+            Community
+          </h2>
+          <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div class="p-4 bg-gray-50 border-b border-gray-200">
+              <p class="text-gray-600 text-sm">Join our Facebook groups to connect with other ECEA riders, get event updates, and share photos.</p>
+            </div>
+            <div class="divide-y divide-gray-200">
+              {Object.entries(FACEBOOK_GROUPS).map(([key, group]) => (
+                <a
+                  href={group.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex items-center gap-4 p-4 hover:bg-blue-50 transition-colors"
+                >
+                  <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                    <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">{group.name}</h3>
+                    <p class="text-sm text-gray-500">{group.description}</p>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Help Section -->
+        <div class="bg-primary-50 rounded-lg p-6">
+          <h3 class="font-bold text-primary-900 mb-2">Need Help?</h3>
+          <p class="text-primary-800 mb-4">
+            Can't find what you're looking for? Check out our FAQ or contact us directly.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/faq" class="inline-flex items-center px-4 py-2 bg-white text-primary-700 rounded-lg hover:bg-primary-100 transition-colors font-medium border border-primary-200">
+              View FAQ
+            </a>
+            <a href="/contact" class="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium">
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

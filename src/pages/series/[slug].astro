@@ -1,0 +1,233 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/Sections/PageHeader.astro";
+import Card from "../../components/UI/Card.astro";
+import Button from "../../components/UI/Button.astro";
+import { getCollection } from "astro:content";
+import { formatDate } from "../../utils/dateUtils";
+import { COMPETITIVE_SERIES } from "../../utils/constants";
+
+export async function getStaticPaths() {
+  const seriesEntries = await getCollection("series");
+  return seriesEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Map series slug to event type for filtering
+const slugToEventType: Record<string, string> = {
+  enduro: "Enduro",
+  harescramble: "Hare Scramble",
+  fastkidz: "FastKIDZ",
+  "dual-sport": "Dual Sport",
+};
+
+const eventType = slugToEventType[entry.slug];
+
+// Get events for this series
+const allEvents = await getCollection("events", ({ data }) => !data.draft);
+const now = new Date();
+const currentYear = now.getFullYear();
+
+const seriesEvents = allEvents.filter(e => e.data.eventType === eventType);
+const thisYearEvents = seriesEvents.filter(e => new Date(e.data.date).getFullYear() === currentYear);
+
+const upcomingEvents = seriesEvents
+  .filter(e => new Date(e.data.date) >= now)
+  .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+
+const pastEvents = seriesEvents
+  .filter(e => new Date(e.data.date) < now)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 6); // Show last 6 past events
+
+// Get club logos for event images
+const clubs = await getCollection("clubs");
+const clubLogoMap = Object.fromEntries(
+  clubs.map(club => [club.data.abbreviatedName, club.data.logo])
+);
+
+// Series metadata
+const seriesInfo: Record<string, { icon: string; color: string; headerBg: string }> = {
+  enduro: { icon: "🏁", color: "primary", headerBg: "/images/feature-bg.jpg" },
+  harescramble: { icon: "🏍️", color: "green", headerBg: "/images/feature-bg.jpg" },
+  fastkidz: { icon: "⭐", color: "yellow", headerBg: "/images/feature-bg.jpg" },
+  "dual-sport": { icon: "🌲", color: "orange", headerBg: "/images/feature-bg.jpg" },
+};
+
+const info = seriesInfo[entry.slug] || { icon: "🏁", color: "primary", headerBg: "/images/feature-bg.jpg" };
+
+// Check if this is a competitive series (with points/championships)
+const isCompetitive = COMPETITIVE_SERIES.includes(entry.slug as typeof COMPETITIVE_SERIES[number]);
+const seriesLabel = isCompetitive ? "Series" : "Events";
+
+// Helper to get event image
+const getEventImage = (event: typeof upcomingEvents[0]) => {
+  if (event.data.image) return event.data.image;
+  if (event.data.hostingClubs?.[0]) {
+    return clubLogoMap[event.data.hostingClubs[0]];
+  }
+  return null;
+};
+---
+
+<BaseLayout
+  title={`${entry.data.name} ${seriesLabel} - ECEA`}
+  description={entry.data.description || `${entry.data.name} ${seriesLabel.toLowerCase()} information and upcoming events.`}
+>
+  <PageHeader
+    title={`${info.icon} ${entry.data.name} ${seriesLabel}`}
+    subtitle={entry.data.description}
+    backgroundImage={info.headerBg}
+  />
+
+  <section class="py-12">
+    <div class="container">
+      <!-- Series Content (if any markdown content exists) -->
+      {Content && (
+        <div class="prose prose-lg max-w-none mb-12">
+          <Content />
+        </div>
+      )}
+
+      <!-- Quick Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div class="bg-white p-6 rounded-lg shadow-sm text-center border border-gray-100">
+          <p class="text-3xl font-bold text-primary-600">{upcomingEvents.length}</p>
+          <p class="text-gray-600 text-sm">Upcoming Events</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm text-center border border-gray-100">
+          <p class="text-3xl font-bold text-gray-700">{thisYearEvents.length}</p>
+          <p class="text-gray-600 text-sm">{currentYear} Events</p>
+        </div>
+        {upcomingEvents[0] && (
+          <div class="bg-white p-6 rounded-lg shadow-sm text-center border border-gray-100 col-span-2 md:col-span-1">
+            <p class="text-sm text-gray-500 mb-1">Next Event</p>
+            <p class="font-bold text-gray-900 truncate">{upcomingEvents[0].data.title}</p>
+            <p class="text-primary-600 text-sm">{formatDate(upcomingEvents[0].data.date)}</p>
+          </div>
+        )}
+        {entry.data.facebookGroup && (
+          <a
+            href={entry.data.facebookGroup}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white p-6 rounded-lg shadow-sm text-center border border-gray-100 hover:border-blue-300 hover:bg-blue-50 transition-colors col-span-2 md:col-span-1"
+          >
+            <div class="flex items-center justify-center gap-2">
+              <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+              </svg>
+              <span class="font-semibold text-blue-600">Join Facebook Group</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-1">Discuss {entry.data.name}</p>
+          </a>
+        )}
+      </div>
+
+      <!-- Documents & Resources -->
+      {entry.data.documents && entry.data.documents.length > 0 && (
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold mb-6">Documents & Resources</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {entry.data.documents.map(doc => (
+              <a
+                href={doc.url}
+                target="_blank"
+                class="flex items-center p-4 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-primary-200 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                <span class="font-medium text-gray-700">{doc.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Upcoming Events -->
+      {upcomingEvents.length > 0 && (
+        <div class="mb-12">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">Upcoming {entry.data.name} Events</h2>
+            <a href="/events" class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+              View All Events →
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {upcomingEvents.slice(0, 6).map((event) => {
+              const eventImage = getEventImage(event);
+              return (
+                <Card
+                  title={event.data.title}
+                  image={eventImage ? { src: eventImage, alt: event.data.title } : undefined}
+                  href={`/events/${event.slug}`}
+                >
+                  <div class="mb-3 flex items-center text-primary-700 font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {formatDate(event.data.date)}
+                  </div>
+                  <div class="mb-3 flex items-center text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {event.data.location}
+                  </div>
+                  {event.data.hostingClubs && (
+                    <p class="text-gray-500 text-sm">Hosted by {event.data.hostingClubs.join(", ")}</p>
+                  )}
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {upcomingEvents.length === 0 && (
+        <div class="mb-12 bg-gray-50 rounded-lg p-8 text-center">
+          <p class="text-gray-600 mb-4">No upcoming {entry.data.name} events scheduled.</p>
+          <Button href="/events" variant="outline">View All Events</Button>
+        </div>
+      )}
+
+      <!-- Past Events -->
+      {pastEvents.length > 0 && (
+        <div>
+          <h2 class="text-2xl font-bold mb-6 text-gray-500">Recent Past Events</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-75">
+            {pastEvents.map((event) => (
+              <a
+                href={`/events/${event.slug}`}
+                class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                <h3 class="font-bold text-gray-700 mb-1">{event.data.title}</h3>
+                <p class="text-gray-500 text-sm line-through">{formatDate(event.data.date)}</p>
+                {event.data.resultsLink && (
+                  <span class="inline-flex items-center mt-2 text-primary-600 text-sm font-medium">
+                    View Results →
+                  </span>
+                )}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Back to Series -->
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <Button href="/series" variant="outline">
+          ← Back to Racing Series
+        </Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

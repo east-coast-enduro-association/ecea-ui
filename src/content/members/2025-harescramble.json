@@ -1,0 +1,671 @@
+{
+  "year": 2025,
+  "series": "Hare Scramble",
+  "lastUpdated": "2025-12-17",
+  "members": [
+    {
+      "name": "JAMES ASHMEN",
+      "club": "DVTR",
+      "ama": "5090561",
+      "number": "344",
+      "city": "WILLIAMSTOWN",
+      "state": "NJ"
+    },
+    {
+      "name": "DAVID BADER",
+      "club": "SJER",
+      "ama": "697503",
+      "number": "999",
+      "city": "ATCO",
+      "state": "NJ"
+    },
+    {
+      "name": "MICHAEL BARRETT",
+      "club": "GMER",
+      "ama": "891519",
+      "number": "444",
+      "city": "IJAMSVILLE",
+      "state": "MD"
+    },
+    {
+      "name": "JACK BASSETT",
+      "club": "RORR",
+      "ama": "3913690",
+      "number": "469",
+      "city": "EXTON",
+      "state": "PA"
+    },
+    {
+      "name": "MICHAEL BLAHUT",
+      "club": "",
+      "ama": "5161296",
+      "number": "602",
+      "city": "PORT PENN",
+      "state": "DE"
+    },
+    {
+      "name": "PATRICIA BLAIR",
+      "club": "OCCR",
+      "ama": "700036",
+      "number": "342",
+      "city": "BRICK",
+      "state": "NJ"
+    },
+    {
+      "name": "JERIME BOSTON",
+      "club": "",
+      "ama": "5007503",
+      "number": "984",
+      "city": "PITTSGROVE",
+      "state": "NJ"
+    },
+    {
+      "name": "STEVE BOWMAN",
+      "club": "SPER",
+      "ama": "305992",
+      "number": "104",
+      "city": "ANNVILLE",
+      "state": "PA"
+    },
+    {
+      "name": "PAUL BRANSTETTER",
+      "club": "",
+      "ama": "3981911",
+      "number": "894",
+      "city": "BROWNS MILLS",
+      "state": "NJ"
+    },
+    {
+      "name": "RANDALL BROWN",
+      "club": "CDR",
+      "ama": "943963",
+      "number": "982",
+      "city": "SICKLERVILLE",
+      "state": "NJ"
+    },
+    {
+      "name": "WILLIAM BURNETT",
+      "club": "",
+      "ama": "662500",
+      "number": "542",
+      "city": "TOWNSEND",
+      "state": "DE"
+    },
+    {
+      "name": "STEVE BURT",
+      "club": "",
+      "ama": "5204465",
+      "number": "442",
+      "city": "MAURICETOWN",
+      "state": "NJ"
+    },
+    {
+      "name": "ANDY BYLSMA",
+      "club": "OCCR",
+      "ama": "733354",
+      "number": "327",
+      "city": "FORKED RIVER",
+      "state": "NJ"
+    },
+    {
+      "name": "JOSEPH CABOT",
+      "club": "",
+      "ama": "527886",
+      "number": "952",
+      "city": "PHOENIXVILLE",
+      "state": "PA"
+    },
+    {
+      "name": "BRIAN  CADDELL",
+      "club": "GMER",
+      "ama": "2203780",
+      "number": "561",
+      "city": "DELMAR",
+      "state": "MD"
+    },
+    {
+      "name": "BRIAN CALABRO",
+      "club": "",
+      "ama": "5150638",
+      "number": "441",
+      "city": "BUCHANAN",
+      "state": "NY"
+    },
+    {
+      "name": "ETHAN CLARK",
+      "club": "",
+      "ama": "5170146",
+      "number": "323",
+      "city": "QUAKERTOWN",
+      "state": "PA"
+    },
+    {
+      "name": "MATTHEW CLOSE",
+      "club": "BER",
+      "ama": "329334",
+      "number": "717",
+      "city": "KIRKWOOD",
+      "state": "PA"
+    },
+    {
+      "name": "LOUIS COBB",
+      "club": "TCSMC",
+      "ama": "3405933",
+      "number": "285",
+      "city": "MILLVILLE",
+      "state": "NJ"
+    },
+    {
+      "name": "DANIEL CROSBY",
+      "club": "RORR",
+      "ama": "2158218",
+      "number": "300",
+      "city": "DOUGLASSVILLE",
+      "state": "PA"
+    },
+    {
+      "name": "JESSE DAVIS",
+      "club": "DER",
+      "ama": "5071925",
+      "number": "291",
+      "city": "BEAR",
+      "state": "DE"
+    },
+    {
+      "name": "WILLIAM DAVIS",
+      "club": "",
+      "ama": "3165216",
+      "number": "304",
+      "city": "BRIDGETON",
+      "state": "NJ"
+    },
+    {
+      "name": "RONALD DECARO",
+      "club": "MMC",
+      "ama": "588086",
+      "number": "29",
+      "city": "FRANKLINVILLE",
+      "state": "NJ"
+    },
+    {
+      "name": "JOSEPH DESIMONE",
+      "club": "",
+      "ama": "5028330",
+      "number": "746",
+      "city": "LANDENBERG",
+      "state": "PA"
+    },
+    {
+      "name": "JODY DONLEY",
+      "club": "CDR",
+      "ama": "3277301",
+      "number": "718",
+      "city": "MULLICA HILL",
+      "state": "NJ"
+    },
+    {
+      "name": "JENINE DOSCHER",
+      "club": "DVTR",
+      "ama": "5104433",
+      "number": "428",
+      "city": "PITTSGROVE",
+      "state": "NJ"
+    },
+    {
+      "name": "WARREN DOSCHER",
+      "club": "DVTR",
+      "ama": "5104432",
+      "number": "679",
+      "city": "PITTSGROVE",
+      "state": "NJ"
+    },
+    {
+      "name": "JAMES FAVREAU",
+      "club": "DVTR",
+      "ama": "5152261",
+      "number": "736",
+      "city": "NEW BRUNSWICK",
+      "state": "NJ"
+    },
+    {
+      "name": "DAVID FLAMM",
+      "club": "RORR",
+      "ama": "329028",
+      "number": "20",
+      "city": "READING",
+      "state": "PA"
+    },
+    {
+      "name": "ANTHONY FORTUNA",
+      "club": "",
+      "ama": "5089267",
+      "number": "487",
+      "city": "OXFORD",
+      "state": "PA"
+    },
+    {
+      "name": "LELAND FRORIEP",
+      "club": "PBER",
+      "ama": "5091881",
+      "number": "366",
+      "city": "TOMS RIVER",
+      "state": "NJ"
+    },
+    {
+      "name": "PHILIP GASPAROVIC",
+      "club": "",
+      "ama": "711226",
+      "number": "254",
+      "city": "ELKTON",
+      "state": "MD"
+    },
+    {
+      "name": "JOHN GIACOMETTI",
+      "club": "",
+      "ama": "3539620",
+      "number": "11",
+      "city": "SOMER POINT",
+      "state": "NJ"
+    },
+    {
+      "name": "DAVID GLENN",
+      "club": "DER",
+      "ama": "507199",
+      "number": "112",
+      "city": "NORTH EAST",
+      "state": "MD"
+    },
+    {
+      "name": "JACOB GLENN",
+      "club": "DER",
+      "ama": "3925018",
+      "number": "12",
+      "city": "NORTH EAST",
+      "state": "MD"
+    },
+    {
+      "name": "DAN GRECCO",
+      "club": "",
+      "ama": "5221880",
+      "number": "249",
+      "city": "BARNEGAT",
+      "state": "NJ"
+    },
+    {
+      "name": "NICK GRECCO",
+      "club": "",
+      "ama": "5221408",
+      "number": "634",
+      "city": "NEWMANSTOWN",
+      "state": "PA"
+    },
+    {
+      "name": "MASON GUARD",
+      "club": "",
+      "ama": "5192130",
+      "number": "805",
+      "city": "HOCKESSIN",
+      "state": "DE"
+    },
+    {
+      "name": "MARVIN HAGENBACH",
+      "club": "",
+      "ama": "2438428",
+      "number": "1119",
+      "city": "GLEN LYON",
+      "state": "PA"
+    },
+    {
+      "name": "THOMAS HIND",
+      "club": "",
+      "ama": "3584680",
+      "number": "625",
+      "city": "MINE HILL",
+      "state": "NJ"
+    },
+    {
+      "name": "ALAN JESSAT",
+      "club": "TCSMC",
+      "ama": "2651696",
+      "number": "44",
+      "city": "BRIDGETON",
+      "state": "NJ"
+    },
+    {
+      "name": "JAY KENDERISH",
+      "club": "DVTR",
+      "ama": "5015990",
+      "number": "730",
+      "city": "CLAYTON",
+      "state": "NJ"
+    },
+    {
+      "name": "BRADLEY KRAEMER",
+      "club": "",
+      "ama": "5128927",
+      "number": "513",
+      "city": "MILLINGTON",
+      "state": "MD"
+    },
+    {
+      "name": "MAXX KYRITSIS",
+      "club": "DER",
+      "ama": "5114666",
+      "number": "789",
+      "city": "HOCKESSIN",
+      "state": "DE"
+    },
+    {
+      "name": "ERIC LEIBY",
+      "club": "",
+      "ama": "5117277",
+      "number": "15",
+      "city": "NEW RINGGOLD",
+      "state": "PA"
+    },
+    {
+      "name": "EVAN LUDLAM",
+      "club": "",
+      "ama": "5043028",
+      "number": "312",
+      "city": "WOODBINE",
+      "state": "NJ"
+    },
+    {
+      "name": "HUNTER LUDLAM",
+      "club": "",
+      "ama": "5043027",
+      "number": "411",
+      "city": "WOODBINE",
+      "state": "NJ"
+    },
+    {
+      "name": "JOSH LUDLAM",
+      "club": "",
+      "ama": "5043022",
+      "number": "600",
+      "city": "WOODBINE",
+      "state": "NJ"
+    },
+    {
+      "name": "JIM MCCOMMON",
+      "club": "DVTR",
+      "ama": "676734",
+      "number": "404",
+      "city": "QUARRYVILLE",
+      "state": "PA"
+    },
+    {
+      "name": "NATE MEILY",
+      "club": "CJCR",
+      "ama": "3034634",
+      "number": "211",
+      "city": "MARIETTA",
+      "state": "PA"
+    },
+    {
+      "name": "DAVID MILLS",
+      "club": "TCSMC",
+      "ama": "669358",
+      "number": "848",
+      "city": "BRIDGETON",
+      "state": "NJ"
+    },
+    {
+      "name": "BRYAN MONTGOMERY",
+      "club": "MMC",
+      "ama": "5043854",
+      "number": "262",
+      "city": "CINNAMINSON",
+      "state": "NJ"
+    },
+    {
+      "name": "DANIEL MORTON",
+      "club": "DVTR",
+      "ama": "1049422",
+      "number": "369",
+      "city": "MECHANICSBURG",
+      "state": "PA"
+    },
+    {
+      "name": "JD MORTON",
+      "club": "DVTR",
+      "ama": "1088713",
+      "number": "83",
+      "city": "MECHANICSBURG",
+      "state": "PA"
+    },
+    {
+      "name": "HARRY NEWCOMER III",
+      "club": "GMER",
+      "ama": "350560",
+      "number": "462",
+      "city": "MONKTON",
+      "state": "MD"
+    },
+    {
+      "name": "JACOB NOWAKOWSKI",
+      "club": "DER",
+      "ama": "3177300",
+      "number": "405",
+      "city": "BALTIMORE",
+      "state": "MD"
+    },
+    {
+      "name": "DOMINIC NUDY",
+      "club": "",
+      "ama": "5115384",
+      "number": "59",
+      "city": "FLEETWOOD",
+      "state": "PA"
+    },
+    {
+      "name": "NATHANIEL OSWALD",
+      "club": "RORR",
+      "ama": "3659026",
+      "number": "50",
+      "city": "BOYERTOWN",
+      "state": "PA"
+    },
+    {
+      "name": "MARIO PETRILLO",
+      "club": "",
+      "ama": "2894128",
+      "number": "28",
+      "city": "FLORHAM PARK",
+      "state": "NJ"
+    },
+    {
+      "name": "COLTON PHILHOWER",
+      "club": "DVTR",
+      "ama": "966504",
+      "number": "918",
+      "city": "MILFORD",
+      "state": "NJ"
+    },
+    {
+      "name": "JAMES PRASEK",
+      "club": "",
+      "ama": "716325",
+      "number": "484",
+      "city": "ROCKAWAY",
+      "state": "NJ"
+    },
+    {
+      "name": "THOMAS RAIO",
+      "club": "DER",
+      "ama": "2795432",
+      "number": "89",
+      "city": "SOUTHAMPTON",
+      "state": "NJ"
+    },
+    {
+      "name": "JACOB RILEY",
+      "club": "",
+      "ama": "5039097",
+      "number": "677",
+      "city": "GALENA",
+      "state": "MD"
+    },
+    {
+      "name": "GEORGE ROUSE",
+      "club": "",
+      "ama": "5132918",
+      "number": "628",
+      "city": "PAOLI",
+      "state": "PA"
+    },
+    {
+      "name": "DAVID SALMEN",
+      "club": "",
+      "ama": "3127772",
+      "number": "686",
+      "city": "CENTRE HALL",
+      "state": "PA"
+    },
+    {
+      "name": "ROBERT SCHAFFHAUSER",
+      "club": "MMC",
+      "ama": "5046376",
+      "number": "406",
+      "city": "MILLTOWN",
+      "state": "NJ"
+    },
+    {
+      "name": "BRANDON SHARFF",
+      "club": "OCCR",
+      "ama": "216580",
+      "number": "816",
+      "city": "MOUNT HOLLY",
+      "state": "NJ"
+    },
+    {
+      "name": "MICHAEL SHERIDAN",
+      "club": "OCCR",
+      "ama": "3750040",
+      "number": "370",
+      "city": "WHITING",
+      "state": "NJ"
+    },
+    {
+      "name": "KELLI SILVERS",
+      "club": "TCSMC",
+      "ama": "5145933",
+      "number": "137",
+      "city": "NEWPORT",
+      "state": "NJ"
+    },
+    {
+      "name": "STEVE SILVERS",
+      "club": "TCSMC",
+      "ama": "629900",
+      "number": "238",
+      "city": "NEWPORT",
+      "state": "NJ"
+    },
+    {
+      "name": "ADAM SIMICICH JR",
+      "club": "MCI",
+      "ama": "3111378",
+      "number": "27",
+      "city": "ALLENTOWN",
+      "state": "NJ"
+    },
+    {
+      "name": "MICHAEL SOUDAS",
+      "club": "HMDR",
+      "ama": "314854",
+      "number": "55",
+      "city": "DUPONT",
+      "state": "PA"
+    },
+    {
+      "name": "JOSEPH STABILE",
+      "club": "",
+      "ama": "2382294",
+      "number": "253",
+      "city": "DOVER",
+      "state": "NJ"
+    },
+    {
+      "name": "SKIP STONER",
+      "club": "SPER",
+      "ama": "691156",
+      "number": "100",
+      "city": "LEWISBERRY",
+      "state": "PA"
+    },
+    {
+      "name": "ROB STUMP",
+      "club": "OCCR",
+      "ama": "5188713",
+      "number": "912",
+      "city": "WHITING",
+      "state": "NJ"
+    },
+    {
+      "name": "MIKE TEOLI",
+      "club": "DER",
+      "ama": "275019",
+      "number": "17",
+      "city": "MIDDLETOWN",
+      "state": "DE"
+    },
+    {
+      "name": "PAUL VALENTINE JR",
+      "club": "OCCR",
+      "ama": "5031014",
+      "number": "131",
+      "city": "NEW EGYPT",
+      "state": "NJ"
+    },
+    {
+      "name": "JOHN WALASZEK",
+      "club": "CJCR",
+      "ama": "788066",
+      "number": "74",
+      "city": "JACKSON",
+      "state": "NJ"
+    },
+    {
+      "name": "JACOB WALDER",
+      "club": "",
+      "ama": "5224549",
+      "number": "792",
+      "city": "NEWPORT",
+      "state": "NJ"
+    },
+    {
+      "name": "KYLE WARNER",
+      "club": "",
+      "ama": "5165703",
+      "number": "329",
+      "city": "WOODBURY",
+      "state": "NJ"
+    },
+    {
+      "name": "CHARLES WORDEN",
+      "club": "",
+      "ama": "5152429",
+      "number": "623",
+      "city": "NEWARK",
+      "state": "DE"
+    },
+    {
+      "name": "JOSEPH YOUNG",
+      "club": "RORR",
+      "ama": "410789",
+      "number": "49",
+      "city": "POTTSVILLE",
+      "state": "PA"
+    },
+    {
+      "name": "JAMES YUELLING",
+      "club": "MMC",
+      "ama": "2160300",
+      "number": "1092",
+      "city": "MANAHAWKIN",
+      "state": "NJ"
+    }
+  ]
+}

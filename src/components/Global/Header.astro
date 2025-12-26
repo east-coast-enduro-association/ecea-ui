@@ -1,0 +1,18 @@
+---
+import Navigation from "./Navigation.astro";
+import { Image } from "astro:assets";
+import ecealogo from "@assets/ecea/logos/ecea-small.png";
+---
+
+<header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm">
+  <div class="container flex items-center justify-between h-20">
+    <a href="/" class="text-2xl font-bold text-primary-800 font-heading flex items-center">
+      <span class="sr-only">East Coast Enduro Association</span>
+      <Image src={ecealogo} alt="ECEA Logo" class="h-12 w-auto mr-2" />
+      <span class="text-primary-800 hidden sm:inline">East Coast Enduro Association</span>
+      <span class="text-primary-800 sm:hidden">ECEA</span>
+    </a>
+
+    <Navigation />
+  </div>
+</header>

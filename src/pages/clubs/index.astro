@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/Sections/PageHeader.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+// Fetch all clubs
+const all = await getCollection("clubs", ({ data }) =>
+  import.meta.env.PROD ? !data.draft : true
+);
+// Sort by order or name
+const clubs = all.sort((a, b) =>
+  (a.data.order ?? 0) - (b.data.order ?? 0) ||
+  a.data.name.localeCompare(b.data.name)
+);
+---
+
+<BaseLayout title="Clubs - ECEA" description="Discover our clubs.">
+  <PageHeader
+    title="Our Clubs"
+    subtitle="Clubs sanctioned with the ECEA"
+    backgroundImage="/images/feature-bg.jpg"
+  />
+
+  <!-- Clubs Grid -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Connect With a Club</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Our clubs put on the events you know and love, and there would not be an ECEA without them.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {clubs.map(m => (
+        <a
+          href={`/clubs/${m.slug}`}
+          class="
+          g-white rounded-lg shadow
+          flex flex-col overflow-hidden
+          hover:shadow-lg transition
+          min-h-[370px]
+          "
+        >
+            <!-- Club logo -->
+            {m.data.logo && (
+              <div class="w-full h-[200px] overflow-hidden bg-gray-100 flex items-center justify-center">
+                <Image
+                  src={m.data.logo}
+                  alt={m.data.name}
+                  class="max-w-full max-h-full object-contain p-4"
+                />
+              </div>
+            )}
+
+            <div class="p-4 flex flex-col flex-1 justify-between">
+              <div>
+                <h3 class="text-xl font-semibold mb-2">{m.data.name}</h3>
+                <p class="text-gray-700">{m.data.summary}</p>
+              </div>
+              {m.data.location && (
+                <div class="mt-4 flex items-center text-sm text-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  {m.data.location}
+                </div>
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteer CTA -->
+  <section
+    class="py-20 bg-cover bg-center text-white"
+    style="background-image:
+      linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+      url(/uploads/volunteer-bg.webp)"
+  >
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Get Involved?</h2>
+        <p class="text-xl mb-8">
+          Joining a club is a great way to meet new people and help keep our sport alive and healthy.
+        </p>
+        <a
+          href="/contact?subject=Volunteering"
+          class="inline-flex items-center justify-center px-5 py-3
+                 text-base font-medium text-white bg-primary-600 rounded-md
+                 shadow-sm hover:bg-primary-700 focus:outline-none
+                 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        >
+          Start Volunteering
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

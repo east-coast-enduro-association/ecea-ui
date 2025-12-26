@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/Sections/PageHeader.astro";
+import { getEntry } from "astro:content";
+
+const page = await getEntry("pages", "faq");
+if (!page) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await page.render();
+
+// Table of contents - matches FAQ structure
+const toc = [
+  { id: "a-briefing", label: "A Briefing", items: [
+    { id: "1-who-are-the-ecea", label: "Who are the ECEA?" },
+    { id: "2-should-i-join-a-club", label: "Should I join a club?" },
+    { id: "3-how-do-i-join-a-club", label: "How do I join a club?" },
+    { id: "4-can-i-ride", label: "Can I ride?" },
+  ]},
+  { id: "enduro", label: "Enduro", items: [
+    { id: "1-what-is-an-enduro", label: "What is an Enduro?" },
+    { id: "2-how-do-i-sign-up-for-an-enduro", label: "How to sign up?" },
+    { id: "3-what-should-i-expect-when-i-arrive-at-the-enduro-event", label: "What to expect?" },
+    { id: "4-does-my-bike-need-to-be-road-legal", label: "Road legal?" },
+    { id: "5-what-is-a-closed-course", label: "Closed course?" },
+  ]},
+  { id: "hare-scramble", label: "Hare Scramble", items: [
+    { id: "1-what-is-a-hare-scramble", label: "What is a Hare Scramble?" },
+    { id: "2-how-to-sign-up-for-a-hare-scramble", label: "How to sign up?" },
+    { id: "3-what-should-i-expect-when-i-arrive-at-the-hare-scramble", label: "What to expect?" },
+  ]},
+  { id: "fastkidz", label: "FastKIDZ", items: [
+    { id: "1-what-is-fastkidz", label: "What is FastKIDZ?" },
+    { id: "2-how-do-i-sign-my-kid-up-to-ride", label: "How to sign up?" },
+    { id: "3-what-should-my-family-expect-when-we-arrive-at-the-event", label: "What to expect?" },
+    { id: "4-scholarship-program", label: "Scholarship Program" },
+  ]},
+  { id: "dual-sport", label: "Dual Sport", items: [
+    { id: "1-what-is-a-dual-sport", label: "What is a Dual Sport?" },
+    { id: "2-how-to-sign-up-for-a-dual-sport", label: "How to sign up?" },
+    { id: "3-what-should-i-expect-when-i-arrive-at-the-dual-sport", label: "What to expect?" },
+  ]},
+  { id: "year-end-banquet", label: "Year End Banquet", items: [
+    { id: "1-so-what-is-this-banquet-all-about", label: "What is the Banquet?" },
+  ]},
+];
+---
+
+<BaseLayout
+  title={`${page.data.title} - ECEA`}
+  description={page.data.description}
+>
+  <PageHeader title={page.data.title} backgroundImage="/images/feature-bg.jpg" />
+
+  <main class="container py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <!-- Main FAQ Content -->
+      <div class="lg:col-span-3 order-2 lg:order-1">
+        <article class="prose prose-lg max-w-none prose-headings:text-gray-900 prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:scroll-mt-24 prose-h4:text-lg prose-h4:font-semibold prose-h4:scroll-mt-24 prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-primary-600 hover:prose-a:text-primary-700">
+          <Content />
+        </article>
+      </div>
+
+      <!-- Table of Contents Sidebar -->
+      <div class="lg:col-span-1 order-1 lg:order-2">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 sticky top-24">
+          <h2 class="text-lg font-bold mb-4 text-gray-900 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+            </svg>
+            Contents
+          </h2>
+
+          <nav class="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+            {toc.map((section) => (
+              <div>
+                <a
+                  href={`#${section.id}`}
+                  class="font-semibold text-gray-900 hover:text-primary-600 transition-colors block"
+                >
+                  {section.label}
+                </a>
+                {section.items && section.items.length > 0 && (
+                  <ul class="mt-1 ml-3 space-y-1 border-l border-gray-200 pl-3">
+                    {section.items.map((item) => (
+                      <li>
+                        <a
+                          href={`#${item.id}`}
+                          class="text-sm text-gray-600 hover:text-primary-600 transition-colors block py-0.5"
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </nav>
+
+          <!-- Quick Links -->
+          <div class="mt-6 pt-6 border-t border-gray-200">
+            <h3 class="font-bold text-gray-900 text-sm mb-3">Resources</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="/documents/ecea-rulebook-current.pdf" class="text-primary-600 hover:text-primary-700 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                  Rule Book
+                </a>
+              </li>
+              <li>
+                <a href="/documents/ecea-welcome-book.pdf" class="text-primary-600 hover:text-primary-700 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                  Welcome Book
+                </a>
+              </li>
+              <li>
+                <a href="/get-started" class="text-primary-600 hover:text-primary-700 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  Get Started
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

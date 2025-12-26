@@ -1,0 +1,228 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/Sections/PageHeader.astro";
+import Button from "../components/UI/Button.astro";
+import { Image } from "astro:assets";
+import ecealogo from "@assets/ecea/logos/ecea24l2.png";
+---
+
+<BaseLayout
+  title="About Us - ECEA"
+  description="Learn about the East Coast Enduro Association - AMA sanctioned off-road motorcycle racing since 1971."
+>
+  <PageHeader
+    title="About ECEA"
+    subtitle="Promoting off-road motorcycle racing since 1971"
+    backgroundImage="/images/feature-bg.jpg"
+  />
+
+  <!-- About Section -->
+  <section class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Who We Are</h2>
+          <p class="text-xl text-gray-700 mb-6">
+            The East Coast Enduro Association (ECEA) is an AMA sanctioned organization dedicated to promoting off-road motorcycle racing across the East Coast.
+          </p>
+          <p class="text-gray-700 mb-6">
+            Since 1971, ECEA has been organizing competitive racing events including Enduros, Hare Scrambles, Dual Sports, and FastKIDZ youth racing programs. Our member clubs host events throughout the year, providing opportunities for riders of all skill levels.
+          </p>
+          <p class="text-gray-700">
+            We are a volunteer-run organization committed to growing the sport, maintaining fair competition, and building a strong community of off-road enthusiasts.
+          </p>
+        </div>
+
+        <div>
+          <Image
+            src={ecealogo}
+            alt="ECEA Logo"
+            class="rounded-lg object-contain w-full max-w-md mx-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Racing Series -->
+  <section class="py-16 bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Racing Series</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          ECEA sanctions multiple racing series throughout the year
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <h3 class="text-2xl font-bold mb-4 text-primary-600">Enduro Series</h3>
+          <p class="text-gray-700 mb-4">
+            Traditional time-keeping format enduros where riders navigate marked courses, maintaining specified average speeds. Tests rider skill, navigation, and endurance.
+          </p>
+          <a href="/series/enduro" class="text-primary-600 font-medium hover:text-primary-700">
+            Learn More →
+          </a>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <h3 class="text-2xl font-bold mb-4 text-primary-600">Hare Scramble Series</h3>
+          <p class="text-gray-700 mb-4">
+            Mass-start racing over varied terrain. Riders compete head-to-head over multiple laps on challenging courses. Fast-paced and exciting racing.
+          </p>
+          <a href="/series/harescramble" class="text-primary-600 font-medium hover:text-primary-700">
+            Learn More →
+          </a>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <h3 class="text-2xl font-bold mb-4 text-primary-600">FastKIDZ Series</h3>
+          <p class="text-gray-700 mb-4">
+            Youth racing program designed to introduce young riders to competitive off-road racing in a safe, fun environment. Building the next generation of racers.
+          </p>
+          <a href="/series/fastkidz" class="text-primary-600 font-medium hover:text-primary-700">
+            Learn More →
+          </a>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <h3 class="text-2xl font-bold mb-4 text-primary-600">Dual Sport Series</h3>
+          <p class="text-gray-700 mb-4">
+            Adventure riding events for street-legal motorcycles. Explore scenic routes combining paved and unpaved roads. Non-competitive fun for all skill levels.
+          </p>
+          <a href="/series/dual-sport" class="text-primary-600 font-medium hover:text-primary-700">
+            Learn More →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Timeline -->
+  <section class="py-16">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our History</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Over 50 years of promoting off-road motorcycle racing
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="relative pl-8 sm:pl-16 py-6 group">
+          <div class="flex flex-col sm:flex-row items-start mb-1 before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-primary-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
+            <time class="sm:w-28 text-xs text-gray-500 uppercase font-bold">1971</time>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">ECEA Founded</h3>
+              <p class="text-gray-700">
+                The East Coast Enduro Association was established to organize and promote enduro racing on the East Coast.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative pl-8 sm:pl-16 py-6 group">
+          <div class="flex flex-col sm:flex-row items-start mb-1 before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-primary-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
+            <time class="sm:w-28 text-xs text-gray-500 uppercase font-bold">1980s</time>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">Expansion</h3>
+              <p class="text-gray-700">
+                ECEA expanded to include Hare Scramble events, growing the organization's reach and membership.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative pl-8 sm:pl-16 py-6 group">
+          <div class="flex flex-col sm:flex-row items-start mb-1 before:absolute before:left-2 sm:before:left-7 before:h-full before:px-px before:bg-gray-300 before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-primary-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
+            <time class="sm:w-28 text-xs text-gray-500 uppercase font-bold">2000s</time>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">FastKIDZ Program</h3>
+              <p class="text-gray-700">
+                Launch of the FastKIDZ youth program to introduce young riders to competitive racing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative pl-8 sm:pl-16 py-6 group">
+          <div class="flex flex-col sm:flex-row items-start mb-1 after:absolute after:left-2 sm:after:left-7 after:w-4 after:h-4 after:bg-primary-600 after:border-4 after:border-white after:rounded-full after:-translate-x-1/2 after:translate-y-1.5">
+            <time class="sm:w-28 text-xs text-gray-500 uppercase font-bold">Today</time>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">Continuing the Legacy</h3>
+              <p class="text-gray-700">
+                ECEA continues to grow with 19+ member clubs hosting events across the East Coast, serving hundreds of riders each year.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Member Clubs -->
+  <section class="py-16 bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Member Clubs</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          ECEA is made possible by the dedication of our volunteer member clubs
+        </p>
+      </div>
+
+      <div class="text-center">
+        <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
+          Our member clubs are AMA-chartered organizations that volunteer countless hours to organize and host events. Each club brings unique trails, challenges, and character to our racing series.
+        </p>
+        <Button href="/clubs" variant="primary">
+          View All Member Clubs
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the Board -->
+  <section class="py-16">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Meet the Board</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          ECEA is led by a dedicated team of volunteers who keep our organization running
+        </p>
+      </div>
+
+      <div class="text-center">
+        <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
+          Our elected officers and Board of Trustees work together to coordinate events, maintain fair competition standards, and grow our racing community.
+        </p>
+        <Button href="/board" variant="primary">
+          Meet the Board of Directors
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-16 bg-gray-50">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Get Involved</h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Whether you want to race, volunteer, or just enjoy the camaraderie of the off-road community, ECEA welcomes you.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button href="/get-started" variant="primary">
+            Start Racing
+          </Button>
+          <Button href="/clubs" variant="outline">
+            Join a Club
+          </Button>
+          <Button href="/contact" variant="outline">
+            Contact Us
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

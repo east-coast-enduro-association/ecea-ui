@@ -1,23 +1,35 @@
 [build]
-  publish = "public"
-  command = "hugo --minify --gc"
-  
+  command = "npm run build"
+  publish = "dist"
+
 [build.environment]
-  HUGO_VERSION = "0.87.0"
-  HUGO_BASEURL = "/"
+  NODE_VERSION = "20"
 
-[[headers]]
-  for = "/*" # This defines which paths this specific [[headers]] block will cover.
-
-[headers.values]
-  X-Frame-Options = "DENY"
-  X-XSS-Protection = "1; mode=block"
-  Referrer-Policy = "same-origin"
-  Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-
-# all other pages 404 (incl. those in `defaultContentLanguage`)
-# NOTE that in case you've set `defaultContentLanguageInSubdir = true` in `config.toml`, you need to change the destination below to point to the `defaultContentLanguage` subdir, e.g. `to = "/en/404.html"`
+# Redirects for SPA-like behavior (optional, Astro handles routing)
 [[redirects]]
   from = "/*"
-  to = "/404.html"
+  to = "/404"
   status = 404
+
+# Headers for better caching and security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/documents/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

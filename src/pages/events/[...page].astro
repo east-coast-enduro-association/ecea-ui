@@ -1,0 +1,424 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/Sections/PageHeader.astro";
+import Card from "../../components/UI/Card.astro";
+import MiniCalendar from "../../components/UI/MiniCalendar.astro";
+import { getCollection } from "astro:content";
+import { formatDate } from "../../utils/dateUtils";
+import { groupEventsByDate, createICSDataUrl, type ICSEvent } from "../../utils/calendarUtils";
+import { DISPLAY_LIMITS } from "../../utils/constants";
+
+// ============================================================================
+// Data Fetching
+// ============================================================================
+
+const allEvents = await getCollection("events", ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+});
+
+const allClubs = await getCollection("clubs");
+
+// ============================================================================
+// Data Transformations
+// ============================================================================
+
+// Create club logo lookup map
+const clubLogoMap = Object.fromEntries(
+  allClubs
+    .filter(club => club.data.abbreviatedName)
+    .map(club => [club.data.abbreviatedName, club.data.logo])
+);
+
+// Partition events into upcoming and past
+const now = new Date();
+now.setHours(0, 0, 0, 0);
+
+const upcomingEvents = allEvents
+  .filter(event => new Date(event.data.date) >= now)
+  .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+
+const pastEvents = allEvents
+  .filter(event => new Date(event.data.date) < now)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+// Extract unique filter options
+const eventTypes = [...new Set(allEvents.map(e => e.data.eventType).filter(Boolean))].sort();
+const clubs = [...new Set(allEvents.flatMap(e => e.data.hostingClubs || []).filter(Boolean))].sort();
+
+// Group events by date for calendar display
+const eventsByDate = groupEventsByDate(allEvents);
+
+// Prepare events for ICS export
+const calendarEvents: ICSEvent[] = upcomingEvents.map(event => ({
+  title: event.data.title,
+  date: event.data.date,
+  endDate: event.data.endDate,
+  location: event.data.location || '',
+  summary: event.data.summary || '',
+  slug: event.slug,
+}));
+
+// Pagination
+const ITEMS_PER_PAGE = DISPLAY_LIMITS.upcomingEventsPerPage;
+
+export function getStaticPaths() {
+  return [{ params: { page: undefined } }];
+}
+---
+
+<BaseLayout
+  title="ECEA Events Calendar"
+  description="Upcoming Enduros, Hare Scrambles, and Dual Sports in the ECEA."
+>
+  <PageHeader
+    title="Event Schedule"
+    subtitle="Enduros, Hare Scrambles, FastKIDZ, and Dual Sports"
+    backgroundImage="/images/feature-bg.jpg"
+  />
+
+  <section class="py-16">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+        <div class="lg:col-span-1">
+          <div class="bg-white p-6 rounded-lg shadow-sm sticky top-24">
+            <h2 class="text-xl font-bold mb-6">Filter Events</h2>
+
+            <div class="mb-6">
+              <label for="search" class="block text-sm font-medium text-gray-700 mb-1">Search</label>
+              <input type="text" id="search" placeholder="Search event name..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" />
+            </div>
+
+            <div class="mb-6">
+              <label for="eventType" class="block text-sm font-medium text-gray-700 mb-1">Event Type</label>
+              <select id="eventType" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
+                <option value="">All Types</option>
+                {eventTypes.map(type => <option value={type}>{type}</option>)}
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label for="club" class="block text-sm font-medium text-gray-700 mb-1">Hosting Club</label>
+              <select id="club" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
+                <option value="">All Clubs</option>
+                {clubs.map(c => <option value={c}>{c}</option>)}
+              </select>
+            </div>
+
+            <button id="reset-filters" class="w-full px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
+              Reset Filters
+            </button>
+
+            <p id="filter-status" class="text-sm text-gray-600 mt-4"></p>
+
+            <!-- Visual Calendar -->
+            <div class="mt-6 pt-6 border-t border-gray-200">
+              <h2 class="text-lg font-bold mb-4">Calendar View</h2>
+              <MiniCalendar eventsByDate={eventsByDate} />
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3 space-y-12">
+
+          {/* Subscribe to Calendar */}
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <h2 class="text-lg font-semibold text-gray-900">Subscribe to ECEA Events</h2>
+                <p class="text-sm text-gray-600">Add all upcoming events to your calendar</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <a
+                  href={`https://calendar.google.com/calendar/r?cid=${encodeURIComponent(`webcal://www.ecea.org/calendar/ecea-events.ics`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                >
+                  <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="#4285F4">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0-2a8 8 0 100-16 8 8 0 000 16zm-1-13h2v6h-2V7zm0 8h2v2h-2v-2z"/>
+                  </svg>
+                  Google
+                </a>
+                <a
+                  href="webcal://www.ecea.org/calendar/ecea-events.ics"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                >
+                  <svg class="w-4 h-4 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  </svg>
+                  Apple
+                </a>
+                <a
+                  href={`https://outlook.live.com/calendar/0/addfromweb?url=${encodeURIComponent('https://www.ecea.org/calendar/ecea-events.ics')}&name=ECEA%20Events`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                >
+                  <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="#0078D4">
+                    <path d="M24 7.387v10.478c0 .23-.08.424-.238.576-.16.154-.352.23-.578.23h-8.547v-6.959l1.6 1.229c.102.086.227.129.375.129a.548.548 0 0 0 .375-.13l5.81-4.48a.624.624 0 0 0 .165-.207.487.487 0 0 0 .05-.191V7.39c0-.09-.027-.16-.082-.207a.228.228 0 0 0-.191-.054.56.56 0 0 0-.246.11l-5.88 4.507-1.976-1.518V6.33h8.547c.226 0 .418.074.578.223.158.148.238.337.238.57v.265z"/>
+                  </svg>
+                  Outlook
+                </a>
+                <a
+                  href={createICSDataUrl(calendarEvents)}
+                  download="ecea-events.ics"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                >
+                  <svg class="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Upcoming Events */}
+          <div id="upcoming-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2 flex items-center">
+              <span class="mr-2">📅</span> Upcoming Events
+              <span id="upcoming-count" class="ml-auto text-sm font-normal text-gray-500">{upcomingEvents.length} events</span>
+            </h2>
+
+            {upcomingEvents.length > 0 ? (
+              <div id="upcoming-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {upcomingEvents.map((event) => {
+                  const displayImage = event.data.flyer || event.data.image ||
+                    (event.data.hostingClubs?.[0] ? clubLogoMap[event.data.hostingClubs[0]] : null);
+
+                  return (
+                    <Card
+                      title={event.data.title}
+                      image={displayImage ? { src: displayImage, alt: event.data.title } : undefined}
+                      href={`/events/${event.slug}`}
+                      className="event-card upcoming"
+                      data-type={event.data.eventType || ""}
+                      data-club={event.data.hostingClubs?.join(",") || ""}
+                      data-title={event.data.title.toLowerCase()}
+                      data-date={event.data.date.toISOString().slice(0, 10)}
+                    >
+                      <div class="mb-3 flex items-center text-primary-700 font-medium">
+                        <span class="mr-2">📅</span> {formatDate(event.data.date)}
+                      </div>
+                      {event.data.hostingClubs && (
+                        <div class="mb-3 flex items-center text-gray-600">
+                          <span class="mr-2">🏁</span> {event.data.hostingClubs.join(", ")}
+                        </div>
+                      )}
+                      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-3">
+                        {event.data.eventType}
+                      </span>
+                    </Card>
+                  );
+                })}
+              </div>
+            ) : (
+              <p class="text-gray-500 italic">No upcoming events scheduled.</p>
+            )}
+          </div>
+
+          {/* Past Events */}
+          <div id="past-section">
+            <h2 class="text-2xl font-bold mb-6 text-gray-500 border-b pb-2 flex items-center">
+              <span class="mr-2">🕰️</span> Past Events
+              <span id="past-count" class="ml-auto text-sm font-normal">{pastEvents.length} total</span>
+            </h2>
+
+            <div id="past-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {pastEvents.map((event, index) => {
+                const displayImage = event.data.flyer || event.data.image ||
+                  (event.data.hostingClubs?.[0] ? clubLogoMap[event.data.hostingClubs[0]] : null);
+
+                return (
+                  <Card
+                    title={event.data.title}
+                    image={displayImage ? { src: displayImage, alt: event.data.title } : undefined}
+                    href={`/events/${event.slug}`}
+                    className={`event-card past grayscale hover:grayscale-0 transition-all ${index >= ITEMS_PER_PAGE ? 'hidden' : ''}`}
+                    data-type={event.data.eventType || ""}
+                    data-club={event.data.hostingClubs?.join(",") || ""}
+                    data-title={event.data.title.toLowerCase()}
+                    data-date={event.data.date.toISOString().slice(0, 10)}
+                    data-index={index}
+                  >
+                    <div class="mb-3 flex items-center text-gray-500">
+                      <span class="mr-2">📅</span> <span class="line-through">{formatDate(event.data.date)}</span>
+                    </div>
+                    {event.data.hostingClubs && (
+                      <div class="mb-3 flex items-center text-gray-500">
+                        <span class="mr-2">🏁</span> {event.data.hostingClubs.join(", ")}
+                      </div>
+                    )}
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                      {event.data.eventType}
+                    </span>
+                  </Card>
+                );
+              })}
+            </div>
+
+            {/* Load More Button */}
+            {pastEvents.length > ITEMS_PER_PAGE && (
+              <div id="load-more-container" class="mt-8 text-center">
+                <button id="load-more-btn" class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium">
+                  Load More Events
+                </button>
+                <p id="showing-count" class="text-sm text-gray-500 mt-2">
+                  Showing {ITEMS_PER_PAGE} of {pastEvents.length} past events
+                </p>
+              </div>
+            )}
+          </div>
+
+          <div id="no-results" class="hidden text-center py-12 bg-gray-50 rounded-lg">
+            <p class="text-gray-600">No events match your filters.</p>
+            <button id="clear-search-btn" class="mt-2 text-primary-600 hover:underline">Clear all filters</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ ITEMS_PER_PAGE }}>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search');
+      const typeSelect = document.getElementById('eventType');
+      const clubSelect = document.getElementById('club');
+      const resetButton = document.getElementById('reset-filters');
+      const clearSearchBtn = document.getElementById('clear-search-btn');
+      const noResults = document.getElementById('no-results');
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      const loadMoreContainer = document.getElementById('load-more-container');
+      const showingCount = document.getElementById('showing-count');
+      const upcomingCount = document.getElementById('upcoming-count');
+      const pastCount = document.getElementById('past-count');
+      const filterStatus = document.getElementById('filter-status');
+      const upcomingSection = document.getElementById('upcoming-section');
+      const pastSection = document.getElementById('past-section');
+
+      let currentlyShowing = ITEMS_PER_PAGE;
+      let isFiltering = false;
+
+      const filterEvents = () => {
+        const searchTerm = searchInput?.value.toLowerCase() || '';
+        const selectedType = typeSelect?.value || '';
+        const selectedClub = clubSelect?.value || '';
+
+        isFiltering = !!(searchTerm || selectedType || selectedClub);
+
+        let upcomingVisible = 0;
+        let pastVisible = 0;
+        let pastMatchingTotal = 0;
+
+        // Filter upcoming events
+        const upcomingCards = document.querySelectorAll('#upcoming-grid .event-card');
+        upcomingCards.forEach(card => {
+          const title = card.getAttribute('data-title') || '';
+          const type = card.getAttribute('data-type') || '';
+          const clubs = card.getAttribute('data-club') || '';
+
+          const matchesSearch = title.includes(searchTerm);
+          const matchesType = !selectedType || type === selectedType;
+          const matchesClub = !selectedClub || clubs.split(',').includes(selectedClub);
+
+          if (matchesSearch && matchesType && matchesClub) {
+            card.style.display = 'block';
+            upcomingVisible++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Filter past events
+        const pastCards = document.querySelectorAll('#past-grid .event-card');
+        pastCards.forEach((card, idx) => {
+          const title = card.getAttribute('data-title') || '';
+          const type = card.getAttribute('data-type') || '';
+          const clubs = card.getAttribute('data-club') || '';
+
+          const matchesSearch = title.includes(searchTerm);
+          const matchesType = !selectedType || type === selectedType;
+          const matchesClub = !selectedClub || clubs.split(',').includes(selectedClub);
+
+          if (matchesSearch && matchesType && matchesClub) {
+            pastMatchingTotal++;
+            // When filtering, show all matching events; otherwise respect pagination
+            if (isFiltering || pastMatchingTotal <= currentlyShowing) {
+              card.style.display = 'block';
+              card.classList.remove('hidden');
+              pastVisible++;
+            } else {
+              card.style.display = 'none';
+            }
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Update counts
+        if (upcomingCount) upcomingCount.textContent = `${upcomingVisible} events`;
+        if (pastCount) pastCount.textContent = `${pastMatchingTotal} total`;
+
+        // Show/hide sections based on results
+        if (upcomingSection) {
+          upcomingSection.style.display = upcomingVisible > 0 || !isFiltering ? 'block' : 'none';
+        }
+
+        // Update load more button
+        if (loadMoreContainer) {
+          if (isFiltering) {
+            loadMoreContainer.style.display = 'none';
+          } else {
+            loadMoreContainer.style.display = pastMatchingTotal > currentlyShowing ? 'block' : 'none';
+            if (showingCount) {
+              showingCount.textContent = `Showing ${Math.min(currentlyShowing, pastMatchingTotal)} of ${pastMatchingTotal} past events`;
+            }
+          }
+        }
+
+        // Show/hide no results message
+        const totalVisible = upcomingVisible + pastVisible;
+        if (noResults) {
+          noResults.style.display = totalVisible === 0 ? 'block' : 'none';
+        }
+
+        // Update filter status
+        if (filterStatus) {
+          if (isFiltering) {
+            filterStatus.textContent = `Showing ${totalVisible} matching events`;
+          } else {
+            filterStatus.textContent = '';
+          }
+        }
+      };
+
+      // Load more functionality
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+          currentlyShowing += ITEMS_PER_PAGE;
+          filterEvents();
+        });
+      }
+
+      searchInput?.addEventListener('input', filterEvents);
+      typeSelect?.addEventListener('change', filterEvents);
+      clubSelect?.addEventListener('change', filterEvents);
+
+      const resetAll = () => {
+        if (searchInput) searchInput.value = '';
+        if (typeSelect) typeSelect.value = '';
+        if (clubSelect) clubSelect.value = '';
+        currentlyShowing = ITEMS_PER_PAGE;
+        filterEvents();
+      };
+
+      resetButton?.addEventListener('click', resetAll);
+      clearSearchBtn?.addEventListener('click', resetAll);
+
+      // Initial filter to set up correct display
+      filterEvents();
+    });
+  </script>
+</BaseLayout>

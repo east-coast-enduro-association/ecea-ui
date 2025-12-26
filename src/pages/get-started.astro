@@ -1,0 +1,182 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/Sections/PageHeader.astro";
+import Button from "../components/UI/Button.astro";
+import { getCollection, getEntry } from "astro:content";
+import { COMPETITIVE_SERIES } from "../utils/constants";
+
+// Get page content from markdown
+const page = await getEntry("pages", "get-started");
+const { title, subtitle, description, welcomeTitle, welcomeContent, welcomeBookUrl, amaUrl, seriesTitle, seriesDescription, stepsTitle, steps, faqTitle, faqDescription } = page.data;
+
+// Get all series
+const allSeries = await getCollection("series", ({ data }) => !data.draft);
+
+// Get upcoming events to show count per series
+const allEvents = await getCollection("events", ({ data }) => {
+  return !data.draft && new Date(data.date) >= new Date();
+});
+
+// Count events per series type
+const eventCounts: Record<string, number> = {};
+allEvents.forEach(event => {
+  const type = event.data.eventType;
+  if (type) {
+    eventCounts[type] = (eventCounts[type] || 0) + 1;
+  }
+});
+
+// Series metadata for display
+const seriesInfo: Record<string, { icon: string; bgColor: string }> = {
+  enduro: { icon: "🏁", bgColor: "bg-blue-50" },
+  harescramble: { icon: "🏆", bgColor: "bg-green-50" },
+  fastkidz: { icon: "🚵", bgColor: "bg-yellow-50" },
+  "dual-sport": { icon: "🌲", bgColor: "bg-orange-50" },
+};
+
+// Map series slug to event type
+const slugToEventType: Record<string, string> = {
+  enduro: "Enduro",
+  harescramble: "Hare Scramble",
+  fastkidz: "FastKIDZ",
+  "dual-sport": "Dual Sport",
+};
+---
+
+<BaseLayout
+  title={`${title} - ECEA`}
+  description={description}
+>
+  <PageHeader
+    title={title}
+    subtitle={subtitle}
+    backgroundImage="/images/feature-bg.jpg"
+  />
+
+  <!-- Welcome Section -->
+  <section class="py-12 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold mb-6">{welcomeTitle}</h2>
+        <div class="text-lg text-gray-600 mb-8 whitespace-pre-line">
+          {welcomeContent}
+        </div>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button href={welcomeBookUrl} target="_blank" variant="primary">
+            Download Welcome Book
+          </Button>
+          <Button href={amaUrl} target="_blank" variant="outline">
+            Join the AMA
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Racing Series -->
+  <section class="py-12 bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-4">{seriesTitle}</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          {seriesDescription}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {allSeries.map((series) => {
+          const info = seriesInfo[series.slug] || { icon: "🏁", bgColor: "bg-gray-50" };
+          const eventType = slugToEventType[series.slug];
+          const upcomingCount = eventType ? eventCounts[eventType] || 0 : 0;
+          const isCompetitive = COMPETITIVE_SERIES.includes(series.slug as typeof COMPETITIVE_SERIES[number]);
+
+          return (
+            <a
+              href={`/series/${series.slug}`}
+              class={`group block p-6 rounded-xl border-2 border-gray-100 hover:border-primary-200 ${info.bgColor} hover:shadow-lg transition-all`}
+            >
+              <div class="flex items-start gap-4">
+                <span class="text-4xl">{info.icon}</span>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-2">
+                    <h3 class="text-xl font-bold group-hover:text-primary-600 transition-colors">
+                      {series.data.name}
+                    </h3>
+                    {isCompetitive ? (
+                      <span class="px-2 py-0.5 bg-primary-100 text-primary-700 text-xs font-medium rounded">Championship</span>
+                    ) : (
+                      <span class="px-2 py-0.5 bg-orange-100 text-orange-700 text-xs font-medium rounded">Non-Competitive</span>
+                    )}
+                  </div>
+                  <p class="text-gray-600 text-sm mb-3">{series.data.description}</p>
+
+                  {upcomingCount > 0 && (
+                    <div class="inline-flex items-center px-3 py-1 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm">
+                      <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                      {upcomingCount} upcoming event{upcomingCount !== 1 ? 's' : ''}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div class="mt-4 flex items-center text-primary-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+                Learn more & see events
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps -->
+  <section class="py-12 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">{stepsTitle}</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {steps?.map((step, index) => (
+            <div class="text-center">
+              <div class="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{index + 1}</div>
+              <h3 class="font-bold mb-2">{step.title}</h3>
+              <p class="text-gray-600 text-sm">{step.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 text-center">
+          <Button href="/events" variant="primary" size="lg">
+            Browse Upcoming Events
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Teaser -->
+  <section class="py-12 bg-gray-900 text-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-4 text-white">{faqTitle}</h2>
+        <p class="text-gray-400 mb-6">
+          {faqDescription}
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button href="/faq" variant="outline" class="!bg-transparent !text-white !border-gray-500 hover:!bg-gray-800">
+            Read the FAQ
+          </Button>
+          <Button href="/clubs" variant="outline" class="!bg-transparent !text-white !border-gray-500 hover:!bg-gray-800">
+            Find a Club Near You
+          </Button>
+          <Button href="/contact" variant="outline" class="!bg-transparent !text-white !border-gray-500 hover:!bg-gray-800">
+            Contact Us
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

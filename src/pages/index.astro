@@ -1,0 +1,353 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/UI/Button.astro";
+import EventCard from "../components/Cards/EventCard.astro";
+import BlogCard from "../components/Cards/BlogCard.astro";
+import SponsorCarousel from "../components/Sections/SponsorCarousel.astro";
+import { getCollection } from "astro:content";
+import { formatDate } from "../utils/dateUtils";
+import { SITE_INFO, SERIES_LINKS, DISPLAY_LIMITS, FACEBOOK_GROUPS } from "../utils/constants";
+
+// Get sponsors from CMS
+const allSponsors = (await getCollection("sponsors"))
+  .filter((s) => !s.data.draft)
+  .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+
+const titleSponsorEntry = allSponsors.find((s) => s.data.isTitleSponsor);
+const regularSponsors = allSponsors.filter((s) => !s.data.isTitleSponsor);
+
+// Format for SponsorCarousel component
+const titleSponsor = titleSponsorEntry
+  ? { name: titleSponsorEntry.data.name, logo: titleSponsorEntry.data.logo, url: titleSponsorEntry.data.url || "#" }
+  : null;
+const sponsors = regularSponsors.map((s) => ({
+  name: s.data.name,
+  logo: s.data.logo,
+  url: s.data.url || "#",
+}));
+
+// Get upcoming events
+const allEvents = await getCollection("events", ({ data }) => {
+  return !data.draft && new Date(data.date) >= new Date();
+});
+const upcomingEvents = allEvents
+  .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime())
+  .slice(0, DISPLAY_LIMITS.featuredEvents);
+
+// Get club logos for events without images
+const clubs = await getCollection("clubs");
+const clubLogoMap = Object.fromEntries(
+  clubs.map(club => [club.data.abbreviatedName, club.data.logo])
+);
+
+// Get latest blog posts
+const allPosts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+});
+const sortedPosts = allPosts
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+// Get latest announcement for the hero
+const latestAnnouncement = sortedPosts.find(post => post.data.category === 'announcement');
+
+// Get pinned posts for the hero (excluding the announcement if it's also pinned)
+const pinnedPosts = sortedPosts
+  .filter(post => post.data.pinned && post.slug !== latestAnnouncement?.slug)
+  .slice(0, 2); // Limit to 2 pinned posts in hero
+
+// Get latest posts for news section
+const latestPosts = sortedPosts.slice(0, DISPLAY_LIMITS.latestPosts);
+
+// Helper to get event image
+const getEventImage = (event: typeof upcomingEvents[0]) => {
+  if (event.data.image) return event.data.image;
+  if (event.data.hostingClubs?.[0]) {
+    return clubLogoMap[event.data.hostingClubs[0]];
+  }
+  return null;
+};
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <section
+    class="relative min-h-[70vh] flex items-center bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url(/images/feature-bg.jpg);"
+  >
+    <div class="container">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
+          {SITE_INFO.name}
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-white/90">
+          {SITE_INFO.tagline}
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href="/events" variant="primary" size="lg">
+            View Events
+          </Button>
+          <Button href="/get-started" variant="outline" size="lg" class="!bg-white !text-gray-900 !border-white hover:!bg-gray-100">
+            Get Started
+          </Button>
+        </div>
+
+        <!-- Featured Cards - Mobile only (below buttons) -->
+        {(pinnedPosts.length > 0 || latestAnnouncement) && (
+          <div class="mt-6 flex flex-col gap-3 lg:hidden">
+            {/* Pinned Posts - Mobile */}
+            {pinnedPosts.map((post) => (
+              <a
+                href={`/blog/${post.slug}`}
+                class="group bg-black/40 backdrop-blur-lg rounded-xl overflow-hidden border border-white/30 hover:bg-black/50 hover:border-white/50 transition-all duration-300"
+              >
+                <div class="p-4">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 bg-primary-600 text-white text-xs font-bold rounded uppercase tracking-wider">
+                      Featured
+                    </span>
+                    <span class="text-white/80 text-xs">{formatDate(post.data.pubDate)}</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight">
+                    {post.data.title}
+                  </h3>
+                  <div class="mt-2 flex items-center text-primary-400 text-sm font-medium group-hover:text-primary-300">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+
+            {/* Latest Announcement - Mobile */}
+            {latestAnnouncement && (
+              <a
+                href={`/blog/${latestAnnouncement.slug}`}
+                class="group bg-black/40 backdrop-blur-lg rounded-xl overflow-hidden border border-white/30 hover:bg-black/50 hover:border-white/50 transition-all duration-300"
+              >
+                <div class="p-4">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 bg-accent-600 text-white text-xs font-bold rounded uppercase tracking-wider">
+                      Announcement
+                    </span>
+                    <span class="text-white/80 text-xs">{formatDate(latestAnnouncement.data.pubDate)}</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight">
+                    {latestAnnouncement.data.title}
+                  </h3>
+                  <div class="mt-2 flex items-center text-primary-400 text-sm font-medium group-hover:text-primary-300">
+                    Read more
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Featured Cards Overlay - Desktop only -->
+    {(pinnedPosts.length > 0 || latestAnnouncement) && (
+      <div class="absolute bottom-8 right-8 hidden lg:flex flex-col gap-3 w-80">
+        {/* Pinned Posts */}
+        {pinnedPosts.map((post) => (
+          <a
+            href={`/blog/${post.slug}`}
+            class="group bg-black/40 backdrop-blur-lg rounded-xl overflow-hidden border border-white/30 hover:bg-black/50 hover:border-white/50 transition-all duration-300 shadow-2xl"
+          >
+            <div class="p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="px-2.5 py-1 bg-primary-600 text-white text-xs font-bold rounded uppercase tracking-wider">
+                  Featured
+                </span>
+                <span class="text-white/80 text-sm">{formatDate(post.data.pubDate)}</span>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight">
+                {post.data.title}
+              </h3>
+              <p class="text-white/70 text-sm mt-2 line-clamp-2">
+                {post.data.description}
+              </p>
+              <div class="mt-3 flex items-center text-primary-400 text-sm font-medium group-hover:text-primary-300">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+
+        {/* Latest Announcement */}
+        {latestAnnouncement && (
+          <a
+            href={`/blog/${latestAnnouncement.slug}`}
+            class="group bg-black/40 backdrop-blur-lg rounded-xl overflow-hidden border border-white/30 hover:bg-black/50 hover:border-white/50 transition-all duration-300 shadow-2xl"
+          >
+            <div class="p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="px-2.5 py-1 bg-accent-600 text-white text-xs font-bold rounded uppercase tracking-wider">
+                  Announcement
+                </span>
+                <span class="text-white/80 text-sm">{formatDate(latestAnnouncement.data.pubDate)}</span>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight">
+                {latestAnnouncement.data.title}
+              </h3>
+              <p class="text-white/70 text-sm mt-2 line-clamp-2">
+                {latestAnnouncement.data.description}
+              </p>
+              <div class="mt-3 flex items-center text-primary-400 text-sm font-medium group-hover:text-primary-300">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        )}
+      </div>
+    )}
+  </section>
+
+  <!-- Racing Series Quick Links -->
+  <section class="py-6 bg-gray-900 text-white">
+    <div class="container">
+      <div class="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+        {SERIES_LINKS.map((series) => (
+          <a href={series.href} class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors">
+            <span class="text-lg">{series.emoji}</span>
+            <span class="font-medium">{series.name}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="py-10 md:py-12 bg-white">
+    <div class="container">
+      <div class="flex justify-between items-end mb-6">
+        <div>
+          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Coming Up</span>
+          <h2 class="text-2xl md:text-3xl font-bold">Upcoming Events</h2>
+        </div>
+        <a href="/events" class="text-primary-600 font-medium hover:text-primary-700 hidden md:inline-flex items-center">
+          All Events
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+        {upcomingEvents.map((event, index) => (
+          <EventCard
+            title={event.data.title}
+            slug={event.slug}
+            date={event.data.date}
+            eventType={event.data.eventType}
+            location={event.data.location}
+            image={getEventImage(event)}
+            featured={index === 0}
+          />
+        ))}
+      </div>
+
+      <div class="text-center mt-6 md:hidden">
+        <Button href="/events" variant="outline">View All Events</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors -->
+  <SponsorCarousel titleSponsor={titleSponsor} sponsors={sponsors} />
+
+  <!-- Latest News -->
+  <section class="py-10 md:py-12 bg-white">
+    <div class="container">
+      <div class="flex justify-between items-end mb-6">
+        <div>
+          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">News & Updates</span>
+          <h2 class="text-2xl md:text-3xl font-bold">Latest News</h2>
+        </div>
+        <a href="/blog" class="text-primary-600 font-medium hover:text-primary-700 hidden md:inline-flex items-center">
+          All Posts
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+        {latestPosts.map((post, index) => (
+          <BlogCard
+            title={post.data.title}
+            slug={post.slug}
+            pubDate={post.data.pubDate}
+            description={post.data.description}
+            category={post.data.category}
+            image={post.data.image}
+            featured={index === 0}
+          />
+        ))}
+      </div>
+
+      <div class="text-center mt-6 md:hidden">
+        <Button href="/blog" variant="outline">View All Posts</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results & Photos Quick Links -->
+  <section class="py-8 bg-gray-100">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Race Results & Photos</span>
+          <h2 class="text-xl md:text-2xl font-bold">View {new Date().getFullYear()} Results</h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3">
+          <Button href="/results" variant="primary">
+            All Results
+          </Button>
+          <a
+            href={FACEBOOK_GROUPS.photos.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Race Photos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-10 bg-gray-900 text-white">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Ready to race?</h2>
+          <p class="text-gray-400 mt-1">Join 19+ clubs across the East Coast</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3">
+          <Button href="/get-started" variant="primary">
+            Get Started
+          </Button>
+          <Button href="/clubs" variant="outline" class="text-white border-gray-600 hover:bg-gray-800">
+            Find a Club
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

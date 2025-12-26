@@ -1,0 +1,80 @@
+---
+/**
+ * BlogCard Component
+ * Displays a blog post with image, category, date, and title
+ * Used on homepage and blog listing page
+ */
+import { Image } from "astro:assets";
+import { formatDate } from "../../utils/dateUtils";
+import { CATEGORY_COLORS, UI_STYLES } from "../../utils/constants";
+
+interface Props {
+  title: string;
+  slug: string;
+  pubDate: Date;
+  description?: string;
+  category?: "announcement" | "news" | "recap" | "article";
+  image?: {
+    src: ImageMetadata;
+    alt: string;
+  };
+  featured?: boolean;
+  class?: string;
+}
+
+const {
+  title,
+  slug,
+  pubDate,
+  description,
+  category,
+  image,
+  featured = false,
+  class: className = ""
+} = Astro.props;
+---
+
+<a
+  href={`/blog/${slug}`}
+  class:list={[
+    "group relative overflow-hidden rounded-xl bg-gray-100",
+    featured ? "md:col-span-2 lg:col-span-2 aspect-[16/9] md:aspect-[2/1]" : "aspect-[16/9]",
+    className
+  ]}
+>
+  {image ? (
+    <Image
+      src={image.src}
+      alt={image.alt}
+      class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      widths={featured ? [640, 800] : [400, 600]}
+    />
+  ) : (
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900"></div>
+  )}
+
+  <div class:list={["absolute inset-0", UI_STYLES.gradientOverlay]}></div>
+
+  <div class="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+    <div class="flex items-center gap-2 mb-1">
+      {category && (
+        <span class:list={[
+          UI_STYLES.badge,
+          CATEGORY_COLORS[category] || "bg-primary-600/80"
+        ]}>
+          {category}
+        </span>
+      )}
+      <span class="text-white/70 text-sm">{formatDate(pubDate)}</span>
+    </div>
+    <h3 class:list={[
+      "font-bold text-white group-hover:text-primary-300 transition-colors",
+      featured ? "text-lg md:text-xl" : "text-base md:text-lg line-clamp-2"
+    ]}>
+      {title}
+    </h3>
+    {featured && description && (
+      <p class="text-white/70 text-sm mt-1 line-clamp-2 hidden md:block">{description}</p>
+    )}
+  </div>
+</a>
