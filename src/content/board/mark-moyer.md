@@ -1,6 +1,6 @@
 ---
 name: Mark Moyer
-title: Trustee
+title: Chair
 boardType: trustees
 order: 5
 draft: false

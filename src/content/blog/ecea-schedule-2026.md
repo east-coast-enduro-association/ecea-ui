@@ -6,7 +6,7 @@ author: Michael Abramo
 category: announcement
 draft: false
 image:
-  src: '../../assets/blog/2026-ecea-event-schedule-announcement-111025.jpg'
+  src: '../../assets/blog/2026-ecea-schedule-banner.jpg'
   alt: ECEA Schedule 2026
 tags:
   - '2026'
@@ -23,4 +23,4 @@ If you are an enduro racer and plan to race for a class championship, don't forg
 
 Complete details for each event will be posted on the Events page as they are available.
 
-![ecea schedule for 2026](../../assets/blog/2026-ecea-event-schedule-announcement-111025.jpg "Schedule 2026")
+![ecea schedule for 2026](../../assets/blog/2026-ecea-schedule-banner.jpg "Schedule 2026")
