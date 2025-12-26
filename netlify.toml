@@ -5,13 +5,13 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Redirects for SPA-like behavior (optional, Astro handles routing)
+# Redirects - Astro generates static pages, this handles true 404s
 [[redirects]]
   from = "/*"
   to = "/404"
   status = 404
 
-# Headers for better caching and security
+# Security headers for all pages
 [[headers]]
   for = "/*"
   [headers.values]
@@ -19,17 +19,32 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Astro assets - immutable, cache forever
 [[headers]]
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Static images - cache 1 day
 [[headers]]
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
+# Documents (PDFs, rulebooks) - cache 1 day
 [[headers]]
   for = "/documents/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# Attachments (event PDFs, flyers) - cache 1 day
+[[headers]]
+  for = "/attachments/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# TinaCMS admin - no cache to ensure fresh content
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
