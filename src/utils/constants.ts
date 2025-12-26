@@ -183,59 +183,6 @@ export const EVENT_TYPE_COLORS: Record<string, string> = {
   Meeting: "bg-slate-600",
 };
 
-// Staff and Series Contacts
-export const STAFF_CONTACTS = [
-  {
-    category: "ECEA Referee",
-    contacts: [
-      { name: "Kenny Lee Taylor", role: "ECEA Referee", email: "mrtaylor58@comcast.net" },
-    ],
-  },
-  {
-    category: "Enduro Series",
-    contacts: [
-      { name: "Merle Compton", role: "Series Director / Scoring / Points Keeper", email: "ecea.secy@verizon.net" },
-      { name: "Ron DeCaro", role: "Enduro Referee", email: "" },
-      { name: "Holly DeCaro", role: "Scoring / Membership", email: "" },
-    ],
-  },
-  {
-    category: "Hare Scramble / FastKIDZ",
-    contacts: [
-      { name: "Dave Glenn", role: "Series Director and Referee", email: "daveglenn112@yahoo.com" },
-      { name: "Joe Young", role: "Youth Series Chair", email: "jyoung311@comcast.net" },
-      { name: "Lisa Soudas", role: "Numbers / Sign Up Coordinator", email: "lsoudas@comcast.net" },
-      { name: "Mike Soudas", role: "Points Keeper", email: "msoudas@comcast.net" },
-      { name: "Mitch Walker", role: "Event Scoring", email: "" },
-      { name: "Amanda Walker", role: "Event Signup", email: "" },
-    ],
-  },
-  {
-    category: "Marketing & Sponsorships",
-    contacts: [
-      { name: "Neil Newcomb", role: "Marketing / Promotions", email: "neil.newcomb@yahoo.com" },
-      { name: "Joe Young", role: "Sponsorships", email: "jyoung311@comcast.net" },
-    ],
-  },
-  {
-    category: "Web Masters",
-    contacts: [
-      { name: "Mike Soudas", role: "", email: "msoudas@comcast.net" },
-      { name: "Michael Abramo", role: "", email: "abramomichael@gmail.com" },
-      { name: "Justin McKenzie", role: "", email: "justinmckenzie15@gmail.com" },
-    ],
-  },
-];
-
-// Board of Trustees
-export const BOARD_OF_TRUSTEES = [
-  { name: "Bob Stuart", role: "Chair" },
-  { name: "Jack Lafferty Sr.", role: "Vice Chair" },
-  { name: "Merle Compton", role: "" },
-  { name: "David Glenn", role: "" },
-  { name: "Mark Moyer", role: "" },
-];
-
 // Shared UI styles (Tailwind classes)
 export const UI_STYLES = {
   // Badges

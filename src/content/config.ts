@@ -161,17 +161,41 @@ const seriesCollection = defineCollection({
 
 /**
  * Board Collection
- * ECEA board members, officials, and key volunteers
+ * ECEA board members (Executive Board and Board of Trustees)
  */
 const boardCollection = defineCollection({
   type: 'content',
   schema: z.object({
     name: z.string(),
     title: z.string(),
+    boardType: z.enum(['executive', 'trustees']).default('executive'),
     image: z.string().optional(),
     email: z.string().email().optional(),
     phone: z.string().optional(),
     bio: z.string().optional(),
+    order: z.number().default(0),
+    draft: z.boolean().default(false),
+  }),
+});
+
+/**
+ * Staff Collection
+ * Series directors, referees, and other key volunteers
+ */
+const staffCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),
+    email: z.string().email().optional(),
+    phone: z.string().optional(),
+    category: z.enum([
+      'ECEA Referee',
+      'Enduro Series',
+      'Hare Scramble / FastKIDZ',
+      'Marketing & Sponsorships',
+      'Web Masters',
+    ]),
+    role: z.string().optional(),
     order: z.number().default(0),
     draft: z.boolean().default(false),
   }),
@@ -283,6 +307,7 @@ export const collections = {
   blog: blogCollection,
   series: seriesCollection,
   board: boardCollection,
+  staff: staffCollection,
   pages: pagesCollection,
   siteInfo: siteInfoCollection,
   teamResults: teamResultsCollection,

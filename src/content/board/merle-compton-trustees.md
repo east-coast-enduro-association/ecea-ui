@@ -1,8 +1,8 @@
 ---
 name: Merle Compton
-title: Secretary
-boardType: executive
+title: Trustee
+boardType: trustees
 email: ecea.secy@verizon.net
-order: 4
+order: 3
 draft: false
 ---

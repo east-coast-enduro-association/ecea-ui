@@ -1,8 +1,8 @@
 ---
 name: Merle Compton
-title: Secretary
-boardType: executive
 email: ecea.secy@verizon.net
-order: 4
+category: Marketing & Sponsorships
+role: Contingency
+order: 3
 draft: false
 ---

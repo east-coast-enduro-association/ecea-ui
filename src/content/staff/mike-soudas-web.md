@@ -1,8 +1,7 @@
 ---
 name: Mike Soudas
-title: Vice President
-boardType: executive
 email: msoudas@comcast.net
-order: 2
+category: Web Masters
+order: 1
 draft: false
 ---

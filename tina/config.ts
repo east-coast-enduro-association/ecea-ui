@@ -211,7 +211,7 @@ export default defineConfig({
       },
 
       // =========================================================================
-      // Board Members
+      // Board Members (Executive Board and Board of Trustees)
       // =========================================================================
       {
         name: 'board',
@@ -221,11 +221,50 @@ export default defineConfig({
         fields: [
           { type: 'string', name: 'name', label: 'Name', required: true, isTitle: true },
           { type: 'string', name: 'title', label: 'Title/Position', required: true },
+          {
+            type: 'string',
+            name: 'boardType',
+            label: 'Board Type',
+            options: ['executive', 'trustees'],
+            required: true,
+          },
           { type: 'string', name: 'image', label: 'Photo URL' },
           { type: 'string', name: 'email', label: 'Email' },
           { type: 'string', name: 'phone', label: 'Phone' },
           { type: 'string', name: 'bio', label: 'Bio', ui: { component: 'textarea' } },
           { type: 'number', name: 'order', label: 'Display Order' },
+          { type: 'boolean', name: 'draft', label: 'Draft' },
+          { type: 'rich-text', name: 'body', label: 'Additional Info', isBody: true },
+        ],
+      },
+
+      // =========================================================================
+      // Staff Contacts (Series Directors, Referees, etc.)
+      // =========================================================================
+      {
+        name: 'staff',
+        label: 'Staff Contacts',
+        path: 'src/content/staff',
+        format: 'md',
+        fields: [
+          { type: 'string', name: 'name', label: 'Name', required: true, isTitle: true },
+          { type: 'string', name: 'email', label: 'Email' },
+          { type: 'string', name: 'phone', label: 'Phone' },
+          {
+            type: 'string',
+            name: 'category',
+            label: 'Category',
+            options: [
+              'ECEA Referee',
+              'Enduro Series',
+              'Hare Scramble / FastKIDZ',
+              'Marketing & Sponsorships',
+              'Web Masters',
+            ],
+            required: true,
+          },
+          { type: 'string', name: 'role', label: 'Role/Title' },
+          { type: 'number', name: 'order', label: 'Display Order (within category)' },
           { type: 'boolean', name: 'draft', label: 'Draft' },
           { type: 'rich-text', name: 'body', label: 'Additional Info', isBody: true },
         ],

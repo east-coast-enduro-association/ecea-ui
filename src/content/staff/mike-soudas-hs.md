@@ -1,8 +1,8 @@
 ---
 name: Mike Soudas
-title: Vice President
-boardType: executive
 email: msoudas@comcast.net
-order: 2
+category: Hare Scramble / FastKIDZ
+role: Points Keeper
+order: 5
 draft: false
 ---
