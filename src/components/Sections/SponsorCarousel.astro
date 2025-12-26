@@ -12,7 +12,7 @@ interface Sponsor {
 }
 
 interface Props {
-  titleSponsor: Sponsor;
+  titleSponsor?: Sponsor | null;
   sponsors: Sponsor[];
 }
 
@@ -27,22 +27,26 @@ const { titleSponsor, sponsors } = Astro.props;
         <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Proudly Supported By</span>
         <h2 class="text-xl md:text-2xl font-bold">Our Sponsors</h2>
       </div>
-      <div class="hidden md:block w-px h-12 bg-gray-300"></div>
-      <a
-        href={titleSponsor.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex items-center gap-3"
-      >
-        <span class="text-xs uppercase tracking-wider text-gray-500">Title Sponsor</span>
-        <div class="bg-white rounded-lg px-4 py-2 border border-gray-200 group-hover:border-primary-300 transition-colors">
-          <Image
-            src={titleSponsor.logo}
-            alt={titleSponsor.name}
-            class="h-10 md:h-12 w-auto object-contain"
-          />
-        </div>
-      </a>
+      {titleSponsor && (
+        <>
+          <div class="hidden md:block w-px h-12 bg-gray-300"></div>
+          <a
+            href={titleSponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3"
+          >
+            <span class="text-xs uppercase tracking-wider text-gray-500">Title Sponsor</span>
+            <div class="bg-white rounded-lg px-4 py-2 border border-gray-200 group-hover:border-primary-300 transition-colors">
+              <Image
+                src={titleSponsor.logo}
+                alt={titleSponsor.name}
+                class="h-10 md:h-12 w-auto object-contain"
+              />
+            </div>
+          </a>
+        </>
+      )}
     </div>
 
     <!-- Sponsor Carousel -->

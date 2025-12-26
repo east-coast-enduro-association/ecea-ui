@@ -6,35 +6,25 @@ import BlogCard from "../components/Cards/BlogCard.astro";
 import SponsorCarousel from "../components/Sections/SponsorCarousel.astro";
 import { getCollection } from "astro:content";
 import { formatDate } from "../utils/dateUtils";
-import { SITE_INFO, SERIES_LINKS, DISPLAY_LIMITS } from "../utils/constants";
+import { SITE_INFO, SERIES_LINKS, DISPLAY_LIMITS, FACEBOOK_GROUPS } from "../utils/constants";
 
-// Sponsor images - keep here as they need dynamic imports
-import kendaLogo from "@assets/sponsors/logos/kenda1.png";
-import amsoilLogo from "@assets/sponsors/logos/amsoil-logo.png";
-import hundredPercentLogo from "@assets/sponsors/logos/100percent.png";
-import araiLogo from "@assets/sponsors/logos/arai.png";
-import blackrockLogo from "@assets/sponsors/logos/blackrock-synthetics.png";
-import dpBrakesLogo from "@assets/sponsors/logos/dp-brakes-logo.png";
-import evansCoolantLogo from "@assets/sponsors/logos/evans-coolant.png";
-import funnelwebLogo from "@assets/sponsors/logos/funnelweb-logo.png";
-import liquimolyLogo from "@assets/sponsors/logos/liquimoly.png";
-import revzillaLogo from "@assets/sponsors/logos/revzilla.png";
-import vpFuelsLogo from "@assets/sponsors/logos/vp-fuels.jpg";
+// Get sponsors from CMS
+const allSponsors = (await getCollection("sponsors"))
+  .filter((s) => !s.data.draft)
+  .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
 
-// Sponsor data
-const titleSponsor = { name: "Kenda Tires", logo: kendaLogo, url: "#" };
-const sponsors = [
-  { name: "AMSOIL", logo: amsoilLogo, url: "#" },
-  { name: "100%", logo: hundredPercentLogo, url: "#" },
-  { name: "Arai", logo: araiLogo, url: "#" },
-  { name: "Blackrock Synthetics", logo: blackrockLogo, url: "#" },
-  { name: "DP Brakes", logo: dpBrakesLogo, url: "#" },
-  { name: "Evans Coolant", logo: evansCoolantLogo, url: "#" },
-  { name: "Funnelweb", logo: funnelwebLogo, url: "#" },
-  { name: "Liqui Moly", logo: liquimolyLogo, url: "#" },
-  { name: "RevZilla", logo: revzillaLogo, url: "#" },
-  { name: "VP Fuels", logo: vpFuelsLogo, url: "#" },
-];
+const titleSponsorEntry = allSponsors.find((s) => s.data.isTitleSponsor);
+const regularSponsors = allSponsors.filter((s) => !s.data.isTitleSponsor);
+
+// Format for SponsorCarousel component
+const titleSponsor = titleSponsorEntry
+  ? { name: titleSponsorEntry.data.name, logo: titleSponsorEntry.data.logo, url: titleSponsorEntry.data.url || "#" }
+  : null;
+const sponsors = regularSponsors.map((s) => ({
+  name: s.data.name,
+  logo: s.data.logo,
+  url: s.data.url || "#",
+}));
 
 // Get upcoming events
 const allEvents = await getCollection("events", ({ data }) => {
@@ -313,18 +303,29 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
     </div>
   </section>
 
-  <!-- Results Quick Links -->
+  <!-- Results & Photos Quick Links -->
   <section class="py-8 bg-gray-100">
     <div class="container">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
         <div>
-          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Race Results</span>
+          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Race Results & Photos</span>
           <h2 class="text-xl md:text-2xl font-bold">View {new Date().getFullYear()} Results</h2>
         </div>
         <div class="flex flex-wrap justify-center gap-3">
           <Button href="/results" variant="primary">
             All Results
           </Button>
+          <a
+            href={FACEBOOK_GROUPS.photos.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Race Photos
+          </a>
         </div>
       </div>
     </div>

@@ -271,6 +271,25 @@ export default defineConfig({
       },
 
       // =========================================================================
+      // Sponsors
+      // =========================================================================
+      {
+        name: 'sponsors',
+        label: 'Sponsors',
+        path: 'src/content/sponsors',
+        format: 'md',
+        fields: [
+          { type: 'string', name: 'name', label: 'Sponsor Name', required: true, isTitle: true },
+          { type: 'image', name: 'logo', label: 'Logo', required: true },
+          { type: 'string', name: 'url', label: 'Website URL' },
+          { type: 'boolean', name: 'isTitleSponsor', label: 'Title Sponsor' },
+          { type: 'number', name: 'order', label: 'Display Order' },
+          { type: 'boolean', name: 'draft', label: 'Draft' },
+          { type: 'rich-text', name: 'body', label: 'Description', isBody: true },
+        ],
+      },
+
+      // =========================================================================
       // Pages
       // =========================================================================
       {

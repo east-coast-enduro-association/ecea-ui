@@ -111,6 +111,27 @@ const registrationDropdown = [
           );
         }
 
+        // Highlight "Get Started" with special styling
+        const isGetStarted = item.text === "Get Started";
+
+        if (isGetStarted) {
+          return (
+            <li>
+              <a
+                href={item.href}
+                class={`text-base font-medium transition-colors px-3 py-1.5 rounded-lg ${
+                  isActive
+                    ? "bg-primary-600 text-white"
+                    : "bg-primary-100 text-primary-700 hover:bg-primary-600 hover:text-white"
+                }`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {item.text}
+              </a>
+            </li>
+          );
+        }
+
         return (
           <li>
             <a
@@ -169,14 +190,19 @@ const registrationDropdown = [
         NAV_ITEMS.map((item) => {
           const isActive = currentPath === item.href ||
                            (item.href !== "/" && currentPath.startsWith(item.href));
+          const isGetStarted = item.text === "Get Started";
 
           return (
             <a
               href={item.href}
               class={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors text-center ${
-                isActive
-                  ? "bg-primary-50 text-primary-600 border border-primary-200"
-                  : "text-gray-700 hover:bg-gray-50 hover:text-primary-600 border border-transparent"
+                isGetStarted
+                  ? isActive
+                    ? "bg-primary-600 text-white border border-primary-600"
+                    : "bg-primary-100 text-primary-700 border border-primary-200 hover:bg-primary-600 hover:text-white hover:border-primary-600"
+                  : isActive
+                    ? "bg-primary-50 text-primary-600 border border-primary-200"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-primary-600 border border-transparent"
               }`}
               role="menuitem"
               aria-current={isActive ? "page" : undefined}

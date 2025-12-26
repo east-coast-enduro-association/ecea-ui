@@ -277,6 +277,23 @@ const siteInfoCollection = defineCollection({
 });
 
 /**
+ * Sponsors Collection
+ * Title and regular sponsors for homepage display
+ */
+const sponsorsCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      logo: image(),
+      url: z.string().url().optional(),
+      isTitleSponsor: z.boolean().default(false),
+      order: z.number().default(0),
+      draft: z.boolean().default(false),
+    }),
+});
+
+/**
  * Members Collection
  * ECEA membership roster by year
  * Portable JSON format for easy import/export
@@ -308,6 +325,7 @@ export const collections = {
   series: seriesCollection,
   board: boardCollection,
   staff: staffCollection,
+  sponsors: sponsorsCollection,
   pages: pagesCollection,
   siteInfo: siteInfoCollection,
   teamResults: teamResultsCollection,

@@ -183,6 +183,15 @@ export const EVENT_TYPE_COLORS: Record<string, string> = {
   Meeting: "bg-slate-600",
 };
 
+// Staff contact categories (for grouping)
+export const STAFF_CATEGORIES = [
+  "ECEA Referee",
+  "Enduro Series",
+  "Hare Scramble / FastKIDZ",
+  "Marketing & Sponsorships",
+  "Web Masters",
+] as const;
+
 // Shared UI styles (Tailwind classes)
 export const UI_STYLES = {
   // Badges
