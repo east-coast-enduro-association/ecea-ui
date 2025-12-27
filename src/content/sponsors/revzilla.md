@@ -1,7 +1,8 @@
 ---
 name: RevZilla
 logo: ../../assets/sponsors/logos/revzilla.png
-isTitleSponsor: false
+url: https://www.revzilla.com/
+isTitleSponsor: true
 order: 10
 draft: false
 ---
