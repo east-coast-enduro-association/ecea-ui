@@ -74,6 +74,7 @@ const { titleSponsor, sponsors } = Astro.props;
 <style>
   .sponsor-carousel {
     animation: scroll 30s linear infinite;
+    width: max-content;
   }
   .sponsor-carousel:hover {
     animation-play-state: paused;
@@ -81,5 +82,11 @@ const { titleSponsor, sponsors } = Astro.props;
   @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+  /* Mobile: faster than desktop */
+  @media (max-width: 768px) {
+    .sponsor-carousel {
+      animation-duration: 20s;
+    }
   }
 </style>
