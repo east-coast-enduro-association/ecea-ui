@@ -5,8 +5,8 @@ logo: '../../assets/clubs/logos/hmdr.png'
 summary: High Mountain Dirt Riders
 draft: false
 website: 'https://hmdr.org/'
-president: Joanne Apple
-contact: msoudas@comcast.net
+president: JoAnn Apple
+contact: president@hmdr.org
 order: 6
 location: 'Sugarloaf, PA'
 ---
