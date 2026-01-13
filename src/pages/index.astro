@@ -244,7 +244,7 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+      <div class={`grid grid-cols-1 gap-3 md:gap-4 ${upcomingEvents.length > 1 ? 'md:grid-cols-2' : 'max-w-xl mx-auto'}`}>
         {upcomingEvents.map((event, index) => (
           <EventCard
             title={event.data.title}
@@ -253,7 +253,7 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
             eventType={event.data.eventType}
             location={event.data.location}
             image={getEventImage(event)}
-            featured={index === 0}
+            featured={index === 0 && upcomingEvents.length > 1}
           />
         ))}
       </div>
