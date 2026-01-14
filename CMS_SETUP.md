@@ -1,173 +1,143 @@
-# Sveltia CMS Setup Guide
+# TinaCMS Setup Guide
 
-This guide walks you through setting up Sveltia CMS with GitHub authentication for the ECEA website.
+This guide walks you through using TinaCMS for the ECEA website.
 
 ## Architecture
 
 ```
 ┌─────────────────┐                    ┌─────────────────┐
 │   Editor's      │───────────────────▶│   GitHub        │
-│   Browser       │  (GitHub API)      │   Repository    │
-│   (Sveltia CMS) │◀───────────────────│   (Content)     │
+│   Browser       │  (Git-backed)      │   Repository    │
+│   (TinaCMS)     │◀───────────────────│   (Content)     │
 └─────────────────┘                    └─────────────────┘
         │
         ▼
 ┌─────────────────┐
-│   GitHub OAuth  │
-│   or PAT        │
-│   (Auth)        │
+│   Tina Cloud    │
+│   (Auth & API)  │
 └─────────────────┘
 ```
 
-- **Sveltia CMS**: Visual content editor (runs in browser, loaded via CDN)
-- **GitHub**: Stores content (markdown files), handles auth via PAT or OAuth
+- **TinaCMS**: Visual content editor with real-time preview
+- **Tina Cloud**: Handles authentication and Git operations
+- **GitHub**: Stores content (markdown/JSON files)
 - **Netlify**: Hosts the static site (auto-deploys on GitHub commits)
 
 ## What's Included
 
 ```
-src/pages/
-└── admin.html       # CMS entry point (loads Sveltia from CDN)
+tina/
+├── config.ts           # CMS schema and configuration
+├── CustomLogo.tsx      # Custom branding for admin UI
+├── __generated__/      # Auto-generated types and queries
+└── tina-lock.json      # Lock file for schema
 public/admin/
-└── config.yml       # CMS configuration (collections, fields)
+└── index.html          # Admin entry point (auto-generated)
 ```
 
-## Setup Steps
+## Local Development
 
-### 1. Deploy to Netlify
+```bash
+# Start the dev server with TinaCMS
+npm run dev
+```
 
-1. Push this branch to GitHub
-2. In Netlify, deploy from the `cms-setup` branch
-3. Wait for the initial deploy to complete
+Then visit **http://localhost:4321/admin/** to access the CMS.
 
-### 2. Set Up Authentication (Choose One)
+In local mode, TinaCMS reads/writes directly to your local files - no authentication needed.
 
-**Option A: GitHub Personal Access Token (Simplest)**
-1. Each editor creates a GitHub PAT at https://github.com/settings/tokens
-2. Token needs `repo` scope for private repos, or `public_repo` for public
-3. Editors paste the token when signing in to the CMS
+## Production Setup
 
-**Option B: GitHub OAuth via Cloudflare Workers (Better UX)**
-1. Deploy [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) to Cloudflare Workers
-2. Create a GitHub OAuth App
-3. Add the OAuth base_url to `config.yml`
+### 1. Create a Tina Cloud Account
 
-### 3. Add Editors to GitHub
+1. Go to [tina.io](https://tina.io) and sign up
+2. Create a new project and connect your GitHub repository
+3. Get your Client ID and Token from the project settings
 
-1. Go to your GitHub repo > Settings > Collaborators
-2. Add editors with **Write** access
-3. They can now authenticate and edit content
+### 2. Configure Environment Variables
 
-### 4. Access the CMS
+Set these in Netlify (or your hosting provider):
 
-1. Go to `https://your-site.netlify.app/admin/`
-2. Sign in with GitHub (PAT or OAuth)
-3. Start editing!
+```
+TINA_CLIENT_ID=your-client-id
+TINA_TOKEN=your-token
+TINA_BRANCH=main
+```
 
-## Usage
+### 3. Build for Production
 
-### Accessing the CMS
+```bash
+npm run build:tina
+```
 
-- URL: `https://your-site.netlify.app/admin/`
-- Login: GitHub PAT or OAuth
+This runs `tinacms build && astro build` to generate the admin UI and site.
 
-### Content Collections
+## Content Collections
 
 | Collection | Description |
 |------------|-------------|
 | **Blog Posts** | News, announcements, recaps |
-| **Events (2025)** | 2025 race events |
-| **Events (2026)** | 2026 race events |
+| **Events (2023-2026)** | Race events by year |
 | **Clubs** | Club profiles |
 | **Racing Series** | Enduro, Hare Scramble, FastKIDZ, Dual Sport |
-| **Board Members** | Board member bios |
+| **Board Members** | Executive board and trustees |
+| **Staff Contacts** | Series directors, referees, etc. |
+| **Sponsors** | Sponsor logos and links |
 | **Pages** | Static content pages |
+| **Team Results** | JSON data for standings |
 
-### Workflow
+## Workflow
 
-1. **Create/Edit** content in the CMS
-2. **Save** - Creates a commit to GitHub
-3. **Netlify auto-deploys** - Site rebuilds with new content
-4. Changes appear on the live site in ~1-2 minutes
+1. **Access** the CMS at `/admin/`
+2. **Create/Edit** content using the visual editor
+3. **Save** - Creates a commit to GitHub via Tina Cloud
+4. **Netlify auto-deploys** - Site rebuilds with new content
+5. Changes appear on the live site in ~1-2 minutes
 
-### Managing Editors
+## Managing Editors
 
-**To add an editor:**
-1. Go to GitHub repo > Settings > Collaborators
-2. Click "Add people"
-3. Enter their GitHub username or email
-4. Grant **Write** access
+Editors need to be invited through Tina Cloud:
 
-**To remove an editor:**
-1. Go to GitHub repo > Settings > Collaborators
-2. Find the user and remove them
+1. Go to your project in [app.tina.io](https://app.tina.io)
+2. Navigate to Project Settings > Collaborators
+3. Invite editors by email
 
-## Limitations
+## Media Handling
 
-### GitHub Collaborator Limits
-- **Unlimited collaborators** on public repos (free)
-- **Private repos**: Free tier allows 3 collaborators, GitHub Team allows more
-- All editors need GitHub accounts
-
-### Media Handling
-- Images are stored in `src/assets/images/uploads/`
-- Large images will increase repository size
-- Consider Cloudinary for external image hosting in the future
-
-## Local Development
-
-Sveltia CMS uses the **File System Access API** for local development (Chrome/Edge only):
-
-```bash
-# Start the Astro dev server
-npm run dev
-```
-
-Then visit **http://localhost:4321/admin/** in Chrome or Edge.
-
-When prompted, choose **"Work with local repository"** and select your project folder. Sveltia will read/write directly to your local files.
-
-### Authentication Options
-
-1. **Local development**: File System Access API (no auth needed)
-2. **GitHub PAT**: Generate a Personal Access Token and paste it when signing in
-3. **OAuth**: Set up sveltia-cms-auth on Cloudflare Workers (see [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth))
+- Media is stored in `public/` directory
+- TinaCMS provides a built-in media manager
+- Images are committed to the repository
 
 ## Troubleshooting
 
-### Login not working
-- Clear browser cache and try again
-- Ensure the GitHub PAT has correct scopes (`repo` or `public_repo`)
-- Verify the user has write access to the repository
+### Admin page shows "Failed loading TinaCMS assets"
+- Ensure `npm run dev` is running (local development)
+- Check that environment variables are set (production)
+- Verify the Tina Cloud project is properly configured
 
 ### Changes not appearing on site
 - Check GitHub for the commit
 - Check Netlify deploy logs
 - Wait 1-2 minutes for deploy to complete
 
-### Media upload failing
-- Check file size (Netlify has limits)
-- Ensure the media folder path is correct in config.yml
+### Authentication issues
+- Verify TINA_CLIENT_ID and TINA_TOKEN are correct
+- Check Tina Cloud project settings
+- Ensure the user is added as a collaborator
 
 ## Cost
 
 | Service | Free Tier | Notes |
 |---------|-----------|-------|
 | Netlify Hosting | 100GB bandwidth/mo | Plenty for ECEA |
-| GitHub | Unlimited collaborators (public repos) | Free |
-| Sveltia CMS | Open source | Free |
-
-**Expected monthly cost: $0** (within free tier limits)
-
-## Future Considerations
-
-1. **GitHub OAuth**: Better UX than PAT - deploy sveltia-cms-auth to Cloudflare Workers
-2. **Cloudinary**: External image hosting to reduce repo size
-3. **GitHub Teams**: If repo becomes private and needs >3 collaborators
+| Tina Cloud | 2 users, unlimited content | Free tier |
+| GitHub | Unlimited (public repos) | Free |
 
 ## Files Reference
 
 | File | Purpose |
 |------|---------|
-| `src/pages/admin.html` | CMS entry point |
-| `public/admin/config.yml` | CMS collections and fields |
+| `tina/config.ts` | CMS schema and collections |
+| `tina/CustomLogo.tsx` | Custom admin branding |
+| `public/admin/index.html` | Admin entry point |
+| `.env` | Environment variables (local) |
