@@ -70,6 +70,27 @@
   }
 }
 
+/* Responsive tables in prose content */
+.prose table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+.prose table th:first-child,
+.prose table td:first-child {
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 1;
+  box-shadow: 2px 0 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.prose table th:first-child {
+  background: #f9fafb;
+}
+
 details > summary::-webkit-details-marker {
   display: none;
 }
