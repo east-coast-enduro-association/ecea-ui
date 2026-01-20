@@ -14,8 +14,44 @@ const optionalString = z
 // Helper for optional URLs
 const optionalUrl = optionalString.pipe(z.string().url().optional());
 
+/**
+ * Zod schema for parsing dates as local time.
+ *
+ * This prevents the common timezone issue where date-only strings (YYYY-MM-DD)
+ * are parsed as UTC midnight, causing dates to display one day earlier in US timezones.
+ *
+ * @see src/utils/dateUtils.js for the parseLocalDate() utility used elsewhere
+ */
+const localDate = z.union([z.date(), z.string()]).transform((val): Date => {
+  // String input
+  if (typeof val === 'string') {
+    // Date-only string (YYYY-MM-DD) - parse as local midnight
+    if (/^\d{4}-\d{2}-\d{2}$/.test(val)) {
+      const [year, month, day] = val.split('-').map(Number);
+      return new Date(year, month - 1, day);
+    }
+    // ISO string with time - parse normally
+    return new Date(val);
+  }
+
+  // Date object (may come from YAML parser as UTC midnight)
+  if (val instanceof Date) {
+    const hours = val.getUTCHours();
+    const mins = val.getUTCMinutes();
+    const secs = val.getUTCSeconds();
+
+    // If midnight UTC, this was likely a date-only value - recreate as local
+    if (hours === 0 && mins === 0 && secs === 0) {
+      return new Date(val.getUTCFullYear(), val.getUTCMonth(), val.getUTCDate());
+    }
+    return val;
+  }
+
+  return val as Date;
+});
+
 // Helper for optional dates
-const optionalDate = optionalString.pipe(z.coerce.date().optional());
+const optionalDate = optionalString.pipe(localDate.optional());
 
 /**
  * Clubs Collection
@@ -50,9 +86,9 @@ const eventsCollection = defineCollection({
       title: z.string(),
       summary: z.string(),
 
-      // Dates & Times
-      date: z.coerce.date(),
-      endDate: z.coerce.date().optional(),
+      // Dates & Times (parsed as local time to prevent UTC timezone shift)
+      date: localDate,
+      endDate: localDate.optional(),
       keyTime: optionalDate,
       checkInTime: optionalDate,
 
@@ -111,7 +147,7 @@ const blogCollection = defineCollection({
     z.object({
       title: z.string(),
       slug: z.string().optional(),
-      pubDate: z.coerce.date(),
+      pubDate: localDate,
       description: z.string(),
       author: z.string().default('ECEA'),
       category: z
