@@ -10,9 +10,7 @@
  * - FastKIDZ: Green (youth, growth)
  * - Dual Sport: Purple (versatile, dual-purpose)
  * - Special: Amber/Gold (unique, standout)
- * - Fun Ride: Teal (relaxed, enjoyable)
  * - ECEA: Red (organizational, official)
- * - Meeting: Gray (neutral, administrative)
  */
 
 export type EventType =
@@ -20,10 +18,8 @@ export type EventType =
   | "Hare Scramble"
   | "FastKIDZ"
   | "Dual Sport"
-  | "Fun Ride"
   | "ECEA"
-  | "Special"
-  | "Meeting";
+  | "Special";
 
 interface ColorScheme {
   bg: string;
@@ -61,20 +57,10 @@ const eventTypeColors: Record<EventType, ColorScheme> = {
     text: "text-amber-800",
     border: "border-amber-200",
   },
-  "Fun Ride": {
-    bg: "bg-teal-100",
-    text: "text-teal-800",
-    border: "border-teal-200",
-  },
   ECEA: {
     bg: "bg-red-100",
     text: "text-red-800",
     border: "border-red-200",
-  },
-  Meeting: {
-    bg: "bg-gray-100",
-    text: "text-gray-800",
-    border: "border-gray-200",
   },
 };
 
@@ -144,9 +130,7 @@ const darkBgColors: Record<EventType, string> = {
   FastKIDZ: "bg-green-500/80 text-white",
   "Dual Sport": "bg-purple-500/80 text-white",
   Special: "bg-amber-500/80 text-white",
-  "Fun Ride": "bg-teal-500/80 text-white",
   ECEA: "bg-red-500/80 text-white",
-  Meeting: "bg-gray-500/80 text-white",
 };
 
 const defaultDarkBgColors = "bg-white/20 text-white";

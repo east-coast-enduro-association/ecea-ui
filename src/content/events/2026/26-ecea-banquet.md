@@ -24,11 +24,8 @@ hostingClubs:
   - PBER
   - TCSMC
   - VFTR
-eventType: Enduro
-format: Special
-series: Special Series
-closedCourse: false
-gasAway: false
+eventType: ECEA
+series: ECEA Events
 image: ../../../assets/ecea/logos/ecea24l2.png
 flyer: ../../../assets/events/flyers/25adultbanq.jpg
 draft: false

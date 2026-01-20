@@ -183,26 +183,28 @@ if (entry.data.eventType === "Enduro" && entry.data.hostingClubs?.[0]) {
             </div>
           )}
 
-          <div class="grid grid-cols-2 gap-4 text-sm mt-4">
-            <div class="bg-white p-2 rounded border border-gray-200 text-center">
-              <span class="block font-bold text-gray-500 text-xs uppercase">Format</span>
-              {entry.data.format || entry.data.eventType}
-            </div>
-            {entry.data.gateFee && (
+          {entry.data.eventType !== "ECEA" && (
+            <div class="grid grid-cols-2 gap-4 text-sm mt-4">
               <div class="bg-white p-2 rounded border border-gray-200 text-center">
-                <span class="block font-bold text-gray-500 text-xs uppercase">Gate Fee</span>
-                {entry.data.gateFee}
+                <span class="block font-bold text-gray-500 text-xs uppercase">Format</span>
+                {entry.data.format || entry.data.eventType}
               </div>
-            )}
-            <div class="bg-white p-2 rounded border border-gray-200 text-center">
-              <span class="block font-bold text-gray-500 text-xs uppercase">Closed Course</span>
-              {entry.data.closedCourse ? "Yes" : "No"}
+              {entry.data.gateFee && (
+                <div class="bg-white p-2 rounded border border-gray-200 text-center">
+                  <span class="block font-bold text-gray-500 text-xs uppercase">Gate Fee</span>
+                  {entry.data.gateFee}
+                </div>
+              )}
+              <div class="bg-white p-2 rounded border border-gray-200 text-center">
+                <span class="block font-bold text-gray-500 text-xs uppercase">Closed Course</span>
+                {entry.data.closedCourse ? "Yes" : "No"}
+              </div>
+              <div class="bg-white p-2 rounded border border-gray-200 text-center">
+                <span class="block font-bold text-gray-500 text-xs uppercase">Gas Away</span>
+                {entry.data.gasAway ? "Yes" : "No"}
+              </div>
             </div>
-            <div class="bg-white p-2 rounded border border-gray-200 text-center">
-              <span class="block font-bold text-gray-500 text-xs uppercase">Gas Away</span>
-              {entry.data.gasAway ? "Yes" : "No"}
-            </div>
-          </div>
+          )}
         </div>
       </div>
 
