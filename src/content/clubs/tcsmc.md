@@ -5,7 +5,7 @@ logo: '../../assets/clubs/logos/tcsmc.png'
 summary: TCSMC
 draft: false
 website: 'http://www.teamhammer.org/'
-president: TODO
+president: Eldin Polhamus
 contact: hammerhead@teamhammer.org
 order: 10
 location: 'Port Elizabeth, NJ'
