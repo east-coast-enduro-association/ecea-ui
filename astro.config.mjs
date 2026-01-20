@@ -8,6 +8,9 @@ import react from '@astrojs/react';
 export default defineConfig({
   site: 'https://www.ecea.org',
   trailingSlash: 'ignore',
+  redirects: {
+    '/admin': '/admin/index.html'
+  },
   integrations: [tailwind(), sitemap(), react()],
   markdown: {
     shikiConfig: {

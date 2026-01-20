@@ -7,6 +7,7 @@ import { getCollection } from "astro:content";
 import { formatDate } from "../../utils/dateUtils";
 import { groupEventsByDate, createICSDataUrl, type ICSEvent } from "../../utils/calendarUtils";
 import { DISPLAY_LIMITS } from "../../utils/constants";
+import { getEventTypeBadgeClasses, getPastEventBadgeClasses } from "../../utils/eventTypeColors";
 
 // ============================================================================
 // Data Fetching
@@ -206,7 +207,7 @@ export function getStaticPaths() {
                           <span class="mr-2">🏁</span> {event.data.hostingClubs.join(", ")}
                         </div>
                       )}
-                      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 mb-3">
+                      <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium mb-3 ${getEventTypeBadgeClasses(event.data.eventType)}`}>
                         {event.data.eventType}
                       </span>
                     </Card>
@@ -250,7 +251,7 @@ export function getStaticPaths() {
                         <span class="mr-2">🏁</span> {event.data.hostingClubs.join(", ")}
                       </div>
                     )}
-                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                    <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getPastEventBadgeClasses()}`}>
                       {event.data.eventType}
                     </span>
                   </Card>

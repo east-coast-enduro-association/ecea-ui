@@ -6,6 +6,7 @@
  */
 import { Image } from "astro:assets";
 import { formatDate } from "../../utils/dateUtils";
+import { getEventTypeBadgeClassesDark } from "../../utils/eventTypeColors";
 
 interface Props {
   title: string;
@@ -54,7 +55,7 @@ const {
   <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6">
     <div class="flex items-center gap-2 mb-2">
       {eventType && (
-        <span class="px-2 py-0.5 bg-white/20 backdrop-blur-sm rounded text-xs font-medium text-white uppercase tracking-wider">
+        <span class={`px-2 py-0.5 backdrop-blur-sm rounded text-xs font-medium uppercase tracking-wider ${getEventTypeBadgeClassesDark(eventType)}`}>
           {eventType}
         </span>
       )}
