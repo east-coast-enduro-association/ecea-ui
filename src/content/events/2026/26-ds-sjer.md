@@ -1,9 +1,8 @@
 ---
 title: Ice Breaker
 summary: Come out of hibernation
-draft: false
-date: 2026-02-22
-location: BBB Hunting Club, Pemberton, NJ
+date: 2026-02-22T00:00:00.000Z
+location: 'BBB Hunting Club, Pemberton, NJ'
 hostingClubs:
   - SJER
 eventType: Dual Sport
@@ -11,6 +10,9 @@ format: Dual Sport
 series: Dual Sport Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/clubs/logos/sjer-green.png'
+image: ../../../assets/clubs/logos/sjer-green.png
+flyer: ../../../assets/events/images/ib-2026-save-date.jpg
+draft: false
 ---
+
 Details coming soon.

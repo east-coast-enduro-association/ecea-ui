@@ -28,7 +28,32 @@ const eventFields: Template['fields'] = [
   { type: 'boolean', name: 'gasAway', label: 'Gas Away' },
   { type: 'string', name: 'gateFee', label: 'Gate Fee' },
   { type: 'image', name: 'image', label: 'Event Image' },
-  { type: 'image', name: 'flyer', label: 'Event Flyer' },
+  {
+    type: 'image',
+    name: 'flyer',
+    label: 'Event Flyer',
+    uploadDir: () => 'assets/events',
+    ui: {
+      // Store as relative path for Astro's image() optimization
+      parse: (media: string) => {
+        if (!media) return '';
+        // Convert /assets/events/file.jpg -> ../../../assets/events/file.jpg
+        if (media.startsWith('/assets/')) {
+          return `../../..${media}`;
+        }
+        return media;
+      },
+      // Preview with absolute path for TinaCMS
+      previewSrc: (value: string) => {
+        if (!value) return '';
+        // Convert ../../../assets/events/file.jpg -> /assets/events/file.jpg
+        if (value.startsWith('../../../assets/')) {
+          return value.replace('../../..', '');
+        }
+        return value;
+      },
+    },
+  },
   { type: 'string', name: 'flyerPdf', label: 'Flyer PDF URL' },
   { type: 'number', name: 'motoTallyId', label: 'Moto-Tally ID' },
   { type: 'string', name: 'registrationLink', label: 'Registration Link' },
@@ -81,8 +106,8 @@ export default defineConfig({
 
   media: {
     tina: {
-      mediaRoot: '',  // Empty = entire public folder is media root
-      publicFolder: 'public',
+      mediaRoot: '',
+      publicFolder: 'public',  // Uploads to public/assets/ which symlinks to src/assets/
     },
   },
 
@@ -130,7 +155,28 @@ export default defineConfig({
             name: 'image',
             label: 'Featured Image',
             fields: [
-              { type: 'image', name: 'src', label: 'Image' },
+              {
+                type: 'image',
+                name: 'src',
+                label: 'Image',
+                uploadDir: () => 'assets/blog',
+                ui: {
+                  parse: (media: string) => {
+                    if (!media) return '';
+                    if (media.startsWith('/assets/')) {
+                      return `../..${media}`;
+                    }
+                    return media;
+                  },
+                  previewSrc: (value: string) => {
+                    if (!value) return '';
+                    if (value.startsWith('../../assets/')) {
+                      return value.replace('../..', '');
+                    }
+                    return value;
+                  },
+                },
+              },
               { type: 'string', name: 'alt', label: 'Alt Text' },
             ],
           },
@@ -160,7 +206,12 @@ export default defineConfig({
         fields: [
           { type: 'string', name: 'name', label: 'Club Name', required: true, isTitle: true },
           { type: 'string', name: 'abbreviatedName', label: 'Abbreviation', required: true },
-          { type: 'image', name: 'logo', label: 'Club Logo' },
+          {
+            type: 'image',
+            name: 'logo',
+            label: 'Club Logo',
+            uploadDir: () => 'assets/clubs/logos',
+          },
           { type: 'string', name: 'summary', label: 'Summary', ui: { component: 'textarea' } },
           { type: 'string', name: 'website', label: 'Website URL' },
           { type: 'string', name: 'contact', label: 'Contact Email' },

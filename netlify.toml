@@ -5,6 +5,12 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# TinaCMS admin - rewrite to index.html (must be before catch-all)
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
 # Redirects - Astro generates static pages, this handles true 404s
 [[redirects]]
   from = "/*"
