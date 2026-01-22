@@ -108,7 +108,7 @@ const eventsCollection = defineCollection({
       gasAway: z.boolean().default(false),
       gateFee: z.string().optional(),
 
-      // Media
+      // Media - relative paths processed by Astro image() for optimization
       image: image().nullable().optional(),
       flyer: image().nullable().optional(),
       flyerPdf: z.string().nullable().optional(), // PDF version of flyer for download

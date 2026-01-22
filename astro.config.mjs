@@ -8,10 +8,24 @@ import react from '@astrojs/react';
 export default defineConfig({
   site: 'https://www.ecea.org',
   trailingSlash: 'ignore',
-  redirects: {
-    '/admin': '/admin/index.html'
-  },
   integrations: [tailwind(), sitemap(), react()],
+  vite: {
+    plugins: [
+      {
+        name: 'admin-redirect',
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            if (req.url === '/admin' || req.url === '/admin/') {
+              res.writeHead(302, { Location: '/admin/index.html' });
+              res.end();
+              return;
+            }
+            next();
+          });
+        },
+      },
+    ],
+  },
   markdown: {
     shikiConfig: {
       theme: 'github-light',
