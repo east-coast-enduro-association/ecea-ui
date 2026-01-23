@@ -7,6 +7,7 @@
 import { Image } from "astro:assets";
 import { formatDate } from "../../utils/dateUtils";
 import { CATEGORY_COLORS, UI_STYLES } from "../../utils/constants";
+import defaultBlogImage from "../../assets/blog/ecea-small.png";
 
 interface Props {
   title: string;
@@ -42,16 +43,12 @@ const {
     className
   ]}
 >
-  {image ? (
-    <Image
-      src={image.src}
-      alt={image.alt}
-      class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      widths={featured ? [640, 800] : [400, 600]}
-    />
-  ) : (
-    <div class="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900"></div>
-  )}
+  <Image
+    src={image?.src ?? defaultBlogImage}
+    alt={image?.alt ?? "ECEA"}
+    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    widths={featured ? [640, 800] : [400, 600]}
+  />
 
   <div class:list={["absolute inset-0", UI_STYLES.gradientOverlay]}></div>
 
