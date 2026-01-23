@@ -2,7 +2,7 @@
 title: 2025 ECEA AWARDS BANQUET - Swap Meet - Vendor Show
 summary: 'Celebrate with ECEA, Friends, Family the 2025 Race Season.'
 date: 2026-01-24T15:00:08.480Z
-checkInTime: '2026-01-24T17:00:08.503Z'
+checkInTime: 2026-01-24T17:00:08.503Z
 location: '1160 FIRST AVENUE • KING OF PRUSSIA, PA 19406'
 hostingClubs:
   - BER
@@ -34,6 +34,22 @@ draft: false
 **ECEA AWARDS BANQUET** is back at the Valley Forge Casino by popular request, also we will have the **Vendor show, Seminar**s and all **New SWAPMEET**... so Register for a spot and sell your stuff-bikes, gear etc....
 
 ![](/images/blog/26swap.png)
+
+### Event Schedule:
+
+12pm Vendor Show and Swap Meet
+
+3:30pm 100% Club Awards
+
+4:00pm Checkpoints Awards
+
+4:30pm Arai Helmet Seminar
+
+5:00pm Cocktail Hour
+
+6:00pm Dinner
+
+7:00pm Awards Ceremony
 
 **GET a Cheap 10x10 Spot to Sell, swap, give away**.. your motorcycle related stuff... *[REGISTER HERE](https://brushfire.com/eastcoastenduroassociation/eceaswapmeet-sellerregistration/621047)*\
 \
