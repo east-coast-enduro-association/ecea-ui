@@ -1,21 +1,23 @@
 ---
 title: Greenbrier Enduro
 summary: The annual season opener
-draft: false
-date: 2026-03-08
-location: 34 Frankles Lane, Port Elizabeth, NJ
+date: 2026-03-08T23:00:00.000Z
+endDate: 2026-03-09T03:34:54.740Z
+keyTime: 2026-03-08T13:00:00.000Z
+checkInTime: 2026-03-08T11:00:00.000Z
+location: '34 Frankles Lane, Port Elizabeth, NJ'
 hostingClubs:
   - TCSMC
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
-keyTime: '2026-03-08T09:00:00'
-checkInTime: '2026-03-08T07:00:00'
 closedCourse: false
 gasAway: true
-image: '../../../assets/clubs/logos/tcsmc.png'
-flyer: '../../../assets/events/flyers/26-en-tcsmc-flyer.jpg'
+image: ../../../assets/clubs/logos/tcsmc.png
+flyer: ../../../assets/events/flyers/Greenbrier 2026 Flyer.jpg
+draft: false
 ---
+
 ## Greenbrier Enduro March 8th, 2026
 
 Details coming soon.
