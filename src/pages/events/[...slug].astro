@@ -86,20 +86,28 @@ const mapsSearchUrl = entry.data.location ? `https://www.google.com/maps/search/
 const mapsEmbedUrl = entry.data.location ? `https://www.google.com/maps?q=${encodeURIComponent(entry.data.location)}&output=embed` : null;
 
 // Team Results (for Enduro events)
+// Results are year-specific - only show results from the same year as the event
 let teamEventResults: Array<{ club: string; points: number }> = [];
 let teamEventInfo: { abbr: string; name: string } | null = null;
+let teamResultsYear: number | null = null;
 
 if (entry.data.eventType === "Enduro" && entry.data.hostingClubs?.[0]) {
-  const teamResults2025 = await getEntry("teamResults", "2025");
-  if (teamResults2025?.data) {
+  // Get the year from the event date
+  const eventYear = new Date(entry.data.date).getFullYear();
+
+  // Try to fetch team results for this specific year
+  const teamResultsEntry = await getEntry("teamResults", String(eventYear));
+
+  if (teamResultsEntry?.data) {
     const hostingClub = entry.data.hostingClubs[0];
     // Find the event in team results by matching hosting club
-    const teamEvent = teamResults2025.data.events.find(e => e.abbr === hostingClub);
+    const teamEvent = teamResultsEntry.data.events.find(e => e.abbr === hostingClub);
 
     if (teamEvent?.completed) {
+      teamResultsYear = eventYear;
       teamEventInfo = { abbr: teamEvent.abbr, name: teamEvent.name };
       // Get results for this event (results is now an array of {event, points})
-      teamEventResults = teamResults2025.data.standings
+      teamEventResults = teamResultsEntry.data.standings
         .map(standing => {
           const eventResult = standing.results.find(r => r.event === hostingClub);
           const points = eventResult?.points ? parseInt(eventResult.points, 10) : 0;
@@ -319,10 +327,10 @@ if (entry.data.eventType === "Enduro" && entry.data.hostingClubs?.[0]) {
     )}
 
     <!-- Team Results (for Enduro events with completed team competition) -->
-    {teamEventResults.length > 0 && (
+    {teamEventResults.length > 0 && teamResultsYear && (
       <div class="mt-8 mb-8">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold">Team Competition Results</h3>
+          <h3 class="text-xl font-bold">{teamResultsYear} Team Competition Results</h3>
           <a href="/results/team" class="text-sm text-primary-600 hover:text-primary-700 font-medium">
             View Full Standings →
           </a>
