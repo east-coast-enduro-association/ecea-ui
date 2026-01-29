@@ -4,6 +4,7 @@ export const layout = "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import PageHeader from "../components/Sections/PageHeader.astro";
 import { formatDate } from "../utils/dateUtils";
+import defaultBlogImage from "../assets/blog/ecea-small.png";
 
 export interface Props {
   title: string;
@@ -49,11 +50,11 @@ const formattedDate = date ? formatDate(date) : null;
 <main class="container py-8">
   <div class="mx-auto max-w-3xl">
 
-    {image && (
+    {(image || type === "blog") && (
       <div class="mb-8 overflow-hidden rounded-lg">
         <Image
-          src={image.src}
-          alt={image.alt}
+          src={image?.src ?? defaultBlogImage}
+          alt={image?.alt ?? "ECEA"}
           class={fullImage ? "w-full h-auto" : "object-cover w-full h-64 md:h-96"}
           widths={[320, 640, 1024]}
           format="webp"
