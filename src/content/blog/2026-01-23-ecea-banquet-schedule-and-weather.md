@@ -6,7 +6,7 @@ author: ECEA
 category: news
 tags:
   - 'banquet,2026,awards'
-pinned: true
+pinned: false
 draft: false
 ---
 
