@@ -9,8 +9,8 @@ hostingClubs:
 eventType: Enduro
 format: Restart
 series: ECEA Enduro Championship Series
-keyTime: '2024-04-14T09:00:00.000Z'
-checkInTime: '2024-04-14T07:00:00.013Z'
+keyTime: '9:00 AM'
+checkInTime: '7:00 AM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/cjcr.jpg'

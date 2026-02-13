@@ -120,8 +120,9 @@ const eventsCollection = defineCollection({
       // Dates & Times (parsed as local time to prevent UTC timezone shift)
       date: localDate,
       endDate: localDate.optional(),
-      keyTime: optionalDate,
-      checkInTime: optionalDate,
+      // Times stored as strings to avoid timezone issues (e.g., "9:00 AM")
+      keyTime: z.string().optional(),
+      checkInTime: z.string().optional(),
 
       // Location
       location: z.string(),

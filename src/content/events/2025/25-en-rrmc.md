@@ -9,8 +9,8 @@ hostingClubs:
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
-keyTime: '2025-06-08T09:00:00'
-checkInTime: '2025-06-08T07:00:00'
+keyTime: '9:00 AM'
+checkInTime: '7:00 AM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/rrmc-large.png'

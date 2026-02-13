@@ -56,16 +56,16 @@ const eventFields: Template['fields'] = [
     description: 'Only needed for multi-day events (e.g., 2-day enduros)',
   },
   {
-    type: 'datetime',
+    type: 'string',
     name: 'keyTime',
-    label: 'Key/Start Time',
-    description: 'When the first rider starts (for enduros) or race begins (for hare scrambles)',
+    label: 'Key/Start Time (EST)',
+    description: 'Enter time in EST (e.g., "9:00 AM", "1:30 PM")',
   },
   {
-    type: 'datetime',
+    type: 'string',
     name: 'checkInTime',
-    label: 'Check-in Time',
-    description: 'When riders should arrive to sign up and tech',
+    label: 'Check-in Time (EST)',
+    description: 'Enter time in EST (e.g., "7:00 AM", "8:30 AM")',
   },
 
   // -------------------------------------------------------------------------

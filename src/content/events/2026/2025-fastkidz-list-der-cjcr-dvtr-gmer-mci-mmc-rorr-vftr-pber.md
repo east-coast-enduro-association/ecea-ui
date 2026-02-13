@@ -16,7 +16,7 @@ hostingClubs:
   - PBER
 format: Hare Scramble
 series: ECEA Youth Series
-checkInTime: '2026-01-11T15:00:02.452Z'
+checkInTime: '10:00 AM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/ecea/logos/kidz25banq.png'

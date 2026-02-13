@@ -9,7 +9,7 @@ hostingClubs:
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
-checkInTime: '2023-05-20T10:01:43.367Z'
+checkInTime: 'TBD'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/mci.jpg'

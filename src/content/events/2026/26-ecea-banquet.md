@@ -2,7 +2,7 @@
 title: 2025 ECEA AWARDS BANQUET - Swap Meet - Vendor Show
 summary: 'Celebrate with ECEA, Friends, Family the 2025 Race Season.'
 date: 2026-01-24T15:00:08.480Z
-checkInTime: 2026-01-24T17:00:08.503Z
+checkInTime: '12:00 PM'
 location: '1160 FIRST AVENUE • KING OF PRUSSIA, PA 19406'
 hostingClubs:
   - BER

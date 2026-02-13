@@ -9,7 +9,7 @@ hostingClubs:
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
-checkInTime: '2024-06-16T11:00:50.686Z'
+checkInTime: '11:00 AM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/rorr.png'

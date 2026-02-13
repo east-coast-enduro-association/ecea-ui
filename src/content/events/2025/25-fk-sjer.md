@@ -10,7 +10,7 @@ hostingClubs:
 eventType: FastKIDZ
 format: Hare Scramble
 series: ECEA Youth Series
-checkInTime: '2025-10-18T13:00:24.638Z'
+checkInTime: '1:00 PM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/sjer.png'

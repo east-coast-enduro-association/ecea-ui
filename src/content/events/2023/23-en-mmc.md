@@ -9,8 +9,8 @@ hostingClubs:
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
-keyTime: '2023-03-26T09:00:00'
-checkInTime: '2023-03-26T06:00:00.000Z'
+keyTime: '9:00 AM'
+checkInTime: '6:00 AM'
 closedCourse: false
 gasAway: true
 image: '../../../assets/clubs/logos/mmc.jpg'

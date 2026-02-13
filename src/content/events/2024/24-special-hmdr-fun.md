@@ -9,7 +9,7 @@ hostingClubs:
 eventType: Special
 format: Special
 series: Special Series
-checkInTime: '2024-08-30T20:00:54.249Z'
+checkInTime: '8:00 PM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/hmdr.png'

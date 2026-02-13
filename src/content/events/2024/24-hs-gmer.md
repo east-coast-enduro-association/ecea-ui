@@ -9,7 +9,7 @@ hostingClubs:
 eventType: Hare Scramble
 format: Hare Scramble
 series: ECEA Hare Scramble Series
-checkInTime: '2024-06-02T11:05:23.454Z'
+checkInTime: 'TBD'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/gmer.gif'

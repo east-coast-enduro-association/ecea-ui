@@ -9,7 +9,7 @@ hostingClubs:
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
-checkInTime: '2023-07-16T11:00:02.084Z'
+checkInTime: '11:00 AM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/sper.jpg'

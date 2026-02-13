@@ -9,7 +9,7 @@ hostingClubs:
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
-checkInTime: '2023-08-23T04:01:08.120Z'
+checkInTime: 'TBD'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/dvtr.jpg'

@@ -9,7 +9,7 @@ hostingClubs:
 eventType: Special
 format: Restart
 series: Special Series
-checkInTime: '2025-03-15T14:50:07.755Z'
+checkInTime: 'TBD'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/sjer.png'

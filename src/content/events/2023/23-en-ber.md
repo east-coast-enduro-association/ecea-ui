@@ -9,8 +9,8 @@ hostingClubs:
 eventType: Enduro
 format: National Enduro
 series: ECEA Enduro Championship Series
-keyTime: '2023-07-23T09:00:00'
-checkInTime: '2023-07-23T07:00:00'
+keyTime: '9:00 AM'
+checkInTime: '7:00 AM'
 closedCourse: true
 gasAway: true
 image: '../../../assets/clubs/logos/ber.gif'

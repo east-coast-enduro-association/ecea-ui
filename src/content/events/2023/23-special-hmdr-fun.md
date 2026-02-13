@@ -9,7 +9,7 @@ hostingClubs:
 eventType: Special
 format: Family Fun Ride
 series: Special Series
-checkInTime: '2023-09-01T20:00:54.249Z'
+checkInTime: '8:00 PM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/hmdr.png'

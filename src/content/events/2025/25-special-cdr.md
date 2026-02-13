@@ -9,7 +9,7 @@ hostingClubs:
 eventType: Special
 format: Special
 series: Special Series
-checkInTime: '2025-06-21T02:27:50.184Z'
+checkInTime: 'TBD'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/cdr.png'

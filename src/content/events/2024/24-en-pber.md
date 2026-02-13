@@ -9,8 +9,8 @@ hostingClubs:
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
-keyTime: '2024-11-24T09:00:20.513Z'
-checkInTime: '2024-11-24T07:00:00.000Z'
+keyTime: '9:00 AM'
+checkInTime: '7:00 AM'
 closedCourse: false
 gasAway: true
 image: '../../../assets/clubs/logos/pber.webp'

@@ -8,7 +8,7 @@ hostingClubs:
   - SPER
 format: Hare Scramble
 series: ECEA Youth Series
-checkInTime: '2025-06-28T14:00:16.009Z'
+checkInTime: '2:00 PM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/sper.jpg'

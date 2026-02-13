@@ -9,8 +9,8 @@ hostingClubs:
 eventType: Enduro
 format: Time Keeping
 series: ECEA Enduro Championship Series
-keyTime: '2025-09-07T09:00:00'
-checkInTime: '2025-09-07T07:00:00'
+keyTime: '9:00 AM'
+checkInTime: '7:00 AM'
 closedCourse: true
 gasAway: false
 image: '../../../assets/ecea/logos/michaux.jpg'

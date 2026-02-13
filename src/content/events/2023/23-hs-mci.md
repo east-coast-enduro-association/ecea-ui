@@ -9,7 +9,7 @@ hostingClubs:
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
-checkInTime: '2023-05-21T07:00:30.573Z'
+checkInTime: '7:00 AM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/clubs/logos/mci.jpg'

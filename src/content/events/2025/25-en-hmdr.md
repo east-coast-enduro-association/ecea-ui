@@ -9,8 +9,8 @@ hostingClubs:
 eventType: Enduro
 format: Restart
 series: ECEA Enduro Championship Series
-keyTime: '2025-06-22T09:00:00'
-checkInTime: '2025-06-22T07:00:00'
+keyTime: '9:00 AM'
+checkInTime: '7:00 AM'
 closedCourse: true
 gasAway: false
 image: '../../../assets/clubs/logos/hmdr.png'

@@ -10,7 +10,7 @@ hostingClubs:
 eventType: Special
 format: Special
 series: Special Series
-checkInTime: '2025-05-23T22:30:12.374Z'
+checkInTime: '10:30 PM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/ecea/logos/2023-series-east-irc-logo-black-with-color-logos.png'

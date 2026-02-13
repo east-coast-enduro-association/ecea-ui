@@ -26,7 +26,7 @@ hostingClubs:
 eventType: Special
 format: Special
 series: Special Series
-checkInTime: '2024-01-20T21:00:52.787Z'
+checkInTime: '9:00 PM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/ecea/logos/ecea24l2.png'

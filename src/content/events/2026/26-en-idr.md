@@ -9,8 +9,8 @@ hostingClubs:
 eventType: Enduro
 format: Sprint Enduro
 series: ECEA Enduro Championship Series
-keyTime: '2026-08-16T10:00:00'
-checkInTime: '2026-08-16T07:30:00'
+keyTime: '10:00 AM'
+checkInTime: '7:30 AM'
 closedCourse: true
 gasAway: false
 image: '../../../assets/clubs/logos/idrlogo.jpg'

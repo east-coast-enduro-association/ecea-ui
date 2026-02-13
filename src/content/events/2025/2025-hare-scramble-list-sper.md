@@ -9,7 +9,7 @@ hostingClubs:
 eventType: Hare Scramble
 format: Hare Scramble
 series: ECEA Hare Scramble Series
-checkInTime: '2025-06-28T19:00:18.350Z'
+checkInTime: '7:00 PM'
 closedCourse: false
 gasAway: false
 image: '../../../assets/ecea/logos/michaux.jpg'
