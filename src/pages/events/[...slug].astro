@@ -5,6 +5,7 @@ import Button from "../../components/UI/Button.astro";
 import { getCollection, getEntry } from "astro:content";
 import { formatDate } from "../../utils/dateUtils";
 import { getEventMotoTallyUrls } from "../../utils/motoTally";
+import { MOTO_TALLY } from "../../utils/constants";
 
 export async function getStaticPaths() {
   const eventEntries = await getCollection("events");
@@ -51,6 +52,10 @@ const motoTallyUrls = getEventMotoTallyUrls(entry, allEvents);
 // Use auto-generated URLs if available, otherwise fall back to manual links
 const startGridUrl = motoTallyUrls.startGrid || entry.data.startGridLink || null;
 const registrationUrl = entry.data.registrationLink || null;
+
+// Get Moto-Tally signup URL based on event type
+const eventType = entry.data.eventType;
+const motoTallySignupUrl = eventType && MOTO_TALLY.signupLinks[eventType] ? MOTO_TALLY.signupLinks[eventType] : null;
 // ----------------------------
 
 const formattedDate = formatDate(entry.data.date);
@@ -217,9 +222,16 @@ if (entry.data.eventType === "Enduro" && entry.data.hostingClubs?.[0]) {
       </div>
 
       <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap gap-4">
-        {/* Show Registration for future events */}
+        {/* Moto-Tally Signup for future competitive events */}
+        {isFutureEvent && motoTallySignupUrl && (
+          <Button href={motoTallySignupUrl} target="_blank" variant="primary">
+            Sign Up on Moto-Tally
+          </Button>
+        )}
+
+        {/* Show custom Registration link if provided */}
         {isFutureEvent && registrationUrl && (
-          <Button href={registrationUrl} target="_blank" variant="primary">
+          <Button href={registrationUrl} target="_blank" variant={motoTallySignupUrl ? "outline" : "primary"}>
             Register Online
           </Button>
         )}

@@ -153,7 +153,14 @@ export const MOTO_TALLY = {
     results: "Results.aspx",
     standings: "Standings.aspx",
     registration: "SeriesRegistration.aspx",
+    preEntry: "PreEntry.aspx",
   },
+  // Direct signup links for each series
+  signupLinks: {
+    "Enduro": "https://www.moto-tally.com/ECEA/Enduro/PreEntry.aspx",
+    "Hare Scramble": "https://www.moto-tally.com/ecea/ecea/PreEntry.aspx",
+    "FastKIDZ": "https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx",
+  } as Record<string, string>,
 };
 
 // Default images
