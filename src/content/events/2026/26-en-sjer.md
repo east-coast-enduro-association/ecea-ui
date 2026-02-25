@@ -12,7 +12,8 @@ format: Time Keeping
 series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: true
-image: /attachments/events/sjer-curly-fern-enduro-flyer-r1.jpg
+image: ''
+flyer: /assets/events/sjer-curly-fern-enduro-flyer-r1.jpg
 draft: false
 ---
 
