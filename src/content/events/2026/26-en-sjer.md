@@ -13,7 +13,7 @@ series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: true
 image: ''
-flyer: /assets/events/sjer-curly-fern-enduro-flyer-r1.jpg
+flyer: ../../../assets/events/flyers/sjer-curly-fern-enduro-flyer-r1.jpg
 draft: false
 ---
 

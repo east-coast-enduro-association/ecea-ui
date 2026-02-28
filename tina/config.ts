@@ -140,29 +140,46 @@ const eventFields: Template['fields'] = [
     name: 'image',
     label: 'Event Image',
     description: 'Optional hero image (not the flyer). Used for event detail page header.',
+    uploadDir: () => 'events/images',
+    ui: {
+      parse: (media: string) => {
+        if (!media) return '';
+        if (media.startsWith('/')) {
+          return `../../../assets${media}`;
+        }
+        return media;
+      },
+      previewSrc: (value: string) => {
+        if (!value) return '';
+        if (value.includes('/assets/')) {
+          return value.replace(/^.*\/assets/, '');
+        }
+        return value;
+      },
+    },
   },
   {
     type: 'image',
     name: 'flyer',
     label: 'Event Flyer',
     description: 'The promotional flyer image (JPG or PNG). Will be displayed on the event page.',
-    uploadDir: () => 'assets/events',
+    uploadDir: () => 'events/flyers',
     ui: {
       // Store as relative path for Astro's image() optimization
       parse: (media: string) => {
         if (!media) return '';
-        // Convert /assets/events/file.jpg -> ../../../assets/events/file.jpg
-        if (media.startsWith('/assets/')) {
-          return `../../..${media}`;
+        // TinaCMS returns /events/flyers/file.jpg (relative to mediaRoot 'assets')
+        // Convert to ../../../assets/events/flyers/file.jpg for Astro image()
+        if (media.startsWith('/')) {
+          return `../../../assets${media}`;
         }
         return media;
       },
-      // Preview with absolute path for TinaCMS
+      // Preview: convert relative path back for TinaCMS display
       previewSrc: (value: string) => {
         if (!value) return '';
-        // Convert ../../../assets/events/file.jpg -> /assets/events/file.jpg
-        if (value.startsWith('../../../assets/')) {
-          return value.replace('../../..', '');
+        if (value.includes('/assets/')) {
+          return value.replace(/^.*\/assets/, '');
         }
         return value;
       },
@@ -347,8 +364,8 @@ export default defineConfig({
 
   media: {
     tina: {
-      mediaRoot: '',  // Empty = entire public folder is media root
-      publicFolder: 'public',
+      mediaRoot: 'assets',  // Upload root is src/assets/
+      publicFolder: 'src',
     },
   },
 
@@ -429,19 +446,21 @@ export default defineConfig({
                 name: 'src',
                 label: 'Image',
                 description: 'Upload a JPG or PNG image (recommended: 1200x630px for social sharing)',
-                uploadDir: () => 'assets/blog',
+                uploadDir: () => 'blog',
                 ui: {
                   parse: (media: string) => {
                     if (!media) return '';
-                    if (media.startsWith('/assets/')) {
-                      return `../..${media}`;
+                    // TinaCMS returns /blog/file.jpg (relative to mediaRoot 'assets')
+                    // Blog is 2 levels deep: src/content/blog/
+                    if (media.startsWith('/')) {
+                      return `../../assets${media}`;
                     }
                     return media;
                   },
                   previewSrc: (value: string) => {
                     if (!value) return '';
-                    if (value.startsWith('../../assets/')) {
-                      return value.replace('../..', '');
+                    if (value.includes('/assets/')) {
+                      return value.replace(/^.*\/assets/, '');
                     }
                     return value;
                   },
@@ -520,8 +539,25 @@ export default defineConfig({
             type: 'image',
             name: 'logo',
             label: 'Club Logo',
-            uploadDir: () => 'assets/clubs/logos',
+            uploadDir: () => 'clubs/logos',
             description: 'Club logo image (PNG with transparent background preferred)',
+            ui: {
+              parse: (media: string) => {
+                if (!media) return '';
+                // Clubs are 2 levels deep: src/content/clubs/
+                if (media.startsWith('/')) {
+                  return `../../assets${media}`;
+                }
+                return media;
+              },
+              previewSrc: (value: string) => {
+                if (!value) return '';
+                if (value.includes('/assets/')) {
+                  return value.replace(/^.*\/assets/, '');
+                }
+                return value;
+              },
+            },
           },
           {
             type: 'string',
@@ -854,6 +890,24 @@ export default defineConfig({
             label: 'Logo',
             required: true,
             description: 'Sponsor logo (PNG with transparent background works best)',
+            uploadDir: () => 'sponsors/logos',
+            ui: {
+              parse: (media: string) => {
+                if (!media) return '';
+                // Sponsors are 2 levels deep: src/content/sponsors/
+                if (media.startsWith('/')) {
+                  return `../../assets${media}`;
+                }
+                return media;
+              },
+              previewSrc: (value: string) => {
+                if (!value) return '';
+                if (value.includes('/assets/')) {
+                  return value.replace(/^.*\/assets/, '');
+                }
+                return value;
+              },
+            },
           },
           {
             type: 'string',

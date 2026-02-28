@@ -13,7 +13,7 @@ series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: true
 image: ''
-flyer: /attachments/events/Sandy Lane 3.22.2026.jpg
+flyer: ../../../assets/events/flyers/Sandy Lane 3.22.2026.jpg
 draft: false
 ---
 
