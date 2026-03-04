@@ -140,19 +140,19 @@ const eventFields: Template['fields'] = [
     name: 'image',
     label: 'Event Image',
     description: 'Optional hero image (not the flyer). Used for event detail page header.',
-    uploadDir: () => 'events/images',
+    uploadDir: () => 'assets/events/images',
     ui: {
       parse: (media: string) => {
         if (!media) return '';
-        if (media.startsWith('/')) {
-          return `../../../assets${media}`;
+        if (media.startsWith('/assets/')) {
+          return `../../..${media}`;
         }
         return media;
       },
       previewSrc: (value: string) => {
         if (!value) return '';
-        if (value.includes('/assets/')) {
-          return value.replace(/^.*\/assets/, '');
+        if (value.startsWith('../../../assets/')) {
+          return value.replace('../../..', '');
         }
         return value;
       },
@@ -163,23 +163,19 @@ const eventFields: Template['fields'] = [
     name: 'flyer',
     label: 'Event Flyer',
     description: 'The promotional flyer image (JPG or PNG). Will be displayed on the event page.',
-    uploadDir: () => 'events/flyers',
+    uploadDir: () => 'assets/events/flyers',
     ui: {
-      // Store as relative path for Astro's image() optimization
       parse: (media: string) => {
         if (!media) return '';
-        // TinaCMS returns /events/flyers/file.jpg (relative to mediaRoot 'assets')
-        // Convert to ../../../assets/events/flyers/file.jpg for Astro image()
-        if (media.startsWith('/')) {
-          return `../../../assets${media}`;
+        if (media.startsWith('/assets/')) {
+          return `../../..${media}`;
         }
         return media;
       },
-      // Preview: convert relative path back for TinaCMS display
       previewSrc: (value: string) => {
         if (!value) return '';
-        if (value.includes('/assets/')) {
-          return value.replace(/^.*\/assets/, '');
+        if (value.startsWith('../../../assets/')) {
+          return value.replace('../../..', '');
         }
         return value;
       },
@@ -245,12 +241,12 @@ const eventFields: Template['fields'] = [
         description: 'Display name (e.g., "Supplemental Rules", "Course Map")',
       },
       {
-        type: 'string',
+        type: 'image',
         name: 'url',
-        label: 'URL',
+        label: 'File',
         required: true,
-        description: 'Link to the file',
-        ui: { validate: validateUrl },
+        description: 'Upload a file (PDF, image, etc.)',
+        uploadDir: () => 'attachments/events',
       },
     ],
   },
@@ -364,8 +360,8 @@ export default defineConfig({
 
   media: {
     tina: {
-      mediaRoot: 'assets',  // Upload root is src/assets/
-      publicFolder: 'src',
+      mediaRoot: '',
+      publicFolder: 'public',  // public/assets symlinks to src/assets
     },
   },
 
@@ -446,21 +442,19 @@ export default defineConfig({
                 name: 'src',
                 label: 'Image',
                 description: 'Upload a JPG or PNG image (recommended: 1200x630px for social sharing)',
-                uploadDir: () => 'blog',
+                uploadDir: () => 'assets/blog',
                 ui: {
                   parse: (media: string) => {
                     if (!media) return '';
-                    // TinaCMS returns /blog/file.jpg (relative to mediaRoot 'assets')
-                    // Blog is 2 levels deep: src/content/blog/
-                    if (media.startsWith('/')) {
-                      return `../../assets${media}`;
+                    if (media.startsWith('/assets/')) {
+                      return `../..${media}`;
                     }
                     return media;
                   },
                   previewSrc: (value: string) => {
                     if (!value) return '';
-                    if (value.includes('/assets/')) {
-                      return value.replace(/^.*\/assets/, '');
+                    if (value.startsWith('../../assets/')) {
+                      return value.replace('../..', '');
                     }
                     return value;
                   },
@@ -539,21 +533,20 @@ export default defineConfig({
             type: 'image',
             name: 'logo',
             label: 'Club Logo',
-            uploadDir: () => 'clubs/logos',
+            uploadDir: () => 'assets/clubs/logos',
             description: 'Club logo image (PNG with transparent background preferred)',
             ui: {
               parse: (media: string) => {
                 if (!media) return '';
-                // Clubs are 2 levels deep: src/content/clubs/
-                if (media.startsWith('/')) {
-                  return `../../assets${media}`;
+                if (media.startsWith('/assets/')) {
+                  return `../..${media}`;
                 }
                 return media;
               },
               previewSrc: (value: string) => {
                 if (!value) return '';
-                if (value.includes('/assets/')) {
-                  return value.replace(/^.*\/assets/, '');
+                if (value.startsWith('../../assets/')) {
+                  return value.replace('../..', '');
                 }
                 return value;
               },
@@ -890,20 +883,19 @@ export default defineConfig({
             label: 'Logo',
             required: true,
             description: 'Sponsor logo (PNG with transparent background works best)',
-            uploadDir: () => 'sponsors/logos',
+            uploadDir: () => 'assets/sponsors/logos',
             ui: {
               parse: (media: string) => {
                 if (!media) return '';
-                // Sponsors are 2 levels deep: src/content/sponsors/
-                if (media.startsWith('/')) {
-                  return `../../assets${media}`;
+                if (media.startsWith('/assets/')) {
+                  return `../..${media}`;
                 }
                 return media;
               },
               previewSrc: (value: string) => {
                 if (!value) return '';
-                if (value.includes('/assets/')) {
-                  return value.replace(/^.*\/assets/, '');
+                if (value.startsWith('../../assets/')) {
+                  return value.replace('../..', '');
                 }
                 return value;
               },
