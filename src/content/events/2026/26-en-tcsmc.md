@@ -15,6 +15,9 @@ closedCourse: false
 gasAway: true
 image: ../../../assets/clubs/logos/tcsmc.png
 flyer: ../../../assets/events/flyers/Greenbrier 2026 Flyer.jpg
+downloads:
+  - label: Confirmation Sheet
+    url: /attachments/events/2026-en-tcsmc-confirmation.pdf
 draft: false
 ---
 
