@@ -745,10 +745,26 @@ export default defineConfig({
             description: 'executive = officers (President, VP, etc.), trustees = club representatives',
           },
           {
-            type: 'string',
+            type: 'image',
             name: 'image',
-            label: 'Photo URL',
-            description: 'Link to their photo (optional)',
+            label: 'Photo',
+            description: 'Board member photo (optional)',
+            uploadDir: () => 'assets/board/photos',
+            ui: {
+              parse: (media: string) => {
+                if (!media) return '';
+                if (media.startsWith('/assets/')) {
+                  return '../../..' + media;
+                }
+                return media;
+              },
+              previewSrc: (value: string) => {
+                if (value.startsWith('../../../assets/')) {
+                  return value.replace('../../..', '');
+                }
+                return value;
+              },
+            },
           },
           {
             type: 'string',

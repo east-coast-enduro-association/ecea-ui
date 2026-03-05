@@ -233,17 +233,18 @@ const seriesCollection = defineCollection({
  */
 const boardCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    name: z.string(),
-    title: z.string(),
-    boardType: z.enum(['executive', 'trustees']).default('executive'),
-    image: z.string().optional(),
-    email: z.string().email().optional(),
-    phone: z.string().optional(),
-    bio: z.string().optional(),
-    order: z.number().default(0),
-    draft: z.boolean().default(false),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      title: z.string(),
+      boardType: z.enum(['executive', 'trustees']).default('executive'),
+      image: image().optional(),
+      email: z.string().email().optional(),
+      phone: z.string().optional(),
+      bio: z.string().optional(),
+      order: z.number().default(0),
+      draft: z.boolean().default(false),
+    }),
 });
 
 /**
