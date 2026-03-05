@@ -18,6 +18,9 @@ flyer: ../../../assets/events/flyers/Greenbrier 2026 Flyer.jpg
 downloads:
   - label: Confirmation Sheet
     url: /attachments/events/2026-en-tcsmc-confirmation.pdf
+  - label: Route Sheet PDF
+    url: /attachments/events/2026-en-tcsmc-rollchart.pdf
+  - {}
 draft: false
 ---
 
