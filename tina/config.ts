@@ -754,13 +754,14 @@ export default defineConfig({
               parse: (media: string) => {
                 if (!media) return '';
                 if (media.startsWith('/assets/')) {
-                  return '../../..' + media;
+                  return `../..${media}`;
                 }
                 return media;
               },
               previewSrc: (value: string) => {
-                if (value.startsWith('../../../assets/')) {
-                  return value.replace('../../..', '');
+                if (!value) return '';
+                if (value.startsWith('../../assets/')) {
+                  return value.replace('../..', '');
                 }
                 return value;
               },
