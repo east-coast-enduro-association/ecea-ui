@@ -20,7 +20,6 @@ downloads:
     url: /attachments/events/2026-en-tcsmc-confirmation.pdf
   - label: Route Sheet PDF
     url: /attachments/events/2026-en-tcsmc-rollchart.pdf
-  - {}
 draft: false
 ---
 
