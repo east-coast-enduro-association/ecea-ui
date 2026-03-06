@@ -19,3 +19,4 @@ dist/
 
 # TinaCMS generated files
 tina/__generated__/
+scripts/.venv

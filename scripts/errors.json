@@ -1,0 +1,1552 @@
+{
+  "generatedAt": "2026-03-06",
+  "description": "Duplicate AMA numbers found - these need manual review",
+  "duplicateCount": 309,
+  "duplicates": [
+    {
+      "name": "DAVID BYE",
+      "club": "OCCR",
+      "ama": "1018496"
+    },
+    {
+      "name": "JOSEPH ACHMETOV",
+      "club": "RRMC",
+      "ama": "1018496"
+    },
+    {
+      "name": "ANDY DAMM",
+      "club": "OCCR",
+      "ama": "102004"
+    },
+    {
+      "name": "MIKE ANDERSON",
+      "club": "RORR",
+      "ama": "102004"
+    },
+    {
+      "name": "DOUG HYNES",
+      "club": "RORR",
+      "ama": "1032064"
+    },
+    {
+      "name": "GERRY KURRY",
+      "club": "OCCR",
+      "ama": "1032064"
+    },
+    {
+      "name": "DONOVAN MARVIN",
+      "club": "OCCR",
+      "ama": "104350"
+    },
+    {
+      "name": "JAMES MANZICK",
+      "club": "RORR",
+      "ama": "104350"
+    },
+    {
+      "name": "BOB MOORE",
+      "club": "PBER",
+      "ama": "1075807"
+    },
+    {
+      "name": "MATTHEW JANKOVITZ",
+      "club": "RRMC",
+      "ama": "1075807"
+    },
+    {
+      "name": "ERICA DANCE",
+      "club": "GMER",
+      "ama": "1080431"
+    },
+    {
+      "name": "JOE WINKLER",
+      "club": "GMER",
+      "ama": "1080431"
+    },
+    {
+      "name": "BOB MARTIN",
+      "club": "OCCR",
+      "ama": "1090479"
+    },
+    {
+      "name": "BRIAN MACO",
+      "club": "RORR",
+      "ama": "1090479"
+    },
+    {
+      "name": "CRAIG LIFER",
+      "club": "OCCR",
+      "ama": "1091584"
+    },
+    {
+      "name": "KORY KOEHLER",
+      "club": "RORR",
+      "ama": "1091584"
+    },
+    {
+      "name": "TONY LOBATO",
+      "club": "SPER",
+      "ama": "1093244"
+    },
+    {
+      "name": "TONY LOBATO",
+      "club": "DVTR",
+      "ama": "1093244"
+    },
+    {
+      "name": "GAIL JONES",
+      "club": "DVTR",
+      "ama": "1097284"
+    },
+    {
+      "name": "SAM JONES",
+      "club": "GMER",
+      "ama": "1097284"
+    },
+    {
+      "name": "ALEKS ARN",
+      "club": "RRMC",
+      "ama": "1101989"
+    },
+    {
+      "name": "KATE FLANAGAN",
+      "club": "PBER",
+      "ama": "1101989"
+    },
+    {
+      "name": "TYLON DALBEY",
+      "club": "BER",
+      "ama": "1108073"
+    },
+    {
+      "name": "WYATT DALBEY",
+      "club": "BER",
+      "ama": "1108073"
+    },
+    {
+      "name": "CURT RENTSCHLER",
+      "club": "RORR",
+      "ama": "125575"
+    },
+    {
+      "name": "RON PYATAK",
+      "club": "OCCR",
+      "ama": "125575"
+    },
+    {
+      "name": "BOB BARR",
+      "club": "RORR",
+      "ama": "150253"
+    },
+    {
+      "name": "KRISTIN DEPALMA",
+      "club": "OCCR",
+      "ama": "150253"
+    },
+    {
+      "name": "DICK MOLLENKOPF",
+      "club": "OCCR",
+      "ama": "150259"
+    },
+    {
+      "name": "JOHN MICKOSEFF",
+      "club": "RORR",
+      "ama": "150259"
+    },
+    {
+      "name": "RON MEELHEIM",
+      "club": "MCI",
+      "ama": "169020"
+    },
+    {
+      "name": "TIM GLEASON",
+      "club": "OCCR",
+      "ama": "169020"
+    },
+    {
+      "name": "ADAM MILLER",
+      "club": "RORR",
+      "ama": "181002"
+    },
+    {
+      "name": "TRAVIS NICHOLS",
+      "club": "OCCR",
+      "ama": "181002"
+    },
+    {
+      "name": "MATT CONNOR",
+      "club": "OCCR",
+      "ama": "2072327"
+    },
+    {
+      "name": "PEDRO FARIA",
+      "club": "MCI",
+      "ama": "2072327"
+    },
+    {
+      "name": "ANDY CONSIGLIO",
+      "club": "OCCR",
+      "ama": "2072646"
+    },
+    {
+      "name": "IAN WEISMAN",
+      "club": "PBER",
+      "ama": "2072646"
+    },
+    {
+      "name": "CHRISTIAN GIORDANO",
+      "club": "OCCR",
+      "ama": "2085138"
+    },
+    {
+      "name": "JIM CASSEL",
+      "club": "RORR",
+      "ama": "2085138"
+    },
+    {
+      "name": "BRIAN HAMILTON",
+      "club": "OCCR",
+      "ama": "209587"
+    },
+    {
+      "name": "MIKE EMERICK",
+      "club": "RORR",
+      "ama": "209587"
+    },
+    {
+      "name": "ALBERT VAN KLEEFF",
+      "club": "OCCR",
+      "ama": "211328"
+    },
+    {
+      "name": "ED WANNER",
+      "club": "DVTR",
+      "ama": "211328"
+    },
+    {
+      "name": "ED WANNER",
+      "club": "RORR",
+      "ama": "211328"
+    },
+    {
+      "name": "AUSTIN ZINK",
+      "club": "GMER",
+      "ama": "2154736"
+    },
+    {
+      "name": "RICHARD ZINK",
+      "club": "GMER",
+      "ama": "2154736"
+    },
+    {
+      "name": "NOAH RITZ",
+      "club": "DVTR",
+      "ama": "2155565"
+    },
+    {
+      "name": "PATTI BLAIR",
+      "club": "OCCR",
+      "ama": "2155565"
+    },
+    {
+      "name": "BRAD BERNET",
+      "club": "OCCR",
+      "ama": "216520"
+    },
+    {
+      "name": "SERGIO BASSANI",
+      "club": "MCI",
+      "ama": "216520"
+    },
+    {
+      "name": "CHRIS GRIMES",
+      "club": "OCCR",
+      "ama": "217600"
+    },
+    {
+      "name": "CRAIG DELONG",
+      "club": "RORR",
+      "ama": "217600"
+    },
+    {
+      "name": "STEVE DRANSFIELD",
+      "club": "RRMC",
+      "ama": "2203700"
+    },
+    {
+      "name": "WALT HUMMEL, JR",
+      "club": "PBER",
+      "ama": "2203700"
+    },
+    {
+      "name": "DARRIN KLOULCHEK",
+      "club": "PBER",
+      "ama": "2230909"
+    },
+    {
+      "name": "ROB FREEMAN",
+      "club": "RRMC",
+      "ama": "2230909"
+    },
+    {
+      "name": "KENNEDY COX",
+      "club": "TCSMC",
+      "ama": "2270730"
+    },
+    {
+      "name": "MADELYN COX",
+      "club": "TCSMC",
+      "ama": "2270730"
+    },
+    {
+      "name": "ARIANA JOHNSTON",
+      "club": "RRMC",
+      "ama": "2319241"
+    },
+    {
+      "name": "BETTY MORGAN",
+      "club": "PBER",
+      "ama": "2319241"
+    },
+    {
+      "name": "BEN HORVATH",
+      "club": "DVTR",
+      "ama": "2322506"
+    },
+    {
+      "name": "HANK JR. KNABE",
+      "club": "OCCR",
+      "ama": "2322506"
+    },
+    {
+      "name": "JOHN O'ROURKE",
+      "club": "OCCR",
+      "ama": "233439"
+    },
+    {
+      "name": "ROB MOHN",
+      "club": "RORR",
+      "ama": "233439"
+    },
+    {
+      "name": "JIM GRAFFIUS",
+      "club": "RORR",
+      "ama": "246711"
+    },
+    {
+      "name": "PETER JAQUAY",
+      "club": "OCCR",
+      "ama": "246711"
+    },
+    {
+      "name": "CHRIS REEN",
+      "club": "PBER",
+      "ama": "249178"
+    },
+    {
+      "name": "NICK LOBOSCO",
+      "club": "RRMC",
+      "ama": "249178"
+    },
+    {
+      "name": "BRAD MATTO",
+      "club": "RORR",
+      "ama": "260848"
+    },
+    {
+      "name": "MATT MCCONNELL",
+      "club": "OCCR",
+      "ama": "260848"
+    },
+    {
+      "name": "MATT GOLDEN",
+      "club": "OCCR",
+      "ama": "2704403"
+    },
+    {
+      "name": "PETE COOK",
+      "club": "RORR",
+      "ama": "2704403"
+    },
+    {
+      "name": "RICH HEISLER",
+      "club": "OCCR",
+      "ama": "270820"
+    },
+    {
+      "name": "ROB FELDMAN",
+      "club": "RORR",
+      "ama": "270820"
+    },
+    {
+      "name": "ANGEL OCASIO",
+      "club": "OCCR",
+      "ama": "2755865"
+    },
+    {
+      "name": "JOE MOYER",
+      "club": "RORR",
+      "ama": "2755865"
+    },
+    {
+      "name": "JOSEPH COPPOLA",
+      "club": "OCCR",
+      "ama": "2791513"
+    },
+    {
+      "name": "TOM GAFGEN",
+      "club": "MCI",
+      "ama": "2791513"
+    },
+    {
+      "name": "PHIL PRICE",
+      "club": "DER",
+      "ama": "2803226"
+    },
+    {
+      "name": "TRISTAN PRICE",
+      "club": "DER",
+      "ama": "2803226"
+    },
+    {
+      "name": "CHRISTOPHER SILVERMAN",
+      "club": "DER",
+      "ama": "2823121"
+    },
+    {
+      "name": "DAVE CARRETTA",
+      "club": "OCCR",
+      "ama": "2823121"
+    },
+    {
+      "name": "CHARLES SMEDILE",
+      "club": "OCCR",
+      "ama": "2881155"
+    },
+    {
+      "name": "LOGAN SMITH",
+      "club": "SPER",
+      "ama": "2881155"
+    },
+    {
+      "name": "HAROLD WILSON",
+      "club": "RORR",
+      "ama": "291226"
+    },
+    {
+      "name": "JOHN WHITAKER",
+      "club": "OCCR",
+      "ama": "291226"
+    },
+    {
+      "name": "LARRY BORTZ",
+      "club": "RORR",
+      "ama": "294321"
+    },
+    {
+      "name": "NICK FONTANAZZI",
+      "club": "OCCR",
+      "ama": "294321"
+    },
+    {
+      "name": "KEN YANKOWSKI",
+      "club": "PBER",
+      "ama": "2973350"
+    },
+    {
+      "name": "KEVIN SORCE",
+      "club": "RRMC",
+      "ama": "2973350"
+    },
+    {
+      "name": "BILL ATKINSON",
+      "club": "RORR",
+      "ama": "298093"
+    },
+    {
+      "name": "KRISTIAN DEHN",
+      "club": "OCCR",
+      "ama": "298093"
+    },
+    {
+      "name": "JEFF FEDERICI",
+      "club": "DVTR",
+      "ama": "3030181"
+    },
+    {
+      "name": "JOE FEDERICI",
+      "club": "SJER",
+      "ama": "3030181"
+    },
+    {
+      "name": "CHRISTOPHER PIROZZI",
+      "club": "DER",
+      "ama": "3038717"
+    },
+    {
+      "name": "PHIL PIERITTI",
+      "club": "DER",
+      "ama": "3038717"
+    },
+    {
+      "name": "DOUG KINZEY",
+      "club": "RORR",
+      "ama": "3157435"
+    },
+    {
+      "name": "FRED LAVANCE",
+      "club": "OCCR",
+      "ama": "3157435"
+    },
+    {
+      "name": "BRANDON CHARLESWORTH",
+      "club": "TCSMC",
+      "ama": "3189756"
+    },
+    {
+      "name": "JAMES CHARLESWORTH",
+      "club": "TCSMC",
+      "ama": "3189756"
+    },
+    {
+      "name": "PERRY LESKO",
+      "club": "OCCR",
+      "ama": "319437"
+    },
+    {
+      "name": "RICH KLINE",
+      "club": "RORR",
+      "ama": "319437"
+    },
+    {
+      "name": "BOB GRIFFIN",
+      "club": "PBER",
+      "ama": "3213340"
+    },
+    {
+      "name": "LUIGI COLELLA",
+      "club": "RRMC",
+      "ama": "3213340"
+    },
+    {
+      "name": "CRAIG COPELAND",
+      "club": "OCCR",
+      "ama": "3250867"
+    },
+    {
+      "name": "ZBIGNIEW WOJTECZKO",
+      "club": "OCCR",
+      "ama": "3250867"
+    },
+    {
+      "name": "DOMINIC VILLECCO",
+      "club": "PBER",
+      "ama": "3287271"
+    },
+    {
+      "name": "JEREMY CONDIE",
+      "club": "OCCR",
+      "ama": "3287271"
+    },
+    {
+      "name": "ERIC JOHNSTON",
+      "club": "RRMC",
+      "ama": "3304142"
+    },
+    {
+      "name": "JOE MORGAN",
+      "club": "PBER",
+      "ama": "3304142"
+    },
+    {
+      "name": "STEVE REED",
+      "club": "RORR",
+      "ama": "332894"
+    },
+    {
+      "name": "TED PRESSEN",
+      "club": "OCCR",
+      "ama": "332894"
+    },
+    {
+      "name": "KEVIN KOCH",
+      "club": "RORR",
+      "ama": "332896"
+    },
+    {
+      "name": "SCOTT LEWIS",
+      "club": "OCCR",
+      "ama": "332896"
+    },
+    {
+      "name": "ED ZALENSKI",
+      "club": "RORR",
+      "ama": "3349830"
+    },
+    {
+      "name": "GARY ZANOLINI",
+      "club": "OCCR",
+      "ama": "3349830"
+    },
+    {
+      "name": "ANDREW DELONG",
+      "club": "RORR",
+      "ama": "337183"
+    },
+    {
+      "name": "JIM GRIGGS",
+      "club": "OCCR",
+      "ama": "337183"
+    },
+    {
+      "name": "DAVE MEALING",
+      "club": "RORR",
+      "ama": "339380"
+    },
+    {
+      "name": "PAT METZGER",
+      "club": "OCCR",
+      "ama": "339380"
+    },
+    {
+      "name": "DONALD III JOY",
+      "club": "OCCR",
+      "ama": "341261"
+    },
+    {
+      "name": "SCOTT HAFER",
+      "club": "RORR",
+      "ama": "341261"
+    },
+    {
+      "name": "DAN SEKELLICK",
+      "club": "RORR",
+      "ama": "345653"
+    },
+    {
+      "name": "STEVE SENERCHIA",
+      "club": "OCCR",
+      "ama": "345653"
+    },
+    {
+      "name": "ERIC JACOBSON",
+      "club": "OCCR",
+      "ama": "3496042"
+    },
+    {
+      "name": "MARIO ROSSI",
+      "club": "MCI",
+      "ama": "3496042"
+    },
+    {
+      "name": "JIM ROBERTS",
+      "club": "OCCR",
+      "ama": "352336"
+    },
+    {
+      "name": "LISA RODE",
+      "club": "RORR",
+      "ama": "352336"
+    },
+    {
+      "name": "CHRISTIAN VELEZ",
+      "club": "OCCR",
+      "ama": "354237"
+    },
+    {
+      "name": "JASON WEIDMAN",
+      "club": "RORR",
+      "ama": "354237"
+    },
+    {
+      "name": "MARTY VAISMAN",
+      "club": "OCCR",
+      "ama": "3551207"
+    },
+    {
+      "name": "MITCHELL WALKER",
+      "club": "RORR",
+      "ama": "3551207"
+    },
+    {
+      "name": "MARK VAN DRIEL",
+      "club": "OCCR",
+      "ama": "3573291"
+    },
+    {
+      "name": "RHETT WALKER",
+      "club": "RORR",
+      "ama": "3573291"
+    },
+    {
+      "name": "DAVE BARTH",
+      "club": "RORR",
+      "ama": "361894"
+    },
+    {
+      "name": "RICH DEVITO JR.",
+      "club": "OCCR",
+      "ama": "361894"
+    },
+    {
+      "name": "BRUCE SWEIGART",
+      "club": "RORR",
+      "ama": "362260"
+    },
+    {
+      "name": "RICH TOMPKINS",
+      "club": "OCCR",
+      "ama": "362260"
+    },
+    {
+      "name": "DEVIN PETRUSKY",
+      "club": "DVTR",
+      "ama": "3626602"
+    },
+    {
+      "name": "DEVIN PETRUSKY",
+      "club": "RORR",
+      "ama": "3626602"
+    },
+    {
+      "name": "GEORGE CLAYTON",
+      "club": "OCCR",
+      "ama": "362832"
+    },
+    {
+      "name": "JOE DUBLAS",
+      "club": "MCI",
+      "ama": "362832"
+    },
+    {
+      "name": "IAN DEPALMA",
+      "club": "OCCR",
+      "ama": "364165"
+    },
+    {
+      "name": "KRAIG BAER",
+      "club": "RORR",
+      "ama": "364165"
+    },
+    {
+      "name": "BOB HEIZMAN",
+      "club": "RORR",
+      "ama": "372455"
+    },
+    {
+      "name": "CHRIS KENDIG",
+      "club": "OCCR",
+      "ama": "372455"
+    },
+    {
+      "name": "MATT REBER",
+      "club": "RORR",
+      "ama": "375578"
+    },
+    {
+      "name": "RICH PINHO",
+      "club": "OCCR",
+      "ama": "375578"
+    },
+    {
+      "name": "DEWITT HARRELL",
+      "club": "RORR",
+      "ama": "377578"
+    },
+    {
+      "name": "SHAUN KEENAN",
+      "club": "OCCR",
+      "ama": "377578"
+    },
+    {
+      "name": "MIKE ELEFANTE",
+      "club": "OCCR",
+      "ama": "379251"
+    },
+    {
+      "name": "TROY BAVER",
+      "club": "RORR",
+      "ama": "379251"
+    },
+    {
+      "name": "BUD MATTO",
+      "club": "RORR",
+      "ama": "382008"
+    },
+    {
+      "name": "DAVID MCINTYRE",
+      "club": "OCCR",
+      "ama": "382008"
+    },
+    {
+      "name": "JOHN GYURIESEK",
+      "club": "RORR",
+      "ama": "384619"
+    },
+    {
+      "name": "KEITH JOHNSON",
+      "club": "OCCR",
+      "ama": "384619"
+    },
+    {
+      "name": "GLENN STEVENS",
+      "club": "OCCR",
+      "ama": "385988"
+    },
+    {
+      "name": "ROB SPIESS",
+      "club": "RORR",
+      "ama": "385988"
+    },
+    {
+      "name": "FRED WAROPAY",
+      "club": "OCCR",
+      "ama": "386566"
+    },
+    {
+      "name": "JOSH WHITEHEAD",
+      "club": "RORR",
+      "ama": "386566"
+    },
+    {
+      "name": "CHAD BARTH",
+      "club": "RORR",
+      "ama": "387448"
+    },
+    {
+      "name": "JOHN DEROUVILLE",
+      "club": "OCCR",
+      "ama": "387448"
+    },
+    {
+      "name": "KEVIN STEINMETZ",
+      "club": "RORR",
+      "ama": "393720"
+    },
+    {
+      "name": "LOGAN SUTTON",
+      "club": "OCCR",
+      "ama": "393720"
+    },
+    {
+      "name": "DAVID SCHEUMEISTER",
+      "club": "OCCR",
+      "ama": "408933"
+    },
+    {
+      "name": "RYAN FITZPATRICK",
+      "club": "MMC",
+      "ama": "408933"
+    },
+    {
+      "name": "JOE YOUNG",
+      "club": "RORR",
+      "ama": "410789"
+    },
+    {
+      "name": "MIKE ZACHAR",
+      "club": "OCCR",
+      "ama": "410789"
+    },
+    {
+      "name": "MIKE STRAUSS",
+      "club": "RORR",
+      "ama": "422331"
+    },
+    {
+      "name": "SCOTT TELLONE",
+      "club": "OCCR",
+      "ama": "422331"
+    },
+    {
+      "name": "JAY HARRISON",
+      "club": "OCCR",
+      "ama": "425051"
+    },
+    {
+      "name": "TY EYRICH",
+      "club": "RORR",
+      "ama": "425051"
+    },
+    {
+      "name": "DES CONBOY",
+      "club": "OCCR",
+      "ama": "427431"
+    },
+    {
+      "name": "GLENN TURNER",
+      "club": "PBER",
+      "ama": "427431"
+    },
+    {
+      "name": "JEFF HUFFERT",
+      "club": "RORR",
+      "ama": "439169"
+    },
+    {
+      "name": "MICHAEL KURIAWA",
+      "club": "OCCR",
+      "ama": "439169"
+    },
+    {
+      "name": "BOB GEIGER",
+      "club": "RORR",
+      "ama": "439194"
+    },
+    {
+      "name": "PERRY HODGES",
+      "club": "OCCR",
+      "ama": "439194"
+    },
+    {
+      "name": "MARK BITTNER",
+      "club": "RORR",
+      "ama": "445378"
+    },
+    {
+      "name": "MOLLY FELTER",
+      "club": "OCCR",
+      "ama": "445378"
+    },
+    {
+      "name": "DENNIS BLACK",
+      "club": "OCCR",
+      "ama": "465806"
+    },
+    {
+      "name": "WESTLY BECKER",
+      "club": "MCI",
+      "ama": "465806"
+    },
+    {
+      "name": "DAVID BERNET",
+      "club": "RORR",
+      "ama": "476309"
+    },
+    {
+      "name": "GERALD EVES",
+      "club": "OCCR",
+      "ama": "476309"
+    },
+    {
+      "name": "BILLY SCHOENEBERG",
+      "club": "MCI",
+      "ama": "478926"
+    },
+    {
+      "name": "DAVID KOUGH",
+      "club": "OCCR",
+      "ama": "478926"
+    },
+    {
+      "name": "KEVIN ROSS",
+      "club": "PBER",
+      "ama": "488681"
+    },
+    {
+      "name": "ROBERT MCCRACKEN",
+      "club": "RRMC",
+      "ama": "488681"
+    },
+    {
+      "name": "JOHN KASPER",
+      "club": "RRMC",
+      "ama": "492350"
+    },
+    {
+      "name": "MICHAEL PIETROFORTE",
+      "club": "PBER",
+      "ama": "492350"
+    },
+    {
+      "name": "DALE SWEIGART",
+      "club": "RORR",
+      "ama": "499172"
+    },
+    {
+      "name": "GREG TRAUCH",
+      "club": "OCCR",
+      "ama": "499172"
+    },
+    {
+      "name": "CHUCK KORNUTIAK",
+      "club": "DVTR",
+      "ama": "5034306"
+    },
+    {
+      "name": "SUZANNE KORNUTIAK",
+      "club": "DVTR",
+      "ama": "5034306"
+    },
+    {
+      "name": "BRIAN DEARBORN",
+      "club": "GMER",
+      "ama": "5056080"
+    },
+    {
+      "name": "DEARBORN BRYAN",
+      "club": "GMER",
+      "ama": "5056080"
+    },
+    {
+      "name": "STACY EVANS",
+      "club": "DVTR",
+      "ama": "5087155"
+    },
+    {
+      "name": "STACY EVANS",
+      "club": "DVTR",
+      "ama": "5087155"
+    },
+    {
+      "name": "BRIAN SMITH",
+      "club": "RRMC",
+      "ama": "516506"
+    },
+    {
+      "name": "ERICA YANKOWSKI",
+      "club": "PBER",
+      "ama": "516506"
+    },
+    {
+      "name": "LOU GREEN",
+      "club": "OCCR",
+      "ama": "522469"
+    },
+    {
+      "name": "SCOTT DANNER",
+      "club": "RORR",
+      "ama": "522469"
+    },
+    {
+      "name": "COLIN PALMERI",
+      "club": "DER",
+      "ama": "5227761"
+    },
+    {
+      "name": "COLLIN PATMERI",
+      "club": "DER",
+      "ama": "5227761"
+    },
+    {
+      "name": "ED ZEIGENFUSE",
+      "club": "RORR",
+      "ama": "523009"
+    },
+    {
+      "name": "MIKE ZUZOLO",
+      "club": "OCCR",
+      "ama": "523009"
+    },
+    {
+      "name": "KEVIN HOFFMAN",
+      "club": "RORR",
+      "ama": "523275"
+    },
+    {
+      "name": "MICHAEL KENNEDY",
+      "club": "OCCR",
+      "ama": "523275"
+    },
+    {
+      "name": "JUAN QUELAL",
+      "club": "MCI",
+      "ama": "526186"
+    },
+    {
+      "name": "KENNETH SR. HELD",
+      "club": "MCI",
+      "ama": "526186"
+    },
+    {
+      "name": "LORENZO HINES",
+      "club": "OCCR",
+      "ama": "532188"
+    },
+    {
+      "name": "MARK GARBER",
+      "club": "RORR",
+      "ama": "532188"
+    },
+    {
+      "name": "CHUCK MAIN",
+      "club": "OCCR",
+      "ama": "532222"
+    },
+    {
+      "name": "MARK KROPP",
+      "club": "RORR",
+      "ama": "532222"
+    },
+    {
+      "name": "CHRISTIAN CRUM",
+      "club": "OCCR",
+      "ama": "536538"
+    },
+    {
+      "name": "KARL GOLDENBLAUM",
+      "club": "MCI",
+      "ama": "536538"
+    },
+    {
+      "name": "ARTHUR DOWNS III",
+      "club": "OCCR",
+      "ama": "548006"
+    },
+    {
+      "name": "RYAN BARTH",
+      "club": "RORR",
+      "ama": "548006"
+    },
+    {
+      "name": "JOSH YANCHOCIK",
+      "club": "RORR",
+      "ama": "548007"
+    },
+    {
+      "name": "SCOTT WOLFERSBERGER",
+      "club": "OCCR",
+      "ama": "548007"
+    },
+    {
+      "name": "DOUG VANHORN",
+      "club": "RORR",
+      "ama": "548570"
+    },
+    {
+      "name": "KURT UFER",
+      "club": "OCCR",
+      "ama": "548570"
+    },
+    {
+      "name": "BRAD GRAVES",
+      "club": "OCCR",
+      "ama": "549335"
+    },
+    {
+      "name": "BRUCE CRONEBERGER",
+      "club": "RORR",
+      "ama": "549335"
+    },
+    {
+      "name": "DAN SCHENKEIN",
+      "club": "OCCR",
+      "ama": "552514"
+    },
+    {
+      "name": "RON SANDS",
+      "club": "RORR",
+      "ama": "552514"
+    },
+    {
+      "name": "DEVIN MARCHUT",
+      "club": "OCCR",
+      "ama": "555498"
+    },
+    {
+      "name": "MITCH LIEB",
+      "club": "RORR",
+      "ama": "555498"
+    },
+    {
+      "name": "JIM REBER SR.",
+      "club": "RORR",
+      "ama": "574205"
+    },
+    {
+      "name": "STANLEY POULSEN",
+      "club": "OCCR",
+      "ama": "574205"
+    },
+    {
+      "name": "CHUCK BERHAIN",
+      "club": "OCCR",
+      "ama": "585959"
+    },
+    {
+      "name": "KEITH BARROW",
+      "club": "MCI",
+      "ama": "585959"
+    },
+    {
+      "name": "DENNY TARCZA",
+      "club": "MCI",
+      "ama": "589106"
+    },
+    {
+      "name": "JACEK MALECKI",
+      "club": "OCCR",
+      "ama": "589106"
+    },
+    {
+      "name": "JOE CARTWRIGHT",
+      "club": "RORR",
+      "ama": "598694"
+    },
+    {
+      "name": "MARC GANTNER",
+      "club": "OCCR",
+      "ama": "598694"
+    },
+    {
+      "name": "JEFF FOCHT",
+      "club": "RORR",
+      "ama": "612676"
+    },
+    {
+      "name": "JOSEPH HENDERSON",
+      "club": "OCCR",
+      "ama": "612676"
+    },
+    {
+      "name": "HANS DIETER RODE",
+      "club": "RORR",
+      "ama": "612677"
+    },
+    {
+      "name": "MARK ROLL",
+      "club": "OCCR",
+      "ama": "612677"
+    },
+    {
+      "name": "EARL MOATS",
+      "club": "RORR",
+      "ama": "620033"
+    },
+    {
+      "name": "JACK O'CONNOR",
+      "club": "OCCR",
+      "ama": "620033"
+    },
+    {
+      "name": "ANDREW POLASH",
+      "club": "OCCR",
+      "ama": "623175"
+    },
+    {
+      "name": "KENNETH(PETE) REBER",
+      "club": "RORR",
+      "ama": "623175"
+    },
+    {
+      "name": "RICH FRANCESCONI",
+      "club": "OCCR",
+      "ama": "633213"
+    },
+    {
+      "name": "TERRY BOYER",
+      "club": "RORR",
+      "ama": "633213"
+    },
+    {
+      "name": "JERRY DUGAN",
+      "club": "OCCR",
+      "ama": "640842"
+    },
+    {
+      "name": "MIKE BATASTINI",
+      "club": "RORR",
+      "ama": "640842"
+    },
+    {
+      "name": "ART WILSON",
+      "club": "OCCR",
+      "ama": "653441"
+    },
+    {
+      "name": "RICHARD WITMAN",
+      "club": "RORR",
+      "ama": "653441"
+    },
+    {
+      "name": "JESSE GROEMM",
+      "club": "OCCR",
+      "ama": "654056"
+    },
+    {
+      "name": "MARK DELONG",
+      "club": "RORR",
+      "ama": "654056"
+    },
+    {
+      "name": "DYLAN RECCHIA",
+      "club": "RRMC",
+      "ama": "665603"
+    },
+    {
+      "name": "MICHAEL SEAN SWEIGART",
+      "club": "PBER",
+      "ama": "665603"
+    },
+    {
+      "name": "BEAU WOODRICK",
+      "club": "MCI",
+      "ama": "674570"
+    },
+    {
+      "name": "STEVE MESSINEO",
+      "club": "OCCR",
+      "ama": "674570"
+    },
+    {
+      "name": "KEVIN OSWALD",
+      "club": "RORR",
+      "ama": "675925"
+    },
+    {
+      "name": "RYAN PFLUEGER",
+      "club": "OCCR",
+      "ama": "675925"
+    },
+    {
+      "name": "BILL HAMARICH",
+      "club": "OCCR",
+      "ama": "676498"
+    },
+    {
+      "name": "CRAIG EBLING",
+      "club": "RORR",
+      "ama": "676498"
+    },
+    {
+      "name": "DALE MARKS",
+      "club": "OCCR",
+      "ama": "677500"
+    },
+    {
+      "name": "SEAN MACLEAN",
+      "club": "RORR",
+      "ama": "677500"
+    },
+    {
+      "name": "DAVE BITTNER",
+      "club": "RORR",
+      "ama": "677956"
+    },
+    {
+      "name": "MICHAEL FANNING",
+      "club": "OCCR",
+      "ama": "677956"
+    },
+    {
+      "name": "FRANCIS WEAVER",
+      "club": "DVTR",
+      "ama": "683810"
+    },
+    {
+      "name": "FRANK WEAVER",
+      "club": "DER",
+      "ama": "683810"
+    },
+    {
+      "name": "ERIC EVANS",
+      "club": "MCI",
+      "ama": "701790"
+    },
+    {
+      "name": "ERIC EVANS",
+      "club": "MCI",
+      "ama": "701790"
+    },
+    {
+      "name": "DEAN SPENCER",
+      "club": "RORR",
+      "ama": "708064"
+    },
+    {
+      "name": "ROCCO SPANO",
+      "club": "OCCR",
+      "ama": "708064"
+    },
+    {
+      "name": "MIKE OFSANKO",
+      "club": "OCCR",
+      "ama": "712293"
+    },
+    {
+      "name": "RICK MOYER",
+      "club": "RORR",
+      "ama": "712293"
+    },
+    {
+      "name": "MARK MOYER",
+      "club": "RORR",
+      "ama": "712333"
+    },
+    {
+      "name": "MICHAEL TYLER OFSANKO",
+      "club": "OCCR",
+      "ama": "712333"
+    },
+    {
+      "name": "ALBERT SANTELLI III",
+      "club": "PBER",
+      "ama": "712407"
+    },
+    {
+      "name": "CURT BUSH",
+      "club": "OCCR",
+      "ama": "712407"
+    },
+    {
+      "name": "HERM BAVER",
+      "club": "RORR",
+      "ama": "71953"
+    },
+    {
+      "name": "KEITH DUNNING",
+      "club": "OCCR",
+      "ama": "71953"
+    },
+    {
+      "name": "JOHN PALUMBO",
+      "club": "OCCR",
+      "ama": "730503"
+    },
+    {
+      "name": "TIM NOCERA",
+      "club": "RORR",
+      "ama": "730503"
+    },
+    {
+      "name": "ANDY BYLSMA",
+      "club": "OCCR",
+      "ama": "733354"
+    },
+    {
+      "name": "DAMON CASSANO",
+      "club": "MCI",
+      "ama": "733354"
+    },
+    {
+      "name": "AL SANTELLI, JR",
+      "club": "PBER",
+      "ama": "737144"
+    },
+    {
+      "name": "SCOTT MICKELSEN",
+      "club": "RRMC",
+      "ama": "737144"
+    },
+    {
+      "name": "BRIAN EVANS",
+      "club": "TCSMC",
+      "ama": "738888"
+    },
+    {
+      "name": "BRIAN EVANS",
+      "club": "TCSMC",
+      "ama": "738888"
+    },
+    {
+      "name": "BRAD DENNING",
+      "club": "OCCR",
+      "ama": "743642"
+    },
+    {
+      "name": "CHUCK AUGHINBAUGH",
+      "club": "RORR",
+      "ama": "743642"
+    },
+    {
+      "name": "BOB MORRIS",
+      "club": "PBER",
+      "ama": "757268"
+    },
+    {
+      "name": "MARK JOHNSTON",
+      "club": "RRMC",
+      "ama": "757268"
+    },
+    {
+      "name": "JOHN LALANAS",
+      "club": "OCCR",
+      "ama": "779978"
+    },
+    {
+      "name": "PETER SIBILSKI",
+      "club": "MCI",
+      "ama": "779978"
+    },
+    {
+      "name": "JAMES HECK",
+      "club": "RORR",
+      "ama": "806532"
+    },
+    {
+      "name": "LUKE KELLY",
+      "club": "OCCR",
+      "ama": "806532"
+    },
+    {
+      "name": "BARRY KAYTES",
+      "club": "OCCR",
+      "ama": "807428"
+    },
+    {
+      "name": "MICHAEL ELSTON",
+      "club": "RRMC",
+      "ama": "807428"
+    },
+    {
+      "name": "DAVE HEVERELY",
+      "club": "OCCR",
+      "ama": "834144"
+    },
+    {
+      "name": "THOMAS GALLAGHER",
+      "club": "RORR",
+      "ama": "834144"
+    },
+    {
+      "name": "BRANDON WEINER",
+      "club": "OCCR",
+      "ama": "858782"
+    },
+    {
+      "name": "GREG WILSON",
+      "club": "RORR",
+      "ama": "858782"
+    },
+    {
+      "name": "ANDREW DANTE",
+      "club": "OCCR",
+      "ama": "860811"
+    },
+    {
+      "name": "MIKE JR. ANDERSON",
+      "club": "RORR",
+      "ama": "860811"
+    },
+    {
+      "name": "DAN SEKELLICK JR",
+      "club": "RORR",
+      "ama": "897130"
+    },
+    {
+      "name": "JEFF SHIPMAN",
+      "club": "OCCR",
+      "ama": "897130"
+    },
+    {
+      "name": "CARL GULBISH",
+      "club": "OCCR",
+      "ama": "924795"
+    },
+    {
+      "name": "LUCAS NELSON",
+      "club": "MCI",
+      "ama": "924795"
+    },
+    {
+      "name": "ELLIOT (SON) HEFELFINGER",
+      "club": "VFTR",
+      "ama": "no record"
+    },
+    {
+      "name": "JP JOHN KALILEC",
+      "club": "VFTR",
+      "ama": "no record"
+    }
+  ]
+}
