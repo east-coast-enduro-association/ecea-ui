@@ -361,7 +361,7 @@ export default defineConfig({
   media: {
     tina: {
       mediaRoot: '',
-      publicFolder: 'public',  // public/assets symlinks to src/assets
+      publicFolder: 'src',  // upload directly to src/assets (public/assets is a symlink that GitHub API can't traverse)
     },
   },
 
