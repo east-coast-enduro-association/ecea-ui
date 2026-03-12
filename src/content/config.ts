@@ -5,6 +5,21 @@ import { defineCollection, z } from 'astro:content';
  * East Coast Enduro Association - Racing Organization
  */
 
+// Helper: TinaCMS Cloud does not apply ui.parse, so it always saves absolute paths
+// like /assets/events/flyers/foo.png. Astro's image() requires relative paths.
+// This preprocessor normalizes absolute /assets/... paths to relative paths
+// based on the content file's depth from src/.
+// Existing relative paths (../../..assets/...) pass through unchanged.
+const normalizeAssetPath = (depth: number) => (val: unknown) => {
+  if (typeof val === 'string') {
+    if (val === '') return undefined;
+    if (val.startsWith('/assets/')) {
+      return '../'.repeat(depth) + 'assets/' + val.slice(8);
+    }
+  }
+  return val;
+};
+
 // Helper for optional strings that may be empty
 const optionalString = z
   .string()
@@ -94,7 +109,7 @@ const clubsCollection = defineCollection({
     z.object({
       name: z.string(),
       abbreviatedName: z.string(),
-      logo: image().optional(),
+      logo: z.preprocess(normalizeAssetPath(2), image().optional()),
       summary: z.string().optional(),
       website: z.string().optional(),
       contact: z.string().optional(),
@@ -140,9 +155,9 @@ const eventsCollection = defineCollection({
       gasAway: z.boolean().default(false),
       gateFee: z.string().optional(),
 
-      // Media - relative paths processed by Astro image() for optimization
-      image: image().nullable().optional(),
-      flyer: image().nullable().optional(),
+      // Media - TinaCMS Cloud saves /assets/... paths; normalizer converts to relative for Astro
+      image: z.preprocess(normalizeAssetPath(3), image().nullable().optional()),
+      flyer: z.preprocess(normalizeAssetPath(3), image().nullable().optional()),
       flyerPdf: z.string().nullable().optional(), // PDF version of flyer for download
 
       // Moto-Tally Integration
@@ -187,7 +202,7 @@ const blogCollection = defineCollection({
         .default('news'),
       image: z
         .object({
-          src: image(),
+          src: z.preprocess(normalizeAssetPath(2), image()),
           alt: z.string(),
         })
         .optional(),
@@ -238,7 +253,7 @@ const boardCollection = defineCollection({
       name: z.string(),
       title: z.string(),
       boardType: z.enum(['executive', 'trustees']).default('executive'),
-      image: image().optional(),
+      image: z.preprocess(normalizeAssetPath(2), image().optional()),
       email: z.string().email().optional(),
       phone: z.string().optional(),
       bio: z.string().optional(),
@@ -354,7 +369,7 @@ const sponsorsCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      logo: image(),
+      logo: z.preprocess(normalizeAssetPath(2), image()),
       url: z.string().url().optional(),
       isTitleSponsor: z.boolean().default(false),
       order: z.number().default(0),
