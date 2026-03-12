@@ -14,7 +14,7 @@ series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: false
 image: ../../../assets/clubs/logos/cjcr.jpg
-flyer: ''
+flyer: /assets/events/flyers/CJCR_2026_Flier_v1%20(3).png
 draft: false
 ---
 
