@@ -48,6 +48,7 @@ tina/
 
 public/
 ├── admin/                # TinaCMS admin (built)
+├── assets -> ../src/assets  # Symlink — keeps TinaCMS preview URLs working locally
 ├── attachments/          # PDFs and downloads
 ├── documents/            # Rulebook, welcome book, forms
 └── images/               # Static images (backgrounds)
@@ -94,8 +95,9 @@ Open your browser to `http://localhost:4321`
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Start dev server with hot reload |
-| `npm run build` | Build production site to `dist/` |
+| `npm run dev` | Start dev server with TinaCMS local mode |
+| `npm run build:tina` | Build TinaCMS admin + Astro site (used in production) |
+| `npm run build` | Build Astro site only (skips TinaCMS admin) |
 | `npm run preview` | Preview production build locally |
 
 ## TinaCMS Admin
@@ -206,9 +208,9 @@ Configure base URLs in `MOTO_TALLY` constant.
 Deploys automatically via Netlify on push to `master`.
 
 **Build Settings:**
-- Build command: `npm run build`
+- Build command: `npm run build:tina`
 - Publish directory: `dist`
-- Node version: 18+
+- Node version: 20+
 
 ## Testing Checklist
 
