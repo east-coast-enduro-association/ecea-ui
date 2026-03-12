@@ -4,7 +4,7 @@ summary: Alcohol Prohibited
 date: 2026-07-12T00:00:00.000Z
 keyTime: '9:00 AM'
 checkInTime: '7:00 AM'
-location: '184 Comfort Rd Pine City, NY 14871'
+location: '48 Lewis Rd Pine City, NY 14871'
 hostingClubs:
   - STER
 eventType: Enduro
