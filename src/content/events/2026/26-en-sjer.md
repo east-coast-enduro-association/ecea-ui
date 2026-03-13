@@ -17,6 +17,8 @@ flyer: ../../../assets/events/flyers/sjer-curly-fern-enduro-flyer-r1.jpg
 downloads:
   - label: Confirmation
     url: /attachments/events/2026 SJER CF CONFIRMATION 311.pdf
+  - label: JART PDF
+    url: /attachments/events/SJER CF 2026 ROUTESHEET.pdf
 draft: false
 ---
 
