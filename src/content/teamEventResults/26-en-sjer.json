@@ -1,0 +1,19 @@
+{
+  "year": 2026,
+  "series": "Enduro",
+  "eventAbbr": "SJER",
+  "results": [
+    { "team": "KILLER BEES", "club": "CDR", "points": 25, "epoints": 1712, "riders": ["JOSEPH FORD", "JOSHUA PITTMAN", "GREGORY NORDBERG", "JOE SUMPTER", "BRADLEY CAMP"] },
+    { "team": "SANDBLASTERS", "club": "OCCR", "points": 22, "epoints": 1791, "riders": ["RYAN CANAVAN", "CHRISTOPHER SMITH", "JONATHAN SPAFFORD", "TYLER KENNEDY", "DANIEL BOYLE"] },
+    { "team": "I", "club": "DER", "points": 20, "epoints": 1538, "riders": ["DOUG ALLEN II", "THOMAS RAIO", "ANGELO RISPOLI", "BRIAN TURNER", "JACOB NOWAKOWSKI"] },
+    { "team": "FASTBOYZ I", "club": "SPER", "points": 18, "epoints": 2076, "riders": ["GRAHAM SMITH", "LOGAN SMITH", "TIMOTHY SPRENKLE", "NATHAN JOSEPH", "ROBERT HAGAN"] },
+    { "team": "CHECK PLEASE", "club": "MMC", "points": 16, "epoints": 2126, "riders": ["JARRETT HUNT", "RAYMOND POWELL", "COLIN QUIRIN", "RONALD DECARO", "TIMOTHY MAURO"] },
+    { "team": "II", "club": "DER", "points": 15, "epoints": 2144, "riders": ["ZACHARY PAGE", "JESSE DAVIS", "CHUCK STAPLEFORD", "KRIS BIZZARI", "MARVIN SCANLAND"] },
+    { "team": "DIGGERS", "club": "DVTR", "points": 14, "epoints": 2320, "riders": ["VAN MCCARREN", "JAMES ASHMEN", "MICHAEL ABRAMO", "JONATHAN SUBBE", "ERIC SIMPSON"] },
+    { "team": "PINE CONE KILLERS", "club": "OCCR", "points": 13, "epoints": 2453, "riders": ["DONOVAN MARVIN", "BRANDON SHARFF", "ANDY BYLSMA", "ARTHUR DOWNS", "AXEL ANDERSON"] },
+    { "team": "TEAM TONY", "club": "CJCR", "points": 12, "epoints": 2365, "riders": ["NATE MEILY", "SARAH MICKEY", "JACEK SZCZACHOR", "BRANDON BOWERS", "WALTER ANDRES"] },
+    { "team": "HAMMER #1", "club": "TCSMC", "points": 11, "epoints": 3190, "riders": ["KYLE MCDONAL", "KYLE PLUMMER", "DEVIN MACAVOY", "JOE CASTALDI", "KELLI SILVERS"] },
+    { "team": "III", "club": "DER", "points": 10, "epoints": 3802, "riders": ["AUSTIN SCHWARZ", "JOSEPH FUNK", "ZACHARY CHADICK", "ADAM BAKER", "NICK CHADICK"] },
+    { "team": "IV", "club": "DER", "points": 9, "epoints": 5792, "riders": ["EDWARD HAMILTON", "MAXX KYRITSIS", "PHILIP GASPAROVIC", "FRANK SINKKO", "MATTHEW SCHNEIDERS"] }
+  ]
+}

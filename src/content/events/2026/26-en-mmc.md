@@ -14,6 +14,15 @@ closedCourse: false
 gasAway: true
 image: ''
 flyer: ../../../assets/events/flyers/Sandy Lane 3.22.2026.jpg
+downloads:
+  - label: Confirmation
+    url: /attachments/events/2026-sandylane-confirmation.pdf
+  - label: Route Sheet PDF
+    url: /attachments/events/2026-sandylane-routesheet.pdf
+  - label: Roll Chart
+    url: /attachments/events/2026-sandylane-rollchart.pdf
+  - label: JART Route Sheet
+    url: /attachments/events/2026-sandylane.rs
 draft: false
 ---
 

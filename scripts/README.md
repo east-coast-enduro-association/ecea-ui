@@ -2,6 +2,55 @@
 
 Utility scripts for managing ECEA website data.
 
+## import-team-results.mjs
+
+Converts a per-event team results CSV into the JSON format used by the team standings page.
+
+Run after each enduro event to add that round's results to the site.
+
+### Usage
+
+```bash
+npm run import-results -- <csv-file> <event-abbr> [year] [series]
+```
+
+### Examples
+
+```bash
+# Add results for the MMC event (Sandy Lane)
+npm run import-results -- ~/Downloads/results-mmc.csv MMC
+
+# Specify year or series explicitly
+npm run import-results -- results-sjer.csv SJER 2026 Enduro
+```
+
+### CSV Format
+
+One row per finishing team, **in order from 1st place to last**. Omit DNF, DQ, and host club teams.
+
+```csv
+team,club,epoints,riders
+RIDGE RIDERS -A-,RRMC,7650,MAVERICK REINER;DYLAN RECCHIA;NICHOLAS LOBOSCO;ROBERT CIVILETTI JR;WILLIAM SIGLER
+FASTBOYZ I,SPER,10322,ZACH MILLER;LOGAN SMITH;NATHAN JOSEPH;GRAHAM SMITH;TIMOTHY SPRENKLE
+```
+
+| Column | Required | Notes |
+|--------|----------|-------|
+| `team` | Yes | Team name |
+| `club` | Yes | Club abbreviation |
+| `epoints` | No | Tiebreaker score from scoring software |
+| `riders` | No | Rider names, **semicolon-separated** |
+
+Championship points (25/22/20…) are computed automatically from row order.
+
+### Output
+
+Creates `src/content/teamEventResults/26-en-<eventabbr>.json`. Then commit and push — Netlify rebuilds automatically.
+
+See `src/content/teamEventResults/README.md` for full details on how the team results system works.
+
+---
+
 ## import-roster.py
 
 Imports club roster data from Excel/CSV files into the website's member list.

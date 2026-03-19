@@ -1,0 +1,24 @@
+{
+  "year": 2026,
+  "series": "Enduro",
+  "lastUpdated": "2026-03-18",
+  "teams": [],
+  "schedule": [
+    { "abbr": "TCSMC", "name": "Greenbrier Enduro", "date": "2026-03-08", "hostClubs": ["TCSMC"] },
+    { "abbr": "SJER", "name": "Curly Fern", "date": "2026-03-15", "hostClubs": ["SJER"] },
+    { "abbr": "MMC", "name": "Sandy Lane", "date": "2026-03-22", "hostClubs": ["MMC"] },
+    { "abbr": "CJCR", "name": "Pine Hill", "date": "2026-04-12", "hostClubs": ["CJCR", "MCI"] },
+    { "abbr": "RRMC", "name": "Jim Smith Memorial Enduro", "date": "2026-06-08", "hostClubs": ["RRMC"] },
+    { "abbr": "HMDR", "name": "Shotgun Enduro", "date": "2026-06-21", "hostClubs": ["HMDR"] },
+    { "abbr": "STER", "name": "Barbed Wire National Enduro", "date": "2026-07-12", "hostClubs": ["STER"] },
+    { "abbr": "DVTR", "name": "Foggy Mountain", "date": "2026-07-19", "hostClubs": ["DVTR"] },
+    { "abbr": "BER", "name": "Rattlesnake National Enduro", "date": "2026-07-26", "hostClubs": ["BER"] },
+    { "abbr": "GMER", "name": "Three Springs", "date": "2026-08-09", "hostClubs": ["GMER"] },
+    { "abbr": "IDR", "name": "Ithaca Sprint", "date": "2026-08-16", "hostClubs": ["IDR"] },
+    { "abbr": "CDR", "name": "Beehive", "date": "2026-08-30", "hostClubs": ["CDR", "DER"] },
+    { "abbr": "SPER", "name": "Michaux", "date": "2026-09-13", "hostClubs": ["SPER"] },
+    { "abbr": "VFTR", "name": "Moonshine", "date": "2026-09-20", "hostClubs": ["VFTR", "RORR"] },
+    { "abbr": "OCCR", "name": "Scrub Pine", "date": "2026-10-25", "hostClubs": ["OCCR"] },
+    { "abbr": "PBER", "name": "Pine Barons", "date": "2026-11-15", "hostClubs": ["PBER"] }
+  ]
+}

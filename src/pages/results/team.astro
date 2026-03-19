@@ -3,71 +3,122 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
 import { getCollection, getEntry } from "astro:content";
 
-// Get team results data
-const teamResults2025 = await getEntry("teamResults", "2025");
-const data = teamResults2025?.data;
+// ─── 2026+ Data (new per-event format) ───────────────────────────────────────
 
-// Get clubs collection for full names and slugs
+const teamSeason = await getEntry("teamSeasons", "2026-enduro");
+const season = teamSeason?.data;
+const schedule = season?.schedule ?? [];
+
+const allEventResults = await getCollection("teamEventResults");
+const eventResults = allEventResults
+  .filter(e => e.data.year === 2026 && e.data.series === "Enduro");
+
+// Build a lookup: eventAbbr → results
+const resultsByEvent = new Map(eventResults.map(e => [e.data.eventAbbr, e.data.results]));
+
+// Which events have result files
+const completedAbbrs = new Set(eventResults.map(e => e.data.eventAbbr));
+
+// ─── Compute club standings ───────────────────────────────────────────────────
+// Rule: club's score per event = BEST placing team from that club in that event.
+// Multiple teams per club compete independently; only the best counts for the club total.
+
+type ClubEntry = {
+  club: string;
+  total: number;
+  perEvent: Record<string, number | "host">;
+};
+
+const clubMap = new Map<string, ClubEntry>();
+
+for (const eventResult of eventResults) {
+  const { eventAbbr, results } = eventResult.data;
+  const schedEvent = schedule.find(s => s.abbr === eventAbbr);
+  const hostClubs = schedEvent?.hostClubs ?? [];
+
+  for (const r of results) {
+    if (!clubMap.has(r.club)) {
+      clubMap.set(r.club, { club: r.club, total: 0, perEvent: {} });
+    }
+    const entry = clubMap.get(r.club)!;
+    const isHost = hostClubs.includes(r.club);
+
+    if (isHost) {
+      entry.perEvent[eventAbbr] = "host";
+    } else {
+      // Take the BEST (highest) points from any team of this club in this event
+      const current = entry.perEvent[eventAbbr];
+      if (current === undefined || (current !== "host" && r.points > current)) {
+        entry.perEvent[eventAbbr] = r.points;
+      }
+    }
+  }
+
+  // Mark host clubs that had no teams in the event (they still get "host" status)
+  for (const hostClub of hostClubs) {
+    if (!clubMap.has(hostClub)) {
+      clubMap.set(hostClub, { club: hostClub, total: 0, perEvent: {} });
+    }
+    const entry = clubMap.get(hostClub)!;
+    if (entry.perEvent[eventAbbr] === undefined) {
+      entry.perEvent[eventAbbr] = "host";
+    }
+  }
+}
+
+// Compute totals (host = 0 pts, missing = 0 pts)
+for (const entry of clubMap.values()) {
+  entry.total = Object.values(entry.perEvent).reduce<number>((sum, v) => {
+    return sum + (typeof v === "number" ? v : 0);
+  }, 0);
+}
+
+// Sort by total desc
+const clubStandings = Array.from(clubMap.values())
+  .sort((a, b) => b.total - a.total)
+  .map((c, i) => ({ ...c, place: i + 1 }));
+
+const hasAnyData = eventResults.some(e => e.data.results.length > 0);
+
+// ─── 2025 Archive (legacy format) ────────────────────────────────────────────
+
+const teamResults2025 = await getEntry("teamResults", "2025");
+const data2025 = teamResults2025?.data;
+
+// ─── Shared helpers ───────────────────────────────────────────────────────────
+
 const clubs = await getCollection("clubs");
 const clubNameMap = Object.fromEntries(
-  clubs.map(club => [club.data.abbreviatedName, club.data.name])
+  clubs.map(c => [c.data.abbreviatedName, c.data.name])
 );
 const clubSlugMap = Object.fromEntries(
-  clubs.map(club => [club.data.abbreviatedName, club.slug])
+  clubs.map(c => [c.data.abbreviatedName, c.slug])
 );
 
-// Sort events by date for display
-const completedEvents = data?.events
-  .filter(e => e.completed)
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) || [];
+const formatDate = (dateStr: string) => {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
+};
 
-// Points scale for reference
 const pointsScale = [
-  { place: 1, points: 25 },
-  { place: 2, points: 22 },
-  { place: 3, points: 20 },
-  { place: 4, points: 18 },
-  { place: 5, points: 16 },
-  { place: 6, points: 15 },
-  { place: 7, points: 14 },
-  { place: 8, points: 13 },
-  { place: 9, points: 12 },
+  { place: 1, points: 25 }, { place: 2, points: 22 }, { place: 3, points: 20 },
+  { place: 4, points: 18 }, { place: 5, points: 16 }, { place: 6, points: 15 },
+  { place: 7, points: 14 }, { place: 8, points: 13 }, { place: 9, points: 12 },
   { place: 10, points: 11 },
 ];
 
-// Helper to format date
-const formatDate = (dateStr: string) => {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
-};
+// Legacy helpers for 2025 table
+const getResult2025 = (results: Array<{event: string; points: string}>, abbr: string) =>
+  results.find(r => r.event === abbr)?.points;
 
-// Helper to get result display (points is a string: number, "W", or empty)
-const getResultDisplay = (points: string | undefined) => {
-  if (points === "W") return { text: "W", class: "bg-amber-100 text-amber-800", title: "Host Club" };
-  if (!points || points === "") return { text: "-", class: "text-gray-300", title: "Did not compete" };
-  if (points === "0") return { text: "0", class: "text-gray-400", title: "0 points" };
-  return { text: points, class: "text-gray-900 font-medium", title: `${points} points` };
-};
-
-// Helper to get result for a specific event from array format
-const getResult = (results: Array<{event: string, points: string}>, eventAbbr: string) => {
-  return results.find(r => r.event === eventAbbr)?.points;
-};
-
-// Get event results for a specific event
-const getEventResults = (eventAbbr: string) => {
-  if (!data) return [];
-  return data.standings
-    .map(standing => ({
-      club: standing.club,
-      result: getResult(standing.results, eventAbbr),
-    }))
-    .filter(r => r.result && r.result !== "" && r.result !== "W")
-    .sort((a, b) => {
-      const aVal = parseInt(a.result || "0", 10);
-      const bVal = parseInt(b.result || "0", 10);
-      return bVal - aVal;
-    });
+const getDisplay2025 = (points: string | undefined) => {
+  if (points === "W") return { text: "W", cls: "bg-amber-100 text-amber-800", title: "Host Club" };
+  if (!points || points === "") return { text: "-", cls: "text-gray-300", title: "Did not compete" };
+  if (points === "0") return { text: "0", cls: "text-gray-400", title: "0 points" };
+  return { text: points, cls: "text-gray-900 font-medium", title: `${points} points` };
 };
 ---
 
@@ -83,21 +134,222 @@ const getEventResults = (eventAbbr: string) => {
 
   <section class="py-12">
     <div class="container">
-      {data ? (
-        <div class="space-y-12">
+      <div class="space-y-16">
 
-          <!-- Championship Standings -->
+        <!-- ═══════════════════════════════════════════════════════════════════
+             2026 CHAMPIONSHIP STANDINGS
+             Club standings — a club's score per event = best team placing.
+        ════════════════════════════════════════════════════════════════════ -->
+        {season ? (
           <div>
             <div class="flex items-center justify-between mb-6">
               <div>
-                <h2 class="text-2xl font-bold text-gray-900">{data.year} Championship Standings</h2>
+                <h2 class="text-2xl font-bold text-gray-900">2026 Championship Standings</h2>
                 <p class="text-gray-600 text-sm mt-1">
-                  Last updated: {new Date(data.lastUpdated).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+                  Last updated: {new Date(season.lastUpdated + "T12:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
                   <span class="ml-2 px-2 py-0.5 bg-amber-100 text-amber-800 text-xs rounded">Unofficial</span>
                 </p>
               </div>
             </div>
 
+            {!hasAnyData ? (
+              <div class="bg-gray-50 rounded-lg p-8 text-center">
+                <p class="text-gray-500 italic">Results will be posted after each event.</p>
+              </div>
+            ) : (
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                  <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-900">
+                      <tr>
+                        <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider md:sticky left-0 bg-gray-900 text-white z-10">Pos</th>
+                        <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider md:sticky left-12 bg-gray-900 text-white z-10 min-w-[100px]">Club</th>
+                        <th class="px-4 py-3 text-center text-xs font-semibold uppercase tracking-wider bg-primary-700 text-white">Total</th>
+                        {schedule.map(event => (
+                          <th class={`px-3 py-3 text-center text-xs font-medium uppercase tracking-wider whitespace-nowrap ${completedAbbrs.has(event.abbr) ? 'text-white' : 'text-gray-500'}`}>
+                            <div title={event.name}>{event.abbr}</div>
+                            <div class="text-[10px] font-normal normal-case text-gray-400">{formatDate(event.date)}</div>
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                      {clubStandings.map((standing, idx) => (
+                        <tr class={idx < 3 ? "bg-amber-50/50" : idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                          <td class="px-4 py-3 whitespace-nowrap text-sm font-bold text-gray-900 md:sticky left-0 bg-inherit z-10">
+                            {standing.place <= 3 ? (
+                              <span class={`inline-flex items-center justify-center w-6 h-6 rounded-full ${
+                                standing.place === 1 ? 'bg-amber-400 text-amber-900' :
+                                standing.place === 2 ? 'bg-gray-300 text-gray-700' :
+                                'bg-amber-600 text-white'
+                              }`}>
+                                {standing.place}
+                              </span>
+                            ) : standing.place}
+                          </td>
+                          <td class="px-4 py-3 whitespace-nowrap md:sticky left-12 bg-inherit z-10">
+                            {clubSlugMap[standing.club] ? (
+                              <a href={`/clubs/${clubSlugMap[standing.club]}`} class="group">
+                                <div class="text-sm font-bold text-gray-900 group-hover:text-primary-600 transition-colors">{standing.club}</div>
+                                <div class="text-xs text-gray-500 hidden sm:block">{clubNameMap[standing.club] || ''}</div>
+                              </a>
+                            ) : (
+                              <>
+                                <div class="text-sm font-bold text-gray-900">{standing.club}</div>
+                                <div class="text-xs text-gray-500 hidden sm:block">{clubNameMap[standing.club] || ''}</div>
+                              </>
+                            )}
+                          </td>
+                          <td class="px-4 py-3 whitespace-nowrap text-center text-sm font-bold text-primary-700 bg-primary-50">
+                            {standing.total}
+                          </td>
+                          {schedule.map(event => {
+                            if (!completedAbbrs.has(event.abbr)) {
+                              return <td class="px-3 py-3 whitespace-nowrap text-center text-xs text-gray-200">—</td>;
+                            }
+                            const pts = standing.perEvent[event.abbr];
+                            if (pts === "host") {
+                              return (
+                                <td class="px-3 py-3 whitespace-nowrap text-center text-xs bg-amber-50" title="Host club — no points awarded">
+                                  <span class="px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">H</span>
+                                </td>
+                              );
+                            }
+                            if (pts === undefined || pts === 0) {
+                              return <td class="px-3 py-3 whitespace-nowrap text-center text-sm text-gray-300" title="No finishing team">—</td>;
+                            }
+                            return (
+                              <td class="px-3 py-3 whitespace-nowrap text-center text-sm text-gray-900 font-medium" title={`${pts} points`}>
+                                {pts}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            <!-- Legend -->
+            <div class="mt-4 flex flex-wrap gap-4 text-sm text-gray-600">
+              <div class="flex items-center gap-2">
+                <span class="px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-xs font-medium">H</span>
+                <span>Host Club (teams get 0 championship points)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-gray-300">—</span>
+                <span>No finishing teams</span>
+              </div>
+              <div class="text-gray-500">Scores reflect best team per club per event. All events count — no throw-aways.</div>
+            </div>
+          </div>
+        ) : (
+          <p class="text-gray-500 italic">2026 season data not yet available.</p>
+        )}
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             2026 INDIVIDUAL EVENT TEAM RESULTS
+        ════════════════════════════════════════════════════════════════════ -->
+        {hasAnyData && (
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Event Team Results</h2>
+            <p class="text-sm text-gray-500 mb-4">All competing teams ranked by finish. A club's championship score = their best team's finish.</p>
+
+            <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {schedule
+                .filter(event => completedAbbrs.has(event.abbr))
+                .map(event => {
+                  const results = (resultsByEvent.get(event.abbr) ?? [])
+                    .slice()
+                    .sort((a, b) => b.points - a.points);
+                  const schedEvent = schedule.find(s => s.abbr === event.abbr);
+                  const hostClubs = schedEvent?.hostClubs ?? [];
+
+                  return (
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                      <div class="bg-gray-900 px-4 py-3">
+                        <h3 class="font-bold text-white">{event.name}</h3>
+                        <p class="text-sm text-gray-300">
+                          {formatDate(event.date)}
+                          {hostClubs.length > 0 && (
+                            <span class="ml-2 text-xs opacity-70">
+                              Hosted by {hostClubs.join(' / ')}
+                            </span>
+                          )}
+                        </p>
+                      </div>
+                      <div class="p-4">
+                        {results.length > 0 ? (
+                          <div class="space-y-2">
+                            {results.map((r, idx) => (
+                              <details class="group">
+                                <summary class="flex items-center gap-2 cursor-pointer py-1.5 list-none">
+                                  <span class="text-gray-400 text-xs w-5 shrink-0">{idx + 1}</span>
+                                  <span class="font-medium text-gray-900 text-xs grow leading-tight">
+                                    {r.club} — {r.team}
+                                  </span>
+                                  <span class="font-bold text-primary-700 text-sm shrink-0">{r.points}</span>
+                                  {r.epoints !== undefined && (
+                                    <span class="text-gray-400 text-[10px] shrink-0">EP:{r.epoints.toLocaleString()}</span>
+                                  )}
+                                  {r.riders?.length ? (
+                                    <svg class="w-3 h-3 text-gray-400 shrink-0 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                  ) : null}
+                                </summary>
+                                {r.riders?.length ? (
+                                  <ul class="ml-7 mt-1 mb-2 space-y-0.5">
+                                    {r.riders.map(rider => (
+                                      <li class="text-[11px] text-gray-500">{rider}</li>
+                                    ))}
+                                  </ul>
+                                ) : null}
+                              </details>
+                            ))}
+                          </div>
+                        ) : (
+                          <p class="text-gray-500 italic text-sm">No results recorded</p>
+                        )}
+                        {hostClubs.length > 0 && (
+                          <p class="text-xs text-amber-700 mt-3 pt-3 border-t border-gray-100">
+                            Host club teams compete but earn 0 championship points.
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })
+              }
+            </div>
+          </div>
+        )}
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             POINTS SCALE
+        ════════════════════════════════════════════════════════════════════ -->
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h3 class="font-bold text-gray-900 mb-4">Points Scale</h3>
+          <div class="flex flex-wrap gap-3">
+            {pointsScale.map(({ place, points }) => (
+              <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded border">
+                <span class="text-sm text-gray-600">{place}{place === 1 ? 'st' : place === 2 ? 'nd' : place === 3 ? 'rd' : 'th'}</span>
+                <span class="font-bold text-primary-700">{points}</span>
+              </div>
+            ))}
+            <span class="text-sm text-gray-500 self-center">... down to 20th = 1 point</span>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             2025 ARCHIVE
+        ════════════════════════════════════════════════════════════════════ -->
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">2025 Final Standings</h2>
+
+          {data2025 ? (
             <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
               <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
@@ -106,7 +358,7 @@ const getEventResults = (eventAbbr: string) => {
                       <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider md:sticky left-0 bg-gray-900 text-white z-10">Pos</th>
                       <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider md:sticky left-12 bg-gray-900 text-white z-10">Club</th>
                       <th class="px-4 py-3 text-center text-xs font-semibold uppercase tracking-wider bg-primary-700 text-white">Total</th>
-                      {data.events.map(event => (
+                      {data2025.events.map(event => (
                         <th class={`px-3 py-3 text-center text-xs font-medium uppercase tracking-wider whitespace-nowrap ${event.completed ? 'text-white' : 'text-gray-500'}`}>
                           <div title={event.name}>{event.abbr}</div>
                           <div class="text-[10px] font-normal normal-case text-gray-400">{formatDate(event.date)}</div>
@@ -115,7 +367,7 @@ const getEventResults = (eventAbbr: string) => {
                     </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
-                    {data.standings.map((standing, idx) => (
+                    {data2025.standings.map((standing, idx) => (
                       <tr class={idx < 3 ? "bg-amber-50/50" : idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                         <td class="px-4 py-3 whitespace-nowrap text-sm font-bold text-gray-900 md:sticky left-0 bg-inherit z-10">
                           {standing.place <= 3 ? (
@@ -132,23 +384,19 @@ const getEventResults = (eventAbbr: string) => {
                           {clubSlugMap[standing.club] ? (
                             <a href={`/clubs/${clubSlugMap[standing.club]}`} class="group">
                               <div class="text-sm font-bold text-gray-900 group-hover:text-primary-600 transition-colors">{standing.club}</div>
-                              <div class="text-xs text-gray-500">{clubNameMap[standing.club] || ''}</div>
                             </a>
                           ) : (
-                            <>
-                              <div class="text-sm font-bold text-gray-900">{standing.club}</div>
-                              <div class="text-xs text-gray-500">{clubNameMap[standing.club] || ''}</div>
-                            </>
+                            <div class="text-sm font-bold text-gray-900">{standing.club}</div>
                           )}
                         </td>
                         <td class="px-4 py-3 whitespace-nowrap text-center text-sm font-bold text-primary-700 bg-primary-50">
                           {standing.total}
                         </td>
-                        {data.events.map(event => {
-                          const result = getResult(standing.results, event.abbr);
-                          const display = getResultDisplay(result);
+                        {data2025.events.map(event => {
+                          const result = getResult2025(standing.results, event.abbr);
+                          const display = getDisplay2025(result);
                           return (
-                            <td class={`px-3 py-3 whitespace-nowrap text-center text-sm ${display.class}`} title={display.title}>
+                            <td class={`px-3 py-3 whitespace-nowrap text-center text-sm ${display.cls}`} title={display.title}>
                               {display.text}
                             </td>
                           );
@@ -159,122 +407,33 @@ const getEventResults = (eventAbbr: string) => {
                 </table>
               </div>
             </div>
+          ) : null}
 
-            <!-- Legend -->
-            <div class="mt-4 flex flex-wrap gap-4 text-sm text-gray-600">
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 bg-amber-100 text-amber-800 rounded text-xs font-medium">W</span>
-                <span>Host Club (cannot earn points)</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-gray-300">-</span>
-                <span>Did not compete</span>
-              </div>
-              <div>All events count (no throw-aways)</div>
-            </div>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href="/attachments/events/team-results/2025-en-current-team-results.pdf"
+              class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
+              download
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              2025 Standings (PDF)
+            </a>
+            <a
+              href="/attachments/events/team-results/2024/2024-en-team-championship-results.pdf"
+              class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
+              download
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              2024 Final Results (PDF)
+            </a>
           </div>
-
-          <!-- Individual Event Results -->
-          <div>
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">Event Results</h2>
-
-            <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {completedEvents.map(event => {
-                const eventResults = getEventResults(event.abbr);
-                return (
-                  <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="bg-gray-900 px-4 py-3">
-                      <h3 class="font-bold text-white">{event.name}</h3>
-                      <p class="text-sm text-gray-300">
-                        {new Date(event.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
-                        <span class="ml-2 text-xs opacity-70">Hosted by {event.abbr}</span>
-                      </p>
-                    </div>
-                    <div class="p-4">
-                      {eventResults.length > 0 ? (
-                        <table class="w-full text-sm">
-                          <thead>
-                            <tr class="text-xs text-gray-500 uppercase">
-                              <th class="text-left pb-2">Pos</th>
-                              <th class="text-left pb-2">Club</th>
-                              <th class="text-right pb-2">Points</th>
-                            </tr>
-                          </thead>
-                          <tbody class="divide-y divide-gray-100">
-                            {eventResults.slice(0, 10).map((r, idx) => (
-                              <tr>
-                                <td class="py-1.5 font-medium text-gray-600">{idx + 1}</td>
-                                <td class="py-1.5 font-medium">
-                                  {clubSlugMap[r.club] ? (
-                                    <a href={`/clubs/${clubSlugMap[r.club]}`} class="text-gray-900 hover:text-primary-600 transition-colors">{r.club}</a>
-                                  ) : (
-                                    <span class="text-gray-900">{r.club}</span>
-                                  )}
-                                </td>
-                                <td class="py-1.5 text-right text-primary-700 font-bold">{r.result}</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      ) : (
-                        <p class="text-gray-500 italic text-sm">No team results recorded</p>
-                      )}
-                      {eventResults.length > 10 && (
-                        <p class="text-xs text-gray-500 mt-2">+ {eventResults.length - 10} more teams</p>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <!-- Points Scale Reference -->
-          <div class="bg-gray-50 rounded-lg p-6">
-            <h3 class="font-bold text-gray-900 mb-4">Points Scale</h3>
-            <div class="flex flex-wrap gap-3">
-              {pointsScale.map(({ place, points }) => (
-                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded border">
-                  <span class="text-sm text-gray-600">{place}{place === 1 ? 'st' : place === 2 ? 'nd' : place === 3 ? 'rd' : 'th'}</span>
-                  <span class="font-bold text-primary-700">{points}</span>
-                </div>
-              ))}
-              <span class="text-sm text-gray-500 self-center">... down to 20th = 1 point</span>
-            </div>
-          </div>
-
-          <!-- Download Links -->
-          <div class="bg-gray-100 rounded-lg p-6">
-            <h3 class="font-bold text-gray-900 mb-2">PDF Downloads</h3>
-            <p class="text-sm text-gray-600 mb-4">Original PDF files are still available for download.</p>
-            <div class="flex flex-wrap gap-3">
-              <a
-                href="/attachments/events/team-results/2025-en-current-team-results.pdf"
-                class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
-                download
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                2025 Standings (PDF)
-              </a>
-              <a
-                href="/attachments/events/team-results/2024/2024-en-team-championship-results.pdf"
-                class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
-                download
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                2024 Final Results (PDF)
-              </a>
-            </div>
-          </div>
-
         </div>
-      ) : (
-        <p class="text-gray-500 italic">No team results data available.</p>
-      )}
+
+      </div>
     </div>
   </section>
 </BaseLayout>

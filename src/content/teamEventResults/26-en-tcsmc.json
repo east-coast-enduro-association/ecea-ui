@@ -1,0 +1,20 @@
+{
+  "year": 2026,
+  "series": "Enduro",
+  "eventAbbr": "TCSMC",
+  "results": [
+    { "team": "RIDGE RIDERS -A-", "club": "RRMC", "points": 25, "epoints": 7650, "riders": ["MAVERICK REINER", "DYLAN RECCHIA", "NICHOLAS LOBOSCO", "ROBERT CIVILETTI JR", "WILLIAM SIGLER"] },
+    { "team": "FASTBOYZ I", "club": "SPER", "points": 22, "epoints": 10322, "riders": ["ZACH MILLER", "LOGAN SMITH", "NATHAN JOSEPH", "GRAHAM SMITH", "TIMOTHY SPRENKLE"] },
+    { "team": "TEAM BOB", "club": "CJCR", "points": 20, "epoints": 10733, "riders": ["SEAN KOELLER", "CHAD LOCH", "GREG PRESTON", "JUSTIN MCKENZIE", "JASON RICE"] },
+    { "team": "TEAM TONY", "club": "CJCR", "points": 18, "epoints": 13278, "riders": ["AUSTIN CHAVOUS", "NATE MEILY", "JACEK SZCZACHOR", "WALTER ANDRES", "BRANDON BOWERS"] },
+    { "team": "#2", "club": "DER", "points": 16, "epoints": 13252, "riders": ["DOMINIC RISPOLI", "ANGELO RISPOLI", "MIKE TEOLI", "JESSE DAVIS", "ZACHARY PAGE"] },
+    { "team": "DIGGERS", "club": "DVTR", "points": 15, "epoints": 15592, "riders": ["VAN MCCARREN", "JAMES ASHMEN", "MICHAEL ABRAMO", "JOSH ALDERFER", "JONATHAN SUBBE"] },
+    { "team": "FASTBOYZ II", "club": "SPER", "points": 14, "epoints": 18051, "riders": ["DARREN ALDINGER", "DYLAN HAMMER", "MICHAEL LONG", "ROBERT HAGAN", "WADE SCHOENBERGER"] },
+    { "team": "#3", "club": "DER", "points": 13, "epoints": 17043, "riders": ["JACOB NOWAKOWSKI", "CHUCK STAPLEFORD", "MARK SCHLEEWEIS", "KARL WILLS", "WILLIAM CONWAY JR"] },
+    { "team": "PINE CONE KILLERS", "club": "OCCR", "points": 12, "epoints": 18899, "riders": ["ARTHUR DOWNS", "JOSEPH KLINE", "ROBERT DIMOCK", "AXEL ANDERSON", "CHRISTOPHER RIZZON"] },
+    { "team": "TEAM GARY", "club": "CJCR", "points": 11, "epoints": 20037, "riders": ["ETHAN OTANI", "SARAH MICKEY", "TIMOTHY HULMES", "STEVEN MCKENZIE JR", "WILLIAM BRADY"] },
+    { "team": "CHECK PLEASE", "club": "MMC", "points": 10, "epoints": 20806, "riders": ["ANDREW BOUCHAUD", "RONALD DECARO", "EDDIE O'FLYNN", "RAYMOND POWELL", "SEAN SUPERNOWICZ"] },
+    { "team": "#5", "club": "DER", "points": 9, "epoints": 26141, "riders": ["KRIS BIZZARI", "ANTHONY LACHETTE", "CODY NOVAK", "ZACHARY CHADICK", "NICK CHADICK"] },
+    { "team": "I", "club": "DVTR", "points": 8, "epoints": 29471, "riders": ["JAMES LANDVATER JR", "JEFFREY KINIERY", "MARK MARTIN", "LIZ KINIERY", "DYLLAN SCHIMPF"] }
+  ]
+}

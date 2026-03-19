@@ -1104,11 +1104,222 @@ export default defineConfig({
       },
 
       // =========================================================================
-      // Team Results (JSON data files)
+      // Team Competition Season Setup (2026+)
+      // One file per year/series — set up once at start of season.
+      // Contains the event schedule and registered team roster.
+      // =========================================================================
+      {
+        name: 'teamSeasons',
+        label: 'Team Competition — Season Setup',
+        path: 'src/content/teamSeasons',
+        format: 'json',
+        ui: {
+          allowedActions: {
+            create: true,
+            delete: false,
+          },
+          filename: {
+            slugify: (values: Record<string, unknown>) => {
+              const year = values.year || new Date().getFullYear();
+              const series = ((values.series as string) || 'Enduro').toLowerCase().replace(/\s+/g, '-');
+              return `${year}-${series}`;
+            },
+            description: 'Auto-generated: year-series (e.g., 2026-enduro)',
+          },
+        },
+        fields: [
+          {
+            type: 'number',
+            name: 'year',
+            label: 'Year',
+            required: true,
+            description: 'The season year (e.g., 2026)',
+          },
+          {
+            type: 'string',
+            name: 'series',
+            label: 'Series',
+            required: true,
+            options: ['Enduro', 'Hare Scramble'],
+          },
+          {
+            type: 'string',
+            name: 'lastUpdated',
+            label: 'Last Updated',
+            description: 'Date of last update (YYYY-MM-DD)',
+          },
+          {
+            type: 'object',
+            name: 'teams',
+            label: 'Registered Teams',
+            list: true,
+            description: 'All teams registered for this season. Add each team once here.',
+            ui: {
+              itemProps: (item) => ({
+                label: item?.name ? `${item.name} (${item.club})` : 'New Team',
+              }),
+            },
+            fields: [
+              {
+                type: 'string',
+                name: 'name',
+                label: 'Team Name',
+                required: true,
+                description: 'Display name (e.g., "Iron Horses" or just "OCCR" if unnamed)',
+              },
+              {
+                type: 'string',
+                name: 'club',
+                label: 'Club',
+                required: true,
+                description: 'Club abbreviation (e.g., "OCCR")',
+              },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'schedule',
+            label: 'Event Schedule',
+            list: true,
+            description: 'All events in the season — include future events so they show as columns in standings.',
+            ui: {
+              itemProps: (item) => ({
+                label: item?.abbr ? `${item.abbr} — ${item.name} (${item.date})` : 'New Event',
+              }),
+            },
+            fields: [
+              {
+                type: 'string',
+                name: 'abbr',
+                label: 'Abbreviation',
+                required: true,
+                description: 'Short code used in results (e.g., "SJER", "DVTR")',
+              },
+              {
+                type: 'string',
+                name: 'name',
+                label: 'Event Name',
+                required: true,
+              },
+              {
+                type: 'string',
+                name: 'date',
+                label: 'Date',
+                required: true,
+                description: 'Format: YYYY-MM-DD',
+              },
+              {
+                type: 'string',
+                name: 'hostClubs',
+                label: 'Host Club(s)',
+                list: true,
+                required: true,
+                description: 'Club abbreviations that host this event (their teams get 0 points). Usually just one.',
+              },
+            ],
+          },
+        ],
+      },
+
+      // =========================================================================
+      // Team Event Results (2026+)
+      // One file per completed event — purely additive.
+      // After each race: create a new entry, enter team results.
+      // =========================================================================
+      {
+        name: 'teamEventResults',
+        label: 'Team Event Results',
+        path: 'src/content/teamEventResults',
+        format: 'json',
+        ui: {
+          filename: {
+            slugify: (values: Record<string, unknown>) => {
+              const year = String(values.year || new Date().getFullYear()).slice(2);
+              const series = ((values.series as string) || 'Enduro').toLowerCase() === 'enduro' ? 'en' : 'hs';
+              const event = ((values.eventAbbr as string) || 'event').toLowerCase();
+              return `${year}-${series}-${event}`;
+            },
+            description: 'Auto-generated: YY-series-club (e.g., 26-en-sjer)',
+          },
+        },
+        fields: [
+          {
+            type: 'number',
+            name: 'year',
+            label: 'Year',
+            required: true,
+          },
+          {
+            type: 'string',
+            name: 'series',
+            label: 'Series',
+            required: true,
+            options: ['Enduro', 'Hare Scramble'],
+          },
+          {
+            type: 'string',
+            name: 'eventAbbr',
+            label: 'Event (Club Abbreviation)',
+            required: true,
+            description: 'The hosting club abbreviation — must match an event in the season schedule (e.g., "SJER")',
+          },
+          {
+            type: 'object',
+            name: 'results',
+            label: 'Team Results',
+            list: true,
+            description: 'One row per team. Host club teams should be entered with 0 points.',
+            ui: {
+              itemProps: (item) => ({
+                label: item?.team ? `${item.team} (${item.club}): ${item.points ?? '?'} pts` : 'New Result',
+              }),
+            },
+            fields: [
+              {
+                type: 'string',
+                name: 'team',
+                label: 'Team Name',
+                required: true,
+                description: 'Team name (e.g., "RIDGE RIDERS -A-", "FASTBOYZ I")',
+              },
+              {
+                type: 'string',
+                name: 'club',
+                label: 'Club',
+                required: true,
+                description: 'Club abbreviation (e.g., "RRMC")',
+              },
+              {
+                type: 'number',
+                name: 'points',
+                label: 'Championship Points',
+                required: true,
+                description: '25/22/20/18... based on finishing position. Host club teams = 0.',
+              },
+              {
+                type: 'number',
+                name: 'epoints',
+                label: 'Emergency Points',
+                description: 'Tiebreaker score from the scoring software (optional)',
+              },
+              {
+                type: 'string',
+                name: 'riders',
+                label: 'Riders',
+                list: true,
+                description: 'Rider names on this team for this event (can change each round)',
+              },
+            ],
+          },
+        ],
+      },
+
+      // =========================================================================
+      // Team Results (LEGACY — 2025 and prior, read-only)
       // =========================================================================
       {
         name: 'teamResults',
-        label: 'Team Results',
+        label: 'Team Results (Legacy — 2025)',
         path: 'src/content/teamResults',
         format: 'json',
         ui: {

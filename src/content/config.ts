@@ -315,8 +315,8 @@ const pagesCollection = defineCollection({
 });
 
 /**
- * Team Results Collection
- * Enduro team competition standings by year
+ * Team Results Collection (LEGACY — 2025 and prior)
+ * Enduro team competition standings by year (club-centric, pre-named-teams era)
  */
 const teamResultsCollection = defineCollection({
   type: 'data',
@@ -346,6 +346,57 @@ const teamResultsCollection = defineCollection({
         ),
       })
     ),
+  }),
+});
+
+/**
+ * Team Seasons Collection (2026+)
+ * Season-level configuration: event schedule + registered team roster.
+ * One file per year/series. Created once at the start of the season.
+ */
+const teamSeasonsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    year: z.number(),
+    series: z.string(),
+    lastUpdated: z.string(),
+    teams: z.array(
+      z.object({
+        name: z.string(),   // Team display name (e.g., "Iron Horses")
+        club: z.string(),   // Club abbreviation (e.g., "OCCR")
+      })
+    ).default([]),
+    schedule: z.array(
+      z.object({
+        abbr: z.string(),                          // Short code used in results (e.g., "SJER")
+        name: z.string(),                          // Event name
+        date: z.string(),                          // YYYY-MM-DD
+        hostClubs: z.array(z.string()).default([]), // Clubs that host (their teams get 0 pts)
+      })
+    ).default([]),
+  }),
+});
+
+/**
+ * Team Event Results Collection (2026+)
+ * Per-event results — one file per completed event.
+ * Additive: add a new file after each race.
+ */
+const teamEventResultsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    year: z.number(),
+    series: z.string(),
+    eventAbbr: z.string(),  // Must match an abbr in the season's schedule
+    results: z.array(
+      z.object({
+        team: z.string(),               // Team name
+        club: z.string(),               // Club abbreviation
+        points: z.number(),             // Championship points (25/22/20... based on finish position)
+        epoints: z.number().optional(), // Emergency/tiebreaker points (from scoring software)
+        riders: z.array(z.string()).optional(), // Rider names for this event
+      })
+    ).default([]),
   }),
 });
 
@@ -413,5 +464,7 @@ export const collections = {
   pages: pagesCollection,
   siteInfo: siteInfoCollection,
   teamResults: teamResultsCollection,
+  teamSeasons: teamSeasonsCollection,
+  teamEventResults: teamEventResultsCollection,
   members: membersCollection,
 };

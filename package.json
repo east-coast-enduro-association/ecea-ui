@@ -8,7 +8,8 @@
     "build": "astro build",
     "build:tina": "tinacms build && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "import-results": "node scripts/import-team-results.mjs"
   },
   "dependencies": {
     "@astrojs/markdoc": "^0.15.10",
