@@ -76,7 +76,9 @@ it usually means `tina-lock.json` is out of sync with `config.ts`. Regenerate by
 
 The downloads field on events uploads files to `src/attachments/events/` (because `publicFolder: 'src'`). However, PDFs need to be in `public/attachments/events/` to be served by the site.
 
-**Current workaround:** After TinaCMS uploads an attachment, manually move it:
+**`.rs` files (Enduro Roll Chart):** TinaCMS's media picker does not allow `.rs` uploads. Copy these files to `src/attachments/events/` via git and add the URL directly to the event's `downloads` array in the markdown file. Everything else (PDFs, images) uploads normally through TinaCMS.
+
+**Current workaround for PDFs:** After TinaCMS uploads an attachment, manually move it:
 ```bash
 git mv "src/attachments/events/your-file.pdf" "public/attachments/events/your-file.pdf"
 git commit -m "Move attachment to public/"
