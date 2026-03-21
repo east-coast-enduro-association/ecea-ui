@@ -24,7 +24,10 @@ draft: false
 
 ECEA **[Hare Scramble Series Number](https://www.moto-tally.com/ECEA/ECEA/SeriesRegistration.aspx)** and **AMA Membership required** to register through the online system.
 
-**Gates Open:**
+**PLEASE USE the ONLINE Number Registration and ONLINE Pre ENTRY to save time at event.
+**The online Numbers is OPEN until 4/23 at 8pm, the Pre Entry  Closes Friday 4/24 at Noon
+**
+Gates Open:**
 
 * FRIDAY 5:00PM
 * SATURDAY 7:00AM
@@ -32,9 +35,9 @@ ECEA **[Hare Scramble Series Number](https://www.moto-tally.com/ECEA/ECEA/Series
 
 **ALL RIDERS MUST CHECK IN at Registration Trailer with HELMET**
 
-* **SIGN UP/CHECK IN for MORNING EVENT** 
+* **SIGN UP/CHECK IN for MORNING EVENT**
   Opens **Sunday at 7:00AM, Closes 9:30AM**
 * SUNDAY **MORNING EVENT START** TIME **10:00 AM**
 * **SIGNUP/CHECK IN for MAIN**/AFTERNOON EVENT
-   opens **Sunday at 10:00AM, Closes 12:30PM**
+  opens **Sunday at 10:00AM, Closes 12:30PM**
 * SUNDAY **MAIN EVENT START TIME 1:00PM**
