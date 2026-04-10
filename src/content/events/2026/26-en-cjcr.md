@@ -18,6 +18,8 @@ flyer: ../../../assets/events/flyers/CJCR_2026_Flier_v1.png
 downloads:
   - label: Confirmation
     url: /attachments/events/2026 Pine Hill Enduro Confirmation.pdf
+  - label: Route Sheet
+    url: /attachments/events/2026%20Pine%20Hill%20Enduro%20Route%20Sheet.pdf
 draft: false
 ---
 
