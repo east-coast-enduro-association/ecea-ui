@@ -15,6 +15,9 @@ closedCourse: false
 gasAway: false
 image: ../../../assets/clubs/logos/cjcr.jpg
 flyer: ../../../assets/events/flyers/CJCR_2026_Flier_v1.png
+downloads:
+  - label: Confirmation
+    url: /attachments/events/2026 Pine Hill Enduro Confirmation.pdf
 draft: false
 ---
 
