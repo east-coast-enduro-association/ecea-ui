@@ -1,24 +1,31 @@
 ---
 title: Delaware
-summary: Great Sand track, open woods
-draft: false
-date: '2026-05-03T10:00:00.000Z'
-location: 161 Hesstown Rd, Millville, NJ
+summary: 'Great Sand track, open woods'
+date: 2026-05-03T10:00:00.000Z
+checkInTime: '7:00 AM'
+location: '161 Hesstown Rd, Millville, NJ'
 hostingClubs:
   - DER
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
-checkInTime: '7:00 AM'
 closedCourse: false
 gasAway: false
-image: '../../../assets/clubs/logos/der.gif'
+gateFee: '$15 per person,  kids 6-11 $10'
+image: ../../../assets/clubs/logos/der.gif
+flyer: /assets/events/flyers/26DERHS.jpeg
+motoTallyId: 2
+registrationLink: 'https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx'
+resultsLink: 'https://www.moto-tally.com/ECEA/ECEA/Results.aspx'
+draft: false
 ---
+
 # ADULT RACE DETAILS
 
-**RIDER LIMIT for SUNDAY - ONLINE SIGN UP ONLY**
+**ONLINE SIGN UP OPEN, Preferred -   ECEA Membership or Day pass required **
 
 **Gates Open:**
+
 * FRIDAY 7PM
 * SATURDAY 8AM
 * SUNDAY 6AM
