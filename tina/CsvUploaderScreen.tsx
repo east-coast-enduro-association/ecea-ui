@@ -6,7 +6,17 @@ const CLUB_ABBREVIATIONS = [
   'MMC', 'OCCR', 'PBER', 'RORR', 'RRMC', 'SJER', 'SPER', 'STER', 'TCSMC', 'VFTR',
 ];
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 type Status = 'idle' | 'uploading' | 'success' | 'error';
+
+interface Entry {
+  id: string;
+  file: File;
+  club: string;
+  series: string;
+  year: number;
+}
 
 interface Props {
   close(): void;
@@ -14,49 +24,56 @@ interface Props {
 
 export function CsvUploaderScreen({ close }: Props) {
   const cms = useCMS();
-  const [club, setClub] = useState('');
-  const [series, setSeries] = useState('Enduro');
-  const [year, setYear] = useState(new Date().getFullYear());
-  const [file, setFile] = useState<File | null>(null);
+  const [entries, setEntries] = useState<Entry[]>([]);
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const [isDragging, setIsDragging] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleFile = (f: File) => {
-    if (!f.name.endsWith('.csv')) {
-      setErrorMsg('File must be a .csv');
-      setFile(null);
-      return;
-    }
-    setFile(f);
+  const addFiles = (files: File[]) => {
+    const csvs = files.filter(f => f.name.endsWith('.csv'));
+    if (csvs.length === 0) { setErrorMsg('Only .csv files are accepted.'); return; }
     setErrorMsg('');
+    setEntries(prev => [
+      ...prev,
+      ...csvs.map(f => ({
+        id: Math.random().toString(36).slice(2),
+        file: f,
+        club: '',
+        series: 'Enduro',
+        year: CURRENT_YEAR,
+      })),
+    ]);
   };
 
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
-    const f = e.dataTransfer.files[0];
-    if (f) handleFile(f);
+    addFiles(Array.from(e.dataTransfer.files));
   }, []);
 
+  const updateEntry = (id: string, patch: Partial<Entry>) =>
+    setEntries(prev => prev.map(e => e.id === id ? { ...e, ...patch } : e));
+
+  const removeEntry = (id: string) =>
+    setEntries(prev => prev.filter(e => e.id !== id));
+
   const handleSubmit = async () => {
-    if (!club) { setErrorMsg('Please select a hosting club.'); return; }
-    if (!file) { setErrorMsg('Please upload a CSV file.'); return; }
-
-    // Build filename: YY-{en|hs}-{club}.csv  e.g. 26-en-sjer.csv
-    const yy = String(year).slice(2);
-    const seriesCode = series === 'Enduro' ? 'en' : 'hs';
-    const filename = `${yy}-${seriesCode}-${club.toLowerCase()}.csv`;
-
-    // Rename file to the convention the GitHub Action expects
-    const renamedFile = new File([file], filename, { type: 'text/csv' });
+    if (entries.length === 0) { setErrorMsg('Add at least one CSV file.'); return; }
+    const missing = entries.find(e => !e.club);
+    if (missing) { setErrorMsg('Please select a hosting club for every event.'); return; }
 
     setStatus('uploading');
     setErrorMsg('');
 
     try {
-      await cms.media.persist([{ directory: 'uploads/team-results', file: renamedFile }]);
+      const mediaFiles = entries.map(e => {
+        const yy = String(e.year).slice(2);
+        const seriesCode = e.series === 'Enduro' ? 'en' : 'hs';
+        const filename = `${yy}-${seriesCode}-${e.club.toLowerCase()}.csv`;
+        return { directory: 'uploads/team-results', file: new File([e.file], filename, { type: 'text/csv' }) };
+      });
+      await cms.media.persist(mediaFiles);
       setStatus('success');
     } catch (e: unknown) {
       setStatus('error');
@@ -64,121 +81,113 @@ export function CsvUploaderScreen({ close }: Props) {
     }
   };
 
-  // ── Success state ────────────────────────────────────────────────────────────
+  // ── Success ───────────────────────────────────────────────────────────────
 
   if (status === 'success') {
     return (
       <div style={containerStyle}>
         <div style={{ fontSize: 40, marginBottom: 12 }}>✅</div>
-        <h2 style={headingStyle}>Results uploaded</h2>
-        <p style={subtextStyle}>
-          GitHub is processing the file. The results page will update in 2–3 minutes.
-        </p>
+        <h2 style={headingStyle}>{entries.length === 1 ? 'Results uploaded' : `${entries.length} events uploaded`}</h2>
+        <p style={subtextStyle}>GitHub is processing the files. Results pages will update in 2–3 minutes.</p>
         <div style={{ display: 'flex', gap: 12, marginTop: 24 }}>
-          <button
-            onClick={() => { setStatus('idle'); setFile(null); setClub(''); }}
-            style={primaryBtn}
-          >
-            Upload another
-          </button>
+          <button onClick={() => { setStatus('idle'); setEntries([]); }} style={primaryBtn}>Upload more</button>
           <button onClick={close} style={secondaryBtn}>Close</button>
         </div>
       </div>
     );
   }
 
-  // ── Form ─────────────────────────────────────────────────────────────────────
+  // ── Form ─────────────────────────────────────────────────────────────────
 
   return (
     <div style={containerStyle}>
       <h2 style={headingStyle}>Upload Team Results</h2>
       <p style={subtextStyle}>
-        Export a CSV from your scoring software and fill in the event details below.
-        The site updates automatically — no technical steps required.
+        Drop one or more CSV files — one per event. Fill in the event details for each.
+        The site updates automatically in 2–3 minutes.
       </p>
 
-      {/* Hosting Club */}
-      <div style={fieldWrap}>
-        <label style={labelStyle}>Hosting Club *</label>
-        <select value={club} onChange={e => setClub(e.target.value)} style={selectStyle}>
-          <option value="">— select —</option>
-          {CLUB_ABBREVIATIONS.map(c => (
-            <option key={c} value={c}>{c}</option>
-          ))}
-        </select>
-      </div>
-
-      {/* Series */}
-      <div style={fieldWrap}>
-        <label style={labelStyle}>Series *</label>
-        <select value={series} onChange={e => setSeries(e.target.value)} style={selectStyle}>
-          <option value="Enduro">Enduro</option>
-          <option value="Hare Scramble">Hare Scramble</option>
-        </select>
-      </div>
-
-      {/* Year */}
-      <div style={fieldWrap}>
-        <label style={labelStyle}>Year *</label>
+      {/* Drop zone */}
+      <div
+        onDragOver={e => { e.preventDefault(); setIsDragging(true); }}
+        onDragLeave={() => setIsDragging(false)}
+        onDrop={handleDrop}
+        onClick={() => inputRef.current?.click()}
+        style={{
+          ...dropZoneStyle,
+          borderColor: isDragging ? '#3b82f6' : '#d1d5db',
+          background: isDragging ? '#eff6ff' : '#f9fafb',
+          marginBottom: 20,
+        }}
+      >
         <input
-          type="number"
-          value={year}
-          onChange={e => setYear(parseInt(e.target.value, 10))}
-          min={2020}
-          max={2099}
-          style={selectStyle}
+          ref={inputRef}
+          type="file"
+          accept=".csv"
+          multiple
+          style={{ display: 'none' }}
+          onChange={e => { if (e.target.files) addFiles(Array.from(e.target.files)); }}
         />
+        <span style={{ color: '#9ca3af', fontSize: 14 }}>
+          Drop CSV files here or <span style={{ color: '#3b82f6' }}>browse</span>
+        </span>
       </div>
 
-      {/* CSV drop zone */}
-      <div style={fieldWrap}>
-        <label style={labelStyle}>Results CSV *</label>
-        <div
-          onDragOver={e => { e.preventDefault(); setIsDragging(true); }}
-          onDragLeave={() => setIsDragging(false)}
-          onDrop={handleDrop}
-          onClick={() => inputRef.current?.click()}
-          style={{
-            ...dropZoneStyle,
-            borderColor: isDragging ? '#3b82f6' : file ? '#22c55e' : '#d1d5db',
-            background: isDragging ? '#eff6ff' : file ? '#f0fdf4' : '#f9fafb',
-          }}
-        >
-          <input
-            ref={inputRef}
-            type="file"
-            accept=".csv"
-            style={{ display: 'none' }}
-            onChange={e => { const f = e.target.files?.[0]; if (f) handleFile(f); }}
-          />
-          {file ? (
-            <span style={{ color: '#15803d', fontWeight: 600, fontSize: 14 }}>
-              📄 {file.name}
-            </span>
-          ) : (
-            <span style={{ color: '#9ca3af', fontSize: 14 }}>
-              Drop CSV here or <span style={{ color: '#3b82f6' }}>browse</span>
-            </span>
-          )}
+      {/* Entry list */}
+      {entries.length > 0 && (
+        <div style={{ marginBottom: 16 }}>
+          {entries.map((entry, i) => (
+            <div key={entry.id} style={entryRow}>
+              <div style={{ fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 8, display: 'flex', justifyContent: 'space-between' }}>
+                <span>📄 {entry.file.name}</span>
+                <button onClick={() => removeEntry(entry.id)} style={removeBtn} title="Remove">✕</button>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 80px', gap: 8 }}>
+                <div>
+                  <label style={labelStyle}>Hosting Club *</label>
+                  <select value={entry.club} onChange={e => updateEntry(entry.id, { club: e.target.value })} style={selectStyle}>
+                    <option value="">— select —</option>
+                    {CLUB_ABBREVIATIONS.map(c => <option key={c} value={c}>{c}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label style={labelStyle}>Series *</label>
+                  <select value={entry.series} onChange={e => updateEntry(entry.id, { series: e.target.value })} style={selectStyle}>
+                    <option value="Enduro">Enduro</option>
+                    <option value="Hare Scramble">Hare Scramble</option>
+                  </select>
+                </div>
+                <div>
+                  <label style={labelStyle}>Year *</label>
+                  <input
+                    type="number"
+                    value={entry.year}
+                    onChange={e => updateEntry(entry.id, { year: parseInt(e.target.value, 10) })}
+                    min={2020}
+                    max={2099}
+                    style={selectStyle}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        <p style={{ fontSize: 12, color: '#6b7280', marginTop: 6 }}>
-          Rows in finishing order (1st place first). Leave out host club teams and DNF/DQ.
-          Columns: <code>team</code>, <code>club</code>, <code>epoints</code> (opt), <code>riders</code> (opt, semicolons).
-        </p>
-      </div>
-
-      {/* Error */}
-      {errorMsg && (
-        <p style={{ color: '#dc2626', fontSize: 13, margin: '0 0 12px' }}>{errorMsg}</p>
       )}
 
-      {/* Submit */}
+      {errorMsg && <p style={{ color: '#dc2626', fontSize: 13, margin: '0 0 12px' }}>{errorMsg}</p>}
+
       <button
         onClick={handleSubmit}
-        disabled={status === 'uploading'}
-        style={{ ...primaryBtn, opacity: status === 'uploading' ? 0.6 : 1 }}
+        disabled={status === 'uploading' || entries.length === 0}
+        style={{ ...primaryBtn, opacity: (status === 'uploading' || entries.length === 0) ? 0.6 : 1 }}
       >
-        {status === 'uploading' ? 'Uploading…' : 'Upload Results'}
+        {status === 'uploading'
+          ? 'Uploading…'
+          : entries.length === 0
+            ? 'Upload Results'
+            : entries.length === 1
+              ? 'Upload 1 Event'
+              : `Upload ${entries.length} Events`}
       </button>
     </div>
   );
@@ -186,81 +195,27 @@ export function CsvUploaderScreen({ close }: Props) {
 
 // ── Styles ────────────────────────────────────────────────────────────────────
 
-const containerStyle: React.CSSProperties = {
-  padding: '32px 36px',
-  maxWidth: 520,
-};
+const containerStyle: React.CSSProperties = { padding: '32px 36px', maxWidth: 580 };
 
-const headingStyle: React.CSSProperties = {
-  fontSize: 20,
-  fontWeight: 700,
-  color: '#111827',
-  margin: '0 0 8px',
-};
+const headingStyle: React.CSSProperties = { fontSize: 20, fontWeight: 700, color: '#111827', margin: '0 0 8px' };
 
-const subtextStyle: React.CSSProperties = {
-  fontSize: 14,
-  color: '#6b7280',
-  margin: '0 0 24px',
-  lineHeight: 1.5,
-};
+const subtextStyle: React.CSSProperties = { fontSize: 14, color: '#6b7280', margin: '0 0 24px', lineHeight: 1.5 };
 
-const fieldWrap: React.CSSProperties = {
-  marginBottom: 18,
-};
+const labelStyle: React.CSSProperties = { display: 'block', fontSize: 11, fontWeight: 600, color: '#6b7280', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' };
 
-const labelStyle: React.CSSProperties = {
-  display: 'block',
-  fontSize: 13,
-  fontWeight: 600,
-  color: '#374151',
-  marginBottom: 6,
-};
+const selectStyle: React.CSSProperties = { display: 'block', width: '100%', padding: '6px 10px', border: '1px solid #d1d5db', borderRadius: 6, fontSize: 13, color: '#111827', background: '#fff', boxSizing: 'border-box' };
 
-const selectStyle: React.CSSProperties = {
-  display: 'block',
-  width: '100%',
-  padding: '8px 12px',
-  border: '1px solid #d1d5db',
-  borderRadius: 6,
-  fontSize: 14,
-  color: '#111827',
-  background: '#fff',
-  boxSizing: 'border-box',
-};
+const dropZoneStyle: React.CSSProperties = { border: '2px dashed', borderRadius: 8, padding: '24px 16px', textAlign: 'center', cursor: 'pointer', transition: 'border-color 0.15s, background 0.15s' };
 
-const dropZoneStyle: React.CSSProperties = {
-  border: '2px dashed',
-  borderRadius: 8,
-  padding: '28px 16px',
-  textAlign: 'center',
-  cursor: 'pointer',
-  transition: 'border-color 0.15s, background 0.15s',
-};
+const entryRow: React.CSSProperties = { background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: 8, padding: '12px 14px', marginBottom: 10 };
 
-const primaryBtn: React.CSSProperties = {
-  padding: '9px 22px',
-  borderRadius: 6,
-  border: 'none',
-  cursor: 'pointer',
-  fontWeight: 600,
-  fontSize: 14,
-  background: '#2563eb',
-  color: '#fff',
-};
+const primaryBtn: React.CSSProperties = { padding: '9px 22px', borderRadius: 6, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: '#2563eb', color: '#fff' };
 
-const secondaryBtn: React.CSSProperties = {
-  padding: '9px 22px',
-  borderRadius: 6,
-  border: '1px solid #d1d5db',
-  cursor: 'pointer',
-  fontWeight: 600,
-  fontSize: 14,
-  background: '#fff',
-  color: '#374151',
-};
+const secondaryBtn: React.CSSProperties = { padding: '9px 22px', borderRadius: 6, border: '1px solid #d1d5db', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: '#fff', color: '#374151' };
 
-// ── Upload icon (inline SVG for the screen plugin nav) ────────────────────────
+const removeBtn: React.CSSProperties = { background: 'none', border: 'none', cursor: 'pointer', color: '#9ca3af', fontSize: 14, padding: '0 2px', lineHeight: 1 };
+
+// ── Upload icon ───────────────────────────────────────────────────────────────
 
 export const UploadIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
