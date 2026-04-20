@@ -32,6 +32,53 @@ const DatePickerField = ({ input, field }: { input: { name: string; value: strin
 );
 
 // =============================================================================
+// Time Picker Field Component
+// =============================================================================
+
+/**
+ * Native HTML time picker — replaces free-text time entry with a browser
+ * time picker. Stores values as "H:MM AM/PM" to match the existing format.
+ * Converts to/from 24-hour HH:MM for the <input type="time"> value.
+ */
+function to24h(val: string): string {
+  if (!val) return '';
+  const m = val.trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if (!m) return '';
+  let h = parseInt(m[1], 10);
+  const min = m[2];
+  const period = m[3].toUpperCase();
+  if (period === 'AM' && h === 12) h = 0;
+  if (period === 'PM' && h !== 12) h += 12;
+  return `${String(h).padStart(2, '0')}:${min}`;
+}
+
+function to12h(val: string): string {
+  if (!val) return '';
+  const [hStr, min] = val.split(':');
+  let h = parseInt(hStr, 10);
+  const period = h >= 12 ? 'PM' : 'AM';
+  if (h === 0) h = 12;
+  if (h > 12) h -= 12;
+  return `${h}:${min} ${period}`;
+}
+
+const TimePickerField = ({ input, field }: { input: { name: string; value: string; onChange: (v: string) => void }; field: { label: string; description?: string; required?: boolean } }) => (
+  <div style={{ marginBottom: 16 }}>
+    <label htmlFor={input.name} style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>
+      {field.label}{field.required && <span style={{ color: '#dc2626' }}> *</span>}
+    </label>
+    <input
+      id={input.name}
+      type="time"
+      value={to24h(input.value)}
+      onChange={e => input.onChange(e.target.value ? to12h(e.target.value) : '')}
+      style={{ display: 'block', width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: 6, fontSize: 14, color: '#111827', background: '#fff', boxSizing: 'border-box' }}
+    />
+    {field.description && <p style={{ fontSize: 12, color: '#6b7280', marginTop: 4 }}>{field.description}</p>}
+  </div>
+);
+
+// =============================================================================
 // Conditional Field Component
 // =============================================================================
 
@@ -89,16 +136,6 @@ const validateEmail = (value: string): string | undefined => {
   return undefined;
 };
 
-/**
- * Time format validation — expects "H:MM AM/PM" (e.g., "9:00 AM")
- */
-const validateTimeFormat = (value: string): string | undefined => {
-  if (!value) return undefined;
-  if (!/^\d{1,2}:\d{2}\s*(AM|PM)$/i.test(value.trim())) {
-    return 'Enter time as H:MM AM or H:MM PM (e.g., "9:00 AM", "1:30 PM")';
-  }
-  return undefined;
-};
 
 
 /**
@@ -155,15 +192,13 @@ const eventFields: Template['fields'] = [
     type: 'string',
     name: 'keyTime',
     label: 'Key/Start Time (EST)',
-    description: 'Enter time in EST (e.g., "9:00 AM", "1:30 PM")',
-    ui: { validate: validateTimeFormat },
+    ui: { component: TimePickerField },
   },
   {
     type: 'string',
     name: 'checkInTime',
     label: 'Check-in Time (EST)',
-    description: 'Enter time in EST (e.g., "7:00 AM", "8:30 AM")',
-    ui: { validate: validateTimeFormat },
+    ui: { component: TimePickerField },
   },
 
   // -------------------------------------------------------------------------
