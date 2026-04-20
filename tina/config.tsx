@@ -1,10 +1,6 @@
 import React from 'react';
 import { defineConfig, type Template } from 'tinacms';
 import { CsvUploaderScreen, UploadIcon } from './CsvUploaderScreen';
-// useFormState is used for conditional field visibility (show enduro-only fields
-// only when eventType === 'Enduro'). TinaCMS bundles react-final-form internally.
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const { useFormState } = require('tinacms/node_modules/react-final-form');
 
 // =============================================================================
 // Custom Field Components
@@ -87,9 +83,9 @@ const TimePickerField = ({ input, field }: { input: { name: string; value: strin
  * eventType is 'Enduro'. Used for closedCourse and gasAway.
  */
 function endurosOnlyToggle(label: string, description: string) {
-  return function EndurosOnlyField({ input }: { input: { name: string; value: boolean; onChange: (v: boolean) => void } }) {
-    const { values } = useFormState({ subscription: { values: true } });
-    if (values.eventType !== 'Enduro') return null;
+  return function EndurosOnlyField({ input, form }: { input: { name: string; value: boolean; onChange: (v: boolean) => void }; form: any }) {
+    const eventType = form?.getState?.()?.values?.eventType;
+    if (eventType !== 'Enduro') return null;
     return (
       <div style={{ margin: '8px 0' }}>
         <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
