@@ -1,0 +1,83 @@
+name: Process Team Results
+
+# Triggers when a CSV is uploaded via the TinaCMS "Upload Team Results" screen.
+# cms.media.persist() writes to src/ (publicFolder), so the file lands at
+# src/uploads/team-results/YY-{en|hs}-{club}.csv  e.g. 26-en-sjer.csv
+on:
+  push:
+    paths:
+      - 'src/uploads/team-results/*.csv'
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Process CSV files
+        run: |
+          shopt -s nullglob
+          csvs=(src/uploads/team-results/*.csv)
+
+          if [ ${#csvs[@]} -eq 0 ]; then
+            echo "No CSVs found."
+            exit 0
+          fi
+
+          for csv in "${csvs[@]}"; do
+            name=$(basename "$csv" .csv)
+            echo "━━━ Processing: $name.csv ━━━"
+
+            # Filename convention: YY-{en|hs}-{clubabbr}
+            # e.g. 26-en-sjer → year=2026, series=Enduro, abbr=SJER
+            IFS='-' read -ra PARTS <<< "$name"
+
+            if [ ${#PARTS[@]} -lt 3 ]; then
+              echo "  ✗ Unexpected filename format: $name"
+              echo "    Expected: YY-{en|hs}-{clubabbr} (e.g. 26-en-sjer)"
+              exit 1
+            fi
+
+            YY="${PARTS[0]}"
+            SERIES_CODE="${PARTS[1],,}"   # lowercase
+            ABBR="${PARTS[2]^^}"          # uppercase
+
+            YEAR="20$YY"
+            if [ "$SERIES_CODE" = "en" ]; then
+              SERIES="Enduro"
+            elif [ "$SERIES_CODE" = "hs" ]; then
+              SERIES="Hare Scramble"
+            else
+              echo "  ✗ Unknown series code: $SERIES_CODE (expected 'en' or 'hs')"
+              exit 1
+            fi
+
+            echo "  Event:  $ABBR"
+            echo "  Series: $SERIES"
+            echo "  Year:   $YEAR"
+
+            node scripts/import-team-results.mjs "$csv" "$ABBR" "$YEAR" "$SERIES"
+
+            # Archive the processed CSV
+            mkdir -p uploads/team-results/processed
+            mv "$csv" "uploads/team-results/processed/${name}.csv"
+            echo "  Archived to uploads/team-results/processed/"
+          done
+
+      - name: Commit results
+        run: |
+          git config user.name "ECEA Results Bot"
+          git config user.email "noreply@ecea.org"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "chore: process team results from CSV upload"
+            git push
