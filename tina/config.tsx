@@ -1,4 +1,110 @@
+import React from 'react';
 import { defineConfig, type Template } from 'tinacms';
+import { CsvUploaderScreen, UploadIcon } from './CsvUploaderScreen';
+
+// =============================================================================
+// Custom Field Components
+// =============================================================================
+
+/**
+ * Native HTML date picker — replaces TinaCMS's datetime field which always
+ * pre-fills with today and has no clear button. This starts empty, shows a
+ * calendar on click, stores YYYY-MM-DD, and can be cleared natively.
+ */
+const DatePickerField = ({ input, field }: { input: { name: string; value: string; onChange: (v: string) => void }; field: { label: string; description?: string; required?: boolean } }) => (
+  <div style={{ marginBottom: 16 }}>
+    <label htmlFor={input.name} style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>
+      {field.label}{field.required && <span style={{ color: '#dc2626' }}> *</span>}
+    </label>
+    <input
+      id={input.name}
+      type="date"
+      value={input.value || ''}
+      onChange={e => input.onChange(e.target.value)}
+      style={{ display: 'block', width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: 6, fontSize: 14, color: '#111827', background: '#fff', boxSizing: 'border-box' }}
+    />
+    {field.description && <p style={{ fontSize: 12, color: '#6b7280', marginTop: 4 }}>{field.description}</p>}
+  </div>
+);
+
+// =============================================================================
+// Time Picker Field Component
+// =============================================================================
+
+/**
+ * Native HTML time picker — replaces free-text time entry with a browser
+ * time picker. Stores values as "H:MM AM/PM" to match the existing format.
+ * Converts to/from 24-hour HH:MM for the <input type="time"> value.
+ */
+function to24h(val: string): string {
+  if (!val) return '';
+  const m = val.trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if (!m) return '';
+  let h = parseInt(m[1], 10);
+  const min = m[2];
+  const period = m[3].toUpperCase();
+  if (period === 'AM' && h === 12) h = 0;
+  if (period === 'PM' && h !== 12) h += 12;
+  return `${String(h).padStart(2, '0')}:${min}`;
+}
+
+function to12h(val: string): string {
+  if (!val) return '';
+  const [hStr, min] = val.split(':');
+  let h = parseInt(hStr, 10);
+  const period = h >= 12 ? 'PM' : 'AM';
+  if (h === 0) h = 12;
+  if (h > 12) h -= 12;
+  return `${h}:${min} ${period}`;
+}
+
+const TimePickerField = ({ input, field }: { input: { name: string; value: string; onChange: (v: string) => void }; field: { label: string; description?: string; required?: boolean } }) => (
+  <div style={{ marginBottom: 16 }}>
+    <label htmlFor={input.name} style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 6 }}>
+      {field.label}{field.required && <span style={{ color: '#dc2626' }}> *</span>}
+    </label>
+    <input
+      id={input.name}
+      type="time"
+      value={to24h(input.value)}
+      onChange={e => input.onChange(e.target.value ? to12h(e.target.value) : '')}
+      style={{ display: 'block', width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: 6, fontSize: 14, color: '#111827', background: '#fff', boxSizing: 'border-box' }}
+    />
+    {field.description && <p style={{ fontSize: 12, color: '#6b7280', marginTop: 4 }}>{field.description}</p>}
+  </div>
+);
+
+// =============================================================================
+// Conditional Field Component
+// =============================================================================
+
+/**
+ * Returns a boolean toggle that only renders when the current event's
+ * eventType is 'Enduro'. Used for closedCourse and gasAway.
+ */
+function endurosOnlyToggle(label: string, description: string) {
+  return function EndurosOnlyField({ input, form }: { input: { name: string; value: boolean; onChange: (v: boolean) => void }; form: any }) {
+    const eventType = form?.getState?.()?.values?.eventType;
+    if (eventType !== 'Enduro') return null;
+    return (
+      <div style={{ margin: '8px 0' }}>
+        <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
+          <input
+            type="checkbox"
+            name={input.name}
+            checked={!!input.value}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => input.onChange(e.target.checked)}
+            style={{ width: 16, height: 16 }}
+          />
+          <span style={{ fontSize: 13, fontWeight: 600 }}>{label}</span>
+        </label>
+        {description && (
+          <p style={{ fontSize: 12, color: '#6b7280', marginTop: 4, marginLeft: 24 }}>{description}</p>
+        )}
+      </div>
+    );
+  };
+}
 
 // =============================================================================
 // Shared Field Definitions (DRY)
@@ -14,6 +120,27 @@ const validateUrl = (value: string): string | undefined => {
   }
   return undefined;
 };
+
+/**
+ * Email validation helper
+ */
+const validateEmail = (value: string): string | undefined => {
+  if (!value) return undefined;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+    return 'Please enter a valid email address (e.g., name@example.com)';
+  }
+  return undefined;
+};
+
+
+
+/**
+ * All active member club abbreviations — used for dropdowns to prevent typos
+ */
+const CLUB_ABBREVIATIONS = [
+  'BER', 'CDR', 'CJCR', 'DER', 'DVTR', 'GMER', 'HMDR', 'IDR', 'MCI',
+  'MMC', 'OCCR', 'PBER', 'RORR', 'RRMC', 'SJER', 'SPER', 'STER', 'TCSMC', 'VFTR',
+];
 
 /**
  * Common event fields used across all year collections
@@ -43,29 +170,31 @@ const eventFields: Template['fields'] = [
   // Date & Time
   // -------------------------------------------------------------------------
   {
-    type: 'datetime',
+    type: 'string',
     name: 'date',
     label: 'Event Date',
     required: true,
     description: 'The start date of the event',
+    ui: { component: DatePickerField },
   },
   {
-    type: 'datetime',
+    type: 'string',
     name: 'endDate',
     label: 'End Date',
-    description: 'Only needed for multi-day events (e.g., 2-day enduros)',
+    description: 'Only needed for multi-day events',
+    ui: { component: DatePickerField },
   },
   {
     type: 'string',
     name: 'keyTime',
     label: 'Key/Start Time (EST)',
-    description: 'Enter time in EST (e.g., "9:00 AM", "1:30 PM")',
+    ui: { component: TimePickerField },
   },
   {
     type: 'string',
     name: 'checkInTime',
     label: 'Check-in Time (EST)',
-    description: 'Enter time in EST (e.g., "7:00 AM", "8:30 AM")',
+    ui: { component: TimePickerField },
   },
 
   // -------------------------------------------------------------------------
@@ -83,7 +212,8 @@ const eventFields: Template['fields'] = [
     name: 'hostingClubs',
     label: 'Hosting Clubs',
     list: true,
-    description: 'Club abbreviations (e.g., SJER, DVTR). Add one club per item.',
+    options: CLUB_ABBREVIATIONS,
+    description: 'Select the club(s) hosting this event. Add one entry per club.',
   },
 
   // -------------------------------------------------------------------------
@@ -101,13 +231,32 @@ const eventFields: Template['fields'] = [
     type: 'string',
     name: 'format',
     label: 'Format',
-    description: 'Race format (e.g., "Sprint Enduro", "2-Hour", "Time Keeping"). Leave blank for non-race events.',
+    options: [
+      'Time Keeping',
+      'Restart',
+      'Hare Scramble',
+      'Sprint Enduro',
+      'National Enduro',
+      'Dual Sport',
+      'Extreme Enduro',
+      'Family Fun Ride',
+      'Special',
+    ],
+    description: 'Race format. Leave blank for non-race events.',
   },
   {
     type: 'string',
     name: 'series',
     label: 'Series',
-    description: 'Which series this counts toward (e.g., "Enduro Series", "Hare Scramble Series")',
+    options: [
+      'ECEA Enduro Championship Series',
+      'ECEA Youth Series',
+      'Hare Scramble Series',
+      'Dual Sport Series',
+      'Special Series',
+      'ECEA Events',
+    ],
+    description: 'Which championship series this event counts toward',
   },
 
   // -------------------------------------------------------------------------
@@ -118,12 +267,14 @@ const eventFields: Template['fields'] = [
     name: 'closedCourse',
     label: 'Closed Course',
     description: 'Check if the course is closed to the public during the event',
+    ui: { component: endurosOnlyToggle('Closed Course', 'Check if the course is closed to the public during the event') },
   },
   {
     type: 'boolean',
     name: 'gasAway',
     label: 'Gas Away',
-    description: 'Check if gas is available at the venue (gas away = no need to carry extra fuel)',
+    description: 'Check if there is a gas stop during the event (riders don\'t need to carry all their fuel for the full course)',
+    ui: { component: endurosOnlyToggle('Gas Away', "Riders don't need to carry all their fuel — there's a gas stop on course") },
   },
   {
     type: 'string',
@@ -293,21 +444,21 @@ const eventTypeAbbreviations: Record<string, string> = {
 };
 
 /**
- * Create an events collection for a specific year
+ * Create an events collection for a specific year.
+ * Pass `locked: true` for past years to prevent creating or deleting events.
  */
-function createEventsCollection(year: number) {
+function createEventsCollection(year: number, { locked = false } = {}) {
   return {
     name: `events${year}`,
     label: `Events (${year})`,
     path: `src/content/events/${year}`,
     format: 'md' as const,
     defaultItem: () => ({
-      date: new Date().toISOString(),
       draft: true,
-      closedCourse: false,
-      gasAway: false,
     }),
     ui: {
+      ...(locked && { allowedActions: { create: false, delete: false } }),
+      router: ({ document }) => `events/${document._sys.filename}`,
       filename: {
         slugify: (values: Record<string, unknown>) => {
           // Year (2 digits)
@@ -365,6 +516,18 @@ export default defineConfig({
     },
   },
 
+  cmsCallback: (cms) => {
+    cms.plugins.add({
+      __type: 'screen',
+      name: 'Upload Team Results',
+      Component: CsvUploaderScreen,
+      Icon: UploadIcon,
+      layout: 'popup',
+      navCategory: 'Site',
+    });
+    return cms;
+  },
+
   schema: {
     collections: [
       // =========================================================================
@@ -379,9 +542,21 @@ export default defineConfig({
           pubDate: new Date().toISOString(),
           author: 'ECEA',
           category: 'news',
-          draft: false,
+          draft: true,
         }),
         ui: {
+          router: ({ document }) => `blog/${document._sys.filename}`,
+          beforeSubmit: async ({ values }: { values: Record<string, unknown> }) => {
+            return {
+              ...values,
+              // Trim accidental whitespace from text fields
+              title: typeof values.title === 'string' ? values.title.trim() : values.title,
+              author: typeof values.author === 'string' ? values.author.trim() : values.author,
+              description: typeof values.description === 'string' ? values.description.trim() : values.description,
+              // Default pubDate to now if somehow left blank
+              pubDate: values.pubDate || new Date().toISOString(),
+            };
+          },
           filename: {
             readonly: false,
             slugify: (values) => {
@@ -473,7 +648,7 @@ export default defineConfig({
             name: 'tags',
             label: 'Tags',
             list: true,
-            description: 'Keywords for filtering and search (e.g., "enduro", "results", "youth")',
+            description: 'Keywords for filtering and search. Common tags: enduro, hare-scramble, dual-sport, results, youth, registration, announcement, recap, schedule, points, awards',
           },
           {
             type: 'boolean',
@@ -501,9 +676,9 @@ export default defineConfig({
       // Events by Year
       // =========================================================================
       createEventsCollection(2026),
-      createEventsCollection(2025),
-      createEventsCollection(2024),
-      createEventsCollection(2023),
+      createEventsCollection(2025, { locked: true }),
+      createEventsCollection(2024, { locked: true }),
+      createEventsCollection(2023, { locked: true }),
 
       // =========================================================================
       // Clubs
@@ -513,6 +688,10 @@ export default defineConfig({
         label: 'Clubs',
         path: 'src/content/clubs',
         format: 'md',
+        ui: {
+          allowedActions: { delete: false },
+          router: ({ document }) => `clubs/${document._sys.filename}`,
+        },
         fields: [
           {
             type: 'string',
@@ -571,6 +750,7 @@ export default defineConfig({
             name: 'contact',
             label: 'Contact Email',
             description: 'Public contact email for the club',
+            ui: { validate: validateEmail },
           },
           {
             type: 'string',
@@ -620,6 +800,10 @@ export default defineConfig({
         label: 'Racing Series',
         path: 'src/content/series',
         format: 'md',
+        ui: {
+          allowedActions: { delete: false },
+          router: ({ document }) => `series/${document._sys.filename}`,
+        },
         fields: [
           {
             type: 'string',
@@ -720,6 +904,7 @@ export default defineConfig({
         label: 'Board Members',
         path: 'src/content/board',
         format: 'md',
+        ui: { allowedActions: { delete: false } },
         fields: [
           {
             type: 'string',
@@ -772,6 +957,7 @@ export default defineConfig({
             name: 'email',
             label: 'Email',
             description: 'Public contact email (optional)',
+            ui: { validate: validateEmail },
           },
           {
             type: 'string',
@@ -815,6 +1001,7 @@ export default defineConfig({
         label: 'Staff Contacts',
         path: 'src/content/staff',
         format: 'md',
+        ui: { allowedActions: { delete: false } },
         fields: [
           {
             type: 'string',
@@ -829,6 +1016,7 @@ export default defineConfig({
             name: 'email',
             label: 'Email',
             description: 'Contact email',
+            ui: { validate: validateEmail },
           },
           {
             type: 'string',
@@ -885,6 +1073,7 @@ export default defineConfig({
         label: 'Sponsors',
         path: 'src/content/sponsors',
         format: 'md',
+        ui: { allowedActions: { delete: false } },
         fields: [
           {
             type: 'string',
@@ -1097,6 +1286,7 @@ export default defineConfig({
         label: 'Site Info',
         path: 'src/content/siteInfo',
         format: 'md',
+        ui: { allowedActions: { create: false, delete: false } },
         fields: [
           { type: 'string', name: 'title', label: 'Title', required: true, isTitle: true },
           { type: 'rich-text', name: 'body', label: 'Content', isBody: true },
@@ -1118,6 +1308,10 @@ export default defineConfig({
             create: true,
             delete: false,
           },
+          beforeSubmit: async ({ values }: { values: Record<string, unknown> }) => ({
+            ...values,
+            lastUpdated: new Date().toISOString().slice(0, 10),
+          }),
           filename: {
             slugify: (values: Record<string, unknown>) => {
               const year = values.year || new Date().getFullYear();
@@ -1146,7 +1340,7 @@ export default defineConfig({
             type: 'string',
             name: 'lastUpdated',
             label: 'Last Updated',
-            description: 'Date of last update (YYYY-MM-DD)',
+            ui: { component: () => null },
           },
           {
             type: 'object',
@@ -1172,7 +1366,8 @@ export default defineConfig({
                 name: 'club',
                 label: 'Club',
                 required: true,
-                description: 'Club abbreviation (e.g., "OCCR")',
+                options: CLUB_ABBREVIATIONS,
+                description: 'Select the club this team represents',
               },
             ],
           },
@@ -1206,7 +1401,8 @@ export default defineConfig({
                 name: 'date',
                 label: 'Date',
                 required: true,
-                description: 'Format: YYYY-MM-DD',
+                description: 'Event date',
+                ui: { component: DatePickerField },
               },
               {
                 type: 'string',
@@ -1214,7 +1410,8 @@ export default defineConfig({
                 label: 'Host Club(s)',
                 list: true,
                 required: true,
-                description: 'Club abbreviations that host this event (their teams get 0 points). Usually just one.',
+                options: CLUB_ABBREVIATIONS,
+                description: 'Club(s) hosting this event (their teams get 0 points). Usually just one.',
               },
             ],
           },
@@ -1232,6 +1429,9 @@ export default defineConfig({
         path: 'src/content/teamEventResults',
         format: 'json',
         ui: {
+          allowedActions: {
+            delete: false,
+          },
           filename: {
             slugify: (values: Record<string, unknown>) => {
               const year = String(values.year || new Date().getFullYear()).slice(2);
@@ -1287,7 +1487,8 @@ export default defineConfig({
                 name: 'club',
                 label: 'Club',
                 required: true,
-                description: 'Club abbreviation (e.g., "RRMC")',
+                options: CLUB_ABBREVIATIONS,
+                description: 'Select the club this team represents',
               },
               {
                 type: 'number',
@@ -1327,6 +1528,10 @@ export default defineConfig({
             create: false,
             delete: false,
           },
+          beforeSubmit: async ({ values }: { values: Record<string, unknown> }) => ({
+            ...values,
+            lastUpdated: new Date().toISOString().slice(0, 10),
+          }),
         },
         fields: [
           {
@@ -1334,7 +1539,7 @@ export default defineConfig({
             name: 'year',
             label: 'Year',
             required: true,
-            description: 'The season year (e.g., 2026)',
+            description: 'The season year (e.g., 2025)',
           },
           {
             type: 'string',
@@ -1348,7 +1553,7 @@ export default defineConfig({
             name: 'lastUpdated',
             label: 'Last Updated',
             required: true,
-            description: 'Date of last update (YYYY-MM-DD format)',
+            ui: { component: () => null },
           },
           {
             type: 'object',
@@ -1378,7 +1583,8 @@ export default defineConfig({
                 name: 'date',
                 label: 'Date',
                 required: true,
-                description: 'Format: YYYY-MM-DD',
+                description: 'Event date',
+                ui: { component: DatePickerField },
               },
               {
                 type: 'boolean',
