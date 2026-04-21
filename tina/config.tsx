@@ -1400,7 +1400,7 @@ export default defineConfig({
                 required: true,
               },
               {
-                type: 'datetime',
+                type: 'string',
                 name: 'date',
                 label: 'Date',
                 required: true,
@@ -1582,7 +1582,7 @@ export default defineConfig({
                 required: true,
               },
               {
-                type: 'datetime',
+                type: 'string',
                 name: 'date',
                 label: 'Date',
                 required: true,
