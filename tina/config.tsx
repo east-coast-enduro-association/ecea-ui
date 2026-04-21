@@ -9,7 +9,10 @@ import { CsvUploaderScreen, UploadIcon } from './CsvUploaderScreen';
 /**
  * Native HTML date picker — replaces TinaCMS's datetime field which always
  * pre-fills with today and has no clear button. This starts empty, shows a
- * calendar on click, stores YYYY-MM-DD, and can be cleared natively.
+ * calendar on click, and can be cleared natively.
+ *
+ * The schema type stays 'datetime' (ISO string) for TinaCloud compatibility.
+ * This component converts: ISO datetime ↔ YYYY-MM-DD for the picker display.
  */
 const DatePickerField = ({ input, field }: { input: { name: string; value: string; onChange: (v: string) => void }; field: { label: string; description?: string; required?: boolean } }) => (
   <div style={{ marginBottom: 16 }}>
@@ -19,8 +22,8 @@ const DatePickerField = ({ input, field }: { input: { name: string; value: strin
     <input
       id={input.name}
       type="date"
-      value={input.value || ''}
-      onChange={e => input.onChange(e.target.value)}
+      value={input.value ? input.value.slice(0, 10) : ''}
+      onChange={e => input.onChange(e.target.value ? e.target.value + 'T00:00:00.000Z' : '')}
       style={{ display: 'block', width: '100%', padding: '8px 12px', border: '1px solid #d1d5db', borderRadius: 6, fontSize: 14, color: '#111827', background: '#fff', boxSizing: 'border-box' }}
     />
     {field.description && <p style={{ fontSize: 12, color: '#6b7280', marginTop: 4 }}>{field.description}</p>}
@@ -170,7 +173,7 @@ const eventFields: Template['fields'] = [
   // Date & Time
   // -------------------------------------------------------------------------
   {
-    type: 'string',
+    type: 'datetime',
     name: 'date',
     label: 'Event Date',
     required: true,
@@ -178,7 +181,7 @@ const eventFields: Template['fields'] = [
     ui: { component: DatePickerField },
   },
   {
-    type: 'string',
+    type: 'datetime',
     name: 'endDate',
     label: 'End Date',
     description: 'Only needed for multi-day events',
@@ -1397,7 +1400,7 @@ export default defineConfig({
                 required: true,
               },
               {
-                type: 'string',
+                type: 'datetime',
                 name: 'date',
                 label: 'Date',
                 required: true,
@@ -1579,7 +1582,7 @@ export default defineConfig({
                 required: true,
               },
               {
-                type: 'string',
+                type: 'datetime',
                 name: 'date',
                 label: 'Date',
                 required: true,
