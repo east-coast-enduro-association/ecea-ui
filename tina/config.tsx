@@ -461,7 +461,6 @@ function createEventsCollection(year: number, { locked = false } = {}) {
     }),
     ui: {
       ...(locked && { allowedActions: { create: false, delete: false } }),
-      router: ({ document }) => `events/${document._sys.filename}`,
       filename: {
         slugify: (values: Record<string, unknown>) => {
           // Year (2 digits)
@@ -548,7 +547,6 @@ export default defineConfig({
           draft: true,
         }),
         ui: {
-          router: ({ document }) => `blog/${document._sys.filename}`,
           beforeSubmit: async ({ values }: { values: Record<string, unknown> }) => {
             return {
               ...values,
@@ -693,7 +691,6 @@ export default defineConfig({
         format: 'md',
         ui: {
           allowedActions: { delete: false },
-          router: ({ document }) => `clubs/${document._sys.filename}`,
         },
         fields: [
           {
@@ -805,7 +802,6 @@ export default defineConfig({
         format: 'md',
         ui: {
           allowedActions: { delete: false },
-          router: ({ document }) => `series/${document._sys.filename}`,
         },
         fields: [
           {
