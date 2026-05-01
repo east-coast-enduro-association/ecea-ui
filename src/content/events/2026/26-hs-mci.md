@@ -1,22 +1,28 @@
 ---
 title: Stump Jumper
 summary: A premier sand run in NJ
-draft: false
-date: '2026-05-17T10:00:00.000Z'
-location: 942 Main St (RT 9), Eagleswood, NJ 08092
+date: 2026-05-17T10:00:00.000Z
+checkInTime: '7:00 AM'
+location: '942 Main St (RT 9), Eagleswood, NJ 08092'
 hostingClubs:
   - MCI
 eventType: Hare Scramble
 format: Hare Scramble
 series: Hare Scramble Series
-checkInTime: '7:00 AM'
 closedCourse: false
 gasAway: false
-image: '../../../assets/clubs/logos/mci.jpg'
+image: ../../../assets/clubs/logos/mci.jpg
+flyer: /assets/events/flyers/SJHS_2026_Updated3.png
+motoTallyId: 1
+registrationLink: 'https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx'
+resultsLink: 'https://www.moto-tally.com/ECEA/ECEA/Results.aspx'
+draft: false
 ---
+
 # ADULT RACE DETAILS
 
 **Gates Open:**
+
 * SATURDAY 7AM
 * SUNDAY 6AM
 
