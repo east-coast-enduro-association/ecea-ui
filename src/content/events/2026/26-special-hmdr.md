@@ -1,18 +1,21 @@
 ---
 title: Locked & Loaded Hard Scramble
-summary: Keystone Challenge
-draft: false
-date: 2026-05-25
-location: TBA
+summary: US Hard Enduro - AMA National / East Regional
+date: 2026-05-23T00:00:00.000Z
+endDate: 2026-05-24T00:00:00.000Z
+location: '342 Cabin Lane, Sugarloaf, PA'
 hostingClubs:
   - HMDR
 eventType: Special
-format: Hard Scramble
+format: Hare Scramble
 series: Special Series
 closedCourse: false
 gasAway: false
-image: '../../../assets/clubs/logos/hmdr.png'
+gateFee: $10
+image: ../../../assets/clubs/logos/hmdr.png
+draft: false
 ---
+
 Keystone Challenge hard scramble event.
 
 Details coming soon.
