@@ -13,6 +13,7 @@ closedCourse: false
 gasAway: false
 gateFee: $10
 image: ../../../assets/clubs/logos/hmdr.png
+flyer: /assets/events/flyers/Locked26R6final.jpg
 draft: false
 ---
 
