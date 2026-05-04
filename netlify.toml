@@ -1,6 +1,7 @@
 [build]
   command = "npm run build:tina"
   publish = "dist"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':!src/uploads'"
 
 [build.environment]
   NODE_VERSION = "20"
