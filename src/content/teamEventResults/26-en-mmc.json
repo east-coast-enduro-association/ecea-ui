@@ -1,0 +1,202 @@
+{
+  "year": 2026,
+  "series": "Enduro",
+  "eventAbbr": "MMC",
+  "results": [
+    {
+      "team": "DER - I",
+      "club": "DER",
+      "points": 25,
+      "epoints": 2887,
+      "riders": [
+        "DOUG ALLEN II",
+        "ANGELO RISPOLI",
+        "ZACHARY PAGE",
+        "BRIAN TURNER",
+        "THOMAS RAIO"
+      ]
+    },
+    {
+      "team": "SJER - CHECKERS",
+      "club": "SJER",
+      "points": 22,
+      "epoints": 3062,
+      "riders": [
+        "STEVE MASON JR",
+        "DOMENIC RINALDI",
+        "TROY DENISE",
+        "TONY HODGSON",
+        "MACGREGOR HENNAUT"
+      ]
+    },
+    {
+      "team": "CJCR - TEAM BOB",
+      "club": "CJCR",
+      "points": 20,
+      "epoints": 3287,
+      "riders": [
+        "SEAN KOELLER",
+        "AUSTIN CHAVOUS",
+        "CHAD LOCH",
+        "GREG PRESTON",
+        "NATE MEILY"
+      ]
+    },
+    {
+      "team": "TCSMC - HAMMER 1",
+      "club": "TCSMC",
+      "points": 18,
+      "epoints": 3325,
+      "riders": [
+        "KYLE MCDONAL",
+        "KYLE PLUMMER",
+        "DEVIN MACAVOY",
+        "JOE CASTALDI",
+        "BRIAN EVANS"
+      ]
+    },
+    {
+      "team": "CDR - KILLER BEES",
+      "club": "CDR",
+      "points": 16,
+      "epoints": 3396,
+      "riders": [
+        "JOSEPH FORD",
+        "JOE SUMPTER",
+        "JOSHUA PITTMAN",
+        "COLIN BLACK",
+        "BRADLEY CAMP"
+      ]
+    },
+    {
+      "team": "RRMC - A",
+      "club": "RRMC",
+      "points": 15,
+      "epoints": 3476,
+      "riders": [
+        "MAVERICK REINER",
+        "ROBERT CIVILETTI JR",
+        "NICHOLAS LOBOSCO",
+        "DOM FALLENI",
+        "DEREK RYAN"
+      ]
+    },
+    {
+      "team": "OCCR - PINE CONE KILLERS",
+      "club": "OCCR",
+      "points": 14,
+      "epoints": 3898,
+      "riders": [
+        "CHRISTOPHER RIZZON",
+        "DONOVAN MARVIN",
+        "BRANDON SHARFF",
+        "ANDY BYLSMA",
+        "DANIEL BOYLE"
+      ]
+    },
+    {
+      "team": "DVTR - DIGGERS",
+      "club": "DVTR",
+      "points": 13,
+      "epoints": 4210,
+      "riders": [
+        "VAN MCCARREN",
+        "JAMES ASHMEN",
+        "MICHAEL ABRAMO",
+        "ERIC SIMPSON",
+        "JAMES LANDVATER JR"
+      ]
+    },
+    {
+      "team": "SJER - SHORT BUS KIDZ",
+      "club": "SJER",
+      "points": 12,
+      "epoints": 4662,
+      "riders": [
+        "TYLER GRACE",
+        "BRIAN GRAU",
+        "JOHN SCOLERI",
+        "MARK HARRINGTON",
+        "RICH LECHNER JR"
+      ]
+    },
+    {
+      "team": "DER -  II",
+      "club": "DER",
+      "points": 11,
+      "epoints": 3583,
+      "riders": [
+        "JACOB NOWAKOWSKI",
+        "KRIS BIZZARI",
+        "MIKE TEOLI",
+        "MARK SCHLEEWEIS",
+        "CHUCK STAPLEFORD"
+      ]
+    },
+    {
+      "team": "OCCR - CHECK MATES",
+      "club": "OCCR",
+      "points": 10,
+      "epoints": 5200,
+      "riders": [
+        "JIM POTTER",
+        "MICHAEL TREZZA",
+        "ARTHUR DOWNS",
+        "ROBERT DIMOCK",
+        "GREG VAN NESS"
+      ]
+    },
+    {
+      "team": "DER - III",
+      "club": "DER",
+      "points": 9,
+      "epoints": 5054,
+      "riders": [
+        "JESSE DAVIS",
+        "AUSTIN SCHWARZ",
+        "ANTHONY LACHETTE",
+        "ADAM BAKER",
+        "JOSEPH FUNK"
+      ]
+    },
+    {
+      "team": "CJCR - TEAM GORY",
+      "club": "CJCR",
+      "points": 8,
+      "epoints": 4710,
+      "riders": [
+        "SARAH MICKEY",
+        "ETHAN OTANI",
+        "TIMOTHY HULMES",
+        "WILLIAM BRADY",
+        "STEVEN MCKENZIE JR"
+      ]
+    },
+    {
+      "team": "DVTR - II",
+      "club": "DVTR",
+      "points": 7,
+      "epoints": 6407,
+      "riders": [
+        "BRAD HARGIS",
+        "EDWARD ANSKIS",
+        "THOMAS KUZMICKI",
+        "JEFFREY FOSTER",
+        "RICHARD POWELL"
+      ]
+    },
+    {
+      "team": "OCCR - KILLER C'S",
+      "club": "OCCR",
+      "points": 6,
+      "epoints": 7859,
+      "riders": [
+        "DERON DITTMER",
+        "ALBERT ZIPF",
+        "JAXON HAWS",
+        "PAUL VALENTINE JR",
+        "WAYNE ZUCATTI"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "year": 2026,
+  "series": "Enduro",
+  "eventAbbr": "CJCR",
+  "results": [
+    {
+      "team": "OCCR - SAND BLASTERS",
+      "club": "OCCR",
+      "points": 25,
+      "epoints": 13,
+      "riders": [
+        "RYAN CANAVAN",
+        "CHRISTOPHER SMITH",
+        "CHRISTOPHER RIZZON",
+        "JONATHAN SPAFFORD",
+        "DANIEL BOYLE"
+      ]
+    },
+    {
+      "team": "DER - #1",
+      "club": "DER",
+      "points": 22,
+      "epoints": 50,
+      "riders": [
+        "ZACHARY PAGE",
+        "DOUG ALLEN II",
+        "ANGELO RISPOLI",
+        "JESSE DAVIS",
+        "MIKE TEOLI"
+      ]
+    },
+    {
+      "team": "CDR - KILLER BEES",
+      "club": "CDR",
+      "points": 20,
+      "epoints": 23,
+      "riders": [
+        "JOSEPH FORD",
+        "JOE SUMPTER",
+        "COLIN BLACK",
+        "DEREK BRADLEY",
+        "BRADLEY CAMP"
+      ]
+    },
+    {
+      "team": "SJER - REALITY CHECK RACING",
+      "club": "SJER",
+      "points": 18,
+      "epoints": 57,
+      "riders": [
+        "TYLER GRACE",
+        "DOMENIC RINALDI",
+        "MACGREGOR HENNAUT",
+        "TONY HODGSON",
+        "DANIEL COMPTON"
+      ]
+    },
+    {
+      "team": "DER - #3",
+      "club": "DER",
+      "points": 16,
+      "epoints": 3,
+      "riders": [
+        "AUSTIN SCHWARZ",
+        "MATTHEW PRATOLA",
+        "KRIS BIZZARI",
+        "CODY NOVAK",
+        "ADAM BAKER"
+      ]
+    },
+    {
+      "team": "MMC - CHECK PLEASE",
+      "club": "MMC",
+      "points": 15,
+      "epoints": 45,
+      "riders": [
+        "RAYMOND POWELL",
+        "COLIN QUIRIN",
+        "RONALD DECARO",
+        "JARRETT HUNT",
+        "SEAN SUPERNOWICZ"
+      ]
+    },
+    {
+      "team": "DVTR - DIGGERS",
+      "club": "DVTR",
+      "points": 14,
+      "epoints": 15,
+      "riders": [
+        "DILLON MARCHELLO",
+        "MICHAEL ABRAMO",
+        "BRAD HARGIS",
+        "MATT WOUTERSZ",
+        "ERIC SIMPSON"
+      ]
+    },
+    {
+      "team": "OCCR - CUT LINE KINGS",
+      "club": "OCCR",
+      "points": 13,
+      "epoints": 41,
+      "riders": [
+        "PIERCE CAGEN",
+        "GREG VAN NESS",
+        "HANK KNABE",
+        "RYAN LUSK",
+        "AXEL ANDERSON"
+      ]
+    },
+    {
+      "team": "TCSMC - HAMMER 1",
+      "club": "TCSMC",
+      "points": 12,
+      "epoints": 36,
+      "riders": [
+        "KYLE MCDONAL",
+        "KYLE PLUMMER",
+        "JOE CASTALDI",
+        "JOHN CASTALDI",
+        "KELLI SILVERS"
+      ]
+    },
+    {
+      "team": "OCCR - SAND STORMERS",
+      "club": "OCCR",
+      "points": 11,
+      "epoints": 3,
+      "riders": [
+        "DERON DITTMER",
+        "JUSTIN STYLES",
+        "ROB STUMP",
+        "JAXON HAWS",
+        "MATTHEW CONNER"
+      ]
+    },
+    {
+      "team": "DER - #5",
+      "club": "DER",
+      "points": 10,
+      "epoints": 13,
+      "riders": [
+        "MICHAEL LEO",
+        "MAXX KYRITSIS",
+        "PHILIP GASPAROVIC",
+        "FRANK SINKKO",
+        "GEORGE POTTS"
+      ]
+    },
+    {
+      "team": "SJER - BRAKING BAD",
+      "club": "SJER",
+      "points": 9,
+      "epoints": 35,
+      "riders": [
+        "JAMES HOOKER",
+        "DON SCHROEDER",
+        "MICHAEL MADISON",
+        "ERIC JORDAN",
+        "DAVID ECKEL"
+      ]
+    }
+  ]
+}
