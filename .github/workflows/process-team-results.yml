@@ -66,9 +66,9 @@ jobs:
             node scripts/import-team-results.mjs "$csv" "$ABBR" "$YEAR" "$SERIES"
 
             # Archive the processed CSV
-            mkdir -p uploads/team-results/processed
-            mv "$csv" "uploads/team-results/processed/${name}.csv"
-            echo "  Archived to uploads/team-results/processed/"
+            mkdir -p src/uploads/team-results/processed
+            mv "$csv" "src/uploads/team-results/processed/${name}.csv"
+            echo "  Archived to src/uploads/team-results/processed/"
           done
 
       - name: Commit results
@@ -81,3 +81,4 @@ jobs:
           else
             git commit -m "chore: process team results from CSV upload"
             git push
+          fi
