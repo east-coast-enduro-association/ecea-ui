@@ -1,33 +1,27 @@
 #!/usr/bin/env node
 /**
- * Import per-event team results from a CSV file.
+ * Import team results from the scoring software's CSV export.
  *
- * CSV format — one row per team, in finishing order (1st place first).
- * Host club teams should be OMITTED (they earn 0 championship points by rule).
- * DNF/DQ teams should be OMITTED (no championship points).
- *
- * Columns:
- *   team     - Team name (e.g., "RIDGE RIDERS -A-")
- *   club     - Club abbreviation (e.g., "RRMC")
- *   epoints  - Emergency/tiebreaker points from scoring software (optional)
- *   riders   - Semicolon-separated rider names (optional)
- *              e.g., "JOHN SMITH;JANE DOE;BOB JONES;ALICE LEE;TOM CLARK"
- *
- * Championship points (25/22/20...) are auto-computed from row order.
- *
- * Example CSV:
- *   team,club,epoints,riders
- *   RIDGE RIDERS -A-,RRMC,7650,MAVERICK REINER;DYLAN RECCHIA;NICHOLAS LOBOSCO;ROBERT CIVILETTI JR;WILLIAM SIGLER
- *   FASTBOYZ I,SPER,10322,ZACH MILLER;LOGAN SMITH;NATHAN JOSEPH;GRAHAM SMITH;TIMOTHY SPRENKLE
- *   TEAM BOB,CJCR,10733,SEAN KOELLER;CHAD LOCH;GREG PRESTON;JUSTIN MCKENZIE;JASON RICE
+ * Accepts the CSV exactly as exported from the scoring software — no
+ * reformatting needed. The script detects team header rows vs rider rows,
+ * extracts the club abbreviation from the team name, excludes DNF/DQ teams,
+ * excludes the hosting club's teams, and auto-computes championship points
+ * from finishing rank.
  *
  * Usage:
- *   node scripts/import-team-results.mjs <csv-file> <event-abbr> [year] [series]
- *   npm run import-results -- <csv-file> <event-abbr> [year] [series]
+ *   node scripts/import-team-results.mjs <csv-file> <host-club-abbr> [year] [series]
+ *   npm run import-results -- <csv-file> <host-club-abbr> [year] [series]
  *
  * Examples:
- *   npm run import-results -- results-sjer.csv SJER
- *   npm run import-results -- results-mmc.csv MMC 2026 Enduro
+ *   npm run import-results -- ~/Downloads/results.csv SJER 2026 Enduro
+ *   npm run import-results -- ~/Downloads/results.csv MMC 2026 "Hare Scramble"
+ *
+ * Arguments:
+ *   csv-file        Path to the scoring software CSV export
+ *   host-club-abbr  Abbreviation of the club hosting this event (e.g. SJER).
+ *                   Their teams are automatically excluded (0 championship points by rule).
+ *   year            Season year (default: current year)
+ *   series          "Enduro" or "Hare Scramble" (default: Enduro)
  */
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
@@ -37,7 +31,7 @@ import { fileURLToPath } from 'url';
 const __dir = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dir, '..');
 
-// Championship points by finishing position (1st=25, 2nd=22, ... 20th=1, 21st+=0)
+// Championship points by finishing position (1st=25, 2nd=22, …, 20th=1, 21st+=0)
 const POINTS_SCALE = [
   25, 22, 20, 18, 16, 15, 14, 13, 12, 11,
   10,  9,  8,  7,  6,  5,  4,  3,  2,  1,
@@ -47,133 +41,145 @@ function pointsForPlace(place) {
   return POINTS_SCALE[place - 1] ?? 0;
 }
 
-// ─── Parse args ──────────────────────────────────────────────────────────────
+// Extract club abbreviation from team name: "OCCR - SAND BLASTERS" → "OCCR"
+function extractClub(teamName) {
+  const m = teamName.match(/^([A-Z]+)\s*-/);
+  return m ? m[1] : teamName.split(/\s+/)[0];
+}
 
-const [, , csvFile, eventAbbr, year = '2026', series = 'Enduro'] = process.argv;
+// ─── Args ─────────────────────────────────────────────────────────────────────
+
+const [, , csvFile, eventAbbr, year = String(new Date().getFullYear()), series = 'Enduro'] = process.argv;
 
 if (!csvFile || !eventAbbr) {
-  console.error('Usage: npm run import-results -- <csv-file> <event-abbr> [year] [series]');
-  console.error('');
-  console.error('CSV columns: team, club, epoints (optional), riders (optional, semicolon-separated)');
-  console.error('Row order = finishing position. Championship points are auto-computed.');
+  console.error('Usage: node scripts/import-team-results.mjs <csv-file> <host-club-abbr> [year] [series]');
   process.exit(1);
 }
 
 const csvPath = resolve(csvFile);
 if (!existsSync(csvPath)) {
-  console.error(`Error: CSV file not found: ${csvPath}`);
+  console.error(`Error: file not found: ${csvPath}`);
   process.exit(1);
 }
 
-// ─── Parse CSV ───────────────────────────────────────────────────────────────
+// ─── Parse CSV ────────────────────────────────────────────────────────────────
 
-const raw = readFileSync(csvPath, 'utf8');
+const raw = readFileSync(csvPath, 'utf8').replace(/^\uFEFF/, ''); // strip BOM
 const lines = raw.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
 
-// Parse header to find column indices (case-insensitive)
-const headerLine = lines[0].toLowerCase();
-const isHeaderRow = headerLine.includes('team') || headerLine.includes('club');
-const headerCols = isHeaderRow
-  ? lines[0].toLowerCase().split(',').map(h => h.trim().replace(/^"|"$/g, ''))
-  : ['team', 'club', 'epoints', 'riders'];
-const dataLines = isHeaderRow ? lines.slice(1) : lines;
-
-const colIdx = {
-  team:    headerCols.indexOf('team'),
-  club:    headerCols.indexOf('club'),
-  epoints: headerCols.indexOf('epoints'),
-  riders:  headerCols.indexOf('riders'),
-};
-
-if (colIdx.team === -1 || colIdx.club === -1) {
-  // Fall back to positional: team=0, club=1, epoints=2, riders=3
-  colIdx.team    = 0;
-  colIdx.club    = 1;
-  colIdx.epoints = 2;
-  colIdx.riders  = 3;
-}
-
-// Parse a CSV line respecting quoted fields
 function parseCsvLine(line) {
   const cols = [];
-  let current = '';
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (ch === '"') {
-      inQuotes = !inQuotes;
-    } else if (ch === ',' && !inQuotes) {
-      cols.push(current.trim());
-      current = '';
-    } else {
-      current += ch;
-    }
+  let cur = '';
+  let inQ = false;
+  for (const ch of line) {
+    if (ch === '"') { inQ = !inQ; }
+    else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+    else { cur += ch; }
   }
-  cols.push(current.trim());
+  cols.push(cur.trim());
   return cols;
 }
 
-const results = [];
-let place = 1;
-
-for (const line of dataLines) {
-  const cols = parseCsvLine(line);
-
-  const team    = cols[colIdx.team]?.trim();
-  const club    = cols[colIdx.club]?.trim();
-  const epRaw   = colIdx.epoints >= 0 ? cols[colIdx.epoints]?.trim() : undefined;
-  const ridersRaw = colIdx.riders >= 0 ? cols[colIdx.riders]?.trim() : undefined;
-
-  if (!team || !club) {
-    console.warn(`  Skipping incomplete row: ${line}`);
-    continue;
+// Locate the column header row (starts with "Row," and contains "Rider Name")
+let headerIdx = -1;
+for (let i = 0; i < Math.min(lines.length, 8); i++) {
+  if (/^row,/i.test(lines[i]) && /rider name/i.test(lines[i])) {
+    headerIdx = i;
+    break;
   }
-
-  const points  = pointsForPlace(place);
-  const epoints = epRaw ? parseInt(epRaw.replace(/,/g, ''), 10) : undefined;
-  const riders  = ridersRaw
-    ? ridersRaw.split(';').map(r => r.trim()).filter(Boolean)
-    : undefined;
-
-  const entry = { team, club, points };
-  if (epoints !== undefined && !isNaN(epoints)) entry.epoints = epoints;
-  if (riders?.length) entry.riders = riders;
-
-  results.push(entry);
-
-  const ridersStr = riders?.length ? ` [${riders.length} riders]` : '';
-  const epStr     = epoints !== undefined ? ` epoints:${epoints}` : '';
-  console.log(`  ${place}. ${club} — ${team}: ${points} pts${epStr}${ridersStr}`);
-  place++;
 }
-
-if (results.length === 0) {
-  console.error('Error: No results parsed from CSV.');
+if (headerIdx === -1) {
+  console.error('Error: could not find column header row. Expected a row starting with "Row," containing "Rider Name".');
   process.exit(1);
 }
 
-// ─── Build output JSON ───────────────────────────────────────────────────────
+// Column indices (from header: Row, Rider Name, Bike, Class, [blank], Place, #Chks, Points, EPoints)
+const COL_ROW     = 0;
+const COL_NAME    = 1;
+const COL_EPOINTS = 8;
 
-const yearNum = parseInt(year, 10);
-const seriesAbbr = series.toLowerCase() === 'enduro' ? 'en' : 'hs';
-const yy = String(yearNum).slice(2);
-const filename = `${yy}-${seriesAbbr}-${eventAbbr.toLowerCase()}.json`;
-const outputPath = resolve(repoRoot, 'src/content/teamEventResults', filename);
+// ─── Extract teams and riders ─────────────────────────────────────────────────
 
-const output = {
-  year: yearNum,
-  series,
-  eventAbbr: eventAbbr.toUpperCase(),
-  results,
-};
+const teams = [];
+let current = null;
 
-writeFileSync(outputPath, JSON.stringify(output, null, 2) + '\n');
+for (const line of lines.slice(headerIdx + 1)) {
+  const cols = parseCsvLine(line);
+  const rowId = cols[COL_ROW] ?? '';
+  const name  = cols[COL_NAME]?.trim() ?? '';
 
-console.log('');
-console.log(`✓ Written: src/content/teamEventResults/${filename}`);
-console.log(`  ${results.length} teams · event: ${eventAbbr.toUpperCase()} · year: ${yearNum}`);
-console.log('');
-console.log('Next:');
+  const isTeamRow = /^\d+$/.test(rowId) || rowId === 'DNF' || rowId === 'DQ';
+
+  if (isTeamRow) {
+    if (current) teams.push(current);
+    const epRaw = cols[COL_EPOINTS]?.replace(/,/g, '').trim();
+    current = {
+      rank:   /^\d+$/.test(rowId) ? parseInt(rowId, 10) : rowId,
+      team:   name,
+      club:   extractClub(name),
+      epoints: epRaw && /^\d+$/.test(epRaw) ? parseInt(epRaw, 10) : undefined,
+      riders: [],
+      dnf:    rowId === 'DNF' || rowId === 'DQ',
+    };
+  } else if (current && name) {
+    current.riders.push(name);
+  }
+}
+if (current) teams.push(current);
+
+// ─── Filter ───────────────────────────────────────────────────────────────────
+
+const hostClub   = eventAbbr.toUpperCase();
+const dnfTeams   = teams.filter(t => t.dnf);
+const hostTeams  = teams.filter(t => !t.dnf && t.club === hostClub);
+const finishers  = teams.filter(t => !t.dnf && t.club !== hostClub)
+                        .sort((a, b) => a.rank - b.rank);
+
+if (hostTeams.length) {
+  console.log(`\n  Host club (${hostClub}) — excluded from championship points:`);
+  hostTeams.forEach(t => console.log(`    ${t.rank}. ${t.team}`));
+}
+if (dnfTeams.length) {
+  console.log(`\n  DNF/DQ — excluded:`);
+  dnfTeams.forEach(t => console.log(`    ${t.rank}. ${t.team}`));
+}
+
+// ─── Build results ────────────────────────────────────────────────────────────
+
+console.log('\n  Championship standings:');
+const results = finishers.map((t, i) => {
+  const place  = i + 1;
+  const points = pointsForPlace(place);
+  const entry  = { team: t.team, club: t.club, points };
+  if (t.epoints !== undefined) entry.epoints = t.epoints;
+  if (t.riders.length)         entry.riders  = t.riders;
+
+  const epStr = t.epoints !== undefined ? `  epoints:${t.epoints}` : '';
+  const rStr  = t.riders.length ? `  [${t.riders.length} riders]` : '';
+  console.log(`  ${place}. ${t.club} — ${t.team}: ${points} pts${epStr}${rStr}`);
+
+  return entry;
+});
+
+if (results.length === 0) {
+  console.error('\nError: no results after filtering. Check that the host club abbreviation is correct.');
+  process.exit(1);
+}
+
+// ─── Write JSON ───────────────────────────────────────────────────────────────
+
+const yearNum   = parseInt(year, 10);
+const seriesAbbr = series.toLowerCase().startsWith('hare') ? 'hs' : 'en';
+const yy        = String(yearNum).slice(2);
+const filename  = `${yy}-${seriesAbbr}-${eventAbbr.toLowerCase()}.json`;
+const outDir    = resolve(repoRoot, 'src/content/teamEventResults');
+const outPath   = resolve(outDir, filename);
+
+writeFileSync(outPath, JSON.stringify({ year: yearNum, series, eventAbbr: hostClub, results }, null, 2) + '\n');
+
+console.log(`\n✓ Written: src/content/teamEventResults/${filename}`);
+console.log(`  ${results.length} teams · event: ${hostClub} · ${yearNum} ${series}`);
+console.log('\nNext steps:');
 console.log(`  git add src/content/teamEventResults/${filename}`);
-console.log(`  git commit -m "Add team results: ${eventAbbr.toUpperCase()} ${yearNum}"`);
+console.log(`  git commit -m "results: ${hostClub} ${yearNum} round ${finishers[0]?.rank ?? ''}"`);
 console.log('  git push');
