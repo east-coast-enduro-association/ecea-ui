@@ -5,7 +5,7 @@ date: 2026-05-23T00:00:00.000Z
 endDate: 2026-05-24T00:00:00.000Z
 keyTime: '8:30 AM'
 checkInTime: '6:00 AM'
-location: '342 Cabin lane, SugarLoaf, PA'
+location: '142 Cabin lane, SugarLoaf, PA'
 hostingClubs:
   - HMDR
 eventType: Special
