@@ -19,6 +19,8 @@ resultsLink: 'https://www.moto-tally.com/ECEA/ECEA/Results.aspx'
 downloads:
   - label: Map
     url: /attachments/events/map%20mci.png
+  - label: Info Sheet
+    url: /attachments/events/26MCInfo.pdf
 draft: false
 ---
 
