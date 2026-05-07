@@ -26,7 +26,7 @@ draft: false
 
 \*\*PEE WEE/JUNIOR/YOUTH RACE DETAILS
 
-Friday - No entry to event.\*\*
+**Friday - No entry to event.\*\***
 
 GATES OPEN SATURDAY 7am
 
