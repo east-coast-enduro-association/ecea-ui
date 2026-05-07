@@ -16,12 +16,15 @@ flyer: /assets/events/flyers/SJHS_2026_Updated3.png
 motoTallyId: 2
 registrationLink: 'https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx'
 resultsLink: 'https://www.moto-tally.com/ECEA/ECEA_PWY/Results.aspx'
+downloads:
+  - label: Map
+    url: /attachments/events/map mci.png
 draft: false
 ---
 
-**PEE WEE/JUNIOR/YOUTH RACE DETAILS
+\*\*PEE WEE/JUNIOR/YOUTH RACE DETAILS
 
-Friday - No entry to event.**
+Friday - No entry to event.\*\*
 
 GATES OPEN SATURDAY 7am
 
