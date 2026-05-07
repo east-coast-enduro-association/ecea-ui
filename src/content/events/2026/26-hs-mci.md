@@ -16,12 +16,16 @@ flyer: /assets/events/flyers/SJHS_2026_Updated3.png
 motoTallyId: 1
 registrationLink: 'https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx'
 resultsLink: 'https://www.moto-tally.com/ECEA/ECEA/Results.aspx'
+downloads:
+  - label: Map
+    url: /attachments/events/map%20mci.png
 draft: false
 ---
 
 # ADULT RACE DETAILS
 
-**Gates Open:**
+**Gates Open:
+      FRIDAY NO ENTRY**
 
 * SATURDAY 7AM
 * SUNDAY 6AM
