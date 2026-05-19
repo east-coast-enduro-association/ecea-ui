@@ -21,13 +21,13 @@ downloads:
     url: /attachments/events/map%20mci.png
   - label: Info Sheet
     url: /attachments/events/26MCInfo.pdf
-draft: false
+draft: true
 ---
 
 # ADULT RACE DETAILS
 
 **Gates Open:
-      FRIDAY NO ENTRY**
+FRIDAY NO ENTRY**
 
 * SATURDAY 7AM
 * SUNDAY 6AM
