@@ -3,7 +3,7 @@ title: Broken Anvil
 summary: GMER
 date: 2026-05-31T10:00:00.000Z
 checkInTime: '7:00 AM'
-location: ' Rocket MX Park 22382 Starr Rd. Three Springs Pa. 17264. '
+location: ' Rocket MX Park 22382 Starr Rd. Three Springs Pa. 17264'
 hostingClubs:
   - GMER
 eventType: Hare Scramble
@@ -27,13 +27,13 @@ Registration opens at 7:AM for Morning Event, 10AM for Main Event
 
 SUNDAY:
 
-Women B, School Boy, C- Classes, B Super Senior, Masters & Gold Masters Starts at 10:AM 
+Women B, School Boy, C- Classes, B Super Senior, Masters & Gold Masters Starts at 10:AM
 
-(approx. 1.5 hours) Entry Fee: $60. 
+(approx. 1.5 hours) Entry Fee: $60.
 
-Main Event: Starts at 1:PM (approx. 2 hours) Entry Fee: $65 for all classes. 
+Main Event: Starts at 1:PM (approx. 2 hours) Entry Fee: $65 for all classes.
 
-NO Video Allowed,   NO Practice Laps,  NO Pit Bikes,  NO Golf Carts,  NO Side X Sides 
+NO Video Allowed,   NO Practice Laps,  NO Pit Bikes,  NO Golf Carts,  NO Side X Sides
 
 \*\*NO USE OF TEAR OFF’S OR SMALL WATER BOTTLES WITH HOSES = DSQ\*\*
- \*NO WALKING THE COURSE\* \*NO REFUNDS
+\*NO WALKING THE COURSE\* \*NO REFUNDS
