@@ -21,7 +21,7 @@ downloads:
     url: /attachments/events/map mci.png
   - label: Info Sheet
     url: /attachments/events/26MCInfo.pdf
-draft: false
+draft: true
 ---
 
 \*\*PEE WEE/JUNIOR/YOUTH RACE DETAILS
