@@ -6,8 +6,8 @@ This directory contains the TinaCMS schema and admin branding for the ECEA websi
 
 | File | Purpose |
 |------|---------|
-| `config.ts` | All collection schemas, field definitions, and media config |
-| `CustomLogo.tsx` | ECEA logo shown in the TinaCMS admin header |
+| `config.tsx` | All collection schemas, field definitions, and media config |
+| `CsvUploaderScreen.tsx` | Custom TinaCMS screen for uploading team results CSVs |
 | `tina-lock.json` | Compiled schema snapshot — **must be committed** |
 | `__generated__/` | Auto-generated types/client — gitignored, rebuilt at build time |
 
@@ -29,7 +29,7 @@ Site rebuilds and deploys
 
 ### Where Files Go
 
-`publicFolder` is set to `'src'` in `config.ts`:
+`publicFolder` is set to `'src'` in `config.tsx`:
 
 ```ts
 media: {
@@ -70,7 +70,7 @@ This file is a compiled snapshot of the schema used by TinaCMS Cloud to validate
 If a Netlify build fails with:
 > "The local Tina schema doesn't match the remote Tina schema"
 
-it usually means `tina-lock.json` is out of sync with `config.ts`. Regenerate by running `npm run build:tina` locally and committing the updated lock file.
+it usually means `tina-lock.json` is out of sync with `config.tsx`. The reliable fix is to run `npm run dev` locally (not `build:tina`) — the dev server regenerates `tina-lock.json` to match the current config. Commit and push the updated file, then trigger a re-index from the TinaCloud dashboard.
 
 ### Attachment Files (PDFs)
 
@@ -89,11 +89,15 @@ The URL saved in the event's `downloads[].url` field (e.g., `/attachments/events
 
 ## Adding a New Collection
 
-1. Define the collection in `config.ts` using `defineConfig`
+1. Define the collection in `config.tsx` using `defineConfig`
 2. For image fields, use `uploadDir` and wrap with the path type — **do not rely on `ui.parse`**; path normalization happens in `src/content/config.ts`
 3. Add the collection to `src/content/config.ts` with the appropriate schema
-4. Run `npm run build:tina` locally to regenerate `tina-lock.json`
-5. Commit both `config.ts` and `tina-lock.json`
+4. Run `npm run dev` locally to regenerate `tina-lock.json`
+5. Commit both `config.tsx` and `tina-lock.json`
+
+## Visual Editing
+
+Visual editing is intentionally **disabled**. The `router` config has been removed from all collections (events, blog, clubs, series). Adding a `router` field to any collection re-enables visual editing mode in the TinaCMS admin — avoid this unless intentional.
 
 ## Local Development
 

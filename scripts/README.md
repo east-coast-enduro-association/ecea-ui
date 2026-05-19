@@ -4,50 +4,49 @@ Utility scripts for managing ECEA website data.
 
 ## import-team-results.mjs
 
-Converts a per-event team results CSV into the JSON format used by the team standings page.
+Converts the scoring software's CSV export into the JSON format used by the team standings page.
 
-Run after each enduro event to add that round's results to the site.
+The script accepts the CSV **exactly as exported** from the scoring software — no reformatting needed. It automatically:
+- Detects team header rows vs rider rows
+- Extracts the club abbreviation from the team name
+- Excludes the host club's teams (0 championship points by rule)
+- Excludes DNF and DQ teams
+- Computes championship points (25/22/20…) from finishing rank
+
+> **In normal operation this script runs automatically via GitHub Actions** when a CSV is uploaded through the TinaCMS "Upload Team Results" screen. Run it manually only for one-off imports or testing.
 
 ### Usage
 
 ```bash
-npm run import-results -- <csv-file> <event-abbr> [year] [series]
+npm run import-results -- <csv-file> <host-club-abbr> [year] [series]
 ```
 
 ### Examples
 
 ```bash
-# Add results for the MMC event (Sandy Lane)
-npm run import-results -- ~/Downloads/results-mmc.csv MMC
+# Sandy Lane Enduro, hosted by SJER
+npm run import-results -- ~/Downloads/results.csv SJER 2026 Enduro
 
-# Specify year or series explicitly
-npm run import-results -- results-sjer.csv SJER 2026 Enduro
+# Hare Scramble event hosted by MMC
+npm run import-results -- ~/Downloads/results.csv MMC 2026 "Hare Scramble"
 ```
 
-### CSV Format
+### Input format
 
-One row per finishing team, **in order from 1st place to last**. Omit DNF, DQ, and host club teams.
+Pass the CSV exactly as exported from the scoring software (Team Enduro Results report). The script identifies rows by structure:
 
-```csv
-team,club,epoints,riders
-RIDGE RIDERS -A-,RRMC,7650,MAVERICK REINER;DYLAN RECCHIA;NICHOLAS LOBOSCO;ROBERT CIVILETTI JR;WILLIAM SIGLER
-FASTBOYZ I,SPER,10322,ZACH MILLER;LOGAN SMITH;NATHAN JOSEPH;GRAHAM SMITH;TIMOTHY SPRENKLE
-```
+| Row type | Identifier |
+|----------|-----------|
+| Team header | `Row` column is a number (`1`, `2`…) or `DNF`/`DQ` |
+| Rider row | `Row` column is alphanumeric (`23A`, `7B`…) |
 
-| Column | Required | Notes |
-|--------|----------|-------|
-| `team` | Yes | Team name |
-| `club` | Yes | Club abbreviation |
-| `epoints` | No | Tiebreaker score from scoring software |
-| `riders` | No | Rider names, **semicolon-separated** |
-
-Championship points (25/22/20…) are computed automatically from row order.
+Club abbreviations are extracted from the team name — the part before the first ` - ` (e.g., `OCCR - SAND BLASTERS` → `OCCR`).
 
 ### Output
 
-Creates `src/content/teamEventResults/26-en-<eventabbr>.json`. Then commit and push — Netlify rebuilds automatically.
+Creates `src/content/teamEventResults/YY-{en|hs}-<host-club>.json`. Then commit and push — Netlify rebuilds automatically.
 
-See `src/content/teamEventResults/README.md` for full details on how the team results system works.
+See `src/content/teamEventResults/README.md` for details on how the team results system works.
 
 ---
 
@@ -129,7 +128,7 @@ The script can handle either a single "Name" column or separate "First Name" and
 - `scripts/errors.xlsx` - Excel file for easy review and correction
 - `scripts/errors.json` - JSON format
 
-The main output is NOT deduplicated - duplicates must be fixed manually in the source data.
+The main output is NOT deduplicated — duplicates must be fixed manually in the source data.
 
 ### First Run
 

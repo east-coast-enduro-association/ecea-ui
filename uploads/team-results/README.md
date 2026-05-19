@@ -21,28 +21,24 @@ That's it. GitHub processes the file automatically and the results page updates 
 
 ## CSV format
 
-Export from your scoring software (or build manually). Columns can be in any order.
+Upload the **Team Enduro Results** report directly from your scoring software — no reformatting needed.
 
-| Column | Required | Notes |
-|---|---|---|
-| `team` | Yes | Team name (e.g., `RIDGE RIDERS -A-`) |
-| `club` | Yes | Club abbreviation (e.g., `RRMC`) |
-| `epoints` | No | Tiebreaker score from scoring software |
-| `riders` | No | Names separated by semicolons |
+The script automatically:
+- Detects team rows vs rider rows
+- Extracts the club abbreviation from the team name
+- Excludes the host club's teams (0 championship points by rule)
+- Excludes DNF and DQ teams
+- Computes championship points (25/22/20…) from finishing rank
 
-**List rows in finishing order — 1st place first.** Championship points (25/22/20...) are assigned automatically by row position.
+**The CSV file must be named using this convention:**
 
-**Leave out:**
-- Host club teams (earn 0 points by rule)
-- DNF or DQ teams (no points)
-
-**Example:**
-```csv
-team,club,epoints,riders
-KILLER BEES,CDR,1712,JOSEPH FORD;JOSHUA PITTMAN;GREGORY NORDBERG
-SANDBLASTERS,OCCR,1791,RYAN CANAVAN;CHRISTOPHER SMITH;TYLER KENNEDY
-I,DER,1538,DOUG ALLEN II;THOMAS RAIO;ANGELO RISPOLI
 ```
+YY-{en|hs}-{clubabbr}.csv
+```
+
+Examples: `26-en-sjer.csv`, `26-hs-mmc.csv`
+
+The filename is how the script knows the year, series, and host club.
 
 ---
 
@@ -52,7 +48,7 @@ Check the **Actions** tab on GitHub. It shows whether the import succeeded and a
 
 Common issues:
 - **CSV not showing up** — make sure you uploaded the file in the CSV field before saving
-- **Wrong club abbreviation** — must exactly match the season setup (e.g., `RRMC` not `RR`)
-- **Missing columns** — CSV must have at least `team` and `club`
+- **Wrong filename format** — must be `YY-{en|hs}-{clubabbr}.csv` (e.g. `26-en-sjer.csv`)
+- **No results after filtering** — double-check the club abbreviation in the filename matches what's in the team names in the CSV
 
-Processed files are archived to `uploads/team-results/processed/` automatically.
+Processed files are archived to `src/uploads/team-results/processed/` automatically.
