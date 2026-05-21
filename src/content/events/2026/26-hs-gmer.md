@@ -13,7 +13,7 @@ closedCourse: false
 gasAway: false
 gateFee: '$15 per person,  kids 6-11 $10'
 image: ../../../assets/clubs/logos/gmer.gif
-flyer: /assets/events/flyers/GMER%202026%20HS%20FlyerR5.png
+flyer: /assets/events/flyers/gmer-2026-hs-flyer-r5.png
 registrationLink: 'https://www.moto-tally.com/ECEA/ECEA/PreEntry.aspx'
 resultsLink: 'https://www.moto-tally.com/ECEA/ECEA/Results.aspx'
 draft: false
