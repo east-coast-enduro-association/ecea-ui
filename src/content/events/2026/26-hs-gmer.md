@@ -21,6 +21,8 @@ draft: false
 
 # ADULT RACE DETAILS
 
+Update May 21: GMER is permitting racers to walk or bike the course. Further details to come.
+
 Gate opens at 7:AM       Camping Gates Open Friday at Noon
 
 Registration opens at 7:AM for Morning Event, 10AM for Main Event
@@ -35,5 +37,4 @@ Main Event: Starts at 1:PM (approx. 2 hours) Entry Fee: $65 for all classes.
 
 NO Video Allowed,   NO Practice Laps,  NO Pit Bikes,  NO Golf Carts,  NO Side X Sides
 
-\*\*NO USE OF TEAR OFF’S OR SMALL WATER BOTTLES WITH HOSES = DSQ\*\*
-\*NO WALKING THE COURSE\* \*NO REFUNDS
+\*\*NO USE OF TEAR OFF’S OR SMALL WATER BOTTLES WITH HOSES = DSQ\*\* \*NO REFUNDS
