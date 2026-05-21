@@ -13,7 +13,7 @@ closedCourse: false
 gasAway: false
 gateFee: 12 yrs and up $15. - 6 yrs to 11 yrs $10. -  Kids under 5 Free.
 image: ../../../assets/clubs/logos/gmer.gif
-flyer: /assets/events/flyers/GMER 2026 HS FlyerR5.png
+flyer: /assets/events/flyers/gmer-2026-hs-flyer-r5.png
 registrationLink: 'https://www.moto-tally.com/ECEA/ECEA_PWY/PreEntry.aspx'
 resultsLink: 'https://www.moto-tally.com/ECEA/ECEA_PWY/Results.aspx'
 draft: false
