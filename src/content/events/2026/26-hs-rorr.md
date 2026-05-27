@@ -3,7 +3,7 @@ title: Reading
 summary: 'New Trail, New Venue'
 date: 2026-06-14T10:00:00.000Z
 checkInTime: '7:00 AM'
-location: 'Maple Grove Raceway - 30 Stauffer Park Ln, Mohnton, PA 19540'
+location: 'Maple Grove Raceway - 5302 Kachel Road, Mohnton, PA 19540'
 hostingClubs:
   - RORR
 eventType: Hare Scramble
@@ -24,4 +24,3 @@ draft: false
 Morning race: 10:00 am
 10AM to 12:30 PM Check in / Registration for Afternoon Event
 Afternoon race: 1:00pm
-
