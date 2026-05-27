@@ -3,7 +3,7 @@ title: Reading
 summary: 'Youth racing at RORR, New Venue'
 date: 2026-06-13T12:00:00.000Z
 checkInTime: '10:00 AM'
-location: 'Maple Grove Raceway - 30 Stauffer Park Ln, Mohnton, PA 19540'
+location: 'Maple Grove Raceway - 5302 Kachel Road, Mohnton, PA 19540'
 hostingClubs:
   - RORR
 eventType: FastKIDZ
