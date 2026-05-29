@@ -7,4 +7,4 @@ category: news
 draft: false
 ---
 
-Due to the cancellation of Rattlesnake National Enduro hosted by BER, Ridge Riders MC is now hosting the Pine Glen Sprint Enduro on July 26th. Head over to the \[event page]\(/events/2026/26-en-rrmc) for more details. Looking forward to it!
+Due to the cancellation of Rattlesnake National Enduro hosted by BER, Ridge Riders MC is now hosting the Pine Glen Sprint Enduro on July 26th. Head over to the [event page](/events/2026/26-en-rrmc) for more details. Looking forward to it!
