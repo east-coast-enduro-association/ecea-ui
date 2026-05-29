@@ -20,4 +20,4 @@ downloads:
 draft: false
 ---
 
-RRMC brings everything to the table with rocks, roots, mud, creek beds, grass track, loamy hillclimbs, slick off cambers, you name it! Hosted in a beautiful part of New York State.
+RRMC brings everything to the table with rocks, roots, mud, creek beds, grass track, loamy hillclimbs, slick off cambers, you name it! Hosted in a beautiful part of New York State. 
