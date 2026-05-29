@@ -13,7 +13,10 @@ series: ECEA Enduro Championship Series
 closedCourse: true
 gasAway: false
 image: ../../../assets/clubs/logos/rrmc-large.png
-flyer: /assets/events/flyers/2026-en-rrmc-flyer.pdf
+flyer: /assets/events/flyers/2026-en-rrmc-flyer.jpg
+downloads:
+  - label: Flyer PDF
+    url: /attachments/events/2026-en-rrmc-flyer.pdf
 draft: false
 ---
 
