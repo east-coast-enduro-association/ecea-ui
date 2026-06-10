@@ -1,13 +1,12 @@
 ---
 title: "2026 ECEA Scholarships Now Open: Skip Stoner & Mike Little Memorial Awards"
-slug: "ecea-scholarships-2026"
 pubDate: 2026-06-10
 description: "The East Coast Enduro Association is proud to announce the 2026 scholarship season. Two $500 scholarships honoring Skip Stoner and Mike Little are available to eligible ECEA members pursuing education in the 2026-2027 scholastic year."
 author: "ECEA"
-image: {
-  url: "/uploads/scholarships/ss-scholarship-flyer.png",
+category: news
+image:
+  src: ../../assets/blog/ss-scholarship-flyer.png
   alt: "2026 Skip Stoner Memorial Scholarship Flyer"
-}
 tags: ["scholarships", "community", "announcements"]
 draft: false
 ---
