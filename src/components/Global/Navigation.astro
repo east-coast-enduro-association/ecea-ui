@@ -13,8 +13,13 @@ const navItems = [
   { text: "Giving", href: "/giving" },
 ];
 
+const resourcesItems = [
+  { text: "Scholarships", href: "/resources/scholarships" },
+];
+
 // Get the current URL path to highlight the active link
 const currentPath = Astro.url.pathname;
+const isResourcesActive = currentPath.startsWith("/resources");
 ---
 
 <!-- Desktop Navigation -->
@@ -40,6 +45,46 @@ const currentPath = Astro.url.pathname;
         );
       })
     }
+
+    <!-- Resources Dropdown -->
+    <li class="relative" id="resources-dropdown">
+      <button
+        class={`flex items-center gap-1 text-base font-medium transition-colors hover:text-primary-600 ${
+          isResourcesActive ? "text-primary-600" : "text-gray-700"
+        }`}
+        aria-expanded="false"
+        aria-haspopup="true"
+        id="resources-btn"
+      >
+        Resources
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200" id="resources-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <ul
+        id="resources-menu"
+        class="absolute left-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-1 hidden z-50"
+        role="menu"
+      >
+        {resourcesItems.map((item) => {
+          const isActive = currentPath === item.href || currentPath.startsWith(item.href);
+          return (
+            <li>
+              <a
+                href={item.href}
+                class={`block px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-50 hover:text-primary-600 ${
+                  isActive ? "text-primary-600 bg-primary-50" : "text-gray-700"
+                }`}
+                role="menuitem"
+                aria-current={isActive ? "page" : undefined}
+              >
+                {item.text}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </li>
 
     <!-- GitHub Icon -->
     <li>
@@ -101,6 +146,24 @@ const currentPath = Astro.url.pathname;
           );
         })
       }
+      <!-- Resources items in mobile grid -->
+      {resourcesItems.map((item) => {
+        const isActive = currentPath === item.href || currentPath.startsWith(item.href);
+        return (
+          <a
+            href={item.href}
+            class={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors text-center ${
+              isActive
+                ? "bg-primary-50 text-primary-600 border border-primary-200"
+                : "text-gray-700 hover:bg-gray-50 hover:text-primary-600 border border-transparent"
+            }`}
+            role="menuitem"
+            aria-current={isActive ? "page" : undefined}
+          >
+            {item.text}
+          </a>
+        );
+      })}
     </div>
 
     <!-- GitHub Link -->
@@ -148,6 +211,41 @@ const currentPath = Astro.url.pathname;
 </style>
 
 <script>
+  // Resources dropdown functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const resourcesBtn = document.getElementById('resources-btn');
+    const resourcesMenu = document.getElementById('resources-menu');
+    const resourcesChevron = document.getElementById('resources-chevron');
+
+    const closeResourcesMenu = () => {
+      resourcesMenu?.classList.add('hidden');
+      resourcesBtn?.setAttribute('aria-expanded', 'false');
+      resourcesChevron?.classList.remove('rotate-180');
+    };
+
+    resourcesBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = !resourcesMenu?.classList.contains('hidden');
+      if (isOpen) {
+        closeResourcesMenu();
+      } else {
+        resourcesMenu?.classList.remove('hidden');
+        resourcesBtn?.setAttribute('aria-expanded', 'true');
+        resourcesChevron?.classList.add('rotate-180');
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!document.getElementById('resources-dropdown')?.contains(e.target)) {
+        closeResourcesMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeResourcesMenu();
+    });
+  });
+
   // Mobile menu functionality
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');

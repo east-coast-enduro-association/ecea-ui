@@ -8,5 +8,7 @@ node_modules
 builds
 package-lock.json
 resources
+!src/pages/resources
+!src/pages/resources/**
 .hugo_build.lock
 .astro
