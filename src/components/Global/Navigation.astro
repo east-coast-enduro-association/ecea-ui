@@ -1,10 +1,6 @@
 ---
 import { NAV_ITEMS, SOCIAL_LINKS, MOTO_TALLY } from "../../utils/constants";
 
-const resourcesItems = [
-  { text: "Scholarships", href: "/resources/scholarships" },
-];
-
 // Get the current URL path to highlight the active link
 const currentPath = Astro.url.pathname;
 
@@ -41,7 +37,6 @@ const signupDropdown = [
   { text: "FastKIDZ Signup", href: MOTO_TALLY.signupLinks["FastKIDZ"], external: true },
 ];
 
-const isResourcesActive = currentPath.startsWith("/resources");
 ---
 
 <!-- Desktop Navigation -->
@@ -53,6 +48,7 @@ const isResourcesActive = currentPath.startsWith("/resources");
                          (item.href !== "/" && currentPath.startsWith(item.href));
         const isResults = item.text === "Results";
         const isEvents = item.text === "Events";
+        const isResources = item.text === "Resources";
 
         if (isEvents) {
           // Events dropdown with signup links
@@ -171,6 +167,36 @@ const isResourcesActive = currentPath.startsWith("/resources");
           );
         }
 
+        if (isResources) {
+          return (
+            <li class="relative group">
+              <a
+                href={item.href}
+                class={`text-base font-medium transition-colors hover:text-primary-600 inline-flex items-center ${
+                  isActive ? "text-primary-600" : "text-gray-700"
+                }`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {item.text}
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[200px]">
+                  <a href="/resources" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+                    Rider Resources
+                  </a>
+                  <div class="border-t border-gray-100 my-2"></div>
+                  <a href="/resources/scholarships" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors">
+                    Scholarships
+                  </a>
+                </div>
+              </div>
+            </li>
+          );
+        }
+
         // Highlight "Get Started" with special styling
         const isGetStarted = item.text === "Get Started";
 
@@ -207,46 +233,6 @@ const isResourcesActive = currentPath.startsWith("/resources");
         );
       })
     }
-
-    <!-- Resources Dropdown -->
-    <li class="relative" id="resources-dropdown">
-      <button
-        class={`flex items-center gap-1 text-base font-medium transition-colors hover:text-primary-600 ${
-          isResourcesActive ? "text-primary-600" : "text-gray-700"
-        }`}
-        aria-expanded="false"
-        aria-haspopup="true"
-        id="resources-btn"
-      >
-        Resources
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200" id="resources-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <ul
-        id="resources-menu"
-        class="absolute left-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-1 hidden z-50"
-        role="menu"
-      >
-        {resourcesItems.map((item) => {
-          const isActive = currentPath === item.href || currentPath.startsWith(item.href);
-          return (
-            <li>
-              <a
-                href={item.href}
-                class={`block px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-50 hover:text-primary-600 ${
-                  isActive ? "text-primary-600 bg-primary-50" : "text-gray-700"
-                }`}
-                role="menuitem"
-                aria-current={isActive ? "page" : undefined}
-              >
-                {item.text}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </li>
 
     <!-- Facebook Icon - Links to community section on Resources -->
     <li>
@@ -312,24 +298,6 @@ const isResourcesActive = currentPath.startsWith("/resources");
           );
         })
       }
-      <!-- Resources items in mobile grid -->
-      {resourcesItems.map((item) => {
-        const isActive = currentPath === item.href || currentPath.startsWith(item.href);
-        return (
-          <a
-            href={item.href}
-            class={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors text-center ${
-              isActive
-                ? "bg-primary-50 text-primary-600 border border-primary-200"
-                : "text-gray-700 hover:bg-gray-50 hover:text-primary-600 border border-transparent"
-            }`}
-            role="menuitem"
-            aria-current={isActive ? "page" : undefined}
-          >
-            {item.text}
-          </a>
-        );
-      })}
     </div>
 
     <!-- Facebook Link -->
@@ -375,41 +343,6 @@ const isResourcesActive = currentPath.startsWith("/resources");
 </style>
 
 <script>
-  // Resources dropdown functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const resourcesBtn = document.getElementById('resources-btn');
-    const resourcesMenu = document.getElementById('resources-menu');
-    const resourcesChevron = document.getElementById('resources-chevron');
-
-    const closeResourcesMenu = () => {
-      resourcesMenu?.classList.add('hidden');
-      resourcesBtn?.setAttribute('aria-expanded', 'false');
-      resourcesChevron?.classList.remove('rotate-180');
-    };
-
-    resourcesBtn?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = !resourcesMenu?.classList.contains('hidden');
-      if (isOpen) {
-        closeResourcesMenu();
-      } else {
-        resourcesMenu?.classList.remove('hidden');
-        resourcesBtn?.setAttribute('aria-expanded', 'true');
-        resourcesChevron?.classList.add('rotate-180');
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!document.getElementById('resources-dropdown')?.contains(e.target)) {
-        closeResourcesMenu();
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeResourcesMenu();
-    });
-  });
-
   // Mobile menu functionality
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
