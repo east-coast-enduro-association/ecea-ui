@@ -5,7 +5,7 @@ description: Critical positions for the ECEA Hare Scramble series are opening up
 author: ECEA
 category: news
 image:
-  src: /assets/blog/ECEA%20Hare%20Scrambles%20Series%20Director%20060826%20r1.png
+  src: '../../assets/blog/ECEA Hare Scrambles Series Director 060826 r1.png'
   alt: hs director opening flyer
 draft: true
 ---
