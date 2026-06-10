@@ -7,6 +7,10 @@ category: news
 image:
   src: /assets/blog/ECEA Hare Scrambles Series Director 060826 r1.png
   alt: hs director open position flyer
+tags:
+  - harescramble
+  - volunteer
+  - scoring
 draft: true
 ---
 
