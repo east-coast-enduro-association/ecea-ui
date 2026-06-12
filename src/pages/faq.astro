@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/Sections/PageHeader.astro";
 import { getEntry } from "astro:content";
 
-const page = await getEntry("pages", "faq");
+const page = await getEntry("faqPage", "index");
 if (!page) {
   return Astro.redirect("/404");
 }

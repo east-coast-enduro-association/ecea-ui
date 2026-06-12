@@ -117,7 +117,25 @@ export const DISPLAY_LIMITS = {
   upcomingEventsPerPage: 12,
 };
 
-// Event types for filtering
+// All active member club abbreviations — used for dropdowns to prevent typos.
+// Canonical source: update here and it propagates to tina/config.tsx and the content schema.
+export const CLUB_ABBREVIATIONS = [
+  'BER', 'CDR', 'CJCR', 'DER', 'DVTR', 'GMER', 'HMDR', 'IDR', 'MCI',
+  'MMC', 'OCCR', 'PBER', 'RORR', 'RRMC', 'SJER', 'SPER', 'STER', 'TCSMC', 'VFTR',
+] as const;
+
+// Event types that can be scheduled (used in content schema + TinaCMS dropdown).
+// Distinct from EVENT_TYPES below which includes legacy/display-only types.
+export const SCHEDULABLE_EVENT_TYPES = [
+  'Enduro',
+  'Hare Scramble',
+  'FastKIDZ',
+  'Dual Sport',
+  'ECEA',
+  'Special',
+] as const;
+
+// Event types for filtering (includes legacy types used in calendar color maps)
 export const EVENT_TYPES = [
   "Enduro",
   "Hare Scramble",

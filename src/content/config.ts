@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { STAFF_CATEGORIES, BLOG_CATEGORIES, SCHEDULABLE_EVENT_TYPES } from '../utils/constants';
 
 /**
  * ECEA Content Collections Configuration
@@ -148,9 +149,8 @@ const eventsCollection = defineCollection({
 
       // Organization
       hostingClubs: z.array(z.string()).default([]),
-      eventType: z
-        .enum(['Enduro', 'Hare Scramble', 'FastKIDZ', 'Dual Sport', 'ECEA', 'Special'])
-        .optional(),
+      // Canonical source: src/utils/constants.ts → SCHEDULABLE_EVENT_TYPES
+      eventType: z.enum(SCHEDULABLE_EVENT_TYPES).optional(),
       format: z.string().optional(),
       series: z.string().optional(),
 
@@ -201,9 +201,8 @@ const blogCollection = defineCollection({
       pubDate: localDate,
       description: z.string(),
       author: z.string().default('ECEA'),
-      category: z
-        .enum(['announcement', 'news', 'recap', 'article'])
-        .default('news'),
+      // Canonical source: src/utils/constants.ts → BLOG_CATEGORIES
+      category: z.enum(BLOG_CATEGORIES).default('news'),
       image: z
         .object({
           src: z.preprocess(normalizeAssetPath(2), image()),
@@ -276,13 +275,8 @@ const staffCollection = defineCollection({
     name: z.string(),
     email: z.string().email().optional(),
     phone: z.string().optional(),
-    category: z.enum([
-      'ECEA Referee',
-      'Enduro Series',
-      'Hare Scramble / FastKIDZ',
-      'Marketing & Sponsorships',
-      'Web Masters',
-    ]),
+    // Canonical source: src/utils/constants.ts → STAFF_CATEGORIES
+    category: z.enum(STAFF_CATEGORIES),
     role: z.string().optional(),
     order: z.number().default(0),
     draft: z.boolean().default(false),
@@ -290,18 +284,16 @@ const staffCollection = defineCollection({
 });
 
 /**
- * Pages Collection
- * Static content pages (FAQ, Get Started, etc.)
- * Uses passthrough to allow page-specific fields
+ * Get Started Page Collection (singleton)
+ * src/content/pages/get-started/index.md
  */
-const pagesCollection = defineCollection({
+const getStartedPageCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     subtitle: z.string().optional(),
     description: z.string().optional(),
     draft: z.boolean().default(false),
-    // Get Started page fields
     welcomeTitle: z.string().optional(),
     welcomeContent: z.string().optional(),
     welcomeBookUrl: z.string().optional(),
@@ -315,6 +307,19 @@ const pagesCollection = defineCollection({
     })).optional(),
     faqTitle: z.string().optional(),
     faqDescription: z.string().optional(),
+  }),
+});
+
+/**
+ * FAQ Page Collection (singleton)
+ * src/content/pages/faq/index.md
+ */
+const faqPageCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    draft: z.boolean().default(false),
   }),
 });
 
@@ -465,7 +470,8 @@ export const collections = {
   board: boardCollection,
   staff: staffCollection,
   sponsors: sponsorsCollection,
-  pages: pagesCollection,
+  getStartedPage: getStartedPageCollection,
+  faqPage: faqPageCollection,
   siteInfo: siteInfoCollection,
   teamResults: teamResultsCollection,
   teamSeasons: teamSeasonsCollection,
