@@ -10,12 +10,16 @@ import { defineCollection, z } from 'astro:content';
 // This preprocessor normalizes absolute /assets/... paths to relative paths
 // based on the content file's depth from src/.
 // Existing relative paths (../../..assets/...) pass through unchanged.
+// Also URL-decodes paths (TinaCMS sometimes saves spaces as %20) so Vite can
+// resolve filenames with spaces on the filesystem.
 const normalizeAssetPath = (depth: number) => (val: unknown) => {
   if (typeof val === 'string') {
     if (val === '') return undefined;
-    if (val.startsWith('/assets/')) {
-      return '../'.repeat(depth) + 'assets/' + val.slice(8);
+    const decoded = decodeURIComponent(val);
+    if (decoded.startsWith('/assets/')) {
+      return '../'.repeat(depth) + 'assets/' + decoded.slice(8);
     }
+    return decoded;
   }
   return val;
 };
