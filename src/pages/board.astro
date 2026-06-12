@@ -3,7 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/Sections/PageHeader.astro";
 import Button from "../components/UI/Button.astro";
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
 import { STAFF_CATEGORIES } from "../utils/constants";
 
 // Get all board members
@@ -56,11 +55,10 @@ function encodeEmail(email: string): string {
         {officers.map((member) => (
           <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
             {member.data.image ? (
-              <Image
+              <img
                 src={member.data.image}
                 alt={member.data.name}
-                width={96}
-                height={96}
+                loading="lazy"
                 class="w-24 h-24 rounded-full object-cover mx-auto mb-4"
               />
             ) : (
@@ -106,11 +104,10 @@ function encodeEmail(email: string): string {
               <li class="flex items-center justify-between py-3 border-b border-gray-100 last:border-0">
                 <div class="flex items-center">
                   {trustee.data.image ? (
-                    <Image
+                    <img
                       src={trustee.data.image}
                       alt={trustee.data.name}
-                      width={40}
-                      height={40}
+                      loading="lazy"
                       class="w-10 h-10 rounded-full object-cover mr-4"
                     />
                   ) : (

@@ -4,7 +4,6 @@
  * Displays an event with image, date, type badge, and title
  * Used on homepage and events listing page
  */
-import { Image } from "astro:assets";
 import { formatDate } from "../../utils/dateUtils";
 import { getEventTypeBadgeClassesDark } from "../../utils/eventTypeColors";
 
@@ -14,7 +13,7 @@ interface Props {
   date: Date;
   eventType?: string;
   location?: string;
-  image?: ImageMetadata | null;
+  image?: string | null;
   featured?: boolean;
   class?: string;
 }
@@ -40,11 +39,11 @@ const {
   ]}
 >
   {image ? (
-    <Image
+    <img
       src={image}
       alt={title}
+      loading="lazy"
       class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      widths={featured ? [640, 800] : [400, 600]}
     />
   ) : (
     <div class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800"></div>
