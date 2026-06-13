@@ -1,28 +1,16 @@
 import { defineCollection, z } from 'astro:content';
+import { STAFF_CATEGORIES, BLOG_CATEGORIES, SCHEDULABLE_EVENT_TYPES } from '../utils/constants';
 
 /**
  * ECEA Content Collections Configuration
  * East Coast Enduro Association - Racing Organization
  */
 
-// Helper: TinaCMS Cloud does not apply ui.parse, so it always saves absolute paths
-// like /assets/events/flyers/foo.png. Astro's image() requires relative paths.
-// This preprocessor normalizes absolute /assets/... paths to relative paths
-// based on the content file's depth from src/.
-// Existing relative paths (../../..assets/...) pass through unchanged.
-// Also URL-decodes paths (TinaCMS sometimes saves spaces as %20) so Vite can
-// resolve filenames with spaces on the filesystem.
-const normalizeAssetPath = (depth: number) => (val: unknown) => {
-  if (typeof val === 'string') {
-    if (val === '') return undefined;
-    const decoded = decodeURIComponent(val);
-    if (decoded.startsWith('/assets/')) {
-      return '../'.repeat(depth) + 'assets/' + decoded.slice(8);
-    }
-    return decoded;
-  }
-  return val;
-};
+// NOTE: Image fields use z.string() rather than Astro's image() helper.
+// TinaCMS Cloud saves image paths as absolute strings (/assets/... or /uploads/...).
+// Using z.string() accepts these directly — images are served via the public/assets
+// symlink without any build-time processing. This avoids recurring build failures
+// caused by the path format mismatch between TinaCMS and Astro's image() validator.
 
 // Helper for optional strings that may be empty
 const optionalString = z
@@ -109,11 +97,10 @@ const optionalDate = z
  */
 const clubsCollection = defineCollection({
   type: 'content',
-  schema: ({ image }) =>
-    z.object({
+  schema: z.object({
       name: z.string(),
       abbreviatedName: z.string(),
-      logo: z.preprocess(normalizeAssetPath(2), image().optional()),
+      logo: z.string().optional(),
       summary: z.string().optional(),
       website: z.string().optional(),
       contact: z.string().optional(),
@@ -131,8 +118,7 @@ const clubsCollection = defineCollection({
  */
 const eventsCollection = defineCollection({
   type: 'content',
-  schema: ({ image }) =>
-    z.object({
+  schema: z.object({
       title: z.string(),
       summary: z.string(),
 
@@ -148,9 +134,8 @@ const eventsCollection = defineCollection({
 
       // Organization
       hostingClubs: z.array(z.string()).default([]),
-      eventType: z
-        .enum(['Enduro', 'Hare Scramble', 'FastKIDZ', 'Dual Sport', 'ECEA', 'Special'])
-        .optional(),
+      // Canonical source: src/utils/constants.ts → SCHEDULABLE_EVENT_TYPES
+      eventType: z.enum(SCHEDULABLE_EVENT_TYPES).optional(),
       format: z.string().optional(),
       series: z.string().optional(),
 
@@ -159,9 +144,9 @@ const eventsCollection = defineCollection({
       gasAway: z.boolean().default(false),
       gateFee: z.string().optional(),
 
-      // Media - TinaCMS Cloud saves /assets/... paths; normalizer converts to relative for Astro
-      image: z.preprocess(normalizeAssetPath(3), image().nullable().optional()),
-      flyer: z.preprocess(normalizeAssetPath(3), image().nullable().optional()),
+      // Media - TinaCMS Cloud saves /assets/... paths; served via public/assets symlink
+      image: z.string().nullable().optional(),
+      flyer: z.string().nullable().optional(),
       flyerPdf: z.string().nullable().optional(), // PDF version of flyer for download
 
       // Moto-Tally Integration
@@ -194,19 +179,17 @@ const eventsCollection = defineCollection({
  */
 const blogCollection = defineCollection({
   type: 'content',
-  schema: ({ image }) =>
-    z.object({
+  schema: z.object({
       title: z.string(),
       slug: z.string().optional(),
       pubDate: localDate,
       description: z.string(),
       author: z.string().default('ECEA'),
-      category: z
-        .enum(['announcement', 'news', 'recap', 'article'])
-        .default('news'),
+      // Canonical source: src/utils/constants.ts → BLOG_CATEGORIES
+      category: z.enum(BLOG_CATEGORIES).default('news'),
       image: z
         .object({
-          src: z.preprocess(normalizeAssetPath(2), image()),
+          src: z.string(),
           alt: z.string(),
         })
         .optional(),
@@ -252,12 +235,11 @@ const seriesCollection = defineCollection({
  */
 const boardCollection = defineCollection({
   type: 'content',
-  schema: ({ image }) =>
-    z.object({
+  schema: z.object({
       name: z.string(),
       title: z.string(),
       boardType: z.enum(['executive', 'trustees']).default('executive'),
-      image: z.preprocess(normalizeAssetPath(2), image().optional()),
+      image: z.string().optional(),
       email: z.string().email().optional(),
       phone: z.string().optional(),
       bio: z.string().optional(),
@@ -276,13 +258,8 @@ const staffCollection = defineCollection({
     name: z.string(),
     email: z.string().email().optional(),
     phone: z.string().optional(),
-    category: z.enum([
-      'ECEA Referee',
-      'Enduro Series',
-      'Hare Scramble / FastKIDZ',
-      'Marketing & Sponsorships',
-      'Web Masters',
-    ]),
+    // Canonical source: src/utils/constants.ts → STAFF_CATEGORIES
+    category: z.enum(STAFF_CATEGORIES),
     role: z.string().optional(),
     order: z.number().default(0),
     draft: z.boolean().default(false),
@@ -290,18 +267,16 @@ const staffCollection = defineCollection({
 });
 
 /**
- * Pages Collection
- * Static content pages (FAQ, Get Started, etc.)
- * Uses passthrough to allow page-specific fields
+ * Get Started Page Collection (singleton)
+ * src/content/pages/get-started/index.md
  */
-const pagesCollection = defineCollection({
+const getStartedPageCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     subtitle: z.string().optional(),
     description: z.string().optional(),
     draft: z.boolean().default(false),
-    // Get Started page fields
     welcomeTitle: z.string().optional(),
     welcomeContent: z.string().optional(),
     welcomeBookUrl: z.string().optional(),
@@ -315,6 +290,19 @@ const pagesCollection = defineCollection({
     })).optional(),
     faqTitle: z.string().optional(),
     faqDescription: z.string().optional(),
+  }),
+});
+
+/**
+ * FAQ Page Collection (singleton)
+ * src/content/pages/faq/index.md
+ */
+const faqPageCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    draft: z.boolean().default(false),
   }),
 });
 
@@ -421,10 +409,9 @@ const siteInfoCollection = defineCollection({
  */
 const sponsorsCollection = defineCollection({
   type: 'content',
-  schema: ({ image }) =>
-    z.object({
+  schema: z.object({
       name: z.string(),
-      logo: z.preprocess(normalizeAssetPath(2), image()),
+      logo: z.string(),
       url: z.string().url().optional(),
       isTitleSponsor: z.boolean().default(false),
       order: z.number().default(0),
@@ -465,7 +452,8 @@ export const collections = {
   board: boardCollection,
   staff: staffCollection,
   sponsors: sponsorsCollection,
-  pages: pagesCollection,
+  getStartedPage: getStartedPageCollection,
+  faqPage: faqPageCollection,
   siteInfo: siteInfoCollection,
   teamResults: teamResultsCollection,
   teamSeasons: teamSeasonsCollection,

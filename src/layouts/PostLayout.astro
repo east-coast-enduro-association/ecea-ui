@@ -10,7 +10,7 @@ export interface Props {
   title: string;
   description?: string;
   image?: {
-    src: ImageMetadata;
+    src: string;
     alt: string;
   };
   date?: Date;
@@ -52,14 +52,23 @@ const formattedDate = date ? formatDate(date) : null;
 
     {(image || type === "blog") && (
       <div class="mb-8 overflow-hidden rounded-lg">
-        <Image
-          src={image?.src ?? defaultBlogImage}
-          alt={image?.alt ?? "ECEA"}
-          class={fullImage ? "w-full h-auto" : "object-cover w-full h-64 md:h-96"}
-          widths={[320, 640, 1024]}
-          format="webp"
-          loading="lazy"
-        />
+        {image?.src ? (
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading="lazy"
+            class={fullImage ? "w-full h-auto" : "object-cover w-full h-64 md:h-96"}
+          />
+        ) : (
+          <Image
+            src={defaultBlogImage}
+            alt="ECEA"
+            loading="lazy"
+            class={fullImage ? "w-full h-auto" : "object-cover w-full h-64 md:h-96"}
+            widths={[320, 640, 1024]}
+            format="webp"
+          />
+        )}
       </div>
     )}
 

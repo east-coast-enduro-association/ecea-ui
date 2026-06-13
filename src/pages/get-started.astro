@@ -6,7 +6,7 @@ import { getCollection, getEntry } from "astro:content";
 import { COMPETITIVE_SERIES } from "../utils/constants";
 
 // Get page content from markdown
-const page = await getEntry("pages", "get-started");
+const page = await getEntry("getStartedPage", "index");
 const { title, subtitle, description, welcomeTitle, welcomeContent, welcomeBookUrl, amaUrl, seriesTitle, seriesDescription, stepsTitle, steps, faqTitle, faqDescription } = page.data;
 
 // Get all series

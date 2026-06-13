@@ -16,7 +16,7 @@ interface Props {
   description?: string;
   category?: "announcement" | "news" | "recap" | "article";
   image?: {
-    src: ImageMetadata;
+    src: string;
     alt: string;
   };
   featured?: boolean;
@@ -43,12 +43,21 @@ const {
     className
   ]}
 >
-  <Image
-    src={image?.src ?? defaultBlogImage}
-    alt={image?.alt ?? "ECEA"}
-    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-    widths={featured ? [640, 800] : [400, 600]}
-  />
+  {image?.src ? (
+    <img
+      src={image.src}
+      alt={image.alt}
+      loading="lazy"
+      class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+  ) : (
+    <Image
+      src={defaultBlogImage}
+      alt="ECEA"
+      class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      widths={featured ? [640, 800] : [400, 600]}
+    />
+  )}
 
   <div class:list={["absolute inset-0", UI_STYLES.gradientOverlay]}></div>
 
