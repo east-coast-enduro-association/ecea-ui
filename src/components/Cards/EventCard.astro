@@ -4,8 +4,10 @@
  * Displays an event with image, date, type badge, and title
  * Used on homepage and events listing page
  */
+import { Image } from "astro:assets";
 import { formatDate } from "../../utils/dateUtils";
 import { getEventTypeBadgeClassesDark } from "../../utils/eventTypeColors";
+import { getCmsImage } from "../../utils/cmsImage";
 
 interface Props {
   title: string;
@@ -28,6 +30,8 @@ const {
   featured = false,
   class: className = ""
 } = Astro.props;
+
+const imageMeta = getCmsImage(image);
 ---
 
 <a
@@ -38,7 +42,14 @@ const {
     className
   ]}
 >
-  {image ? (
+  {imageMeta ? (
+    <Image
+      src={imageMeta}
+      alt={title}
+      class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      widths={featured ? [640, 960] : [400, 700]}
+    />
+  ) : image ? (
     <img
       src={image}
       alt={title}

@@ -6,6 +6,7 @@ import { getCollection, getEntry } from "astro:content";
 import { formatDate } from "../../utils/dateUtils";
 import { getEventMotoTallyUrls } from "../../utils/motoTally";
 import { MOTO_TALLY } from "../../utils/constants";
+import { getCmsImage } from "../../utils/cmsImage";
 
 export async function getStaticPaths() {
   const eventEntries = await getCollection("events");

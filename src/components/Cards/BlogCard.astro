@@ -8,6 +8,7 @@ import { Image } from "astro:assets";
 import { formatDate } from "../../utils/dateUtils";
 import { CATEGORY_COLORS, UI_STYLES } from "../../utils/constants";
 import defaultBlogImage from "../../assets/blog/ecea-small.png";
+import { getCmsImage } from "../../utils/cmsImage";
 
 interface Props {
   title: string;
@@ -33,6 +34,8 @@ const {
   featured = false,
   class: className = ""
 } = Astro.props;
+
+const imageMeta = getCmsImage(image?.src);
 ---
 
 <a
@@ -43,7 +46,14 @@ const {
     className
   ]}
 >
-  {image?.src ? (
+  {imageMeta ? (
+    <Image
+      src={imageMeta}
+      alt={image!.alt}
+      class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      widths={featured ? [640, 800] : [400, 600]}
+    />
+  ) : image?.src ? (
     <img
       src={image.src}
       alt={image.alt}
