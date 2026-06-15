@@ -6,8 +6,8 @@ Thumbs.db
 npm-debug.log
 node_modules
 builds
-package-lock.json
 /resources
+venv/
 .hugo_build.lock
 .astro
 dist/

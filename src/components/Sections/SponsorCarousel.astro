@@ -4,10 +4,11 @@
  * Displays title sponsor prominently and scrolling carousel of other sponsors
  */
 import { Image } from "astro:assets";
+import { getCmsImage } from "../../utils/cmsImage";
 
 interface Sponsor {
   name: string;
-  logo: ImageMetadata;
+  logo: string;
   url: string;
 }
 
@@ -38,11 +39,15 @@ const { titleSponsor, sponsors } = Astro.props;
           >
             <span class="text-xs uppercase tracking-wider text-gray-500">Title Sponsor</span>
             <div class="bg-white rounded-lg px-4 py-2 border border-gray-200 group-hover:border-primary-300 transition-colors">
-              <Image
-                src={titleSponsor.logo}
-                alt={titleSponsor.name}
-                class="h-10 md:h-12 w-auto object-contain"
-              />
+              {getCmsImage(titleSponsor.logo) ? (
+                <Image
+                  src={getCmsImage(titleSponsor.logo)!}
+                  alt={titleSponsor.name}
+                  class="h-10 md:h-12 w-auto object-contain"
+                />
+              ) : (
+                <img src={titleSponsor.logo} alt={titleSponsor.name} loading="lazy" class="h-10 md:h-12 w-auto object-contain" />
+              )}
             </div>
           </a>
         </>
@@ -59,11 +64,15 @@ const { titleSponsor, sponsors } = Astro.props;
             rel="noopener noreferrer"
             class="flex-shrink-0"
           >
-            <Image
-              src={sponsor.logo}
-              alt={sponsor.name}
-              class="h-8 md:h-10 w-auto object-contain"
-            />
+            {getCmsImage(sponsor.logo) ? (
+              <Image
+                src={getCmsImage(sponsor.logo)!}
+                alt={sponsor.name}
+                class="h-8 md:h-10 w-auto object-contain"
+              />
+            ) : (
+              <img src={sponsor.logo} alt={sponsor.name} loading="lazy" class="h-8 md:h-10 w-auto object-contain" />
+            )}
           </a>
         ))}
       </div>

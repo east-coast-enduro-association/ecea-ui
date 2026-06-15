@@ -2,9 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/Sections/PageHeader.astro";
 import Button from "../components/UI/Button.astro";
-import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import { STAFF_CATEGORIES } from "../utils/constants";
+import { getCmsImage } from "../utils/cmsImage";
 
 // Get all board members
 const allBoard = (await getCollection("board"))
@@ -56,13 +57,16 @@ function encodeEmail(email: string): string {
         {officers.map((member) => (
           <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
             {member.data.image ? (
-              <Image
-                src={member.data.image}
-                alt={member.data.name}
-                width={96}
-                height={96}
-                class="w-24 h-24 rounded-full object-cover mx-auto mb-4"
-              />
+              getCmsImage(member.data.image) ? (
+                <Image
+                  src={getCmsImage(member.data.image)!}
+                  alt={member.data.name}
+                  width={96} height={96}
+                  class="w-24 h-24 rounded-full object-cover mx-auto mb-4"
+                />
+              ) : (
+                <img src={member.data.image} alt={member.data.name} loading="lazy" class="w-24 h-24 rounded-full object-cover mx-auto mb-4" />
+              )
             ) : (
               <div class="w-24 h-24 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -106,13 +110,16 @@ function encodeEmail(email: string): string {
               <li class="flex items-center justify-between py-3 border-b border-gray-100 last:border-0">
                 <div class="flex items-center">
                   {trustee.data.image ? (
-                    <Image
-                      src={trustee.data.image}
-                      alt={trustee.data.name}
-                      width={40}
-                      height={40}
-                      class="w-10 h-10 rounded-full object-cover mr-4"
-                    />
+                    getCmsImage(trustee.data.image) ? (
+                      <Image
+                        src={getCmsImage(trustee.data.image)!}
+                        alt={trustee.data.name}
+                        width={40} height={40}
+                        class="w-10 h-10 rounded-full object-cover mr-4"
+                      />
+                    ) : (
+                      <img src={trustee.data.image} alt={trustee.data.name} loading="lazy" class="w-10 h-10 rounded-full object-cover mr-4" />
+                    )
                   ) : (
                     <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mr-4">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

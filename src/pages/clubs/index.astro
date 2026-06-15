@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
-import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { getCmsImage } from "../../utils/cmsImage";
 
 // Fetch all clubs
 const all = await getCollection("clubs", ({ data }) =>
@@ -46,11 +47,15 @@ const clubs = all.sort((a, b) =>
             <!-- Club logo -->
             {m.data.logo && (
               <div class="w-full h-[200px] overflow-hidden bg-gray-100 flex items-center justify-center">
-                <Image
-                  src={m.data.logo}
-                  alt={m.data.name}
-                  class="max-w-full max-h-full object-contain p-4"
-                />
+                {getCmsImage(m.data.logo) ? (
+                  <Image
+                    src={getCmsImage(m.data.logo)!}
+                    alt={m.data.name}
+                    class="max-w-full max-h-full object-contain p-4"
+                  />
+                ) : (
+                  <img src={m.data.logo} alt={m.data.name} loading="lazy" class="max-w-full max-h-full object-contain p-4" />
+                )}
               </div>
             )}
 

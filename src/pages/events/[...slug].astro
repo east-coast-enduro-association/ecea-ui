@@ -6,6 +6,7 @@ import { getCollection, getEntry } from "astro:content";
 import { formatDate } from "../../utils/dateUtils";
 import { getEventMotoTallyUrls } from "../../utils/motoTally";
 import { MOTO_TALLY } from "../../utils/constants";
+import { getCmsImage } from "../../utils/cmsImage";
 
 export async function getStaticPaths() {
   const eventEntries = await getCollection("events");
@@ -38,9 +39,6 @@ if (!displayImage && entry.data.hostingClubs && entry.data.hostingClubs.length >
     isFlyer = false; // Club logo should not be displayed full-size
   }
 }
-
-// Check if displayImage is an ImageMetadata object (has .src property)
-const hasImageMetadata = displayImage && typeof displayImage === 'object' && 'src' in displayImage;
 
 // Get PDF flyer URL for download button (separate from image flyer)
 const flyerPdfUrl = entry.data.flyerPdf || null;
@@ -134,7 +132,7 @@ if (entry.data.eventType === "Enduro" && entry.data.hostingClubs?.[0]) {
   <PostLayout
     title={entry.data.title}
     description={entry.data.summary}
-    image={hasImageMetadata ? { src: displayImage, alt: entry.data.title } : undefined}
+    image={displayImage ? { src: displayImage, alt: entry.data.title } : undefined}
     date={entry.data.date}
     tags={entry.data.tags}
     type="event"
