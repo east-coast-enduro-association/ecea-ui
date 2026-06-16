@@ -14,6 +14,7 @@ closedCourse: true
 gasAway: false
 image: ../../../assets/clubs/logos/hmdr.png
 flyer: /assets/events/flyers/2026-en-hmder-flyer.jpeg
+motoTallyId: 6
 draft: false
 ---
 
