@@ -4,12 +4,15 @@ This directory contains the TinaCMS schema and admin branding for the ECEA websi
 
 ## Files
 
-| File | Purpose |
-|------|---------|
-| `config.tsx` | All collection schemas, field definitions, and media config |
-| `CsvUploaderScreen.tsx` | Custom TinaCMS screen for uploading team results CSVs |
+| File/Directory | Purpose |
+|----------------|---------|
+| `config.tsx` | TinaCMS entry point — imports all collections, sets media config |
+| `collections/` | One file per collection (blog, events, clubs, etc.) |
+| `helpers.ts` | Shared field helpers (richText, imageField, uploadDir, etc.) |
+| `components.tsx` | Custom TinaCMS UI components |
+| `CsvUploaderScreen.tsx` | Custom screen for uploading team results CSVs |
 | `tina-lock.json` | Compiled schema snapshot — **must be committed** |
-| `__generated__/` | Auto-generated types/client — gitignored, rebuilt at build time |
+| `__generated__/` | Auto-generated types/client — gitignored, rebuilt locally |
 
 ## How TinaCMS Works Here
 
@@ -20,7 +23,7 @@ Editor saves in TinaCMS UI
         ↓
 TinaCMS Cloud → GitHub commit (markdown/JSON + any uploaded images)
         ↓
-Netlify detects push → runs `npm run build:tina`
+Netlify detects push → runs `npm run build` (astro build only)
         ↓
 Site rebuilds and deploys
 ```
@@ -57,47 +60,62 @@ TinaCMS uploads images directly to `src/assets/...` in the GitHub repo. Each ima
 
 The `public/assets` symlink still exists for local dev — it lets TinaCMS admin preview images at `/assets/...` URLs while running locally.
 
-### Why `ui.parse` Is Not Used
+### Image Paths in Content Files
 
-TinaCMS's `ui.parse` function (which appears on image fields) is a **client-side-only** transform. TinaCMS Cloud does not apply it when saving content via the API — the raw path from the media picker is written directly to the markdown file.
+TinaCMS Cloud saves image paths as absolute strings like `/assets/events/flyers/foo.jpg`. All image fields in `src/content/config.ts` use `z.string()` to accept these directly.
 
-Path normalization (converting TinaCMS's `/assets/...` paths to Astro-compatible relative paths) is handled instead by `normalizeAssetPath` in `src/content/config.ts`.
+At render time, `getCmsImage()` in `src/utils/cmsImage.ts` resolves any path variant to Astro `ImageMetadata` via `import.meta.glob`, enabling full Astro image optimization. It handles three formats:
 
-## tina-lock.json
-
-This file is a compiled snapshot of the schema used by TinaCMS Cloud to validate builds. It **must be kept in sync** with `config.ts`. If you change `config.ts` (add a field, change media config, etc.), the lock file is normally updated automatically when `tinacms build` runs — but if you make changes manually to `config.ts`, you may need to run `tinacms build` locally to regenerate it.
-
-If a Netlify build fails with:
-> "The local Tina schema doesn't match the remote Tina schema"
-
-it usually means `tina-lock.json` is out of sync with `config.tsx`. The reliable fix is to run `npm run dev` locally (not `build:tina`) — the dev server regenerates `tina-lock.json` to match the current config. Commit and push the updated file, then trigger a re-index from the TinaCloud dashboard.
+| Format | Example |
+|--------|---------|
+| Absolute (TinaCMS Cloud) | `/assets/events/flyers/foo.jpg` |
+| Relative (legacy) | `../../../assets/events/flyers/foo.jpg` |
+| Alias | `@assets/events/flyers/foo.jpg` |
 
 ### Attachment Files (PDFs)
 
-The downloads field on events uploads files to `src/attachments/events/` (because `publicFolder: 'src'`). However, PDFs need to be in `public/attachments/events/` to be served by the site.
+The downloads field on events uses `publicFolder: 'src'`, so TinaCMS uploads PDFs to `src/attachments/events/`. However, PDFs need to be in `public/attachments/events/` to be served.
 
-**`.rs` files (Enduro Roll Chart):** TinaCMS's media picker does not allow `.rs` uploads. Copy these files to `src/attachments/events/` via git and add the URL directly to the event's `downloads` array in the markdown file. Everything else (PDFs, images) uploads normally through TinaCMS.
-
-**Current workaround for PDFs:** After TinaCMS uploads an attachment, manually move it:
+**After TinaCMS uploads an attachment**, move it:
 ```bash
 git mv "src/attachments/events/your-file.pdf" "public/attachments/events/your-file.pdf"
 git commit -m "Move attachment to public/"
 git push
 ```
 
-The URL saved in the event's `downloads[].url` field (e.g., `/attachments/events/your-file.pdf`) will work once the file is in `public/`.
+**`.rs` files (Enduro Roll Charts):** TinaCMS's media picker does not allow `.rs` uploads. Copy these files to `public/attachments/events/` via git and add the URL directly to the event's `downloads` array in the markdown file.
+
+## tina-lock.json
+
+This file is a compiled snapshot of the schema used by TinaCMS Cloud to validate builds. It **must be kept in sync** with `config.tsx` and committed. If you change the config (add a field, rename a collection, etc.), run `npm run dev` locally — the dev server regenerates `tina-lock.json` automatically. Commit and push the updated file.
+
+If a Netlify build or TinaCloud sync fails with a schema mismatch error, the lock file is likely out of sync. Fix by running `npm run dev` locally, committing the regenerated `tina-lock.json`, and pushing.
+
+## Admin Panel
+
+The TinaCMS admin panel (`public/admin/`) is a static SPA that is **pre-built and committed** to the repo. Netlify does not run `tinacms build` at deploy time — it only runs `astro build`.
+
+The admin panel only needs to be rebuilt when the tina schema changes. After any schema change:
+
+```bash
+npm run build:tina
+git add public/admin/
+git commit -m "Rebuild TinaCMS admin panel"
+git push
+```
 
 ## Adding a New Collection
 
-1. Define the collection in `config.tsx` using `defineConfig`
-2. For image fields, use `uploadDir` and wrap with the path type — **do not rely on `ui.parse`**; path normalization happens in `src/content/config.ts`
-3. Add the collection to `src/content/config.ts` with the appropriate schema
+1. Create `tina/collections/your-collection.ts` — define the collection using `defineConfig` helpers
+2. Import and add it to the `collections` array in `tina/config.tsx`
+3. Add the corresponding collection to `src/content/config.ts` with `z.string()` for image fields
 4. Run `npm run dev` locally to regenerate `tina-lock.json`
-5. Commit both `config.tsx` and `tina-lock.json`
+5. Run `npm run build:tina` to rebuild the admin panel
+6. Commit `tina/collections/your-collection.ts`, `tina/tina-lock.json`, `src/content/config.ts`, and `public/admin/`
 
 ## Visual Editing
 
-Visual editing is intentionally **disabled**. The `router` config has been removed from all collections (events, blog, clubs, series). Adding a `router` field to any collection re-enables visual editing mode in the TinaCMS admin — avoid this unless intentional.
+Visual editing is intentionally **disabled**. The `router` config has been removed from all collections. Adding a `router` field to any collection re-enables visual editing mode — avoid this unless intentional.
 
 ## Local Development
 
@@ -105,6 +123,5 @@ Visual editing is intentionally **disabled**. The `router` config has been remov
 npm run dev
 # TinaCMS admin available at http://localhost:4321/admin
 # Uses local mode — no cloud authentication required
+# Changes are written to your local filesystem instead of GitHub
 ```
-
-In local mode, changes are written directly to your local filesystem instead of GitHub.

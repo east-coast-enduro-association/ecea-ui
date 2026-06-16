@@ -13,74 +13,68 @@ All site content lives here as Markdown (`.md`) or JSON files. Schemas are defin
 | `board/` | Markdown | Executive board + Board of Trustees |
 | `staff/` | Markdown | Series directors, referees, contacts |
 | `sponsors/` | Markdown | Title and regular sponsors |
-| `pages/` | Markdown | Static page content (Get Started, FAQ) |
+| `faqPage/` | Markdown | FAQ page content |
+| `getStartedPage/` | Markdown | Get Started page content |
 | `siteInfo/` | Markdown | Global site config |
-| `teamResults/` | JSON | Enduro team competition standings |
+| `teamEventResults/` | JSON | Per-event team competition results |
+| `teamResults/` | JSON | Team competition standings |
+| `teamSeasons/` | JSON | Team season schedules |
 | `members/` | JSON | Membership roster by series/year |
 
-## Image Path Normalization
+## Image Fields
 
-### The Problem
+Image fields in `config.ts` use `z.string()` rather than Astro's `image()` validator. This is intentional — TinaCMS Cloud saves image paths as absolute strings (e.g. `/assets/events/flyers/foo.jpg`), which are incompatible with the `image()` validator's static import requirement.
 
-TinaCMS Cloud saves image paths as absolute paths like:
-```
-/assets/events/flyers/my-flyer.jpg
-```
+At render time, `getCmsImage()` in `src/utils/cmsImage.ts` resolves any path to Astro `ImageMetadata` using an eager `import.meta.glob` over all of `src/assets/`. This gives full Astro image optimization (format conversion, responsive sizes, lazy loading) for all CMS-managed images. If a path doesn't resolve (e.g. an external URL), components fall back to a plain `<img>`.
 
-Astro's `image()` schema validator requires relative paths:
-```
-../../../assets/events/flyers/my-flyer.jpg
-```
+Supported path formats (all normalize correctly):
 
-### The Fix
-
-`config.ts` defines a `normalizeAssetPath(depth)` helper that preprocesses image values before `image()` validates them:
-
-```ts
-const normalizeAssetPath = (depth: number) => (val: unknown) => {
-  if (typeof val === 'string') {
-    if (val === '') return undefined;
-    if (val.startsWith('/assets/')) {
-      return '../'.repeat(depth) + 'assets/' + val.slice(8);
-    }
-  }
-  return val;
-};
-```
-
-It's applied as a `z.preprocess` wrapper on every `image()` field:
-
-```ts
-flyer: z.preprocess(normalizeAssetPath(3), image().nullable().optional()),
-```
-
-The `depth` parameter is the number of directory levels from the content file up to `src/`:
-
-| Collection path | Depth | Prefix |
-|----------------|-------|--------|
-| `src/content/events/YEAR/` | 3 | `../../../` |
-| `src/content/blog/` | 2 | `../../` |
-| `src/content/clubs/` | 2 | `../../` |
-| `src/content/board/` | 2 | `../../` |
-| `src/content/sponsors/` | 2 | `../../` |
-
-Existing relative paths (already in `../../..` format) pass through unchanged.
+| Format | Example |
+|--------|---------|
+| Absolute (TinaCMS Cloud) | `/assets/events/flyers/foo.jpg` |
+| Relative (legacy) | `../../../assets/events/flyers/foo.jpg` |
+| Alias | `@assets/events/flyers/foo.jpg` |
 
 ## Adding a New Image Field
 
-If you add an image field to a collection schema, wrap it with `normalizeAssetPath`:
+In `config.ts`, use `z.string()`:
 
 ```ts
-// Events collection (depth 3)
-myImage: z.preprocess(normalizeAssetPath(3), image().nullable().optional()),
+// Optional image
+myImage: z.string().nullable().optional(),
 
-// Other collections (depth 2)
-myImage: z.preprocess(normalizeAssetPath(2), image().nullable().optional()),
+// Required image
+myImage: z.string(),
 ```
+
+In the component, resolve and use `<Image>`:
+
+```astro
+import { Image } from "astro:assets";
+import { getCmsImage } from "../../utils/cmsImage";
+
+const imageMeta = getCmsImage(myImage);
+---
+{imageMeta ? (
+  <Image src={imageMeta} alt="..." />
+) : myImage ? (
+  <img src={myImage} alt="..." loading="lazy" />
+) : null}
+```
+
+## Schema Helpers
+
+Defined at the top of `config.ts`:
+
+| Helper | Purpose |
+|--------|---------|
+| `localDate` | Parses dates as local time (prevents UTC timezone shift) |
+| `optionalString` | Optional string that treats empty string as `undefined` |
+| `optionalUrl` | Optional string validated as a URL |
 
 ## Event Content
 
-Events are organized by year under `events/YEAR/`. All years share the same schema (defined once in `config.ts` as `eventsCollection`).
+Events are organized by year under `events/YEAR/`. All years share the same schema (`eventsCollection` in `config.ts`).
 
 ### Filename Convention
 
@@ -95,14 +89,5 @@ Type abbreviations: `en` = Enduro, `hs` = Hare Scramble, `fk` = FastKIDZ, `ds` =
 ### Flyer Images
 
 Flyer images are stored in `src/assets/events/flyers/`. To add a flyer:
-- **Via TinaCMS (recommended):** Use the image picker in the event editor — the file will be committed automatically
-- **Manually:** Add the file to `src/assets/events/flyers/` and set `flyer: ../../../assets/events/flyers/your-file.jpg` in the frontmatter
-
-## Schema Helpers
-
-| Helper | Purpose |
-|--------|---------|
-| `localDate` | Parses dates as local time (prevents UTC timezone shift) |
-| `optionalString` | Optional string that treats empty string as `undefined` |
-| `optionalUrl` | Optional string validated as a URL |
-| `normalizeAssetPath(depth)` | Normalizes TinaCMS absolute image paths to relative |
+- **Via TinaCMS (recommended):** Use the image picker in the event editor — the file commits automatically
+- **Manually:** Add the file to `src/assets/events/flyers/` and set `flyer: /assets/events/flyers/your-file.jpg` in the frontmatter
