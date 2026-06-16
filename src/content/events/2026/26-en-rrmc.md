@@ -14,10 +14,11 @@ closedCourse: true
 gasAway: false
 image: ../../../assets/clubs/logos/rrmc-large.png
 flyer: /assets/events/flyers/2026-en-rrmc-flyer.jpg
+motoTallyId: 5
 downloads:
   - label: Flyer PDF
     url: /attachments/events/2026-en-rrmc-flyer.pdf
 draft: false
 ---
 
-RRMC brings everything to the table with rocks, roots, mud, creek beds, grass track, loamy hillclimbs, slick off cambers, you name it! Hosted in a beautiful part of New York State. 
+RRMC brings everything to the table with rocks, roots, mud, creek beds, grass track, loamy hillclimbs, slick off cambers, you name it! Hosted in a beautiful part of New York State.
