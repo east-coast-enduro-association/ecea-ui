@@ -17,6 +17,8 @@ flyer: /assets/events/flyers/26-en-dvtr-flyer.jpg
 downloads:
   - label: Route Sheet
     url: /attachments/events/FOGGY 2026 ROUTE SHEET VER 2.pdf
+  - label: JART
+    url: /attachments/events/FOGGY 2026 JART VER 2.pdf
 draft: false
 ---
 
