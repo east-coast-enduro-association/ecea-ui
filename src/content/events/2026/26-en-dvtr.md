@@ -19,6 +19,8 @@ downloads:
     url: /attachments/events/FOGGY 2026 ROUTE SHEET VER 2.pdf
   - label: JART
     url: /attachments/events/FOGGY 2026 JART VER 2.pdf
+  - label: Confirmation Sheet
+    url: /attachments/events/Foggy 2026 Confirmation Sheet.docx.pdf
 draft: false
 ---
 
