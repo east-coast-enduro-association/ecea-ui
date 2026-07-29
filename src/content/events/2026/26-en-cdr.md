@@ -14,7 +14,7 @@ series: ECEA Enduro Championship Series
 closedCourse: false
 gasAway: true
 image: ../../../assets/clubs/logos/cdr.png
-flyer: ../../../assets/events/flyers/2023-en-cdr-flyer.png
+flyer: /assets/events/flyers/2026 Beehive Flyer.jpg
 draft: false
 ---
 
