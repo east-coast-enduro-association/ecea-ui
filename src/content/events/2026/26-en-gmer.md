@@ -17,6 +17,8 @@ flyer: /assets/events/flyers/26-en-gmer-flyer.png
 downloads:
   - label: Roll Chart
     url: /attachments/events/three_springs_2026_roll_chart.pdf
+  - label: Confirmation
+    url: /attachments/events/2026_3springs_confirmation.pdf
 draft: false
 ---
 
