@@ -14,6 +14,9 @@ closedCourse: false
 gasAway: true
 image: ../../../assets/clubs/logos/gmer.gif
 flyer: /assets/events/flyers/26-en-gmer-flyer.png
+downloads:
+  - label: Roll Chart
+    url: /attachments/events/three_springs_2026_roll_chart.pdf
 draft: false
 ---
 
