@@ -14,6 +14,9 @@ closedCourse: true
 gasAway: false
 image: ../../../assets/clubs/logos/idrlogo.jpg
 flyer: /assets/events/flyers/26-en-idr-flyer.jpg
+downloads:
+  - label: Rider and Course Information
+    url: /attachments/events/IDR Rider Info Sheet 2026 (1).pdf
 draft: false
 ---
 
