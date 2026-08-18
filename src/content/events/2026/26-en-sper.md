@@ -13,7 +13,7 @@ series: ECEA Enduro Championship Series
 closedCourse: true
 gasAway: false
 image: ../../../assets/ecea/logos/michaux.jpg
-flyer: ''
+flyer: /assets/events/flyers/26-en-sper-flyer.jpg
 draft: false
 ---
 
