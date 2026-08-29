@@ -20,7 +20,8 @@ downloads:
     url: /attachments/events/Beehive 2026 routesheet short courtesy copy 082826.pdf
   - label: Long Course Route Sheet
     url: /attachments/events/Beehive 2026 routesheet long courtesy copy 082826.pdf
-  - {}
+  - label: Confirmation Sheet
+    url: /attachments/events/2026 Confirmation Sheet 082826.pdf
 draft: false
 ---
 
