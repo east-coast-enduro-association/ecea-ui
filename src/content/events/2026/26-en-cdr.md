@@ -15,6 +15,11 @@ closedCourse: false
 gasAway: true
 image: ../../../assets/clubs/logos/cdr.png
 flyer: /assets/events/flyers/2026 Beehive Flyer.jpg
+downloads:
+  - label: Short Course Route Sheet
+    url: /attachments/events/Beehive 2026 routesheet short courtesy copy 082826.pdf
+  - {}
+  - {}
 draft: false
 ---
 
