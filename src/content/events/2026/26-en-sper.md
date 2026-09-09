@@ -21,6 +21,8 @@ downloads:
     url: /attachments/events/MICHAUX JART ROUTESHEET WTURNS.pdf
   - label: Route Sheet (No Turns)
     url: /attachments/events/MICHAUX JART NO TURNS 26.pdf
+  - label: Route Sheet JART Complete
+    url: /attachments/events/Michaux 2026 rollchart rev.pdf
 draft: false
 ---
 
