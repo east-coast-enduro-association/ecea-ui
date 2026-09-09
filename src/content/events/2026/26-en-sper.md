@@ -14,6 +14,9 @@ closedCourse: true
 gasAway: false
 image: ../../../assets/ecea/logos/michaux.jpg
 flyer: /assets/events/flyers/26-en-sper-flyer.jpg
+downloads:
+  - label: Confirmation Sheet
+    url: /attachments/events/MICHAUX CONFIRMATION 26.pdf
 draft: false
 ---
 
