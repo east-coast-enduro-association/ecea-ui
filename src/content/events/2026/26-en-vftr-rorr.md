@@ -14,7 +14,7 @@ series: ECEA Enduro Championship Series
 closedCourse: true
 gasAway: false
 image: ../../../assets/clubs/logos/vftr.jpg
-flyer: /assets/events/flyers/image0.jpeg
+flyer: /assets/events/flyers/IMG_3598.jpeg
 draft: false
 ---
 
