@@ -19,6 +19,8 @@ downloads:
     url: /attachments/events/MICHAUX CONFIRMATION 26.pdf
   - label: Route Sheet Complete
     url: /attachments/events/MICHAUX JART ROUTESHEET WTURNS.pdf
+  - label: Route Sheet (No Turns)
+    url: /attachments/events/MICHAUX JART NO TURNS 26.pdf
 draft: false
 ---
 
