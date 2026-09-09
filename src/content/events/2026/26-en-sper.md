@@ -17,6 +17,8 @@ flyer: /assets/events/flyers/26-en-sper-flyer.jpg
 downloads:
   - label: Confirmation Sheet
     url: /attachments/events/MICHAUX CONFIRMATION 26.pdf
+  - label: Route Sheet Complete
+    url: /attachments/events/MICHAUX JART ROUTESHEET WTURNS.pdf
 draft: false
 ---
 
