@@ -15,6 +15,15 @@ closedCourse: true
 gasAway: false
 image: ../../../assets/clubs/logos/vftr.jpg
 flyer: /assets/events/flyers/IMG_3598.jpeg
+downloads:
+  - label: Confirmation Sheet
+    url: /attachments/events/Moonshine Confirmation 2026 - rev 2.pdf
+  - label: Route Sheet (With Possibles)
+    url: /attachments/events/2026 Moonshine Route Sheet - WITH possibles.pdf
+  - label: Route Sheet (No Possibles)
+    url: /attachments/events/2026 Moonshine Route Sheet - No possibles.pdf
+  - label: Waiver
+    url: /attachments/events/Moonshine_Waiver.pdf
 draft: false
 ---
 
