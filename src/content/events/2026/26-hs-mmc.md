@@ -18,7 +18,8 @@ flyer: /assets/events/flyers/IMG_0959.jpeg
 downloads:
   - label: Vendor Breakfast
     url: /attachments/events/IMG_5990.jpeg
-  - {}
+  - label: Vendor Lunch
+    url: /attachments/events/IMG_5988.jpeg
 draft: false
 ---
 
