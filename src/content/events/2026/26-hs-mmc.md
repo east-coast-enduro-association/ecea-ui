@@ -16,6 +16,8 @@ gateFee: '$15 (age 12+), $10 (age 6-11)'
 image: ../../../assets/clubs/logos/mmc.jpg
 flyer: /assets/events/flyers/IMG_0959.jpeg
 downloads:
+  - label: Vendor Breakfast
+    url: /attachments/events/IMG_5990.jpeg
   - {}
 draft: false
 ---
