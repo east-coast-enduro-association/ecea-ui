@@ -4,7 +4,7 @@ summary: Fall racing in NJ
 date: 2026-09-27T10:00:00.000Z
 endDate: 2026-09-27T04:43:32.554Z
 checkInTime: '7:00 AM'
-location: TBA
+location: '161 Hesstown Rd, Millville NJ'
 hostingClubs:
   - MMC
 eventType: Hare Scramble
