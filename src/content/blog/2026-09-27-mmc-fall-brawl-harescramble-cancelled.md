@@ -6,6 +6,7 @@ author: ECEA
 category: news
 image:
   src: /assets/blog/mmc-fall-brawl-cancel.jpg
+  alt: Riders and volunteers in rain gear gathered under pavilions at a wet, overcast event site
 tags:
   - '2026'
   - harescramble
