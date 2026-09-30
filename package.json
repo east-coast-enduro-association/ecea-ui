@@ -12,24 +12,23 @@
     "import-results": "node scripts/import-team-results.mjs"
   },
   "dependencies": {
-    "@astrojs/markdoc": "^0.15.10",
     "@astrojs/react": "^4.4.2",
-    "@astrojs/rss": "^4.0.14",
-    "@astrojs/sitemap": "^3.1.1",
-    "@astrojs/tailwind": "^5.1.0",
-    "@tinacms/cli": "^2.0.3",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "astro": "^5.2.5",
-    "date-fns": "^3.3.1",
-    "glob": "^13.0.0",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/tailwind": "^6.0.2",
+    "@tinacms/cli": "^3.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "astro": "^5.18.2",
+    "date-fns": "^4.4.0",
+    "glob": "^13.0.6",
     "gray-matter": "^4.0.3",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "tailwindcss": "^3.4.1",
-    "tinacms": "^3.3.1"
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwindcss": "^3.4.19",
+    "tinacms": "^3.14.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10"
+    "@tailwindcss/typography": "^0.5.20"
   }
 }
