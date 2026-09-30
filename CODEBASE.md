@@ -75,6 +75,9 @@ pubDate: 2025-01-15
 description: "Brief description for previews"
 author: "ECEA"
 category: "news"  # Options: announcement, news, recap, article
+image:            # Optional — but if you include `image`, `alt` is REQUIRED
+  src: /assets/blog/your-image.jpg
+  alt: "Describe the image"
 tags: ["enduro", "2025"]
 pinned: false     # Set true to feature on homepage
 draft: false      # Set true to hide in production
@@ -82,6 +85,12 @@ draft: false      # Set true to hide in production
 
 Your content here...
 ```
+
+> **Build trap:** the blog schema (`src/content/config.ts`) makes `image.alt`
+> required whenever `image` is present. A post with `image.src` but no `image.alt`
+> passes the TinaCMS editor with no warning, then **fails the production build**
+> (`InvalidContentEntryDataError`), taking down all deploys until fixed. If you
+> add an image, always add alt text.
 
 ### Adding a New Event
 
@@ -339,10 +348,42 @@ pinned: true
 ## Development Commands
 
 ```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run preview  # Preview production build
+npm run dev       # Start dev server (astro + TinaCMS)
+npm run build     # Build the site (astro build only) — this is what Netlify runs
+npm run build:tina # tinacms build + astro build — rebuilds the /admin bundle too
+npm run preview   # Preview production build
 ```
+
+---
+
+## Build & Deploy Notes
+
+- **Hosting**: Netlify auto-deploys from `master` on push. The build command in
+  `netlify.toml` is `npm run build` (**`astro build` only** — it does NOT run
+  `tinacms build`), on `NODE_VERSION = "22"`.
+- **The `/admin` (TinaCMS) bundle is served from committed files** under
+  `public/admin/`, because the Netlify build never rebuilds it. If you run
+  `npm run build:tina` (or `tinacms build`) locally, **be careful committing the
+  result**: TinaCMS 3 writes a `public/admin/.gitignore` that ignores its own
+  freshly-built `index.html` and `assets/`, while deleting the previously
+  committed assets. Committing that half-state leaves the tracked
+  `public/admin/index.html` pointing at an asset absent from the repo →
+  **`/admin` 404s in production**. Either commit the full new bundle (force-add
+  past the generated `.gitignore`) or revert `public/admin` before committing.
+- **Verifying a production deploy**: preview deploys post GitHub commit statuses,
+  but production deploys from `master` do **not**. Confirm prod by hitting the
+  live site (e.g. `curl -I https://www.ecea.org/`) or the Netlify dashboard — the
+  GitHub status API will just read `pending` with zero statuses.
+- **Dependencies are pinned to the Astro 5 line on purpose.** `@astrojs/tailwind`
+  peers `astro ^3||^4||^5`, and Astro 6 removes the legacy content-collections
+  API (this site uses `type: 'content'` throughout, plus `entry.render()` and
+  `entry.slug`). Moving to Astro 6/7 is a real migration (Content Layer API +
+  Tailwind 4 via `@tailwindcss/vite`), not a version bump.
+- **Related-posts ordering is non-deterministic.** `src/pages/blog/[slug].astro`
+  sorts related posts only by shared-tag count, then slices 3; ties fall back to
+  collection order, which isn't stable across cold builds. Cosmetic, but it means
+  two builds of identical source can differ — don't rely on output diffing to
+  spot regressions. A secondary sort (pubDate desc, then slug) would fix it.
 
 ---
 

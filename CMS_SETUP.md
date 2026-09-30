@@ -72,6 +72,20 @@ npm run build:tina
 
 This runs `tinacms build && astro build` to generate the admin UI and site.
 
+> **Important — this is NOT what Netlify runs.** The deploy command in
+> `netlify.toml` is `npm run build` (`astro build` only). Netlify does **not**
+> rebuild the `/admin` bundle; it serves the version committed under
+> `public/admin/`. So the admin UI only changes in production when you run
+> `npm run build:tina` locally and **commit the regenerated `public/admin/`**.
+>
+> TinaCMS 3 makes this a footgun: `tinacms build` writes a
+> `public/admin/.gitignore` that ignores the new `index.html` and `assets/` it
+> just built, while removing the old committed assets. If you commit that state,
+> the tracked `public/admin/index.html` references an asset that isn't in the
+> repo and `/admin` 404s. When regenerating the admin, force-add the full new
+> bundle past that `.gitignore`; otherwise revert `public/admin` before you
+> commit.
+
 ## Content Collections
 
 | Collection | Description |
@@ -115,10 +129,18 @@ Editors need to be invited through Tina Cloud:
 - Check that environment variables are set (production)
 - Verify the Tina Cloud project is properly configured
 
+### Admin page 404s or loads a blank page after a deploy
+- Someone likely ran `tinacms build` and committed a partial `public/admin/`.
+  Check that `public/admin/index.html`'s referenced `assets/index-*.js` actually
+  exists in the repo. See "Build for Production" above — regenerate and force-add
+  the full bundle, or revert `public/admin` to the last known-good commit.
+
 ### Changes not appearing on site
 - Check GitHub for the commit
 - Check Netlify deploy logs
 - Wait 1-2 minutes for deploy to complete
+- Note: production deploys from `master` do not post a GitHub commit status;
+  confirm via the live site or the Netlify dashboard, not the GitHub checks UI
 
 ### Authentication issues
 - Verify TINA_CLIENT_ID and TINA_TOKEN are correct
