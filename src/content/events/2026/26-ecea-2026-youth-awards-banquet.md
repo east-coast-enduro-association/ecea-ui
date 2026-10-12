@@ -7,7 +7,7 @@ eventType: ECEA
 format: Special
 series: ECEA Events
 flyer: /assets/events/flyers/IMG_3774.jpeg
-draft: true
+draft: false
 ---
 
 The annual Youth Awards banquet is returning to the FunPlex in Mount Laurel, NJ. Check back here in the coming weeks for further info.
