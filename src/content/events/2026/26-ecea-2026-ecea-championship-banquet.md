@@ -5,7 +5,7 @@ date: 2027-01-23T00:00:00.000Z
 location: 'Sheraton Valley Forge, 480 North Gulph Road, King of Prussia, PA 19406'
 hostingClubs: []
 eventType: ECEA
-flyer: /assets/events/flyers/IMG_3774.jpeg
+flyer: /assets/events/flyers/save the date for adult bq.png
 draft: true
 ---
 
