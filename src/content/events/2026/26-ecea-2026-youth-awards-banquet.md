@@ -6,6 +6,7 @@ location: 'FunPlex, Mount Laurel, NJ'
 eventType: ECEA
 format: Special
 series: ECEA Events
+flyer: /assets/events/flyers/IMG_3774.jpeg
 draft: true
 ---
 
