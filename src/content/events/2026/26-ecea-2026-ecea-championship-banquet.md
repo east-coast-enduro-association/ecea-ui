@@ -6,7 +6,7 @@ location: 'Sheraton Valley Forge, 480 North Gulph Road, King of Prussia, PA 1940
 hostingClubs: []
 eventType: ECEA
 flyer: /assets/events/flyers/save the date for adult bq.png
-draft: true
+draft: false
 ---
 
 The annual ECEA Enduro and Hare Scramble Championship Banquet awaits! January 23rd, 2027 at the Sheraton Valley Forge. Save the date and more info to come.
