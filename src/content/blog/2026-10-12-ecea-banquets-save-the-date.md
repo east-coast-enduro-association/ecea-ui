@@ -7,7 +7,7 @@ category: news
 image:
   src: /assets/blog/IMG_3781.jpeg
   alt: adult banquet save the date
-draft: true
+draft: false
 ---
 
 The ECEA Enduro and Hare Scramble banquet will be at the Sheraton Valley Forge on January 26th. The ECEA Fast Kidz awards banquet will be at the FunPlex in Mount Laurel NJ on February 7th.
