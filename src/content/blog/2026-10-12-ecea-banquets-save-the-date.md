@@ -1,11 +1,11 @@
 ---
-title: ECEA Banquets - Save the Date
+title: ECEA Banquets - Save the Date and Program Ads
 pubDate: 2026-10-12T20:59:08.807Z
 description: Save the date for the annual awards banquets
 author: ECEA
 category: news
 image:
-  src: /assets/blog/save the date for adult bq.png
+  src: /assets/blog/IMG_3781.jpeg
   alt: adult banquet save the date
 draft: true
 ---
