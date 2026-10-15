@@ -73,10 +73,10 @@ const detailsId = `event-details-${slug}`;
           {eventType}
         </span>
       )}
-      <h3 class="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors truncate">
+      <h3 class="event-title font-semibold text-gray-900 group-hover:text-primary-600 transition-colors truncate">
         {title}
       </h3>
-      {location && <p class="text-sm text-gray-500 truncate">{location}</p>}
+      {location && <p class="event-loc text-sm text-gray-500 truncate">{location}</p>}
     </div>
 
     <!-- Expand toggle sits above the stretched link (z-10) so it captures its own clicks -->
@@ -131,6 +131,13 @@ const detailsId = `event-details-${slug}`;
   .event-expand[aria-expanded="true"] .event-expand-icon {
     transform: rotate(180deg);
   }
+  /* When expanded, let the title and location wrap to their full text */
+  .group.is-expanded .event-title,
+  .group.is-expanded .event-loc {
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+  }
 </style>
 
 <script>
@@ -147,5 +154,6 @@ const detailsId = `event-details-${slug}`;
     const willOpen = panel.hasAttribute("hidden");
     panel.toggleAttribute("hidden", !willOpen);
     btn.setAttribute("aria-expanded", String(willOpen));
+    btn.closest(".group")?.classList.toggle("is-expanded", willOpen);
   });
 </script>
