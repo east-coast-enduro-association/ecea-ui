@@ -34,6 +34,15 @@ const upcomingEvents = allEvents
   .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime())
   .slice(0, DISPLAY_LIMITS.featuredEvents);
 
+// Map club abbreviation -> { logo, name }, so the events rail can show the
+// hosting club's mark and full name.
+const clubs = await getCollection("clubs");
+const clubMap = Object.fromEntries(
+  clubs.map((club) => [club.data.abbreviatedName, { logo: club.data.logo, name: club.data.name }])
+);
+const getHostClub = (event: typeof upcomingEvents[0]) =>
+  event.data.hostingClubs?.[0] ? clubMap[event.data.hostingClubs[0]] : undefined;
+
 // Get latest blog posts
 const allPosts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? !data.draft : true;
@@ -273,6 +282,12 @@ const latestPosts = sortedPosts.slice(0, 5);
                   date={event.data.date}
                   eventType={event.data.eventType}
                   location={event.data.location}
+                  clubLogo={getHostClub(event)?.logo}
+                  clubName={getHostClub(event)?.name}
+                  summary={event.data.summary}
+                  checkInTime={event.data.checkInTime}
+                  gateFee={event.data.gateFee}
+                  registrationLink={event.data.registrationLink}
                 />
               ))}
             </div>
