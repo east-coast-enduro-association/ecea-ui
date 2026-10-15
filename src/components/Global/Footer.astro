@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import ecealogo from "@assets/ecea/logos/ecea-small.png";
 import { FOOTER_NAV, SOCIAL_LINKS, SITE_INFO } from "../../utils/constants";
 
 // Social media links with icons
@@ -33,10 +35,7 @@ const currentYear = new Date().getFullYear();
         <div class="mb-4">
           <a href="/" class="text-2xl font-bold text-white font-heading inline-flex items-center">
             <span class="sr-only">ECEA</span>
-            <!-- Motorcycle/Racing Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="h-10 w-auto text-white mr-2">
-              <path fill="currentColor" d="M280 32c-13.3 0-24 10.7-24 24s10.7 24 24 24l57.7 0 16.4 30.3L256 192l-45.3-45.3c-12-12-28.3-18.7-45.3-18.7L64 128c-17.7 0-32 14.3-32 32l0 32 96 0c88.4 0 160 71.6 160 160c0 11-1.1 21.7-3.2 32l70.4 0c-2.1-10.3-3.2-21-3.2-32c0-52.2 25-98.6 63.7-127.8l-15.7-28.9c-3.5-6.5-2-14.5 3.6-19.3l66-57.1c5.4-4.6 13.4-4.6 18.6 .2l12.5 12c6.7 6.5 7.6 16.9 2.1 24.5L473.4 192l79.2 0c54.7 0 99.3 44.2 99.8 98.9c0 0 0 0 0 .1l0 .2 0 .8c0 .5 0 .9 0 1.4l0 .6c0 88.4-71.6 160-160 160l-69.7 0c-19.5 35.7-57.3 60-100.3 60c-43 0-80.8-24.3-100.3-60L128 384c-88.4 0-160-71.6-160-160l0-64c0-53 43-96 96-96l101.5 0 109.6-91.3C285.3 63.6 297.9 59 311 59l.4 0 27.9 0c2.7 0 5.3 .4 7.8 1.2L280 32zM128 256a96 96 0 1 0 0 192 96 96 0 1 0 0-192zm384 96a96 96 0 1 0 192 0 96 96 0 1 0 -192 0z"/>
-            </svg>
+            <Image src={ecealogo} alt="" class="h-10 w-auto mr-2" />
             <span>ECEA</span>
           </a>
         </div>
