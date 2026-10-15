@@ -6,13 +6,14 @@ import PageHeader from "../components/Sections/PageHeader.astro";
 import { formatDate } from "../utils/dateUtils";
 import defaultBlogImage from "../assets/blog/ecea-small.png";
 import { getCmsImage } from "../utils/cmsImage";
+import { altFromImagePath } from "../utils/altText";
 
 export interface Props {
   title: string;
   description?: string;
   image?: {
     src: string;
-    alt: string;
+    alt?: string;
   };
   date?: Date;
   author?: string;
@@ -52,6 +53,8 @@ if (type === "event") {
 }
 
 const formattedDate = date ? formatDate(date) : null;
+// Author alt wins; otherwise derive from the filename, finally the post title.
+const imageAlt = image?.alt || altFromImagePath(image?.src, title);
 ---
 
 <!-- SEO props diteruskan oleh BaseLayout -->
@@ -66,7 +69,7 @@ const formattedDate = date ? formatDate(date) : null;
         {getCmsImage(image?.src) ? (
           <Image
             src={getCmsImage(image!.src)!}
-            alt={image!.alt}
+            alt={imageAlt}
             loading="lazy"
             class={imageClass}
             widths={[320, 640, 1024]}
@@ -75,7 +78,7 @@ const formattedDate = date ? formatDate(date) : null;
         ) : image?.src ? (
           <img
             src={image.src}
-            alt={image.alt}
+            alt={imageAlt}
             loading="lazy"
             class={imageClass}
           />
