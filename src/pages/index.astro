@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "../components/UI/Button.astro";
-import EventCard from "../components/Cards/EventCard.astro";
+import EventListItem from "../components/Cards/EventListItem.astro";
 import BlogCard from "../components/Cards/BlogCard.astro";
 import SponsorCarousel from "../components/Sections/SponsorCarousel.astro";
 import { getCollection } from "astro:content";
@@ -34,11 +34,14 @@ const upcomingEvents = allEvents
   .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime())
   .slice(0, DISPLAY_LIMITS.featuredEvents);
 
-// Get club logos for events without images
+// Map club abbreviation -> { logo, name }, so the events rail can show the
+// hosting club's mark and full name.
 const clubs = await getCollection("clubs");
-const clubLogoMap = Object.fromEntries(
-  clubs.map(club => [club.data.abbreviatedName, club.data.logo])
+const clubMap = Object.fromEntries(
+  clubs.map((club) => [club.data.abbreviatedName, { logo: club.data.logo, name: club.data.name }])
 );
+const getHostClub = (event: typeof upcomingEvents[0]) =>
+  event.data.hostingClubs?.[0] ? clubMap[event.data.hostingClubs[0]] : undefined;
 
 // Get latest blog posts
 const allPosts = await getCollection("blog", ({ data }) => {
@@ -55,17 +58,8 @@ const pinnedPosts = sortedPosts
   .filter(post => post.data.pinned && post.slug !== latestAnnouncement?.slug)
   .slice(0, 2); // Limit to 2 pinned posts in hero
 
-// Get latest posts for news section
-const latestPosts = sortedPosts.slice(0, DISPLAY_LIMITS.latestPosts);
-
-// Helper to get event image
-const getEventImage = (event: typeof upcomingEvents[0]) => {
-  if (event.data.image) return event.data.image;
-  if (event.data.hostingClubs?.[0]) {
-    return clubLogoMap[event.data.hostingClubs[0]];
-  }
-  return null;
-};
+// Get latest posts for the news column (featured + 2x2 grid beside the events rail)
+const latestPosts = sortedPosts.slice(0, 5);
 ---
 
 <BaseLayout>
@@ -228,104 +222,111 @@ const getEventImage = (event: typeof upcomingEvents[0]) => {
     </div>
   </section>
 
-  <!-- Upcoming Events -->
-  <section class="py-10 md:py-12 bg-white">
-    <div class="container">
-      <div class="flex justify-between items-end mb-6">
-        <div>
-          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Coming Up</span>
-          <h2 class="text-2xl md:text-3xl font-bold">Upcoming Events</h2>
-        </div>
-        <a href="/events" class="text-primary-600 font-medium hover:text-primary-700 hidden md:inline-flex items-center">
-          All Events
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-
-      <div class={`grid grid-cols-1 gap-3 md:gap-4 ${upcomingEvents.length > 1 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'max-w-xl mx-auto'}`}>
-        {upcomingEvents.map((event) => (
-          <EventCard
-            title={event.data.title}
-            slug={event.slug}
-            date={event.data.date}
-            eventType={event.data.eventType}
-            location={event.data.location}
-            image={getEventImage(event)}
-          />
-        ))}
-      </div>
-
-      <div class="text-center mt-6 md:hidden">
-        <Button href="/events" variant="outline">View All Events</Button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sponsors -->
+  <!-- Sponsors (moved up so all sponsors are seen before the fold scrolls away) -->
   <SponsorCarousel titleSponsor={titleSponsor} sponsors={sponsors} />
 
-  <!-- Latest News -->
+  <!-- Latest News + Upcoming Events (combined two-column band) -->
   <section class="py-10 md:py-12 bg-white">
     <div class="container">
-      <div class="flex justify-between items-end mb-6">
-        <div>
-          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">News & Updates</span>
-          <h2 class="text-2xl md:text-3xl font-bold">Latest News</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+
+        <!-- News column (2/3 on desktop) -->
+        <div class="lg:col-span-2">
+          <div class="flex justify-between items-end mb-6">
+            <div>
+              <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">News & Updates</span>
+              <h2 class="text-2xl md:text-3xl font-bold">Latest News</h2>
+            </div>
+            <a href="/blog" class="text-primary-600 font-medium hover:text-primary-700 hidden md:inline-flex items-center">
+              All Posts
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+            {latestPosts.map((post, index) => (
+              <BlogCard
+                title={post.data.title}
+                slug={post.slug}
+                pubDate={post.data.pubDate}
+                description={post.data.description}
+                category={post.data.category}
+                image={post.data.image}
+                featured={index === 0}
+              />
+            ))}
+          </div>
+
+          <div class="text-center mt-6 md:hidden">
+            <Button href="/blog" variant="outline">View All Posts</Button>
+          </div>
         </div>
-        <a href="/blog" class="text-primary-600 font-medium hover:text-primary-700 hidden md:inline-flex items-center">
-          All Posts
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-        {latestPosts.map((post, index) => (
-          <BlogCard
-            title={post.data.title}
-            slug={post.slug}
-            pubDate={post.data.pubDate}
-            description={post.data.description}
-            category={post.data.category}
-            image={post.data.image}
-            featured={index === 0}
-          />
-        ))}
-      </div>
+        <!-- Upcoming Events rail (1/3 on desktop) -->
+        <aside class="lg:col-span-1">
+          <div class="flex justify-between items-end mb-6">
+            <div>
+              <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Coming Up</span>
+              <h2 class="text-2xl md:text-3xl font-bold">Upcoming Events</h2>
+            </div>
+          </div>
 
-      <div class="text-center mt-6 md:hidden">
-        <Button href="/blog" variant="outline">View All Posts</Button>
-      </div>
-    </div>
-  </section>
+          {upcomingEvents.length > 0 ? (
+            <div class="rounded-xl border border-gray-200 divide-y divide-gray-100 overflow-hidden">
+              {upcomingEvents.map((event) => (
+                <EventListItem
+                  title={event.data.title}
+                  slug={event.slug}
+                  date={event.data.date}
+                  eventType={event.data.eventType}
+                  location={event.data.location}
+                  clubLogo={getHostClub(event)?.logo}
+                  clubName={getHostClub(event)?.name}
+                  summary={event.data.summary}
+                  checkInTime={event.data.checkInTime}
+                  gateFee={event.data.gateFee}
+                  registrationLink={event.data.registrationLink}
+                />
+              ))}
+            </div>
+          ) : (
+            <div class="rounded-xl border border-gray-200 p-6 text-center text-gray-500">
+              No upcoming events right now — check back soon for the next race.
+            </div>
+          )}
 
-  <!-- Results & Photos Quick Links -->
-  <section class="py-8 bg-gray-100">
-    <div class="container">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <div>
-          <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Race Results & Photos</span>
-          <h2 class="text-xl md:text-2xl font-bold">View {new Date().getFullYear()} Results</h2>
-        </div>
-        <div class="flex flex-wrap justify-center gap-3">
-          <Button href="/results" variant="primary">
-            All Results
-          </Button>
-          <a
-            href={FACEBOOK_GROUPS.photos.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          <a href="/events" class="mt-4 inline-flex items-center text-primary-600 font-medium hover:text-primary-700">
+            All Events
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
-            Race Photos
           </a>
-        </div>
+
+          <!-- Results & Photos (stacked under the events rail — all "race info" in one place) -->
+          <div class="mt-8 rounded-xl border border-gray-200 bg-gray-50 p-5">
+            <span class="text-primary-600 font-medium text-sm uppercase tracking-wider">Results & Photos</span>
+            <h3 class="text-lg font-bold mb-3">View {new Date().getFullYear()} Results</h3>
+            <div class="flex flex-col gap-2">
+              <Button href="/results" variant="primary" class="w-full justify-center">
+                All Results
+              </Button>
+              <a
+                href={FACEBOOK_GROUPS.photos.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Race Photos
+              </a>
+            </div>
+          </div>
+        </aside>
+
       </div>
     </div>
   </section>

@@ -56,13 +56,13 @@ const { titleSponsor, sponsors } = Astro.props;
 
     <!-- Sponsor Carousel -->
     <div class="relative">
-      <div class="sponsor-carousel flex items-center gap-8 md:gap-12">
+      <div class="sponsor-carousel flex items-center">
         {[...sponsors, ...sponsors].map((sponsor) => (
           <a
             href={sponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex-shrink-0"
+            class="flex-shrink-0 mr-8 md:mr-12"
           >
             {getCmsImage(sponsor.logo) ? (
               <Image

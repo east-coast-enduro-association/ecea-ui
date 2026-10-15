@@ -23,6 +23,7 @@ const { Content } = await entry.render();
 // Priority: 1. Flyer, 2. Event image, 3. Hosting club logo
 let displayImage = entry.data.flyer || entry.data.image;
 let isFlyer = !!entry.data.flyer; // Track if we're showing a flyer (for full-size display)
+let isClubLogo = false; // Track if we fell back to the hosting club's logo
 
 // Get clubs collection for logo fallback and slug mapping
 const clubs = await getCollection("clubs");
@@ -37,6 +38,7 @@ if (!displayImage && entry.data.hostingClubs && entry.data.hostingClubs.length >
   if (hostingClubEntry && hostingClubEntry.data.logo) {
     displayImage = hostingClubEntry.data.logo;
     isFlyer = false; // Club logo should not be displayed full-size
+    isClubLogo = true; // ...and should be contained, not cropped
   }
 }
 
@@ -137,6 +139,7 @@ if (entry.data.eventType === "Enduro" && entry.data.hostingClubs?.[0]) {
     tags={entry.data.tags}
     type="event"
     fullImage={isFlyer}
+    containImage={isClubLogo}
   >
     <div class="bg-gray-50 rounded-lg p-6 mb-8 border border-gray-100">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
