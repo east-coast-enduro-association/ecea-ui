@@ -190,7 +190,9 @@ const blogCollection = defineCollection({
       image: z
         .object({
           src: z.string(),
-          alt: z.string(),
+          // Optional: Tina doesn't force alt on save, so a missing alt must
+          // not break the build. Components fall back to altFromImagePath().
+          alt: z.string().optional(),
         })
         .optional(),
       tags: z.array(z.string()).default(['general']),

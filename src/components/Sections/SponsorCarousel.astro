@@ -57,25 +57,49 @@ const { titleSponsor, sponsors } = Astro.props;
     <!-- Sponsor Carousel -->
     <div class="relative">
       <div class="sponsor-carousel flex items-center">
-        {[...sponsors, ...sponsors].map((sponsor) => (
-          <a
-            href={sponsor.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex-shrink-0 mr-8 md:mr-12"
-          >
-            {getCmsImage(sponsor.logo) ? (
-              <Image
-                src={getCmsImage(sponsor.logo)!}
-                alt={sponsor.name}
-                class="h-8 md:h-10 w-auto object-contain"
-              />
-            ) : (
-              <img src={sponsor.logo} alt={sponsor.name} loading="lazy" class="h-8 md:h-10 w-auto object-contain" />
-            )}
-          </a>
-        ))}
+        {[...sponsors, ...sponsors].map((sponsor, i) => {
+          // The list is duplicated to create a seamless loop; the second copy
+          // is purely visual, so hide it from assistive tech and keyboard order.
+          const isDuplicate = i >= sponsors.length;
+          return (
+            <a
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-shrink-0 mr-8 md:mr-12"
+              aria-hidden={isDuplicate ? "true" : undefined}
+              tabindex={isDuplicate ? -1 : undefined}
+            >
+              {getCmsImage(sponsor.logo) ? (
+                <Image
+                  src={getCmsImage(sponsor.logo)!}
+                  alt={sponsor.name}
+                  class="h-8 md:h-10 w-auto object-contain"
+                />
+              ) : (
+                <img src={sponsor.logo} alt={sponsor.name} loading="lazy" class="h-8 md:h-10 w-auto object-contain" />
+              )}
+            </a>
+          );
+        })}
       </div>
+
+      <!-- Pause/play control: gives everyone (not just hover) a way to stop the motion (WCAG 2.2.2) -->
+      <button
+        type="button"
+        data-sponsor-pause
+        aria-pressed="false"
+        class="sponsor-pause absolute top-1/2 right-0 -translate-y-1/2 z-10 grid place-items-center w-9 h-9 rounded-full bg-white border border-gray-200 text-gray-600 shadow-sm hover:text-primary-600 hover:border-primary-300 focus-visible:ring-2 focus-visible:ring-primary-600 transition-colors"
+      >
+        <span class="sr-only" data-sponsor-pause-label>Pause sponsor scrolling</span>
+        <svg data-icon="pause" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="6" y="5" width="4" height="14" rx="1"></rect>
+          <rect x="14" y="5" width="4" height="14" rx="1"></rect>
+        </svg>
+        <svg data-icon="play" class="h-4 w-4 hidden" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+      </button>
     </div>
   </div>
 </section>
@@ -85,7 +109,10 @@ const { titleSponsor, sponsors } = Astro.props;
     animation: scroll 30s linear infinite;
     width: max-content;
   }
-  .sponsor-carousel:hover {
+  /* Pause on hover, on keyboard focus within the track, and on explicit request */
+  .sponsor-carousel:hover,
+  .sponsor-carousel:focus-within,
+  .sponsor-carousel.is-paused {
     animation-play-state: paused;
   }
   @keyframes scroll {
@@ -98,4 +125,31 @@ const { titleSponsor, sponsors } = Astro.props;
       animation-duration: 20s;
     }
   }
+  /* Respect users who prefer reduced motion: stop entirely, hide the toggle */
+  @media (prefers-reduced-motion: reduce) {
+    .sponsor-carousel {
+      animation: none;
+    }
+    .sponsor-pause {
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-sponsor-pause]").forEach((btn) => {
+    const track = btn.parentElement?.querySelector(".sponsor-carousel");
+    const label = btn.querySelector("[data-sponsor-pause-label]");
+    const pauseIcon = btn.querySelector('[data-icon="pause"]');
+    const playIcon = btn.querySelector('[data-icon="play"]');
+    if (!track) return;
+
+    btn.addEventListener("click", () => {
+      const paused = track.classList.toggle("is-paused");
+      btn.setAttribute("aria-pressed", String(paused));
+      if (label) label.textContent = paused ? "Resume sponsor scrolling" : "Pause sponsor scrolling";
+      pauseIcon?.classList.toggle("hidden", paused);
+      playIcon?.classList.toggle("hidden", !paused);
+    });
+  });
+</script>
