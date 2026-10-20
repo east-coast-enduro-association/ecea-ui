@@ -5,10 +5,24 @@ Tina Cloud (whose free tier caps at 2 editors). The backend is **siloed** — it
 only talks to the GitHub repo and authenticates editors; it is independent of
 where the website is deployed.
 
-> **Status: SPIKE / not yet live.** The core config is scaffolded, but nothing
-> works until the accounts/secrets below are created, and the Netlify function
-> shim (`netlify/functions/tina.mts`) still needs first-deploy validation.
-> Local dev (`TINA_PUBLIC_IS_LOCAL=true`) works without any of the accounts.
+> **Status: SPIKE.** Core **validated locally** — `TINA_PUBLIC_IS_LOCAL=true
+> npx tinacms build --skip-cloud-checks` succeeds: it recognizes the
+> self-hosted data layer, indexes content, and generates `databaseClient`.
+> Still needs: the accounts/secrets below, and first-deploy validation of the
+> Netlify function shim (`netlify/functions/tina.mts`).
+
+## Where it deploys
+**No new Netlify project, and NOT the tinacms repo.** The backend is a function
+in *this* repo (`netlify/functions/tina.mts`). Your existing ecea-ui Netlify
+site picks it up automatically and serves it at `/api/tina/*`. You just set env
+vars and the build command on that same site (below).
+
+**Build command:** change the Netlify build command from `npm run build` to
+**`npm run build:tina`** (`tinacms build --skip-cloud-checks && astro build`) —
+verified this is the correct self-hosted build. Bonus: because Netlify now
+regenerates `/admin` fresh each build, this also sidesteps the committed-admin
+`.gitignore` footgun in CMS_SETUP.md. Production needs the env vars set *before*
+this build runs (indexing reads GitHub + writes Upstash at build time).
 
 ## Architecture
 
