@@ -1,5 +1,10 @@
-import { defineConfig } from 'tinacms';
+import { defineConfig, LocalAuthProvider } from 'tinacms';
+import { UsernamePasswordAuthJSProvider, TinaUserCollection } from 'tinacms-authjs/dist/tinacms';
 import { CsvUploaderScreen, UploadIcon } from './CsvUploaderScreen';
+
+// Local dev talks to the filesystem + skips auth; production uses the
+// self-hosted backend (GitHub + Upstash Redis) with username/password login.
+const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === 'true';
 
 import { blogCollection } from './collections/blog';
 import { createEventsCollection } from './collections/events';
@@ -22,8 +27,13 @@ export default defineConfig({
     process.env.HEAD ||
     'cms-setup',
 
-  clientId: process.env.TINA_CLIENT_ID || null,
-  token: process.env.TINA_TOKEN || null,
+  // Self-hosted: point the admin UI at our own backend instead of Tina Cloud.
+  // (If the backend ends up on a different origin than the site, change this to
+  // the backend's absolute URL, e.g. https://tina-backend.example.org/api/tina/gql)
+  contentApiUrlOverride: '/api/tina/gql',
+  authProvider: isLocal
+    ? new LocalAuthProvider()
+    : new UsernamePasswordAuthJSProvider(),
 
   build: {
     outputFolder: 'admin',
@@ -52,6 +62,9 @@ export default defineConfig({
 
   schema: {
     collections: [
+      // Editor accounts (username/password) for the self-hosted backend.
+      TinaUserCollection,
+
       blogCollection,
 
       // Events by year — add a new createEventsCollection(YYYY) each season.

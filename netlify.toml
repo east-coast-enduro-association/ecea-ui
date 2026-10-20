@@ -12,6 +12,12 @@
   to = "/admin/index.html"
   status = 200
 
+# Self-hosted TinaCMS backend (GraphQL + auth). Must be before the catch-all.
+[[redirects]]
+  from = "/api/tina/*"
+  to = "/.netlify/functions/tina/:splat"
+  status = 200
+
 # Redirects - Astro generates static pages, this handles true 404s
 [[redirects]]
   from = "/*"
