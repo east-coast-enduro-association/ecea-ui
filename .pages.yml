@@ -1,0 +1,325 @@
+# Pages CMS config — mirrors the TinaCMS schema (tina/collections/*.ts).
+#
+# SPIKE / evaluation: load this in app.pagescms.org against the ecea-ui repo to
+# compare the editing experience with Tina before committing to a migration.
+# A few keys (format values, `subfolders`, select `options` shape, per-field
+# media) may need small tweaks on first load — Pages CMS's config editor
+# validates and will flag them.
+#
+# Field mapping used (Tina -> Pages CMS):
+#   string                -> string
+#   string + textarea     -> text
+#   string + options      -> select (options.values)
+#   string + list         -> string (list: true)
+#   string + list+options -> select (list: true)
+#   datetime              -> date (options.time: true)
+#   number/boolean/image  -> number/boolean/image
+#   object / object list  -> object (fields, list: true)
+#   rich-text isBody       -> rich-text field named `body` (maps to markdown body)
+
+media:
+  input: src/assets      # where uploads are stored in the repo
+  output: /assets        # path written into content; matches getCmsImage('/assets/...')
+
+content:
+  # ───────────────────────── Blog Posts ─────────────────────────
+  - name: blog
+    label: Blog Posts
+    type: collection
+    path: src/content/blog
+    format: yaml-frontmatter
+    filename: '{fields.pubDate | date(''YYYY-MM-DD'')}-{fields.title | slugify}.md'
+    fields:
+      - { name: title, label: Title, type: string, required: true, description: The headline of your blog post }
+      - { name: pubDate, label: Publication Date, type: date, required: true, options: { time: true }, description: When this post should be published (can be future-dated) }
+      - { name: description, label: Description, type: text, required: true, description: Short summary shown in previews and search results }
+      - { name: author, label: Author, type: string, default: ECEA, description: Who wrote this post }
+      - { name: category, label: Category, type: select, default: news, options: { values: [announcement, news, recap, article] }, description: 'announcement = important updates, news = general, recap = event recaps, article = educational' }
+      - name: image
+        label: Featured Image
+        type: object
+        description: Main image shown at the top of the post and in previews
+        fields:
+          - { name: src, label: Image, type: image, description: 'Recommended 1200x630px. Use hyphens in filenames.' }
+          - { name: alt, label: Alt Text, type: string, description: Describe the image for accessibility }
+      - { name: tags, label: Tags, type: string, list: true, description: 'Keywords for filtering/search (e.g. enduro, results, youth)' }
+      - { name: pinned, label: Pinned (Featured), type: boolean, description: Show this post at the top of the blog page }
+      - { name: draft, label: Draft, type: boolean, default: true, description: Hide from the public site }
+      - { name: body, label: Content, type: rich-text, description: The main content of your blog post }
+
+  # ───────────────────────── Events ─────────────────────────
+  # Tina uses one collection per year (events/2025, events/2026). Here a single
+  # collection with subfolders spans all years.
+  - name: events
+    label: Events
+    type: collection
+    path: src/content/events
+    subfolders: true
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Event Title, type: string, required: true, description: 'The name of the event (e.g. "Ice Breaker")' }
+      - { name: summary, label: Summary, type: text, required: true, description: Short tagline shown on event cards }
+      - { name: date, label: Event Date, type: date, required: true, options: { time: true }, description: The start date of the event }
+      - { name: endDate, label: End Date, type: date, options: { time: true }, description: Only needed for multi-day events }
+      - { name: keyTime, label: Key/Start Time (EST), type: string }
+      - { name: checkInTime, label: Check-in Time (EST), type: string }
+      - { name: location, label: Location, type: string, required: true, description: Venue name and address }
+      - { name: hostingClubs, label: Hosting Clubs, type: select, list: true, options: { values: [BER, CDR, CJCR, DER, DVTR, GMER, HMDR, IDR, MCI, MMC, OCCR, PBER, RORR, RRMC, SJER, SPER, STER, TCSMC, VFTR] }, description: Select the club(s) hosting this event }
+      - { name: eventType, label: Event Type, type: select, required: true, options: { values: [Enduro, Hare Scramble, FastKIDZ, Dual Sport, ECEA, Special] }, description: Determines calendar color and filtering }
+      - { name: format, label: Format, type: select, options: { values: [Time Keeping, Restart, Hare Scramble, Sprint Enduro, National Enduro, Dual Sport, Extreme Enduro, Family Fun Ride, Special] }, description: Race format (leave blank for non-race events) }
+      - { name: series, label: Series, type: select, options: { values: [ECEA Enduro Championship Series, ECEA Youth Series, Hare Scramble Series, Dual Sport Series, Special Series, ECEA Events] }, description: Which championship series this counts toward }
+      - { name: closedCourse, label: Closed Course, type: boolean, description: Course is closed to the public during the event }
+      - { name: gasAway, label: Gas Away, type: boolean, description: There is a gas stop on course }
+      - { name: gateFee, label: Gate Fee, type: string, description: 'Entry fee for spectators (e.g. "$10 per vehicle")' }
+      - { name: image, label: Event Image, type: image, description: 'Optional hero image (not the flyer)' }
+      - { name: flyer, label: Event Flyer, type: image, description: The promotional flyer image }
+      - { name: flyerPdf, label: Flyer PDF URL, type: string, pattern: { regex: '^https?://.+', message: Must be a valid URL }, description: Link to a downloadable PDF flyer }
+      - { name: motoTallyId, label: Moto-Tally ID, type: number, description: Event ID from Moto-Tally }
+      - { name: registrationLink, label: Registration Link, type: string, description: Direct link to sign up }
+      - { name: startGridLink, label: Start Grid Link, type: string, description: Link to the start order/grid }
+      - { name: resultsLink, label: Results Link, type: string, description: Link to official results }
+      - name: downloads
+        label: Downloadable Files
+        type: object
+        list: true
+        description: 'Additional files (rules, maps, entry forms)'
+        fields:
+          - { name: label, label: Label, type: string, required: true, description: 'Display name (e.g. "Course Map")' }
+          - { name: url, label: File, type: file, required: true, description: 'Upload a file (PDF, image, etc.)' }
+      - { name: tags, label: Tags, type: string, list: true, description: Optional keywords for searching }
+      - { name: draft, label: Draft, type: boolean, default: true, description: Hide this event from the public site }
+      - { name: body, label: Additional Details, type: rich-text, description: Directions or notes about the event }
+
+  # ───────────────────────── Clubs ─────────────────────────
+  - name: clubs
+    label: Clubs
+    type: collection
+    path: src/content/clubs
+    format: yaml-frontmatter
+    fields:
+      - { name: name, label: Club Name, type: string, required: true, description: 'Full club name (e.g. "South Jersey Enduro Riders")' }
+      - { name: abbreviatedName, label: Abbreviation, type: string, required: true, description: 'Short form used on the schedule (e.g. "SJER")' }
+      - { name: logo, label: Club Logo, type: image, description: PNG with transparent background preferred }
+      - { name: summary, label: Summary, type: text, description: Brief description of the club }
+      - { name: website, label: Website URL, type: string, description: Club website or Facebook page }
+      - { name: contact, label: Contact Email, type: string, description: Public contact email for the club }
+      - { name: phone, label: Phone, type: string }
+      - { name: president, label: President/Contact Name, type: string }
+      - { name: location, label: Location, type: string }
+      - { name: order, label: Display Order, type: number, description: Lower numbers appear first }
+      - { name: draft, label: Draft, type: boolean }
+      - { name: body, label: Club Description, type: rich-text, description: Detailed club info, history, or membership }
+
+  # ───────────────────────── Racing Series ─────────────────────────
+  - name: series
+    label: Racing Series
+    type: collection
+    path: src/content/series
+    format: yaml-frontmatter
+    fields:
+      - { name: name, label: Series Name, type: string, required: true }
+      - { name: description, label: Description, type: text }
+      - { name: facebookGroup, label: Facebook Group URL, type: string }
+      - name: documents
+        label: Documents
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label, type: string, required: true }
+          - { name: url, label: URL, type: string, required: true }
+      - name: faqLinks
+        label: FAQ Links
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label, type: string, required: true }
+          - { name: url, label: URL, type: string, required: true }
+      - { name: draft, label: Draft, type: boolean }
+      - { name: body, label: Series Details, type: rich-text }
+
+  # ───────────────────────── Sponsors ─────────────────────────
+  - name: sponsors
+    label: Sponsors
+    type: collection
+    path: src/content/sponsors
+    format: yaml-frontmatter
+    fields:
+      - { name: name, label: Sponsor Name, type: string, required: true }
+      - { name: logo, label: Logo, type: image, required: true, description: PNG with transparent background works best }
+      - { name: url, label: Website URL, type: string, description: Clicking the logo goes here }
+      - { name: isTitleSponsor, label: Title Sponsor, type: boolean, description: Title/premier sponsor (shown larger) }
+      - { name: order, label: Display Order, type: number, description: Lower numbers appear first }
+      - { name: draft, label: Draft, type: boolean }
+      - { name: body, label: Description, type: rich-text }
+
+  # ───────────────────────── Board Members ─────────────────────────
+  - name: board
+    label: Board Members
+    type: collection
+    path: src/content/board
+    format: yaml-frontmatter
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: title, label: Title/Position, type: string, required: true, description: 'e.g. "President", "Trustee"' }
+      - { name: boardType, label: Board Type, type: select, required: true, options: { values: [executive, trustees] }, description: 'executive = officers, trustees = club reps' }
+      - { name: image, label: Photo, type: image }
+      - { name: email, label: Email, type: string }
+      - { name: phone, label: Phone, type: string }
+      - { name: bio, label: Bio, type: text }
+      - { name: order, label: Display Order, type: number, description: 'Lower numbers first (President = 1)' }
+      - { name: draft, label: Draft, type: boolean }
+      - { name: body, label: Additional Info, type: rich-text }
+
+  # ───────────────────────── Staff Contacts ─────────────────────────
+  - name: staff
+    label: Staff Contacts
+    type: collection
+    path: src/content/staff
+    format: yaml-frontmatter
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: email, label: Email, type: string }
+      - { name: phone, label: Phone, type: string }
+      - { name: category, label: Category, type: select, required: true, options: { values: [ECEA Referee, Enduro Series, Hare Scramble / FastKIDZ, Marketing & Sponsorships, Web Masters] } }
+      - { name: role, label: Role/Title, type: string }
+      - { name: order, label: Display Order, type: number }
+      - { name: draft, label: Draft, type: boolean }
+      - { name: body, label: Additional Info, type: rich-text }
+
+  # ───────────────────────── Page: Get Started (singleton) ─────────────────────────
+  - name: getStartedPage
+    label: 'Page: Get Started'
+    type: file
+    path: src/content/getStartedPage/index.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Page Title, type: string, required: true }
+      - { name: subtitle, label: Subtitle, type: string }
+      - { name: description, label: SEO Description, type: text }
+      - { name: draft, label: Draft, type: boolean }
+      - { name: welcomeTitle, label: Welcome Title, type: string }
+      - { name: welcomeContent, label: Welcome Content, type: text }
+      - { name: welcomeBookUrl, label: Welcome Book URL, type: string }
+      - { name: amaUrl, label: AMA URL, type: string }
+      - { name: seriesTitle, label: Series Section Title, type: string }
+      - { name: seriesDescription, label: Series Section Description, type: text }
+      - { name: stepsTitle, label: Steps Section Title, type: string }
+      - name: steps
+        label: Steps
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Step Title, type: string, required: true }
+          - { name: description, label: Step Description, type: text, required: true }
+      - { name: faqTitle, label: FAQ Teaser Title, type: string }
+      - { name: faqDescription, label: FAQ Teaser Description, type: text }
+
+  # ───────────────────────── Page: FAQ (singleton) ─────────────────────────
+  - name: faqPage
+    label: 'Page: FAQ'
+    type: file
+    path: src/content/faqPage/index.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Page Title, type: string, required: true }
+      - { name: description, label: SEO Description, type: text }
+      - { name: draft, label: Draft, type: boolean }
+      - { name: body, label: FAQ Content, type: rich-text, description: 'Use ## for sections, #### for questions' }
+
+  # ───────────────────────── Site Info (singleton) ─────────────────────────
+  - name: siteInfo
+    label: Site Info
+    type: file
+    path: src/content/siteInfo/main.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: body, label: Content, type: rich-text }
+
+  # ───────────────────────── Team Competition — Season Setup (JSON) ─────────────────────────
+  - name: teamSeasons
+    label: Team Competition — Season Setup
+    type: collection
+    path: src/content/teamSeasons
+    format: json
+    fields:
+      - { name: year, label: Year, type: number, required: true }
+      - { name: series, label: Series, type: select, required: true, options: { values: [Enduro, Hare Scramble] } }
+      - { name: lastUpdated, label: Last Updated, type: date }
+      - name: teams
+        label: Registered Teams
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Team Name, type: string, required: true }
+          - { name: club, label: Club, type: select, required: true, options: { values: [BER, CDR, CJCR, DER, DVTR, GMER, HMDR, IDR, MCI, MMC, OCCR, PBER, RORR, RRMC, SJER, SPER, STER, TCSMC, VFTR] } }
+      - name: schedule
+        label: Event Schedule
+        type: object
+        list: true
+        fields:
+          - { name: abbr, label: Abbreviation, type: string, required: true }
+          - { name: name, label: Event Name, type: string, required: true }
+          - { name: date, label: Date, type: date, required: true }
+          - { name: hostClubs, label: Host Club(s), type: select, list: true, required: true, options: { values: [BER, CDR, CJCR, DER, DVTR, GMER, HMDR, IDR, MCI, MMC, OCCR, PBER, RORR, RRMC, SJER, SPER, STER, TCSMC, VFTR] } }
+
+  # ───────────────────────── Team Event Results (JSON) ─────────────────────────
+  - name: teamEventResults
+    label: Team Event Results
+    type: collection
+    path: src/content/teamEventResults
+    format: json
+    fields:
+      - { name: year, label: Year, type: number, required: true }
+      - { name: series, label: Series, type: select, required: true, options: { values: [Enduro, Hare Scramble] } }
+      - { name: eventAbbr, label: Event (Club Abbreviation), type: string, required: true, description: Must match an event in the season schedule }
+      - name: results
+        label: Team Results
+        type: object
+        list: true
+        description: One row per team. Host club teams = 0 points.
+        fields:
+          - { name: team, label: Team Name, type: string, required: true }
+          - { name: club, label: Club, type: select, required: true, options: { values: [BER, CDR, CJCR, DER, DVTR, GMER, HMDR, IDR, MCI, MMC, OCCR, PBER, RORR, RRMC, SJER, SPER, STER, TCSMC, VFTR] } }
+          - { name: points, label: Championship Points, type: number, required: true }
+          - { name: epoints, label: Emergency Points, type: number, description: Tiebreaker score }
+          - { name: riders, label: Riders, type: string, list: true }
+
+  # ───────────────────────── Team Results (Legacy 2025, JSON) ─────────────────────────
+  - name: teamResults
+    label: Team Results (Legacy — 2025)
+    type: collection
+    path: src/content/teamResults
+    format: json
+    fields:
+      - { name: year, label: Year, type: number, required: true }
+      - { name: series, label: Series, type: string, required: true }
+      - { name: lastUpdated, label: Last Updated, type: date, required: true }
+      - name: events
+        label: Events
+        type: object
+        list: true
+        fields:
+          - { name: abbr, label: Abbreviation, type: string, required: true }
+          - { name: name, label: Event Name, type: string, required: true }
+          - { name: date, label: Date, type: date, required: true }
+          - { name: completed, label: Completed, type: boolean }
+      - name: standings
+        label: Standings
+        type: object
+        list: true
+        fields:
+          - { name: place, label: Place, type: number, required: true }
+          - { name: club, label: Club, type: string, required: true }
+          - { name: total, label: Total Points, type: number, required: true }
+          - name: results
+            label: Event Results
+            type: object
+            list: true
+            fields:
+              - { name: event, label: Event, type: string, required: true }
+              - { name: points, label: Points, type: string, description: 'Number, "W" for host club, or empty' }
+
+settings:
+  # Hide the config file from the content UI.
+  hide: false
