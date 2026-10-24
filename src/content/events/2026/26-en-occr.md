@@ -19,6 +19,8 @@ downloads:
     url: /attachments/events/SCE 26 CONFIRMATION_U1.pdf
   - label: Route Sheet
     url: /attachments/events/SCE 26 RS3.pdf
+  - label: JART Chart
+    url: /attachments/events/SCE 100 2026.pdf
 draft: false
 ---
 
