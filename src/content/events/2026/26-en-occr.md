@@ -14,6 +14,9 @@ closedCourse: false
 gasAway: false
 image: ../../../assets/clubs/logos/occr.jpg
 flyer: /assets/events/flyers/ScrubPine26Flyer_page-0001.jpg
+downloads:
+  - label: Confirmation Sheet
+    url: /attachments/events/SCE 26 CONFIRMATION_U1.pdf
 draft: false
 ---
 
