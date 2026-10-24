@@ -17,6 +17,8 @@ flyer: /assets/events/flyers/ScrubPine26Flyer_page-0001.jpg
 downloads:
   - label: Confirmation Sheet
     url: /attachments/events/SCE 26 CONFIRMATION_U1.pdf
+  - label: Route Sheet
+    url: /attachments/events/SCE 26 RS3.pdf
 draft: false
 ---
 
