@@ -1,8 +1,9 @@
 ---
-name: Lisa Soudas
+name: Jamie Thurkoff
 title: Treasurer
 boardType: executive
-email: lsoudas@comcast.net
+email: treasurer@ecea.org
 order: 3
 draft: false
 ---
+
