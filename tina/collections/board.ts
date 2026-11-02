@@ -5,7 +5,6 @@ export const boardCollection = {
   label: 'Board Members',
   path: 'src/content/board',
   format: 'md' as const,
-  ui: { allowedActions: { delete: false } },
   fields: [
     {
       type: 'string' as const,

@@ -6,7 +6,6 @@ export const staffCollection = {
   label: 'Staff Contacts',
   path: 'src/content/staff',
   format: 'md' as const,
-  ui: { allowedActions: { delete: false } },
   fields: [
     {
       type: 'string' as const,
