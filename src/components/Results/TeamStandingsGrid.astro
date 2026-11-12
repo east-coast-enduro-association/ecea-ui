@@ -1,0 +1,114 @@
+---
+/**
+ * Club team-championship standings grid (legacy club-centric format).
+ * Renders a clubs × rounds points table. Used for both the current
+ * season and prior-year archives — each driven by a `teamResults/*.json`
+ * entry (year, events[], standings[]).
+ */
+interface EventCol {
+  abbr: string;
+  name: string;
+  date: string;
+  completed: boolean;
+}
+interface Standing {
+  place: number;
+  club: string;
+  total: number;
+  results: Array<{ event: string; points: string }>;
+}
+
+interface Props {
+  events: EventCol[];
+  standings: Standing[];
+  clubNameMap: Record<string, string>;
+  clubSlugMap: Record<string, string>;
+}
+
+const { events, standings, clubNameMap, clubSlugMap } = Astro.props;
+
+const formatDate = (dateStr: string) => {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
+};
+
+const getPoints = (results: Standing["results"], abbr: string) =>
+  results.find((r) => r.event === abbr)?.points;
+---
+
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-gray-900">
+        <tr>
+          <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider md:sticky left-0 bg-gray-900 text-white z-10">Pos</th>
+          <th class="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider md:sticky left-12 bg-gray-900 text-white z-10 min-w-[100px]">Club</th>
+          <th class="px-4 py-3 text-center text-xs font-semibold uppercase tracking-wider bg-primary-700 text-white">Total</th>
+          {events.map((event) => (
+            <th class={`px-3 py-3 text-center text-xs font-medium uppercase tracking-wider whitespace-nowrap ${event.completed ? 'text-white' : 'text-gray-500'}`}>
+              <div title={event.name}>{event.abbr}</div>
+              <div class="text-[10px] font-normal normal-case text-gray-400">{formatDate(event.date)}</div>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        {standings.map((standing, idx) => (
+          <tr class={idx < 3 ? "bg-amber-50/50" : idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+            <td class="px-4 py-3 whitespace-nowrap text-sm font-bold text-gray-900 md:sticky left-0 bg-inherit z-10">
+              {standing.place <= 3 ? (
+                <span class={`inline-flex items-center justify-center w-6 h-6 rounded-full ${
+                  standing.place === 1 ? 'bg-amber-400 text-amber-900' :
+                  standing.place === 2 ? 'bg-gray-300 text-gray-700' :
+                  'bg-amber-600 text-white'
+                }`}>
+                  {standing.place}
+                </span>
+              ) : standing.place}
+            </td>
+            <td class="px-4 py-3 whitespace-nowrap md:sticky left-12 bg-inherit z-10">
+              {clubSlugMap[standing.club] ? (
+                <a href={`/clubs/${clubSlugMap[standing.club]}`} class="group">
+                  <div class="text-sm font-bold text-gray-900 group-hover:text-primary-600 transition-colors">{standing.club}</div>
+                  <div class="text-xs text-gray-500 hidden sm:block">{clubNameMap[standing.club] || ''}</div>
+                </a>
+              ) : (
+                <>
+                  <div class="text-sm font-bold text-gray-900">{standing.club}</div>
+                  <div class="text-xs text-gray-500 hidden sm:block">{clubNameMap[standing.club] || ''}</div>
+                </>
+              )}
+            </td>
+            <td class="px-4 py-3 whitespace-nowrap text-center text-sm font-bold text-primary-700 bg-primary-50">
+              {standing.total}
+            </td>
+            {events.map((event) => {
+              if (!event.completed) {
+                return <td class="px-3 py-3 whitespace-nowrap text-center text-xs text-gray-200">—</td>;
+              }
+              const pts = getPoints(standing.results, event.abbr);
+              if (pts === "W") {
+                return (
+                  <td class="px-3 py-3 whitespace-nowrap text-center text-xs bg-amber-50" title="Host club — no points awarded">
+                    <span class="px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">H</span>
+                  </td>
+                );
+              }
+              if (!pts || pts === "" || pts === "0") {
+                return <td class="px-3 py-3 whitespace-nowrap text-center text-sm text-gray-300" title="No finishing team">—</td>;
+              }
+              return (
+                <td class="px-3 py-3 whitespace-nowrap text-center text-sm text-gray-900 font-medium" title={`${pts} points`}>
+                  {pts}
+                </td>
+              );
+            })}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
