@@ -6,6 +6,9 @@ author: Mike S
 category: news
 image:
   src: /assets/blog/2026teamimg.png
-draft: true
+tags:
+  - 'Banquet, hare scramble'
+draft: false
 ---
 
+![](/attachments/26100A_A.png)![](/attachments/26kidz100.png)
