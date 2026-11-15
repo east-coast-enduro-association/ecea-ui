@@ -1,0 +1,11 @@
+---
+title: ECEA Hare Scrambles 2026 100% Clubs
+pubDate: 2026-11-15T13:09:36.357Z
+description: Here are the 100% Club Drawing Qualifiers to be awarded at the 2026 Banquets
+author: Mike S
+category: news
+image:
+  src: /assets/blog/2026teamimg.png
+draft: true
+---
+
