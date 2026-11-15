@@ -11,4 +11,4 @@ tags:
 draft: false
 ---
 
-![](/attachments/26100A_A.png)![](/attachments/26kidz100.png)
+Get ready for Banquet activities and awards… Rider appreciation thru the 100% Clubs for 2026![](/attachments/26100A_A.png)![](/attachments/26kidz100.png)
