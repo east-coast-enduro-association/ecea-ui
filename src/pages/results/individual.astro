@@ -80,7 +80,7 @@ const classSlug = (name: string) =>
                 />
               )}
 
-              {!s.highPointDraft && s.highPoint.length > 0 && (
+              {s.highPoint.length > 0 && (
                 <div class="space-y-4">
                   {s.highPoint.map(hp => (
                     <RiderClassTable

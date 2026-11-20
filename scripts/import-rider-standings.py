@@ -258,9 +258,6 @@ def main():
         "notes": notes,
         "overall": overall,
         "highPoint": high_point,
-        # Derived (not an official scoring-team ranking) — hidden from the public
-        # page until verified. Flip to false once the scoring team confirms.
-        "highPointDraft": True,
         "classes": classes,
     }
 

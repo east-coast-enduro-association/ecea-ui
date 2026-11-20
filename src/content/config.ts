@@ -469,9 +469,6 @@ const riderStandingsCollection = defineCollection({
       })
     ).default([]),
     notes: z.array(z.string()).default([]), // scoring-rule notes from the PDF
-    // Derived A/B/C High Point is hidden from the public page until the scoring
-    // team verifies it; flip to false to publish.
-    highPointDraft: z.boolean().default(false),
     overall: z.array(               // Top-3 overall long course (optional)
       z.object({
         place: z.number(),
