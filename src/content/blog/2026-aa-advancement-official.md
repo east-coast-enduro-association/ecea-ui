@@ -4,7 +4,7 @@ pubDate: '2026-11-19T12:00:00.000Z'
 description: Official AA class advancements for the 2027 ECEA Enduro season based on 2026 overall long course results
 author: ECEA
 category: news
-draft: true
+draft: false
 image:
   src: '../../assets/blog/ecea-small.png'
   alt: 2026 ECEA AA Advancement Results
