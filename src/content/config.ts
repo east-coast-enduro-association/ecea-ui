@@ -469,6 +469,20 @@ const riderStandingsCollection = defineCollection({
       })
     ).default([]),
     notes: z.array(z.string()).default([]), // scoring-rule notes from the PDF
+    overall: z.array(               // Top-3 overall long course (optional)
+      z.object({
+        place: z.number(),
+        club: z.string(),
+        name: z.string(),
+        class: z.string().optional(),
+        brand: z.string().optional(),
+        total: z.number(),
+        eventCount: z.number(),
+        results: z.array(
+          z.object({ event: z.string(), points: z.string() })
+        ).default([]),
+      })
+    ).default([]),
     classes: z.array(
       z.object({
         name: z.string(),       // class/section label, e.g. "A Open 251+"

@@ -76,6 +76,62 @@ def clean(cell):
     return (cell or "").replace("\n", " ").strip()
 
 
+def norm_label(s):
+    """Collapse whitespace so 'CJCR/ MCI' and 'Event Count' match reliably."""
+    return "".join(s.split())
+
+
+def detect_columns(row):
+    """From a header row, map column index -> event abbr, plus count/total indices."""
+    col_map, count_idx, total_idx = {}, None, None
+    for i, label in enumerate(row):
+        nl = norm_label(label)
+        if nl in LABEL_TO_ABBR:
+            col_map[i] = LABEL_TO_ABBR[nl]
+        elif nl in ("EventCount", "Count"):
+            count_idx = i
+        elif nl == "Total":
+            total_idx = i
+    return col_map, count_idx, total_idx
+
+
+def parse_rider(row, col_map, count_idx, total_idx):
+    results = []
+    for idx, abbr in col_map.items():
+        val = row[idx] if idx < len(row) else ""
+        if val != "":
+            results.append({"event": abbr, "points": val})
+    rider = {
+        "place": int(row[0]),
+        "club": row[1],
+        "name": row[2],
+        "total": int(row[total_idx]) if total_idx and row[total_idx].lstrip("-").isdigit() else 0,
+        "eventCount": int(row[count_idx]) if count_idx and row[count_idx].isdigit() else 0,
+        "results": results,
+    }
+    if len(row) > 3 and row[3]:
+        rider["class"] = row[3]
+    if len(row) > 4 and row[4]:
+        rider["brand"] = row[4]
+    return rider
+
+
+def parse_overall(pdf_path):
+    """Flat list of riders from the 'Top 3 Overall' PDF (single section)."""
+    riders = []
+    col_map = count_idx = total_idx = None
+    with pdfplumber.open(pdf_path) as pdf:
+        for page in pdf.pages:
+            for table in page.extract_tables():
+                for raw in table:
+                    row = [clean(c) for c in raw]
+                    if "Rider Name" in row and "Total" in row:
+                        col_map, count_idx, total_idx = detect_columns(row)
+                    elif row and row[0].isdigit() and col_map:
+                        riders.append(parse_rider(row, col_map, count_idx, total_idx))
+    return riders
+
+
 def load_schedule(repo_root, year, series_slug):
     """Canonical event list (abbr/name/date) from the teamSeasons entry."""
     path = repo_root / "src" / "content" / "teamSeasons" / f"{year}-{series_slug}.json"
@@ -103,14 +159,7 @@ def parse(pdf_path):
 
                     # Header row: locate event columns + Count/Total.
                     if "Rider Name" in row and "Total" in row:
-                        col_map = {}
-                        for i, label in enumerate(row):
-                            if label in LABEL_TO_ABBR:
-                                col_map[i] = LABEL_TO_ABBR[label]
-                            elif label in ("Event Count", "Count"):
-                                count_idx = i
-                            elif label == "Total":
-                                total_idx = i
+                        col_map, count_idx, total_idx = detect_columns(row)
                         continue
 
                     # Scoring-rule notes.
@@ -127,24 +176,7 @@ def parse(pdf_path):
                     if row[0].isdigit():
                         if current is None or col_map is None:
                             continue
-                        results = []
-                        for idx, abbr in col_map.items():
-                            val = row[idx] if idx < len(row) else ""
-                            if val != "":
-                                results.append({"event": abbr, "points": val})
-                        rider = {
-                            "place": int(row[0]),
-                            "club": row[1],
-                            "name": row[2],
-                            "total": int(row[total_idx]) if total_idx and row[total_idx].lstrip("-").isdigit() else 0,
-                            "eventCount": int(row[count_idx]) if count_idx and row[count_idx].isdigit() else 0,
-                            "results": results,
-                        }
-                        if len(row) > 3 and row[3]:
-                            rider["class"] = row[3]
-                        if len(row) > 4 and row[4]:
-                            rider["brand"] = row[4]
-                        current["riders"].append(rider)
+                        current["riders"].append(parse_rider(row, col_map, count_idx, total_idx))
                         continue
 
                     # Otherwise a single-cell row = class section header.
@@ -163,6 +195,7 @@ def main():
     ap.add_argument("--year", type=int, default=date.today().year)
     ap.add_argument("--series", default="Enduro")
     ap.add_argument("--updated", default=None, help="Standings date YYYY-MM-DD (default: today)")
+    ap.add_argument("--overall", default=None, help="Optional 'Top 3 Overall' PDF to include")
     args = ap.parse_args()
 
     pdf_path = Path(os.path.expanduser(args.pdf))
@@ -174,6 +207,13 @@ def main():
 
     events = load_schedule(repo_root, args.year, series_slug)
     classes, notes = parse(pdf_path)
+
+    overall = []
+    if args.overall:
+        overall_path = Path(os.path.expanduser(args.overall))
+        if not overall_path.exists():
+            sys.exit(f"Overall PDF not found: {overall_path}")
+        overall = parse_overall(overall_path)
 
     if events is None:
         # Fall back to the event order discovered in the PDF.
@@ -193,6 +233,7 @@ def main():
         "lastUpdated": args.updated or date.today().isoformat(),
         "events": events,
         "notes": notes,
+        "overall": overall,
         "classes": classes,
     }
 
@@ -202,7 +243,7 @@ def main():
 
     nriders = sum(len(c["riders"]) for c in classes)
     print(f"Wrote {dest.relative_to(repo_root)}")
-    print(f"  {len(classes)} classes, {nriders} rider entries, {len(events)} events, {len(notes)} notes")
+    print(f"  {len(classes)} classes, {nriders} rider entries, {len(overall)} overall, {len(events)} events, {len(notes)} notes")
 
 
 if __name__ == "__main__":

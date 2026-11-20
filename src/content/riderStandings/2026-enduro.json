@@ -90,6 +90,181 @@
     "SPECIAL NOTE FOR C Riders: Event Credit for DNF's if at least 50% of Checks were completed at an Event. Those credits are displayed as RED zeroes.",
     "SPECIAL NOTE FOR SPECIALTY CLASSES: 4 Events Finished OR 5 events competed in."
   ],
+  "overall": [
+    {
+      "place": 1,
+      "club": "TCSMC",
+      "name": "KYLE MCDONAL",
+      "total": 277,
+      "eventCount": 12,
+      "results": [
+        {
+          "event": "SJER",
+          "points": "25"
+        },
+        {
+          "event": "MMC",
+          "points": "25"
+        },
+        {
+          "event": "CJCR",
+          "points": "25"
+        },
+        {
+          "event": "RRMC",
+          "points": "20"
+        },
+        {
+          "event": "HMDR",
+          "points": "25"
+        },
+        {
+          "event": "DVTR",
+          "points": "25"
+        },
+        {
+          "event": "GMER",
+          "points": "22"
+        },
+        {
+          "event": "IDR",
+          "points": "20"
+        },
+        {
+          "event": "CDR",
+          "points": "22"
+        },
+        {
+          "event": "SPER",
+          "points": "18"
+        },
+        {
+          "event": "VFTR",
+          "points": "25"
+        },
+        {
+          "event": "OCCR",
+          "points": "25"
+        }
+      ],
+      "class": "AA",
+      "brand": "BET"
+    },
+    {
+      "place": 2,
+      "club": "OCCR",
+      "name": "RYAN CANAVAN",
+      "total": 248,
+      "eventCount": 13,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": "25"
+        },
+        {
+          "event": "SJER",
+          "points": "20"
+        },
+        {
+          "event": "MMC",
+          "points": "20"
+        },
+        {
+          "event": "CJCR",
+          "points": "20"
+        },
+        {
+          "event": "RRMC",
+          "points": "18"
+        },
+        {
+          "event": "HMDR",
+          "points": "16"
+        },
+        {
+          "event": "STER",
+          "points": "12"
+        },
+        {
+          "event": "DVTR",
+          "points": "18"
+        },
+        {
+          "event": "GMER",
+          "points": "14"
+        },
+        {
+          "event": "IDR",
+          "points": "18"
+        },
+        {
+          "event": "CDR",
+          "points": "20"
+        },
+        {
+          "event": "SPER",
+          "points": "25"
+        },
+        {
+          "event": "VFTR",
+          "points": "22"
+        }
+      ],
+      "class": "AA",
+      "brand": "KTM"
+    },
+    {
+      "place": 3,
+      "club": "RRMC",
+      "name": "MAVERICK REINER",
+      "total": 185,
+      "eventCount": 10,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": "18"
+        },
+        {
+          "event": "SJER",
+          "points": "22"
+        },
+        {
+          "event": "MMC",
+          "points": "14"
+        },
+        {
+          "event": "CJCR",
+          "points": "18"
+        },
+        {
+          "event": "HMDR",
+          "points": "18"
+        },
+        {
+          "event": "STER",
+          "points": "16"
+        },
+        {
+          "event": "DVTR",
+          "points": "22"
+        },
+        {
+          "event": "GMER",
+          "points": "15"
+        },
+        {
+          "event": "IDR",
+          "points": "22"
+        },
+        {
+          "event": "OCCR",
+          "points": "20"
+        }
+      ],
+      "class": "AA",
+      "brand": "GAS"
+    }
+  ],
   "classes": [
     {
       "name": "AA",

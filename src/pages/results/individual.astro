@@ -2,10 +2,13 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
 import RiderClassTable from "../../components/Results/RiderClassTable.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
-const entry = await getEntry("riderStandings", "2026-enduro");
-const data = entry?.data;
+// All seasons of individual standings, newest first → year tabs.
+const seasons = (await getCollection("riderStandings"))
+  .map(e => e.data)
+  .filter(d => d.series === "Enduro")
+  .sort((a, b) => b.year - a.year);
 
 const clubs = await getCollection("clubs");
 const clubSlugMap = Object.fromEntries(
@@ -22,8 +25,8 @@ const classSlug = (name: string) =>
 ---
 
 <BaseLayout
-  title="2026 Individual Standings - ECEA"
-  description="2026 ECEA Championship Enduro Series individual rider points standings by class."
+  title="Individual Standings - ECEA"
+  description="ECEA Championship Enduro Series individual rider points standings by class."
 >
   <PageHeader
     title="Individual Standings"
@@ -33,57 +36,84 @@ const classSlug = (name: string) =>
 
   <section class="py-12">
     <div class="container">
-      {data ? (
+      {seasons.length > 0 ? (
         <div class="space-y-8">
-          <div>
-            <div class="flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <h2 class="text-2xl font-bold text-gray-900">2026 {data.series} — Final Standings</h2>
-                <p class="text-gray-600 text-sm mt-1">Official &middot; {formatLongDate(data.lastUpdated)}</p>
-              </div>
-              <a href="/results/team" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm">
-                Team standings
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Class jump nav -->
-          <div class="bg-gray-50 rounded-lg p-4">
-            <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">Jump to class</p>
-            <div class="flex flex-wrap gap-2">
-              {data.classes.map(c => (
-                <a href={`#class-${classSlug(c.name)}`}
-                   class="inline-block px-2.5 py-1 bg-white border border-gray-200 rounded text-xs text-gray-700 hover:border-primary-400 hover:text-primary-700 transition-colors">
-                  {c.name}
-                </a>
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <!-- Year tabs -->
+            <div class="flex flex-wrap gap-2" role="tablist" aria-label="Season">
+              {seasons.map((s, i) => (
+                <button
+                  type="button"
+                  data-year-tab={s.year}
+                  class:list={[
+                    "year-tab px-4 py-2 rounded-lg font-semibold text-sm transition-colors",
+                    i === 0 ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200",
+                  ]}
+                >
+                  {s.year}
+                </button>
               ))}
             </div>
+            <a href="/results/team" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm">
+              Team standings
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
 
-          <!-- Class tables -->
-          <div>
-            {data.classes.map(c => (
-              <RiderClassTable name={c.name} riders={c.riders} events={data.events} clubSlugMap={clubSlugMap} />
-            ))}
-          </div>
-
-          <!-- Scoring notes -->
-          {data.notes.length > 0 && (
-            <div class="bg-gray-50 rounded-lg p-6">
-              <h3 class="font-bold text-gray-900 mb-3">Scoring Notes</h3>
-              <ul class="space-y-2 text-sm text-gray-600 list-disc list-inside">
-                {data.notes.map(n => <li>{n}</li>)}
-              </ul>
-              <div class="mt-4 flex flex-wrap gap-4 text-xs text-gray-500">
-                <span><span class="align-super">d</span> = dropped (throwaway) score</span>
-                <span><span class="text-gray-400">0</span> = DNF credit</span>
-                <span><span class="text-red-600">negative</span> = penalty points</span>
+          {seasons.map((s, i) => (
+            <div data-year-panel={s.year} hidden={i !== 0} class="space-y-8">
+              <div>
+                <h2 class="text-2xl font-bold text-gray-900">{s.year} {s.series} — Final Standings</h2>
+                <p class="text-gray-600 text-sm mt-1">Official &middot; {formatLongDate(s.lastUpdated)}</p>
               </div>
+
+              {s.overall.length > 0 && (
+                <RiderClassTable
+                  name="Overall — Top 3 (Long Course)"
+                  riders={s.overall}
+                  events={s.events}
+                  clubSlugMap={clubSlugMap}
+                />
+              )}
+
+              <!-- Class jump nav -->
+              <div class="bg-gray-50 rounded-lg p-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">Jump to class</p>
+                <div class="flex flex-wrap gap-2">
+                  {s.classes.map(c => (
+                    <a href={`#class-${classSlug(c.name)}`}
+                       class="inline-block px-2.5 py-1 bg-white border border-gray-200 rounded text-xs text-gray-700 hover:border-primary-400 hover:text-primary-700 transition-colors">
+                      {c.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Class tables -->
+              <div>
+                {s.classes.map(c => (
+                  <RiderClassTable name={c.name} riders={c.riders} events={s.events} clubSlugMap={clubSlugMap} />
+                ))}
+              </div>
+
+              <!-- Scoring notes -->
+              {s.notes.length > 0 && (
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="font-bold text-gray-900 mb-3">Scoring Notes</h3>
+                  <ul class="space-y-2 text-sm text-gray-600 list-disc list-inside">
+                    {s.notes.map(n => <li>{n}</li>)}
+                  </ul>
+                  <div class="mt-4 flex flex-wrap gap-4 text-xs text-gray-500">
+                    <span><span class="align-super">d</span> = dropped (throwaway) score</span>
+                    <span><span class="text-gray-400">0</span> = DNF credit</span>
+                    <span><span class="text-red-600">negative</span> = penalty points</span>
+                  </div>
+                </div>
+              )}
             </div>
-          )}
+          ))}
         </div>
       ) : (
         <p class="text-gray-500 italic">Individual standings are not available yet.</p>
@@ -91,3 +121,23 @@ const classSlug = (name: string) =>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>("[data-year-tab]");
+  const panels = document.querySelectorAll<HTMLElement>("[data-year-panel]");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const year = tab.getAttribute("data-year-tab");
+      tabs.forEach((t) => {
+        const active = t === tab;
+        t.classList.toggle("bg-amber-500", active);
+        t.classList.toggle("text-white", active);
+        t.classList.toggle("bg-gray-100", !active);
+        t.classList.toggle("text-gray-700", !active);
+      });
+      panels.forEach((p) => {
+        p.hidden = p.getAttribute("data-year-panel") !== year;
+      });
+    });
+  });
+</script>
