@@ -2,19 +2,14 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHeader from "../../components/Sections/PageHeader.astro";
 import TeamStandingsGrid from "../../components/Results/TeamStandingsGrid.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
-// ─── Team championship standings (legacy club-grid format) ──────────────────
-// Both the current season and prior years are stored as club × round grids in
-// teamResults/*.json and rendered by <TeamStandingsGrid>. Standings come from
-// the ECEA scorekeeper's published (currently unofficial) points document.
-const teamResults2026 = await getEntry("teamResults", "2026");
-const data2026 = teamResults2026?.data;
+// All seasons of team standings (legacy club-grid format), newest first → year tabs.
+const seasons = (await getCollection("teamResults"))
+  .map(e => e.data)
+  .filter(d => d.series === "Enduro")
+  .sort((a, b) => b.year - a.year);
 
-const teamResults2025 = await getEntry("teamResults", "2025");
-const data2025 = teamResults2025?.data;
-
-// ─── Shared lookups ─────────────────────────────────────────────────────────
 const clubs = await getCollection("clubs");
 const clubNameMap = Object.fromEntries(
   clubs.map(c => [c.data.abbreviatedName, c.data.name])
@@ -25,9 +20,7 @@ const clubSlugMap = Object.fromEntries(
 
 const formatLongDate = (dateStr: string) =>
   new Date(dateStr + "T12:00:00").toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
+    month: "long", day: "numeric", year: "numeric",
   });
 
 const pointsScale = [
@@ -50,108 +43,98 @@ const pointsScale = [
 
   <section class="py-12">
     <div class="container">
-      <div class="space-y-16">
+      {seasons.length > 0 ? (
+        <div class="space-y-8">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <!-- Year tabs -->
+            <div class="flex flex-wrap gap-2" role="tablist" aria-label="Season">
+              {seasons.map((s, i) => (
+                <button
+                  type="button"
+                  data-year-tab={s.year}
+                  class:list={[
+                    "year-tab px-4 py-2 rounded-lg font-semibold text-sm transition-colors",
+                    i === 0 ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200",
+                  ]}
+                >
+                  {s.year}
+                </button>
+              ))}
+            </div>
+            <a href="/results/individual" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm">
+              Individual standings
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
 
-        <!-- ═══════════════════════════════════════════════════════════════════
-             2026 CHAMPIONSHIP STANDINGS
-        ════════════════════════════════════════════════════════════════════ -->
-        {data2026 ? (
-          <div>
-            <div class="flex items-center justify-between mb-6">
+          {seasons.map((s, i) => (
+            <div data-year-panel={s.year} hidden={i !== 0} class="space-y-4">
               <div>
-                <h2 class="text-2xl font-bold text-gray-900">2026 Final Standings</h2>
-                <p class="text-gray-600 text-sm mt-1">
-                  Official &middot; {formatLongDate(data2026.lastUpdated)}
-                </p>
+                <h2 class="text-2xl font-bold text-gray-900">{s.year} {s.series} — Final Standings</h2>
+                <p class="text-gray-600 text-sm mt-1">Official &middot; {formatLongDate(s.lastUpdated)}</p>
               </div>
-              <a href="/results/individual" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm">
-                Individual standings
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
 
-            <TeamStandingsGrid
-              events={data2026.events}
-              standings={data2026.standings}
-              clubNameMap={clubNameMap}
-              clubSlugMap={clubSlugMap}
-            />
-
-            <!-- Legend -->
-            <div class="mt-4 flex flex-wrap gap-4 text-sm text-gray-600">
-              <div class="flex items-center gap-2">
-                <span class="px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-xs font-medium">H</span>
-                <span>Host Club (teams get 0 championship points)</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-gray-300">—</span>
-                <span>No finishing teams / round not yet held</span>
-              </div>
-              <div class="text-gray-500">Scores reflect best team per club per event. All events count — no throw-aways.</div>
+              <TeamStandingsGrid
+                events={s.events}
+                standings={s.standings}
+                clubNameMap={clubNameMap}
+                clubSlugMap={clubSlugMap}
+              />
             </div>
+          ))}
+
+          <!-- Legend -->
+          <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+            <div class="flex items-center gap-2">
+              <span class="px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-xs font-medium">H</span>
+              <span>Host Club (teams get 0 championship points)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-gray-300">—</span>
+              <span>No finishing teams / round not held</span>
+            </div>
+            <div class="text-gray-500">Scores reflect best team per club per event. All events count — no throw-aways.</div>
           </div>
-        ) : (
-          <p class="text-gray-500 italic">2026 season data not yet available.</p>
-        )}
 
-        <!-- ═══════════════════════════════════════════════════════════════════
-             POINTS SCALE
-        ════════════════════════════════════════════════════════════════════ -->
-        <div class="bg-gray-50 rounded-lg p-6">
-          <h3 class="font-bold text-gray-900 mb-4">Points Scale</h3>
-          <div class="flex flex-wrap gap-3">
-            {pointsScale.map(({ place, points }) => (
-              <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded border">
-                <span class="text-sm text-gray-600">{place}{place === 1 ? 'st' : place === 2 ? 'nd' : place === 3 ? 'rd' : 'th'}</span>
-                <span class="font-bold text-primary-700">{points}</span>
-              </div>
-            ))}
-            <span class="text-sm text-gray-500 self-center">... down to 20th = 1 point</span>
+          <!-- Points Scale -->
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="font-bold text-gray-900 mb-4">Points Scale</h3>
+            <div class="flex flex-wrap gap-3">
+              {pointsScale.map(({ place, points }) => (
+                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded border">
+                  <span class="text-sm text-gray-600">{place}{place === 1 ? 'st' : place === 2 ? 'nd' : place === 3 ? 'rd' : 'th'}</span>
+                  <span class="font-bold text-primary-700">{points}</span>
+                </div>
+              ))}
+              <span class="text-sm text-gray-500 self-center">... down to 20th = 1 point</span>
+            </div>
           </div>
         </div>
-
-        <!-- ═══════════════════════════════════════════════════════════════════
-             2025 ARCHIVE
-        ════════════════════════════════════════════════════════════════════ -->
-        <div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-6">2025 Final Standings</h2>
-
-          {data2025 ? (
-            <TeamStandingsGrid
-              events={data2025.events}
-              standings={data2025.standings}
-              clubNameMap={clubNameMap}
-              clubSlugMap={clubSlugMap}
-            />
-          ) : null}
-
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a
-              href="/attachments/events/team-results/2025-en-current-team-results.pdf"
-              class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
-              download
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              2025 Standings (PDF)
-            </a>
-            <a
-              href="/attachments/events/team-results/2024/2024-en-team-championship-results.pdf"
-              class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
-              download
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              2024 Final Results (PDF)
-            </a>
-          </div>
-        </div>
-
-      </div>
+      ) : (
+        <p class="text-gray-500 italic">Team standings are not available yet.</p>
+      )}
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>("[data-year-tab]");
+  const panels = document.querySelectorAll<HTMLElement>("[data-year-panel]");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const year = tab.getAttribute("data-year-tab");
+      tabs.forEach((t) => {
+        const active = t === tab;
+        t.classList.toggle("bg-amber-500", active);
+        t.classList.toggle("text-white", active);
+        t.classList.toggle("bg-gray-100", !active);
+        t.classList.toggle("text-gray-700", !active);
+      });
+      panels.forEach((p) => {
+        p.hidden = p.getAttribute("data-year-panel") !== year;
+      });
+    });
+  });
+</script>

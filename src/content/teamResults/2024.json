@@ -1,0 +1,1618 @@
+{
+  "year": 2024,
+  "series": "Enduro",
+  "lastUpdated": "2024-12-15",
+  "events": [
+    {
+      "abbr": "TCSMC",
+      "name": "TCSMC",
+      "date": "2024-03-10",
+      "completed": true
+    },
+    {
+      "abbr": "SJER",
+      "name": "SJER",
+      "date": "2024-03-17",
+      "completed": true
+    },
+    {
+      "abbr": "MMC",
+      "name": "MMC",
+      "date": "2024-11-17",
+      "completed": true
+    },
+    {
+      "abbr": "PBER",
+      "name": "PBER",
+      "date": "2024-11-24",
+      "completed": true
+    },
+    {
+      "abbr": "CJCR",
+      "name": "CJCR",
+      "date": "2024-04-14",
+      "completed": true
+    },
+    {
+      "abbr": "RRMC",
+      "name": "RRMC",
+      "date": "2024-06-09",
+      "completed": true
+    },
+    {
+      "abbr": "HMDR",
+      "name": "HMDR",
+      "date": "2024-06-23",
+      "completed": true
+    },
+    {
+      "abbr": "STER",
+      "name": "STER",
+      "date": "2024-07-14",
+      "completed": true
+    },
+    {
+      "abbr": "DVTR",
+      "name": "DVTR",
+      "date": "2024-07-21",
+      "completed": true
+    },
+    {
+      "abbr": "BER",
+      "name": "BER",
+      "date": "2024-07-28",
+      "completed": true
+    },
+    {
+      "abbr": "GMER",
+      "name": "GMER",
+      "date": "2024-08-04",
+      "completed": true
+    },
+    {
+      "abbr": "IDR",
+      "name": "IDR",
+      "date": "2024-08-18",
+      "completed": true
+    },
+    {
+      "abbr": "CDR/DER",
+      "name": "CDR/DER",
+      "date": "2024-08-25",
+      "completed": true
+    },
+    {
+      "abbr": "SPER",
+      "name": "SPER",
+      "date": "2024-09-08",
+      "completed": true
+    },
+    {
+      "abbr": "VFTR/RORR",
+      "name": "VFTR/RORR",
+      "date": "2024-09-15",
+      "completed": true
+    },
+    {
+      "abbr": "RRMC(2)",
+      "name": "RRMC(2)",
+      "date": "2024-09-29",
+      "completed": true
+    },
+    {
+      "abbr": "MCI",
+      "name": "MCI",
+      "date": "2024-10-20",
+      "completed": true
+    },
+    {
+      "abbr": "OCCR",
+      "name": "OCCR",
+      "date": "2024-11-10",
+      "completed": true
+    }
+  ],
+  "standings": [
+    {
+      "place": 1,
+      "club": "OCCR",
+      "total": 276,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": "22"
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": "25"
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": "25"
+        },
+        {
+          "event": "HMDR",
+          "points": "25"
+        },
+        {
+          "event": "STER",
+          "points": "22"
+        },
+        {
+          "event": "DVTR",
+          "points": "22"
+        },
+        {
+          "event": "BER",
+          "points": "22"
+        },
+        {
+          "event": "GMER",
+          "points": "22"
+        },
+        {
+          "event": "IDR",
+          "points": "25"
+        },
+        {
+          "event": "CDR/DER",
+          "points": "16"
+        },
+        {
+          "event": "SPER",
+          "points": "25"
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": "25"
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": "W"
+        }
+      ]
+    },
+    {
+      "place": 2,
+      "club": "DER",
+      "total": 218,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": "16"
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": "18"
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": "20"
+        },
+        {
+          "event": "STER",
+          "points": "25"
+        },
+        {
+          "event": "DVTR",
+          "points": "25"
+        },
+        {
+          "event": "BER",
+          "points": "25"
+        },
+        {
+          "event": "GMER",
+          "points": "25"
+        },
+        {
+          "event": "IDR",
+          "points": "20"
+        },
+        {
+          "event": "CDR/DER",
+          "points": "W"
+        },
+        {
+          "event": "SPER",
+          "points": "22"
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": "22"
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 3,
+      "club": "MMC",
+      "total": 204,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": "25"
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": "W"
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": "22"
+        },
+        {
+          "event": "HMDR",
+          "points": "0"
+        },
+        {
+          "event": "STER",
+          "points": "18"
+        },
+        {
+          "event": "DVTR",
+          "points": "20"
+        },
+        {
+          "event": "BER",
+          "points": "18"
+        },
+        {
+          "event": "GMER",
+          "points": "20"
+        },
+        {
+          "event": "IDR",
+          "points": "18"
+        },
+        {
+          "event": "CDR/DER",
+          "points": "22"
+        },
+        {
+          "event": "SPER",
+          "points": "0"
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": "16"
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": "25"
+        }
+      ]
+    },
+    {
+      "place": 4,
+      "club": "SPER",
+      "total": 90,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": "20"
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": "0"
+        },
+        {
+          "event": "STER",
+          "points": "15"
+        },
+        {
+          "event": "DVTR",
+          "points": "15"
+        },
+        {
+          "event": "BER",
+          "points": "20"
+        },
+        {
+          "event": "GMER",
+          "points": "0"
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": "0"
+        },
+        {
+          "event": "SPER",
+          "points": "W"
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": "20"
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 5,
+      "club": "SJER",
+      "total": 31,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": "0"
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": "W"
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": "13"
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": "18"
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": "0"
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 6,
+      "club": "TCSMC",
+      "total": 25,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": "W"
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": "25"
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 7,
+      "club": "CDR",
+      "total": 22,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": "22"
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": "W"
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 8,
+      "club": "BER",
+      "total": 18,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": "W"
+        },
+        {
+          "event": "GMER",
+          "points": "18"
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": "0"
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 9,
+      "club": "DVTR",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": "W"
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 10,
+      "club": "RORR",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": "W"
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 11,
+      "club": "CJCR",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": "W"
+        }
+      ]
+    },
+    {
+      "place": 12,
+      "club": "HMDR",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": "W"
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 13,
+      "club": "VFTR",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": "W"
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 14,
+      "club": "GMER",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": "W"
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 15,
+      "club": "IDR",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": "W"
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 16,
+      "club": "MCI",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": "W"
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 17,
+      "club": "PBER",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": "W"
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 18,
+      "club": "RRMC",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": "W"
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": ""
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    },
+    {
+      "place": 19,
+      "club": "STER",
+      "total": 0,
+      "results": [
+        {
+          "event": "TCSMC",
+          "points": ""
+        },
+        {
+          "event": "SJER",
+          "points": ""
+        },
+        {
+          "event": "MMC",
+          "points": ""
+        },
+        {
+          "event": "PBER",
+          "points": ""
+        },
+        {
+          "event": "CJCR",
+          "points": ""
+        },
+        {
+          "event": "RRMC",
+          "points": ""
+        },
+        {
+          "event": "HMDR",
+          "points": ""
+        },
+        {
+          "event": "STER",
+          "points": "W"
+        },
+        {
+          "event": "DVTR",
+          "points": ""
+        },
+        {
+          "event": "BER",
+          "points": ""
+        },
+        {
+          "event": "GMER",
+          "points": ""
+        },
+        {
+          "event": "IDR",
+          "points": ""
+        },
+        {
+          "event": "CDR/DER",
+          "points": ""
+        },
+        {
+          "event": "SPER",
+          "points": ""
+        },
+        {
+          "event": "VFTR/RORR",
+          "points": ""
+        },
+        {
+          "event": "RRMC(2)",
+          "points": ""
+        },
+        {
+          "event": "MCI",
+          "points": ""
+        },
+        {
+          "event": "OCCR",
+          "points": ""
+        }
+      ]
+    }
+  ]
+}

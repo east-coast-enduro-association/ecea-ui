@@ -1,0 +1,226 @@
+---
+/**
+ * Client-side CSV export for championship standings.
+ * Self-contained: loads team + individual standings in frontmatter, embeds them
+ * as a JSON island, and generates spreadsheet-ready CSV in the browser (no deps).
+ * Drop <ResultsExport /> onto the results page.
+ */
+import { getCollection } from "astro:content";
+
+type PointsCell = { event: string; points: string };
+
+type TeamYear = {
+  year: number;
+  events: Array<{ abbr: string; name: string; date: string }>;
+  standings: Array<{
+    place: number;
+    club: string;
+    total: number;
+    results: PointsCell[];
+  }>;
+};
+
+type Rider = {
+  place: number;
+  club: string;
+  name: string;
+  class?: string;
+  brand?: string;
+  total: number;
+  eventCount: number;
+  results: PointsCell[];
+};
+
+type IndividualYear = {
+  year: number;
+  events: Array<{ abbr: string; name: string; date: string }>;
+  overall: Rider[];
+  classes: Array<{ name: string; riders: Rider[] }>;
+};
+
+const team: TeamYear[] = (await getCollection("teamResults"))
+  .map((e) => e.data)
+  .filter((d) => d.series === "Enduro")
+  .sort((a, b) => b.year - a.year)
+  .map((d) => ({
+    year: d.year,
+    events: d.events.map((ev) => ({ abbr: ev.abbr, name: ev.name, date: ev.date })),
+    standings: d.standings.map((s) => ({
+      place: s.place,
+      club: s.club,
+      total: s.total,
+      results: s.results.map((r) => ({ event: r.event, points: r.points })),
+    })),
+  }));
+
+const individual: IndividualYear[] = (await getCollection("riderStandings"))
+  .map((e) => e.data)
+  .filter((d) => d.series === "Enduro")
+  .sort((a, b) => b.year - a.year)
+  .map((d) => ({
+    year: d.year,
+    events: d.events.map((ev) => ({ abbr: ev.abbr, name: ev.name, date: ev.date })),
+    overall: d.overall as Rider[],
+    classes: d.classes.map((c) => ({ name: c.name, riders: c.riders as Rider[] })),
+  }));
+
+const payload = { team, individual };
+const hasData = team.length > 0 || individual.length > 0;
+
+const selectClass =
+  "w-full sm:w-auto rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500";
+---
+
+{hasData && (
+  <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+    <h3 class="font-bold text-gray-900 mb-1">Download Results (CSV)</h3>
+    <p class="text-sm text-gray-600 mb-4">Export championship standings as spreadsheet-ready CSV.</p>
+
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:flex-wrap">
+      <div class="flex flex-col gap-1">
+        <label for="export-dataset" class="text-xs font-semibold uppercase tracking-wider text-gray-500">Dataset</label>
+        <select id="export-dataset" class={selectClass}>
+          <option value="team">Team standings</option>
+          <option value="individual">Individual standings</option>
+        </select>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label for="export-season" class="text-xs font-semibold uppercase tracking-wider text-gray-500">Season</label>
+        <select id="export-season" class={selectClass}></select>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <button
+          type="button"
+          id="export-download"
+          class="bg-primary-600 text-white hover:bg-primary-700 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+        >
+          Download CSV
+        </button>
+        <button
+          type="button"
+          id="export-download-all"
+          class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+        >
+          Download everything
+        </button>
+      </div>
+    </div>
+
+    <script type="application/json" id="results-export-data" set:html={JSON.stringify(payload)} />
+  </div>
+)}
+
+<script>
+  type PointsCell = { event: string; points: string };
+  interface TeamStanding { place: number; club: string; total: number; results: PointsCell[] }
+  interface TeamYear { year: number; events: Array<{ abbr: string }>; standings: TeamStanding[] }
+  interface Rider {
+    place: number; club: string; name: string; class?: string; brand?: string;
+    total: number; eventCount: number; results: PointsCell[];
+  }
+  interface IndividualYear {
+    year: number; events: Array<{ abbr: string }>;
+    overall: Rider[]; classes: Array<{ name: string; riders: Rider[] }>;
+  }
+  interface Payload { team: TeamYear[]; individual: IndividualYear[] }
+
+  const dataEl = document.getElementById("results-export-data");
+  const datasetSel = document.getElementById("export-dataset") as HTMLSelectElement | null;
+  const seasonSel = document.getElementById("export-season") as HTMLSelectElement | null;
+  const dlBtn = document.getElementById("export-download");
+  const dlAllBtn = document.getElementById("export-download-all");
+
+  if (dataEl && datasetSel && seasonSel && dlBtn && dlAllBtn) {
+    const data = JSON.parse(dataEl.textContent || "{}") as Payload;
+    const team = data.team ?? [];
+    const individual = data.individual ?? [];
+
+    // --- CSV helpers ---
+    const esc = (v: unknown): string => {
+      const s = v === null || v === undefined ? "" : String(v);
+      return /[",\r\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+    };
+    const toCsv = (rows: unknown[][]): string =>
+      rows.map((row) => row.map(esc).join(",")).join("\r\n");
+
+    // Union of event abbrs across years, first-seen order (years already newest-first).
+    const unionAbbrs = (years: Array<{ events: Array<{ abbr: string }> }>): string[] => {
+      const seen: string[] = [];
+      for (const y of years) for (const e of y.events) if (!seen.includes(e.abbr)) seen.push(e.abbr);
+      return seen;
+    };
+    const pointsAt = (results: PointsCell[], abbr: string): string =>
+      results.find((r) => r.event === abbr)?.points ?? "";
+
+    // --- builders ---
+    const buildTeamCsv = (yearOrAll: string): string => {
+      const years = yearOrAll === "all" ? team : team.filter((y) => String(y.year) === yearOrAll);
+      const abbrs = yearOrAll === "all" ? unionAbbrs(years) : (years[0]?.events.map((e) => e.abbr) ?? []);
+      const header = ["Year", "Place", "Club", "Total", ...abbrs];
+      const rows: unknown[][] = [header];
+      for (const y of years) {
+        for (const s of y.standings) {
+          rows.push([y.year, s.place, s.club, s.total, ...abbrs.map((a) => pointsAt(s.results, a))]);
+        }
+      }
+      return toCsv(rows);
+    };
+
+    const buildIndividualCsv = (yearOrAll: string): string => {
+      const years = yearOrAll === "all" ? individual : individual.filter((y) => String(y.year) === yearOrAll);
+      const abbrs = yearOrAll === "all" ? unionAbbrs(years) : (years[0]?.events.map((e) => e.abbr) ?? []);
+      const header = ["Year", "Class", "Place", "Club", "Rider", "Brand", "Events", "Total", ...abbrs];
+      const rows: unknown[][] = [header];
+      const pushRider = (year: number, className: string, r: Rider) => {
+        rows.push([
+          year, className, r.place, r.club, r.name, r.brand ?? "", r.eventCount, r.total,
+          ...abbrs.map((a) => pointsAt(r.results, a)),
+        ]);
+      };
+      for (const y of years) {
+        for (const r of y.overall ?? []) pushRider(y.year, "Overall", r);
+        for (const c of y.classes ?? []) for (const r of c.riders) pushRider(y.year, c.name, r);
+      }
+      return toCsv(rows);
+    };
+
+    const download = (csv: string, filename: string) => {
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    };
+
+    // --- season dropdown population ---
+    const populateSeasons = () => {
+      const years = datasetSel.value === "team" ? team : individual;
+      const opts = ['<option value="all">All years</option>']
+        .concat(years.map((y) => `<option value="${y.year}">${y.year}</option>`));
+      seasonSel.innerHTML = opts.join("");
+    };
+    populateSeasons();
+    datasetSel.addEventListener("change", populateSeasons);
+
+    // --- actions ---
+    dlBtn.addEventListener("click", () => {
+      const season = seasonSel.value;
+      if (datasetSel.value === "team") {
+        download(buildTeamCsv(season), `ecea-team-standings-${season}.csv`);
+      } else {
+        download(buildIndividualCsv(season), `ecea-individual-standings-${season}.csv`);
+      }
+    });
+
+    dlAllBtn.addEventListener("click", () => {
+      if (team.length) download(buildTeamCsv("all"), "ecea-team-standings-all.csv");
+      if (individual.length) download(buildIndividualCsv("all"), "ecea-individual-standings-all.csv");
+    });
+  }
+</script>
