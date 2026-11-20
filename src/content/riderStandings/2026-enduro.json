@@ -1,0 +1,7265 @@
+{
+  "year": 2026,
+  "series": "Enduro",
+  "standingType": "class",
+  "lastUpdated": "2026-11-18",
+  "events": [
+    {
+      "abbr": "TCSMC",
+      "name": "Greenbrier Enduro",
+      "date": "2026-03-08"
+    },
+    {
+      "abbr": "SJER",
+      "name": "Curly Fern",
+      "date": "2026-03-15"
+    },
+    {
+      "abbr": "MMC",
+      "name": "Sandy Lane",
+      "date": "2026-03-22"
+    },
+    {
+      "abbr": "CJCR",
+      "name": "Pine Hill",
+      "date": "2026-04-12"
+    },
+    {
+      "abbr": "RRMC",
+      "name": "Jim Smith Memorial Enduro",
+      "date": "2026-06-08"
+    },
+    {
+      "abbr": "HMDR",
+      "name": "Shotgun Enduro",
+      "date": "2026-06-21"
+    },
+    {
+      "abbr": "STER",
+      "name": "Barbed Wire National Enduro",
+      "date": "2026-07-12"
+    },
+    {
+      "abbr": "DVTR",
+      "name": "Foggy Mountain",
+      "date": "2026-07-19"
+    },
+    {
+      "abbr": "BER",
+      "name": "Rattlesnake National Enduro",
+      "date": "2026-07-26"
+    },
+    {
+      "abbr": "GMER",
+      "name": "Three Springs",
+      "date": "2026-08-09"
+    },
+    {
+      "abbr": "IDR",
+      "name": "Ithaca Sprint",
+      "date": "2026-08-16"
+    },
+    {
+      "abbr": "CDR",
+      "name": "Beehive",
+      "date": "2026-08-30"
+    },
+    {
+      "abbr": "SPER",
+      "name": "Michaux",
+      "date": "2026-09-13"
+    },
+    {
+      "abbr": "VFTR",
+      "name": "Moonshine",
+      "date": "2026-09-20"
+    },
+    {
+      "abbr": "OCCR",
+      "name": "Scrub Pine",
+      "date": "2026-10-25"
+    },
+    {
+      "abbr": "PBER",
+      "name": "Pine Barons",
+      "date": "2026-11-15"
+    }
+  ],
+  "notes": [
+    "SPECIAL NOTE FOR AA/A/B/C Riders: Points Received in Minimum of 5 Events/Best 11",
+    "SPECIAL NOTE FOR C Riders: Event Credit for DNF's if at least 50% of Checks were completed at an Event. Those credits are displayed as RED zeroes.",
+    "SPECIAL NOTE FOR SPECIALTY CLASSES: 4 Events Finished OR 5 events competed in."
+  ],
+  "classes": [
+    {
+      "name": "AA",
+      "riders": [
+        {
+          "place": 1,
+          "club": "TCSMC",
+          "name": "KYLE MCDONAL",
+          "total": 259,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "20d"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "9d"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "22"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "AA",
+          "brand": "BET"
+        },
+        {
+          "place": 2,
+          "club": "OCCR",
+          "name": "RYAN CANAVAN",
+          "total": 224,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "RRMC",
+              "points": "18"
+            },
+            {
+              "event": "HMDR",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "14d"
+            },
+            {
+              "event": "DVTR",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "14d"
+            },
+            {
+              "event": "IDR",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            }
+          ],
+          "class": "AA",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "RRMC",
+          "name": "MAVERICK REINER",
+          "total": 210,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "20"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "18"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "HMDR",
+              "points": "18"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "15"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "AA",
+          "brand": "GAS"
+        },
+        {
+          "place": 4,
+          "club": "DER",
+          "name": "JACOB NOWAKOWSKI",
+          "total": 159,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "13"
+            },
+            {
+              "event": "SJER",
+              "points": "14"
+            },
+            {
+              "event": "MMC",
+              "points": "11"
+            },
+            {
+              "event": "CJCR",
+              "points": "13"
+            },
+            {
+              "event": "RRMC",
+              "points": "13"
+            },
+            {
+              "event": "HMDR",
+              "points": "13"
+            },
+            {
+              "event": "STER",
+              "points": "10d"
+            },
+            {
+              "event": "DVTR",
+              "points": "16"
+            },
+            {
+              "event": "GMER",
+              "points": "10d"
+            },
+            {
+              "event": "IDR",
+              "points": "13"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "15"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "AA",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "OCCR",
+          "name": "DONOVAN MARVIN",
+          "total": 147,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "12"
+            },
+            {
+              "event": "SJER",
+              "points": "16"
+            },
+            {
+              "event": "MMC",
+              "points": "10d"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "RRMC",
+              "points": "12"
+            },
+            {
+              "event": "HMDR",
+              "points": "12"
+            },
+            {
+              "event": "STER",
+              "points": "11"
+            },
+            {
+              "event": "GMER",
+              "points": "11"
+            },
+            {
+              "event": "IDR",
+              "points": "12"
+            },
+            {
+              "event": "CDR",
+              "points": "16"
+            },
+            {
+              "event": "SPER",
+              "points": "15"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            }
+          ],
+          "class": "AA",
+          "brand": "BET"
+        },
+        {
+          "place": 6,
+          "club": "DER",
+          "name": "CHRIS SILVERMAN",
+          "total": 130,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "14"
+            },
+            {
+              "event": "RRMC",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "DVTR",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "9"
+            },
+            {
+              "event": "IDR",
+              "points": "15"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            }
+          ],
+          "class": "AA",
+          "brand": "KTM"
+        },
+        {
+          "place": 7,
+          "club": "DER",
+          "name": "ZACHARY PAGE",
+          "total": 106,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "11"
+            },
+            {
+              "event": "SJER",
+              "points": "15"
+            },
+            {
+              "event": "MMC",
+              "points": "12"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "RRMC",
+              "points": "14"
+            },
+            {
+              "event": "HMDR",
+              "points": "14"
+            },
+            {
+              "event": "STER",
+              "points": "12"
+            },
+            {
+              "event": "GMER",
+              "points": "12"
+            }
+          ],
+          "class": "AA",
+          "brand": "KTM"
+        },
+        {
+          "place": 8,
+          "club": "CDR",
+          "name": "JOSEPH FORD",
+          "total": 78,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "15"
+            },
+            {
+              "event": "CJCR",
+              "points": "15"
+            },
+            {
+              "event": "HMDR",
+              "points": "15"
+            },
+            {
+              "event": "DVTR",
+              "points": "15"
+            }
+          ],
+          "class": "AA",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "A 98-200",
+      "riders": [
+        {
+          "place": 1,
+          "club": "TCSMC",
+          "name": "JOHN CASTALDI",
+          "total": 164,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "18"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "A 200",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "CJCR",
+          "name": "NATE MEILY",
+          "total": 115,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "18"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            }
+          ],
+          "class": "A 200",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "A 201-250",
+      "riders": [
+        {
+          "place": 1,
+          "club": "OCCR",
+          "name": "CHRISTOPHER SMITH",
+          "total": 259,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "20d"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            }
+          ],
+          "class": "A 250",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "CDR",
+          "name": "JOSHUA PITTMAN",
+          "total": 234,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "20"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "18d"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "18"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "A 250",
+          "brand": "YAM"
+        },
+        {
+          "place": 3,
+          "club": "CJCR",
+          "name": "JUSTIN MCKENZIE",
+          "total": 172,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "15"
+            },
+            {
+              "event": "SJER",
+              "points": "14"
+            },
+            {
+              "event": "MMC",
+              "points": "16"
+            },
+            {
+              "event": "HMDR",
+              "points": "15"
+            },
+            {
+              "event": "DVTR",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "18"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "A 250",
+          "brand": "BET"
+        },
+        {
+          "place": 4,
+          "club": "DER",
+          "name": "THOMAS RAIO",
+          "total": 134,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "18"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "14"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "13"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "IDR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "18"
+            }
+          ],
+          "class": "A 250",
+          "brand": "YAM"
+        }
+      ]
+    },
+    {
+      "name": "A Open 251+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "TCSMC",
+          "name": "KYLE PLUMMER",
+          "total": 246,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "16d"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "DVTR",
+              "points": "18d"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "A 251+",
+          "brand": "BET"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "ANGELO RISPOLI",
+          "total": 212,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "16"
+            },
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "18"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "RRMC",
+              "points": "15"
+            },
+            {
+              "event": "HMDR",
+              "points": "13d"
+            },
+            {
+              "event": "STER",
+              "points": "9d"
+            },
+            {
+              "event": "DVTR",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "22"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "A 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "VFTR",
+          "name": "TANNER BARNHARDT",
+          "total": 195,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "12"
+            },
+            {
+              "event": "MMC",
+              "points": "10"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "14"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "13"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "18"
+            }
+          ],
+          "class": "A 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 4,
+          "club": "CJCR",
+          "name": "AUSTIN CHAVOUS",
+          "total": 191,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "11d"
+            },
+            {
+              "event": "MMC",
+              "points": "12"
+            },
+            {
+              "event": "RRMC",
+              "points": "14"
+            },
+            {
+              "event": "HMDR",
+              "points": "18"
+            },
+            {
+              "event": "STER",
+              "points": "11"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "11"
+            },
+            {
+              "event": "IDR",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "16"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "A 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "DER",
+          "name": "DOMINIC RISPOLI",
+          "total": 100,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "15"
+            },
+            {
+              "event": "STER",
+              "points": "15"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "VFTR",
+              "points": "18"
+            },
+            {
+              "event": "OCCR",
+              "points": "15"
+            }
+          ],
+          "class": "A 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 6,
+          "club": "SJER",
+          "name": "TROY DENISE",
+          "total": 77,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "14"
+            },
+            {
+              "event": "MMC",
+              "points": "13"
+            },
+            {
+              "event": "RRMC",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "16"
+            }
+          ],
+          "class": "A 251+",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "A Vet 30+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "RRMC",
+          "name": "ROBERT CIVILETTI JR",
+          "total": 226,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "14"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "12"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "DVTR",
+              "points": "13"
+            },
+            {
+              "event": "GMER",
+              "points": "22"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "10d"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "A VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "VAN MCCARREN",
+          "total": 210,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "18"
+            },
+            {
+              "event": "RRMC",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "10"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "GMER",
+              "points": "16"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "8d"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "A VET 30+",
+          "brand": "YAM"
+        },
+        {
+          "place": 3,
+          "club": "SPER",
+          "name": "LOGAN SMITH",
+          "total": 187,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "18"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "14"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "RRMC",
+              "points": "16"
+            },
+            {
+              "event": "HMDR",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "15"
+            },
+            {
+              "event": "DVTR",
+              "points": "16"
+            },
+            {
+              "event": "GMER",
+              "points": "11d"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "14"
+            },
+            {
+              "event": "VFTR",
+              "points": "11d"
+            },
+            {
+              "event": "OCCR",
+              "points": "18"
+            }
+          ],
+          "class": "A VET 30+",
+          "brand": "TRI"
+        },
+        {
+          "place": 4,
+          "club": "OCCR",
+          "name": "CHRISTOPHER RIZZON",
+          "total": 181,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "13"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "RRMC",
+              "points": "18"
+            },
+            {
+              "event": "HMDR",
+              "points": "14"
+            },
+            {
+              "event": "STER",
+              "points": "12d"
+            },
+            {
+              "event": "DVTR",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "12"
+            },
+            {
+              "event": "IDR",
+              "points": "14"
+            },
+            {
+              "event": "CDR",
+              "points": "12"
+            },
+            {
+              "event": "SPER",
+              "points": "16"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            }
+          ],
+          "class": "A VET 30+",
+          "brand": "YAM"
+        },
+        {
+          "place": 5,
+          "club": "SPER",
+          "name": "NATHAN JOSEPH",
+          "total": 168,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "12"
+            },
+            {
+              "event": "SJER",
+              "points": "16"
+            },
+            {
+              "event": "MMC",
+              "points": "15"
+            },
+            {
+              "event": "CJCR",
+              "points": "12"
+            },
+            {
+              "event": "HMDR",
+              "points": "18"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "DVTR",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "13"
+            },
+            {
+              "event": "IDR",
+              "points": "15"
+            },
+            {
+              "event": "CDR",
+              "points": "13"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            }
+          ],
+          "class": "A VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 6,
+          "club": "CDR",
+          "name": "THOMAS PALERMO",
+          "total": 118,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "15"
+            },
+            {
+              "event": "MMC",
+              "points": "12"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "DVTR",
+              "points": "15"
+            },
+            {
+              "event": "GMER",
+              "points": "6"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "14"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "A VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 7,
+          "club": "DVTR",
+          "name": "MICHAEL ABRAMO",
+          "total": 117,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "5d"
+            },
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "10"
+            },
+            {
+              "event": "CJCR",
+              "points": "10"
+            },
+            {
+              "event": "RRMC",
+              "points": "14"
+            },
+            {
+              "event": "HMDR",
+              "points": "6"
+            },
+            {
+              "event": "STER",
+              "points": "8"
+            },
+            {
+              "event": "GMER",
+              "points": "5"
+            },
+            {
+              "event": "IDR",
+              "points": "13"
+            },
+            {
+              "event": "CDR",
+              "points": "6"
+            },
+            {
+              "event": "SPER",
+              "points": "12"
+            },
+            {
+              "event": "OCCR",
+              "points": "15"
+            }
+          ],
+          "class": "A VET 30+",
+          "brand": "TM"
+        },
+        {
+          "place": 8,
+          "club": "BER",
+          "name": "RONALD PERRY",
+          "total": 111,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "14"
+            },
+            {
+              "event": "SPER",
+              "points": "15"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            }
+          ],
+          "class": "A VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 9,
+          "club": "BER",
+          "name": "MATTHEW CLOSE",
+          "total": 82,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "15"
+            },
+            {
+              "event": "CJCR",
+              "points": "15"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "VFTR",
+              "points": "15"
+            }
+          ],
+          "class": "A VET 30+",
+          "brand": "SCO"
+        }
+      ]
+    },
+    {
+      "name": "A Senior 40+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DER",
+          "name": "DOUG ALLEN II",
+          "total": 261,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "A SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "CDR",
+          "name": "JOE SUMPTER",
+          "total": 201,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "16"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "RRMC",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "15d"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "DVTR",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "SPER",
+              "points": "16"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "A SR 40+",
+          "brand": "YAM"
+        },
+        {
+          "place": 3,
+          "club": "MMC",
+          "name": "RAYMOND POWELL",
+          "total": 197,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "5d"
+            },
+            {
+              "event": "SJER",
+              "points": "16"
+            },
+            {
+              "event": "CJCR",
+              "points": "15"
+            },
+            {
+              "event": "RRMC",
+              "points": "18"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "13d"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "18"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "18"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "A SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "DER",
+          "name": "KRIS BIZZARI",
+          "total": 159,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "10d"
+            },
+            {
+              "event": "SJER",
+              "points": "14"
+            },
+            {
+              "event": "MMC",
+              "points": "14"
+            },
+            {
+              "event": "CJCR",
+              "points": "10d"
+            },
+            {
+              "event": "RRMC",
+              "points": "14"
+            },
+            {
+              "event": "HMDR",
+              "points": "11"
+            },
+            {
+              "event": "STER",
+              "points": "12"
+            },
+            {
+              "event": "DVTR",
+              "points": "15"
+            },
+            {
+              "event": "GMER",
+              "points": "10"
+            },
+            {
+              "event": "IDR",
+              "points": "14"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "15"
+            },
+            {
+              "event": "OCCR",
+              "points": "15"
+            }
+          ],
+          "class": "A SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "SJER",
+          "name": "TONY HODGSON",
+          "total": 135,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "15"
+            },
+            {
+              "event": "MMC",
+              "points": "16"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "RRMC",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "14"
+            },
+            {
+              "event": "GMER",
+              "points": "16"
+            },
+            {
+              "event": "IDR",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            }
+          ],
+          "class": "A SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 6,
+          "club": "CJCR",
+          "name": "WALTER ANDRES",
+          "total": 116,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "12"
+            },
+            {
+              "event": "SJER",
+              "points": "11"
+            },
+            {
+              "event": "MMC",
+              "points": "15"
+            },
+            {
+              "event": "HMDR",
+              "points": "14"
+            },
+            {
+              "event": "STER",
+              "points": "15"
+            },
+            {
+              "event": "GMER",
+              "points": "11"
+            },
+            {
+              "event": "CDR",
+              "points": "16"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            }
+          ],
+          "class": "A SR 40+",
+          "brand": "BET"
+        },
+        {
+          "place": 7,
+          "club": "SPER",
+          "name": "GRAHAM SMITH",
+          "total": 80,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "13"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "HMDR",
+              "points": "13"
+            },
+            {
+              "event": "DVTR",
+              "points": "14"
+            }
+          ],
+          "class": "A SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 8,
+          "club": "OCCR",
+          "name": "AXEL ANDERSON",
+          "total": 73,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "6"
+            },
+            {
+              "event": "SJER",
+              "points": "12"
+            },
+            {
+              "event": "CJCR",
+              "points": "9"
+            },
+            {
+              "event": "HMDR",
+              "points": "8"
+            },
+            {
+              "event": "STER",
+              "points": "13"
+            },
+            {
+              "event": "DVTR",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "9"
+            }
+          ],
+          "class": "A SR 40+",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "A Senior 45+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "CJCR",
+          "name": "NATE MEILY",
+          "total": 182,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "RRMC",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ]
+        },
+        {
+          "place": 2,
+          "club": "CDR",
+          "name": "GREGORY NORDBERG",
+          "total": 121,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "13"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "A SR45+",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "SPER",
+          "name": "DARREN ALDINGER",
+          "total": 118,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "14"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            }
+          ],
+          "class": "A SR45+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "CJCR",
+          "name": "GREG PRESTON",
+          "total": 101,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "16"
+            },
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "A SR45+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "OCCR",
+          "name": "BRANDON SHARFF",
+          "total": 100,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "18"
+            }
+          ],
+          "class": "A SR45+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "A Super Sr 50+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "SPER",
+          "name": "ROBERT HAGAN",
+          "total": 212,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "11"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "RRMC",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "DVTR",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "18"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "A SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "MARK SCHLEEWEIS",
+          "total": 149,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "16"
+            },
+            {
+              "event": "MMC",
+              "points": "15"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "DVTR",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            }
+          ],
+          "class": "A SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "DER",
+          "name": "MARVIN SCANLAND",
+          "total": 144,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            }
+          ],
+          "class": "A SSR 50+",
+          "brand": "HUS"
+        },
+        {
+          "place": 4,
+          "club": "OCCR",
+          "name": "ROBERT DIMOCK",
+          "total": 137,
+          "eventCount": 9,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "15"
+            },
+            {
+              "event": "MMC",
+              "points": "16"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "RRMC",
+              "points": "14"
+            },
+            {
+              "event": "HMDR",
+              "points": "13"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "IDR",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "13"
+            }
+          ],
+          "class": "A SSR 50+",
+          "brand": "HUS"
+        },
+        {
+          "place": 5,
+          "club": "SPER",
+          "name": "MICHAEL LONG",
+          "total": 126,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "14"
+            },
+            {
+              "event": "MMC",
+              "points": "18"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "HMDR",
+              "points": "14"
+            },
+            {
+              "event": "DVTR",
+              "points": "16"
+            },
+            {
+              "event": "GMER",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "14"
+            }
+          ],
+          "class": "A SSR 50+",
+          "brand": "YAM"
+        },
+        {
+          "place": 6,
+          "club": "GMER",
+          "name": "DAVID ROSE",
+          "total": 124,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "13"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            }
+          ],
+          "class": "A SSR 50+",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "A Super Sr 55+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "OCCR",
+          "name": "ARTHUR DOWNS",
+          "total": 222,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "12d"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "DVTR",
+              "points": "16"
+            },
+            {
+              "event": "GMER",
+              "points": "18"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "15d"
+            }
+          ],
+          "class": "A SSR 55+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "CHUCK STAPLEFORD",
+          "total": 216,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "11"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "A SSR 55+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "DVTR",
+          "name": "JAMES LANDVATER JR",
+          "total": 152,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "9"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "13"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "HMDR",
+              "points": "13"
+            },
+            {
+              "event": "STER",
+              "points": "13"
+            },
+            {
+              "event": "GMER",
+              "points": "12"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "A SSR 55+",
+          "brand": "HUS"
+        },
+        {
+          "place": 4,
+          "club": "HMDR",
+          "name": "BRIAN FROST",
+          "total": 117,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "DVTR",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "A SSR 55+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "HMDR",
+          "name": "TODD WHITNEY",
+          "total": 115,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "10"
+            },
+            {
+              "event": "MMC",
+              "points": "16"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "DVTR",
+              "points": "15"
+            },
+            {
+              "event": "CDR",
+              "points": "16"
+            },
+            {
+              "event": "VFTR",
+              "points": "18"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "A SSR 55+",
+          "brand": "HUS"
+        },
+        {
+          "place": 6,
+          "club": "SPER",
+          "name": "JOHN YANTEK",
+          "total": 77,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "12"
+            },
+            {
+              "event": "DVTR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "15"
+            },
+            {
+              "event": "VFTR",
+              "points": "14"
+            }
+          ],
+          "class": "A SSR 55+",
+          "brand": "YAM"
+        },
+        {
+          "place": 7,
+          "club": "OCCR",
+          "name": "JOHN WHITAKER",
+          "total": 76,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "14"
+            },
+            {
+              "event": "MMC",
+              "points": "12"
+            },
+            {
+              "event": "STER",
+              "points": "14"
+            },
+            {
+              "event": "GMER",
+              "points": "14"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            }
+          ],
+          "class": "A SSR 55+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B 98-200",
+      "riders": [
+        {
+          "place": 1,
+          "club": "CJCR",
+          "name": "SARAH MICKEY",
+          "total": 192,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "B 200",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "RRMC",
+          "name": "WADE SCHIAVONE",
+          "total": 132,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "16"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "B 200",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B 201-250",
+      "riders": [
+        {
+          "place": 1,
+          "club": "RRMC",
+          "name": "DOM FALLENI",
+          "total": 245,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "15d"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "16"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "B 250",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "JESSE DAVIS",
+          "total": 218,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "RRMC",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "15"
+            },
+            {
+              "event": "GMER",
+              "points": "14"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "B 250",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "TCSMC",
+          "name": "JOE CASTALDI",
+          "total": 218,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "RRMC",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "13d"
+            },
+            {
+              "event": "IDR",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "B 250",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "GMER",
+          "name": "ROBERT CADDELL",
+          "total": 146,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "12"
+            },
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "10"
+            },
+            {
+              "event": "CJCR",
+              "points": "13"
+            },
+            {
+              "event": "RRMC",
+              "points": "13"
+            },
+            {
+              "event": "HMDR",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "18"
+            },
+            {
+              "event": "SPER",
+              "points": "15"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "15"
+            }
+          ],
+          "class": "B 250",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "DER",
+          "name": "MIKE TEOLI",
+          "total": 109,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "16"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "12"
+            },
+            {
+              "event": "VFTR",
+              "points": "18"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "B 250",
+          "brand": "YAM"
+        },
+        {
+          "place": 6,
+          "club": "HMDR",
+          "name": "BRANDON FROST",
+          "total": 92,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "11"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "OCCR",
+              "points": "18"
+            }
+          ],
+          "class": "B 250",
+          "brand": "KTM"
+        },
+        {
+          "place": 7,
+          "club": "CJCR",
+          "name": "WILLIAM BRADY",
+          "total": 82,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "13"
+            },
+            {
+              "event": "MMC",
+              "points": "15"
+            },
+            {
+              "event": "HMDR",
+              "points": "18"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "16"
+            }
+          ],
+          "class": "B 250",
+          "brand": "HUS"
+        },
+        {
+          "place": 8,
+          "club": "BER",
+          "name": "RYAN LARGE",
+          "total": 75,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "14"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "12"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "CDR",
+              "points": "15"
+            }
+          ],
+          "class": "B 250",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B Open 251+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "SJER",
+          "name": "MACGREGOR HENNAUT",
+          "total": 251,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "15d"
+            },
+            {
+              "event": "DVTR",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "18d"
+            },
+            {
+              "event": "IDR",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "B 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "VFTR",
+          "name": "HARRISON MCCURDY",
+          "total": 229,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "10d"
+            },
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "14d"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "B 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "DVTR",
+          "name": "JAMES ASHMEN",
+          "total": 114,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            }
+          ],
+          "class": "B 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "OCCR",
+          "name": "RYAN LUSK",
+          "total": 90,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "11"
+            },
+            {
+              "event": "MMC",
+              "points": "13"
+            },
+            {
+              "event": "CJCR",
+              "points": "13"
+            },
+            {
+              "event": "HMDR",
+              "points": "12"
+            },
+            {
+              "event": "STER",
+              "points": "13"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "CDR",
+              "points": "13"
+            }
+          ],
+          "class": "B 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 5,
+          "club": "CJCR",
+          "name": "ETHAN OTANI",
+          "total": 84,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "16"
+            },
+            {
+              "event": "HMDR",
+              "points": "14"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "12"
+            }
+          ],
+          "class": "B 251+",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "B Vet 30+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "CDR",
+          "name": "COLIN BLACK",
+          "total": 262,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "18d"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "14d"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "AUSTIN SCHWARZ",
+          "total": 209,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "11"
+            },
+            {
+              "event": "SJER",
+              "points": "14"
+            },
+            {
+              "event": "MMC",
+              "points": "18"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "16"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "SPER",
+          "name": "TIMOTHY SPRENKLE",
+          "total": 191,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "15"
+            },
+            {
+              "event": "SJER",
+              "points": "15"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "RRMC",
+              "points": "18"
+            },
+            {
+              "event": "HMDR",
+              "points": "18"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "DVTR",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "12"
+            },
+            {
+              "event": "CDR",
+              "points": "9d"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "CDR",
+          "name": "DEREK BRADLEY",
+          "total": 140,
+          "eventCount": 9,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "8"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "RRMC",
+              "points": "15"
+            },
+            {
+              "event": "HMDR",
+              "points": "13"
+            },
+            {
+              "event": "STER",
+              "points": "15"
+            },
+            {
+              "event": "DVTR",
+              "points": "16"
+            },
+            {
+              "event": "GMER",
+              "points": "13"
+            }
+          ],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "HMDR",
+          "name": "COLIN LONG",
+          "total": 137,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "8"
+            },
+            {
+              "event": "MMC",
+              "points": "6"
+            },
+            {
+              "event": "CJCR",
+              "points": "8"
+            },
+            {
+              "event": "RRMC",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "7"
+            },
+            {
+              "event": "GMER",
+              "points": "11"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "15"
+            }
+          ],
+          "class": "B VET 30+",
+          "brand": "BET"
+        },
+        {
+          "place": 6,
+          "club": "CJCR",
+          "name": "TIMOTHY HULMES",
+          "total": 86,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "3"
+            },
+            {
+              "event": "MMC",
+              "points": "11"
+            },
+            {
+              "event": "RRMC",
+              "points": "14"
+            },
+            {
+              "event": "HMDR",
+              "points": "12"
+            },
+            {
+              "event": "STER",
+              "points": "11"
+            },
+            {
+              "event": "GMER",
+              "points": "9"
+            },
+            {
+              "event": "CDR",
+              "points": "14"
+            },
+            {
+              "event": "VFTR",
+              "points": "12"
+            }
+          ],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 7,
+          "club": "DVTR",
+          "name": "JONATHAN SUBBE",
+          "total": 75,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "11"
+            },
+            {
+              "event": "HMDR",
+              "points": "7"
+            },
+            {
+              "event": "STER",
+              "points": "13"
+            },
+            {
+              "event": "GMER",
+              "points": "6"
+            },
+            {
+              "event": "CDR",
+              "points": "15"
+            },
+            {
+              "event": "VFTR",
+              "points": "9"
+            },
+            {
+              "event": "OCCR",
+              "points": "14"
+            }
+          ],
+          "class": "B VET 30+",
+          "brand": "BET"
+        },
+        {
+          "place": 8,
+          "club": "CJCR",
+          "name": "STEVEN MCKENZIE JR",
+          "total": 73,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "13"
+            },
+            {
+              "event": "MMC",
+              "points": "10"
+            },
+            {
+              "event": "DVTR",
+              "points": "9"
+            },
+            {
+              "event": "CDR",
+              "points": "11"
+            },
+            {
+              "event": "SPER",
+              "points": "14"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "B VET 30+",
+          "brand": "GAS"
+        },
+        {
+          "place": 9,
+          "club": "DER",
+          "name": "GREGORY CURLETT",
+          "total": 51,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "MMC",
+              "points": "7"
+            },
+            {
+              "event": "CJCR",
+              "points": "10"
+            },
+            {
+              "event": "RRMC",
+              "points": "9"
+            },
+            {
+              "event": "HMDR",
+              "points": "3"
+            },
+            {
+              "event": "STER",
+              "points": "8"
+            },
+            {
+              "event": "GMER",
+              "points": "4"
+            },
+            {
+              "event": "OCCR",
+              "points": "10"
+            }
+          ],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 10,
+          "club": "OCCR",
+          "name": "GREG VAN NESS",
+          "total": 46,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "2"
+            },
+            {
+              "event": "SJER",
+              "points": "16"
+            },
+            {
+              "event": "MMC",
+              "points": "8"
+            },
+            {
+              "event": "CJCR",
+              "points": "12"
+            },
+            {
+              "event": "GMER",
+              "points": "8"
+            }
+          ],
+          "class": "B VET 30+",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "B Senior 40+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "CDR",
+          "name": "BRADLEY CAMP",
+          "total": 254,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "20d"
+            },
+            {
+              "event": "RRMC",
+              "points": "20d"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "B SR 40+",
+          "brand": "YAM"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "ADAM BAKER",
+          "total": 190,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "16"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "16"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "B SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "TCSMC",
+          "name": "BRIAN EVANS",
+          "total": 130,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            }
+          ],
+          "class": "B SR 40+",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "B Senior 45+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "ERIC SIMPSON",
+          "total": 257,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "20"
+            },
+            {
+              "event": "SJER",
+              "points": "16d"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "B SR 45+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "PBER",
+          "name": "LELAND FRORIEP JR",
+          "total": 179,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "12"
+            },
+            {
+              "event": "MMC",
+              "points": "18"
+            },
+            {
+              "event": "CJCR",
+              "points": "12"
+            },
+            {
+              "event": "RRMC",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "PBER",
+              "points": "-19"
+            }
+          ],
+          "class": "B SR 45+",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "OCCR",
+          "name": "ROB STUMP",
+          "total": 149,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "15"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            }
+          ],
+          "class": "B SR 45+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "RORR",
+          "name": "ADAM MILLER",
+          "total": 102,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "22"
+            }
+          ],
+          "class": "B SR 45+",
+          "brand": "BET"
+        },
+        {
+          "place": 5,
+          "club": "DER",
+          "name": "NICK CHADICK",
+          "total": 69,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "9"
+            },
+            {
+              "event": "SJER",
+              "points": "15"
+            },
+            {
+              "event": "MMC",
+              "points": "12"
+            },
+            {
+              "event": "CJCR",
+              "points": "13"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "B SR 45+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B Super Sr 50+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "BRAD HARGIS",
+          "total": 275,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "25d"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "B SSR 50+",
+          "brand": "BET"
+        },
+        {
+          "place": 2,
+          "club": "CDR",
+          "name": "STEVEN HOLMES",
+          "total": 213,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "RRMC",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "DVTR",
+              "points": "18"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "GMER",
+          "name": "BRIAN CADDELL",
+          "total": 205,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "15"
+            },
+            {
+              "event": "MMC",
+              "points": "16"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "RRMC",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "18"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "18"
+            }
+          ],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "RORR",
+          "name": "MITCHELL WALKER",
+          "total": 150,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "11"
+            },
+            {
+              "event": "MMC",
+              "points": "10"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "RRMC",
+              "points": "16"
+            },
+            {
+              "event": "HMDR",
+              "points": "15"
+            },
+            {
+              "event": "STER",
+              "points": "14"
+            },
+            {
+              "event": "DVTR",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "14"
+            },
+            {
+              "event": "CDR",
+              "points": "18"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            }
+          ],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "DVTR",
+          "name": "DAVID SMITH",
+          "total": 141,
+          "eventCount": 9,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "12"
+            },
+            {
+              "event": "SJER",
+              "points": "16"
+            },
+            {
+              "event": "MMC",
+              "points": "11"
+            },
+            {
+              "event": "CJCR",
+              "points": "15"
+            },
+            {
+              "event": "HMDR",
+              "points": "14"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "16"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            }
+          ],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 6,
+          "club": "GMER",
+          "name": "PETER BUTLER",
+          "total": 110,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "13"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "15"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B Super Sr 55+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "RORR",
+          "name": "JEREMY MERTZ",
+          "total": 163,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "RRMC",
+              "points": "18"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "DVTR",
+              "points": "16"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "B SSR 55+",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "OCCR",
+          "name": "DERON DITTMER",
+          "total": 158,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "20"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "16"
+            },
+            {
+              "event": "GMER",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            }
+          ],
+          "class": "B SSR 55+",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "DVTR",
+          "name": "SIMON TASKER",
+          "total": 120,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "18"
+            }
+          ],
+          "class": "B SSR 55+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "MMC",
+          "name": "GUY DRANOFF",
+          "total": 111,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "B SSR 55+",
+          "brand": "BET"
+        },
+        {
+          "place": 5,
+          "club": "GMER",
+          "name": "BEN FRECON",
+          "total": 84,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "RRMC",
+              "points": "10"
+            },
+            {
+              "event": "DVTR",
+              "points": "15"
+            },
+            {
+              "event": "IDR",
+              "points": "13"
+            },
+            {
+              "event": "CDR",
+              "points": "18"
+            },
+            {
+              "event": "SPER",
+              "points": "14"
+            },
+            {
+              "event": "OCCR",
+              "points": "14"
+            }
+          ],
+          "class": "B SSR 55+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "C 98-200",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "MICHAEL MARSH",
+          "total": 200,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            }
+          ],
+          "class": "C 200",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "OCCR",
+          "name": "LORENZO HINES",
+          "total": 192,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "RRMC",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "18"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            }
+          ],
+          "class": "C 200",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "DVTR",
+          "name": "JONATHAN HARTMAN",
+          "total": 129,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "0"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "18"
+            }
+          ],
+          "class": "C 200",
+          "brand": "HUS"
+        },
+        {
+          "place": 4,
+          "club": "DVTR",
+          "name": "PAUL RITZ",
+          "total": 84,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "0"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "C 200",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "C 201-250",
+      "riders": [
+        {
+          "place": 1,
+          "club": "HMDR",
+          "name": "TYLER CRAIG",
+          "total": 259,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "16d"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "C 250",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "MAXX KYRITSIS",
+          "total": 201,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "14"
+            },
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "RRMC",
+              "points": "18"
+            },
+            {
+              "event": "HMDR",
+              "points": "0d"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "DVTR",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "16"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "C 250",
+          "brand": "YAM"
+        },
+        {
+          "place": 3,
+          "club": "SPER",
+          "name": "ANDREW OMMERT",
+          "total": 107,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "18"
+            },
+            {
+              "event": "CJCR",
+              "points": "15"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "DVTR",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "14"
+            }
+          ],
+          "class": "C 250",
+          "brand": "BET"
+        },
+        {
+          "place": 4,
+          "club": "DER",
+          "name": "ZACHARY CHADICK",
+          "total": 97,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "15"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "18"
+            }
+          ],
+          "class": "C 250",
+          "brand": "YAM"
+        },
+        {
+          "place": 5,
+          "club": "DVTR",
+          "name": "THOMAS EGAN",
+          "total": 92,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "15"
+            },
+            {
+              "event": "MMC",
+              "points": "14"
+            },
+            {
+              "event": "CDR",
+              "points": "16"
+            },
+            {
+              "event": "SPER",
+              "points": "16"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "15"
+            }
+          ],
+          "class": "C 250",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "C Open 251+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "OCCR",
+          "name": "PIERCE CAGEN",
+          "total": 272,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            }
+          ],
+          "class": "C 251+",
+          "brand": "GAS"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "EDWARD ANSKIS",
+          "total": 214,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "0d"
+            },
+            {
+              "event": "GMER",
+              "points": "16"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "18"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "C 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "PBER",
+          "name": "VINCENT MAGGIO",
+          "total": 76,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "20"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "18"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "GMER",
+              "points": "18"
+            },
+            {
+              "event": "PBER",
+              "points": "-18"
+            }
+          ],
+          "class": "C 251+",
+          "brand": "BET"
+        },
+        {
+          "place": 4,
+          "club": "PBER",
+          "name": "XIOVANNY COMFORT",
+          "total": 70,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "13"
+            },
+            {
+              "event": "MMC",
+              "points": "13"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "0"
+            },
+            {
+              "event": "CDR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            },
+            {
+              "event": "PBER",
+              "points": "-14"
+            }
+          ],
+          "class": "C 251+",
+          "brand": "GAS"
+        }
+      ]
+    },
+    {
+      "name": "C Vet 30+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "OCCR",
+          "name": "ALBERT ZIPF",
+          "total": 231,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "DVTR",
+              "points": "16d"
+            },
+            {
+              "event": "GMER",
+              "points": "18"
+            },
+            {
+              "event": "IDR",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "13d"
+            }
+          ],
+          "class": "C VET 30+",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "RICHARD POWELL",
+          "total": 222,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "20"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "RRMC",
+              "points": "18"
+            },
+            {
+              "event": "HMDR",
+              "points": "18"
+            },
+            {
+              "event": "STER",
+              "points": "15d"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "14d"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "C VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "VFTR",
+          "name": "PAWEL BIALK",
+          "total": 211,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "16"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "RRMC",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "15"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "DVTR",
+              "points": "0d"
+            },
+            {
+              "event": "GMER",
+              "points": "13"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "C VET 30+",
+          "brand": "HUS"
+        },
+        {
+          "place": 4,
+          "club": "VFTR",
+          "name": "JAMI NAZARSKI",
+          "total": 179,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "16"
+            },
+            {
+              "event": "SJER",
+              "points": "16"
+            },
+            {
+              "event": "MMC",
+              "points": "18"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "RRMC",
+              "points": "16"
+            },
+            {
+              "event": "HMDR",
+              "points": "0d"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "DVTR",
+              "points": "13d"
+            },
+            {
+              "event": "GMER",
+              "points": "14"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "15"
+            },
+            {
+              "event": "SPER",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "C VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "DER",
+          "name": "PHILIP GASPAROVIC",
+          "total": 135,
+          "eventCount": 10,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "10"
+            },
+            {
+              "event": "SJER",
+              "points": "15"
+            },
+            {
+              "event": "MMC",
+              "points": "14"
+            },
+            {
+              "event": "CJCR",
+              "points": "11"
+            },
+            {
+              "event": "RRMC",
+              "points": "15"
+            },
+            {
+              "event": "STER",
+              "points": "12"
+            },
+            {
+              "event": "GMER",
+              "points": "11"
+            },
+            {
+              "event": "SPER",
+              "points": "15"
+            },
+            {
+              "event": "VFTR",
+              "points": "12"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "C VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 6,
+          "club": "DVTR",
+          "name": "PHIL WESTCOTT",
+          "total": 122,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "CJCR",
+              "points": "15"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            }
+          ],
+          "class": "C VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 7,
+          "club": "DVTR",
+          "name": "COLTON PHILHOWER",
+          "total": 73,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "12"
+            },
+            {
+              "event": "CJCR",
+              "points": "9"
+            },
+            {
+              "event": "HMDR",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "13"
+            },
+            {
+              "event": "GMER",
+              "points": "8"
+            },
+            {
+              "event": "IDR",
+              "points": "15"
+            }
+          ],
+          "class": "C VET 30+",
+          "brand": "BET"
+        },
+        {
+          "place": 8,
+          "club": "DER",
+          "name": "FRANK SINKKO",
+          "total": 64,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "0"
+            },
+            {
+              "event": "SJER",
+              "points": "14"
+            },
+            {
+              "event": "MMC",
+              "points": "13"
+            },
+            {
+              "event": "CJCR",
+              "points": "8"
+            },
+            {
+              "event": "VFTR",
+              "points": "14"
+            },
+            {
+              "event": "OCCR",
+              "points": "15"
+            }
+          ],
+          "class": "C VET 30+",
+          "brand": "YAM"
+        }
+      ]
+    },
+    {
+      "name": "C Senior 40+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "THOMAS KUZMICKI",
+          "total": 251,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "12d"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "22"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "20"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "18"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "C SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "JEFFREY FOSTER",
+          "total": 202,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "18"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "15"
+            },
+            {
+              "event": "HMDR",
+              "points": "15"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "16"
+            },
+            {
+              "event": "SPER",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "C SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "VFTR",
+          "name": "DAN WARNER",
+          "total": 182,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "15"
+            },
+            {
+              "event": "SJER",
+              "points": "11d"
+            },
+            {
+              "event": "MMC",
+              "points": "11d"
+            },
+            {
+              "event": "CJCR",
+              "points": "13"
+            },
+            {
+              "event": "RRMC",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "13"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "DVTR",
+              "points": "14"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            },
+            {
+              "event": "IDR",
+              "points": "20"
+            },
+            {
+              "event": "CDR",
+              "points": "15"
+            },
+            {
+              "event": "SPER",
+              "points": "16"
+            },
+            {
+              "event": "OCCR",
+              "points": "18"
+            }
+          ],
+          "class": "C SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "VFTR",
+          "name": "JESSE JOHNSTON",
+          "total": 175,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "0d"
+            },
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "13d"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "RRMC",
+              "points": "16"
+            },
+            {
+              "event": "HMDR",
+              "points": "16"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "DVTR",
+              "points": "15"
+            },
+            {
+              "event": "GMER",
+              "points": "16"
+            },
+            {
+              "event": "IDR",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "14"
+            },
+            {
+              "event": "SPER",
+              "points": "14"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "C SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "DVTR",
+          "name": "AARON WILT",
+          "total": 169,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            }
+          ],
+          "class": "C SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 6,
+          "club": "DVTR",
+          "name": "MARTIN BREITENSTEIN",
+          "total": 118,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "9"
+            },
+            {
+              "event": "MMC",
+              "points": "6"
+            },
+            {
+              "event": "CJCR",
+              "points": "7"
+            },
+            {
+              "event": "RRMC",
+              "points": "11"
+            },
+            {
+              "event": "HMDR",
+              "points": "7"
+            },
+            {
+              "event": "STER",
+              "points": "13"
+            },
+            {
+              "event": "GMER",
+              "points": "13"
+            },
+            {
+              "event": "IDR",
+              "points": "11"
+            },
+            {
+              "event": "CDR",
+              "points": "4d"
+            },
+            {
+              "event": "SPER",
+              "points": "15"
+            },
+            {
+              "event": "VFTR",
+              "points": "14"
+            },
+            {
+              "event": "OCCR",
+              "points": "12"
+            }
+          ],
+          "class": "C SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 7,
+          "club": "OCCR",
+          "name": "JOSEPH MCGLYNN",
+          "total": 88,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "16"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "12"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            }
+          ],
+          "class": "C SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 8,
+          "club": "DVTR",
+          "name": "JAY KENDERISH",
+          "total": 55,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "0"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "3"
+            },
+            {
+              "event": "OCCR",
+              "points": "14"
+            }
+          ],
+          "class": "C SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 9,
+          "club": "DVTR",
+          "name": "RUDRAM DAS",
+          "total": 55,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "0"
+            },
+            {
+              "event": "SJER",
+              "points": "10"
+            },
+            {
+              "event": "MMC",
+              "points": "9"
+            },
+            {
+              "event": "CJCR",
+              "points": "10"
+            },
+            {
+              "event": "CDR",
+              "points": "5"
+            },
+            {
+              "event": "SPER",
+              "points": "8"
+            },
+            {
+              "event": "OCCR",
+              "points": "13"
+            }
+          ],
+          "class": "C SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 10,
+          "club": "DVTR",
+          "name": "CLINTON WETZEL",
+          "total": 43,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "0"
+            },
+            {
+              "event": "SJER",
+              "points": "12"
+            },
+            {
+              "event": "MMC",
+              "points": "12"
+            },
+            {
+              "event": "CJCR",
+              "points": "12"
+            },
+            {
+              "event": "CDR",
+              "points": "7"
+            }
+          ],
+          "class": "C SR 40+",
+          "brand": "PIT"
+        }
+      ]
+    },
+    {
+      "name": "C Super Sr 50+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "RRMC",
+          "name": "MICHAEL KEARNEY",
+          "total": 229,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "0d"
+            },
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "22"
+            },
+            {
+              "event": "IDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "C SSR 50+",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "GREG GLAZAR",
+          "total": 210,
+          "eventCount": 9,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "GMER",
+              "points": "16"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "C SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "DVTR",
+          "name": "MORGAN JONES",
+          "total": 126,
+          "eventCount": 9,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "0"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "MMC",
+              "points": "12"
+            },
+            {
+              "event": "CJCR",
+              "points": "15"
+            },
+            {
+              "event": "STER",
+              "points": "16"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "13"
+            },
+            {
+              "event": "OCCR",
+              "points": "13"
+            }
+          ],
+          "class": "C SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "DVTR",
+          "name": "BROOKE BURKEY",
+          "total": 47,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "14"
+            },
+            {
+              "event": "STER",
+              "points": "0"
+            },
+            {
+              "event": "CDR",
+              "points": "11"
+            },
+            {
+              "event": "SPER",
+              "points": "11"
+            },
+            {
+              "event": "OCCR",
+              "points": "11"
+            }
+          ],
+          "class": "C SSR 50+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "Women",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "KELLY SMOKER",
+          "total": 173,
+          "eventCount": 8,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "15"
+            },
+            {
+              "event": "CDR",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            }
+          ],
+          "class": "WOMEN",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "CASSANDRA FICACCI",
+          "total": 129,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "STER",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "WOMEN",
+          "brand": "GAS"
+        },
+        {
+          "place": 3,
+          "club": "CJCR",
+          "name": "SARAH MICKEY",
+          "total": 119,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "IDR",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "22"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            }
+          ],
+          "class": "WOMEN",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "HMDR",
+          "name": "SHELLY FROST",
+          "total": 72,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "10"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "SPER",
+              "points": "6"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "WOMEN",
+          "brand": "BET"
+        }
+      ]
+    },
+    {
+      "name": "Masters A 60+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "MMC",
+          "name": "RONALD DECARO",
+          "total": 242,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "22"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "22"
+            },
+            {
+              "event": "HMDR",
+              "points": "18"
+            },
+            {
+              "event": "STER",
+              "points": "14d"
+            },
+            {
+              "event": "DVTR",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "22"
+            },
+            {
+              "event": "IDR",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "16d"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "MASTERS A 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "CDR",
+          "name": "RANDALL BROWN",
+          "total": 161,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "14"
+            },
+            {
+              "event": "SJER",
+              "points": "14"
+            },
+            {
+              "event": "MMC",
+              "points": "15"
+            },
+            {
+              "event": "CJCR",
+              "points": "12d"
+            },
+            {
+              "event": "RRMC",
+              "points": "15"
+            },
+            {
+              "event": "HMDR",
+              "points": "11d"
+            },
+            {
+              "event": "STER",
+              "points": "15"
+            },
+            {
+              "event": "DVTR",
+              "points": "18"
+            },
+            {
+              "event": "GMER",
+              "points": "13"
+            },
+            {
+              "event": "IDR",
+              "points": "12"
+            },
+            {
+              "event": "SPER",
+              "points": "16"
+            },
+            {
+              "event": "VFTR",
+              "points": "15"
+            },
+            {
+              "event": "OCCR",
+              "points": "14"
+            }
+          ],
+          "class": "MASTERS A 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "OCCR",
+          "name": "ANDY BYLSMA",
+          "total": 144,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "25"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "22"
+            }
+          ],
+          "class": "MASTERS A 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "SPER",
+          "name": "MICHAEL DEMOS",
+          "total": 125,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "16"
+            },
+            {
+              "event": "SJER",
+              "points": "18"
+            },
+            {
+              "event": "MMC",
+              "points": "16"
+            },
+            {
+              "event": "CJCR",
+              "points": "20"
+            },
+            {
+              "event": "HMDR",
+              "points": "15"
+            },
+            {
+              "event": "STER",
+              "points": "20"
+            },
+            {
+              "event": "GMER",
+              "points": "20"
+            }
+          ],
+          "class": "MASTERS A 60+",
+          "brand": "HUS"
+        },
+        {
+          "place": 5,
+          "club": "GMER",
+          "name": "JOSEPH WINKLER",
+          "total": 100,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "13"
+            },
+            {
+              "event": "MMC",
+              "points": "13"
+            },
+            {
+              "event": "CJCR",
+              "points": "13"
+            },
+            {
+              "event": "STER",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "15"
+            },
+            {
+              "event": "SPER",
+              "points": "8"
+            },
+            {
+              "event": "VFTR",
+              "points": "20"
+            }
+          ],
+          "class": "MASTERS A 60+",
+          "brand": "HUS"
+        },
+        {
+          "place": 6,
+          "club": "GMER",
+          "name": "JOEY WALLACE",
+          "total": 97,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "HMDR",
+              "points": "14"
+            },
+            {
+              "event": "STER",
+              "points": "12"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "IDR",
+              "points": "13"
+            },
+            {
+              "event": "SPER",
+              "points": "18"
+            },
+            {
+              "event": "VFTR",
+              "points": "18"
+            }
+          ],
+          "class": "MASTERS A 60+",
+          "brand": "HUS"
+        },
+        {
+          "place": 7,
+          "club": "MMC",
+          "name": "TIMOTHY MAURO",
+          "total": 89,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "18"
+            },
+            {
+              "event": "SJER",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "13"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "MASTERS A 60+",
+          "brand": "SUZ"
+        },
+        {
+          "place": 8,
+          "club": "RORR",
+          "name": "KEVIN KOCH",
+          "total": 84,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "SJER",
+              "points": "16"
+            },
+            {
+              "event": "MMC",
+              "points": "20"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "HMDR",
+              "points": "4"
+            },
+            {
+              "event": "CDR",
+              "points": "14"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "MASTERS A 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 9,
+          "club": "SJER",
+          "name": "DANIEL COMPTON",
+          "total": 50,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "6"
+            },
+            {
+              "event": "CJCR",
+              "points": "10"
+            },
+            {
+              "event": "RRMC",
+              "points": "7"
+            },
+            {
+              "event": "CDR",
+              "points": "12"
+            },
+            {
+              "event": "OCCR",
+              "points": "15"
+            }
+          ],
+          "class": "MASTERS A 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 10,
+          "club": "RRMC",
+          "name": "MICHAEL WALTERS",
+          "total": 48,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "2"
+            },
+            {
+              "event": "MMC",
+              "points": "9"
+            },
+            {
+              "event": "HMDR",
+              "points": "5"
+            },
+            {
+              "event": "STER",
+              "points": "10"
+            },
+            {
+              "event": "IDR",
+              "points": "5"
+            },
+            {
+              "event": "VFTR",
+              "points": "7"
+            },
+            {
+              "event": "OCCR",
+              "points": "10"
+            }
+          ],
+          "class": "MASTERS A 60+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "Masters B/C 60+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "RRMC",
+          "name": "VICTOR SCHIAVONE",
+          "total": 157,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "7"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "25"
+            }
+          ],
+          "class": "MASTERS B/C 60+",
+          "brand": "GAS"
+        },
+        {
+          "place": 2,
+          "club": "CJCR",
+          "name": "MICHAEL LESNIAK",
+          "total": 147,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "HMDR",
+              "points": "25"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "SPER",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "MASTERS B/C 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "GMER",
+          "name": "JOHN UEMATSU",
+          "total": 142,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "MMC",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "16"
+            },
+            {
+              "event": "HMDR",
+              "points": "22"
+            },
+            {
+              "event": "DVTR",
+              "points": "22"
+            },
+            {
+              "event": "CDR",
+              "points": "20"
+            },
+            {
+              "event": "VFTR",
+              "points": "22"
+            },
+            {
+              "event": "OCCR",
+              "points": "18"
+            }
+          ],
+          "class": "MASTERS B/C 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "MMC",
+          "name": "JOHN SCHOENER",
+          "total": 87,
+          "eventCount": 5,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "13"
+            },
+            {
+              "event": "SJER",
+              "points": "22"
+            },
+            {
+              "event": "CJCR",
+              "points": "18"
+            },
+            {
+              "event": "CDR",
+              "points": "14"
+            },
+            {
+              "event": "OCCR",
+              "points": "20"
+            }
+          ],
+          "class": "MASTERS B/C 60+",
+          "brand": "HUS"
+        },
+        {
+          "place": 5,
+          "club": "GMER",
+          "name": "JEFFREY FISHER",
+          "total": 75,
+          "eventCount": 6,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "7"
+            },
+            {
+              "event": "SJER",
+              "points": "16"
+            },
+            {
+              "event": "MMC",
+              "points": "14"
+            },
+            {
+              "event": "CJCR",
+              "points": "14"
+            },
+            {
+              "event": "CDR",
+              "points": "8"
+            },
+            {
+              "event": "OCCR",
+              "points": "16"
+            }
+          ],
+          "class": "MASTERS B/C 60+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "Golden 70+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "HMDR",
+          "name": "THOMAS CICHON",
+          "total": 260,
+          "eventCount": 11,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "13"
+            },
+            {
+              "event": "SJER",
+              "points": "25"
+            },
+            {
+              "event": "MMC",
+              "points": "25"
+            },
+            {
+              "event": "CJCR",
+              "points": "25"
+            },
+            {
+              "event": "RRMC",
+              "points": "25"
+            },
+            {
+              "event": "STER",
+              "points": "25"
+            },
+            {
+              "event": "DVTR",
+              "points": "25"
+            },
+            {
+              "event": "GMER",
+              "points": "25"
+            },
+            {
+              "event": "CDR",
+              "points": "25"
+            },
+            {
+              "event": "VFTR",
+              "points": "25"
+            },
+            {
+              "event": "OCCR",
+              "points": "22"
+            }
+          ],
+          "class": "GOLDEN",
+          "brand": "GAS"
+        }
+      ]
+    },
+    {
+      "name": "Legends 80+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "GMER",
+          "name": "DONALD KIRKPATRICK",
+          "total": 85,
+          "eventCount": 7,
+          "results": [
+            {
+              "event": "TCSMC",
+              "points": "11"
+            },
+            {
+              "event": "MMC",
+              "points": "11"
+            },
+            {
+              "event": "CJCR",
+              "points": "11"
+            },
+            {
+              "event": "DVTR",
+              "points": "13"
+            },
+            {
+              "event": "CDR",
+              "points": "13"
+            },
+            {
+              "event": "SPER",
+              "points": "13"
+            },
+            {
+              "event": "OCCR",
+              "points": "13"
+            }
+          ],
+          "class": "LEGENDS",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "CHARLES STAPLEFORD",
+          "total": 10,
+          "eventCount": 1,
+          "results": [
+            {
+              "event": "CJCR",
+              "points": "10"
+            }
+          ],
+          "class": "LEGENDS",
+          "brand": "HUS"
+        }
+      ]
+    }
+  ]
+}

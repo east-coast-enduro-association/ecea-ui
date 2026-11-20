@@ -10,8 +10,8 @@ const allEvents = await getCollection("events", ({ data }) => {
 });
 
 // Get team results for current year summary
-const teamResults2025 = await getEntry("teamResults", "2025");
-const teamData = teamResults2025?.data;
+const teamResultsEntry = await getEntry("teamResults", "2026");
+const teamData = teamResultsEntry?.data;
 const topTeams = teamData?.standings.slice(0, 5) || [];
 
 // Get clubs collection for slug mapping
@@ -27,6 +27,15 @@ const competitiveTypes = [
   { name: "FastKIDZ", path: MOTO_TALLY.paths["FastKIDZ"] },
 ];
 
+// On-site final championship standings (hosted here, not Moto-Tally).
+// Only the Enduro series currently has imported standings.
+const onSiteStandings: Record<string, Array<{ label: string; href: string }>> = {
+  Enduro: [
+    { label: "2026 Individual (Final)", href: "/results/individual" },
+    { label: "2026 Team (Final)", href: "/results/team" },
+  ],
+};
+
 // Get years for each event type
 const resultsByType = competitiveTypes.map(type => {
   const years = [...new Set(
@@ -38,6 +47,7 @@ const resultsByType = competitiveTypes.map(type => {
   return {
     ...type,
     years,
+    onSite: onSiteStandings[type.name] ?? [],
     getResultsUrl: (year: number) =>
       `${MOTO_TALLY.baseUrl}/${type.path}/${MOTO_TALLY.pages.results}?EY=${year}`,
     getStandingsUrl: () =>
@@ -82,22 +92,48 @@ const resultsByType = competitiveTypes.map(type => {
               </div>
 
               <div class="p-6">
-                {type.years.length > 0 ? (
-                  <div class="flex flex-wrap gap-3">
-                    {type.years.map((year) => (
-                      <a
-                        href={type.getResultsUrl(year)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center px-4 py-2 bg-primary-50 text-primary-700 rounded-lg hover:bg-primary-100 transition-colors font-medium"
-                      >
-                        {year}
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </a>
-                    ))}
+                {type.onSite.length > 0 && (
+                  <div class="mb-5 pb-5 border-b border-gray-100">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                      Championship standings (on this site)
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                      {type.onSite.map((s) => (
+                        <a
+                          href={s.href}
+                          class="inline-flex items-center px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors font-medium"
+                        >
+                          {s.label}
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                          </svg>
+                        </a>
+                      ))}
+                    </div>
                   </div>
+                )}
+
+                {type.years.length > 0 ? (
+                  <>
+                    <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                      Event results (Moto-Tally)
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                      {type.years.map((year) => (
+                        <a
+                          href={type.getResultsUrl(year)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center px-4 py-2 bg-primary-50 text-primary-700 rounded-lg hover:bg-primary-100 transition-colors font-medium"
+                        >
+                          {year}
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      ))}
+                    </div>
+                  </>
                 ) : (
                   <p class="text-gray-500 italic">No results available</p>
                 )}
@@ -125,7 +161,6 @@ const resultsByType = competitiveTypes.map(type => {
             <div class="p-6">
               <p class="text-sm text-gray-600 mb-4">
                 {teamData.year} Club Team Championship
-                <span class="ml-2 px-2 py-0.5 bg-amber-100 text-amber-800 text-xs rounded">Unofficial</span>
               </p>
 
               <div class="space-y-2">
@@ -151,15 +186,26 @@ const resultsByType = competitiveTypes.map(type => {
                 ))}
               </div>
 
-              <a
-                href="/results/team"
-                class="mt-4 inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm"
-              >
-                View all teams & event results
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
+              <div class="mt-4 flex flex-col sm:flex-row sm:gap-6 gap-2">
+                <a
+                  href="/results/team"
+                  class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm"
+                >
+                  View all teams & event results
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+                <a
+                  href="/results/individual"
+                  class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm"
+                >
+                  Individual rider standings by class
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         )}

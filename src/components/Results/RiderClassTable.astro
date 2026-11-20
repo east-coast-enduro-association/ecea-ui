@@ -1,0 +1,103 @@
+---
+/**
+ * Individual rider standings for one class — a riders × rounds points table.
+ * Driven by one class entry from a riderStandings collection file.
+ * Points are strings so scoring flags survive: trailing "d" = dropped
+ * (throwaway) round, "0" = DNF credit, negative = penalty.
+ */
+interface EventCol { abbr: string; name: string; date: string }
+interface Rider {
+  place: number;
+  club: string;
+  name: string;
+  class?: string;
+  brand?: string;
+  total: number;
+  eventCount: number;
+  results: Array<{ event: string; points: string }>;
+}
+interface Props {
+  name: string;
+  riders: Rider[];
+  events: EventCol[];
+  clubSlugMap: Record<string, string>;
+}
+
+const { name, riders, events, clubSlugMap } = Astro.props;
+
+// Only show event columns that at least one rider in this class scored.
+const usedAbbrs = new Set(riders.flatMap(r => r.results.map(x => x.event)));
+const cols = events.filter(e => usedAbbrs.has(e.abbr));
+
+const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+const pointsFor = (r: Rider, abbr: string) =>
+  r.results.find(x => x.event === abbr)?.points;
+---
+
+<div id={`class-${slug}`} class="scroll-mt-24">
+  <h3 class="text-lg font-bold text-gray-900 mb-3">{name}</h3>
+  <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden mb-8">
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-200 text-sm">
+        <thead class="bg-gray-900 text-white">
+          <tr>
+            <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider">Pos</th>
+            <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider min-w-[150px]">Rider</th>
+            <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider">Club</th>
+            <th class="px-3 py-2 text-center text-xs font-semibold uppercase tracking-wider bg-primary-700">Total</th>
+            <th class="px-3 py-2 text-center text-xs font-medium uppercase tracking-wider" title="Events counted">Ct</th>
+            {cols.map(e => (
+              <th class="px-2 py-2 text-center text-xs font-medium uppercase tracking-wider whitespace-nowrap">
+                <div title={e.name}>{e.abbr}</div>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          {riders.map((r, idx) => (
+            <tr class={idx < 3 ? "bg-amber-50/50" : idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+              <td class="px-3 py-2 whitespace-nowrap font-bold text-gray-900">
+                {r.place <= 3 ? (
+                  <span class={`inline-flex items-center justify-center w-6 h-6 rounded-full ${
+                    r.place === 1 ? 'bg-amber-400 text-amber-900' :
+                    r.place === 2 ? 'bg-gray-300 text-gray-700' :
+                    'bg-amber-600 text-white'
+                  }`}>{r.place}</span>
+                ) : r.place}
+              </td>
+              <td class="px-3 py-2 whitespace-nowrap font-medium text-gray-900">
+                {r.name}
+                {r.brand && <span class="ml-1 text-[10px] text-gray-400 uppercase">{r.brand}</span>}
+              </td>
+              <td class="px-3 py-2 whitespace-nowrap">
+                {clubSlugMap[r.club] ? (
+                  <a href={`/clubs/${clubSlugMap[r.club]}`} class="text-primary-600 hover:text-primary-700 font-medium">{r.club}</a>
+                ) : (
+                  <span class="text-gray-700">{r.club}</span>
+                )}
+              </td>
+              <td class="px-3 py-2 whitespace-nowrap text-center font-bold text-primary-700 bg-primary-50">{r.total}</td>
+              <td class="px-3 py-2 whitespace-nowrap text-center text-gray-500">{r.eventCount}</td>
+              {cols.map(e => {
+                const pts = pointsFor(r, e.abbr);
+                if (pts === undefined) {
+                  return <td class="px-2 py-2 text-center text-gray-300">—</td>;
+                }
+                const dropped = pts.endsWith("d");
+                const num = dropped ? pts.slice(0, -1) : pts;
+                const negative = num.startsWith("-");
+                return (
+                  <td class={`px-2 py-2 text-center whitespace-nowrap ${negative ? 'text-red-600' : dropped ? 'text-gray-400' : 'text-gray-900'}`}
+                      title={negative ? 'Penalty points' : dropped ? 'Dropped (throwaway) score' : num === '0' ? 'DNF credit' : `${num} points`}>
+                    {num}{dropped && <span class="text-[9px] align-super">d</span>}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

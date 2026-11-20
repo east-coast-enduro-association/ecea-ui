@@ -446,6 +446,54 @@ const membersCollection = defineCollection({
   }),
 });
 
+/**
+ * Rider Standings Collection (2026+)
+ * Individual championship standings grouped by class, imported from the
+ * scoring software's "Standings Detail by Class" PDF. One file per year/series.
+ * Per-event points are strings to preserve scoring flags: "20d" = dropped
+ * (throwaway) round, "0" = DNF credit, "-19" = penalty. Foundation for future
+ * rider-profile pages.
+ */
+const riderStandingsCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    year: z.number(),
+    series: z.string(),         // "Enduro", "Hare Scramble"
+    standingType: z.string(),   // "class"
+    lastUpdated: z.string(),
+    events: z.array(
+      z.object({
+        abbr: z.string(),
+        name: z.string(),
+        date: z.string(),
+      })
+    ).default([]),
+    notes: z.array(z.string()).default([]), // scoring-rule notes from the PDF
+    classes: z.array(
+      z.object({
+        name: z.string(),       // class/section label, e.g. "A Open 251+"
+        riders: z.array(
+          z.object({
+            place: z.number(),
+            club: z.string(),
+            name: z.string(),
+            class: z.string().optional(),  // per-rider class label from the PDF
+            brand: z.string().optional(),  // bike make, e.g. "KTM"
+            total: z.number(),
+            eventCount: z.number(),         // events counted toward the total
+            results: z.array(
+              z.object({
+                event: z.string(),  // event abbr
+                points: z.string(), // verbatim: "25", "20d", "0", "-19"
+              })
+            ).default([]),
+          })
+        ).default([]),
+      })
+    ).default([]),
+  }),
+});
+
 export const collections = {
   clubs: clubsCollection,
   events: eventsCollection,
@@ -461,4 +509,5 @@ export const collections = {
   teamSeasons: teamSeasonsCollection,
   teamEventResults: teamEventResultsCollection,
   members: membersCollection,
+  riderStandings: riderStandingsCollection,
 };

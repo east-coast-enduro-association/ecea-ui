@@ -1,7 +1,7 @@
 {
   "year": 2026,
   "series": "Enduro",
-  "lastUpdated": "2026-10-27",
+  "lastUpdated": "2026-11-18",
   "events": [
     {
       "abbr": "TCSMC",
@@ -97,7 +97,7 @@
       "abbr": "PBER",
       "name": "Pine Barons",
       "date": "2026-11-15",
-      "completed": false
+      "completed": true
     }
   ],
   "standings": [
@@ -458,12 +458,12 @@
     },
     {
       "place": 6,
-      "club": "DVTR",
+      "club": "TCSMC",
       "total": 153,
       "results": [
         {
           "event": "TCSMC",
-          "points": ""
+          "points": "W"
         },
         {
           "event": "SJER",
@@ -491,7 +491,7 @@
         },
         {
           "event": "DVTR",
-          "points": "W"
+          "points": ""
         },
         {
           "event": "BER",
@@ -529,12 +529,12 @@
     },
     {
       "place": 7,
-      "club": "TCSMC",
+      "club": "DVTR",
       "total": 145,
       "results": [
         {
           "event": "TCSMC",
-          "points": "W"
+          "points": "15"
         },
         {
           "event": "SJER",
@@ -562,7 +562,7 @@
         },
         {
           "event": "DVTR",
-          "points": "15"
+          "points": "W"
         },
         {
           "event": "BER",
@@ -945,7 +945,7 @@
         },
         {
           "event": "OCCR",
-          "points": ""
+          "points": "W"
         },
         {
           "event": "PBER",
@@ -984,7 +984,7 @@
         },
         {
           "event": "STER",
-          "points": ""
+          "points": "W"
         },
         {
           "event": "DVTR",
