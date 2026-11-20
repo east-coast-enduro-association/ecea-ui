@@ -116,6 +116,26 @@ def parse_rider(row, col_map, count_idx, total_idx):
     return rider
 
 
+def compute_high_point(classes):
+    """Derive top-3 'Overall High Point' per A/B/C division by season total.
+
+    The scoring software doesn't export a per-division overall ranking, so we
+    rank each letter division's riders (across its sub-classes, excluding AA)
+    by total points for the year. A high-point award goes to the most points.
+    """
+    out = []
+    for div in ("A", "B", "C"):
+        riders = []
+        for c in classes:
+            if c["name"].startswith(div + " "):   # "A ", "B ", "C " — excludes "AA"
+                riders.extend(c["riders"])
+        riders.sort(key=lambda r: (-r["total"], r.get("eventCount", 0)))
+        top3 = [{**r, "place": i + 1} for i, r in enumerate(riders[:3])]
+        if top3:
+            out.append({"name": f"{div} Overall High Point", "riders": top3})
+    return out
+
+
 def parse_overall(pdf_path):
     """Flat list of riders from the 'Top 3 Overall' PDF (single section)."""
     riders = []
@@ -195,7 +215,8 @@ def main():
     ap.add_argument("--year", type=int, default=date.today().year)
     ap.add_argument("--series", default="Enduro")
     ap.add_argument("--updated", default=None, help="Standings date YYYY-MM-DD (default: today)")
-    ap.add_argument("--overall", default=None, help="Optional 'Top 3 Overall' PDF to include")
+    ap.add_argument("--overall", default=None,
+                    help="Optional overall-standings PDF (e.g. the AA-advancement 'Overall Long Course' top-10)")
     args = ap.parse_args()
 
     pdf_path = Path(os.path.expanduser(args.pdf))
@@ -226,6 +247,8 @@ def main():
         events = [{"abbr": a, "name": a, "date": ""} for a in seen]
         print("WARNING: no teamSeasons schedule found; events have no names/dates.")
 
+    high_point = compute_high_point(classes)
+
     out = {
         "year": args.year,
         "series": args.series,
@@ -234,6 +257,7 @@ def main():
         "events": events,
         "notes": notes,
         "overall": overall,
+        "highPoint": high_point,
         "classes": classes,
     }
 
@@ -243,7 +267,7 @@ def main():
 
     nriders = sum(len(c["riders"]) for c in classes)
     print(f"Wrote {dest.relative_to(repo_root)}")
-    print(f"  {len(classes)} classes, {nriders} rider entries, {len(overall)} overall, {len(events)} events, {len(notes)} notes")
+    print(f"  {len(classes)} classes, {nriders} rider entries, {len(overall)} overall, {len(high_point)} high-point divisions, {len(events)} events, {len(notes)} notes")
 
 
 if __name__ == "__main__":

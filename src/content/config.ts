@@ -483,6 +483,25 @@ const riderStandingsCollection = defineCollection({
         ).default([]),
       })
     ).default([]),
+    highPoint: z.array(          // derived A/B/C "Overall High Point" (top 3 by total)
+      z.object({
+        name: z.string(),       // e.g. "A Overall High Point"
+        riders: z.array(
+          z.object({
+            place: z.number(),
+            club: z.string(),
+            name: z.string(),
+            class: z.string().optional(),
+            brand: z.string().optional(),
+            total: z.number(),
+            eventCount: z.number(),
+            results: z.array(
+              z.object({ event: z.string(), points: z.string() })
+            ).default([]),
+          })
+        ).default([]),
+      })
+    ).default([]),
     classes: z.array(
       z.object({
         name: z.string(),       // class/section label, e.g. "A Open 251+"

@@ -71,12 +71,32 @@ const classSlug = (name: string) =>
 
               {s.overall.length > 0 && (
                 <RiderClassTable
-                  name="Overall — Top 3 (Long Course)"
+                  name="Overall — Top 10 (Long Course)"
                   riders={s.overall}
                   events={s.events}
                   clubSlugMap={clubSlugMap}
                   idPrefix={`${s.year}-`}
+                  showClass={true}
                 />
+              )}
+
+              {s.highPoint.length > 0 && (
+                <div class="space-y-4">
+                  {s.highPoint.map(hp => (
+                    <RiderClassTable
+                      name={hp.name}
+                      riders={hp.riders}
+                      events={s.events}
+                      clubSlugMap={clubSlugMap}
+                      idPrefix={`${s.year}-`}
+                      showClass={true}
+                    />
+                  ))}
+                  <p class="text-xs text-gray-500 italic">
+                    Overall High Point is derived from season class totals (highest total points per
+                    division). It is not an official overall-finish ranking from the scoring team.
+                  </p>
+                </div>
               )}
 
               <!-- Class jump nav -->

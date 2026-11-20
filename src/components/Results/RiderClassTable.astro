@@ -22,9 +22,10 @@ interface Props {
   events: EventCol[];
   clubSlugMap: Record<string, string>;
   idPrefix?: string;
+  showClass?: boolean;
 }
 
-const { name, riders, events, clubSlugMap, idPrefix = "" } = Astro.props;
+const { name, riders, events, clubSlugMap, idPrefix = "", showClass = false } = Astro.props;
 
 // Only show event columns that at least one rider in this class scored.
 const usedAbbrs = new Set(riders.flatMap(r => r.results.map(x => x.event)));
@@ -69,6 +70,7 @@ const pointsFor = (r: Rider, abbr: string) =>
               </td>
               <td class="px-3 py-2 whitespace-nowrap font-medium text-gray-900">
                 {r.name}
+                {showClass && r.class && <span class="ml-1.5 text-[10px] text-primary-600 font-semibold">{r.class}</span>}
                 {r.brand && <span class="ml-1 text-[10px] text-gray-400 uppercase">{r.brand}</span>}
               </td>
               <td class="px-3 py-2 whitespace-nowrap">
