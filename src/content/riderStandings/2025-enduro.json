@@ -1,0 +1,1832 @@
+{
+  "year": 2025,
+  "series": "Enduro",
+  "standingType": "class",
+  "lastUpdated": "2025-12-15",
+  "events": [
+    {
+      "abbr": "TCSMC",
+      "name": "Greenbrier",
+      "date": "2025-03-09"
+    },
+    {
+      "abbr": "SJER",
+      "name": "Curly Fern",
+      "date": "2025-03-16"
+    },
+    {
+      "abbr": "MMC",
+      "name": "Sandy Lane",
+      "date": "2025-03-23"
+    },
+    {
+      "abbr": "CJCR",
+      "name": "Pine Hill",
+      "date": "2025-04-13"
+    },
+    {
+      "abbr": "RRMC",
+      "name": "Jim Smith Memorial",
+      "date": "2025-06-08"
+    },
+    {
+      "abbr": "HMDR",
+      "name": "Shotgun Enduro",
+      "date": "2025-06-22"
+    },
+    {
+      "abbr": "STER",
+      "name": "Barbed Wire",
+      "date": "2025-07-13"
+    },
+    {
+      "abbr": "DVTR",
+      "name": "Foggy Mountain",
+      "date": "2025-07-20"
+    },
+    {
+      "abbr": "BER",
+      "name": "Rattlesnake Enduro",
+      "date": "2025-07-27"
+    },
+    {
+      "abbr": "GMER",
+      "name": "Three Springs",
+      "date": "2025-08-10"
+    },
+    {
+      "abbr": "IDR",
+      "name": "Ithaca Sprint",
+      "date": "2025-08-17"
+    },
+    {
+      "abbr": "CDR",
+      "name": "Clock Run",
+      "date": "2025-08-24"
+    },
+    {
+      "abbr": "SPER",
+      "name": "Michaux",
+      "date": "2025-09-07"
+    },
+    {
+      "abbr": "VFTR",
+      "name": "Moonshine",
+      "date": "2025-09-21"
+    },
+    {
+      "abbr": "OCCR",
+      "name": "TBD",
+      "date": "2025-10-26"
+    },
+    {
+      "abbr": "MCI",
+      "name": "TBD",
+      "date": "2025-11-16"
+    },
+    {
+      "abbr": "PBER",
+      "name": "Clock Run",
+      "date": "2025-11-30"
+    }
+  ],
+  "notes": [
+    "Special Note for AA/A/B/C Riders: Points received in minimum of 6 events, best 12 count.",
+    "Special Note for C Riders: Event credit for DNF's if at least 50% of checks were completed at an event.",
+    "Special Note for Specialty Classes: 4 events finished OR 6 events competed in."
+  ],
+  "overall": [
+    {
+      "place": 1,
+      "club": "TCSMC",
+      "name": "Kyle McDonal",
+      "class": "AA",
+      "brand": "BET",
+      "total": 337,
+      "eventCount": 14,
+      "results": []
+    },
+    {
+      "place": 2,
+      "club": "OCCR",
+      "name": "Ryan Canavan",
+      "class": "AA",
+      "brand": "HUS",
+      "total": 241,
+      "eventCount": 14,
+      "results": []
+    },
+    {
+      "place": 3,
+      "club": "CDR",
+      "name": "Joseph Ford",
+      "class": "AA",
+      "brand": "KTM",
+      "total": 222,
+      "eventCount": 15,
+      "results": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "AA",
+      "riders": [
+        {
+          "place": 1,
+          "club": "TCSMC",
+          "name": "Kyle McDonal",
+          "total": 297,
+          "eventCount": 12,
+          "results": [],
+          "class": "AA",
+          "brand": "BET"
+        },
+        {
+          "place": 2,
+          "club": "OCCR",
+          "name": "Ryan Canavan",
+          "total": 227,
+          "eventCount": 12,
+          "results": [],
+          "class": "AA",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "RRMC",
+          "name": "Maverick Reiner",
+          "total": 216,
+          "eventCount": 12,
+          "results": [],
+          "class": "AA",
+          "brand": "GAS"
+        },
+        {
+          "place": 4,
+          "club": "CDR",
+          "name": "Joseph Ford",
+          "total": 205,
+          "eventCount": 12,
+          "results": [],
+          "class": "AA",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "MMC",
+          "name": "John Herrschaft",
+          "total": 165,
+          "eventCount": 12,
+          "results": [],
+          "class": "AA",
+          "brand": "HUS"
+        },
+        {
+          "place": 6,
+          "club": "CDR",
+          "name": "Thomas Palermo",
+          "total": 156,
+          "eventCount": 12,
+          "results": [],
+          "class": "AA",
+          "brand": "KTM"
+        },
+        {
+          "place": 7,
+          "club": "SPER",
+          "name": "Zach Miller",
+          "total": 154,
+          "eventCount": 8,
+          "results": [],
+          "class": "AA",
+          "brand": "HON"
+        },
+        {
+          "place": 8,
+          "club": "DER",
+          "name": "Zachary Page",
+          "total": 114,
+          "eventCount": 8,
+          "results": [],
+          "class": "AA",
+          "brand": "HUS"
+        },
+        {
+          "place": 9,
+          "club": "DER",
+          "name": "Chris Silverman",
+          "total": 95,
+          "eventCount": 7,
+          "results": [],
+          "class": "AA",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "A 98-200",
+      "riders": [
+        {
+          "place": 1,
+          "club": "CJCR",
+          "name": "Nate Meily",
+          "total": 249,
+          "eventCount": 11,
+          "results": [],
+          "class": "A 200",
+          "brand": "BRG"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "Bernard St Amand",
+          "total": 216,
+          "eventCount": 11,
+          "results": [],
+          "class": "A 200",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "MMC",
+          "name": "Andrew Bouchaud",
+          "total": 183,
+          "eventCount": 8,
+          "results": [],
+          "class": "A 200",
+          "brand": "HUS"
+        },
+        {
+          "place": 4,
+          "club": "TCSMC",
+          "name": "John Castaldi",
+          "total": 128,
+          "eventCount": 7,
+          "results": [],
+          "class": "A 200",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "A 201-250",
+      "riders": [
+        {
+          "place": 1,
+          "club": "VFTR",
+          "name": "Tim Raysor",
+          "total": 151,
+          "eventCount": 8,
+          "results": [],
+          "class": "A 250",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "OCCR",
+          "name": "Daniel Boyle",
+          "total": 140,
+          "eventCount": 7,
+          "results": [],
+          "class": "A 250",
+          "brand": "GAS"
+        }
+      ]
+    },
+    {
+      "name": "A Open 251+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "SPER",
+          "name": "Logan Smith",
+          "total": 234,
+          "eventCount": 12,
+          "results": [],
+          "class": "A 251+",
+          "brand": "TRI"
+        },
+        {
+          "place": 2,
+          "club": "VFTR",
+          "name": "Gunnar Bergey",
+          "total": 174,
+          "eventCount": 10,
+          "results": [],
+          "class": "A 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "CDR",
+          "name": "Travis Elseroad",
+          "total": 169,
+          "eventCount": 12,
+          "results": [],
+          "class": "A 251+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "A Vet 30+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DER",
+          "name": "Jacob Nowakowski",
+          "total": 242,
+          "eventCount": 12,
+          "results": [],
+          "class": "A VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "Van McCarren",
+          "total": 227,
+          "eventCount": 12,
+          "results": [],
+          "class": "A VET 30+",
+          "brand": "YAM"
+        },
+        {
+          "place": 3,
+          "club": "SPER",
+          "name": "Nathan Joseph",
+          "total": 191,
+          "eventCount": 11,
+          "results": [],
+          "class": "A VET 30+",
+          "brand": "BET"
+        },
+        {
+          "place": 4,
+          "club": "DVTR",
+          "name": "Austin Chavous",
+          "total": 176,
+          "eventCount": 12,
+          "results": [],
+          "class": "A VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "HMDR",
+          "name": "Brian Kinzel",
+          "total": 117,
+          "eventCount": 9,
+          "results": [],
+          "class": "A VET 30+",
+          "brand": "BET"
+        }
+      ]
+    },
+    {
+      "name": "A Senior 40+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "OCCR",
+          "name": "Donovan Marvin",
+          "total": 263,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "MMC",
+          "name": "Raymond Powell",
+          "total": 232,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "OCCR",
+          "name": "Joseph Kline",
+          "total": 143,
+          "eventCount": 10,
+          "results": [],
+          "class": "A SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "CDR",
+          "name": "Joe Sumpter",
+          "total": 111,
+          "eventCount": 6,
+          "results": [],
+          "class": "A SR 40+",
+          "brand": "YAM"
+        },
+        {
+          "place": 5,
+          "club": "OCCR",
+          "name": "Axel Anderson",
+          "total": 110,
+          "eventCount": 9,
+          "results": [],
+          "class": "A SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 6,
+          "club": "BER",
+          "name": "Kris Bizzari",
+          "total": 83,
+          "eventCount": 6,
+          "results": [],
+          "class": "A SR 40+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "A Senior 45+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "Chad Loch",
+          "total": 285,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SR45+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "CJCR",
+          "name": "Kevin Clark",
+          "total": 172,
+          "eventCount": 10,
+          "results": [],
+          "class": "A SR45+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "OCCR",
+          "name": "Brandon Sharff",
+          "total": 134,
+          "eventCount": 7,
+          "results": [],
+          "class": "A SR45+",
+          "brand": "GAS"
+        }
+      ]
+    },
+    {
+      "name": "A Super Sr 50+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "CJCR",
+          "name": "Jason Rice",
+          "total": 267,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "Chuck Stapleford",
+          "total": 206,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "OCCR",
+          "name": "Robert Dimock",
+          "total": 177,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SSR 50+",
+          "brand": "HUS"
+        },
+        {
+          "place": 4,
+          "club": "HMDR",
+          "name": "Brian Frost",
+          "total": 175,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "SPER",
+          "name": "Michael Long",
+          "total": 157,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SSR 50+",
+          "brand": "YAM"
+        },
+        {
+          "place": 6,
+          "club": "OCCR",
+          "name": "Michael Crum",
+          "total": 142,
+          "eventCount": 7,
+          "results": [],
+          "class": "A SSR 50+",
+          "brand": "BET"
+        },
+        {
+          "place": 7,
+          "club": "GMER",
+          "name": "David Rose",
+          "total": 138,
+          "eventCount": 8,
+          "results": [],
+          "class": "A SSR 50+",
+          "brand": "HUS"
+        },
+        {
+          "place": 8,
+          "club": "DER",
+          "name": "Mark Schleeweis",
+          "total": 137,
+          "eventCount": 8,
+          "results": [],
+          "class": "A SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 9,
+          "club": "DER",
+          "name": "Marvin Scanland",
+          "total": 131,
+          "eventCount": 6,
+          "results": [],
+          "class": "A SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 10,
+          "club": "HMDR",
+          "name": "Todd Whitney",
+          "total": 98,
+          "eventCount": 9,
+          "results": [],
+          "class": "A SSR 50+",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "A Super Sr 55+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "OCCR",
+          "name": "Arthur Downs",
+          "total": 256,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SSR 55+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "SPER",
+          "name": "Doug Haring",
+          "total": 249,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SSR 55+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "MMC",
+          "name": "Ronald DeCaro",
+          "total": 245,
+          "eventCount": 12,
+          "results": [],
+          "class": "A SSR 55+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "DER",
+          "name": "Karl Wills",
+          "total": 185,
+          "eventCount": 10,
+          "results": [],
+          "class": "A SSR 55+",
+          "brand": "YAM"
+        },
+        {
+          "place": 5,
+          "club": "DVTR",
+          "name": "James Landvater Jr",
+          "total": 164,
+          "eventCount": 11,
+          "results": [],
+          "class": "A SSR 55+",
+          "brand": "HUS"
+        },
+        {
+          "place": 6,
+          "club": "CDR",
+          "name": "Daron Elseroad",
+          "total": 162,
+          "eventCount": 11,
+          "results": [],
+          "class": "A SSR 55+",
+          "brand": "KTM"
+        },
+        {
+          "place": 7,
+          "club": "GMER",
+          "name": "Joey Wallace",
+          "total": 133,
+          "eventCount": 10,
+          "results": [],
+          "class": "A SSR 55+",
+          "brand": "HUS"
+        },
+        {
+          "place": 8,
+          "club": "SPER",
+          "name": "John Yantek",
+          "total": 86,
+          "eventCount": 6,
+          "results": [],
+          "class": "A SSR 55+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B 98-200",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DER",
+          "name": "Brian Turner",
+          "total": 247,
+          "eventCount": 10,
+          "results": [],
+          "class": "B 200",
+          "brand": "BET"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "Robert Krause",
+          "total": 163,
+          "eventCount": 8,
+          "results": [],
+          "class": "B 200",
+          "brand": "BET"
+        }
+      ]
+    },
+    {
+      "name": "B 201-250",
+      "riders": [
+        {
+          "place": 1,
+          "club": "CJCR",
+          "name": "Justin McKenzie",
+          "total": 274,
+          "eventCount": 12,
+          "results": [],
+          "class": "B 250",
+          "brand": "BET"
+        },
+        {
+          "place": 2,
+          "club": "DER",
+          "name": "Mike Teoli",
+          "total": 218,
+          "eventCount": 12,
+          "results": [],
+          "class": "B 250",
+          "brand": "YAM"
+        },
+        {
+          "place": 3,
+          "club": "RRMC",
+          "name": "Dom Falleni",
+          "total": 195,
+          "eventCount": 9,
+          "results": [],
+          "class": "B 250",
+          "brand": "HUS"
+        },
+        {
+          "place": 4,
+          "club": "CJCR",
+          "name": "Timothy Hulmes",
+          "total": 111,
+          "eventCount": 7,
+          "results": [],
+          "class": "B 250",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "CJCR",
+          "name": "Jose Hernandez",
+          "total": 109,
+          "eventCount": 7,
+          "results": [],
+          "class": "B 250",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B Open 251+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "Dillon Marchello",
+          "total": 255,
+          "eventCount": 12,
+          "results": [],
+          "class": "B 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "SPER",
+          "name": "Timothy Sprenkle",
+          "total": 215,
+          "eventCount": 12,
+          "results": [],
+          "class": "B 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "CJCR",
+          "name": "Ethan Otani",
+          "total": 205,
+          "eventCount": 11,
+          "results": [],
+          "class": "B 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 4,
+          "club": "MMC",
+          "name": "Zachary Taylor",
+          "total": 198,
+          "eventCount": 12,
+          "results": [],
+          "class": "B 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "SPER",
+          "name": "Wade Schoenberger",
+          "total": 160,
+          "eventCount": 12,
+          "results": [],
+          "class": "B 251+",
+          "brand": "GAS"
+        },
+        {
+          "place": 6,
+          "club": "DER",
+          "name": "Cody Novak",
+          "total": 159,
+          "eventCount": 10,
+          "results": [],
+          "class": "B 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 7,
+          "club": "OCCR",
+          "name": "Lou Davis",
+          "total": 150,
+          "eventCount": 7,
+          "results": [],
+          "class": "B 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 8,
+          "club": "CJCR",
+          "name": "Steven McKenzie Jr",
+          "total": 149,
+          "eventCount": 12,
+          "results": [],
+          "class": "B 251+",
+          "brand": "GAS"
+        },
+        {
+          "place": 9,
+          "club": "HMDR",
+          "name": "Tanner Whitney",
+          "total": 104,
+          "eventCount": 7,
+          "results": [],
+          "class": "B 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 10,
+          "club": "MMC",
+          "name": "Jarrett Hunt",
+          "total": 89,
+          "eventCount": 6,
+          "results": [],
+          "class": "B 251+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B Vet 30+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DER",
+          "name": "Thomas Raio",
+          "total": 263,
+          "eventCount": 12,
+          "results": [],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "CDR",
+          "name": "Colin Black",
+          "total": 233,
+          "eventCount": 12,
+          "results": [],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "OCCR",
+          "name": "Tyler Kennedy",
+          "total": 214,
+          "eventCount": 12,
+          "results": [],
+          "class": "B VET 30+",
+          "brand": "HUS"
+        },
+        {
+          "place": 4,
+          "club": "MMC",
+          "name": "Sean Supernowicz",
+          "total": 189,
+          "eventCount": 12,
+          "results": [],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "DVTR",
+          "name": "Jonathan Subbe",
+          "total": 156,
+          "eventCount": 12,
+          "results": [],
+          "class": "B VET 30+",
+          "brand": "BET"
+        },
+        {
+          "place": 6,
+          "club": "SJER",
+          "name": "Brian Grau",
+          "total": 115,
+          "eventCount": 6,
+          "results": [],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 7,
+          "club": "CJCR",
+          "name": "Christopher Prais",
+          "total": 109,
+          "eventCount": 8,
+          "results": [],
+          "class": "B VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 8,
+          "club": "OCCR",
+          "name": "Matthew Conner",
+          "total": 78,
+          "eventCount": 9,
+          "results": [],
+          "class": "B VET 30+",
+          "brand": "HUS"
+        },
+        {
+          "place": 9,
+          "club": "DVTR",
+          "name": "Bryan Dearborn",
+          "total": 58,
+          "eventCount": 6,
+          "results": [],
+          "class": "B VET 30+",
+          "brand": "HON"
+        }
+      ]
+    },
+    {
+      "name": "B Senior 40+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "MMC",
+          "name": "Joseph Abrams",
+          "total": 261,
+          "eventCount": 12,
+          "results": [],
+          "class": "B SR 40+",
+          "brand": "YAM"
+        },
+        {
+          "place": 2,
+          "club": "CJCR",
+          "name": "Greg Preston",
+          "total": 147,
+          "eventCount": 6,
+          "results": [],
+          "class": "B SR 40+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B Senior 45+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "OCCR",
+          "name": "Michael Trezza",
+          "total": 159,
+          "eventCount": 7,
+          "results": [],
+          "class": "B SR 45+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B Super Sr 50+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "SPER",
+          "name": "Robert Hagan",
+          "total": 272,
+          "eventCount": 11,
+          "results": [],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "GMER",
+          "name": "Peter Butler",
+          "total": 225,
+          "eventCount": 11,
+          "results": [],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "CDR",
+          "name": "Steven Holmes",
+          "total": 223,
+          "eventCount": 12,
+          "results": [],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "GMER",
+          "name": "Myron Stambaugh",
+          "total": 212,
+          "eventCount": 12,
+          "results": [],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "RORR",
+          "name": "Jeremy Mertz",
+          "total": 205,
+          "eventCount": 12,
+          "results": [],
+          "class": "B SSR 50+",
+          "brand": "HUS"
+        },
+        {
+          "place": 6,
+          "club": "DVTR",
+          "name": "David Smith",
+          "total": 183,
+          "eventCount": 12,
+          "results": [],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 7,
+          "club": "RORR",
+          "name": "Mitchell Walker",
+          "total": 111,
+          "eventCount": 9,
+          "results": [],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 8,
+          "club": "DER",
+          "name": "Joseph Funk",
+          "total": 96,
+          "eventCount": 6,
+          "results": [],
+          "class": "B SSR 50+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "B Super Sr 55+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "Frank Marchello",
+          "total": 241,
+          "eventCount": 12,
+          "results": [],
+          "class": "B SSR 55+",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "MMC",
+          "name": "Guy Dranoff",
+          "total": 208,
+          "eventCount": 9,
+          "results": [],
+          "class": "B SSR 55+",
+          "brand": "KAW"
+        },
+        {
+          "place": 3,
+          "club": "DVTR",
+          "name": "John Clark",
+          "total": 174,
+          "eventCount": 8,
+          "results": [],
+          "class": "B SSR 55+",
+          "brand": "YAM"
+        },
+        {
+          "place": 4,
+          "club": "GMER",
+          "name": "Richard Zink",
+          "total": 108,
+          "eventCount": 6,
+          "results": [],
+          "class": "B SSR 55+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "RRMC",
+          "name": "Ken Wadle",
+          "total": 102,
+          "eventCount": 7,
+          "results": [],
+          "class": "B SSR 55+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "C 98-200",
+      "riders": [
+        {
+          "place": 1,
+          "club": "HMDR",
+          "name": "Keith Aigeltinger",
+          "total": 294,
+          "eventCount": 12,
+          "results": [],
+          "class": "C 200",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "Jonathan Hartman",
+          "total": 249,
+          "eventCount": 12,
+          "results": [],
+          "class": "C 200",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "DVTR",
+          "name": "Joe Riggieri",
+          "total": 125,
+          "eventCount": 7,
+          "results": [],
+          "class": "C 200",
+          "brand": "BET"
+        },
+        {
+          "place": 4,
+          "club": "DVTR",
+          "name": "Paul Ritz",
+          "total": 93,
+          "eventCount": 6,
+          "results": [],
+          "class": "C 200",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "C 201-250",
+      "riders": [
+        {
+          "place": 1,
+          "club": "HMDR",
+          "name": "Thomas Nicolai",
+          "total": 242,
+          "eventCount": 11,
+          "results": [],
+          "class": "C 250",
+          "brand": "YAM"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "Liz Kiniery",
+          "total": 219,
+          "eventCount": 12,
+          "results": [],
+          "class": "C 250",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "DER",
+          "name": "Matthew Schneiders",
+          "total": 174,
+          "eventCount": 12,
+          "results": [],
+          "class": "C 250",
+          "brand": "KAW"
+        },
+        {
+          "place": 4,
+          "club": "DVTR",
+          "name": "Matt Woutersz",
+          "total": 165,
+          "eventCount": 8,
+          "results": [],
+          "class": "C 250",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "OCCR",
+          "name": "Jaxon Haws",
+          "total": 135,
+          "eventCount": 9,
+          "results": [],
+          "class": "C 250",
+          "brand": "HUS"
+        },
+        {
+          "place": 6,
+          "club": "CJCR",
+          "name": "Alejandro Calero",
+          "total": 68,
+          "eventCount": 6,
+          "results": [],
+          "class": "C 250",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "C Open 251+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "James Favreau",
+          "total": 273,
+          "eventCount": 12,
+          "results": [],
+          "class": "C 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "James Ashmen",
+          "total": 269,
+          "eventCount": 11,
+          "results": [],
+          "class": "C 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "HMDR",
+          "name": "Tyler Craig",
+          "total": 218,
+          "eventCount": 12,
+          "results": [],
+          "class": "C 251+",
+          "brand": "GAS"
+        },
+        {
+          "place": 4,
+          "club": "OCCR",
+          "name": "Ryan Lusk",
+          "total": 217,
+          "eventCount": 12,
+          "results": [],
+          "class": "C 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 5,
+          "club": "DVTR",
+          "name": "Edward Anskis",
+          "total": 159,
+          "eventCount": 12,
+          "results": [],
+          "class": "C 251+",
+          "brand": "KTM"
+        },
+        {
+          "place": 6,
+          "club": "DVTR",
+          "name": "Pawel Bialk",
+          "total": 135,
+          "eventCount": 10,
+          "results": [],
+          "class": "C 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 7,
+          "club": "DVTR",
+          "name": "Joseph Trifun",
+          "total": 116,
+          "eventCount": 8,
+          "results": [],
+          "class": "C 251+",
+          "brand": "HUS"
+        },
+        {
+          "place": 8,
+          "club": "DVTR",
+          "name": "Vincent Maggio",
+          "total": 104,
+          "eventCount": 7,
+          "results": [],
+          "class": "C 251+",
+          "brand": "BET"
+        }
+      ]
+    },
+    {
+      "name": "C Vet 30+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "Maxim Pascal",
+          "total": 260,
+          "eventCount": 12,
+          "results": [],
+          "class": "C VET 30+",
+          "brand": "BET"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "Richard Powell",
+          "total": 194,
+          "eventCount": 12,
+          "results": [],
+          "class": "C VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "MMC",
+          "name": "Donald Montgomery",
+          "total": 158,
+          "eventCount": 12,
+          "results": [],
+          "class": "C VET 30+",
+          "brand": "GAS"
+        },
+        {
+          "place": 4,
+          "club": "VFTR",
+          "name": "Daniel Hudecki",
+          "total": 86,
+          "eventCount": 6,
+          "results": [],
+          "class": "C VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "DVTR",
+          "name": "Jami Nazarski",
+          "total": 75,
+          "eventCount": 8,
+          "results": [],
+          "class": "C VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 6,
+          "club": "DVTR",
+          "name": "Phil Westcott",
+          "total": 73,
+          "eventCount": 6,
+          "results": [],
+          "class": "C VET 30+",
+          "brand": "KTM"
+        },
+        {
+          "place": 7,
+          "club": "DVTR",
+          "name": "Bryan Dearborn",
+          "total": 68,
+          "eventCount": 9,
+          "results": [],
+          "class": "C VET 30+",
+          "brand": "-"
+        },
+        {
+          "place": 8,
+          "club": "DVTR",
+          "name": "Daniel Givens",
+          "total": 63,
+          "eventCount": 6,
+          "results": [],
+          "class": "C VET 30+",
+          "brand": "HUS"
+        },
+        {
+          "place": 9,
+          "club": "OCCR",
+          "name": "Albert Zipf",
+          "total": 58,
+          "eventCount": 7,
+          "results": [],
+          "class": "C VET 30+",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "C Senior 40+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "Eric Simpson",
+          "total": 253,
+          "eventCount": 12,
+          "results": [],
+          "class": "C SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "PBER",
+          "name": "Leland Froriep Jr",
+          "total": 220,
+          "eventCount": 10,
+          "results": [],
+          "class": "C SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "OCCR",
+          "name": "Rob Stump",
+          "total": 198,
+          "eventCount": 11,
+          "results": [],
+          "class": "C SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "CDR",
+          "name": "Bradley Camp",
+          "total": 197,
+          "eventCount": 9,
+          "results": [],
+          "class": "C SR 40+",
+          "brand": "YAM"
+        },
+        {
+          "place": 5,
+          "club": "DVTR",
+          "name": "Jeffrey Foster",
+          "total": 195,
+          "eventCount": 12,
+          "results": [],
+          "class": "C SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 6,
+          "club": "DVTR",
+          "name": "Matthew Riggieri",
+          "total": 141,
+          "eventCount": 9,
+          "results": [],
+          "class": "C SR 40+",
+          "brand": "GAS"
+        },
+        {
+          "place": 7,
+          "club": "OCCR",
+          "name": "Paul Valentine Jr",
+          "total": 123,
+          "eventCount": 11,
+          "results": [],
+          "class": "C SR 40+",
+          "brand": "HUS"
+        },
+        {
+          "place": 8,
+          "club": "DVTR",
+          "name": "Greg Glazar",
+          "total": 118,
+          "eventCount": 9,
+          "results": [],
+          "class": "C SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 9,
+          "club": "DVTR",
+          "name": "Dan Warner",
+          "total": 105,
+          "eventCount": 11,
+          "results": [],
+          "class": "C SR 40+",
+          "brand": "KTM"
+        },
+        {
+          "place": 10,
+          "club": "DVTR",
+          "name": "Jesse Johnston",
+          "total": 79,
+          "eventCount": 8,
+          "results": [],
+          "class": "C SR 40+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "C Super Sr 50+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "Morgan Jones",
+          "total": 206,
+          "eventCount": 12,
+          "results": [],
+          "class": "C SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "Brooke Burkey",
+          "total": 130,
+          "eventCount": 11,
+          "results": [],
+          "class": "C SSR 50+",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "DVTR",
+          "name": "Simon Tasker",
+          "total": 128,
+          "eventCount": 6,
+          "results": [],
+          "class": "C SSR 50+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "Women",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DVTR",
+          "name": "Sarah Mickey",
+          "total": 300,
+          "eventCount": 12,
+          "results": [],
+          "class": "Women",
+          "brand": "HUS"
+        },
+        {
+          "place": 2,
+          "club": "DVTR",
+          "name": "Cassandra Ficacci",
+          "total": 241,
+          "eventCount": 12,
+          "results": [],
+          "class": "Women",
+          "brand": "GAS"
+        },
+        {
+          "place": 3,
+          "club": "DVTR",
+          "name": "Julie Pohl",
+          "total": 191,
+          "eventCount": 12,
+          "results": [],
+          "class": "Women",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "HMDR",
+          "name": "Shelly Frost",
+          "total": 111,
+          "eventCount": 7,
+          "results": [],
+          "class": "Women",
+          "brand": "BET"
+        },
+        {
+          "place": 5,
+          "club": "DVTR",
+          "name": "Kelly Smoker",
+          "total": 91,
+          "eventCount": 5,
+          "results": [],
+          "class": "Women",
+          "brand": "HUS"
+        }
+      ]
+    },
+    {
+      "name": "Masters A 60+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "OCCR",
+          "name": "Andy Bylsma",
+          "total": 291,
+          "eventCount": 12,
+          "results": [],
+          "class": "Masters A 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 2,
+          "club": "SPER",
+          "name": "Michael Demos",
+          "total": 202,
+          "eventCount": 12,
+          "results": [],
+          "class": "Masters A 60+",
+          "brand": "HUS"
+        },
+        {
+          "place": 3,
+          "club": "MMC",
+          "name": "Chuck Sullivan",
+          "total": 95,
+          "eventCount": 4,
+          "results": [],
+          "class": "Masters A 60+",
+          "brand": "GAS"
+        },
+        {
+          "place": 4,
+          "club": "VFTR",
+          "name": "Greg Sawka",
+          "total": 80,
+          "eventCount": 5,
+          "results": [],
+          "class": "Masters A 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 5,
+          "club": "SJER",
+          "name": "Daniel Compton",
+          "total": 79,
+          "eventCount": 8,
+          "results": [],
+          "class": "Masters A 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 6,
+          "club": "GMER",
+          "name": "Joseph Winkler",
+          "total": 77,
+          "eventCount": 6,
+          "results": [],
+          "class": "Masters A 60+",
+          "brand": "HUS"
+        },
+        {
+          "place": 7,
+          "club": "MMC",
+          "name": "Timothy Mauro",
+          "total": 75,
+          "eventCount": 4,
+          "results": [],
+          "class": "Masters A 60+",
+          "brand": "SUZ"
+        },
+        {
+          "place": 8,
+          "club": "CJCR",
+          "name": "John Walaszek",
+          "total": 70,
+          "eventCount": 8,
+          "results": [],
+          "class": "Masters A 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 9,
+          "club": "RRMC",
+          "name": "Michael Walters",
+          "total": 55,
+          "eventCount": 5,
+          "results": [],
+          "class": "Masters A 60+",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "Masters B/C 60+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "GMER",
+          "name": "Harry Newcomer",
+          "total": 169,
+          "eventCount": 11,
+          "results": [],
+          "class": "Masters B/C 60+",
+          "brand": "GAS"
+        },
+        {
+          "place": 2,
+          "club": "RRMC",
+          "name": "Victor Schiavone",
+          "total": 97,
+          "eventCount": 4,
+          "results": [],
+          "class": "Masters B/C 60+",
+          "brand": "-"
+        },
+        {
+          "place": 3,
+          "club": "OCCR",
+          "name": "David O'Sullivan Sr",
+          "total": 90,
+          "eventCount": 7,
+          "results": [],
+          "class": "Masters B/C 60+",
+          "brand": "KTM"
+        },
+        {
+          "place": 4,
+          "club": "GMER",
+          "name": "Robert Litwin",
+          "total": 89,
+          "eventCount": 6,
+          "results": [],
+          "class": "Masters B/C 60+",
+          "brand": "SCO"
+        },
+        {
+          "place": 5,
+          "club": "MMC",
+          "name": "John Schoener",
+          "total": 87,
+          "eventCount": 4,
+          "results": [],
+          "class": "Masters B/C 60+",
+          "brand": "HUS"
+        },
+        {
+          "place": 6,
+          "club": "OCCR",
+          "name": "Patricia Blair",
+          "total": 68,
+          "eventCount": 6,
+          "results": [],
+          "class": "Masters B/C 60+",
+          "brand": "BET"
+        }
+      ]
+    },
+    {
+      "name": "Golden 70+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "HMDR",
+          "name": "Thomas Cichon",
+          "total": 276,
+          "eventCount": 12,
+          "results": [],
+          "class": "Golden",
+          "brand": "GAS"
+        },
+        {
+          "place": 2,
+          "club": "GMER",
+          "name": "Russell Newlen",
+          "total": 118,
+          "eventCount": 7,
+          "results": [],
+          "class": "Golden",
+          "brand": "KTM"
+        },
+        {
+          "place": 3,
+          "club": "MCI",
+          "name": "Keith Barrow",
+          "total": 99,
+          "eventCount": 7,
+          "results": [],
+          "class": "Golden",
+          "brand": "KTM"
+        }
+      ]
+    },
+    {
+      "name": "Legends 80+",
+      "riders": [
+        {
+          "place": 1,
+          "club": "DER",
+          "name": "Charles Stapleford",
+          "total": 110,
+          "eventCount": 9,
+          "results": [],
+          "class": "Legends",
+          "brand": "HUS"
+        }
+      ]
+    }
+  ]
+}

@@ -75,6 +75,7 @@ const classSlug = (name: string) =>
                   riders={s.overall}
                   events={s.events}
                   clubSlugMap={clubSlugMap}
+                  idPrefix={`${s.year}-`}
                 />
               )}
 
@@ -83,7 +84,7 @@ const classSlug = (name: string) =>
                 <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">Jump to class</p>
                 <div class="flex flex-wrap gap-2">
                   {s.classes.map(c => (
-                    <a href={`#class-${classSlug(c.name)}`}
+                    <a href={`#class-${s.year}-${classSlug(c.name)}`}
                        class="inline-block px-2.5 py-1 bg-white border border-gray-200 rounded text-xs text-gray-700 hover:border-primary-400 hover:text-primary-700 transition-colors">
                       {c.name}
                     </a>
@@ -94,7 +95,7 @@ const classSlug = (name: string) =>
               <!-- Class tables -->
               <div>
                 {s.classes.map(c => (
-                  <RiderClassTable name={c.name} riders={c.riders} events={s.events} clubSlugMap={clubSlugMap} />
+                  <RiderClassTable name={c.name} riders={c.riders} events={s.events} clubSlugMap={clubSlugMap} idPrefix={`${s.year}-`} />
                 ))}
               </div>
 

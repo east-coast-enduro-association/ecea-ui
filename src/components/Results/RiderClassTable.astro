@@ -21,15 +21,16 @@ interface Props {
   riders: Rider[];
   events: EventCol[];
   clubSlugMap: Record<string, string>;
+  idPrefix?: string;
 }
 
-const { name, riders, events, clubSlugMap } = Astro.props;
+const { name, riders, events, clubSlugMap, idPrefix = "" } = Astro.props;
 
 // Only show event columns that at least one rider in this class scored.
 const usedAbbrs = new Set(riders.flatMap(r => r.results.map(x => x.event)));
 const cols = events.filter(e => usedAbbrs.has(e.abbr));
 
-const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const slug = idPrefix + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 const pointsFor = (r: Rider, abbr: string) =>
   r.results.find(x => x.event === abbr)?.points;
