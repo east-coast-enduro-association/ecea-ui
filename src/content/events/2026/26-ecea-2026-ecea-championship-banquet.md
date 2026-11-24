@@ -24,7 +24,7 @@ draft: false
 Join us as we celebrate the season and honor our winners at the Awards Banquet!
 
 - **Tickets:** Available now at [brushfire.com](https://brushfire.com/eastcoastenduroassociation/ecea-banquet-2026/644415)
-- **Hotel Block:** Reserve your room online — book your group rate for *East Coast Enduro Jan2027*. If calling, mention *East Coast Enduro*, and book by **December 23, 2026** for the discounted rate!
+- **Hotel Block:** [Reserve your room online](https://www.marriott.com/event-reservations/reservation-link.mi?id=1777050169745&key=GRP&app=resvlink&inventoryMissing=true) — book your group rate for *East Coast Enduro Jan2027*. If calling, mention *East Coast Enduro*, and book by **December 23, 2026** for the discounted rate!
 - **Ticket Deadline:** **January 14, 2027** — spots are limited, so grab yours early!
 
 Tickets are required for awards.
