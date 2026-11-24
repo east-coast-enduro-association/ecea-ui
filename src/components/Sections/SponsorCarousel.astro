@@ -125,10 +125,23 @@ const { titleSponsor, sponsors } = Astro.props;
       animation-duration: 20s;
     }
   }
-  /* Respect users who prefer reduced motion: stop entirely, hide the toggle */
+  /* Respect users who prefer reduced motion: stop the scroll and lay the
+     sponsors out as a tidy centered, wrapping row instead of a frozen
+     mid-scroll marquee. Hide the duplicate (aria-hidden) copies and the
+     pause toggle. */
   @media (prefers-reduced-motion: reduce) {
     .sponsor-carousel {
       animation: none;
+      width: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem 2rem;
+    }
+    .sponsor-carousel > a {
+      margin-right: 0;
+    }
+    .sponsor-carousel > [aria-hidden="true"] {
+      display: none;
     }
     .sponsor-pause {
       display: none;
