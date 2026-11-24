@@ -66,19 +66,23 @@ const { titleSponsor, sponsors } = Astro.props;
               href={sponsor.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="flex-shrink-0 mr-8 md:mr-12"
+              class="group flex-shrink-0 mr-8 md:mr-12"
               aria-hidden={isDuplicate ? "true" : undefined}
               tabindex={isDuplicate ? -1 : undefined}
             >
-              {getCmsImage(sponsor.logo) ? (
-                <Image
-                  src={getCmsImage(sponsor.logo)!}
-                  alt={sponsor.name}
-                  class="h-8 md:h-10 w-auto object-contain"
-                />
-              ) : (
-                <img src={sponsor.logo} alt={sponsor.name} loading="lazy" class="h-8 md:h-10 w-auto object-contain" />
-              )}
+              {/* White chip (matches the title-sponsor treatment) so logos of any
+                  color read clearly against the light section background. */}
+              <div class="flex items-center bg-white rounded-lg px-4 py-2 border border-gray-200 group-hover:border-primary-300 transition-colors">
+                {getCmsImage(sponsor.logo) ? (
+                  <Image
+                    src={getCmsImage(sponsor.logo)!}
+                    alt={sponsor.name}
+                    class="h-8 md:h-10 w-auto object-contain"
+                  />
+                ) : (
+                  <img src={sponsor.logo} alt={sponsor.name} loading="lazy" class="h-8 md:h-10 w-auto object-contain" />
+                )}
+              </div>
             </a>
           );
         })}
